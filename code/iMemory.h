@@ -8,11 +8,13 @@
 #include "iWord.h"
 #include "iRegister.h"
 
+class Word;
+
 class iMemory {
   private:
     
   public:
-    virtual iWord Load(const iWord&) const = 0;
+    virtual Word Load(const iWord&) const = 0;
 
     virtual bool Store(const iWord& address, const iWord& value) = 0;
     virtual bool Store(const iWord& address, const iRegister&) = 0;
