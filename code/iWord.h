@@ -19,10 +19,17 @@ class iWord {
     
   public:
     virtual int toInt() const = 0;
-    /*  toInt() ("to integer") returns an integer value which is 
+    /*  toInt() ("to integer") returns a positive integer value which is 
         representative of the data iWord is maintaining as a data
         structure. A call to this function does not modify the instance
         of iWord and is therefore const.
+    */
+    virtual int toInt2Complement() const = 0;
+    /*  toInt() ("to integer") returns an integer value which is 
+        representative of the data iWord is maintaining as a data
+        structure as interpretted by two's complement. A call to this
+        function does not modify the instance of iWord and is therefore
+        const.
     */
     virtual std::string toStr() const = 0;
     /*  toStr() ("to string") returns a string representation of the data

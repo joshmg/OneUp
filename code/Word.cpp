@@ -21,6 +21,12 @@ int Word::toInt() const {
   return value;
 }
 
+int Word::toInt2Complement() const {
+  Word value = this->Not();
+  ++value;
+  return value;
+}
+
 string Word::toStr() const {
   string value;
 
@@ -44,6 +50,17 @@ string Word::toHex() const {
 }
 
 bool Word::fromInt(int value) {
+  // handle negative -> Two's Complement
+  if (value < 0) {
+    Word negative;
+    bool success = negative.fromInt(-value);
+    negative = negative.Not();
+    ++negative;
+    (*this) = negative;
+    return success;
+  }
+
+  // value is non-negative:
   int power_of_2 = (int)pow((double)2.0, WORD_SIZE-1);
 
   for (int i=0;i<WORD_SIZE;i++) {

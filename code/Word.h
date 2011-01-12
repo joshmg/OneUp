@@ -18,6 +18,7 @@ class Word : public iWord {
     Word();
 
     int toInt() const;
+    int toInt2Complement() const;
     std::string toStr() const;
     std::string toHex() const;
 
