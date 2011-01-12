@@ -13,7 +13,6 @@
 class Word : public iWord {
   private:
     bool _data[WORD_SIZE];
-    int mod(int, int);
 
   public:
     Word();

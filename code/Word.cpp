@@ -7,8 +7,6 @@
 #include <iostream> // for print()
 using namespace std;
 
-int Word::mod(int a, int b) { return a%b < 0 ? a%b+b : a%b; }
-
 Word::Word() {
   for (int i=0;i<WORD_SIZE;i++) { _data[i] = 0; }
 }
@@ -185,7 +183,12 @@ iWord& Word::operator++() {
 
   return (*this);
 }
-iWord& Word::operator++(int) { return ++(*this); }
+
+iWord& Word::operator++(int) {
+  Word value(*this);
+  ++(*this);
+  return value;
+}
 
 void Word::print() const {
   cout << "[";
