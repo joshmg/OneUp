@@ -24,7 +24,7 @@ int Word::toInt() const {
 int Word::toInt2Complement() const {
   Word value = this->Not();
   ++value;
-  return value;
+  return value.toInt();
 }
 
 string Word::toStr() const {
