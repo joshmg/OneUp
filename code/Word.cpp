@@ -115,7 +115,10 @@ bool Word::fromHex(const string& value) {
       hex_val = value[i] - 'A' + 10;
     }
     // shift up 4 bits per remaining hex digit
-    _value += hex_val * (int)pow(2.0, WORD_SIZE-4*(i+1));
+    _value += hex_val * (int)pow(2.0, WORD_SIZE-4*((i+1)-2));
+    // (i+1)-2 comes from:
+    //  the string accessor starting at zero (+1) and
+    //  the index starting at 2 (-2)
   }
 
   return true;
