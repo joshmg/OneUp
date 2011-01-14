@@ -140,6 +140,11 @@ class iWord {
     /*  Post-increment operator incriments the value of the current instance
         and then returns a duplicate of itself before its incriment.
     */
+
+    virtual bool operator[](int) = 0;
+    /*  Accessor to get the value of a certain bit.
+        True <=> 1, False <=> 0.
+    */
 };
 
 #endif

@@ -1,26 +1,32 @@
 // File: Word.h
 // Written by:
 //    Joshua Green
+// Edited by:
+//    Andrew Groot
 
 #ifndef WORD_H
 #define WORD_H
 
 #include "iWord.h"
 #include <string>
+#include <iostream> // for print()
+#include <cmath> // for pow()
+using namespace std;
 
 #define WORD_SIZE 16
 
 class Word : public iWord {
   private:
-    bool _data[WORD_SIZE];
+    unsigned short _value;
+    bool hasBit(int) const;
 
   public:
     Word();
 
     int toInt() const;
     int toInt2Complement() const;
-    std::string toStr() const;
-    std::string toHex() const;
+    string toStr() const;
+    string toHex() const;
 
     bool fromInt(int);
     bool fromStr(const std::string&);
@@ -36,9 +42,9 @@ class Word : public iWord {
     Word Or(const iWord&) const;
     Word Not() const;
     
-
     iWord& operator++();
     iWord& operator++(int);
+    bool operator[](int);
 
     void print() const;
 };
