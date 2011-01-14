@@ -169,12 +169,12 @@ Word Word::Not() const {
 
 
 iWord& Word::operator++() {
-  _value+=1;
+  _value++;
   return (*this);
 }
 
 iWord& Word::operator++(int) {
-  _value+=1;
+  _value++;
   return (*this);
 }
 
