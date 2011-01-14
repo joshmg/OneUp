@@ -11,7 +11,7 @@
 using namespace std;
 
 // private
-bool Word::hasBit(int i) const {
+bool Word::_hasBit(int i) const {
   // bit i's value
   int pow_of_two = (int)pow(2.0, i);
   // true iff ith bit is one
@@ -30,7 +30,8 @@ int Word::toInt() const {
 
 int Word::toInt2Complement() const {
   // create logical overflow to allow for neg numbers
-  return (short) _value;
+  short temp = (short) _value;
+  return temp;
 }
 
 string Word::toStr() const {
@@ -38,7 +39,7 @@ string Word::toStr() const {
 
   for (int i=0;i<WORD_SIZE;i++) {
     // start with highest order bit
-    str += '0' + hasBit((WORD_SIZE-1)-i);
+    str += '0' + _hasBit((WORD_SIZE-1)-i);
   }
 }
 
@@ -162,31 +163,30 @@ Word Word::Or(const iWord& x) const {
 
 Word Word::Not() const {
   Word temp;
-  temp._value = ~(short)temp._value;
+  temp._value = ~(*this)._value;
   return temp;
 }
 
 
 iWord& Word::operator++() {
-  (*this)._value++;
+  _value+=1;
   return (*this);
 }
 
 iWord& Word::operator++(int) {
-  Word value(*this);
-  ++(*this);
-  return value;
+  _value+=1;
+  return (*this);
 }
 
 bool Word::operator[](int i) {
-  return hasBit(i);
+  return _hasBit(i);
 }
 
 void Word::print() const {
   cout << "[";
   for (int i=0;i<WORD_SIZE;i++) { 
     // highest order bit first
-    cout << hasBit((WORD_SIZE-1)-i);
+    cout << _hasBit((WORD_SIZE-1)-i);
   }
   cout << "]";
 }

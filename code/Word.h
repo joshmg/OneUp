@@ -18,7 +18,7 @@ using namespace std;
 class Word : public iWord {
   private:
     unsigned short _value;
-    bool hasBit(int) const;
+    bool _hasBit(int) const;
 
   public:
     Word();

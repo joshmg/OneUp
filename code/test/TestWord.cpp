@@ -12,9 +12,12 @@ int main() {
     // test hex
     if (x.fromHex(w.toHex())) {
       cout << x.toInt() << endl;
-      cout << x.toInt2Complement() << endl;
+      w = x.Not();
+      cout << "!(" << w.toInt2Complement() << ")\n";
       cout << x.toHex() << endl;
-      x.print();  cout << endl;
+      x++;
+      ++x;
+      cout << "+ 2 = ";  x.print();  cout << endl;
       cout << "--------------------\n";
     }
   }
