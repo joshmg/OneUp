@@ -62,7 +62,13 @@ string Word::toHex() const {
 }
 
 bool Word::fromInt(int value) {
-  _value = (short) value;
+  if (((unsigned int) value) < (int) pow(2.0, WORD_SIZE)) {
+    // value is within allowable range
+    _value = (short) value;
+    return true;
+  }
+  // value is greater than the range of the architecture
+  return false;
 }
 
 bool Word::fromStr(const string& value) {
@@ -167,6 +173,15 @@ Word Word::Not() const {
   return temp;
 }
 
+void Word::copy(const iWord& w) {
+  if (this != &w) {
+    _value = (short) w.toInt();
+  }
+}
+
+void Word::operator=(const iWord& w) {
+  _value = (short) w.toInt();
+}
 
 iWord& Word::operator++() {
   _value++;
@@ -178,7 +193,7 @@ iWord& Word::operator++(int) {
   return (*this);
 }
 
-bool Word::operator[](int i) {
+bool Word::operator[](int i) const {
   return _hasBit(i);
 }
 

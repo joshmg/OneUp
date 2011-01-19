@@ -131,6 +131,20 @@ class iWord {
         therefore const.
     */
 
+    /*! @brief Copies a word.
+        @param[out] The value to be copied.
+        @post The caller equals that parameter.
+
+        Equivalent to "caller = param".
+    */
+    virtual void copy(const iWord&) = 0;
+
+    /*! @brief A standard assignment operator.
+        @param[in] The value to be copied.
+        @return A copy of the parameter.
+    */ 
+    virtual void operator=(const iWord&) = 0;
+
     virtual iWord& operator++() = 0;
     /*  Pre-increment operator incriments the value of the current instance
         and then returns a reference to itself.
@@ -141,7 +155,7 @@ class iWord {
         and then returns a duplicate of itself before its incriment.
     */
 
-    virtual bool operator[](int) = 0;
+    virtual bool operator[](int) const = 0;
     /*  Accessor to get the value of a certain bit.
         True <=> 1, False <=> 0.
     */

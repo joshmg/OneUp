@@ -41,10 +41,14 @@ class Word : public iWord {
     Word And(const iWord&) const;
     Word Or(const iWord&) const;
     Word Not() const;
-    
+
+    void copy(const iWord&);
+    void operator=(const iWord&);
+
     iWord& operator++();
     iWord& operator++(int);
-    bool operator[](int);
+
+    bool operator[](int) const;
 
     void print() const;
 };

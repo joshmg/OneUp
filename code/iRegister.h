@@ -80,12 +80,9 @@ class iRegister {
     */
 
     virtual void Store(const iWord&) = 0;
-    virtual void Store(const iRegister&) const = 0;
-
+    virtual void Store(const iRegister&) = 0;
     virtual void operator=(const iWord&) = 0;
     virtual void operator=(const iRegister&) = 0;
-
-    virtual void linkCCR(iRegister* const) const = 0;
 
     virtual Register& operator++() = 0;
     virtual Register& operator++(int) = 0;
