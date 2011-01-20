@@ -37,8 +37,8 @@ class Register {
 
     void Store(const iWord&);
     void Store(const iRegister&);
-    void operator=(const iWord&);
-    void operator=(const iRegister&);
+    Register& operator=(const iWord&);
+    Register& operator=(const Register);
 
     Register& operator++();
     Register& operator++(int);

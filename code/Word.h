@@ -40,7 +40,7 @@ class Word : public iWord {
     Word Not() const;
 
     void copy(const iWord&);
-    iWord& operator=(const iWord&);
+    Word& operator=(const Word);
 
     iWord& operator++();
     iWord& operator++(int);

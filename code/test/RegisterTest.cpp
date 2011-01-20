@@ -11,5 +11,6 @@ int main() {
     w.fromInt(i);
     r.Store(w);
     r.getValue().print();
+    cout << endl;
   }
 }

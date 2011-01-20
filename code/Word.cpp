@@ -62,7 +62,7 @@ string Word::toHex() const {
 }
 
 bool Word::fromInt(int value) {
-  if (((unsigned int) value) < (int) pow(2.0, WORD_SIZE)) {
+  if (((unsigned short) value) < (int) pow(2.0, WORD_SIZE)) {
     // value is within allowable range
     _value = (short) value;
     return true;
@@ -86,7 +86,8 @@ bool Word::fromStr(const string& value) {
   _value = 0;
   int pow_of_two = 1;
   for (int i=0;i<WORD_SIZE;i++) {
-    // 
+    // accumulate the value of the ith character
+    // times the value of it's binary "decimal place." 
     _value += pow_of_two * (value[i] - '0');
     pow_of_two *= 2;
   }
@@ -179,7 +180,7 @@ void Word::copy(const iWord& w) {
   }
 }
 
-iWord& Word::operator=(const iWord& w) {
+Word& Word::operator=(const Word w) {
   if (this != &w) {
     _value = (short) w.toInt();
   }

@@ -142,8 +142,11 @@ class iWord {
     /*! @brief A standard assignment operator.
         @param[in] The value to be copied.
         @return A copy of the parameter.
+
+        The return value and parameter here must be declared as "Word"s
+        as C++ does not work well with polymorphic assignment operators.
     */ 
-    virtual iWord& operator=(const iWord&) = 0;
+    virtual Word& operator=(const Word) = 0;
 
     /*! @breif A standard pre-increment operator.
         @returns A reference to itself.
@@ -171,6 +174,8 @@ class iWord {
           If it holds a negative value (Starting with a 1 in 2's complement), num[15] = 1.
     */
     virtual bool operator[](int) const = 0;
+
+    virtual void print() const = 0;
 };
 
 #endif

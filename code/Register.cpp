@@ -14,7 +14,7 @@ Register::Register (Word w) {
 }
 
 Word Register::getValue() const {
-  Word temp(_word);
+  Word temp = _word;
   return temp;
 }
 
@@ -87,23 +87,25 @@ Register Register::Not() const {
 }
 
 void Register::Store(const iWord& w) {
-  if (this != &w) {
-    _word = w;
-  }
+  _word.copy(w);
 }
 
 void Register::Store(const iRegister& r) {
-  if (this != &w) {
+  if ((iRegister*)this != &r) {
     _word.copy(r.getValue());
   }
 }
 
-void Register::operator=(const iWord& w) {
-  _word = w;
+Register& Register::operator=(const iWord& w) {
+  _word.copy(w);
+  return (*this);
 }
 
-void Register::operator=(const iRegister& r) {
-  _word = r.getValue();
+Register& Register::operator=(const Register r) {
+  if (this != &r) {
+    _word.copy(r.getValue());
+  }
+  return (*this);
 }
 
 Register& Register::operator++() {

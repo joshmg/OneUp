@@ -81,8 +81,8 @@ class iRegister {
 
     virtual void Store(const iWord&) = 0;
     virtual void Store(const iRegister&) = 0;
-    virtual void operator=(const iWord&) = 0;
-    virtual void operator=(const iRegister&) = 0;
+    virtual Register& operator=(const iWord&) = 0;
+    virtual Register& operator=(const Register) = 0;
 
     virtual Register& operator++() = 0;
     virtual Register& operator++(int) = 0;
