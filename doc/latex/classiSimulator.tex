@@ -1,0 +1,102 @@
+\hypertarget{classiSimulator}{
+\section{iSimulator Class Reference}
+\label{classiSimulator}\index{iSimulator@{iSimulator}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classiSimulator_a26f260b37ec3da3d35624ef6d69c8e43}{
+virtual bool {\bfseries Initialize} (const char $\ast$)=0}
+\label{classiSimulator_a26f260b37ec3da3d35624ef6d69c8e43}
+
+\item 
+\hypertarget{classiSimulator_a7a8fbaee266ec14b2c15888ebb325bd2}{
+virtual bool {\bfseries Add} (const REGISTER\_\-ID DR, const REGISTER\_\-ID SR1, const REGISTER\_\-ID SR2)=0}
+\label{classiSimulator_a7a8fbaee266ec14b2c15888ebb325bd2}
+
+\item 
+\hypertarget{classiSimulator_a632a5d1627f9947f04972caa2d532751}{
+virtual bool {\bfseries Add} (const REGISTER\_\-ID DR, const REGISTER\_\-ID SR1, const \hyperlink{classiWord}{iWord} \&immediate)=0}
+\label{classiSimulator_a632a5d1627f9947f04972caa2d532751}
+
+\item 
+\hypertarget{classiSimulator_acc1c5c681d3ee7b810ef0e5255aa80e5}{
+virtual bool {\bfseries And} (const REGISTER\_\-ID DR, const REGISTER\_\-ID SR1, const REGISTER\_\-ID SR2)=0}
+\label{classiSimulator_acc1c5c681d3ee7b810ef0e5255aa80e5}
+
+\item 
+\hypertarget{classiSimulator_afe859dbd05cff55c12fd3f693a78e9a3}{
+virtual bool {\bfseries And} (const REGISTER\_\-ID DR, const REGISTER\_\-ID SR1, const \hyperlink{classiWord}{iWord} \&immediate)=0}
+\label{classiSimulator_afe859dbd05cff55c12fd3f693a78e9a3}
+
+\item 
+\hypertarget{classiSimulator_a4377a067039a3501ea4cd02602ef10d0}{
+virtual bool {\bfseries Branch} (const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_a4377a067039a3501ea4cd02602ef10d0}
+
+\item 
+\hypertarget{classiSimulator_a8535c27de33581067925bcea28b2585d}{
+virtual bool {\bfseries Debug} ()=0}
+\label{classiSimulator_a8535c27de33581067925bcea28b2585d}
+
+\item 
+\hypertarget{classiSimulator_ab30229a9093f96ae8f49e4a82b2f0a96}{
+virtual bool {\bfseries JSR} (const \hyperlink{classiWord}{iWord} \&)=0}
+\label{classiSimulator_ab30229a9093f96ae8f49e4a82b2f0a96}
+
+\item 
+\hypertarget{classiSimulator_a9f4b0281a3f3d7f0a17f6163926af0fe}{
+virtual bool {\bfseries JSRR} (const \hyperlink{classiWord}{iWord} \&baseR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_a9f4b0281a3f3d7f0a17f6163926af0fe}
+
+\item 
+\hypertarget{classiSimulator_aebed4efd384ed7a2058a331abb443de3}{
+virtual bool {\bfseries Load} (const REGISTER\_\-ID DR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_aebed4efd384ed7a2058a331abb443de3}
+
+\item 
+\hypertarget{classiSimulator_ac9d482f3e08540a0e753ac07ad184f0c}{
+virtual bool {\bfseries LDI} (const REGISTER\_\-ID DR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_ac9d482f3e08540a0e753ac07ad184f0c}
+
+\item 
+\hypertarget{classiSimulator_a3008e18326b41cdd8226da07b9409b62}{
+virtual bool {\bfseries LDR} (const REGISTER\_\-ID DR, const \hyperlink{classiWord}{iWord} \&baseR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_a3008e18326b41cdd8226da07b9409b62}
+
+\item 
+\hypertarget{classiSimulator_a8d418321f4eef73d5cf3b17ac64c0ba8}{
+virtual bool {\bfseries Not} (const REGISTER\_\-ID DR, const REGISTER\_\-ID SR)=0}
+\label{classiSimulator_a8d418321f4eef73d5cf3b17ac64c0ba8}
+
+\item 
+\hypertarget{classiSimulator_a272e6a7baebbb777bdeb60d67e4fcb17}{
+virtual bool {\bfseries Ret} ()=0}
+\label{classiSimulator_a272e6a7baebbb777bdeb60d67e4fcb17}
+
+\item 
+\hypertarget{classiSimulator_a8b43cb8d1da6eefc49d629bf744837d3}{
+virtual bool {\bfseries Store} (const REGISTER\_\-ID DR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_a8b43cb8d1da6eefc49d629bf744837d3}
+
+\item 
+\hypertarget{classiSimulator_aa434d5add2b2b98ad301a1c842fb158f}{
+virtual bool {\bfseries STI} (const REGISTER\_\-ID DR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_aa434d5add2b2b98ad301a1c842fb158f}
+
+\item 
+\hypertarget{classiSimulator_aec50c2cc4b7fc2429bfa62ddc79d41df}{
+virtual bool {\bfseries STR} (const REGISTER\_\-ID DR, const \hyperlink{classiWord}{iWord} \&baseR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_aec50c2cc4b7fc2429bfa62ddc79d41df}
+
+\item 
+\hypertarget{classiSimulator_a9ddfcfe7f0c1d563193b096e1058e388}{
+virtual bool {\bfseries Trap} (const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiSimulator_a9ddfcfe7f0c1d563193b096e1058e388}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+iSimulator.h\end{DoxyCompactItemize}
