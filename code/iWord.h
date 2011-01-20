@@ -1,6 +1,11 @@
-// File: iWord.h
-// Written by:
-//    Joshua Green
+/*! @file iWord.h
+    @author Joshua Green
+    @author Andrew Groot
+    @brief The interface implemented by the "Word" class.
+    
+    @details Defines the operations and signatures by which the "Word" class should operate.
+    The signatures, while intended to be coded to the interface, are done as to this as C++ allows.
+*/
 
 #ifndef iWORD_H
 #define iWORD_H
@@ -9,112 +14,125 @@
 
 class Word;
 
+/*! @brief The iWord interface class defines the a "word" of data on the Wi-11 Machine.
+
+    The methods present in this inteface are meant to mimic the functionality of the Wi-11
+    machine, allowing for simplified execution of the instructions therein.
+    As the size of a "word" depends on the architecture, classes implementing this
+    interface should define the word length to be 16 bits in length.
+*/
 class iWord {
-    /*  iWord is a data container designed to be representative of the data
-        length and functionality found within the Wi-11 Machine. Its size
-        can be variable but in the case of this architecture it is 16 bits
-        in length.
-    */
   private:
     
   public:
+    /*! @brief "To non-negative Integer"
+        @post The value of the word is not changed.
+        @return The bits of the word interpreted as a positive integer value.
+    */
     virtual int toInt() const = 0;
-    /*  toInt() ("to integer") returns a positive integer value which is 
-        representative of the data iWord is maintaining as a data
-        structure. A call to this function does not modify the instance
-        of iWord and is therefore const.
+
+    /*! @brief "To Integer as 2's Complement"
+        @post The value of the word is not changed.
+        @return The bits of the word interpreted as a signed (2's complement) integer value.
     */
     virtual int toInt2Complement() const = 0;
-    /*  toInt() ("to integer") returns an integer value which is 
-        representative of the data iWord is maintaining as a data
-        structure as interpretted by two's complement. A call to this
-        function does not modify the instance of iWord and is therefore
-        const.
+
+    /*! @brief "To String"
+        @post The value of the word is not changed.
+        @return "[" + <16 characters: either 1's or 0's> + "]"
+        
+        @par Examples:
+        If the object holds a (2's comp.) value 4:  [0000000000000100]\n
+        If the object holds a (2's comp.) value -1: [1111111111111111]
     */
     virtual std::string toStr() const = 0;
-    /*  toStr() ("to string") returns a string representation of the data
-        iWord is maintaing as a data structure. The string value is a
-        series of 1 and 0 characters which directly represent the binary
-        value contained within iWord. The string representation does not
-        have any prefix prefacing the series of 1 and 0 characters. A call
-        to this function does not modify the instance of iWord and is 
-        therefore const.
+
+    /*! @brief "To Hexadecimal"
+        @post The value of the word is not changed.
+        @return "0x" + <4 characters in the range [0-9],[A-F]>
+        
+        @par Examples:
+        If the object holds (2's comp.) value 8:  0x0008\n
+        If the object holds (2's comp.) value -2: 0xFFFE
     */
     virtual std::string toHex() const = 0;
-    /*  toHex() ("to hex") returns a string representation of the data
-        iWord is maintaing as a data structure. The string value is a
-        series of 0 through 9, A through F characters which directly 
-        represent the hexidecimal value contained within iWord. The string
-        representation is prefixed with the characters, "0x". A call
-        to this function does not modify the instance of iWord and is 
-        therefore const.
-    */
 
+    /*! @brief "From Integer"
+        @param[in] value
+          The value to be stored into the word.
+        @post "value" is not changed.
+        @return True if and only if "value" can be represented in 16 bits
+        
+        When this function returns "False", the value of the word is unchanged.\n
+        Otherwise, the word now holds the value "value".
+    */
     virtual bool fromInt(int) = 0;
-    /*  fromInt(int) ("from integer") produces a new value to be represented
-        by the instance of iWord. The integer parameter should be capable of
-        being represented by 16 bits or as modelled architecture demands. A
-        value of true indicates the procedure was performed without error;
-        a value of false indicates an error has occured, such as attempting
-        to represent a value outside the bounds of the architecture.
-    */
 
+    /*! @brief "From String"
+        @param[in] str
+          A string of characters meant to represent a "word" to be stored.
+        @post "str" is not changed.
+        @return True if and only if "str" is well-formed (as defined in toStr()).
+        
+        When this function returns "False", the value of the word is unchanged.\n
+        Otherwise, the word now holds the value "str".
+    */
     virtual bool fromStr(const std::string&) = 0;
-    /*  fromStr(string) ("from string") produces a new value to be
-        represented by the instance of iWord. The string parameter should
-        be capable of being represented by 16 bits or as modelled 
-        architecture demands. The string parameter is expected to be a
-        series of 1 and 0 characters representing a binary value with no
-        prefix. A return value of true indicates the procedure was performed
-        without error; a value of false indicates an error has occured, such
-        as attempting to represent a value outside the bounds of the
-        architecture.
-    */
 
+    /*! @brief "From Hexadecimal"
+        @param[in] str
+          A string of characters meant to represent a "word" to be stored.
+        @post "str" is not changed.
+        @return True if and only if "str" is well-formed (as defined in toHex()).
+        
+        When this function returns "False", the value of the word is unchanged.\n
+        Otherwise, the word now holds the value "str".
+    */
     virtual bool fromHex(const std::string&) = 0;
-    /*  fromHex(string) ("from Hexidecimal") produces a new value to be
-        represented by the instance of iWord. The string parameter should
-        be capable of being represented by 16 bits or as modelled 
-        architecture demands. The string parameter is expected to be a
-        series of 0 through 9, A through F characters representing a
-        hexidecimal value with the prefix, "0x". A return value of true
-        indicates the procedure was performed without error; a value of
-        false indicates an error has occured, such as attempting to
-        represent a value outside the bounds of the architecture.
-    */
 
+    /*! @brief Adds two words.
+        @param[in] w
+          A word value to be added.
+        @post Both "w" and the calling object do not change.
+        @return A new "Word" object containing result of adding "w" and the calling object.
+
+        @note
+        The addition is carried out with no regard to logical overflow.
+    */
     virtual Word Add(const iWord&) const = 0;
-    /*  Add() produces a new instance of Word which is formed to represent
-        the value of the current instance of iWord mathematically added to
-        the value of the parameter. Both the parameter and the current
-        instance of iWord are preserved and are therefore const.
-    */
 
+    /*! @brief A standard addition operator.
+        
+        @note
+        "result = p + w" is equivalent to "result = p.Add(w)".
+    */
     virtual Word operator+(const iWord&) const = 0;
-    /*  The addition operator contains the same functionality of Add
-        and is merely an alias.
-    */
 
+    /*! @brief Subtracts two words.
+        @param[in] w
+          A word value to be subtracted.
+        @post Both "w" and the calling object do not change.
+        @return A new "Word" object containing the result of subtracting "w" from the calling object.
+        
+        @note
+        The subtraction is carried out with no regard for logical overflow.
+    */
     virtual Word Subtract(const iWord&) const = 0;
-    /*  Subract() produces a new instance of Word which is formed to
-        represent the value of the iWord parameter mathematically
-        subtracted from the value of the current instance. Both the
-        parameter and the current instance of iWord are preserved and
-        are therefore const.
-    */
 
+    /*! @brief A standard subtraction operator.
+        
+        @note
+        "result = p - w" is equivalent to "result = p.Subtract(w)".
+    */
     virtual Word operator-(const iWord&) const = 0;
-    /*  The subtraction operator contains the same functionality of
-        Subtract and is merely an alias.
-    */
 
-    virtual Word And(const iWord&) const = 0;
-    /*  And() produces a new instance of Word which is formed to
-        represent the value of the iWord parameter logically/bitwise
-        and'ed with the value of the current instance. Both the
-        parameter and the current instance of iWord are preserved and
-        are therefore const.
+    /*! @brief "And"s the bits of two words.
+        @param[in] w
+          A word value to be "and"ed.
+        @post Both "w" and the calling object do not change.
+        @return A new "Word" object containing the result of performing a bit-wise and on "w" and the calling object.
     */
+    virtual Word And(const iWord&) const = 0;
 
     virtual Word Or(const iWord&) const = 0;
     /*  Or() produces a new instance of Word which is formed to
