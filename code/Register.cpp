@@ -87,11 +87,15 @@ Register Register::Not() const {
 }
 
 void Register::Store(const iWord& w) {
-  _word = w;
+  if (this != &w) {
+    _word = w;
+  }
 }
 
 void Register::Store(const iRegister& r) {
-  _word.copy(r.getValue());
+  if (this != &w) {
+    _word.copy(r.getValue());
+  }
 }
 
 void Register::operator=(const iWord& w) {

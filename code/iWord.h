@@ -135,7 +135,7 @@ class iWord {
         @param[out] The value to be copied.
         @post The caller equals that parameter.
 
-        Equivalent to "caller = param".
+        Equivalent to the assignment "caller = parameter".
     */
     virtual void copy(const iWord&) = 0;
 
@@ -143,22 +143,34 @@ class iWord {
         @param[in] The value to be copied.
         @return A copy of the parameter.
     */ 
-    virtual void operator=(const iWord&) = 0;
+    virtual iWord& operator=(const iWord&) = 0;
 
+    /*! @breif A standard pre-increment operator.
+        @returns A reference to itself.
+
+        The object increments its value BEFORE the execution of the current line.
+    */
     virtual iWord& operator++() = 0;
-    /*  Pre-increment operator incriments the value of the current instance
-        and then returns a reference to itself.
-    */
 
+    /*! @brief A standard post-increment operator.
+        @returns A reference to itself.
+
+        The object increments its value AFTER the execution of the current line.
+    */
     virtual iWord& operator++(int) = 0;
-    /*  Post-increment operator incriments the value of the current instance
-        and then returns a duplicate of itself before its incriment.
-    */
 
-    virtual bool operator[](int) const = 0;
-    /*  Accessor to get the value of a certain bit.
-        True <=> 1, False <=> 0.
+    /*! @brief An accessor to the "i"th bit of the value.
+        @param[in] The index of the bit in question.
+        @pre The index must be less than the size of a word, ie. 16.
+        @return True <=> 1, False <=> 0.
+
+        The number of the bits starts at zero and rises into the more significant bits.
+        Examples:
+          If the object "num" holds a value of 4 (0...100 in binary), num[0] = 0, num[1] = 0, num[2] = 1.
+          If it holds a value of 1 (0...001 in binary) num[0] = 1, num[1] = 0, num[2] = 0, etc.
+          If it holds a negative value (Starting with a 1 in 2's complement), num[15] = 1.
     */
+    virtual bool operator[](int) const = 0;
 };
 
 #endif

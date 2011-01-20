@@ -9,9 +9,6 @@
 
 #include "iWord.h"
 #include <string>
-#include <iostream> // for print()
-#include <cmath> // for pow()
-using namespace std;
 
 #define WORD_SIZE 16
 
@@ -25,8 +22,8 @@ class Word : public iWord {
 
     int toInt() const;
     int toInt2Complement() const;
-    string toStr() const;
-    string toHex() const;
+    std::string toStr() const;
+    std::string toHex() const;
 
     bool fromInt(int);
     bool fromStr(const std::string&);
@@ -43,14 +40,15 @@ class Word : public iWord {
     Word Not() const;
 
     void copy(const iWord&);
-    void operator=(const iWord&);
+    iWord& operator=(const iWord&);
 
     iWord& operator++();
     iWord& operator++(int);
 
-    bool operator[](int) const;
+    bool operator[](const int) const;
 
     void print() const;
 };
 
 #endif
+

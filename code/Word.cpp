@@ -179,8 +179,11 @@ void Word::copy(const iWord& w) {
   }
 }
 
-void Word::operator=(const iWord& w) {
-  _value = (short) w.toInt();
+iWord& Word::operator=(const iWord& w) {
+  if (this != &w) {
+    _value = (short) w.toInt();
+  }
+  return (*this);
 }
 
 iWord& Word::operator++() {
@@ -193,7 +196,7 @@ iWord& Word::operator++(int) {
   return (*this);
 }
 
-bool Word::operator[](int i) const {
+bool Word::operator[](const int i) const {
   return _hasBit(i);
 }
 
