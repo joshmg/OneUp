@@ -8,7 +8,7 @@
 #include "iRegister.h"
 #include "Word.h"
 
-class Register {
+class Register : public iRegister {
   private:
     Word _word;
 
