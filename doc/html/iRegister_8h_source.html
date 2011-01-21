@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OneUp Wi&#39; 11 Simulator: iRegister.h Source File</title>
+<title>OneUp Wi-11 Simulator: iRegister.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -54,7 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="preprocessor">#ifndef iREGISTER_H</span>
 <a name="l00006"></a>00006 <span class="preprocessor"></span><span class="preprocessor">#define iREGISTER_H</span>
 <a name="l00007"></a>00007 <span class="preprocessor"></span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;iWord.h&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="iWord_8h.html" title="The interface implemented by the &amp;quot;Word&amp;quot; class.">iWord.h</a>&quot;</span>
 <a name="l00009"></a>00009 
 <a name="l00010"></a>00010 <span class="keyword">class </span><a class="code" href="classWord.html">Word</a>;
 <a name="l00011"></a>00011 <span class="keyword">class </span><a class="code" href="classRegister.html">Register</a>;
@@ -77,7 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028 <span class="comment">        remain unchanged and are therefore the function call is const.</span>
 <a name="l00029"></a>00029 <span class="comment">    */</span>
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Add(<span class="keyword">const</span> <a class="code" href="classiWord.html">iWord</a>&amp;) = 0;
+<a name="l00031"></a>00031     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Add(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00032"></a>00032     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> Add(<span class="keyword">const</span> <a class="code" href="classiRegister.html">iRegister</a>&amp;) <span class="keyword">const</span> = 0;
 <a name="l00033"></a>00033     <span class="comment">/*  Add(iRegister) mathematically adds the value of the given</span>
 <a name="l00034"></a>00034 <span class="comment">        parameter&#39;s value with its current value and returns the result.</span>
@@ -85,13 +85,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00036"></a>00036 <span class="comment">        changed, therefore the function call is const.</span>
 <a name="l00037"></a>00037 <span class="comment">    */</span>
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keyword">virtual</span> <span class="keywordtype">void</span> operator+(<span class="keyword">const</span> <a class="code" href="classiWord.html">iWord</a>&amp;) = 0;
+<a name="l00039"></a>00039     <span class="keyword">virtual</span> <span class="keywordtype">void</span> operator+(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00040"></a>00040     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> operator+(<span class="keyword">const</span> <a class="code" href="classiRegister.html">iRegister</a>&amp;) <span class="keyword">const</span> = 0;
 <a name="l00041"></a>00041     <span class="comment">/*  The addition operator contains the same functionality as Add()</span>
 <a name="l00042"></a>00042 <span class="comment">        and therefore is merely an alias.</span>
 <a name="l00043"></a>00043 <span class="comment">    */</span>
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Subtract(<span class="keyword">const</span> <a class="code" href="classiWord.html">iWord</a>&amp;) = 0;
+<a name="l00045"></a>00045     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Subtract(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00046"></a>00046     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> Subtract(<span class="keyword">const</span> <a class="code" href="classiRegister.html">iRegister</a>&amp;) <span class="keyword">const</span> = 0;
 <a name="l00047"></a>00047     <span class="comment">/*  Subtract(iRegister) mathematically subtracts the value of the given</span>
 <a name="l00048"></a>00048 <span class="comment">        parameter&#39;s value from the current value of this iRegister and</span>
@@ -99,13 +99,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a>00050 <span class="comment">        of iRegister is changed, therefore the function call is const.</span>
 <a name="l00051"></a>00051 <span class="comment">    */</span>
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="keyword">virtual</span> <span class="keywordtype">void</span> operator-(<span class="keyword">const</span> <a class="code" href="classiWord.html">iWord</a>&amp;) = 0;
+<a name="l00053"></a>00053     <span class="keyword">virtual</span> <span class="keywordtype">void</span> operator-(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00054"></a>00054     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> operator-(<span class="keyword">const</span> <a class="code" href="classiRegister.html">iRegister</a>&amp;) <span class="keyword">const</span> = 0;
 <a name="l00055"></a>00055     <span class="comment">/*  The subtraction operator contains the same functionality as</span>
 <a name="l00056"></a>00056 <span class="comment">        Subtract() and therefore is merely an alias.</span>
 <a name="l00057"></a>00057 <span class="comment">    */</span>
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059     <span class="keyword">virtual</span> <span class="keywordtype">void</span> And(<span class="keyword">const</span> <a class="code" href="classiWord.html">iWord</a>&amp;) = 0;
+<a name="l00059"></a>00059     <span class="keyword">virtual</span> <span class="keywordtype">void</span> And(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00060"></a>00060     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> And(<span class="keyword">const</span> <a class="code" href="classiRegister.html">iRegister</a>&amp;) <span class="keyword">const</span> = 0;
 <a name="l00061"></a>00061     <span class="comment">/*  And(iRegister) logically ands the value of the given parameter&#39;s</span>
 <a name="l00062"></a>00062 <span class="comment">        value from the current value of this iRegister and returns the</span>
@@ -113,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00064"></a>00064 <span class="comment">        is changed, therefore the function call is const.</span>
 <a name="l00065"></a>00065 <span class="comment">    */</span>
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Or(<span class="keyword">const</span> <a class="code" href="classiWord.html">iWord</a>&amp;) = 0;
+<a name="l00067"></a>00067     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Or(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00068"></a>00068     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> Or(<span class="keyword">const</span> <a class="code" href="classiRegister.html">iRegister</a>&amp;) <span class="keyword">const</span> = 0;
 <a name="l00069"></a>00069     <span class="comment">/*  Or(iRegister) logically or&#39;s the value of the given parameter&#39;s value</span>
 <a name="l00070"></a>00070 <span class="comment">        from the current value of this iRegister and returns the result.</span>
@@ -128,9 +128,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00079"></a>00079 <span class="comment">        is unchanged, therefore the function call is const.</span>
 <a name="l00080"></a>00080 <span class="comment">    */</span>
 <a name="l00081"></a>00081 
-<a name="l00082"></a>00082     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Store(<span class="keyword">const</span> <a class="code" href="classiWord.html">iWord</a>&amp;) = 0;
+<a name="l00082"></a>00082     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Store(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00083"></a>00083     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Store(<span class="keyword">const</span> <a class="code" href="classiRegister.html">iRegister</a>&amp;) = 0;
-<a name="l00084"></a>00084     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classiWord.html">iWord</a>&amp;) = 0;
+<a name="l00084"></a>00084     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00085"></a>00085     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classRegister.html">Register</a>) = 0;
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a>&amp; operator++() = 0;
@@ -145,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Jan 20 2011 00:26:43 for OneUp Wi' 11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jan 20 2011 21:59:20 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

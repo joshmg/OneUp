@@ -2,6 +2,9 @@
 #include <fstream>
 using namespace std;
 
+/*! @brief The main function parses the object file and uses the Wi11 class to simulate the Wi11 machine.
+    
+*/
 int main(int argc, char* argv[]) {
   if (argc != 2) {
     cerr << "Usage: " << argv[0] << " object_file\n";
@@ -33,3 +36,8 @@ int main(int argc, char* argv[]) {
   // return
   return 0;
 }
+
+// Project-wide documentation
+/*! @mainpage
+    
+*/

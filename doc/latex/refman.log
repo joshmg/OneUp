@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/Arch Linux) (format=pdflatex 2011.1.20)  20 JAN 2011 08:00
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/Arch Linux) (format=pdflatex 2011.1.20)  20 JAN 2011 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -790,145 +790,55 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks24
 \verbatim@in@stream=\read1
 )
-
-! LaTeX Error: File `sectsty.sty' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-
-! LaTeX Error: File `tocloft.sty' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Undefined control sequence.
-<recently read> \allsectionsfont 
-                                 
-l.19 \allsectionsfont
-                     {\usefont{OT1}{phv}{bc}{n}\selectfont}
-? 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 19.
-(/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
-File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+(/usr/share/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
 )
-LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 19.
+(/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
 
 
-! LaTeX Error: \cftchapfont undefined.
+Package tocloft Note: The document has chapter divisions.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 \renewcommand{\cftchapfont}
-                                {%
-? 
-
-! LaTeX Error: \cftchappagefont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 \renewcommand{\cftchappagefont}
-                                    {%
-? 
-
-! LaTeX Error: \cftsecfont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 \renewcommand{\cftsecfont}
-                               {%
-? 
-
-! LaTeX Error: \cftsecpagefont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.29 \renewcommand{\cftsecpagefont}
-                                   {%
-? 
-
-! LaTeX Error: \cftsubsecfont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 \renewcommand{\cftsubsecfont}
-                                  {%
-? 
-
-! LaTeX Error: \cftsubsecpagefont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 \renewcommand{\cftsubsecpagefont}
-                                      {%
-? 
-
-! LaTeX Error: \cftsubsubsecfont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.38 \renewcommand{\cftsubsubsecfont}
-                                     {%
-? 
-
-! LaTeX Error: \cftsubsubsecpagefont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.41 \renewcommand{\cftsubsubsecpagefont}
-                                         {%
-? 
-
-! LaTeX Error: \cftparafont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.44 \renewcommand{\cftparafont}
-                                {%
-? 
-
-! LaTeX Error: \cftparapagefont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.47 \renewcommand{\cftparapagefont}
-                                    {%
-? 
-
-! LaTeX Error: \cfttoctitlefont undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.50 \renewcommand{\cfttoctitlefont}
-                                    {%
-? 
-\tmplength=\skip65
-(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+\cftparskip=\skip65
+\cftbeforetoctitleskip=\skip66
+\cftaftertoctitleskip=\skip67
+\cftbeforepartskip=\skip68
+\cftpartnumwidth=\skip69
+\cftpartindent=\skip70
+\cftbeforechapskip=\skip71
+\cftchapindent=\skip72
+\cftchapnumwidth=\skip73
+\cftbeforesecskip=\skip74
+\cftsecindent=\skip75
+\cftsecnumwidth=\skip76
+\cftbeforesubsecskip=\skip77
+\cftsubsecindent=\skip78
+\cftsubsecnumwidth=\skip79
+\cftbeforesubsubsecskip=\skip80
+\cftsubsubsecindent=\skip81
+\cftsubsubsecnumwidth=\skip82
+\cftbeforeparaskip=\skip83
+\cftparaindent=\skip84
+\cftparanumwidth=\skip85
+\cftbeforesubparaskip=\skip86
+\cftsubparaindent=\skip87
+\cftsubparanumwidth=\skip88
+\cftbeforeloftitleskip=\skip89
+\cftafterloftitleskip=\skip90
+\cftbeforefigskip=\skip91
+\cftfigindent=\skip92
+\cftfignumwidth=\skip93
+\c@lofdepth=\count125
+\c@lotdepth=\count126
+\cftbeforelottitleskip=\skip94
+\cftafterlottitleskip=\skip95
+\cftbeforetabskip=\skip96
+\cfttabindent=\skip97
+\cfttabnumwidth=\skip98
+)
+\tmplength=\skip99
+ (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
 (/usr/share/texmf-dist/tex/latex/base/t1enc.def
@@ -949,7 +859,7 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 
 
 Writing index file refman.idx
-No file refman.aux.
+(./refman.aux)
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -966,7 +876,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 38.
-(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 38.
@@ -984,15 +894,15 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
+\scratchcounter=\count127
 \scratchdimen=\dimen125
 \scratchbox=\box60
-\nofMPsegments=\count126
-\nofMParguments=\count127
+\nofMPsegments=\count128
+\nofMParguments=\count129
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count128
+\MPscratchCnt=\count130
 \MPscratchDim=\dimen126
-\MPnumerator=\count129
+\MPnumerator=\count131
 \everyMPtoPDFconversion=\toks26
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1009,7 +919,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count130
+\c@lstlisting=\count132
 \AtBeginShipoutBox=\box61
 Package hyperref Info: Link coloring ON on input line 38.
 
@@ -1022,11 +932,12 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count131
+\c@section@level=\count133
 )
 LaTeX Info: Redefining \ref on input line 38.
 LaTeX Info: Redefining \pageref on input line 38.
 LaTeX Info: Redefining \nameref on input line 38.
+ (./refman.out) (./refman.out)
 \@outlinefile=\write4
 \openout4 = `refman.out'.
 
@@ -1041,21 +952,76 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
  [1
 
 
-{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 52.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 52.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 17.99988pt on input line 52.
+ (./refman.toc
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 9.89993pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 22.39185pt on input line 52.
+(Font)              scaled to size 8.99994pt on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 1.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 1.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 1.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 1.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+
+
+LaTeX Font Warning: Font shape `OT1/phv/c/n' undefined
+(Font)              using `OT1/phv/m/n' instead on input line 1.
+
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 9.89993pt on input line 1.
+LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
+(Font)              scaled to size 9.89993pt on input line 1.
+LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
+(Font)              scaled to size 8.99994pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
+(Font)              scaled to size 8.09995pt on input line 16.
+[1])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [1
-
-] [2
-
-]
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 6.29996pt on input line 53.
+ [2]
 Package hyperref Info: Option `pageanchor' set `true' on input line 55.
 
 Chapter 1.
@@ -1063,106 +1029,61 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 18.66588pt on input line 56.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 18.66588pt on input line 56.
-(./hierarchy.tex
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 18.66588pt on input line 56.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 22.39185pt on input line 56.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
-
- (/usr/share/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
+(Font)              scaled to size 22.39185pt on input line 56.
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 22.39185pt on input line 56.
+(./index.tex) [1
 
 
-(/usr/share/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
-
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
-
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 3.
-
-
-LaTeX Warning: Reference `classiInterpreter' on page 1 undefined on input line 
-3.
-
-
-LaTeX Warning: Reference `classiMemory' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Reference `classiRegister' on page 1 undefined on input line 5.
-
-
-LaTeX Warning: Reference `classiSimulator' on page 1 undefined on input line 6.
-
-
-
-LaTeX Warning: Reference `classiWord' on page 1 undefined on input line 7.
-
-
-LaTeX Warning: Reference `classWord' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Reference `classRegister' on page 1 undefined on input line 11.
-
-) [1
-
-]
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 58.
- [2
+] [2
 
 ]
 Chapter 2.
-(./annotated.tex
-
-LaTeX Warning: Reference `classiInterpreter' on page 3 undefined on input line 
-3.
-
-
-LaTeX Warning: Reference `classiMemory' on page 3 undefined on input line 4.
-
-
-LaTeX Warning: Reference `classiRegister' on page 3 undefined on input line 5.
-
-
-LaTeX Warning: Reference `classiSimulator' on page 3 undefined on input line 6.
-
-
-
-LaTeX Warning: Reference `classiWord' on page 3 undefined on input line 7.
-
-
-LaTeX Warning: Reference `classRegister' on page 3 undefined on input line 8.
-
-
-LaTeX Warning: Reference `classWord' on page 3 undefined on input line 9.
-
+(./hierarchy.tex
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
 ) [3] [4
 
 ]
 Chapter 3.
+(./annotated.tex) [5] [6
+
+]
+Chapter 4.
+(./files.tex
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 3.
+
+
+LaTeX Warning: Reference `iInterpreter_8h' on page 7 undefined on input line 3.
+
+
+
+LaTeX Warning: Reference `iMemory_8h' on page 7 undefined on input line 4.
+
+
+LaTeX Warning: Reference `iRegister_8h' on page 7 undefined on input line 5.
+
+
+LaTeX Warning: Reference `iSimulator_8h' on page 7 undefined on input line 6.
+
+
+LaTeX Warning: Reference `Register_8h' on page 7 undefined on input line 8.
+
+
+LaTeX Warning: Reference `Word_8h' on page 7 undefined on input line 9.
+
+) [7] [8
+
+]
+Chapter 5.
 (./classiInterpreter.tex
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 9.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd
@@ -1174,7 +1095,9 @@ LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (./classiMemory.tex
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 10.79993pt on input line 5.
-) (./classiRegister.tex [5]) (./classiSimulator.tex
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 10.79993pt on input line 5.
+) (./classiRegister.tex [9]) (./classiSimulator.tex
 Overfull \hbox (31.91226pt too wide) in paragraph at lines 14--16
 []\T1/phv/m/n/10 virtual bool \T1/phv/bc/n/10 Add \T1/phv/m/n/10 (const REGISTE
 R_-ID DR, const REGISTER_-ID SR1, const REGISTER_-
@@ -1198,146 +1121,277 @@ Overfull \hbox (1.19582pt too wide) in paragraph at lines 29--31
 R_-ID DR, const REGISTER_-ID SR1, const [][]iWord[][]
  []
 
-[6]) (./classiWord.tex
-<classiWord__inherit__graph.pdf, id=161, 122.4575pt x 160.6pt>
+[10]) (./classiWord.tex
+<classiWord__inherit__graph.pdf, id=466, 122.4575pt x 160.6pt>
 File: classiWord__inherit__graph.pdf Graphic file (type pdf)
 
 <use classiWord__inherit__graph.pdf>
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 89.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 23.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 89.
- [7 <./classiWord__inherit__graph.pdf>]
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 113.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 113.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 113.
+(Font)              scaled to size 8.09995pt on input line 23.
+ [11 <./classiWord__inherit__graph.pdf>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 84.
 
-(/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
-LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 113.
+LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
+(Font)              using `OT1/pcr/m/n' instead on input line 84.
 
+[12] [13]
+LaTeX Font Info:    Font shape `OT1/phv/bc/it' in size <10> not available
+(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 184.
+
+LaTeX Font Info:    Font shape `OT1/phv/bc/sl' will be
+(Font)              scaled to size 8.99994pt on input line 184.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 192.
+ (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 121.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 192.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 121.
+(Font)              scaled to size 8.99994pt on input line 192.
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 120--123
+Overfull \hbox (22.2886pt too wide) in alignment at lines 191--194
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 123
+Underfull \vbox (badness 10000) detected at line 194
  []
 
-[8]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 181--184
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 220--223
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 184
+Underfull \vbox (badness 10000) detected at line 223
  []
 
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 206--209
+[14]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 249--252
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 209
+Underfull \vbox (badness 10000) detected at line 252
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 278--281
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 281
+ []
+
+[15]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 329--332
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 332
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 380--383
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 383
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 408--411
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 411
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 433--436
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 436
+ []
+
+[17]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 494--497
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 497
  []
 
 ) (./classRegister.tex
-<classRegister__coll__graph.pdf, id=242, 135.50626pt x 234.8775pt>
+<classRegister__coll__graph.pdf, id=612, 135.50626pt x 234.8775pt>
 File: classRegister__coll__graph.pdf Graphic file (type pdf)
 
-<use classRegister__coll__graph.pdf> [9] [10 <./classRegister__coll__graph.pdf>
-]) (./classWord.tex
-<classWord__inherit__graph.pdf, id=321, 122.4575pt x 160.6pt>
+<use classRegister__coll__graph.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+[19 <./classRegister__coll__graph.pdf>]) (./classWord.tex
+<classWord__inherit__graph.pdf, id=685, 122.4575pt x 160.6pt>
 File: classWord__inherit__graph.pdf Graphic file (type pdf)
 
 <use classWord__inherit__graph.pdf>
-<classWord__coll__graph.pdf, id=322, 122.4575pt x 160.6pt>
+<classWord__coll__graph.pdf, id=686, 122.4575pt x 160.6pt>
 File: classWord__coll__graph.pdf Graphic file (type pdf)
 
-<use classWord__coll__graph.pdf> [11 <./classWord__inherit__graph.pdf> <./class
-Word__coll__graph.pdf>]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 146--149
+<use classWord__coll__graph.pdf> [20 <./classWord__inherit__graph.pdf> <./class
+Word__coll__graph.pdf>] [21] [22]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 208--211
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 149
+Underfull \vbox (badness 10000) detected at line 211
  []
 
-[12]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 207--210
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 237--240
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 210
+Underfull \vbox (badness 10000) detected at line 240
  []
 
-[13]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 232--235
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 266--269
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 235
+Underfull \vbox (badness 10000) detected at line 269
  []
 
-)
-No file refman.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
-[14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
- (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 69.
+[24]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 295--298
+ [] [] [] 
+ []
 
 
-Package rerunfilecheck Warning: File `refman.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+Underfull \vbox (badness 10000) detected at line 298
+ []
 
-Package rerunfilecheck Info: Checksums for `refman.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  00F86314030317B5F86ACF1724DD3ADA;3416.
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 346--349
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 349
+ []
+
+[25]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 397--400
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 400
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 425--428
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 428
+ []
+
+[26]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 450--453
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 453
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 511--514
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 514
+ []
+
+[27]) [28]
+Chapter 6.
+(./iWord_8h.tex <iWord_8h__incl.pdf, id=817, 130.4875pt x 160.6pt>
+File: iWord_8h__incl.pdf Graphic file (type pdf)
+
+<use iWord_8h__incl.pdf>
+<iWord_8h__dep__incl.pdf, id=818, 331.2375pt x 218.8175pt>
+File: iWord_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use iWord_8h__dep__incl.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29
+
+ <./iWord_8h__incl.pdf>]) (./refman.ind [30 <./iWord_8h__dep__incl.pdf>] [31
+
+] [32
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
+
+(./refman.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
+Package rerunfilecheck Info: File `refman.out' has not changed.
+(rerunfilecheck)             Checksum: 5E43B8866D7D05D0C304868DF7729286;6930.
+
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 10038 strings out of 493738
- 145845 string characters out of 3148797
- 247655 words of memory out of 3000000
- 12920 multiletter control sequences out of 15000+200000
- 57389 words of font info for 70 fonts, out of 3000000 for 9000
+ 10575 strings out of 493738
+ 153797 string characters out of 3148797
+ 254578 words of memory out of 3000000
+ 13360 multiletter control sequences out of 15000+200000
+ 64895 words of font info for 83 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 42i,11n,58p,501b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,58p,501b,518s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.
-pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/tex
-mf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share/texmf-dist/fonts/type
-1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro
-8a.pfb>
-Output written on refman.pdf (18 pages, 102360 bytes).
+pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texm
+f-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texmf-dist/fonts/type1/
+urw/helvetic/uhvbo8ac.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8
+a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (36 pages, 152751 bytes).
 PDF statistics:
- 480 PDF objects out of 1000 (max. 8388607)
- 436 compressed objects within 5 object streams
- 171 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1006 PDF objects out of 1200 (max. 8388607)
+ 932 compressed objects within 10 object streams
+ 234 named destinations out of 1000 (max. 500000)
+ 471 words of extra memory for PDF output out of 10000 (max. 10000000)
 
