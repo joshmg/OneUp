@@ -13,7 +13,7 @@ Register::Register (Word w) {
   _word = w;
 }
 
-Word Register::getValue() const {
+Word Register::GetValue() const {
   Word temp = _word;
   return temp;
 }
