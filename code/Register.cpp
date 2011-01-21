@@ -24,17 +24,13 @@ void Register::Add(const iWord& w) {
 
 Register Register::Add(const iRegister& r) const {
   Register temp;
-  temp._word = (*this)._word + r.getValue();
+  temp._word = (*this)._word + r.GetValue();
   return temp;
-}
-
-void Register::operator+(const iWord& w) {
-  _word = _word + w;
 }
 
 Register Register::operator+(const iRegister& r) const {
   Register temp;
-  temp._word = (*this)._word + r.getValue();
+  temp._word = (*this)._word + r.GetValue();
   return temp;
 }
 
@@ -44,16 +40,12 @@ void Register::Subtract(const iWord& w) {
 
 Register Register::Subtract(const iRegister& r) const {
   Register temp;
-  temp._word = (*this)._word - r.getValue();
+  temp._word = (*this)._word - r.GetValue();
   return temp;
 }
 
-void Register::operator-(const iWord& w) {
-  _word = _word - w;
-}
-
 Register Register::operator-(const iRegister& r) const {
-  return (*this)._word - r.getValue();
+  return (*this)._word - r.GetValue();
 }
 
 void Register::And(const iWord& w) {
@@ -62,7 +54,7 @@ void Register::And(const iWord& w) {
 
 Register Register::And(const iRegister& r) const {
   Register temp;
-  temp._word = (*this)._word.And(r.getValue());
+  temp._word = (*this)._word.And(r.GetValue());
   return temp;
 }
 
@@ -72,7 +64,7 @@ void Register::Or(const iWord& w) {
 
 Register Register::Or(const iRegister& r) const {
   Register temp;
-  temp._word = (*this)._word.Or(r.getValue());
+  temp._word = (*this)._word.Or(r.GetValue());
   return temp;
 }
 
@@ -92,7 +84,7 @@ void Register::Store(const iWord& w) {
 
 void Register::Store(const iRegister& r) {
   if ((iRegister*)this != &r) {
-    _word.copy(r.getValue());
+    _word.copy(r.GetValue());
   }
 }
 
@@ -103,7 +95,7 @@ Register& Register::operator=(const iWord& w) {
 
 Register& Register::operator=(const Register r) {
   if (this != &r) {
-    _word.copy(r.getValue());
+    _word.copy(r.GetValue());
   }
   return (*this);
 }

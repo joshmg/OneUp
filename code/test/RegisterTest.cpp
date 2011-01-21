@@ -10,7 +10,6 @@ int main() {
   for (int i=-10; i<10; i++) {
     w.fromInt(i);
     r.Store(w);
-    r.getValue().print();
-    cout << endl;
+    cout << r.GetValue().toStr() << endl;
   }
 }

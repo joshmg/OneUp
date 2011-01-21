@@ -1,15 +1,15 @@
-// File: Word.cpp
-// Written by:
-//    Joshua Green
-// Edited by:
-//    Andrew Groot
+/*! @file Word.cpp
+    @author Joshua Green
+    @author Andrew Groot
+    @brief Implements the delcarations in "Word.h".
+*/
 
 #include "Word.h"
 #include <string>
 #include <cmath> // for pow
 using namespace std;
 
-// private
+//*** private ***//
 bool Word::_hasBit(int i) const {
   // bit i's value
   int pow_of_two = (int)pow(2.0, i);
@@ -17,7 +17,7 @@ bool Word::_hasBit(int i) const {
   return ((_value & pow_of_two) > 0);
 }
 
-// public
+//*** public ***/
 Word::Word() {
   _value = 0;
 }

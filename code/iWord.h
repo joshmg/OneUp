@@ -1,9 +1,9 @@
 /*! @file iWord.h
     @author Joshua Green
     @author Andrew Groot
-    @brief The interface implemented by the "Word" class.
+    @brief Definition of a "word" of data.
     
-    @details Defines the operations and signatures by which the "Word" class should operate.
+    @details Defines the operations and signatures by which a "word" class should operate.
     The signatures, while intended to be coded to the interface, are done as to this as C++ allows.
 */
 
@@ -14,7 +14,7 @@
 
 class Word;
 
-/*! @brief The iWord interface class defines the a "word" of data on the Wi-11 Machine.
+/*! @brief Defines a "word" of data on the Wi-11 Machine.
 
     The methods present in this inteface are meant to mimic the functionality of the Wi-11
     machine, allowing for simplified execution of the instructions therein.
@@ -66,29 +66,29 @@ class iWord {
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "value".
     */
-    virtual bool fromInt(int) = 0;
+    virtual bool fromInt(int value) = 0;
 
     /*! @brief "From String"
         @param[in] str
           A string of characters meant to represent a "word" to be stored.
         @post "str" is not changed.
-        @return True if and only if "str" is well-formed (as defined in toStr()).
+        @return True if and only if "str" is well-formed (as defined in #toStr()).
         
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "str".
     */
-    virtual bool fromStr(const std::string&) = 0;
+    virtual bool fromStr(const std::string& str) = 0;
 
     /*! @brief "From Hexadecimal"
         @param[in] str
           A string of characters meant to represent a "word" to be stored.
         @post "str" is not changed.
-        @return True if and only if "str" is well-formed (as defined in toHex()).
+        @return True if and only if "str" is well-formed (as defined in #toHex()).
         
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "str".
     */
-    virtual bool fromHex(const std::string&) = 0;
+    virtual bool fromHex(const std::string& str) = 0;
 
     /*! @brief Adds two words.
         @param[in] w
@@ -99,14 +99,14 @@ class iWord {
         @note
         The addition is carried out with no regard to logical overflow.
     */
-    virtual Word Add(const iWord&) const = 0;
+    virtual Word Add(const iWord& w) const = 0;
 
     /*! @brief A standard addition operator.
         
         @note
         "result = p + w" is equivalent to "result = p.Add(w)".
     */
-    virtual Word operator+(const iWord&) const = 0;
+    virtual Word operator+(const iWord& w) const = 0;
 
     /*! @brief Subtracts two words.
         @param[in] w
@@ -117,14 +117,14 @@ class iWord {
         @note
         The subtraction is carried out with no regard for logical overflow.
     */
-    virtual Word Subtract(const iWord&) const = 0;
+    virtual Word Subtract(const iWord& w) const = 0;
 
     /*! @brief A standard subtraction operator.
         
         @note
         "result = p - w" is equivalent to "result = p.Subtract(w)".
     */
-    virtual Word operator-(const iWord&) const = 0;
+    virtual Word operator-(const iWord& w) const = 0;
 
     /*! @brief "And"s the bits of two words.
         @param[in] w
@@ -132,41 +132,42 @@ class iWord {
         @post Both "w" and the calling object do not change.
         @return A new "Word" object containing the result of performing a bit-wise and on "w" and the calling object.
     */
-    virtual Word And(const iWord&) const = 0;
+    virtual Word And(const iWord& w) const = 0;
 
-    virtual Word Or(const iWord&) const = 0;
-    /*  Or() produces a new instance of Word which is formed to
-        represent the value of the iWord parameter logically/bitwise
-        or'ed with the value of the current instance. Both the
-        parameter and the current instance of iWord are preserved and
-        are therefore const.
+    /*! @brief "Or"s the bits of two words.
+        @param[in] w
+          A word value to be "or"ed.
+        @post Both "w" and the calling object do not change.
+        @return A new "Word" object containing the result of performing a bit-wise or on "w" and the calling object.
     */
+    virtual Word Or(const iWord& w) const = 0;
 
+    /*! @brief "Not"s the bits of a word.
+        @post The calling object do not change.
+        @return A new "Word" object containing the result of performing a bit-wise not on the calling object.
+    */
     virtual Word Not() const = 0;
-    /*  Not() produces a new instance of Word which is formed to
-        represent the value of the current instance logically/bitwise
-        inverted. The current instance of iWord is preserved and is
-        therefore const.
-    */
 
     /*! @brief Copies a word.
-        @param[out] The value to be copied.
+        @param[out] w
+          The value to be copied.
         @post The caller equals that parameter.
 
         Equivalent to the assignment "caller = parameter".
     */
-    virtual void copy(const iWord&) = 0;
+    virtual void copy(const iWord& w) = 0;
 
     /*! @brief A standard assignment operator.
-        @param[in] The value to be copied.
+        @param[in] w
+          The value to be copied.
         @return A copy of the parameter.
 
         The return value and parameter here must be declared as "Word"s
         as C++ does not work well with polymorphic assignment operators.
     */ 
-    virtual Word& operator=(const Word) = 0;
+    virtual Word& operator=(const Word w) = 0;
 
-    /*! @breif A standard pre-increment operator.
+    /*! @brief A standard pre-increment operator.
         @returns A reference to itself.
 
         The object increments its value BEFORE the execution of the current line.
@@ -180,8 +181,9 @@ class iWord {
     */
     virtual iWord& operator++(int) = 0;
 
-    /*! @brief An accessor to the "i"th bit of the value.
-        @param[in] The index of the bit in question.
+    /*! @brief An accessor to the 'i'th bit of the value.
+        @param[in] i
+          The index of the bit in question.
         @pre The index must be less than the size of a word, ie. 16.
         @return True <=> 1, False <=> 0.
 
@@ -191,7 +193,7 @@ class iWord {
           If it holds a value of 1 (0...001 in binary): num[0] = 1.\n
           If it holds a negative value (Starting with a 1 in 2's complement): num[15] = 1.
     */
-    virtual bool operator[](int) const = 0;
+    virtual bool operator[](const int i) const = 0;
 };
 
 #endif

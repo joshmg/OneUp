@@ -1,8 +1,8 @@
-// File: Word.h
-// Written by:
-//    Joshua Green
-// Edited by:
-//    Andrew Groot
+/*! @file: Word.h
+    @author Joshua Green
+    @author Andrew Groot
+    @brief Definition of private data for the "Word" class.
+*/
 
 #ifndef WORD_H
 #define WORD_H
@@ -14,7 +14,19 @@
 
 class Word : public iWord {
   private:
+    /*! @brief Used to store the "word" of data.
+        
+        The type "unsigned short" was chosen because in c++, shorts are 16bits (the same size as our words)
+        and having it unsigned allows for easy "reading" as a positive int or a 2's complement int.
+    */
     unsigned short _value;
+
+    /*! @brief Tests for powers of two in binary representation.
+        @param i The index of the digit desired from the binary representation of _word.
+        @return True if and only if the 'i'th bit is 1.
+        
+        The indexing of the bits works as defined in #operator[]().
+    */
     bool _hasBit(int) const;
 
   public:
@@ -25,27 +37,27 @@ class Word : public iWord {
     std::string toStr() const;
     std::string toHex() const;
 
-    bool fromInt(int);
-    bool fromStr(const std::string&);
-    bool fromHex(const std::string&);
+    bool fromInt(int value);
+    bool fromStr(const std::string& str);
+    bool fromHex(const std::string& str);
 
-    Word Add(const iWord&) const;
-    Word operator+(const iWord&) const;
+    Word Add(const iWord& w) const;
+    Word operator+(const iWord& w) const;
     
-    Word Subtract(const iWord&) const;
-    Word operator-(const iWord&) const;
+    Word Subtract(const iWord& w) const;
+    Word operator-(const iWord& w) const;
 
-    Word And(const iWord&) const;
-    Word Or(const iWord&) const;
+    Word And(const iWord& w) const;
+    Word Or(const iWord& w) const;
     Word Not() const;
 
-    void copy(const iWord&);
-    Word& operator=(const Word);
+    void copy(const iWord& w);
+    Word& operator=(const Word w);
 
     iWord& operator++();
     iWord& operator++(int);
 
-    bool operator[](const int) const;
+    bool operator[](const int i) const;
 };
 
 #endif
