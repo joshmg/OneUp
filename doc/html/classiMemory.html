@@ -17,7 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -39,10 +39,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div>
@@ -53,21 +53,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>iMemory Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="iMemory" -->
-<p><a href="classiMemory-members.html">List of all members.</a></p>
-<table class="memberdecls">
+<!-- doxytag: class="iMemory" --><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a830592088739e3a7d40043f43e72e508"></a><!-- doxytag: member="iMemory::setAddress" ref="a830592088739e3a7d40043f43e72e508" args="(const iWord &amp;) const =0" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setAddress</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54415163e0a822be5e50c7f31409993f"></a><!-- doxytag: member="iMemory::setSize" ref="a54415163e0a822be5e50c7f31409993f" args="(const int lowerbound, const int upperbound) const =0" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setSize</b> (const int lowerbound, const int upperbound) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba678668b13277b6ffb1f71efa9d29c4"></a><!-- doxytag: member="iMemory::Initialize" ref="aba678668b13277b6ffb1f71efa9d29c4" args="() const =0" -->
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> () const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58fea9cebc1beb89503898d2d5f79bcd"></a><!-- doxytag: member="iMemory::Load" ref="a58fea9cebc1beb89503898d2d5f79bcd" args="(const iWord &amp;) const =0" -->
-virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affcd8df32bf56b0e585f555eafba86a3"></a><!-- doxytag: member="iMemory::Store" ref="affcd8df32bf56b0e585f555eafba86a3" args="(const iWord &amp;address, const iWord &amp;value)=0" -->
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;address, const <a class="el" href="classiWord.html">iWord</a> &amp;value)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1bd28c9b68295959b6d5ce02c1727b5"></a><!-- doxytag: member="iMemory::Reserve" ref="ab1bd28c9b68295959b6d5ce02c1727b5" args="(const iWord &amp;initial_address, const iWord &amp;length) const =0" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Reserve</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;initial_address, const <a class="el" href="classiWord.html">iWord</a> &amp;length) const =0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a133a01c153be47bb6971939353f650ef"></a><!-- doxytag: member="iMemory::Load" ref="a133a01c153be47bb6971939353f650ef" args="(const iWord &amp;) const =0" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7bce54c811d4282fa743729db04dbb2"></a><!-- doxytag: member="iMemory::Store" ref="ac7bce54c811d4282fa743729db04dbb2" args="(const iWord &amp;address, const iWord &amp;value)=0" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;address, const <a class="el" href="classiWord.html">iWord</a> &amp;value)=0</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="iMemory_8h_source.html">iMemory.h</a></li>
@@ -78,7 +72,7 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (co
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,7 +81,7 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (co
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Jan 20 2011 21:59:20 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 01:47:00 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

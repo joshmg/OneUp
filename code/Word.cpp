@@ -6,7 +6,6 @@
 
 #include "Word.h"
 #include <string>
-#include <iostream> // for print()
 #include <cmath> // for pow
 using namespace std;
 
@@ -36,11 +35,11 @@ int Word::toInt2Complement() const {
 
 string Word::toStr() const {
   string str;
-
   for (int i=0;i<WORD_SIZE;i++) {
     // start with highest order bit
     str += '0' + _hasBit((WORD_SIZE-1)-i);
   }
+  return str;
 }
 
 string Word::toHex() const {
@@ -199,14 +198,5 @@ iWord& Word::operator++(int) {
 
 bool Word::operator[](const int i) const {
   return _hasBit(i);
-}
-
-void Word::print() const {
-  cout << "[";
-  for (int i=0;i<WORD_SIZE;i++) { 
-    // highest order bit first
-    cout << _hasBit((WORD_SIZE-1)-i);
-  }
-  cout << "]";
 }
 

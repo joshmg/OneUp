@@ -17,7 +17,7 @@ int main() {
       cout << x.toHex() << endl;
       x++;
       ++x;
-      cout << "+ 2 = ";  x.print();  cout << endl;
+      cout << "+ 2 = " << x.toStr() << endl;
       cout << "--------------------\n";
     }
   }

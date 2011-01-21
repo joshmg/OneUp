@@ -5,29 +5,19 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classiMemory_a830592088739e3a7d40043f43e72e508}{
-virtual void {\bfseries setAddress} (const \hyperlink{classiWord}{iWord} \&) const =0}
-\label{classiMemory_a830592088739e3a7d40043f43e72e508}
+\hypertarget{classiMemory_ab1bd28c9b68295959b6d5ce02c1727b5}{
+virtual Codes::RESULT {\bfseries Reserve} (const \hyperlink{classiWord}{iWord} \&initial\_\-address, const \hyperlink{classiWord}{iWord} \&length) const =0}
+\label{classiMemory_ab1bd28c9b68295959b6d5ce02c1727b5}
 
 \item 
-\hypertarget{classiMemory_a54415163e0a822be5e50c7f31409993f}{
-virtual void {\bfseries setSize} (const int lowerbound, const int upperbound) const =0}
-\label{classiMemory_a54415163e0a822be5e50c7f31409993f}
+\hypertarget{classiMemory_a133a01c153be47bb6971939353f650ef}{
+virtual Codes::RESULT {\bfseries Load} (const \hyperlink{classiWord}{iWord} \&) const =0}
+\label{classiMemory_a133a01c153be47bb6971939353f650ef}
 
 \item 
-\hypertarget{classiMemory_aba678668b13277b6ffb1f71efa9d29c4}{
-virtual bool {\bfseries Initialize} () const =0}
-\label{classiMemory_aba678668b13277b6ffb1f71efa9d29c4}
-
-\item 
-\hypertarget{classiMemory_a58fea9cebc1beb89503898d2d5f79bcd}{
-virtual \hyperlink{classWord}{Word} {\bfseries Load} (const \hyperlink{classiWord}{iWord} \&) const =0}
-\label{classiMemory_a58fea9cebc1beb89503898d2d5f79bcd}
-
-\item 
-\hypertarget{classiMemory_affcd8df32bf56b0e585f555eafba86a3}{
-virtual bool {\bfseries Store} (const \hyperlink{classiWord}{iWord} \&address, const \hyperlink{classiWord}{iWord} \&value)=0}
-\label{classiMemory_affcd8df32bf56b0e585f555eafba86a3}
+\hypertarget{classiMemory_ac7bce54c811d4282fa743729db04dbb2}{
+virtual Codes::RESULT {\bfseries Store} (const \hyperlink{classiWord}{iWord} \&address, const \hyperlink{classiWord}{iWord} \&value)=0}
+\label{classiMemory_ac7bce54c811d4282fa743729db04dbb2}
 
 \end{DoxyCompactItemize}
 

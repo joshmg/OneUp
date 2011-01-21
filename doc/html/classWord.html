@@ -17,7 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -39,10 +39,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div>
@@ -69,8 +69,6 @@ Collaboration diagram for Word:<!-- endSectionHeader --></div>
 <map name="Word_coll__map" id="Word_coll__map">
 <area shape="rect" id="node2" href="classiWord.html" title="The iWord interface class defines the a &quot;word&quot; of data on the Wi&#45;11 Machine." alt="" coords="5,5,61,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
-
-<p><a href="classWord-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -111,8 +109,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard post-increment operator.  <a href="#ae921b75d263be790fd150c5962445163"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWord.html#ab0f10ac1a0397559b859774b503538fe">operator[]</a> (const int) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An accessor to the "i"th bit of the value.  <a href="#ab0f10ac1a0397559b859774b503538fe"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7484e0f4d1fa712ca367539dad71dfa3"></a><!-- doxytag: member="Word::print" ref="a7484e0f4d1fa712ca367539dad71dfa3" args="() const " -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> () const </td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaacae836ba9ed28f9725432ae81ab318"></a><!-- doxytag: member="Word::_hasBit" ref="aaacae836ba9ed28f9725432ae81ab318" args="(int) const " -->
@@ -183,9 +179,9 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>_value</b><
 
 <p>"To String" </p>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the word is not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>"[" + &lt;16 characters: either 1's or 0's&gt; + "]"</dd></dl>
-<dl class="user"><dt><b>Examples:</b></dt><dd>If the object holds a (2's comp.) value 4: [0000000000000100]<br/>
- If the object holds a (2's comp.) value -1: [1111111111111111] </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>16 characters: each either a 1 or 0</dd></dl>
+<dl class="user"><dt><b>Examples:</b></dt><dd>If the object holds a (2's comp.) value 4: "0000000000000100"<br/>
+ If the object holds a (2's comp.) value -1: "1111111111111111" </dd></dl>
 
 <p>Implements <a class="el" href="classiWord.html#a0114861c4b660286834ad637f11dc4f4">iWord</a>.</p>
 
@@ -208,8 +204,8 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>_value</b><
 <p>"To Hexadecimal" </p>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the word is not changed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>"0x" + &lt;4 characters in the range [0-9],[A-F]&gt;</dd></dl>
-<dl class="user"><dt><b>Examples:</b></dt><dd>If the object holds (2's comp.) value 8: 0x0008<br/>
- If the object holds (2's comp.) value -2: 0xFFFE </dd></dl>
+<dl class="user"><dt><b>Examples:</b></dt><dd>If the object holds (2's comp.) value 8: "0x0008"<br/>
+ If the object holds (2's comp.) value -2: "0xFFFE" </dd></dl>
 
 <p>Implements <a class="el" href="classiWord.html#a7fc28d0251f8acb4dc3f388fc25c57d1">iWord</a>.</p>
 
@@ -567,7 +563,10 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>_value</b><
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The index must be less than the size of a word, ie. 16. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>True &lt;=&gt; 1, False &lt;=&gt; 0.</dd></dl>
-<p>The number of the bits starts at zero and rises into the more significant bits. Examples: If the object "num" holds a value of 4 (0...100 in binary), num[0] = 0, num[1] = 0, num[2] = 1. If it holds a value of 1 (0...001 in binary) num[0] = 1, num[1] = 0, num[2] = 0, etc. If it holds a negative value (Starting with a 1 in 2's complement), num[15] = 1. </p>
+<p>The number of the bits starts at zero and rises into the more significant bits. </p>
+<dl class="user"><dt><b>Examples:</b></dt><dd>If the object holds a value of 4 (0...100 in binary): num[2] = 1.<br/>
+ If it holds a value of 1 (0...001 in binary): num[0] = 1.<br/>
+ If it holds a negative value (Starting with a 1 in 2's complement): num[15] = 1. </dd></dl>
 
 <p>Implements <a class="el" href="classiWord.html#a2bd140904379329b74c3e1af83eb3a85">iWord</a>.</p>
 
@@ -583,7 +582,7 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>_value</b><
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -592,7 +591,7 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>_value</b><
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Jan 20 2011 21:59:20 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 01:47:00 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

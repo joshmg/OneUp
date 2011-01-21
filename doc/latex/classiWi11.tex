@@ -1,0 +1,120 @@
+\hypertarget{classiWi11}{
+\section{iWi11 Class Reference}
+\label{classiWi11}\index{iWi11@{iWi11}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classiWi11_aa25542f6a447a55a63c1a9892eb0a405}{
+virtual bool {\bfseries LoadObj} (const char $\ast$)=0}
+\label{classiWi11_aa25542f6a447a55a63c1a9892eb0a405}
+
+\item 
+\hypertarget{classiWi11_ad9b13831ad9a83a8abbc3a77794b38bc}{
+virtual void {\bfseries DisplayMemory} () const =0}
+\label{classiWi11_ad9b13831ad9a83a8abbc3a77794b38bc}
+
+\item 
+\hypertarget{classiWi11_a143e669e3c7f46c3d1524838c8d74d94}{
+virtual void {\bfseries DisplayRegisters} () const =0}
+\label{classiWi11_a143e669e3c7f46c3d1524838c8d74d94}
+
+\item 
+\hypertarget{classiWi11_ae502d86eb25fe6e1169e800939362074}{
+virtual bool {\bfseries ExecuteNext} (bool verbose=false)=0}
+\label{classiWi11_ae502d86eb25fe6e1169e800939362074}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classiWi11_a65f699c773084a631cd7373cae05b5da}{
+virtual Codes::RESULT {\bfseries \_\-Add} (const Decoder::REGISTER\_\-ID DR, const Decoder::REGISTER\_\-ID SR1, const Decoder::REGISTER\_\-ID SR2)=0}
+\label{classiWi11_a65f699c773084a631cd7373cae05b5da}
+
+\item 
+\hypertarget{classiWi11_a6345dc089e3a699bd30fc442bd8f6d85}{
+virtual Codes::RESULT {\bfseries \_\-Add} (const Decoder::REGISTER\_\-ID DR, const Decoder::REGISTER\_\-ID SR1, const \hyperlink{classiWord}{iWord} \&immediate)=0}
+\label{classiWi11_a6345dc089e3a699bd30fc442bd8f6d85}
+
+\item 
+\hypertarget{classiWi11_a90cd8f3daa1788f029cabe198c19efb3}{
+virtual Codes::RESULT {\bfseries \_\-And} (const Decoder::REGISTER\_\-ID DR, const Decoder::REGISTER\_\-ID SR1, const Decoder::REGISTER\_\-ID SR2)=0}
+\label{classiWi11_a90cd8f3daa1788f029cabe198c19efb3}
+
+\item 
+\hypertarget{classiWi11_a4785e197f77fb0861e97e8d18c3be96f}{
+virtual Codes::RESULT {\bfseries \_\-And} (const Decoder::REGISTER\_\-ID DR, const Decoder::REGISTER\_\-ID SR1, const \hyperlink{classiWord}{iWord} \&immediate)=0}
+\label{classiWi11_a4785e197f77fb0861e97e8d18c3be96f}
+
+\item 
+\hypertarget{classiWi11_a42d2c50609424634873413d7a6614397}{
+virtual Codes::RESULT {\bfseries \_\-Branch} (const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiWi11_a42d2c50609424634873413d7a6614397}
+
+\item 
+\hypertarget{classiWi11_ae510f127a0c3b87d42cdbe5b14204a65}{
+virtual Codes::RESULT {\bfseries \_\-Debug} ()=0}
+\label{classiWi11_ae510f127a0c3b87d42cdbe5b14204a65}
+
+\item 
+\hypertarget{classiWi11_a0e1e16df5483aaa32e004fe125f95f70}{
+virtual Codes::RESULT {\bfseries \_\-JSR} (const \hyperlink{classiWord}{iWord} \&)=0}
+\label{classiWi11_a0e1e16df5483aaa32e004fe125f95f70}
+
+\item 
+\hypertarget{classiWi11_aeabd561f2728e2345b6a5ae5cdd5b84a}{
+virtual Codes::RESULT {\bfseries \_\-JSRR} (const \hyperlink{classiWord}{iWord} \&baseR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiWi11_aeabd561f2728e2345b6a5ae5cdd5b84a}
+
+\item 
+\hypertarget{classiWi11_aed1f870b129617436434bb6dcee521ce}{
+virtual Codes::RESULT {\bfseries \_\-Load} (const Decoder::REGISTER\_\-ID DR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiWi11_aed1f870b129617436434bb6dcee521ce}
+
+\item 
+\hypertarget{classiWi11_ab8f6fc32bfc363f9798c795320c00894}{
+virtual Codes::RESULT {\bfseries \_\-LoadI} (const Decoder::REGISTER\_\-ID DR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiWi11_ab8f6fc32bfc363f9798c795320c00894}
+
+\item 
+\hypertarget{classiWi11_a47fd64cc3629f9239c75fa4fea753c41}{
+virtual Codes::RESULT {\bfseries \_\-LoadR} (const Decoder::REGISTER\_\-ID DR, Decoder::REGISTER\_\-ID baseR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiWi11_a47fd64cc3629f9239c75fa4fea753c41}
+
+\item 
+\hypertarget{classiWi11_a942ecd7956af6ad9c65c976b968d7832}{
+virtual Codes::RESULT {\bfseries \_\-Not} (const Decoder::REGISTER\_\-ID DR, const Decoder::REGISTER\_\-ID SR)=0}
+\label{classiWi11_a942ecd7956af6ad9c65c976b968d7832}
+
+\item 
+\hypertarget{classiWi11_ae6c1048642dbf2c03c60062f6aaabfd2}{
+virtual Codes::RESULT {\bfseries \_\-Ret} ()=0}
+\label{classiWi11_ae6c1048642dbf2c03c60062f6aaabfd2}
+
+\item 
+\hypertarget{classiWi11_a52659070aca67bf8fba76f059bc120aa}{
+virtual Codes::RESULT {\bfseries \_\-Store} (const Decoder::REGISTER\_\-ID SR1, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiWi11_a52659070aca67bf8fba76f059bc120aa}
+
+\item 
+\hypertarget{classiWi11_a3a299e4526c8c9865f529cc10e293a0c}{
+virtual Codes::RESULT {\bfseries \_\-STI} (const Decoder::REGISTER\_\-ID SR1, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiWi11_a3a299e4526c8c9865f529cc10e293a0c}
+
+\item 
+\hypertarget{classiWi11_a5002f010e61f0677feb9f8a116504a0c}{
+virtual Codes::RESULT {\bfseries \_\-STR} (const Decoder::REGISTER\_\-ID SR1, const Decoder::REGISTER\_\-ID baseR, const \hyperlink{classiWord}{iWord} \&address)=0}
+\label{classiWi11_a5002f010e61f0677feb9f8a116504a0c}
+
+\item 
+\hypertarget{classiWi11_a74da9304180f3cbece4b7e87e8a53a5d}{
+virtual Codes::RESULT {\bfseries \_\-Trap} (const \hyperlink{classiWord}{iWord} \&code)=0}
+\label{classiWi11_a74da9304180f3cbece4b7e87e8a53a5d}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+iWi11.h\end{DoxyCompactItemize}

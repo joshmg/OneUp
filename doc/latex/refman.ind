@@ -1,111 +1,118 @@
 \begin{theindex}
 
   \item {Add}
-    \subitem {iWord}, \hyperpage{15}
-    \subitem {Word}, \hyperpage{24}
+    \subitem {iWord}, \hyperpage{17}
+    \subitem {Word}, \hyperpage{27}
   \item {And}
-    \subitem {iWord}, \hyperpage{16}
-    \subitem {Word}, \hyperpage{26}
+    \subitem {iWord}, \hyperpage{18}
+    \subitem {Word}, \hyperpage{28}
 
   \indexspace
 
   \item {copy}
-    \subitem {iWord}, \hyperpage{17}
-    \subitem {Word}, \hyperpage{26}
+    \subitem {iWord}, \hyperpage{19}
+    \subitem {Word}, \hyperpage{29}
 
   \indexspace
 
   \item {fromHex}
-    \subitem {iWord}, \hyperpage{15}
-    \subitem {Word}, \hyperpage{24}
-  \item {fromInt}
-    \subitem {iWord}, \hyperpage{14}
-    \subitem {Word}, \hyperpage{23}
-  \item {fromStr}
-    \subitem {iWord}, \hyperpage{14}
-    \subitem {Word}, \hyperpage{24}
-
-  \indexspace
-
-  \item {iInterpreter}, \hyperpage{9}
-  \item {iMemory}, \hyperpage{9}
-  \item {iRegister}, \hyperpage{9}
-  \item {iSimulator}, \hyperpage{10}
-  \item {iWord}, \hyperpage{11}
-    \subitem {Add}, \hyperpage{15}
-    \subitem {And}, \hyperpage{16}
-    \subitem {copy}, \hyperpage{17}
-    \subitem {fromHex}, \hyperpage{15}
-    \subitem {fromInt}, \hyperpage{14}
-    \subitem {fromStr}, \hyperpage{14}
-    \subitem {operator+}, \hyperpage{15}
-    \subitem {operator++}, \hyperpage{17, 18}
-    \subitem {operator-\/}, \hyperpage{16}
-    \subitem {operator=}, \hyperpage{17}
-    \subitem {Subtract}, \hyperpage{16}
-    \subitem {toHex}, \hyperpage{13}
-    \subitem {toInt}, \hyperpage{13}
-    \subitem {toInt2Complement}, \hyperpage{13}
-    \subitem {toStr}, \hyperpage{13}
-  \item {iWord.h}, \hyperpage{29}
-
-  \indexspace
-
-  \item {operator+}
-    \subitem {iWord}, \hyperpage{15}
-    \subitem {Word}, \hyperpage{25}
-  \item {operator++}
-    \subitem {iWord}, \hyperpage{17, 18}
-    \subitem {Word}, \hyperpage{27}
-  \item {operator-\/}
-    \subitem {iWord}, \hyperpage{16}
-    \subitem {Word}, \hyperpage{25}
-  \item {operator=}
     \subitem {iWord}, \hyperpage{17}
+    \subitem {Word}, \hyperpage{27}
+  \item {fromInt}
+    \subitem {iWord}, \hyperpage{16}
+    \subitem {Word}, \hyperpage{26}
+  \item {fromStr}
+    \subitem {iWord}, \hyperpage{16}
     \subitem {Word}, \hyperpage{26}
 
   \indexspace
 
-  \item {Register}, \hyperpage{19}
+  \item {iDecoder}, \hyperpage{9}
+  \item {iInterpreter}, \hyperpage{9}
+  \item {iLoader}, \hyperpage{9}
+  \item {iMemory}, \hyperpage{10}
+  \item {Instruction}, \hyperpage{10}
+  \item {iObjParser}, \hyperpage{10}
+  \item {iRegister}, \hyperpage{10}
+  \item {iSimulator}, \hyperpage{11}
+  \item {iWi11}, \hyperpage{12}
+  \item {iWord}, \hyperpage{13}
+    \subitem {Add}, \hyperpage{17}
+    \subitem {And}, \hyperpage{18}
+    \subitem {copy}, \hyperpage{19}
+    \subitem {fromHex}, \hyperpage{17}
+    \subitem {fromInt}, \hyperpage{16}
+    \subitem {fromStr}, \hyperpage{16}
+    \subitem {operator+}, \hyperpage{17}
+    \subitem {operator++}, \hyperpage{19, 20}
+    \subitem {operator-\/}, \hyperpage{18}
+    \subitem {operator=}, \hyperpage{19}
+    \subitem {Subtract}, \hyperpage{18}
+    \subitem {toHex}, \hyperpage{15}
+    \subitem {toInt}, \hyperpage{15}
+    \subitem {toInt2Complement}, \hyperpage{15}
+    \subitem {toStr}, \hyperpage{15}
+  \item {iWord.h}, \hyperpage{31}
+
+  \indexspace
+
+  \item {ObjectData}, \hyperpage{20}
+  \item {operator+}
+    \subitem {iWord}, \hyperpage{17}
+    \subitem {Word}, \hyperpage{27}
+  \item {operator++}
+    \subitem {iWord}, \hyperpage{19, 20}
+    \subitem {Word}, \hyperpage{29, 30}
+  \item {operator-\/}
+    \subitem {iWord}, \hyperpage{18}
+    \subitem {Word}, \hyperpage{28}
+  \item {operator=}
+    \subitem {iWord}, \hyperpage{19}
+    \subitem {Word}, \hyperpage{29}
+
+  \indexspace
+
+  \item {Register}, \hyperpage{21}
+  \item {ResultDecoder}, \hyperpage{22}
 
   \indexspace
 
   \item {Subtract}
-    \subitem {iWord}, \hyperpage{16}
-    \subitem {Word}, \hyperpage{25}
+    \subitem {iWord}, \hyperpage{18}
+    \subitem {Word}, \hyperpage{28}
 
   \indexspace
 
   \item {toHex}
-    \subitem {iWord}, \hyperpage{13}
-    \subitem {Word}, \hyperpage{23}
+    \subitem {iWord}, \hyperpage{15}
+    \subitem {Word}, \hyperpage{25}
   \item {toInt}
-    \subitem {iWord}, \hyperpage{13}
-    \subitem {Word}, \hyperpage{22}
+    \subitem {iWord}, \hyperpage{15}
+    \subitem {Word}, \hyperpage{25}
   \item {toInt2Complement}
-    \subitem {iWord}, \hyperpage{13}
-    \subitem {Word}, \hyperpage{22}
+    \subitem {iWord}, \hyperpage{15}
+    \subitem {Word}, \hyperpage{25}
   \item {toStr}
-    \subitem {iWord}, \hyperpage{13}
-    \subitem {Word}, \hyperpage{22}
+    \subitem {iWord}, \hyperpage{15}
+    \subitem {Word}, \hyperpage{25}
 
   \indexspace
 
-  \item {Word}, \hyperpage{20}
-    \subitem {Add}, \hyperpage{24}
-    \subitem {And}, \hyperpage{26}
-    \subitem {copy}, \hyperpage{26}
-    \subitem {fromHex}, \hyperpage{24}
-    \subitem {fromInt}, \hyperpage{23}
-    \subitem {fromStr}, \hyperpage{24}
-    \subitem {operator+}, \hyperpage{25}
-    \subitem {operator++}, \hyperpage{27}
-    \subitem {operator-\/}, \hyperpage{25}
-    \subitem {operator=}, \hyperpage{26}
-    \subitem {Subtract}, \hyperpage{25}
-    \subitem {toHex}, \hyperpage{23}
-    \subitem {toInt}, \hyperpage{22}
-    \subitem {toInt2Complement}, \hyperpage{22}
-    \subitem {toStr}, \hyperpage{22}
+  \item {Word}, \hyperpage{23}
+    \subitem {Add}, \hyperpage{27}
+    \subitem {And}, \hyperpage{28}
+    \subitem {copy}, \hyperpage{29}
+    \subitem {fromHex}, \hyperpage{27}
+    \subitem {fromInt}, \hyperpage{26}
+    \subitem {fromStr}, \hyperpage{26}
+    \subitem {operator+}, \hyperpage{27}
+    \subitem {operator++}, \hyperpage{29, 30}
+    \subitem {operator-\/}, \hyperpage{28}
+    \subitem {operator=}, \hyperpage{29}
+    \subitem {Subtract}, \hyperpage{28}
+    \subitem {toHex}, \hyperpage{25}
+    \subitem {toInt}, \hyperpage{25}
+    \subitem {toInt2Complement}, \hyperpage{25}
+    \subitem {toStr}, \hyperpage{25}
 
 \end{theindex}

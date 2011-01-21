@@ -46,8 +46,6 @@ class Word : public iWord {
     iWord& operator++(int);
 
     bool operator[](const int) const;
-
-    void print() const;
 };
 
 #endif

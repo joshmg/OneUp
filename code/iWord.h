@@ -39,11 +39,11 @@ class iWord {
 
     /*! @brief "To String"
         @post The value of the word is not changed.
-        @return "[" + <16 characters: either 1's or 0's> + "]"
+        @return 16 characters: each either a 1 or 0
         
         @par Examples:
-        If the object holds a (2's comp.) value 4:  [0000000000000100]\n
-        If the object holds a (2's comp.) value -1: [1111111111111111]
+        If the object holds a (2's comp.) value 4:  "0000000000000100"\n
+        If the object holds a (2's comp.) value -1: "1111111111111111"
     */
     virtual std::string toStr() const = 0;
 
@@ -52,8 +52,8 @@ class iWord {
         @return "0x" + <4 characters in the range [0-9],[A-F]>
         
         @par Examples:
-        If the object holds (2's comp.) value 8:  0x0008\n
-        If the object holds (2's comp.) value -2: 0xFFFE
+        If the object holds (2's comp.) value 8:  "0x0008"\n
+        If the object holds (2's comp.) value -2: "0xFFFE"
     */
     virtual std::string toHex() const = 0;
 
@@ -186,14 +186,12 @@ class iWord {
         @return True <=> 1, False <=> 0.
 
         The number of the bits starts at zero and rises into the more significant bits.
-        Examples:
-          If the object "num" holds a value of 4 (0...100 in binary), num[0] = 0, num[1] = 0, num[2] = 1.
-          If it holds a value of 1 (0...001 in binary) num[0] = 1, num[1] = 0, num[2] = 0, etc.
-          If it holds a negative value (Starting with a 1 in 2's complement), num[15] = 1.
+        @par Examples:
+          If the object holds a value of 4 (0...100 in binary): num[2] = 1.\n
+          If it holds a value of 1 (0...001 in binary): num[0] = 1.\n
+          If it holds a negative value (Starting with a 1 in 2's complement): num[15] = 1.
     */
     virtual bool operator[](int) const = 0;
-
-    virtual void print() const = 0;
 };
 
 #endif

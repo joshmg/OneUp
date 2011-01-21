@@ -1,7 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$iMemory_8h_source.html" title="iMemory.h" alt="" coords="5,83,91,112"/>
-<area shape="rect" id="node5" href="$iSimulator_8h_source.html" title="iSimulator.h" alt="" coords="79,160,177,189"/>
-<area shape="rect" id="node7" href="$iRegister_8h_source.html" title="iRegister.h" alt="" coords="165,83,251,112"/>
-<area shape="rect" id="node13" href="$Word_8h_source.html" title="Word.h" alt="" coords="275,83,339,112"/>
-<area shape="rect" id="node10" href="$Register_8h_source.html" title="Register.h" alt="" coords="233,160,316,189"/>
+<area shape="rect" id="node3" href="$iDecoder_8h_source.html" title="iDecoder.h" alt="" coords="23,83,114,112"/>
+<area shape="rect" id="node5" href="$iWi11_8h_source.html" title="iWi11.h" alt="" coords="41,160,107,189"/>
+<area shape="rect" id="node7" href="$iMemory_8h_source.html" title="iMemory.h" alt="" coords="138,83,223,112"/>
+<area shape="rect" id="node11" href="$iSimulator_8h_source.html" title="iSimulator.h" alt="" coords="242,160,341,189"/>
+<area shape="rect" id="node14" href="$iRegister_8h_source.html" title="iRegister.h" alt="" coords="247,83,333,112"/>
+<area shape="rect" id="node22" href="$Word_8h_source.html" title="Word.h" alt="" coords="407,83,471,112"/>
+<area shape="rect" id="node9" href="$iLoader_8h_source.html" title="iLoader.h" alt="" coords="138,160,218,189"/>
+<area shape="rect" id="node18" href="$Register_8h_source.html" title="Register.h" alt="" coords="382,160,465,189"/>
 </map>
