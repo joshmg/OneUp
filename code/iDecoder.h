@@ -21,7 +21,7 @@ class iDecoder {
   private:
 
   public:
-    virtual DecodeInstruction(const iWord&) const = 0;
+    virtual Instruction DecodeInstruction(const iWord&) const = 0;
     /*  DecodeInstruction() parses the provided iWord and returns an
         Instruction. Instruction.type is determined by the first four bits
         of the iWord, and Instruction.data is a vector of structs for each

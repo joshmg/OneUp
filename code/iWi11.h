@@ -12,18 +12,18 @@
 #include "ResultCodes.h"
 
 class iWi11 {
-  private:
-    /*  The Wi11 must have one instance of an iMemory class and needs
-        multiple (7) instances of the Register class to serve as general
-        purpose registers. Each register object should have an associated
-        REGISTER_ID enum token. Wi11 should also contain some sort of CCR
-        structure (unprovided) which must be updated appropriately.
-    */
+  /*  The Wi11 must have one instance of an iMemory class and needs
+      multiple (7) instances of the Register class to serve as general
+      purpose registers. Each register object should have an associated
+      REGISTER_ID enum token. Wi11 should also contain some sort of CCR
+      structure (unprovided) which must be updated appropriately.
+  */
 
-    // virtual iRegister& _GetRegister(const Decoder::REGISTER_ID&) = 0;
-    /*  This may prove useful. It is essentially a C Switch which returns a
-        reference to the appropriate instance of a Register object which
-        corresponds to the provided REGISTER_ID token.
+  private:
+    virtual iRegister& _GetRegister(const Decoder::REGISTER_ID&) = 0;
+    /*  [This may prove useful. It is essentially a C Switch which returns
+        a reference to the appropriate instance of a Register object which
+        corresponds to the provided REGISTER_ID token.]
     */
 
     virtual Codes::RESULT _Add(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const Decoder::REGISTER_ID SR2) = 0;
