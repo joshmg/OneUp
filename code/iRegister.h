@@ -22,8 +22,8 @@ class iRegister {
   private:
     
   public:
-    virtual Word getValue() const = 0;
-    /*  getValue() copies and returns the value stored within iRegister.
+    virtual Word GetValue() const = 0;
+    /*  GetValue() copies and returns the value stored within iRegister.
         The value stored within iRegister, as we as the object itself
         remain unchanged and are therefore the function call is const.
     */

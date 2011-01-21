@@ -16,7 +16,7 @@ class Register {
     Register();
     Register(const Word w);
 
-    Word getValue() const;
+    Word GetValue() const;
 
     void Add(const iWord&);
     Register Add(const iRegister&) const;
