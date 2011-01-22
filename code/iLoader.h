@@ -9,9 +9,10 @@
 
 class iLoader {
   private:
-  
+    //need a pointer to save the memory pointer given in the ILoader constructor
+  iMemory *Memory;
   public:
-    virtual iLoader(iMemory*) = 0;
+    virtual iLoader(iMemory* Memory) = 0;
     /*  Instantiation of a child of iLoader requires a pointer to the
         memory object the iLoader will be store the object file's data.
     */
