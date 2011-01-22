@@ -45,7 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div class="navpath">
     <ul>
-      <li><a class="el" href="dir_897eef481bf1c008ab3c92dc8aa69649.html">code</a>      </li>
+      <li><a class="el" href="dir_cec1b5f0a3f18d5a6846e7c281d2df7f.html">code</a>      </li>
     </ul>
   </div>
 </div>
@@ -55,70 +55,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="Wi11_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00006"></a>00006 <span class="preprocessor">#ifndef WI11_H</span>
-<a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#define WI11_H</span>
-<a name="l00008"></a>00008 <span class="preprocessor"></span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;Word.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="Register_8h.html" title="Definition of private data for the &amp;quot;Register&amp;quot; class.">Register.h</a>&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;Memory.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;Decoder.h&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;ResultCodes.h&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="iWi11_8h.html" title="Definition of the Wi-11 machine simulator.">iWi11.h</a>&quot;</span>
-<a name="l00015"></a>00015 
-<a name="l00016"></a><a class="code" href="classWi11.html">00016</a> <span class="keyword">class </span><a class="code" href="classWi11.html">Wi11</a> : <span class="keyword">public</span> <a class="code" href="classiWi11.html" title="Defines the internal logic of the Wi-11.">iWi11</a> {
-<a name="l00017"></a>00017   <span class="keyword">private</span>:
-<a name="l00019"></a>00019     <a class="code" href="classMemory.html">Memory</a> <a class="code" href="classWi11.html#a4eb624a34718b061c5d1a9704e1511cb" title="Wi-11&amp;#39;s memory.">_mem</a>;
-<a name="l00021"></a>00021     <a class="code" href="classRegister.html">Register</a> <a class="code" href="classWi11.html#a5db0201cfce46192ffa48e0e7d8661c2" title="8 general purpose registers.">_reg</a>[8];
-<a name="l00023"></a>00023     <span class="keywordtype">bool</span> <a class="code" href="classWi11.html#a78b431105c8d82444b3c94401e0e0977" title="CCR, true iff positive.">_pos</a>;
-<a name="l00025"></a>00025     <span class="keywordtype">bool</span> <a class="code" href="classWi11.html#a2d23fc7d842995772d7f3280f900ca4a" title="CCR, true iff zero.">_zero</a>;
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027     <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; <a class="code" href="classWi11.html#a17b5041499fa55f6b674e4f1ea8ceb59" title="Retrieves a reference to the register corresponding to &amp;quot;id&amp;quot;.">_GetRegister</a>(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; <span class="keywordtype">id</span>);
-<a name="l00028"></a>00028     Codes::RESULT <a class="code" href="classWi11.html#a818de966479e749f8592e73b35f5e2f2" title="Adds two registers and stores the result in a third.">_Add</a>(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> Decoder::REGISTER_ID SR2);
-<a name="l00029"></a>00029     Codes::RESULT <a class="code" href="classWi11.html#a818de966479e749f8592e73b35f5e2f2" title="Adds two registers and stores the result in a third.">_Add</a>(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; immediate);
-<a name="l00030"></a>00030     Codes::RESULT <a class="code" href="classWi11.html#af1e68e7a15deeb829f1771855e108bc0" title="Bit-wise ands two registers and stores the result in a third.">_And</a>(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> Decoder::REGISTER_ID SR2);
-<a name="l00031"></a>00031     Codes::RESULT <a class="code" href="classWi11.html#af1e68e7a15deeb829f1771855e108bc0" title="Bit-wise ands two registers and stores the result in a third.">_And</a>(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; immediate);
-<a name="l00032"></a>00032     Codes::RESULT <a class="code" href="classWi11.html#a09edab9ea53d62c93d5d42bfaa77adf5" title="Changes the last 9 bits of the PC.">_Branch</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
-<a name="l00033"></a>00033     Codes::RESULT <a class="code" href="classWi11.html#a08581ef7b0fa3939185ffa516c905d65" title="Deprecated?">_Debug</a>();
-<a name="l00034"></a>00034     Codes::RESULT <a class="code" href="classWi11.html#a84b28efa218ee676a4482e38069f5f8b" title="Initiate a jump to a subroutine (alter the PC).">_JSR</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
-<a name="l00035"></a>00035     Codes::RESULT <a class="code" href="classWi11.html#a884c75a5dbe753bc316fb2a8faa30e56" title="Initiate a jump to a subroutine (alter the PC). param[in] baseR A register whose value acts as a base...">_JSRR</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
-<a name="l00036"></a>00036     Codes::RESULT <a class="code" href="classWi11.html#a521c4d4d670b8bb1e1e7e9226ec2f259" title="Loads a word in memory into a register.">_Load</a>(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
-<a name="l00037"></a>00037     Codes::RESULT <a class="code" href="classWi11.html#a76e05be82843d69572d1b3c9a84f4eb0" title="Performs an indirect load.">_LoadI</a>(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
-<a name="l00038"></a>00038     Codes::RESULT <a class="code" href="classWi11.html#a58c642a908084d7629c93e702558e05a" title="Performs a register-relative load.">_LoadR</a>(<span class="keyword">const</span> Decoder::REGISTER_ID DR, Decoder::REGISTER_ID baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
-<a name="l00039"></a>00039     Codes::RESULT <a class="code" href="classWi11.html#a13742e76d8e61aa08696459f5bdcaddb" title="Bit-wise nots a register and stores the result in another.">_Not</a>(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR);
-<a name="l00040"></a>00040     Codes::RESULT <a class="code" href="classWi11.html#ad49e98e49ec62664b3684d63568545f0" title="Return from a subroutine.">_Ret</a>();
-<a name="l00041"></a>00041     Codes::RESULT <a class="code" href="classWi11.html#a35746dfc067eedf054ade3c6aeb13eca" title="Stores a register&amp;#39;s value into memory at a specified address.">_Store</a>(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
-<a name="l00042"></a>00042     Codes::RESULT <a class="code" href="classWi11.html#a7b360f2afbe98cd267941d0a8c584260" title="Performs an indirect store.">_STI</a>(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
-<a name="l00043"></a>00043     Codes::RESULT <a class="code" href="classWi11.html#a43d17c3207c05f5519336ff9c2974b2d" title="Perfroms a register-relative store.">_STR</a>(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> Decoder::REGISTER_ID baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
-<a name="l00044"></a>00044     Codes::RESULT <a class="code" href="classWi11.html#af981c1237ba25082ecd7aee3820d19e3" title="Branches to a trap vector.">_Trap</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; code);
-<a name="l00045"></a>00045    
-<a name="l00046"></a>00046   <span class="keyword">public</span>:
-<a name="l00047"></a>00047     <a class="code" href="classWi11.html">Wi11</a>();
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049     <span class="comment">// This will prove to be a useful command, but is not necessary at this time.</span>
-<a name="l00050"></a>00050     <span class="comment">// bool Reset();</span>
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052     <span class="keywordtype">bool</span> <a class="code" href="classWi11.html#a1bd83a38f0ae1ff1436c98e73ff8b421" title="Loads the object file and sets up memory as it describes.">LoadObj</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename);
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054     <span class="keywordtype">void</span> <a class="code" href="classWi11.html#a0f532cefdebd3c33ddc93e8bce4dc06b" title="Prints the state of memory to standard out.">DisplayMemory</a>() <span class="keyword">const</span>;
-<a name="l00055"></a>00055     <span class="keywordtype">void</span> <a class="code" href="classWi11.html#a201359b2506539dda72075b908076492" title="Prints the state of every register to standard out.">DisplayRegisters</a>() <span class="keyword">const</span>;
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057     <span class="keywordtype">bool</span> <a class="code" href="classWi11.html#ace44826e4f92aabd233b68bdd9437c1b" title="Executes the instruction pointed to by the PC.">ExecuteNext</a>(<span class="keywordtype">bool</span> verbose=<span class="keyword">false</span>);
-<a name="l00058"></a>00058     <span class="comment">/*  Data is loaded at the address contained within the PC from Memory,</span>
-<a name="l00059"></a>00059 <span class="comment">        then the PC is incremented by one. The loaded data is sent to the</span>
-<a name="l00060"></a>00060 <span class="comment">        iDecoder component which returns an Instruction struct. The type</span>
-<a name="l00061"></a>00061 <span class="comment">        field within the struct is used to determine the appropriate</span>
-<a name="l00062"></a>00062 <span class="comment">        private function to execute (in the case of branching, ExecuteStep()</span>
-<a name="l00063"></a>00063 <span class="comment">        determines if the branch should be executed. The combination of the</span>
-<a name="l00064"></a>00064 <span class="comment">        type field coupled with the size of the data field determines the</span>
-<a name="l00065"></a>00065 <span class="comment">        appropriate parameters. If the end of the program has been reached,</span>
-<a name="l00066"></a>00066 <span class="comment">        ExecuteStep() returns true. [In the official spec, the list of the</span>
-<a name="l00067"></a>00067 <span class="comment">        commands and how they are determined must be included in this </span>
-<a name="l00068"></a>00068 <span class="comment">        section. For now, reference page 3 of &quot;The Wi11 Machine</span>
-<a name="l00069"></a>00069 <span class="comment">        Characteristics&quot; handout.]</span>
-<a name="l00070"></a>00070 <span class="comment">    */</span>
-<a name="l00071"></a>00071 };
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 <span class="preprocessor">#endif</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#ifndef WI11_H</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#define WI11_H</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;Word.h&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="Register_8h.html" title="Definition of private data for the &amp;quot;Register&amp;quot; class.">Register.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;Memory.h&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;Decoder.h&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;ResultCodes.h&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;Loader.h&quot;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;ResultCodes.h&quot;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="classWi11.html">00018</a> <span class="keyword">class </span><a class="code" href="classWi11.html">Wi11</a> : <span class="keyword">public</span> <a class="code" href="classiWi11.html" title="Defines the internal logic of the Wi-11.">iWi11</a> {
+<a name="l00019"></a>00019   <span class="keyword">private</span>:
+<a name="l00021"></a><a class="code" href="classWi11.html#a07d3ee0573a4ea7d260574120da9dec1">00021</a>     <a class="code" href="classMemory.html">Memory</a> <a class="code" href="classWi11.html#a07d3ee0573a4ea7d260574120da9dec1" title="Acts as the Wi-11&amp;#39;s memory.">_memory</a>;
+<a name="l00023"></a><a class="code" href="classWi11.html#afdde77e5fbf30ef6647572f5c3050b7c">00023</a>     <a class="code" href="classRegister.html">Register</a> <a class="code" href="classWi11.html#afdde77e5fbf30ef6647572f5c3050b7c" title="The 8 general purpose registers and PC.">_R0</a>, _R1, _R2, _R3, _R4, _R5, _R6, _R7, _PC;
+<a name="l00025"></a><a class="code" href="structWi11_1_1CCR.html">00025</a>     <span class="keyword">struct </span><a class="code" href="structWi11_1_1CCR.html" title="Condition code registers: negative, zero, positive.">CCR</a> {
+<a name="l00026"></a>00026       <span class="keywordtype">bool</span> n, z, p;
+<a name="l00027"></a>00027     } _CCR;
+<a name="l00029"></a><a class="code" href="classWi11.html#a22efbed824867b4f355062a31f93d8e2">00029</a>     ObjLoader <a class="code" href="classWi11.html#a22efbed824867b4f355062a31f93d8e2" title="For loading the object file.">_loader</a>;
+<a name="l00031"></a><a class="code" href="classWi11.html#a145d0e52ef8bfd21d7b5a0ff3fea43d1">00031</a>     Decoder <a class="code" href="classWi11.html#a145d0e52ef8bfd21d7b5a0ff3fea43d1" title="For decoding instructions fetch from memory.">_decoder</a>;
+<a name="l00033"></a><a class="code" href="classWi11.html#a18515d6caafb4aba3d8a9220b4ac227e">00033</a>     <a class="code" href="classResultDecoder.html">ResultDecoder</a> <a class="code" href="classWi11.html#a18515d6caafb4aba3d8a9220b4ac227e" title="For error messages.">_result_decoder</a>;
+<a name="l00034"></a>00034     
+<a name="l00035"></a>00035     REGISTER_ID _Word2RegisterID(<span class="keyword">const</span> <a class="code" href="classWord.html">Word</a>&amp;) <span class="keyword">const</span>;
+<a name="l00036"></a>00036     <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; <a class="code" href="classWi11.html#a22228a86b6d5c60c8f403e8fc087077f" title="Retrieves a reference to the register corresponding to &amp;quot;id&amp;quot;.">_GetRegister</a>(<span class="keyword">const</span> Decoder::REGISTER_ID&amp;);
+<a name="l00037"></a>00037     <span class="keywordtype">void</span> _UpdateCCR(<span class="keywordtype">int</span>);
+<a name="l00038"></a>00038     <span class="keyword">virtual</span> Codes::RESULT _Add(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR1, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR2);
+<a name="l00039"></a>00039     <span class="keyword">virtual</span> Codes::RESULT _Add(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; immediate);
+<a name="l00040"></a>00040     <span class="keyword">virtual</span> Codes::RESULT _And(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR1, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR2);
+<a name="l00041"></a>00041     <span class="keyword">virtual</span> Codes::RESULT _And(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; immediate);
+<a name="l00042"></a>00042     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classWi11.html#a01960bc45e7a70a276d91ff01cd637f9" title="Changes the last 9 bits of the PC.">_Branch</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
+<a name="l00043"></a>00043     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classWi11.html#a10d6c79140c97919e2778d1c4d6f8102" title="Deprecated?">_Debug</a>();
+<a name="l00044"></a>00044     <span class="keyword">virtual</span> Codes::RESULT _JSR(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;, <span class="keywordtype">bool</span>);
+<a name="l00045"></a>00045     <span class="keyword">virtual</span> Codes::RESULT _JSRR(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address, <span class="keywordtype">bool</span> link);
+<a name="l00046"></a>00046     <span class="keyword">virtual</span> Codes::RESULT _Load(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
+<a name="l00047"></a>00047     <span class="keyword">virtual</span> Codes::RESULT _LoadI(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
+<a name="l00048"></a>00048     <span class="keyword">virtual</span> Codes::RESULT _LoadR(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
+<a name="l00049"></a>00049     <span class="keyword">virtual</span> Codes::RESULT _LoadEA(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
+<a name="l00050"></a>00050     <span class="keyword">virtual</span> Codes::RESULT _Not(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; DR, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR);
+<a name="l00051"></a>00051     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classWi11.html#a8cbd4e75c8c10f69f4159c02955b4a1f" title="Return from a subroutine.">_Ret</a>();
+<a name="l00052"></a>00052     <span class="keyword">virtual</span> Codes::RESULT _Store(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
+<a name="l00053"></a>00053     <span class="keyword">virtual</span> Codes::RESULT _STI(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
+<a name="l00054"></a>00054     <span class="keyword">virtual</span> Codes::RESULT _STR(<span class="keyword">const</span> Decoder::REGISTER_ID&amp; SR, <span class="keyword">const</span> Decoder::REGISTER_ID&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
+<a name="l00055"></a>00055     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classWi11.html#ac62ce0a9f8df8dacab577cee514cb199" title="Branches to a trap vector.">_Trap</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; code);
+<a name="l00056"></a>00056     
+<a name="l00057"></a>00057   <span class="keyword">public</span>:
+<a name="l00058"></a>00058     <span class="keyword">virtual</span> <a class="code" href="classWi11.html#ab1df37ddc05a51bc3adabf51b50ad39e" title="Creates and organizes the componts of the Wi11 machine.">iWi11</a>();
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classWi11.html#a50af76350b3e72c75d42035582aeb321" title="Loads the object file and sets up memory as it describes.">LoadObj</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>*);
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classWi11.html#a0f532cefdebd3c33ddc93e8bce4dc06b" title="Prints the state of memory to standard out.">DisplayMemory</a>() <span class="keyword">const</span>;
+<a name="l00063"></a>00063     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classWi11.html#a201359b2506539dda72075b908076492" title="Prints the state of every register to standard out.">DisplayRegisters</a>() <span class="keyword">const</span>;
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classWi11.html#ace44826e4f92aabd233b68bdd9437c1b" title="Executes the instruction pointed to by the PC.">ExecuteNext</a>(<span class="keywordtype">bool</span> verbose=<span class="keyword">false</span>);
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 };
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -135,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 02:04:03 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

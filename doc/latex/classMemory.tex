@@ -4,8 +4,7 @@
 }
 
 
-Inheritance diagram for Memory:
-\nopagebreak
+Inheritance diagram for Memory:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,8 +13,7 @@ Inheritance diagram for Memory:
 \end{figure}
 
 
-Collaboration diagram for Memory:
-\nopagebreak
+Collaboration diagram for Memory:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -31,6 +29,11 @@ virtual \hyperlink{classWord}{Word} \hyperlink{classMemory_aca021609915080b38ca1
 \begin{DoxyCompactList}\small\item\em Performs a load. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classMemory_a23703464fb24710d09be1b2010e79edc}{Store} (const \hyperlink{classiWord}{iWord} \&address, const \hyperlink{classWord}{Word} \&value)
 \begin{DoxyCompactList}\small\item\em Peforms a store. \item\end{DoxyCompactList}\item 
+\hypertarget{classMemory_a8a06a6f30a19b58795ab40f9f48dca4f}{
+std::vector$<$ \hyperlink{classWord}{Word}\mbox{[}2\mbox{]}$>$ {\bfseries GetUsedMemory} () const }
+\label{classMemory_a8a06a6f30a19b58795ab40f9f48dca4f}
+
+\item 
 virtual Codes::RESULT \hyperlink{classMemory_afe683401c1656b0a077d5f666f9c8d51}{Reserve} (const \hyperlink{classiWord}{iWord} \&initial\_\-address, const \hyperlink{classiWord}{iWord} \&length)
 \begin{DoxyCompactList}\small\item\em Reserves an initial section of memory for instructions. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classWord}{Word} \hyperlink{classMemory_af043b481b061644f9ff6cd7288655c93}{Load} (const \hyperlink{classiWord}{iWord} \&) const 

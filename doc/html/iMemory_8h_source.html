@@ -45,7 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div class="navpath">
     <ul>
-      <li><a class="el" href="dir_897eef481bf1c008ab3c92dc8aa69649.html">code</a>      </li>
+      <li><a class="el" href="dir_cec1b5f0a3f18d5a6846e7c281d2df7f.html">code</a>      </li>
     </ul>
   </div>
 </div>
@@ -60,23 +60,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 <span class="preprocessor"></span>
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;iWord.h&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;ResultCodes.h&quot;</span>
-<a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="keyword">class </span><a class="code" href="classWord.html">Word</a>;
-<a name="l00014"></a>00014 
-<a name="l00022"></a><a class="code" href="classiMemory.html">00022</a> <span class="keyword">class </span><a class="code" href="classiMemory.html" title="Mimics the functionality of memory in the Wi-11 machine.">iMemory</a> {
-<a name="l00023"></a>00023   <span class="keyword">private</span>:
-<a name="l00024"></a>00024     
-<a name="l00025"></a>00025   <span class="keyword">public</span>:
-<a name="l00035"></a>00035     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiMemory.html#a27750e74d09fb473c163a4cc4c3e697b" title="Reserves an initial section of memory for instructions.">Reserve</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; initial_address, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; length) = 0;
-<a name="l00036"></a>00036 
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="keyword">class </span><a class="code" href="classWord.html">Word</a>;
+<a name="l00015"></a>00015 
+<a name="l00023"></a><a class="code" href="classiMemory.html">00023</a> <span class="keyword">class </span><a class="code" href="classiMemory.html" title="Mimics the functionality of memory in the Wi-11 machine.">iMemory</a> {
+<a name="l00024"></a>00024   <span class="keyword">private</span>:
+<a name="l00025"></a>00025     
+<a name="l00026"></a>00026   <span class="keyword">public</span>:
+<a name="l00036"></a>00036     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiMemory.html#a27750e74d09fb473c163a4cc4c3e697b" title="Reserves an initial section of memory for instructions.">Reserve</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; initial_address, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; length) = 0;
 <a name="l00037"></a>00037 
-<a name="l00047"></a>00047     <span class="keyword">virtual</span> <a class="code" href="classWord.html">Word</a> <a class="code" href="classiMemory.html#a3352ba391fc9b69a0b8691b2d585596a" title="Performs a load.">Load</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) <span class="keyword">const</span> = 0;
-<a name="l00048"></a>00048 
+<a name="l00038"></a>00038 
+<a name="l00048"></a>00048     <span class="keyword">virtual</span> <a class="code" href="classWord.html">Word</a> <a class="code" href="classiMemory.html#a3352ba391fc9b69a0b8691b2d585596a" title="Performs a load.">Load</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) <span class="keyword">const</span> = 0;
 <a name="l00049"></a>00049 
-<a name="l00058"></a>00058     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiMemory.html#a2632c9999797b0799a7d6b0a59bfa91a" title="Peforms a store.">Store</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address, <span class="keyword">const</span> <a class="code" href="classWord.html">Word</a>&amp; value) = 0;
-<a name="l00059"></a>00059 };
+<a name="l00050"></a>00050 
+<a name="l00059"></a>00059     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiMemory.html#a2632c9999797b0799a7d6b0a59bfa91a" title="Peforms a store.">Store</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address, <span class="keyword">const</span> <a class="code" href="classWord.html">Word</a>&amp; value) = 0;
 <a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="preprocessor">#endif</span>
+<a name="l00063"></a>00063     std::vector&lt;Word[2]&gt; GetUsedMemory() <span class="keyword">const</span> = 0;
+<a name="l00064"></a>00064 };
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -93,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 02:04:03 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

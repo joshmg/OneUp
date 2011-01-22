@@ -1,5 +1,8 @@
-// File: iObjParser.h
-// Written by Joshua Green
+/*! @file iObjParser.h
+    @author Joshua Green
+    @author Andrew Groot
+    @Definition of the Object File Parser.
+*/
 
 #ifndef iOBJPARSER_H
 #define iOBJPARSER_H
@@ -10,45 +13,73 @@
 
 class Word;
 
+/*! @brief A simple encoding of a "record".
+    
+    @par
+    The format of this component is dependent upon
+    the kind of record it is representing.
+    @par
+    @argHeader Record (type = 'H')
+    <ul>
+    <li>data.size() = 3</li>
+    <li>
+    <ul><li> data[0] = [Segment Name]</li>
+    <li> data[1] = [Initial Load Address (as a hex string)]</li>
+    <li> data[2] = [Segment Length (as a hex string)]</li></ul>
+    </li>
+    </ul>
+    @arg Text Records (type = 'T')
+    <ul>
+    <li>data.size() = 2</li>
+    <li>
+    <ul><li>data[0] = [Address of Data (as a hex string)]</li>
+    <li>data[1] = [Data (as a hex string)]</li>
+    </li>
+    </ul>
+    @arg End Records (type = 'E')
+    <ul>
+    <li>data.size() = 1</li>
+    <li>
+    <ul><li>data[0] = [Initial PC Address (as a hex string)]</li></ul>
+    </li>
+    </ul>
+*/
 struct ObjectData {
-  /*  Purpose:
-        The ObjectData data class serves the iLoader component to easily
-        identify the intended Object file data entry--be it a header entry,
-        a Text entry, or an End entry. The type of entry determines the
-        size of ObjectData's data vector:
-          Header Entries (type = 'H')
-            -> data.size() = 3
-              -> data[0] = [Segment Name]
-              -> data[1] = [Initial Load Address (as a hex string)]
-              -> data[2] = [Segment Length (as a hex string)]
-          Text Entries (type = 'T')
-            -> data.size() = 2
-              -> data[0] = [Address of Data (as a hex string)]
-              -> data[1] = [Data (as a hex string)]
-          Text Entries (type = 'E')
-            -> data.size() = 1
-              -> data[0] = [Initial PC Address (as a hex string)]
-  */
-
+  //! The type of record: 'H', 'T', or 'E'
   char type;
+  //! The segments of the record.
   std::vector<std::string> data;
 };
 
+/*! @brief Opens the object file and pre-processes each line.
+*/
 class iObjParser {
   private:
   
   public:
+    /*! @brief Closes a file, if necessarily, when an iObjParser object goes out of scope..
+    */
     virtual ~iObjParser() = 0;
-    /*  If a file was opened successfully, it must be closed. This
-        deconstructor ensures that happens.
-    */
 
-    virtual Codes::Result Initialize(const char*) = 0;
-    /*  Attempts to open the input file. Returns the SUCCESS code if there
-        was no problem opening the file. If a file was previously openened,
-        the old file must be closed before the next one is opened.
-    */
 
+    /*! @brief Attempts to open th object file.
+        @param[in] filename The name of the object file to be opened.
+        @return SUCCESS or, if something went wrong, an appropriate error code.
+        
+        If another file is open, closes that file first before
+        attempting to open the new one.
+    */
+    virtual Codes::Result Initialize(const char* filename) = 0;
+
+
+    /*! @brief Pre-processes the next line of the object file.
+        @pre Initialize must have successfully opened a file.
+        @return The encoding of the next instruction.
+
+        If there is an error parsing the entry:
+        @arg ObjectData.type = 0;
+        @arg ObjectData.data = [the faulty encoding]
+    */
     virtual ObjectData GetNext() = 0;
     /*  Requires that Initialized() was invoked successfully. Returns the
         next entry within the *.obj file. See the purpose of ObjEntry

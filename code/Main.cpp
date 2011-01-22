@@ -105,7 +105,7 @@ int main(int argc, char* argv[]) {
       <b>At a glance:</b> There is an 'E', and the location in memory from which the first instruction should be fetched.
 
     @section Component Interaction
-s
+    @image latex software_interaction.png width=\textwidth
     @subsection components Components
 
     @subsection instructions Wi11 Instruction Set

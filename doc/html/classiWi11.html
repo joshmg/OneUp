@@ -141,6 +141,8 @@ Private Member Functions</h2></td></tr>
 <p>Creates and organizes the componts of the <a class="el" href="classWi11.html">Wi11</a> machine. </p>
 <p>Initializes the general purpose registers, CCR, and memory. </p>
 
+<p>Implemented in <a class="el" href="classWi11.html#ab1df37ddc05a51bc3adabf51b50ad39e">Wi11</a>.</p>
+
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -168,7 +170,7 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to the id'd register. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a17b5041499fa55f6b674e4f1ea8ceb59">Wi11</a>.</p>
+<p>Implemented in <a class="el" href="classWi11.html#a22228a86b6d5c60c8f403e8fc087077f">Wi11</a>.</p>
 
 </div>
 </div>
@@ -216,8 +218,6 @@ Private Member Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Updates the CCR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a818de966479e749f8592e73b35f5e2f2">Wi11</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a6345dc089e3a699bd30fc442bd8f6d85"></a><!-- doxytag: member="iWi11::_Add" ref="a6345dc089e3a699bd30fc442bd8f6d85" args="(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const iWord &amp;immediate)=0" -->
@@ -263,8 +263,6 @@ Private Member Functions</h2></td></tr>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>SR1 and "immediate" are not changed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Updates the CCR. </dd></dl>
-
-<p>Implemented in <a class="el" href="classWi11.html#ae3b47b19ae611cd4788891a812cc7ba0">Wi11</a>.</p>
 
 </div>
 </div>
@@ -312,8 +310,6 @@ Private Member Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Updates the CCR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#af1e68e7a15deeb829f1771855e108bc0">Wi11</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a4785e197f77fb0861e97e8d18c3be96f"></a><!-- doxytag: member="iWi11::_And" ref="a4785e197f77fb0861e97e8d18c3be96f" args="(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const iWord &amp;immediate)=0" -->
@@ -360,8 +356,6 @@ Private Member Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Updates the CCR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#abb98c230c0e384e4d3a3b9f0e3606db4">Wi11</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a42d2c50609424634873413d7a6614397"></a><!-- doxytag: member="iWi11::_Branch" ref="a42d2c50609424634873413d7a6614397" args="(const iWord &amp;address)=0" -->
@@ -389,7 +383,7 @@ Private Member Functions</h2></td></tr>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>"address" is not changed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a09edab9ea53d62c93d5d42bfaa77adf5">Wi11</a>.</p>
+<p>Implemented in <a class="el" href="classWi11.html#a01960bc45e7a70a276d91ff01cd637f9">Wi11</a>.</p>
 
 </div>
 </div>
@@ -410,7 +404,7 @@ Private Member Functions</h2></td></tr>
 <p>Deprecated? </p>
 <p>Does nothing. </p>
 
-<p>Implemented in <a class="el" href="classWi11.html#a08581ef7b0fa3939185ffa516c905d65">Wi11</a>.</p>
+<p>Implemented in <a class="el" href="classWi11.html#a10d6c79140c97919e2778d1c4d6f8102">Wi11</a>.</p>
 
 </div>
 </div>
@@ -439,8 +433,6 @@ Private Member Functions</h2></td></tr>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The PC has "w" as its 9 least significant bits. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the link bit was set for this instruction, R7 will hold the old value of the PC. However, the CCR will not be altered for this instruction, depite R7 being altered. </dd></dl>
-
-<p>Implemented in <a class="el" href="classWi11.html#a84b28efa218ee676a4482e38069f5f8b">Wi11</a>.</p>
 
 </div>
 </div>
@@ -479,8 +471,6 @@ Private Member Functions</h2></td></tr>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The PC is the value in baseR plus the value in address. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the link bit was set for this instruction, R7 will hold the old value of the PC. However, the CCR will not be altered for this instruction, depite R7 being altered. </dd></dl>
-
-<p>Implemented in <a class="el" href="classWi11.html#a884c75a5dbe753bc316fb2a8faa30e56">Wi11</a>.</p>
 
 </div>
 </div>
@@ -521,8 +511,6 @@ Private Member Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Updates the CCR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a521c4d4d670b8bb1e1e7e9226ec2f259">Wi11</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ab8f6fc32bfc363f9798c795320c00894"></a><!-- doxytag: member="iWi11::_LoadI" ref="ab8f6fc32bfc363f9798c795320c00894" args="(const Decoder::REGISTER_ID DR, const iWord &amp;address)=0" -->
@@ -562,8 +550,6 @@ Private Member Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <p>Works similar to _Load() but when memory is read, it uses the address found to again access memory. In this indirect way, a load can be made from anywhere in <a class="el" href="classMemory.html">Memory</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Updates the CCR. </dd></dl>
-
-<p>Implemented in <a class="el" href="classWi11.html#a76e05be82843d69572d1b3c9a84f4eb0">Wi11</a>.</p>
 
 </div>
 </div>
@@ -612,8 +598,6 @@ Private Member Functions</h2></td></tr>
 <p>Loads from "baseR" plus "address".</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Updates the CCR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a58c642a908084d7629c93e702558e05a">Wi11</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a942ecd7956af6ad9c65c976b968d7832"></a><!-- doxytag: member="iWi11::_Not" ref="a942ecd7956af6ad9c65c976b968d7832" args="(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR)=0" -->
@@ -652,8 +636,6 @@ Private Member Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Updates the CCR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a13742e76d8e61aa08696459f5bdcaddb">Wi11</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ae6c1048642dbf2c03c60062f6aaabfd2"></a><!-- doxytag: member="iWi11::_Ret" ref="ae6c1048642dbf2c03c60062f6aaabfd2" args="()=0" -->
@@ -677,7 +659,7 @@ Private Member Functions</h2></td></tr>
 <dl class="user"><dt><b></b></dt><dd>This can be used to jump anywhere in memory. However, this is not the intended usage. </dd></dl>
 <dl class="user"><dt><b></b></dt><dd>Updates the CCR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#ad49e98e49ec62664b3684d63568545f0">Wi11</a>.</p>
+<p>Implemented in <a class="el" href="classWi11.html#a8cbd4e75c8c10f69f4159c02955b4a1f">Wi11</a>.</p>
 
 </div>
 </div>
@@ -717,8 +699,6 @@ Private Member Functions</h2></td></tr>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>SR1 and "address" are not changed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a35746dfc067eedf054ade3c6aeb13eca">Wi11</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a3a299e4526c8c9865f529cc10e293a0c"></a><!-- doxytag: member="iWi11::_STI" ref="a3a299e4526c8c9865f529cc10e293a0c" args="(const Decoder::REGISTER_ID SR1, const iWord &amp;address)=0" -->
@@ -757,8 +737,6 @@ Private Member Functions</h2></td></tr>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>"SR1" and "address" are not changed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <p>Works similar to _Store() but when memory is read, it uses the address found to again access memory. In this indirect way, a store can be made to anywhere in <a class="el" href="classMemory.html">Memory</a>. </p>
-
-<p>Implemented in <a class="el" href="classWi11.html#a7b360f2afbe98cd267941d0a8c584260">Wi11</a>.</p>
 
 </div>
 </div>
@@ -805,8 +783,6 @@ Private Member Functions</h2></td></tr>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>SR1, baseR, and "address" are not changed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a43d17c3207c05f5519336ff9c2974b2d">Wi11</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a74da9304180f3cbece4b7e87e8a53a5d"></a><!-- doxytag: member="iWi11::_Trap" ref="a74da9304180f3cbece4b7e87e8a53a5d" args="(const iWord &amp;code)=0" -->
@@ -847,7 +823,7 @@ Private Member Functions</h2></td></tr>
 <dl class="user"><dt><b></b></dt><dd>Standard in is the keyboard.<br/>
  Stardard out is the console. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#af981c1237ba25082ecd7aee3820d19e3">Wi11</a>.</p>
+<p>Implemented in <a class="el" href="classWi11.html#ac62ce0a9f8df8dacab577cee514cb199">Wi11</a>.</p>
 
 </div>
 </div>
@@ -878,7 +854,7 @@ Private Member Functions</h2></td></tr>
 <p>If "false" is returned, prints an appropriate error message to the user.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This fucntion can be called multiple times. Each time the PC is overwritten. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWi11.html#a1bd83a38f0ae1ff1436c98e73ff8b421">Wi11</a>.</p>
+<p>Implemented in <a class="el" href="classWi11.html#a50af76350b3e72c75d42035582aeb321">Wi11</a>.</p>
 
 </div>
 </div>
@@ -970,7 +946,7 @@ Private Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 02:04:03 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>
