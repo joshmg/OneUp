@@ -1,15 +1,23 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/MacPorts 2010_1) (format=pdflatex 2011.1.20)  21 JAN 2011 20:29
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/Arch Linux) (format=pdflatex 2011.1.20)  22 JAN 2011 01:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **refman.tex
 (./refman.tex
 LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, lo
-aded.
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/book.cls
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, farsi, finnish, french,
+ galician, german, ngerman, swissgerman, monogreek, greek, hungarian, icelandic
+, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, oriya, panja
+bi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji, lao, lati
+n, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, polish, portu
+guese, romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedis
+h, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded.
+(/usr/share/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/bk10.clo
+(/usr/share/texmf-dist/tex/latex/base/bk10.clo
 File: bk10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,35 +33,35 @@ File: bk10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/makeidx.sty
+(/usr/share/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/graphics/trig.sty
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/02/14 v0.04n Graphics/color for pdfTeX
+(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/09/14 v0.05b Graphics/color for pdfTeX
 \Gread@gobject=\count88
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/tools/multicol.sty
+(/usr/share/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \c@tracingmulticols=\count89
 \mult@box=\box26
@@ -100,7 +108,7 @@ Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \mult@nat@firstbox=\box50
 \colbreak@box=\box51
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/float/float.sty
+(/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count97
 \float@exts=\toks15
@@ -108,7 +116,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks16
 \@floatcapt=\box53
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/listings/listings.sty
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count98
 \lst@gtempboxa=\box54
 \lst@token=\toks17
@@ -122,40 +130,40 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \lst@lineno=\count103
 \lst@maxwidth=\dimen116
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/listings/lstmisc.sty
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count104
 \lst@skipnumbers=\count105
 \lst@framebox=\box55
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/listings/listings.cfg
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/graphics/color.sty
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/latexconfig/color.cfg
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/ifthen.sty
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/latexconfig/color.cfg
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/colortbl/colortbl.sty
+(/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/tools/array.sty
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen117
 \extrarowheight=\dimen118
@@ -178,7 +186,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/textcomp.sty
+(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -193,7 +201,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/ts1enc.def
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -245,41 +253,41 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/alltt.sty
+(/usr/share/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2010/01/28 v2.1 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in pdf mode detected.
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2010/06/18 v6.81g Hypertext links for LaTeX
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2010/10/30 v6.81t Hypertext links for LaTeX
 
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
 )
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
-
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2010/01/28 v1.3 Prefix for e-TeX command names (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 ))
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/pdfescape.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/pdfescape.sty
 Package: pdfescape 2010/03/01 v1.9 Provides hex, PDF name and string conversion
 s (HO)
 
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
 
 
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -287,121 +295,126 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 ))
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/ifvtex.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/opt/local/share/texmf-texlive-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/hycolor.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/hycolor.sty
 Package: hycolor 2009/12/12 v1.6 Color options of hyperref/bookmark (HO)
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/xcolor-patch.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/12/12 xcolor patch
 ))
-(/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/letltxmacro.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/letltxmacro.sty
 Package: letltxmacro 2008/06/24 v1.3 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
 )
 \@linkdim=\dimen119
 \Hy@linkcounter=\count107
 \Hy@pagecounter=\count108
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2010/06/18 v6.81g Hyperref: PDFDocEncoding definition (HO)
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2010/10/30 v6.81t Hyperref: PDFDocEncoding definition (HO)
 )
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/intcalc.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/intcalc.sty
 Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/latexconfig/hyperref.cfg
+\Hy@SavedSpaceFactor=\count109
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+Package hyperref Info: Option `colorlinks' set `true' on input line 3872.
+Package hyperref Info: Option `unicode' set `true' on input line 3872.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2010/10/30 v6.81t Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 3577.
-Package hyperref Info: Option `unicode' set `true' on input line 3577.
+Package hyperref Info: Hyper figures OFF on input line 3976.
+Package hyperref Info: Link nesting OFF on input line 3981.
+Package hyperref Info: Hyper index ON on input line 3984.
+Package hyperref Info: Plain pages OFF on input line 3991.
+Package hyperref Info: Backreferencing ON on input line 3994.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4211.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2010/06/18 v6.81g Hyperref: PDF Unicode definition (HO)
-)
-Package hyperref Info: Hyper figures OFF on input line 3658.
-Package hyperref Info: Link nesting OFF on input line 3663.
-Package hyperref Info: Hyper index ON on input line 3666.
-Package hyperref Info: Plain pages OFF on input line 3673.
-Package hyperref Info: Backreferencing ON on input line 3676.
+(/usr/share/texmf-dist/tex/latex/hyperref/backref.sty
+Package: backref 2010/08/30 v1.36 Bibliographical back referencing
 
-Implicit mode ON; LaTeX internals redefined
-Package hyperref Info: Bookmarks ON on input line 3874.
-(/opt/local/share/texmf-texlive-dist/tex/latex/hyperref/backref.sty
-Package: backref 2010/03/11 v1.35 Bibliographical back referencing
-
-(/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2010/03/16 v1.6 Rerun checks for auxiliary files (HO)
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/atveryend.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/atveryend.sty
 Package: atveryend 2010/03/24 v1.5 Hooks at very end of document (HO)
 Package atveryend Info: \enddocument detected (standard).
 )
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/uniquecounter.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/uniquecounter.sty
 Package: uniquecounter 2009/12/18 v1.1 Provides unlimited unique counter (HO)
 
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/bigintcalc.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/bigintcalc.sty
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
 ))
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 71.
 ))
-(/opt/local/share/texmf-texlive-dist/tex/latex/url/url.sty
+\c@Hy@tempcnt=\count110
+
+(/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4159.
+LaTeX Info: Redefining \url on input line 4566.
 
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/bitset.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/bitset.sty
 Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
 )
-\Fld@menulength=\count109
+\Fld@menulength=\count111
 \Field@Width=\dimen120
 \Fld@charsize=\dimen121
-\Field@toks=\toks20
-Package hyperref Info: Hyper figures OFF on input line 5137.
-Package hyperref Info: Link nesting OFF on input line 5142.
-Package hyperref Info: Hyper index ON on input line 5145.
-Package hyperref Info: backreferencing ON on input line 5150.
-Package hyperref Info: Link coloring ON on input line 5155.
-Package hyperref Info: Link coloring with OCG OFF on input line 5162.
-Package hyperref Info: PDF/A mode OFF on input line 5167.
-LaTeX Info: Redefining \ref on input line 5207.
-LaTeX Info: Redefining \pageref on input line 5211.
+Package hyperref Info: Hyper figures OFF on input line 5626.
+Package hyperref Info: Link nesting OFF on input line 5631.
+Package hyperref Info: Hyper index ON on input line 5634.
+Package hyperref Info: backreferencing ON on input line 5639.
+Package hyperref Info: Link coloring ON on input line 5644.
+Package hyperref Info: Link coloring with OCG OFF on input line 5651.
+Package hyperref Info: PDF/A mode OFF on input line 5656.
+LaTeX Info: Redefining \ref on input line 5696.
+LaTeX Info: Redefining \pageref on input line 5700.
 
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/atbegshi.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2010/03/25 v1.12 At begin shipout hook (HO)
 )
-\Hy@abspage=\count110
-\c@Item=\count111
-\c@Hfootnote=\count112
+\Hy@abspage=\count112
+\c@Item=\count113
+\c@Hfootnote=\count114
 )
-* hyperref using driver hpdftex *
-(/opt/local/share/texmf-texlive-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2010/06/18 v6.81g Hyperref driver for pdfTeX
-\Fld@listcount=\count113
-\c@bookmark@seq@number=\count114
+
+Package hyperref Message: Driver: hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2010/10/30 v6.81t Hyperref driver for pdfTeX
+\Fld@listcount=\count115
+\c@bookmark@seq@number=\count116
 \Hy@SectionHShift=\skip48
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/inputenc.sty
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks21
-\inpenc@posthook=\toks22
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/utf8.def
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/t1enc.dfu
+(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -551,7 +564,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/ot1enc.dfu
+(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -582,7 +595,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/omsenc.dfu
+(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -598,7 +611,7 @@ Now handling font encoding U ...
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/ts1enc.dfu
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu
 File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -685,7 +698,7 @@ Now handling font encoding PU ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/mathptmx.sty
+(/usr/share/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -721,28 +734,28 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/helvet.sty
+(/usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/courier.sty
+(/usr/share/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
-)
-(./doxygen.sty
+) (./doxygen.sty
 Package: doxygen 
- (/opt/local/share/texmf-texlive-dist/tex/latex/tools/calc.sty
+
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count115
-\calc@Bcount=\count116
+\calc@Acount=\count117
+\calc@Bcount=\count118
 \calc@Adimen=\dimen122
 \calc@Bdimen=\dimen123
 \calc@Askip=\skip49
 \calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count117
+\calc@Ccount=\count119
 \calc@Cskip=\skip51
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/fancyhdr/fancyhdr.sty
+(/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip52
 \f@ncyO@elh=\skip53
 \f@ncyO@erh=\skip54
@@ -753,35 +766,35 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \f@ncyO@olf=\skip59
 \f@ncyO@orf=\skip60
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/tools/longtable.sty
+(/usr/share/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip61
 \LTright=\skip62
 \LTpre=\skip63
 \LTpost=\skip64
-\LTchunksize=\count118
+\LTchunksize=\count120
 \LTcapwidth=\dimen124
 \LT@head=\box56
 \LT@firsthead=\box57
 \LT@foot=\box58
 \LT@lastfoot=\box59
-\LT@cols=\count119
-\LT@rows=\count120
-\c@LT@tables=\count121
-\c@LT@chunks=\count122
-\LT@p@ftn=\toks23
+\LT@cols=\count121
+\LT@rows=\count122
+\c@LT@tables=\count123
+\c@LT@chunks=\count124
+\LT@p@ftn=\toks22
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/tools/verbatim.sty
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks24
-\verbatim@line=\toks25
+\every@verbatim=\toks23
+\verbatim@line=\toks24
 \verbatim@in@stream=\read1
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/sectsty/sectsty.sty
+(/usr/share/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/tocloft/tocloft.sty
+(/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
 
 
@@ -816,8 +829,8 @@ Package tocloft Note: The document has chapter divisions.
 \cftbeforefigskip=\skip91
 \cftfigindent=\skip92
 \cftfignumwidth=\skip93
-\c@lofdepth=\count123
-\c@lotdepth=\count124
+\c@lofdepth=\count125
+\c@lotdepth=\count126
 \cftbeforelottitleskip=\skip94
 \cftafterlottitleskip=\skip95
 \cftbeforetabskip=\skip96
@@ -825,20 +838,20 @@ Package tocloft Note: The document has chapter divisions.
 \cfttabnumwidth=\skip98
 )
 \tmplength=\skip99
- (/opt/local/share/texmf-texlive-dist/tex/latex/base/fontenc.sty
+ (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/base/t1enc.def
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )))
-(/opt/local/share/texmf-texlive-dist/tex/latex/listings/lstlang1.sty
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/listings/lstlang1.sty
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(/opt/local/share/texmf-texlive-dist/tex/latex/listings/lstmisc.sty
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 \@indexfile=\write3
@@ -956,7 +969,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 38.
- (/opt/local/share/texmf-texlive-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 38.
@@ -966,28 +979,28 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 38.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/t1phv.fd
+(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 38.
 
-(/opt/local/share/texmf-texlive-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
+\scratchcounter=\count127
 \scratchdimen=\dimen125
 \scratchbox=\box60
-\nofMPsegments=\count126
-\nofMParguments=\count127
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count128
+\nofMPsegments=\count128
+\nofMParguments=\count129
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count130
 \MPscratchDim=\dimen126
-\MPnumerator=\count129
-\everyMPtoPDFconversion=\toks27
-) (/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/epstopdf-base.sty
+\MPnumerator=\count131
+\everyMPtoPDFconversion=\toks26
+) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
@@ -995,30 +1008,29 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 436.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count130
+\c@lstlisting=\count132
 \AtBeginShipoutBox=\box61
 Package hyperref Info: Link coloring ON on input line 38.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/oberdiek/refcount.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-(/opt/local/share/texmf-texlive-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count131
+\c@section@level=\count133
 )
 LaTeX Info: Redefining \ref on input line 38.
 LaTeX Info: Redefining \pageref on input line 38.
 LaTeX Info: Redefining \nameref on input line 38.
-
-(./refman.out) (./refman.out)
+ (./refman.out) (./refman.out)
 \@outlinefile=\write4
 \openout4 = `refman.out'.
 
@@ -1033,12 +1045,12 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
  [1
 
 
-{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 52.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ot1phv.fd
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
@@ -1051,30 +1063,30 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 1.
 
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ot1ztmcm.fd
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 1.
 
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/omlztmcm.fd
+(/usr/share/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 1.
 
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/omsztmcm.fd
+(/usr/share/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 1.
 
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/omxztmcm.fd
+(/usr/share/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1.
 
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ot1ptm.fd
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
@@ -1095,15 +1107,42 @@ LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
 LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
 (Font)              scaled to size 8.99994pt on input line 2.
 LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
-(Font)              scaled to size 8.09995pt on input line 30.
+(Font)              scaled to size 8.09995pt on input line 32.
 [1]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 6.29996pt on input line 86.
- [2] [3])
+ [2] [3] [4]
+Overfull \hbox (1.0618pt too wide) detected at line 216
+ \OT1/phv/c/n/10 100
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 217
+ \OT1/phv/c/n/10 100
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 218
+ \OT1/phv/c/n/10 101
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 219
+ \OT1/phv/c/n/10 101
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 220
+ \OT1/phv/c/n/10 102
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [4]
+ [5] [6
+
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 55.
 
 Chapter 1.
@@ -1125,7 +1164,7 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 5.
- (/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ts1phv.fd
+ (/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
@@ -1134,23 +1173,22 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 10.79993pt on input line 8.
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 10.79993pt on input line 8.
-
-[1
-
+ [1
 
 ]) [2]
-Chapter 2.
-(./dirs.tex) [3
+[3] [4
 
-] [4
+]
+Chapter 2.
+(./dirs.tex) [5] [6
 
 ]
 Chapter 3.
-(./hierarchy.tex) [5] [6
+(./hierarchy.tex) [7] [8
 
 ]
 Chapter 4.
-(./annotated.tex) [7] [8
+(./annotated.tex) [9] [10
 
 ]
 Chapter 5.
@@ -1159,255 +1197,261 @@ LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 8.99994pt on input line 3.
 
 
-LaTeX Warning: Reference `iDecoder_8h' on page 9 undefined on input line 3.
+LaTeX Warning: Reference `iDecoder_8h' on page 11 undefined on input line 3.
 
 
-LaTeX Warning: Reference `iInterpreter_8h' on page 9 undefined on input line 4.
+LaTeX Warning: Reference `iInterpreter_8h' on page 11 undefined on input line 4
+.
 
 
-
-LaTeX Warning: Reference `iLoader_8h' on page 9 undefined on input line 5.
-
-
-LaTeX Warning: Reference `iMemory_8h' on page 9 undefined on input line 6.
+LaTeX Warning: Reference `iLoader_8h' on page 11 undefined on input line 5.
 
 
-LaTeX Warning: Reference `MemoryTest_2iMemory_8h' on page 9 undefined on input 
-line 7.
+LaTeX Warning: Reference `iMemory_8h' on page 11 undefined on input line 6.
 
 
-LaTeX Warning: Reference `iObjParser_8h' on page 9 undefined on input line 8.
+LaTeX Warning: Reference `MemoryTest_2iMemory_8h' on page 11 undefined on input
+ line 7.
 
 
-LaTeX Warning: Reference `iSimulator_8h' on page 9 undefined on input line 10.
+LaTeX Warning: Reference `iObjParser_8h' on page 11 undefined on input line 8.
 
 
-LaTeX Warning: Reference `iWi11_8h' on page 9 undefined on input line 11.
-
-
-LaTeX Warning: Reference `iWord_8h' on page 9 undefined on input line 12.
-
-
-LaTeX Warning: Reference `MemoryTest_2iWord_8h' on page 9 undefined on input li
-ne 13.
-
-
-LaTeX Warning: Reference `Memory_8h' on page 9 undefined on input line 14.
-
-
-LaTeX Warning: Reference `MemoryTest_2Memory_8h' on page 9 undefined on input l
-ine 15.
-
-
-LaTeX Warning: Reference `MemoryTest_2ResultCodes_8h' on page 9 undefined on in
-put line 17.
-
-
-LaTeX Warning: Reference `ResultCodes_8h' on page 9 undefined on input line 18.
+LaTeX Warning: Reference `iSimulator_8h' on page 11 undefined on input line 10.
 
 
 
-LaTeX Warning: Reference `MemoryTest_2Word_8h' on page 9 undefined on input lin
-e 19.
+LaTeX Warning: Reference `iWord_8h' on page 11 undefined on input line 12.
 
 
-LaTeX Warning: Reference `Word_8h' on page 9 undefined on input line 20.
+LaTeX Warning: Reference `MemoryTest_2iWord_8h' on page 11 undefined on input l
+ine 13.
 
-) [9] [10
+
+LaTeX Warning: Reference `Memory_8h' on page 11 undefined on input line 14.
+
+
+LaTeX Warning: Reference `MemoryTest_2Memory_8h' on page 11 undefined on input 
+line 15.
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 16
+ [][]\OT1/phv/c/n/10 100[][]
+ []
+
+
+LaTeX Warning: Reference `MemoryTest_2ResultCodes_8h' on page 11 undefined on i
+nput line 17.
+
+
+LaTeX Warning: Reference `ResultCodes_8h' on page 11 undefined on input line 18
+.
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 19
+ [][]\OT1/phv/c/n/10 101[][]
+ []
+
+
+LaTeX Warning: Reference `MemoryTest_2Word_8h' on page 11 undefined on input li
+ne 20.
+
+
+LaTeX Warning: Reference `Word_8h' on page 11 undefined on input line 21.
+
+) [11] [12
 
 ]
 Chapter 6.
-(./dir_cec1b5f0a3f18d5a6846e7c281d2df7f.tex
-<dir_cec1b5f0a3f18d5a6846e7c281d2df7f_dep.pdf, id=975, 331.2375pt x 148.555pt>
-File: dir_cec1b5f0a3f18d5a6846e7c281d2df7f_dep.pdf Graphic file (type pdf)
-
-<use dir_cec1b5f0a3f18d5a6846e7c281d2df7f_dep.pdf>
+(./dir_897eef481bf1c008ab3c92dc8aa69649.tex
+<dir_897eef481bf1c008ab3c92dc8aa69649_dep.pdf, id=1284, 331.2375pt x 148.555pt>
+File: dir_897eef481bf1c008ab3c92dc8aa69649_dep.pdf Graphic file (type pdf)
+<use dir_897eef481bf1c008ab3c92dc8aa69649_dep.pdf>
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 40.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 40.
- [11 <./dir_cec1b5f0a3f18d5a6846e7c281d2df7f_dep.pdf>]) (./dir_9ad9e2ce98abb626
-6330d6d2fd4af9e2.tex
-<dir_9ad9e2ce98abb6266330d6d2fd4af9e2_dep.pdf, id=997, 186.6975pt x 169.63374pt
->
-File: dir_9ad9e2ce98abb6266330d6d2fd4af9e2_dep.pdf Graphic file (type pdf)
- <use dir_9ad9e2ce98abb6266330d6d2fd4af9e2_dep.pdf>)
-(./dir_0f206d01559261ba9e888c85cb981711.tex
-<dir_0f206d01559261ba9e888c85cb981711_dep.pdf, id=998, 166.6225pt x 169.63374pt
->
-File: dir_0f206d01559261ba9e888c85cb981711_dep.pdf Graphic file (type pdf)
- <use dir_0f206d01559261ba9e888c85cb981711_dep.pdf> [12 <./dir_9ad9e2ce98abb626
-6330d6d2fd4af9e2_dep.pdf>]) [13 <./dir_0f206d01559261ba9e888c85cb981711_dep.pdf
->] [14
+ [13 <./dir_897eef481bf1c008ab3c92dc8aa69649_dep.pdf>]) (./dir_d875e952815ed604
+0c6e93ce438a4156.tex
+<dir_d875e952815ed6040c6e93ce438a4156_dep.pdf, id=1308, 186.6975pt x 169.63374p
+t>
+File: dir_d875e952815ed6040c6e93ce438a4156_dep.pdf Graphic file (type pdf)
+ <use dir_d875e952815ed6040c6e93ce438a4156_dep.pdf> [14 <./dir_d875e952815ed604
+0c6e93ce438a4156_dep.pdf>]) (./dir_40c0c349231f922dae90aa93d1df3de5.tex
+<dir_40c0c349231f922dae90aa93d1df3de5_dep.pdf, id=1323, 166.6225pt x 169.63374p
+t>
+File: dir_40c0c349231f922dae90aa93d1df3de5_dep.pdf Graphic file (type pdf)
+ <use dir_40c0c349231f922dae90aa93d1df3de5_dep.pdf>) [15 <./dir_40c0c349231f922
+dae90aa93d1df3de5_dep.pdf>] [16
 
 ]
 Chapter 7.
 (./classiDecoder.tex) (./classiInterpreter.tex) (./classiLoader.tex)
 (./classiMemory.tex
-<classiMemory__inherit__graph.pdf, id=1035, 138.5175pt x 160.6pt>
+<classiMemory__inherit__graph.pdf, id=1345, 138.5175pt x 160.6pt>
 File: classiMemory__inherit__graph.pdf Graphic file (type pdf)
 
 <use classiMemory__inherit__graph.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-Overfull \hbox (16.19907pt too wide) in paragraph at lines 18--20
+ [17]
+Overfull \hbox (16.19907pt too wide) in paragraph at lines 19--21
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 Re-serve \T1/phv/m/n/10 
 (const [][]iWord[][] &initial_-address, const [][]iWord[][] &length)=0
  []
 
 
-Overfull \hbox (16.19907pt too wide) in paragraph at lines 33--35
+Overfull \hbox (16.19907pt too wide) in paragraph at lines 34--36
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 Re-serve \T1/phv/m/n/10 
 (const [][]iWord[][] &initial_-address, const [][]iWord[][] &length)=0
  []
 
 ) (./structInstruction.tex) (./classiObjParser.tex) (./classiRegister.tex
-[16pdfTeX warning (ext4): destination with the same identifier (name{classiMemo
+[18pdfTeX warning (ext4): destination with the same identifier (name{classiMemo
 ry_a27750e74d09fb473c163a4cc4c3e697b}) has been already used, duplicate ignored
 
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.12 I
-      nheritance diagram for iRegister:\nopagebreakpdfTeX warning (ext4): desti
-nation with the same identifier (name{classiMemory_a58fea9cebc1beb89503898d2d5f
-79bcd}) has been already used, duplicate ignored
+      nheritance diagram for iRegister:pdfTeX warning (ext4): destination with 
+the same identifier (name{classiMemory_a58fea9cebc1beb89503898d2d5f79bcd}) has 
+been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.12 I
-      nheritance diagram for iRegister:\nopagebreakpdfTeX warning (ext4): desti
-nation with the same identifier (name{classiMemory_a2632c9999797b0799a7d6b0a59b
-fa91a}) has been already used, duplicate ignored
+      nheritance diagram for iRegister:pdfTeX warning (ext4): destination with 
+the same identifier (name{classiMemory_a2632c9999797b0799a7d6b0a59bfa91a}) has 
+been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.12 I
-      nheritance diagram for iRegister:\nopagebreak <./classiMemory__inherit__g
-raph.pdf>] <classiRegister__inherit__graph.pdf, id=1084, 138.5175pt x 160.6pt>
+      nheritance diagram for iRegister: <./classiMemory__inherit__graph.pdf>]
+<classiRegister__inherit__graph.pdf, id=1395, 136.51pt x 160.6pt>
 File: classiRegister__inherit__graph.pdf Graphic file (type pdf)
 
-<use classiRegister__inherit__graph.pdf> [17 <./classiRegister__inherit__graph.
+<use classiRegister__inherit__graph.pdf> [19 <./classiRegister__inherit__graph.
 pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 73.
- (/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ot1pcr.fd
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 74.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
 LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
-(Font)              using `OT1/pcr/m/n' instead on input line 73.
+(Font)              using `OT1/pcr/m/n' instead on input line 74.
 
-[18]
+[20]
 LaTeX Font Info:    Font shape `OT1/phv/bc/it' in size <10> not available
-(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 96.
+(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 96.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 104.
- (/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/t1pcr.fd
+(Font)              scaled to size 8.99994pt on input line 97.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 105.
+ (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 104.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 105.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 104.
+(Font)              scaled to size 8.99994pt on input line 105.
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 103--106
+Overfull \hbox (22.2886pt too wide) in alignment at lines 104--107
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 106
+Underfull \vbox (badness 10000) detected at line 107
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 128--131
+Overfull \hbox (22.2886pt too wide) in alignment at lines 129--132
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 131
+Underfull \vbox (badness 10000) detected at line 132
  []
 
-[19]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 176--179
+[21]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 177--180
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 179
+Underfull \vbox (badness 10000) detected at line 180
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 201--204
+Overfull \hbox (22.2886pt too wide) in alignment at lines 202--205
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 204
+Underfull \vbox (badness 10000) detected at line 205
  []
 
-[20]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 249--252
+[22]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 250--253
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 252
+Underfull \vbox (badness 10000) detected at line 253
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 274--277
+Overfull \hbox (22.2886pt too wide) in alignment at lines 275--278
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 277
+Underfull \vbox (badness 10000) detected at line 278
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 302--305
+Overfull \hbox (22.2886pt too wide) in alignment at lines 303--306
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 305
+Underfull \vbox (badness 10000) detected at line 306
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 327--330
+Overfull \hbox (22.2886pt too wide) in alignment at lines 328--331
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 330
+Underfull \vbox (badness 10000) detected at line 331
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 398--401
+ [23]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 399--402
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 401
+Underfull \vbox (badness 10000) detected at line 402
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 423--426
+ [24]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 424--427
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 426
+Underfull \vbox (badness 10000) detected at line 427
  []
 
-[23]) (./classiSimulator.tex
+[25]) (./classiSimulator.tex
 Overfull \hbox (31.91226pt too wide) in paragraph at lines 14--16
 []\T1/phv/m/n/10 virtual bool \T1/phv/bc/n/10 Add \T1/phv/m/n/10 (const REGISTE
 R_-ID DR, const REGISTER_-ID SR1, const REGISTER_-
@@ -1431,381 +1475,700 @@ Overfull \hbox (1.19582pt too wide) in paragraph at lines 29--31
 R_-ID DR, const REGISTER_-ID SR1, const [][]iWord[][]
  []
 
-) (./classiWi11.tex [24]
-Overfull \hbox (55.73283pt too wide) in paragraph at lines 37--39
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID DR, const Decoder::REGISTER_-
+) (./classiWi11.tex
+<classiWi11__inherit__graph.pdf, id=1569, 120.45pt x 160.6pt>
+File: classiWi11__inherit__graph.pdf Graphic file (type pdf)
+
+<use classiWi11__inherit__graph.pdf> [26]
+Overfull \hbox (58.36087pt too wide) in paragraph at lines 38--39
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder::REGISTER_-
+ID DR, const Decoder::REGISTER_-
  []
 
 
-Overfull \hbox (55.73283pt too wide) in paragraph at lines 42--44
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID DR, const Decoder::REGISTER_-
+Overfull \hbox (58.36087pt too wide) in paragraph at lines 40--41
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder::REGISTER_-
+ID DR, const Decoder::REGISTER_-
+ []
+
+[27 <./classiWi11__inherit__graph.pdf>]
+Overfull \hbox (58.36087pt too wide) in paragraph at lines 42--43
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-And[][] (const Decoder::REGISTER_-
+ID DR, const Decoder::REGISTER_-
  []
 
 
-Overfull \hbox (55.79579pt too wide) in paragraph at lines 47--49
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-And \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID DR, const Decoder::REGISTER_-
+Overfull \hbox (58.36087pt too wide) in paragraph at lines 44--45
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-And[][] (const Decoder::REGISTER_-
+ID DR, const Decoder::REGISTER_-
  []
 
 
-Overfull \hbox (55.79579pt too wide) in paragraph at lines 52--54
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-And \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID DR, const Decoder::REGISTER_-
+Overfull \hbox (45.44553pt too wide) in paragraph at lines 58--59
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-LoadR[][] (const Decoder::REGISTER
+_-ID DR, Decoder::REGISTER_-
  []
 
 
-Overfull \hbox (40.99037pt too wide) in paragraph at lines 87--89
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-LoadR \T1/phv/m/n/10 (
-const Decoder::REGISTER_-ID DR, Decoder::REGISTER_-
+Overfull \hbox (56.3539pt too wide) in paragraph at lines 60--61
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Not[][] (const Decoder::REGISTER_-
+ID DR, const Decoder::REGISTER_-
+ []
+
+[28]
+Overfull \hbox (64.977pt too wide) in paragraph at lines 68--69
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-STR[][] (const Decoder::REGISTER_-
+ID SR1, const Decoder::REGISTER_-
  []
 
 
-Overfull \hbox (53.74388pt too wide) in paragraph at lines 92--94
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Not \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID DR, const Decoder::REGISTER_-
- []
-
-
-Overfull \hbox (60.83693pt too wide) in paragraph at lines 112--114
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-STR \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID SR1, const Decoder::REGISTER_-
- []
-
-) (./classiWord.tex
-<classiWord__inherit__graph.pdf, id=1299, 122.4575pt x 160.6pt>
-File: classiWord__inherit__graph.pdf Graphic file (type pdf)
-
-<use classiWord__inherit__graph.pdf> [25] [26 <./classiWord__inherit__graph.pdf
->] [27] [28] [29]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 218--221
+Overfull \hbox (22.2886pt too wide) in alignment at lines 114--117
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 221
+Underfull \vbox (badness 10000) detected at line 117
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 247--250
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 141--148
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 250
+Underfull \vbox (badness 10000) detected at line 148
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 178--185
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 185
  []
 
 [30]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 276--279
+Overfull \hbox (22.2886pt too wide) in alignment at lines 215--222
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 279
+Underfull \vbox (badness 10000) detected at line 222
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 305--308
+Overfull \hbox (22.2886pt too wide) in alignment at lines 252--259
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 308
+Underfull \vbox (badness 10000) detected at line 259
  []
 
 [31]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 356--359
+Overfull \hbox (22.2886pt too wide) in alignment at lines 287--290
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 359
+Underfull \vbox (badness 10000) detected at line 290
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 407--410
+Overfull \hbox (22.2886pt too wide) in alignment at lines 332--335
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 410
+Underfull \vbox (badness 10000) detected at line 335
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [32]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 435--438
+[32]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 364--367
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 438
+Underfull \vbox (badness 10000) detected at line 367
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 486--489
+Overfull \hbox (22.2886pt too wide) in alignment at lines 396--401
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 489
+Underfull \vbox (badness 10000) detected at line 401
  []
 
 [33]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 511--514
+Overfull \hbox (22.2886pt too wide) in alignment at lines 430--435
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 514
+Underfull \vbox (badness 10000) detected at line 435
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 467--474
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 474
  []
 
 [34]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 576--579
+Overfull \hbox (22.2886pt too wide) in alignment at lines 505--510
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 579
+Underfull \vbox (badness 10000) detected at line 510
  []
 
 [35]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 709--712
+Overfull \hbox (22.2886pt too wide) in alignment at lines 568--573
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 712
+Underfull \vbox (badness 10000) detected at line 573
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 599--604
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 604
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 631--638
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 638
+ []
+
+[36]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 663--666
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 666
+ []
+
+[37]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 706--709
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 709
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/pcr/bc/it' undefined
+(Font)              using `OT1/pcr/bc/n' instead on input line 772.
+
+[38]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 779--782
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 782
+ []
+
+) (./classiWord.tex
+<classiWord__inherit__graph.pdf, id=1786, 122.4575pt x 160.6pt>
+File: classiWord__inherit__graph.pdf Graphic file (type pdf)
+
+<use classiWord__inherit__graph.pdf> [39 <./classiWord__inherit__graph.pdf>]
+[40] [41] [42] [43]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 219--222
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 222
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 248--251
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 251
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 277--280
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 280
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 738--741
+ [44]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 306--309
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 741
+Underfull \vbox (badness 10000) detected at line 309
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 767--770
+Overfull \hbox (22.2886pt too wide) in alignment at lines 357--360
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 770
+Underfull \vbox (badness 10000) detected at line 360
+ []
+
+[45]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 408--411
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 411
+ []
+
+[46]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 436--439
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 439
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 487--490
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 490
+ []
+
+[47]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 512--515
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 515
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 577--580
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 580
+ []
+
+[48] [49]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 710--713
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 713
+ []
+
+[50]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 739--742
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 742
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 768--771
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 771
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{classiWord_ac
 5967eac5182607ac41b9ce6c3a74cb8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.789 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-                                                   [37]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 796--799
+l.790 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+                                                  
+Overfull \hbox (22.2886pt too wide) in alignment at lines 797--800
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 799
+Underfull \vbox (badness 10000) detected at line 800
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{classiWord_a1
-46bf924df8cbb03fbe8152e5e44edbe}) has been already used, duplicate ignored
+[51]pdfTeX warning (ext4): destination with the same identifier (name{classiWor
+d_a146bf924df8cbb03fbe8152e5e44edbe}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.820 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+l.821 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{classiWord_a8e2da1fb4c3ffcc78e1d94f1798797
 ec}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.840 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+l.841 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
                                                   
-Overfull \hbox (22.2886pt too wide) in alignment at lines 847--850
+Overfull \hbox (22.2886pt too wide) in alignment at lines 848--851
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 850
+Underfull \vbox (badness 10000) detected at line 851
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{classiWord_a8
 fbd3f879952196cca2e4f03bac3890b}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.871 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-                                                   [38]pdfTeX warning (ext4): d
-estination with the same identifier (name{classiWord_ad9caea73d7a990bf5189ba1e4
-4ec7865}) has been already used, duplicate ignored
+l.872 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{classiWord_ad9caea73d7a990bf5189ba1e44ec78
+65}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.891 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-                                                  
-Overfull \hbox (22.2886pt too wide) in alignment at lines 898--901
+l.892 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+                                                   [52]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 899--902
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 901
+Underfull \vbox (badness 10000) detected at line 902
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{classiWord_a2
 f57b8b8739d1ce6c043494696a9f685}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.919 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+l.920 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
                                                   
-Overfull \hbox (22.2886pt too wide) in alignment at lines 926--929
+Overfull \hbox (22.2886pt too wide) in alignment at lines 927--930
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 929
+Underfull \vbox (badness 10000) detected at line 930
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{classiWord_a6
 a7602a8220d84b5201a789b597fbbde}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.947 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-                                                   [39]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 977--980
+l.948 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+                                                   [53]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 978--981
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 980
+Underfull \vbox (badness 10000) detected at line 981
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{classiWord_a5
 6d5d0a8d7e27cf8ef161f8e128ace83}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.995 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+l.996 ...ttfamily  \mbox{[}pure virtual\mbox{]}}}}
                                                   
-Overfull \hbox (22.2886pt too wide) in alignment at lines 1002--1005
+Overfull \hbox (22.2886pt too wide) in alignment at lines 1003--1006
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1005
+Underfull \vbox (badness 10000) detected at line 1006
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{classiWord_af
 20040c25b79d2aeae41f1714fbb2cbc}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1020 ...tfamily  \mbox{[}pure virtual\mbox{]}}}}
-                                                   [40]pdfTeX warning (ext4): d
-estination with the same identifier (name{classiWord_a6777f6f41915179c4255d3647
-a9eb4b5}) has been already used, duplicate ignored
+l.1021 ...tfamily  \mbox{[}pure virtual\mbox{]}}}}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{classiWord_a6777f6f41915179c4255d3647a9eb4
+b5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1040 ...tfamily  \mbox{[}pure virtual\mbox{]}}}}
+l.1041 ...tfamily  \mbox{[}pure virtual\mbox{]}}}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{classiWord_a0e83901b08763247527ce61c89fd84
 7f}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1060 ...tfamily  \mbox{[}pure virtual\mbox{]}}}}
-                                                  
-Overfull \hbox (22.2886pt too wide) in alignment at lines 1067--1070
+l.1061 ...tfamily  \mbox{[}pure virtual\mbox{]}}}}
+                                                   [54]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 1068--1071
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1070
+Underfull \vbox (badness 10000) detected at line 1071
  []
 
 ) (./classMemory.tex
-<classMemory__inherit__graph.pdf, id=1615, 138.5175pt x 160.6pt>
+<classMemory__inherit__graph.pdf, id=2082, 138.5175pt x 160.6pt>
 File: classMemory__inherit__graph.pdf Graphic file (type pdf)
 
 <use classMemory__inherit__graph.pdf>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41]
-<classMemory__coll__graph.pdf, id=1621, 138.5175pt x 160.6pt>
+<classMemory__coll__graph.pdf, id=2083, 138.5175pt x 160.6pt>
 File: classMemory__coll__graph.pdf Graphic file (type pdf)
 
 <use classMemory__coll__graph.pdf>
-Overfull \hbox (5.93924pt too wide) in paragraph at lines 27--29
+Underfull \vbox (badness 3009) has occurred while \output is active []
+
+ [55 <./classMemory__inherit__graph.pdf>]
+Overfull \hbox (5.93924pt too wide) in paragraph at lines 29--31
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 Re-serve \T1/phv/m/n/10 
 (const [][]iWord[][] &initial_-address, const [][]iWord[][] &length)
  []
 
 
-Overfull \hbox (5.93924pt too wide) in paragraph at lines 42--44
+Overfull \hbox (5.93924pt too wide) in paragraph at lines 44--46
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 Re-serve \T1/phv/m/n/10 
 (const [][]iWord[][] &initial_-address, const [][]iWord[][] &length)
  []
 
-[42 <./classMemory__inherit__graph.pdf> <./classMemory__coll__graph.pdf>])
-(./structObjectData.tex) (./classRegister.tex
-<classRegister__inherit__graph.pdf, id=1663, 138.5175pt x 160.6pt>
+) (./structObjectData.tex) (./classRegister.tex
+<classRegister__inherit__graph.pdf, id=2111, 136.51pt x 160.6pt>
 File: classRegister__inherit__graph.pdf Graphic file (type pdf)
 
-<use classRegister__inherit__graph.pdf>
-<classRegister__coll__graph.pdf, id=1664, 197.73875pt x 234.8775pt>
+<use classRegister__inherit__graph.pdf> [56 <./classMemory__coll__graph.pdf>]
+<classRegister__coll__graph.pdf, id=2140, 195.73125pt x 234.8775pt>
 File: classRegister__coll__graph.pdf Graphic file (type pdf)
 
-<use classRegister__coll__graph.pdf>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43 <./classRegister__inherit__graph.pdf>] [44 <./classRegister__coll__graph.p
-df>]
-[45]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 117--120
+<use classRegister__coll__graph.pdf> [57 <./classRegister__inherit__graph.pdf> 
+<./classRegister__coll__graph.pdf>] [58]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 119--122
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 120
+Underfull \vbox (badness 10000) detected at line 122
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 142--145
+Underfull \vbox (badness 3396) has occurred while \output is active []
+
+ [59]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 144--147
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 145
+Underfull \vbox (badness 10000) detected at line 147
  []
 
 
-Underfull \vbox (badness 3525) has occurred while \output is active []
-
- [46]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 190--193
+Overfull \hbox (22.2886pt too wide) in alignment at lines 192--195
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 193
+Underfull \vbox (badness 10000) detected at line 195
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 215--218
+Overfull \hbox (22.2886pt too wide) in alignment at lines 217--220
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 218
+Underfull \vbox (badness 10000) detected at line 220
  []
 
-[47]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 263--266
+
+Overfull \vbox (2.9538pt too high) has occurred while \output is active []
+
+
+[60]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 265--268
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 266
+Underfull \vbox (badness 10000) detected at line 268
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 290--293
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 293
+ []
+
+[61]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 318--321
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 321
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 343--346
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 346
+ []
+
+[62]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 414--417
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 417
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 439--442
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 442
+ []
+
+[63]) (./classResultDecoder.tex) (./classWi11.tex
+<classWi11__inherit__graph.pdf, id=2274, 120.45pt x 160.6pt>
+File: classWi11__inherit__graph.pdf Graphic file (type pdf)
+
+<use classWi11__inherit__graph.pdf>
+Underfull \vbox (badness 2980) has occurred while \output is active []
+
+ [64pdfTeX warning (ext4): destination with the same identifier (name{classResu
+ltDecoder_af36f0e04752a354748bbada8c480c2b5}) has been already used, duplicate 
+ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.15 
+     ] <classWi11__coll__graph.pdf, id=2283, 274.02374pt x 307.1475pt>
+File: classWi11__coll__graph.pdf Graphic file (type pdf)
+
+<use classWi11__coll__graph.pdf> [65 <./classWi11__inherit__graph.pdf> <./class
+Wi11__coll__graph.pdf>]
+Overfull \hbox (32.09047pt too wide) in paragraph at lines 41--42
+[]\T1/phv/m/n/10 Codes::RESULT [][]_-Add[][] (const Decoder::REGISTER_-ID DR, c
+onst Decoder::REGISTER_-
+ []
+
+
+Overfull \hbox (32.09047pt too wide) in paragraph at lines 43--44
+[]\T1/phv/m/n/10 Codes::RESULT [][]_-Add[][] (const Decoder::REGISTER_-ID DR, c
+onst Decoder::REGISTER_-
+ []
+
+
+Overfull \hbox (32.09047pt too wide) in paragraph at lines 45--46
+[]\T1/phv/m/n/10 Codes::RESULT [][]_-And[][] (const Decoder::REGISTER_-ID DR, c
+onst Decoder::REGISTER_-
+ []
+
+
+Overfull \hbox (32.09047pt too wide) in paragraph at lines 47--48
+[]\T1/phv/m/n/10 Codes::RESULT [][]_-And[][] (const Decoder::REGISTER_-ID DR, c
+onst Decoder::REGISTER_-
+ []
+
+[66]
+Overfull \hbox (19.17513pt too wide) in paragraph at lines 61--62
+[]\T1/phv/m/n/10 Codes::RESULT [][]_-LoadR[][] (const Decoder::REGISTER_-ID DR,
+ Decoder::REGISTER_-
+ []
+
+
+Overfull \hbox (30.0835pt too wide) in paragraph at lines 63--64
+[]\T1/phv/m/n/10 Codes::RESULT [][]_-Not[][] (const Decoder::REGISTER_-ID DR, c
+onst Decoder::REGISTER_-
+ []
+
+
+Overfull \hbox (38.7066pt too wide) in paragraph at lines 71--72
+[]\T1/phv/m/n/10 Codes::RESULT [][]_-STR[][] (const Decoder::REGISTER_-ID SR1, 
+const Decoder::REGISTER_-
+ []
+
+[67]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 115--118
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 118
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 142--149
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 149
+ []
+
+[68]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 179--186
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 186
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 216--223
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 223
+ []
+
+[69]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 253--260
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 260
  []
 
 
@@ -1817,19 +2180,170 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 288--291
 Underfull \vbox (badness 10000) detected at line 291
  []
 
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 316--319
+[70]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 333--336
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 319
+Underfull \vbox (badness 10000) detected at line 336
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 365--368
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 368
+ []
+
+[71]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 397--402
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 402
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 431--436
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 436
+ []
+
+[72]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 468--475
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 475
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 506--511
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 511
+ []
+
+[73]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 569--574
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 574
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 600--605
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 605
+ []
+
+
+Underfull \vbox (badness 2401) has occurred while \output is active []
+
+ [74]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 632--639
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 639
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 664--667
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 667
+ []
+
+[75]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 707--710
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 710
+ []
+
+[76]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 780--783
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 783
+ []
+
+) (./classWord.tex
+<classWord__inherit__graph.pdf, id=2446, 122.4575pt x 160.6pt>
+File: classWord__inherit__graph.pdf Graphic file (type pdf)
+
+<use classWord__inherit__graph.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77]
+<classWord__coll__graph.pdf, id=2453, 122.4575pt x 160.6pt>
+File: classWord__coll__graph.pdf Graphic file (type pdf)
+
+<use classWord__coll__graph.pdf> [78 <./classWord__inherit__graph.pdf> <./class
+Word__coll__graph.pdf>] [79] [80]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 133--136
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 136
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48]
+ [81]
+[82]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 254--257
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 257
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 283--286
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 286
+ []
+
+[83]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 312--315
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 315
+ []
+
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 341--344
  [] [] [] 
  []
@@ -1838,334 +2352,276 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 341--344
 Underfull \vbox (badness 10000) detected at line 344
  []
 
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 412--415
+[84]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 392--395
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 415
+Underfull \vbox (badness 10000) detected at line 395
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 443--446
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 446
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 437--440
+ [85]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 471--474
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 440
+Underfull \vbox (badness 10000) detected at line 474
  []
 
-[50]) (./classResultDecoder.tex) (./classWord.tex
-<classWord__inherit__graph.pdf, id=1812, 122.4575pt x 160.6pt>
-File: classWord__inherit__graph.pdf Graphic file (type pdf)
 
-<use classWord__inherit__graph.pdf>
-<classWord__coll__graph.pdf, id=1813, 122.4575pt x 160.6pt>
-File: classWord__coll__graph.pdf Graphic file (type pdf)
+Overfull \hbox (22.2886pt too wide) in alignment at lines 522--525
+ [] [] [] 
+ []
 
-<use classWord__coll__graph.pdf> [51pdfTeX warning (ext4): destination with the
- same identifier (name{classResultDecoder_af36f0e04752a354748bbada8c480c2b5}) h
-as been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.23 \subsection
-                *{Public Member Functions} <./classWord__inherit__graph.pdf>]
-[52 <./classWord__coll__graph.pdf>] [53] [54]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 131--134
+Underfull \vbox (badness 10000) detected at line 525
+ []
+
+[86]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 547--550
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 550
+ []
+
+[87]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 612--615
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 615
+ []
+
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 645--648
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 134
+Underfull \vbox (badness 10000) detected at line 648
  []
 
-[55]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 252--255
+[88] [89]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 766--769
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 255
+Underfull \vbox (badness 10000) detected at line 769
  []
 
-[56]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 281--284
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 795--798
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 284
+Underfull \vbox (badness 10000) detected at line 798
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 310--313
+Overfull \hbox (22.2886pt too wide) in alignment at lines 824--827
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 313
- []
-
-[57]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 339--342
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 342
- []
-
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 390--393
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 393
+Underfull \vbox (badness 10000) detected at line 827
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 441--444
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 444
- []
-
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 469--472
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 472
- []
-
-
-Underfull \vbox (badness 2538) has occurred while \output is active []
-
- [59]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 520--523
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 523
- []
-
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 545--548
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 548
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [60]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 610--613
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 613
- []
-
-[61]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 643--646
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 646
- []
-
-[62]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 764--767
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 767
- []
-
-[63]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 793--796
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 796
- []
-
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 822--825
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 825
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{classWord_ae9
-478910c6cb8c30abeedf7fc6ba5b36}) has been already used, duplicate ignored
+ [90]pdfTeX warning (ext4): destination with the same identifier (name{classWor
+d_ae9478910c6cb8c30abeedf7fc6ba5b36}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.844 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+l.846 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
                                                   
-Overfull \hbox (22.2886pt too wide) in alignment at lines 851--854
+Overfull \hbox (22.2886pt too wide) in alignment at lines 853--856
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 854
+Underfull \vbox (badness 10000) detected at line 856
  []
 
-
-Overfull \vbox (5.58429pt too high) has occurred while \output is active []
-
-
-[64]pdfTeX warning (ext4): destination with the same identifier (name{classWord
-_a0fa830d2d54ba68107d035c316b8d3ab}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{classWord_a0f
+a830d2d54ba68107d035c316b8d3ab}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.875 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+l.877 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{classWord_aef1af160cdcc631473aec52ea883e2e
 5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.895 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+l.897 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
                                                   
-Overfull \hbox (22.2886pt too wide) in alignment at lines 902--905
+Overfull \hbox (22.2886pt too wide) in alignment at lines 904--907
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 905
+Underfull \vbox (badness 10000) detected at line 907
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{classWord_af9
-30dcccdcf2cdbb90df31ac61a4933c}) has been already used, duplicate ignored
+[91]pdfTeX warning (ext4): destination with the same identifier (name{classWord
+_af930dcccdcf2cdbb90df31ac61a4933c}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.926 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+l.928 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{classWord_a08eca1ca0af51daee452ba719f9407c
 5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.946 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-                                                   [65]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 953--956
+l.948 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+                                                  
+Overfull \hbox (22.2886pt too wide) in alignment at lines 955--958
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 956
+Underfull \vbox (badness 10000) detected at line 958
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{classWord_a68
 1da292897265ae47f144a99d49d9ec}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.974 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-                                                  
-Overfull \hbox (22.2886pt too wide) in alignment at lines 981--984
+l.976 ...cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+                                                   [92]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 983--986
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 984
+Underfull \vbox (badness 10000) detected at line 986
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{classWord_afd
 ecfa9e3f2fda36496f249617a4cef5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1002 ...m}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-                                                   [66]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 1032--1035
+l.1004 ...m}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+                                                  
+Overfull \hbox (22.2886pt too wide) in alignment at lines 1034--1037
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1035
+Underfull \vbox (badness 10000) detected at line 1037
  []
 
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 1057--1060
+[93]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 1059--1062
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1060
+Underfull \vbox (badness 10000) detected at line 1062
  []
 
-[67]pdfTeX warning (ext4): destination with the same identifier (name{classWord
-_a0b08a81ced05b38d3d719ef70ecb3215}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{classWord_a0b
+08a81ced05b38d3d719ef70ecb3215}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1115 ...m}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+l.1117 ...m}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
                                                   
-Overfull \hbox (22.2886pt too wide) in alignment at lines 1122--1125
+Overfull \hbox (22.2886pt too wide) in alignment at lines 1124--1127
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1125
+Underfull \vbox (badness 10000) detected at line 1127
  []
 
-) [68]
+[94]) [95] [96
+
+]
 Chapter 8.
-(./iRegister_8h.tex <iRegister_8h__incl.pdf, id=2061, 146.5475pt x 218.8175pt>
+(./iRegister_8h.tex <iRegister_8h__incl.pdf, id=2701, 144.54pt x 218.8175pt>
 File: iRegister_8h__incl.pdf Graphic file (type pdf)
 
 <use iRegister_8h__incl.pdf>
-<iRegister_8h__dep__incl.pdf, id=2062, 305.14pt x 160.6pt>
+<iRegister_8h__dep__incl.pdf, id=2702, 303.1325pt x 218.8175pt>
 File: iRegister_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use iRegister_8h__dep__incl.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69
+ [97 <./iRegister_8h__incl.pdf>]) (./iWi11_8h.tex
+<iWi11_8h__incl.pdf, id=2716, 467.7475pt x 277.035pt>
+File: iWi11_8h__incl.pdf Graphic file (type pdf)
+ <use iWi11_8h__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 14--16
+ [] 
+ []
 
- <./iRegister_8h__incl.pdf>]) (./Register_8h.tex
-<Register_8h__incl.pdf, id=2076, 214.8025pt x 277.035pt>
+
+Underfull \vbox (badness 3209) has occurred while \output is active []
+
+ [98 <./iRegister_8h__dep__incl.pdf>]
+<iWi11_8h__dep__incl.pdf, id=2730, 130.4875pt x 160.6pt>
+File: iWi11_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use iWi11_8h__dep__incl.pdf> [99 <./iWi11_8h__incl.pdf> <./iWi11_8h__dep__incl
+.pdf>]) (./Register_8h.tex
+<Register_8h__incl.pdf, id=2754, 210.7875pt x 277.035pt>
 File: Register_8h__incl.pdf Graphic file (type pdf)
 
 <use Register_8h__incl.pdf>
+<Register_8h__dep__incl.pdf, id=2755, 142.5325pt x 160.6pt>
+File: Register_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use Register_8h__dep__incl.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70 <./iRegister_8h__dep__incl.pdf>]) (./refman.ind [71 <./Register_8h__incl.p
-df>]
-Overfull \hbox (1.9418pt too wide) in paragraph at lines 26--27
-[]\T1/phv/m/n/10 code/MemoryTest/ Di-rec-tory Ref-er-ence, [][]12[][] 
+ [100 <./Register_8h__incl.pdf>]) (./Wi11_8h.tex
+<Wi11_8h__incl.pdf, id=2769, 728.7225pt x 335.2525pt>
+File: Wi11_8h__incl.pdf Graphic file (type pdf)
+ <use Wi11_8h__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 14--16
+ [] 
  []
 
-[72
 
-] [73] [74
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [101 <./Register_8h__dep__incl.pdf>]) (./refman.ind [102 <./Wi11_8h__incl.pdf>
+]
+Overfull \hbox (1.9418pt too wide) in paragraph at lines 74--75
+[]\T1/phv/m/n/10 code/MemoryTest/ Di-rec-tory Ref-er-ence, [][]14[][] 
+ []
+
+[103
+
+] [104] [105] [106
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 9C4E80386E508C4B283F5B4AB9110BAD;20305.
+(rerunfilecheck)             Checksum: 5A6B4EA234A1581539D8D2CC1E32A4F1;27180.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2178,26 +2634,24 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11040 strings out of 495074
- 168848 string characters out of 3182082
- 250703 words of memory out of 3000000
- 13388 multiletter control sequences out of 15000+200000
+ 11496 strings out of 493738
+ 174923 string characters out of 3148797
+ 258578 words of memory out of 3000000
+ 13786 multiletter control sequences out of 15000+200000
  64895 words of font info for 83 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 42i,12n,58p,751b,587s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/opt/local/share/texmf-texlive-dist/fonts/enc/dvips/base/8r.enc}</opt/local/
-share/texmf-texlive-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/
-share/texmf-texlive-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/
-share/texmf-texlive-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/local/share/t
-exmf-texlive-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/local/share/texmf-t
-exlive-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></opt/local/share/texmf-texliv
-e-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></opt/local/share/texmf-texlive-di
-st/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/local/share/texmf-texlive-dist/fon
-ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (80 pages, 285038 bytes).
+ 714 hyphenation exceptions out of 8191
+ 42i,12n,58p,774b,592s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.
+pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texm
+f-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texmf-dist/fonts/type1/
+urw/helvetic/uhvbo8ac.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8
+a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (114 pages, 399078 bytes).
 PDF statistics:
- 2474 PDF objects out of 2487 (max. 8388607)
- 2315 compressed objects within 24 object streams
- 518 named destinations out of 1000 (max. 500000)
- 1388 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3287 PDF objects out of 3580 (max. 8388607)
+ 3066 compressed objects within 31 object streams
+ 679 named destinations out of 1000 (max. 500000)
+ 1871 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -46,7 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <h2><a class="anchor" id="intro"></a>
 Introduction</h2>
-<p>The "Wi-11 Machine" is a simple, 16-bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). This software package is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-the-scenes details, one must understand the environment. In particular, an understanding the object file syntax and the interactions between the components used in this project is necessary.</p>
+<p>The "Wi-11 Machine" is a simple, 16-bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). This software package is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-the-scenes details, one must understand the environment. In particular, an understanding of the object file syntax and the interactions between the components used in this project is necessary.</p>
 <h2><a class="anchor" id="syntax"></a>
 Object Files</h2>
 <dl class="user"><dt><b></b></dt><dd>The object files (ususally file_name.o) that this simulator accepts are ascii text files with the following structure: <ul>
@@ -75,7 +75,7 @@ Text Records</h3>
 <li>A second 4-digit Hexadecimal value -- The encoding of the instruction to be stored. </li>
 </ul>
 </dd></dl>
-<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is a T, the location to store the instruction, and the instruction itself.</dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is a 'T', the location to store the instruction, and the instruction itself.</dd></dl>
 <h3><a class="anchor" id="end"></a>
 The End Record</h3>
 <dl class="user"><dt><b></b></dt><dd>The End Record is, as the name would suggest, the last line of the line. Its purpose is to denote the end of instructions to be written and to give an initial value for the PC.<br/>
@@ -87,13 +87,14 @@ The End Record</h3>
 <li>Next, and last, a 4-digit hexadecimal value to be put into the PC. </li>
 </ul>
 </dd></dl>
-<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is an E, and the location in memory from which the first instruction should be fetched.</dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is an 'E', and the location in memory from which the first instruction should be fetched.</dd></dl>
 <h2><a class="anchor" id="Component"></a>
 Interactions</h2>
-<div align="center">
-<img src="software_interaction.png" alt="software_interaction.png"/>
+<h3><a class="anchor" id="components"></a>
+Components</h3>
+<h3><a class="anchor" id="instructions"></a>
+Wi11 Instruction Set</h3>
 </div>
- </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -108,7 +109,7 @@ Interactions</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 20:29:39 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 01:05:32 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

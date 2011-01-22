@@ -4,161 +4,217 @@
 \contentsline {subsection}{\numberline {1.2.1}The Header Record}{1}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Text Records}{2}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}The End Record}{2}{subsection.1.2.3}
-\contentsline {section}{\numberline {1.3}Interactions}{2}{section.1.3}
-\contentsline {chapter}{\numberline {2}Directory Hierarchy}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Directories}{3}{section.2.1}
-\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Class Hierarchy}{5}{section.3.1}
-\contentsline {chapter}{\numberline {4}Class Index}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Class List}{7}{section.4.1}
-\contentsline {chapter}{\numberline {5}File Index}{9}{chapter.5}
-\contentsline {section}{\numberline {5.1}File List}{9}{section.5.1}
-\contentsline {chapter}{\numberline {6}Directory Documentation}{11}{chapter.6}
-\contentsline {section}{\numberline {6.1}code/ Directory Reference}{11}{section.6.1}
-\contentsline {section}{\numberline {6.2}code/MemoryTest/ Directory Reference}{12}{section.6.2}
-\contentsline {section}{\numberline {6.3}code/test/ Directory Reference}{13}{section.6.3}
-\contentsline {chapter}{\numberline {7}Class Documentation}{15}{chapter.7}
-\contentsline {section}{\numberline {7.1}iDecoder Class Reference}{15}{section.7.1}
-\contentsline {section}{\numberline {7.2}iInterpreter Class Reference}{15}{section.7.2}
-\contentsline {section}{\numberline {7.3}iLoader Class Reference}{15}{section.7.3}
-\contentsline {section}{\numberline {7.4}iMemory Class Reference}{16}{section.7.4}
-\contentsline {section}{\numberline {7.5}Instruction Struct Reference}{16}{section.7.5}
-\contentsline {section}{\numberline {7.6}iObjParser Class Reference}{16}{section.7.6}
-\contentsline {section}{\numberline {7.7}iRegister Class Reference}{17}{section.7.7}
-\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{18}{subsection.7.7.1}
-\contentsline {subsection}{\numberline {7.7.2}Member Function Documentation}{18}{subsection.7.7.2}
-\contentsline {subsubsection}{\numberline {7.7.2.1}GetValue}{18}{subsubsection.7.7.2.1}
-\contentsline {subsubsection}{\numberline {7.7.2.2}Add}{19}{subsubsection.7.7.2.2}
-\contentsline {subsubsection}{\numberline {7.7.2.3}Add}{19}{subsubsection.7.7.2.3}
-\contentsline {subsubsection}{\numberline {7.7.2.4}operator+}{19}{subsubsection.7.7.2.4}
-\contentsline {subsubsection}{\numberline {7.7.2.5}Subtract}{20}{subsubsection.7.7.2.5}
-\contentsline {subsubsection}{\numberline {7.7.2.6}Subtract}{20}{subsubsection.7.7.2.6}
-\contentsline {subsubsection}{\numberline {7.7.2.7}operator-\/}{20}{subsubsection.7.7.2.7}
-\contentsline {subsubsection}{\numberline {7.7.2.8}And}{20}{subsubsection.7.7.2.8}
-\contentsline {subsubsection}{\numberline {7.7.2.9}And}{21}{subsubsection.7.7.2.9}
-\contentsline {subsubsection}{\numberline {7.7.2.10}Or}{21}{subsubsection.7.7.2.10}
-\contentsline {subsubsection}{\numberline {7.7.2.11}Or}{21}{subsubsection.7.7.2.11}
-\contentsline {subsubsection}{\numberline {7.7.2.12}Not}{22}{subsubsection.7.7.2.12}
-\contentsline {subsubsection}{\numberline {7.7.2.13}Not}{22}{subsubsection.7.7.2.13}
-\contentsline {subsubsection}{\numberline {7.7.2.14}Store}{22}{subsubsection.7.7.2.14}
-\contentsline {subsubsection}{\numberline {7.7.2.15}Store}{23}{subsubsection.7.7.2.15}
-\contentsline {subsubsection}{\numberline {7.7.2.16}operator=}{23}{subsubsection.7.7.2.16}
-\contentsline {subsubsection}{\numberline {7.7.2.17}operator=}{23}{subsubsection.7.7.2.17}
-\contentsline {subsubsection}{\numberline {7.7.2.18}operator++}{23}{subsubsection.7.7.2.18}
-\contentsline {subsubsection}{\numberline {7.7.2.19}operator++}{24}{subsubsection.7.7.2.19}
-\contentsline {section}{\numberline {7.8}iSimulator Class Reference}{24}{section.7.8}
-\contentsline {section}{\numberline {7.9}iWi11 Class Reference}{24}{section.7.9}
-\contentsline {section}{\numberline {7.10}iWord Class Reference}{25}{section.7.10}
-\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{28}{subsection.7.10.1}
-\contentsline {subsection}{\numberline {7.10.2}Member Function Documentation}{29}{subsection.7.10.2}
-\contentsline {subsubsection}{\numberline {7.10.2.1}ToInt}{29}{subsubsection.7.10.2.1}
-\contentsline {subsubsection}{\numberline {7.10.2.2}ToInt2Complement}{29}{subsubsection.7.10.2.2}
-\contentsline {subsubsection}{\numberline {7.10.2.3}ToStr}{29}{subsubsection.7.10.2.3}
-\contentsline {subsubsection}{\numberline {7.10.2.4}ToHex}{30}{subsubsection.7.10.2.4}
-\contentsline {subsubsection}{\numberline {7.10.2.5}FromInt}{30}{subsubsection.7.10.2.5}
-\contentsline {subsubsection}{\numberline {7.10.2.6}FromStr}{30}{subsubsection.7.10.2.6}
-\contentsline {subsubsection}{\numberline {7.10.2.7}FromHex}{31}{subsubsection.7.10.2.7}
-\contentsline {subsubsection}{\numberline {7.10.2.8}Add}{31}{subsubsection.7.10.2.8}
-\contentsline {subsubsection}{\numberline {7.10.2.9}operator+}{32}{subsubsection.7.10.2.9}
-\contentsline {subsubsection}{\numberline {7.10.2.10}Subtract}{32}{subsubsection.7.10.2.10}
-\contentsline {subsubsection}{\numberline {7.10.2.11}operator-\/}{32}{subsubsection.7.10.2.11}
-\contentsline {subsubsection}{\numberline {7.10.2.12}And}{32}{subsubsection.7.10.2.12}
-\contentsline {subsubsection}{\numberline {7.10.2.13}Or}{33}{subsubsection.7.10.2.13}
-\contentsline {subsubsection}{\numberline {7.10.2.14}Not}{33}{subsubsection.7.10.2.14}
-\contentsline {subsubsection}{\numberline {7.10.2.15}Copy}{33}{subsubsection.7.10.2.15}
-\contentsline {subsubsection}{\numberline {7.10.2.16}operator=}{34}{subsubsection.7.10.2.16}
-\contentsline {subsubsection}{\numberline {7.10.2.17}operator++}{34}{subsubsection.7.10.2.17}
-\contentsline {subsubsection}{\numberline {7.10.2.18}operator++}{34}{subsubsection.7.10.2.18}
-\contentsline {subsubsection}{\numberline {7.10.2.19}operator[]}{35}{subsubsection.7.10.2.19}
-\contentsline {subsubsection}{\numberline {7.10.2.20}toInt}{35}{subsubsection.7.10.2.20}
-\contentsline {subsubsection}{\numberline {7.10.2.21}toInt2Complement}{35}{subsubsection.7.10.2.21}
-\contentsline {subsubsection}{\numberline {7.10.2.22}toStr}{36}{subsubsection.7.10.2.22}
-\contentsline {subsubsection}{\numberline {7.10.2.23}toHex}{36}{subsubsection.7.10.2.23}
-\contentsline {subsubsection}{\numberline {7.10.2.24}fromInt}{36}{subsubsection.7.10.2.24}
-\contentsline {subsubsection}{\numberline {7.10.2.25}fromStr}{37}{subsubsection.7.10.2.25}
-\contentsline {subsubsection}{\numberline {7.10.2.26}fromHex}{37}{subsubsection.7.10.2.26}
-\contentsline {subsubsection}{\numberline {7.10.2.27}Add}{38}{subsubsection.7.10.2.27}
-\contentsline {subsubsection}{\numberline {7.10.2.28}operator+}{38}{subsubsection.7.10.2.28}
-\contentsline {subsubsection}{\numberline {7.10.2.29}Subtract}{38}{subsubsection.7.10.2.29}
-\contentsline {subsubsection}{\numberline {7.10.2.30}operator-\/}{39}{subsubsection.7.10.2.30}
-\contentsline {subsubsection}{\numberline {7.10.2.31}And}{39}{subsubsection.7.10.2.31}
-\contentsline {subsubsection}{\numberline {7.10.2.32}Or}{39}{subsubsection.7.10.2.32}
-\contentsline {subsubsection}{\numberline {7.10.2.33}Not}{39}{subsubsection.7.10.2.33}
-\contentsline {subsubsection}{\numberline {7.10.2.34}copy}{40}{subsubsection.7.10.2.34}
-\contentsline {subsubsection}{\numberline {7.10.2.35}operator=}{40}{subsubsection.7.10.2.35}
-\contentsline {subsubsection}{\numberline {7.10.2.36}operator++}{40}{subsubsection.7.10.2.36}
-\contentsline {subsubsection}{\numberline {7.10.2.37}operator++}{41}{subsubsection.7.10.2.37}
-\contentsline {subsubsection}{\numberline {7.10.2.38}operator[]}{41}{subsubsection.7.10.2.38}
-\contentsline {section}{\numberline {7.11}Memory Class Reference}{42}{section.7.11}
-\contentsline {section}{\numberline {7.12}ObjectData Struct Reference}{43}{section.7.12}
-\contentsline {section}{\numberline {7.13}Register Class Reference}{43}{section.7.13}
-\contentsline {subsection}{\numberline {7.13.1}Member Function Documentation}{46}{subsection.7.13.1}
-\contentsline {subsubsection}{\numberline {7.13.1.1}GetValue}{46}{subsubsection.7.13.1.1}
-\contentsline {subsubsection}{\numberline {7.13.1.2}Add}{46}{subsubsection.7.13.1.2}
-\contentsline {subsubsection}{\numberline {7.13.1.3}Add}{46}{subsubsection.7.13.1.3}
-\contentsline {subsubsection}{\numberline {7.13.1.4}operator+}{47}{subsubsection.7.13.1.4}
-\contentsline {subsubsection}{\numberline {7.13.1.5}Subtract}{47}{subsubsection.7.13.1.5}
-\contentsline {subsubsection}{\numberline {7.13.1.6}Subtract}{47}{subsubsection.7.13.1.6}
-\contentsline {subsubsection}{\numberline {7.13.1.7}operator-\/}{47}{subsubsection.7.13.1.7}
-\contentsline {subsubsection}{\numberline {7.13.1.8}And}{48}{subsubsection.7.13.1.8}
-\contentsline {subsubsection}{\numberline {7.13.1.9}And}{48}{subsubsection.7.13.1.9}
-\contentsline {subsubsection}{\numberline {7.13.1.10}Or}{48}{subsubsection.7.13.1.10}
-\contentsline {subsubsection}{\numberline {7.13.1.11}Or}{49}{subsubsection.7.13.1.11}
-\contentsline {subsubsection}{\numberline {7.13.1.12}Not}{49}{subsubsection.7.13.1.12}
-\contentsline {subsubsection}{\numberline {7.13.1.13}Not}{49}{subsubsection.7.13.1.13}
-\contentsline {subsubsection}{\numberline {7.13.1.14}Store}{49}{subsubsection.7.13.1.14}
-\contentsline {subsubsection}{\numberline {7.13.1.15}Store}{50}{subsubsection.7.13.1.15}
-\contentsline {subsubsection}{\numberline {7.13.1.16}operator=}{50}{subsubsection.7.13.1.16}
-\contentsline {subsubsection}{\numberline {7.13.1.17}operator=}{50}{subsubsection.7.13.1.17}
-\contentsline {subsubsection}{\numberline {7.13.1.18}operator++}{50}{subsubsection.7.13.1.18}
-\contentsline {subsubsection}{\numberline {7.13.1.19}operator++}{51}{subsubsection.7.13.1.19}
-\contentsline {section}{\numberline {7.14}ResultDecoder Class Reference}{51}{section.7.14}
-\contentsline {section}{\numberline {7.15}Word Class Reference}{51}{section.7.15}
-\contentsline {subsection}{\numberline {7.15.1}Member Function Documentation}{55}{subsection.7.15.1}
-\contentsline {subsubsection}{\numberline {7.15.1.1}\_\discretionary {-}{}{}hasBit}{55}{subsubsection.7.15.1.1}
-\contentsline {subsubsection}{\numberline {7.15.1.2}toInt}{55}{subsubsection.7.15.1.2}
-\contentsline {subsubsection}{\numberline {7.15.1.3}toInt2Complement}{55}{subsubsection.7.15.1.3}
-\contentsline {subsubsection}{\numberline {7.15.1.4}toStr}{56}{subsubsection.7.15.1.4}
-\contentsline {subsubsection}{\numberline {7.15.1.5}toHex}{56}{subsubsection.7.15.1.5}
-\contentsline {subsubsection}{\numberline {7.15.1.6}fromInt}{56}{subsubsection.7.15.1.6}
-\contentsline {subsubsection}{\numberline {7.15.1.7}fromStr}{57}{subsubsection.7.15.1.7}
-\contentsline {subsubsection}{\numberline {7.15.1.8}fromHex}{57}{subsubsection.7.15.1.8}
-\contentsline {subsubsection}{\numberline {7.15.1.9}Add}{58}{subsubsection.7.15.1.9}
-\contentsline {subsubsection}{\numberline {7.15.1.10}operator+}{58}{subsubsection.7.15.1.10}
-\contentsline {subsubsection}{\numberline {7.15.1.11}Subtract}{58}{subsubsection.7.15.1.11}
-\contentsline {subsubsection}{\numberline {7.15.1.12}operator-\/}{59}{subsubsection.7.15.1.12}
-\contentsline {subsubsection}{\numberline {7.15.1.13}And}{59}{subsubsection.7.15.1.13}
-\contentsline {subsubsection}{\numberline {7.15.1.14}Or}{59}{subsubsection.7.15.1.14}
-\contentsline {subsubsection}{\numberline {7.15.1.15}Not}{60}{subsubsection.7.15.1.15}
-\contentsline {subsubsection}{\numberline {7.15.1.16}copy}{60}{subsubsection.7.15.1.16}
-\contentsline {subsubsection}{\numberline {7.15.1.17}operator=}{60}{subsubsection.7.15.1.17}
-\contentsline {subsubsection}{\numberline {7.15.1.18}operator++}{61}{subsubsection.7.15.1.18}
-\contentsline {subsubsection}{\numberline {7.15.1.19}operator++}{61}{subsubsection.7.15.1.19}
-\contentsline {subsubsection}{\numberline {7.15.1.20}operator[]}{61}{subsubsection.7.15.1.20}
-\contentsline {subsubsection}{\numberline {7.15.1.21}\_\discretionary {-}{}{}HasBit}{62}{subsubsection.7.15.1.21}
-\contentsline {subsubsection}{\numberline {7.15.1.22}ToInt}{62}{subsubsection.7.15.1.22}
-\contentsline {subsubsection}{\numberline {7.15.1.23}ToInt2Complement}{62}{subsubsection.7.15.1.23}
-\contentsline {subsubsection}{\numberline {7.15.1.24}ToStr}{62}{subsubsection.7.15.1.24}
-\contentsline {subsubsection}{\numberline {7.15.1.25}ToHex}{63}{subsubsection.7.15.1.25}
-\contentsline {subsubsection}{\numberline {7.15.1.26}FromInt}{63}{subsubsection.7.15.1.26}
-\contentsline {subsubsection}{\numberline {7.15.1.27}FromStr}{64}{subsubsection.7.15.1.27}
-\contentsline {subsubsection}{\numberline {7.15.1.28}FromHex}{64}{subsubsection.7.15.1.28}
-\contentsline {subsubsection}{\numberline {7.15.1.29}Add}{64}{subsubsection.7.15.1.29}
-\contentsline {subsubsection}{\numberline {7.15.1.30}operator+}{65}{subsubsection.7.15.1.30}
-\contentsline {subsubsection}{\numberline {7.15.1.31}Subtract}{65}{subsubsection.7.15.1.31}
-\contentsline {subsubsection}{\numberline {7.15.1.32}operator-\/}{65}{subsubsection.7.15.1.32}
-\contentsline {subsubsection}{\numberline {7.15.1.33}And}{66}{subsubsection.7.15.1.33}
-\contentsline {subsubsection}{\numberline {7.15.1.34}Or}{66}{subsubsection.7.15.1.34}
-\contentsline {subsubsection}{\numberline {7.15.1.35}Not}{66}{subsubsection.7.15.1.35}
-\contentsline {subsubsection}{\numberline {7.15.1.36}Copy}{67}{subsubsection.7.15.1.36}
-\contentsline {subsubsection}{\numberline {7.15.1.37}operator=}{67}{subsubsection.7.15.1.37}
-\contentsline {subsubsection}{\numberline {7.15.1.38}operator++}{67}{subsubsection.7.15.1.38}
-\contentsline {subsubsection}{\numberline {7.15.1.39}operator++}{67}{subsubsection.7.15.1.39}
-\contentsline {subsubsection}{\numberline {7.15.1.40}operator[]}{68}{subsubsection.7.15.1.40}
-\contentsline {subsection}{\numberline {7.15.2}Member Data Documentation}{68}{subsection.7.15.2}
-\contentsline {subsubsection}{\numberline {7.15.2.1}\_\discretionary {-}{}{}value}{68}{subsubsection.7.15.2.1}
-\contentsline {chapter}{\numberline {8}File Documentation}{69}{chapter.8}
-\contentsline {section}{\numberline {8.1}iRegister.h File Reference}{69}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{70}{subsection.8.1.1}
-\contentsline {section}{\numberline {8.2}Register.h File Reference}{70}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{71}{subsection.8.2.1}
+\contentsline {section}{\numberline {1.3}Interactions}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Components}{3}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Wi11 Instruction Set}{3}{subsection.1.3.2}
+\contentsline {chapter}{\numberline {2}Directory Hierarchy}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Directories}{5}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Index}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{7}{section.3.1}
+\contentsline {chapter}{\numberline {4}Class Index}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Class List}{9}{section.4.1}
+\contentsline {chapter}{\numberline {5}File Index}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}File List}{11}{section.5.1}
+\contentsline {chapter}{\numberline {6}Directory Documentation}{13}{chapter.6}
+\contentsline {section}{\numberline {6.1}code/ Directory Reference}{13}{section.6.1}
+\contentsline {section}{\numberline {6.2}code/MemoryTest/ Directory Reference}{14}{section.6.2}
+\contentsline {section}{\numberline {6.3}code/test/ Directory Reference}{15}{section.6.3}
+\contentsline {chapter}{\numberline {7}Class Documentation}{17}{chapter.7}
+\contentsline {section}{\numberline {7.1}iDecoder Class Reference}{17}{section.7.1}
+\contentsline {section}{\numberline {7.2}iInterpreter Class Reference}{17}{section.7.2}
+\contentsline {section}{\numberline {7.3}iLoader Class Reference}{17}{section.7.3}
+\contentsline {section}{\numberline {7.4}iMemory Class Reference}{18}{section.7.4}
+\contentsline {section}{\numberline {7.5}Instruction Struct Reference}{18}{section.7.5}
+\contentsline {section}{\numberline {7.6}iObjParser Class Reference}{18}{section.7.6}
+\contentsline {section}{\numberline {7.7}iRegister Class Reference}{19}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{20}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.7.2}Member Function Documentation}{20}{subsection.7.7.2}
+\contentsline {subsubsection}{\numberline {7.7.2.1}GetValue}{20}{subsubsection.7.7.2.1}
+\contentsline {subsubsection}{\numberline {7.7.2.2}Add}{21}{subsubsection.7.7.2.2}
+\contentsline {subsubsection}{\numberline {7.7.2.3}Add}{21}{subsubsection.7.7.2.3}
+\contentsline {subsubsection}{\numberline {7.7.2.4}operator+}{21}{subsubsection.7.7.2.4}
+\contentsline {subsubsection}{\numberline {7.7.2.5}Subtract}{22}{subsubsection.7.7.2.5}
+\contentsline {subsubsection}{\numberline {7.7.2.6}Subtract}{22}{subsubsection.7.7.2.6}
+\contentsline {subsubsection}{\numberline {7.7.2.7}operator-\/}{22}{subsubsection.7.7.2.7}
+\contentsline {subsubsection}{\numberline {7.7.2.8}And}{22}{subsubsection.7.7.2.8}
+\contentsline {subsubsection}{\numberline {7.7.2.9}And}{23}{subsubsection.7.7.2.9}
+\contentsline {subsubsection}{\numberline {7.7.2.10}Or}{23}{subsubsection.7.7.2.10}
+\contentsline {subsubsection}{\numberline {7.7.2.11}Or}{23}{subsubsection.7.7.2.11}
+\contentsline {subsubsection}{\numberline {7.7.2.12}Not}{24}{subsubsection.7.7.2.12}
+\contentsline {subsubsection}{\numberline {7.7.2.13}Not}{24}{subsubsection.7.7.2.13}
+\contentsline {subsubsection}{\numberline {7.7.2.14}Store}{24}{subsubsection.7.7.2.14}
+\contentsline {subsubsection}{\numberline {7.7.2.15}Store}{25}{subsubsection.7.7.2.15}
+\contentsline {subsubsection}{\numberline {7.7.2.16}operator=}{25}{subsubsection.7.7.2.16}
+\contentsline {subsubsection}{\numberline {7.7.2.17}operator=}{25}{subsubsection.7.7.2.17}
+\contentsline {subsubsection}{\numberline {7.7.2.18}operator++}{25}{subsubsection.7.7.2.18}
+\contentsline {subsubsection}{\numberline {7.7.2.19}operator++}{26}{subsubsection.7.7.2.19}
+\contentsline {section}{\numberline {7.8}iSimulator Class Reference}{26}{section.7.8}
+\contentsline {section}{\numberline {7.9}iWi11 Class Reference}{26}{section.7.9}
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{29}{subsection.7.9.1}
+\contentsline {subsection}{\numberline {7.9.2}Constructor \& Destructor Documentation}{29}{subsection.7.9.2}
+\contentsline {subsubsection}{\numberline {7.9.2.1}iWi11}{29}{subsubsection.7.9.2.1}
+\contentsline {subsection}{\numberline {7.9.3}Member Function Documentation}{29}{subsection.7.9.3}
+\contentsline {subsubsection}{\numberline {7.9.3.1}\_\discretionary {-}{}{}GetRegister}{29}{subsubsection.7.9.3.1}
+\contentsline {subsubsection}{\numberline {7.9.3.2}\_\discretionary {-}{}{}Add}{30}{subsubsection.7.9.3.2}
+\contentsline {subsubsection}{\numberline {7.9.3.3}\_\discretionary {-}{}{}Add}{30}{subsubsection.7.9.3.3}
+\contentsline {subsubsection}{\numberline {7.9.3.4}\_\discretionary {-}{}{}And}{31}{subsubsection.7.9.3.4}
+\contentsline {subsubsection}{\numberline {7.9.3.5}\_\discretionary {-}{}{}And}{31}{subsubsection.7.9.3.5}
+\contentsline {subsubsection}{\numberline {7.9.3.6}\_\discretionary {-}{}{}Branch}{32}{subsubsection.7.9.3.6}
+\contentsline {subsubsection}{\numberline {7.9.3.7}\_\discretionary {-}{}{}Debug}{32}{subsubsection.7.9.3.7}
+\contentsline {subsubsection}{\numberline {7.9.3.8}\_\discretionary {-}{}{}JSR}{32}{subsubsection.7.9.3.8}
+\contentsline {subsubsection}{\numberline {7.9.3.9}\_\discretionary {-}{}{}JSRR}{33}{subsubsection.7.9.3.9}
+\contentsline {subsubsection}{\numberline {7.9.3.10}\_\discretionary {-}{}{}Load}{33}{subsubsection.7.9.3.10}
+\contentsline {subsubsection}{\numberline {7.9.3.11}\_\discretionary {-}{}{}LoadI}{34}{subsubsection.7.9.3.11}
+\contentsline {subsubsection}{\numberline {7.9.3.12}\_\discretionary {-}{}{}LoadR}{34}{subsubsection.7.9.3.12}
+\contentsline {subsubsection}{\numberline {7.9.3.13}\_\discretionary {-}{}{}Not}{35}{subsubsection.7.9.3.13}
+\contentsline {subsubsection}{\numberline {7.9.3.14}\_\discretionary {-}{}{}Ret}{35}{subsubsection.7.9.3.14}
+\contentsline {subsubsection}{\numberline {7.9.3.15}\_\discretionary {-}{}{}Store}{36}{subsubsection.7.9.3.15}
+\contentsline {subsubsection}{\numberline {7.9.3.16}\_\discretionary {-}{}{}STI}{36}{subsubsection.7.9.3.16}
+\contentsline {subsubsection}{\numberline {7.9.3.17}\_\discretionary {-}{}{}STR}{36}{subsubsection.7.9.3.17}
+\contentsline {subsubsection}{\numberline {7.9.3.18}\_\discretionary {-}{}{}Trap}{37}{subsubsection.7.9.3.18}
+\contentsline {subsubsection}{\numberline {7.9.3.19}LoadObj}{38}{subsubsection.7.9.3.19}
+\contentsline {subsubsection}{\numberline {7.9.3.20}DisplayMemory}{38}{subsubsection.7.9.3.20}
+\contentsline {subsubsection}{\numberline {7.9.3.21}DisplayRegisters}{38}{subsubsection.7.9.3.21}
+\contentsline {subsubsection}{\numberline {7.9.3.22}ExecuteNext}{39}{subsubsection.7.9.3.22}
+\contentsline {section}{\numberline {7.10}iWord Class Reference}{39}{section.7.10}
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{42}{subsection.7.10.1}
+\contentsline {subsection}{\numberline {7.10.2}Member Function Documentation}{42}{subsection.7.10.2}
+\contentsline {subsubsection}{\numberline {7.10.2.1}ToInt}{42}{subsubsection.7.10.2.1}
+\contentsline {subsubsection}{\numberline {7.10.2.2}ToInt2Complement}{43}{subsubsection.7.10.2.2}
+\contentsline {subsubsection}{\numberline {7.10.2.3}ToStr}{43}{subsubsection.7.10.2.3}
+\contentsline {subsubsection}{\numberline {7.10.2.4}ToHex}{43}{subsubsection.7.10.2.4}
+\contentsline {subsubsection}{\numberline {7.10.2.5}FromInt}{44}{subsubsection.7.10.2.5}
+\contentsline {subsubsection}{\numberline {7.10.2.6}FromStr}{44}{subsubsection.7.10.2.6}
+\contentsline {subsubsection}{\numberline {7.10.2.7}FromHex}{44}{subsubsection.7.10.2.7}
+\contentsline {subsubsection}{\numberline {7.10.2.8}Add}{45}{subsubsection.7.10.2.8}
+\contentsline {subsubsection}{\numberline {7.10.2.9}operator+}{45}{subsubsection.7.10.2.9}
+\contentsline {subsubsection}{\numberline {7.10.2.10}Subtract}{45}{subsubsection.7.10.2.10}
+\contentsline {subsubsection}{\numberline {7.10.2.11}operator-\/}{46}{subsubsection.7.10.2.11}
+\contentsline {subsubsection}{\numberline {7.10.2.12}And}{46}{subsubsection.7.10.2.12}
+\contentsline {subsubsection}{\numberline {7.10.2.13}Or}{46}{subsubsection.7.10.2.13}
+\contentsline {subsubsection}{\numberline {7.10.2.14}Not}{47}{subsubsection.7.10.2.14}
+\contentsline {subsubsection}{\numberline {7.10.2.15}Copy}{47}{subsubsection.7.10.2.15}
+\contentsline {subsubsection}{\numberline {7.10.2.16}operator=}{47}{subsubsection.7.10.2.16}
+\contentsline {subsubsection}{\numberline {7.10.2.17}operator++}{48}{subsubsection.7.10.2.17}
+\contentsline {subsubsection}{\numberline {7.10.2.18}operator++}{48}{subsubsection.7.10.2.18}
+\contentsline {subsubsection}{\numberline {7.10.2.19}operator[]}{48}{subsubsection.7.10.2.19}
+\contentsline {subsubsection}{\numberline {7.10.2.20}toInt}{49}{subsubsection.7.10.2.20}
+\contentsline {subsubsection}{\numberline {7.10.2.21}toInt2Complement}{49}{subsubsection.7.10.2.21}
+\contentsline {subsubsection}{\numberline {7.10.2.22}toStr}{49}{subsubsection.7.10.2.22}
+\contentsline {subsubsection}{\numberline {7.10.2.23}toHex}{50}{subsubsection.7.10.2.23}
+\contentsline {subsubsection}{\numberline {7.10.2.24}fromInt}{50}{subsubsection.7.10.2.24}
+\contentsline {subsubsection}{\numberline {7.10.2.25}fromStr}{50}{subsubsection.7.10.2.25}
+\contentsline {subsubsection}{\numberline {7.10.2.26}fromHex}{51}{subsubsection.7.10.2.26}
+\contentsline {subsubsection}{\numberline {7.10.2.27}Add}{51}{subsubsection.7.10.2.27}
+\contentsline {subsubsection}{\numberline {7.10.2.28}operator+}{52}{subsubsection.7.10.2.28}
+\contentsline {subsubsection}{\numberline {7.10.2.29}Subtract}{52}{subsubsection.7.10.2.29}
+\contentsline {subsubsection}{\numberline {7.10.2.30}operator-\/}{52}{subsubsection.7.10.2.30}
+\contentsline {subsubsection}{\numberline {7.10.2.31}And}{52}{subsubsection.7.10.2.31}
+\contentsline {subsubsection}{\numberline {7.10.2.32}Or}{53}{subsubsection.7.10.2.32}
+\contentsline {subsubsection}{\numberline {7.10.2.33}Not}{53}{subsubsection.7.10.2.33}
+\contentsline {subsubsection}{\numberline {7.10.2.34}copy}{53}{subsubsection.7.10.2.34}
+\contentsline {subsubsection}{\numberline {7.10.2.35}operator=}{54}{subsubsection.7.10.2.35}
+\contentsline {subsubsection}{\numberline {7.10.2.36}operator++}{54}{subsubsection.7.10.2.36}
+\contentsline {subsubsection}{\numberline {7.10.2.37}operator++}{54}{subsubsection.7.10.2.37}
+\contentsline {subsubsection}{\numberline {7.10.2.38}operator[]}{55}{subsubsection.7.10.2.38}
+\contentsline {section}{\numberline {7.11}Memory Class Reference}{55}{section.7.11}
+\contentsline {section}{\numberline {7.12}ObjectData Struct Reference}{56}{section.7.12}
+\contentsline {section}{\numberline {7.13}Register Class Reference}{57}{section.7.13}
+\contentsline {subsection}{\numberline {7.13.1}Member Function Documentation}{59}{subsection.7.13.1}
+\contentsline {subsubsection}{\numberline {7.13.1.1}GetValue}{59}{subsubsection.7.13.1.1}
+\contentsline {subsubsection}{\numberline {7.13.1.2}Add}{59}{subsubsection.7.13.1.2}
+\contentsline {subsubsection}{\numberline {7.13.1.3}Add}{60}{subsubsection.7.13.1.3}
+\contentsline {subsubsection}{\numberline {7.13.1.4}operator+}{60}{subsubsection.7.13.1.4}
+\contentsline {subsubsection}{\numberline {7.13.1.5}Subtract}{60}{subsubsection.7.13.1.5}
+\contentsline {subsubsection}{\numberline {7.13.1.6}Subtract}{60}{subsubsection.7.13.1.6}
+\contentsline {subsubsection}{\numberline {7.13.1.7}operator-\/}{61}{subsubsection.7.13.1.7}
+\contentsline {subsubsection}{\numberline {7.13.1.8}And}{61}{subsubsection.7.13.1.8}
+\contentsline {subsubsection}{\numberline {7.13.1.9}And}{61}{subsubsection.7.13.1.9}
+\contentsline {subsubsection}{\numberline {7.13.1.10}Or}{62}{subsubsection.7.13.1.10}
+\contentsline {subsubsection}{\numberline {7.13.1.11}Or}{62}{subsubsection.7.13.1.11}
+\contentsline {subsubsection}{\numberline {7.13.1.12}Not}{62}{subsubsection.7.13.1.12}
+\contentsline {subsubsection}{\numberline {7.13.1.13}Not}{62}{subsubsection.7.13.1.13}
+\contentsline {subsubsection}{\numberline {7.13.1.14}Store}{63}{subsubsection.7.13.1.14}
+\contentsline {subsubsection}{\numberline {7.13.1.15}Store}{63}{subsubsection.7.13.1.15}
+\contentsline {subsubsection}{\numberline {7.13.1.16}operator=}{63}{subsubsection.7.13.1.16}
+\contentsline {subsubsection}{\numberline {7.13.1.17}operator=}{63}{subsubsection.7.13.1.17}
+\contentsline {subsubsection}{\numberline {7.13.1.18}operator++}{64}{subsubsection.7.13.1.18}
+\contentsline {subsubsection}{\numberline {7.13.1.19}operator++}{64}{subsubsection.7.13.1.19}
+\contentsline {section}{\numberline {7.14}ResultDecoder Class Reference}{64}{section.7.14}
+\contentsline {section}{\numberline {7.15}Wi11 Class Reference}{65}{section.7.15}
+\contentsline {subsection}{\numberline {7.15.1}Member Function Documentation}{68}{subsection.7.15.1}
+\contentsline {subsubsection}{\numberline {7.15.1.1}\_\discretionary {-}{}{}GetRegister}{68}{subsubsection.7.15.1.1}
+\contentsline {subsubsection}{\numberline {7.15.1.2}\_\discretionary {-}{}{}Add}{68}{subsubsection.7.15.1.2}
+\contentsline {subsubsection}{\numberline {7.15.1.3}\_\discretionary {-}{}{}Add}{69}{subsubsection.7.15.1.3}
+\contentsline {subsubsection}{\numberline {7.15.1.4}\_\discretionary {-}{}{}And}{69}{subsubsection.7.15.1.4}
+\contentsline {subsubsection}{\numberline {7.15.1.5}\_\discretionary {-}{}{}And}{70}{subsubsection.7.15.1.5}
+\contentsline {subsubsection}{\numberline {7.15.1.6}\_\discretionary {-}{}{}Branch}{70}{subsubsection.7.15.1.6}
+\contentsline {subsubsection}{\numberline {7.15.1.7}\_\discretionary {-}{}{}Debug}{70}{subsubsection.7.15.1.7}
+\contentsline {subsubsection}{\numberline {7.15.1.8}\_\discretionary {-}{}{}JSR}{71}{subsubsection.7.15.1.8}
+\contentsline {subsubsection}{\numberline {7.15.1.9}\_\discretionary {-}{}{}JSRR}{71}{subsubsection.7.15.1.9}
+\contentsline {subsubsection}{\numberline {7.15.1.10}\_\discretionary {-}{}{}Load}{71}{subsubsection.7.15.1.10}
+\contentsline {subsubsection}{\numberline {7.15.1.11}\_\discretionary {-}{}{}LoadI}{72}{subsubsection.7.15.1.11}
+\contentsline {subsubsection}{\numberline {7.15.1.12}\_\discretionary {-}{}{}LoadR}{72}{subsubsection.7.15.1.12}
+\contentsline {subsubsection}{\numberline {7.15.1.13}\_\discretionary {-}{}{}Not}{73}{subsubsection.7.15.1.13}
+\contentsline {subsubsection}{\numberline {7.15.1.14}\_\discretionary {-}{}{}Ret}{73}{subsubsection.7.15.1.14}
+\contentsline {subsubsection}{\numberline {7.15.1.15}\_\discretionary {-}{}{}Store}{74}{subsubsection.7.15.1.15}
+\contentsline {subsubsection}{\numberline {7.15.1.16}\_\discretionary {-}{}{}STI}{74}{subsubsection.7.15.1.16}
+\contentsline {subsubsection}{\numberline {7.15.1.17}\_\discretionary {-}{}{}STR}{75}{subsubsection.7.15.1.17}
+\contentsline {subsubsection}{\numberline {7.15.1.18}\_\discretionary {-}{}{}Trap}{75}{subsubsection.7.15.1.18}
+\contentsline {subsubsection}{\numberline {7.15.1.19}LoadObj}{76}{subsubsection.7.15.1.19}
+\contentsline {subsubsection}{\numberline {7.15.1.20}DisplayMemory}{76}{subsubsection.7.15.1.20}
+\contentsline {subsubsection}{\numberline {7.15.1.21}DisplayRegisters}{77}{subsubsection.7.15.1.21}
+\contentsline {subsubsection}{\numberline {7.15.1.22}ExecuteNext}{77}{subsubsection.7.15.1.22}
+\contentsline {section}{\numberline {7.16}Word Class Reference}{78}{section.7.16}
+\contentsline {subsection}{\numberline {7.16.1}Member Function Documentation}{81}{subsection.7.16.1}
+\contentsline {subsubsection}{\numberline {7.16.1.1}\_\discretionary {-}{}{}hasBit}{81}{subsubsection.7.16.1.1}
+\contentsline {subsubsection}{\numberline {7.16.1.2}toInt}{82}{subsubsection.7.16.1.2}
+\contentsline {subsubsection}{\numberline {7.16.1.3}toInt2Complement}{82}{subsubsection.7.16.1.3}
+\contentsline {subsubsection}{\numberline {7.16.1.4}toStr}{82}{subsubsection.7.16.1.4}
+\contentsline {subsubsection}{\numberline {7.16.1.5}toHex}{83}{subsubsection.7.16.1.5}
+\contentsline {subsubsection}{\numberline {7.16.1.6}fromInt}{83}{subsubsection.7.16.1.6}
+\contentsline {subsubsection}{\numberline {7.16.1.7}fromStr}{83}{subsubsection.7.16.1.7}
+\contentsline {subsubsection}{\numberline {7.16.1.8}fromHex}{84}{subsubsection.7.16.1.8}
+\contentsline {subsubsection}{\numberline {7.16.1.9}Add}{84}{subsubsection.7.16.1.9}
+\contentsline {subsubsection}{\numberline {7.16.1.10}operator+}{85}{subsubsection.7.16.1.10}
+\contentsline {subsubsection}{\numberline {7.16.1.11}Subtract}{85}{subsubsection.7.16.1.11}
+\contentsline {subsubsection}{\numberline {7.16.1.12}operator-\/}{85}{subsubsection.7.16.1.12}
+\contentsline {subsubsection}{\numberline {7.16.1.13}And}{85}{subsubsection.7.16.1.13}
+\contentsline {subsubsection}{\numberline {7.16.1.14}Or}{86}{subsubsection.7.16.1.14}
+\contentsline {subsubsection}{\numberline {7.16.1.15}Not}{86}{subsubsection.7.16.1.15}
+\contentsline {subsubsection}{\numberline {7.16.1.16}copy}{86}{subsubsection.7.16.1.16}
+\contentsline {subsubsection}{\numberline {7.16.1.17}operator=}{87}{subsubsection.7.16.1.17}
+\contentsline {subsubsection}{\numberline {7.16.1.18}operator++}{87}{subsubsection.7.16.1.18}
+\contentsline {subsubsection}{\numberline {7.16.1.19}operator++}{87}{subsubsection.7.16.1.19}
+\contentsline {subsubsection}{\numberline {7.16.1.20}operator[]}{88}{subsubsection.7.16.1.20}
+\contentsline {subsubsection}{\numberline {7.16.1.21}\_\discretionary {-}{}{}HasBit}{88}{subsubsection.7.16.1.21}
+\contentsline {subsubsection}{\numberline {7.16.1.22}ToInt}{88}{subsubsection.7.16.1.22}
+\contentsline {subsubsection}{\numberline {7.16.1.23}ToInt2Complement}{89}{subsubsection.7.16.1.23}
+\contentsline {subsubsection}{\numberline {7.16.1.24}ToStr}{89}{subsubsection.7.16.1.24}
+\contentsline {subsubsection}{\numberline {7.16.1.25}ToHex}{89}{subsubsection.7.16.1.25}
+\contentsline {subsubsection}{\numberline {7.16.1.26}FromInt}{90}{subsubsection.7.16.1.26}
+\contentsline {subsubsection}{\numberline {7.16.1.27}FromStr}{90}{subsubsection.7.16.1.27}
+\contentsline {subsubsection}{\numberline {7.16.1.28}FromHex}{90}{subsubsection.7.16.1.28}
+\contentsline {subsubsection}{\numberline {7.16.1.29}Add}{91}{subsubsection.7.16.1.29}
+\contentsline {subsubsection}{\numberline {7.16.1.30}operator+}{91}{subsubsection.7.16.1.30}
+\contentsline {subsubsection}{\numberline {7.16.1.31}Subtract}{91}{subsubsection.7.16.1.31}
+\contentsline {subsubsection}{\numberline {7.16.1.32}operator-\/}{92}{subsubsection.7.16.1.32}
+\contentsline {subsubsection}{\numberline {7.16.1.33}And}{92}{subsubsection.7.16.1.33}
+\contentsline {subsubsection}{\numberline {7.16.1.34}Or}{92}{subsubsection.7.16.1.34}
+\contentsline {subsubsection}{\numberline {7.16.1.35}Not}{93}{subsubsection.7.16.1.35}
+\contentsline {subsubsection}{\numberline {7.16.1.36}Copy}{93}{subsubsection.7.16.1.36}
+\contentsline {subsubsection}{\numberline {7.16.1.37}operator=}{93}{subsubsection.7.16.1.37}
+\contentsline {subsubsection}{\numberline {7.16.1.38}operator++}{94}{subsubsection.7.16.1.38}
+\contentsline {subsubsection}{\numberline {7.16.1.39}operator++}{94}{subsubsection.7.16.1.39}
+\contentsline {subsubsection}{\numberline {7.16.1.40}operator[]}{94}{subsubsection.7.16.1.40}
+\contentsline {subsection}{\numberline {7.16.2}Member Data Documentation}{95}{subsection.7.16.2}
+\contentsline {subsubsection}{\numberline {7.16.2.1}\_\discretionary {-}{}{}value}{95}{subsubsection.7.16.2.1}
+\contentsline {chapter}{\numberline {8}File Documentation}{97}{chapter.8}
+\contentsline {section}{\numberline {8.1}iRegister.h File Reference}{97}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{98}{subsection.8.1.1}
+\contentsline {section}{\numberline {8.2}iWi11.h File Reference}{98}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{100}{subsection.8.2.1}
+\contentsline {section}{\numberline {8.3}Register.h File Reference}{100}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Detailed Description}{101}{subsection.8.3.1}
+\contentsline {section}{\numberline {8.4}Wi11.h File Reference}{101}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Detailed Description}{102}{subsection.8.4.1}

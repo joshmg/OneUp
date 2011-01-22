@@ -1,5 +1,5 @@
 \hypertarget{index_intro}{}\section{Introduction}\label{index_intro}
-The \char`\"{}Wi-\/11 Machine\char`\"{} is a simple, 16-\/bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). This software package is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-\/the-\/scenes details, one must understand the environment. In particular, an understanding the object file syntax and the interactions between the components used in this project is necessary.\hypertarget{index_syntax}{}\section{Object Files}\label{index_syntax}
+The \char`\"{}Wi-\/11 Machine\char`\"{} is a simple, 16-\/bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). This software package is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-\/the-\/scenes details, one must understand the environment. In particular, an understanding of the object file syntax and the interactions between the components used in this project is necessary.\hypertarget{index_syntax}{}\section{Object Files}\label{index_syntax}
 \begin{DoxyParagraph}{}
 The object files (ususally file\_\-name.o) that this simulator accepts are ascii text files with the following structure: \begin{DoxyItemize}
 \item One \hyperlink{index_header}{Header Record} \item Several \hyperlink{index_text}{Text Records} \item One \hyperlink{index_end}{End Record}\end{DoxyItemize}
@@ -27,7 +27,7 @@ Following the Header Record are serveral Text Records. Each Text Record correspo
 
 \end{DoxyParagraph}
 \begin{DoxyParagraph}{}
-{\bfseries At a glance:} There is a T, the location to store the instruction, and the instruction itself.
+{\bfseries At a glance:} There is a 'T', the location to store the instruction, and the instruction itself.
 \end{DoxyParagraph}
 \hypertarget{index_end}{}\subsection{The End Record}\label{index_end}
 \begin{DoxyParagraph}{}
@@ -42,7 +42,8 @@ The End Record is, as the name would suggest, the last line of the line. Its pur
 
 \end{DoxyParagraph}
 \begin{DoxyParagraph}{}
-{\bfseries At a glance:} There is an E, and the location in memory from which the first instruction should be fetched.
+{\bfseries At a glance:} There is an 'E', and the location in memory from which the first instruction should be fetched.
 \end{DoxyParagraph}
 \hypertarget{index_Component}{}\section{Interactions}\label{index_Component}
- 
+\hypertarget{index_components}{}\subsection{Components}\label{index_components}
+\hypertarget{index_instructions}{}\subsection{Wi11 Instruction Set}\label{index_instructions}

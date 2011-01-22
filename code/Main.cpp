@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
     its execution, as well as present the user with information regarding the
     state of the machine after each instruction is executed.  However,
     before one can delve into the behind-the-scenes details, one must understand
-    the environment.  In particular, an understanding the object file syntax and
+    the environment.  In particular, an understanding of the object file syntax and
     the interactions between the components used in this project is necessary.
 
     @section syntax Object Files
@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
       @arg A 4-digit hexadecimal value -- The location in memory at which the instruction will be stored.
       @arg A second 4-digit Hexadecimal value -- The encoding of the instruction to be stored.
       @par
-      <b>At a glance:</b> There is a T, the location to store the instruction, and the instruction itself. 
+      <b>At a glance:</b> There is a 'T', the location to store the instruction, and the instruction itself. 
 
       @subsection end The End Record
       @par
@@ -102,8 +102,11 @@ int main(int argc, char* argv[]) {
       @arg The End Record begins with a capital 'E'.\n
       @arg Next, and last, a 4-digit hexadecimal value to be put into the PC.
       @par
-      <b>At a glance:</b> There is an E, and the location in memory from which the first instruction should be fetched.
+      <b>At a glance:</b> There is an 'E', and the location in memory from which the first instruction should be fetched.
 
     @section Component Interactions
-    @image html software_interaction.png 
+    @subsection components Components
+
+    @subsection instructions Wi11 Instruction Set
+
 */

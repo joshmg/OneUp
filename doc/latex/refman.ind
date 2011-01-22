@@ -1,240 +1,353 @@
 \begin{theindex}
 
+  \item {\_\discretionary {-}{}{}Add}
+    \subitem {iWi11}, \hyperpage{30}
+    \subitem {Wi11}, \hyperpage{68}
+  \item {\_\discretionary {-}{}{}And}
+    \subitem {iWi11}, \hyperpage{31}
+    \subitem {Wi11}, \hyperpage{69}
+  \item {\_\discretionary {-}{}{}Branch}
+    \subitem {iWi11}, \hyperpage{32}
+    \subitem {Wi11}, \hyperpage{70}
+  \item {\_\discretionary {-}{}{}Debug}
+    \subitem {iWi11}, \hyperpage{32}
+    \subitem {Wi11}, \hyperpage{70}
+  \item {\_\discretionary {-}{}{}GetRegister}
+    \subitem {iWi11}, \hyperpage{29}
+    \subitem {Wi11}, \hyperpage{68}
   \item {\_\discretionary {-}{}{}HasBit}
-    \subitem {Word}, \hyperpage{62}
+    \subitem {Word}, \hyperpage{88}
+  \item {\_\discretionary {-}{}{}JSR}
+    \subitem {iWi11}, \hyperpage{32}
+    \subitem {Wi11}, \hyperpage{70}
+  \item {\_\discretionary {-}{}{}JSRR}
+    \subitem {iWi11}, \hyperpage{33}
+    \subitem {Wi11}, \hyperpage{71}
+  \item {\_\discretionary {-}{}{}Load}
+    \subitem {iWi11}, \hyperpage{33}
+    \subitem {Wi11}, \hyperpage{71}
+  \item {\_\discretionary {-}{}{}LoadI}
+    \subitem {iWi11}, \hyperpage{34}
+    \subitem {Wi11}, \hyperpage{72}
+  \item {\_\discretionary {-}{}{}LoadR}
+    \subitem {iWi11}, \hyperpage{34}
+    \subitem {Wi11}, \hyperpage{72}
+  \item {\_\discretionary {-}{}{}Not}
+    \subitem {iWi11}, \hyperpage{35}
+    \subitem {Wi11}, \hyperpage{73}
+  \item {\_\discretionary {-}{}{}Ret}
+    \subitem {iWi11}, \hyperpage{35}
+    \subitem {Wi11}, \hyperpage{73}
+  \item {\_\discretionary {-}{}{}STI}
+    \subitem {iWi11}, \hyperpage{36}
+    \subitem {Wi11}, \hyperpage{74}
+  \item {\_\discretionary {-}{}{}STR}
+    \subitem {iWi11}, \hyperpage{36}
+    \subitem {Wi11}, \hyperpage{75}
+  \item {\_\discretionary {-}{}{}Store}
+    \subitem {iWi11}, \hyperpage{35}
+    \subitem {Wi11}, \hyperpage{74}
+  \item {\_\discretionary {-}{}{}Trap}
+    \subitem {iWi11}, \hyperpage{37}
+    \subitem {Wi11}, \hyperpage{75}
   \item {\_\discretionary {-}{}{}hasBit}
-    \subitem {Word}, \hyperpage{55}
+    \subitem {Word}, \hyperpage{81}
   \item {\_\discretionary {-}{}{}value}
-    \subitem {Word}, \hyperpage{68}
+    \subitem {Word}, \hyperpage{95}
 
   \indexspace
 
   \item {Add}
-    \subitem {iRegister}, \hyperpage{19}
-    \subitem {iWord}, \hyperpage{31}, \hyperpage{37}
-    \subitem {Register}, \hyperpage{46}
-    \subitem {Word}, \hyperpage{58}, \hyperpage{64}
+    \subitem {iRegister}, \hyperpage{21}
+    \subitem {iWord}, \hyperpage{45}, \hyperpage{51}
+    \subitem {Register}, \hyperpage{59}
+    \subitem {Word}, \hyperpage{84}, \hyperpage{91}
   \item {And}
-    \subitem {iRegister}, \hyperpage{20, 21}
-    \subitem {iWord}, \hyperpage{32}, \hyperpage{39}
-    \subitem {Register}, \hyperpage{48}
-    \subitem {Word}, \hyperpage{59}, \hyperpage{66}
+    \subitem {iRegister}, \hyperpage{22, 23}
+    \subitem {iWord}, \hyperpage{46}, \hyperpage{52}
+    \subitem {Register}, \hyperpage{61}
+    \subitem {Word}, \hyperpage{85}, \hyperpage{92}
 
   \indexspace
 
-  \item {code/ Directory Reference}, \hyperpage{11}
-  \item {code/MemoryTest/ Directory Reference}, \hyperpage{12}
-  \item {code/test/ Directory Reference}, \hyperpage{13}
+  \item {code/ Directory Reference}, \hyperpage{13}
+  \item {code/MemoryTest/ Directory Reference}, \hyperpage{14}
+  \item {code/test/ Directory Reference}, \hyperpage{15}
   \item {Copy}
-    \subitem {iWord}, \hyperpage{33}
-    \subitem {Word}, \hyperpage{67}
+    \subitem {iWord}, \hyperpage{47}
+    \subitem {Word}, \hyperpage{93}
   \item {copy}
-    \subitem {iWord}, \hyperpage{40}
-    \subitem {Word}, \hyperpage{60}
+    \subitem {iWord}, \hyperpage{53}
+    \subitem {Word}, \hyperpage{86}
+
+  \indexspace
+
+  \item {DisplayMemory}
+    \subitem {iWi11}, \hyperpage{38}
+    \subitem {Wi11}, \hyperpage{76}
+  \item {DisplayRegisters}
+    \subitem {iWi11}, \hyperpage{38}
+    \subitem {Wi11}, \hyperpage{76}
+
+  \indexspace
+
+  \item {ExecuteNext}
+    \subitem {iWi11}, \hyperpage{38}
+    \subitem {Wi11}, \hyperpage{77}
 
   \indexspace
 
   \item {FromHex}
-    \subitem {iWord}, \hyperpage{31}
-    \subitem {Word}, \hyperpage{64}
+    \subitem {iWord}, \hyperpage{44}
+    \subitem {Word}, \hyperpage{90}
   \item {fromHex}
-    \subitem {iWord}, \hyperpage{37}
-    \subitem {Word}, \hyperpage{57}
+    \subitem {iWord}, \hyperpage{51}
+    \subitem {Word}, \hyperpage{84}
   \item {FromInt}
-    \subitem {iWord}, \hyperpage{30}
-    \subitem {Word}, \hyperpage{63}
+    \subitem {iWord}, \hyperpage{43}
+    \subitem {Word}, \hyperpage{89}
   \item {fromInt}
-    \subitem {iWord}, \hyperpage{36}
-    \subitem {Word}, \hyperpage{56}
+    \subitem {iWord}, \hyperpage{50}
+    \subitem {Word}, \hyperpage{83}
   \item {FromStr}
-    \subitem {iWord}, \hyperpage{30}
-    \subitem {Word}, \hyperpage{64}
+    \subitem {iWord}, \hyperpage{44}
+    \subitem {Word}, \hyperpage{90}
   \item {fromStr}
-    \subitem {iWord}, \hyperpage{37}
-    \subitem {Word}, \hyperpage{57}
+    \subitem {iWord}, \hyperpage{50}
+    \subitem {Word}, \hyperpage{83}
 
   \indexspace
 
   \item {GetValue}
-    \subitem {iRegister}, \hyperpage{18}
-    \subitem {Register}, \hyperpage{46}
+    \subitem {iRegister}, \hyperpage{20}
+    \subitem {Register}, \hyperpage{59}
 
   \indexspace
 
-  \item {iDecoder}, \hyperpage{15}
-  \item {iInterpreter}, \hyperpage{15}
-  \item {iLoader}, \hyperpage{15}
-  \item {iMemory}, \hyperpage{16}
-  \item {Instruction}, \hyperpage{16}
-  \item {iObjParser}, \hyperpage{16}
-  \item {iRegister}, \hyperpage{17}
-    \subitem {Add}, \hyperpage{19}
-    \subitem {And}, \hyperpage{20, 21}
-    \subitem {GetValue}, \hyperpage{18}
-    \subitem {Not}, \hyperpage{22}
-    \subitem {operator+}, \hyperpage{19}
-    \subitem {operator++}, \hyperpage{23}
-    \subitem {operator-\/}, \hyperpage{20}
-    \subitem {operator=}, \hyperpage{23}
-    \subitem {Or}, \hyperpage{21}
-    \subitem {Store}, \hyperpage{22}
-    \subitem {Subtract}, \hyperpage{20}
-  \item {iRegister.h}, \hyperpage{69}
-  \item {iSimulator}, \hyperpage{24}
-  \item {iWi11}, \hyperpage{24}
-  \item {iWord}, \hyperpage{25}
-    \subitem {Add}, \hyperpage{31}, \hyperpage{37}
-    \subitem {And}, \hyperpage{32}, \hyperpage{39}
-    \subitem {Copy}, \hyperpage{33}
-    \subitem {copy}, \hyperpage{40}
-    \subitem {FromHex}, \hyperpage{31}
-    \subitem {fromHex}, \hyperpage{37}
-    \subitem {FromInt}, \hyperpage{30}
-    \subitem {fromInt}, \hyperpage{36}
-    \subitem {FromStr}, \hyperpage{30}
-    \subitem {fromStr}, \hyperpage{37}
-    \subitem {Not}, \hyperpage{33}, \hyperpage{39}
-    \subitem {operator+}, \hyperpage{31}, \hyperpage{38}
-    \subitem {operator++}, \hyperpage{34}, \hyperpage{40, 41}
-    \subitem {operator-\/}, \hyperpage{32}, \hyperpage{38}
-    \subitem {operator=}, \hyperpage{34}, \hyperpage{40}
-    \subitem {Or}, \hyperpage{33}, \hyperpage{39}
-    \subitem {Subtract}, \hyperpage{32}, \hyperpage{38}
-    \subitem {ToHex}, \hyperpage{29}
-    \subitem {toHex}, \hyperpage{36}
-    \subitem {ToInt}, \hyperpage{29}
-    \subitem {toInt}, \hyperpage{35}
-    \subitem {ToInt2Complement}, \hyperpage{29}
-    \subitem {toInt2Complement}, \hyperpage{35}
-    \subitem {ToStr}, \hyperpage{29}
-    \subitem {toStr}, \hyperpage{35}
+  \item {iDecoder}, \hyperpage{17}
+  \item {iInterpreter}, \hyperpage{17}
+  \item {iLoader}, \hyperpage{17}
+  \item {iMemory}, \hyperpage{18}
+  \item {Instruction}, \hyperpage{18}
+  \item {iObjParser}, \hyperpage{18}
+  \item {iRegister}, \hyperpage{19}
+    \subitem {Add}, \hyperpage{21}
+    \subitem {And}, \hyperpage{22, 23}
+    \subitem {GetValue}, \hyperpage{20}
+    \subitem {Not}, \hyperpage{24}
+    \subitem {operator+}, \hyperpage{21}
+    \subitem {operator++}, \hyperpage{25}
+    \subitem {operator-\/}, \hyperpage{22}
+    \subitem {operator=}, \hyperpage{25}
+    \subitem {Or}, \hyperpage{23}
+    \subitem {Store}, \hyperpage{24}
+    \subitem {Subtract}, \hyperpage{22}
+  \item {iRegister.h}, \hyperpage{97}
+  \item {iSimulator}, \hyperpage{26}
+  \item {iWi11}, \hyperpage{26}
+    \subitem {\_\discretionary {-}{}{}Add}, \hyperpage{30}
+    \subitem {\_\discretionary {-}{}{}And}, \hyperpage{31}
+    \subitem {\_\discretionary {-}{}{}Branch}, \hyperpage{32}
+    \subitem {\_\discretionary {-}{}{}Debug}, \hyperpage{32}
+    \subitem {\_\discretionary {-}{}{}GetRegister}, \hyperpage{29}
+    \subitem {\_\discretionary {-}{}{}JSR}, \hyperpage{32}
+    \subitem {\_\discretionary {-}{}{}JSRR}, \hyperpage{33}
+    \subitem {\_\discretionary {-}{}{}Load}, \hyperpage{33}
+    \subitem {\_\discretionary {-}{}{}LoadI}, \hyperpage{34}
+    \subitem {\_\discretionary {-}{}{}LoadR}, \hyperpage{34}
+    \subitem {\_\discretionary {-}{}{}Not}, \hyperpage{35}
+    \subitem {\_\discretionary {-}{}{}Ret}, \hyperpage{35}
+    \subitem {\_\discretionary {-}{}{}STI}, \hyperpage{36}
+    \subitem {\_\discretionary {-}{}{}STR}, \hyperpage{36}
+    \subitem {\_\discretionary {-}{}{}Store}, \hyperpage{35}
+    \subitem {\_\discretionary {-}{}{}Trap}, \hyperpage{37}
+    \subitem {DisplayMemory}, \hyperpage{38}
+    \subitem {DisplayRegisters}, \hyperpage{38}
+    \subitem {ExecuteNext}, \hyperpage{38}
+    \subitem {iWi11}, \hyperpage{29}
+    \subitem {LoadObj}, \hyperpage{38}
+  \item {iWi11.h}, \hyperpage{98}
+  \item {iWord}, \hyperpage{39}
+    \subitem {Add}, \hyperpage{45}, \hyperpage{51}
+    \subitem {And}, \hyperpage{46}, \hyperpage{52}
+    \subitem {Copy}, \hyperpage{47}
+    \subitem {copy}, \hyperpage{53}
+    \subitem {FromHex}, \hyperpage{44}
+    \subitem {fromHex}, \hyperpage{51}
+    \subitem {FromInt}, \hyperpage{43}
+    \subitem {fromInt}, \hyperpage{50}
+    \subitem {FromStr}, \hyperpage{44}
+    \subitem {fromStr}, \hyperpage{50}
+    \subitem {Not}, \hyperpage{47}, \hyperpage{53}
+    \subitem {operator+}, \hyperpage{45}, \hyperpage{52}
+    \subitem {operator++}, \hyperpage{48}, \hyperpage{54}
+    \subitem {operator-\/}, \hyperpage{46}, \hyperpage{52}
+    \subitem {operator=}, \hyperpage{47}, \hyperpage{54}
+    \subitem {Or}, \hyperpage{46}, \hyperpage{53}
+    \subitem {Subtract}, \hyperpage{45}, \hyperpage{52}
+    \subitem {ToHex}, \hyperpage{43}
+    \subitem {toHex}, \hyperpage{50}
+    \subitem {ToInt}, \hyperpage{42}
+    \subitem {toInt}, \hyperpage{49}
+    \subitem {ToInt2Complement}, \hyperpage{42}
+    \subitem {toInt2Complement}, \hyperpage{49}
+    \subitem {ToStr}, \hyperpage{43}
+    \subitem {toStr}, \hyperpage{49}
 
   \indexspace
 
-  \item {Memory}, \hyperpage{42}
+  \item {LoadObj}
+    \subitem {iWi11}, \hyperpage{38}
+    \subitem {Wi11}, \hyperpage{76}
+
+  \indexspace
+
+  \item {Memory}, \hyperpage{55}
 
   \indexspace
 
   \item {Not}
-    \subitem {iRegister}, \hyperpage{22}
-    \subitem {iWord}, \hyperpage{33}, \hyperpage{39}
-    \subitem {Register}, \hyperpage{49}
-    \subitem {Word}, \hyperpage{60}, \hyperpage{66}
+    \subitem {iRegister}, \hyperpage{24}
+    \subitem {iWord}, \hyperpage{47}, \hyperpage{53}
+    \subitem {Register}, \hyperpage{62}
+    \subitem {Word}, \hyperpage{86}, \hyperpage{93}
 
   \indexspace
 
-  \item {ObjectData}, \hyperpage{43}
+  \item {ObjectData}, \hyperpage{56}
   \item {operator+}
-    \subitem {iRegister}, \hyperpage{19}
-    \subitem {iWord}, \hyperpage{31}, \hyperpage{38}
-    \subitem {Register}, \hyperpage{46}
-    \subitem {Word}, \hyperpage{58}, \hyperpage{65}
-  \item {operator++}
-    \subitem {iRegister}, \hyperpage{23}
-    \subitem {iWord}, \hyperpage{34}, \hyperpage{40, 41}
-    \subitem {Register}, \hyperpage{50}
-    \subitem {Word}, \hyperpage{61}, \hyperpage{67}
-  \item {operator-\/}
-    \subitem {iRegister}, \hyperpage{20}
-    \subitem {iWord}, \hyperpage{32}, \hyperpage{38}
-    \subitem {Register}, \hyperpage{47}
-    \subitem {Word}, \hyperpage{59}, \hyperpage{65}
-  \item {operator=}
-    \subitem {iRegister}, \hyperpage{23}
-    \subitem {iWord}, \hyperpage{34}, \hyperpage{40}
-    \subitem {Register}, \hyperpage{50}
-    \subitem {Word}, \hyperpage{60}, \hyperpage{67}
-  \item {Or}
     \subitem {iRegister}, \hyperpage{21}
-    \subitem {iWord}, \hyperpage{33}, \hyperpage{39}
-    \subitem {Register}, \hyperpage{48}
-    \subitem {Word}, \hyperpage{59}, \hyperpage{66}
+    \subitem {iWord}, \hyperpage{45}, \hyperpage{52}
+    \subitem {Register}, \hyperpage{60}
+    \subitem {Word}, \hyperpage{84}, \hyperpage{91}
+  \item {operator++}
+    \subitem {iRegister}, \hyperpage{25}
+    \subitem {iWord}, \hyperpage{48}, \hyperpage{54}
+    \subitem {Register}, \hyperpage{64}
+    \subitem {Word}, \hyperpage{87}, \hyperpage{94}
+  \item {operator-\/}
+    \subitem {iRegister}, \hyperpage{22}
+    \subitem {iWord}, \hyperpage{46}, \hyperpage{52}
+    \subitem {Register}, \hyperpage{61}
+    \subitem {Word}, \hyperpage{85}, \hyperpage{92}
+  \item {operator=}
+    \subitem {iRegister}, \hyperpage{25}
+    \subitem {iWord}, \hyperpage{47}, \hyperpage{54}
+    \subitem {Register}, \hyperpage{63}
+    \subitem {Word}, \hyperpage{87}, \hyperpage{93}
+  \item {Or}
+    \subitem {iRegister}, \hyperpage{23}
+    \subitem {iWord}, \hyperpage{46}, \hyperpage{53}
+    \subitem {Register}, \hyperpage{61, 62}
+    \subitem {Word}, \hyperpage{86}, \hyperpage{92}
 
   \indexspace
 
-  \item {Register}, \hyperpage{43}
-    \subitem {Add}, \hyperpage{46}
-    \subitem {And}, \hyperpage{48}
-    \subitem {GetValue}, \hyperpage{46}
-    \subitem {Not}, \hyperpage{49}
-    \subitem {operator+}, \hyperpage{46}
-    \subitem {operator++}, \hyperpage{50}
-    \subitem {operator-\/}, \hyperpage{47}
-    \subitem {operator=}, \hyperpage{50}
-    \subitem {Or}, \hyperpage{48}
-    \subitem {Store}, \hyperpage{49, 50}
-    \subitem {Subtract}, \hyperpage{47}
-  \item {Register.h}, \hyperpage{70}
-  \item {ResultDecoder}, \hyperpage{51}
+  \item {Register}, \hyperpage{57}
+    \subitem {Add}, \hyperpage{59}
+    \subitem {And}, \hyperpage{61}
+    \subitem {GetValue}, \hyperpage{59}
+    \subitem {Not}, \hyperpage{62}
+    \subitem {operator+}, \hyperpage{60}
+    \subitem {operator++}, \hyperpage{64}
+    \subitem {operator-\/}, \hyperpage{61}
+    \subitem {operator=}, \hyperpage{63}
+    \subitem {Or}, \hyperpage{61, 62}
+    \subitem {Store}, \hyperpage{63}
+    \subitem {Subtract}, \hyperpage{60}
+  \item {Register.h}, \hyperpage{100}
+  \item {ResultDecoder}, \hyperpage{64}
 
   \indexspace
 
   \item {Store}
-    \subitem {iRegister}, \hyperpage{22}
-    \subitem {Register}, \hyperpage{49, 50}
+    \subitem {iRegister}, \hyperpage{24}
+    \subitem {Register}, \hyperpage{63}
   \item {Subtract}
-    \subitem {iRegister}, \hyperpage{20}
-    \subitem {iWord}, \hyperpage{32}, \hyperpage{38}
-    \subitem {Register}, \hyperpage{47}
-    \subitem {Word}, \hyperpage{58}, \hyperpage{65}
+    \subitem {iRegister}, \hyperpage{22}
+    \subitem {iWord}, \hyperpage{45}, \hyperpage{52}
+    \subitem {Register}, \hyperpage{60}
+    \subitem {Word}, \hyperpage{85}, \hyperpage{91}
 
   \indexspace
 
   \item {ToHex}
-    \subitem {iWord}, \hyperpage{29}
-    \subitem {Word}, \hyperpage{63}
+    \subitem {iWord}, \hyperpage{43}
+    \subitem {Word}, \hyperpage{89}
   \item {toHex}
-    \subitem {iWord}, \hyperpage{36}
-    \subitem {Word}, \hyperpage{56}
+    \subitem {iWord}, \hyperpage{50}
+    \subitem {Word}, \hyperpage{82}
   \item {ToInt}
-    \subitem {iWord}, \hyperpage{29}
-    \subitem {Word}, \hyperpage{62}
+    \subitem {iWord}, \hyperpage{42}
+    \subitem {Word}, \hyperpage{88}
   \item {toInt}
-    \subitem {iWord}, \hyperpage{35}
-    \subitem {Word}, \hyperpage{55}
+    \subitem {iWord}, \hyperpage{49}
+    \subitem {Word}, \hyperpage{81}
   \item {ToInt2Complement}
-    \subitem {iWord}, \hyperpage{29}
-    \subitem {Word}, \hyperpage{62}
+    \subitem {iWord}, \hyperpage{42}
+    \subitem {Word}, \hyperpage{88}
   \item {toInt2Complement}
-    \subitem {iWord}, \hyperpage{35}
-    \subitem {Word}, \hyperpage{55}
+    \subitem {iWord}, \hyperpage{49}
+    \subitem {Word}, \hyperpage{82}
   \item {ToStr}
-    \subitem {iWord}, \hyperpage{29}
-    \subitem {Word}, \hyperpage{62}
+    \subitem {iWord}, \hyperpage{43}
+    \subitem {Word}, \hyperpage{89}
   \item {toStr}
-    \subitem {iWord}, \hyperpage{35}
-    \subitem {Word}, \hyperpage{56}
+    \subitem {iWord}, \hyperpage{49}
+    \subitem {Word}, \hyperpage{82}
 
   \indexspace
 
-  \item {Word}, \hyperpage{51}
-    \subitem {\_\discretionary {-}{}{}HasBit}, \hyperpage{62}
-    \subitem {\_\discretionary {-}{}{}hasBit}, \hyperpage{55}
-    \subitem {\_\discretionary {-}{}{}value}, \hyperpage{68}
-    \subitem {Add}, \hyperpage{58}, \hyperpage{64}
-    \subitem {And}, \hyperpage{59}, \hyperpage{66}
-    \subitem {Copy}, \hyperpage{67}
-    \subitem {copy}, \hyperpage{60}
-    \subitem {FromHex}, \hyperpage{64}
-    \subitem {fromHex}, \hyperpage{57}
-    \subitem {FromInt}, \hyperpage{63}
-    \subitem {fromInt}, \hyperpage{56}
-    \subitem {FromStr}, \hyperpage{64}
-    \subitem {fromStr}, \hyperpage{57}
-    \subitem {Not}, \hyperpage{60}, \hyperpage{66}
-    \subitem {operator+}, \hyperpage{58}, \hyperpage{65}
-    \subitem {operator++}, \hyperpage{61}, \hyperpage{67}
-    \subitem {operator-\/}, \hyperpage{59}, \hyperpage{65}
-    \subitem {operator=}, \hyperpage{60}, \hyperpage{67}
-    \subitem {Or}, \hyperpage{59}, \hyperpage{66}
-    \subitem {Subtract}, \hyperpage{58}, \hyperpage{65}
-    \subitem {ToHex}, \hyperpage{63}
-    \subitem {toHex}, \hyperpage{56}
-    \subitem {ToInt}, \hyperpage{62}
-    \subitem {toInt}, \hyperpage{55}
-    \subitem {ToInt2Complement}, \hyperpage{62}
-    \subitem {toInt2Complement}, \hyperpage{55}
-    \subitem {ToStr}, \hyperpage{62}
-    \subitem {toStr}, \hyperpage{56}
+  \item {Wi11}, \hyperpage{65}
+    \subitem {\_\discretionary {-}{}{}Add}, \hyperpage{68}
+    \subitem {\_\discretionary {-}{}{}And}, \hyperpage{69}
+    \subitem {\_\discretionary {-}{}{}Branch}, \hyperpage{70}
+    \subitem {\_\discretionary {-}{}{}Debug}, \hyperpage{70}
+    \subitem {\_\discretionary {-}{}{}GetRegister}, \hyperpage{68}
+    \subitem {\_\discretionary {-}{}{}JSR}, \hyperpage{70}
+    \subitem {\_\discretionary {-}{}{}JSRR}, \hyperpage{71}
+    \subitem {\_\discretionary {-}{}{}Load}, \hyperpage{71}
+    \subitem {\_\discretionary {-}{}{}LoadI}, \hyperpage{72}
+    \subitem {\_\discretionary {-}{}{}LoadR}, \hyperpage{72}
+    \subitem {\_\discretionary {-}{}{}Not}, \hyperpage{73}
+    \subitem {\_\discretionary {-}{}{}Ret}, \hyperpage{73}
+    \subitem {\_\discretionary {-}{}{}STI}, \hyperpage{74}
+    \subitem {\_\discretionary {-}{}{}STR}, \hyperpage{75}
+    \subitem {\_\discretionary {-}{}{}Store}, \hyperpage{74}
+    \subitem {\_\discretionary {-}{}{}Trap}, \hyperpage{75}
+    \subitem {DisplayMemory}, \hyperpage{76}
+    \subitem {DisplayRegisters}, \hyperpage{76}
+    \subitem {ExecuteNext}, \hyperpage{77}
+    \subitem {LoadObj}, \hyperpage{76}
+  \item {Wi11.h}, \hyperpage{101}
+  \item {Word}, \hyperpage{78}
+    \subitem {\_\discretionary {-}{}{}HasBit}, \hyperpage{88}
+    \subitem {\_\discretionary {-}{}{}hasBit}, \hyperpage{81}
+    \subitem {\_\discretionary {-}{}{}value}, \hyperpage{95}
+    \subitem {Add}, \hyperpage{84}, \hyperpage{91}
+    \subitem {And}, \hyperpage{85}, \hyperpage{92}
+    \subitem {Copy}, \hyperpage{93}
+    \subitem {copy}, \hyperpage{86}
+    \subitem {FromHex}, \hyperpage{90}
+    \subitem {fromHex}, \hyperpage{84}
+    \subitem {FromInt}, \hyperpage{89}
+    \subitem {fromInt}, \hyperpage{83}
+    \subitem {FromStr}, \hyperpage{90}
+    \subitem {fromStr}, \hyperpage{83}
+    \subitem {Not}, \hyperpage{86}, \hyperpage{93}
+    \subitem {operator+}, \hyperpage{84}, \hyperpage{91}
+    \subitem {operator++}, \hyperpage{87}, \hyperpage{94}
+    \subitem {operator-\/}, \hyperpage{85}, \hyperpage{92}
+    \subitem {operator=}, \hyperpage{87}, \hyperpage{93}
+    \subitem {Or}, \hyperpage{86}, \hyperpage{92}
+    \subitem {Subtract}, \hyperpage{85}, \hyperpage{91}
+    \subitem {ToHex}, \hyperpage{89}
+    \subitem {toHex}, \hyperpage{82}
+    \subitem {ToInt}, \hyperpage{88}
+    \subitem {toInt}, \hyperpage{81}
+    \subitem {ToInt2Complement}, \hyperpage{88}
+    \subitem {toInt2Complement}, \hyperpage{82}
+    \subitem {ToStr}, \hyperpage{89}
+    \subitem {toStr}, \hyperpage{82}
 
 \end{theindex}
