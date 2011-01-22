@@ -4,9 +4,9 @@
 
 #include "Register.h"
 
-// public
+//*** public ***//
 Register::Register () {
-  _word.fromInt(0);
+  _word.FromInt(0);
 }
 
 Register::Register (Word w) {
@@ -79,23 +79,23 @@ Register Register::Not() const {
 }
 
 void Register::Store(const iWord& w) {
-  _word.copy(w);
+  _word.Copy(w);
 }
 
 void Register::Store(const iRegister& r) {
   if ((iRegister*)this != &r) {
-    _word.copy(r.GetValue());
+    _word.Copy(r.GetValue());
   }
 }
 
 Register& Register::operator=(const iWord& w) {
-  _word.copy(w);
+  _word.Copy(w);
   return (*this);
 }
 
 Register& Register::operator=(const Register r) {
   if (this != &r) {
-    _word.copy(r.GetValue());
+    _word.Copy(r.GetValue());
   }
   return (*this);
 }

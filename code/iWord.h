@@ -29,13 +29,13 @@ class iWord {
         @post The value of the word is not changed.
         @return The bits of the word interpreted as a positive integer value.
     */
-    virtual int toInt() const = 0;
+    virtual int ToInt() const = 0;
 
     /*! @brief "To Integer as 2's Complement"
         @post The value of the word is not changed.
         @return The bits of the word interpreted as a signed (2's complement) integer value.
     */
-    virtual int toInt2Complement() const = 0;
+    virtual int ToInt2Complement() const = 0;
 
     /*! @brief "To String"
         @post The value of the word is not changed.
@@ -45,7 +45,7 @@ class iWord {
         If the object holds a (2's comp.) value 4:  "0000000000000100"\n
         If the object holds a (2's comp.) value -1: "1111111111111111"
     */
-    virtual std::string toStr() const = 0;
+    virtual std::string ToStr() const = 0;
 
     /*! @brief "To Hexadecimal"
         @post The value of the word is not changed.
@@ -55,7 +55,7 @@ class iWord {
         If the object holds (2's comp.) value 8:  "0x0008"\n
         If the object holds (2's comp.) value -2: "0xFFFE"
     */
-    virtual std::string toHex() const = 0;
+    virtual std::string ToHex() const = 0;
 
     /*! @brief "From Integer"
         @param[in] value
@@ -66,7 +66,7 @@ class iWord {
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "value".
     */
-    virtual bool fromInt(int value) = 0;
+    virtual bool FromInt(int value) = 0;
 
     /*! @brief "From String"
         @param[in] str
@@ -77,7 +77,7 @@ class iWord {
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "str".
     */
-    virtual bool fromStr(const std::string& str) = 0;
+    virtual bool FromStr(const std::string& str) = 0;
 
     /*! @brief "From Hexadecimal"
         @param[in] str
@@ -88,7 +88,7 @@ class iWord {
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "str".
     */
-    virtual bool fromHex(const std::string& str) = 0;
+    virtual bool FromHex(const std::string& str) = 0;
 
     /*! @brief Adds two words.
         @param[in] w
@@ -155,7 +155,7 @@ class iWord {
 
         Equivalent to the assignment "caller = parameter".
     */
-    virtual void copy(const iWord& w) = 0;
+    virtual void Copy(const iWord& w) = 0;
 
     /*! @brief A standard assignment operator.
         @param[in] w

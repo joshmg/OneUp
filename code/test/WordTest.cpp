@@ -6,18 +6,18 @@ int main() {
   // test from int and print
   Word w, x;
   for (int i=-10; i<10; i++) {
-    w.fromInt(i);
-    cout << w.toInt() << " = ";
+    w.FromInt(i);
+    cout << w.ToInt() << " = ";
 
     // test hex
-    if (x.fromHex(w.toHex())) {
-      cout << x.toInt() << endl;
+    if (x.FromHex(w.ToHex())) {
+      cout << x.ToInt() << endl;
       w = x.Not();
-      cout << "!(" << w.toInt2Complement() << ")\n";
-      cout << x.toHex() << endl;
+      cout << "!(" << w.ToInt2Complement() << ")\n";
+      cout << x.ToHex() << endl;
       x++;
       ++x;
-      cout << "+ 2 = " << x.toStr() << endl;
+      cout << "+ 2 = " << x.ToStr() << endl;
       cout << "--------------------\n";
     }
   }

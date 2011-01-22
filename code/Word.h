@@ -27,19 +27,19 @@ class Word : public iWord {
         
         The indexing of the bits works as defined in #operator[]().
     */
-    bool _hasBit(int) const;
+    bool _HasBit(int) const;
 
   public:
     Word();
 
-    int toInt() const;
-    int toInt2Complement() const;
-    std::string toStr() const;
-    std::string toHex() const;
+    int ToInt() const;
+    int ToInt2Complement() const;
+    std::string ToStr() const;
+    std::string ToHex() const;
 
-    bool fromInt(int value);
-    bool fromStr(const std::string& str);
-    bool fromHex(const std::string& str);
+    bool FromInt(int value);
+    bool FromStr(const std::string& str);
+    bool FromHex(const std::string& str);
 
     Word Add(const iWord& w) const;
     Word operator+(const iWord& w) const;
@@ -51,7 +51,7 @@ class Word : public iWord {
     Word Or(const iWord& w) const;
     Word Not() const;
 
-    void copy(const iWord& w);
+    void Copy(const iWord& w);
     Word& operator=(const Word w);
 
     iWord& operator++();
