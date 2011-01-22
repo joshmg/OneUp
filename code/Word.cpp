@@ -10,39 +10,39 @@
 using namespace std;
 
 //*** private ***//
-bool Word::_hasBit(int i) const {
+bool Word::_HasBit(int i) const {
   // bit i's value
   int pow_of_two = (int)pow(2.0, i);
   // true iff ith bit is one
   return ((_value & pow_of_two) > 0);
 }
 
-//*** public ***/
+//*** public ***//
 Word::Word() {
   _value = 0;
 }
 
-int Word::toInt() const {
+int Word::ToInt() const {
   // always positive
   return (int) _value;
 }
 
-int Word::toInt2Complement() const {
+int Word::ToInt2Complement() const {
   // create logical overflow to allow for neg numbers
   short temp = (short) _value;
   return temp;
 }
 
-string Word::toStr() const {
+string Word::ToStr() const {
   string str;
   for (int i=0;i<WORD_SIZE;i++) {
     // start with highest order bit
-    str += '0' + _hasBit((WORD_SIZE-1)-i);
+    str += '0' + _HasBit((WORD_SIZE-1)-i);
   }
   return str;
 }
 
-string Word::toHex() const {
+string Word::ToHex() const {
   string value("");
 
   for (int i=0;i<WORD_SIZE;i+=4) {
@@ -60,7 +60,7 @@ string Word::toHex() const {
   return "0x" + value;  
 }
 
-bool Word::fromInt(int value) {
+bool Word::FromInt(int value) {
   if (((unsigned short) value) < (int) pow(2.0, WORD_SIZE)) {
     // value is within allowable range
     _value = (short) value;
@@ -70,7 +70,7 @@ bool Word::fromInt(int value) {
   return false;
 }
 
-bool Word::fromStr(const string& value) {
+bool Word::FromStr(const string& value) {
   if (value.length() != WORD_SIZE) {
     // wrong size
     return false;
@@ -94,7 +94,7 @@ bool Word::fromStr(const string& value) {
   return true;
 }
 
-bool Word::fromHex(const string& value) {
+bool Word::FromHex(const string& value) {
   string proper = "0xXXXX"; // proper formatting
   if (value.length() != proper.length()) {
     // wrong size
@@ -133,37 +133,37 @@ bool Word::fromHex(const string& value) {
 
 Word Word::Add(const iWord& x) const {
   Word temp;
-  temp._value = (*this)._value + x.toInt();
+  temp._value = (*this)._value + x.ToInt();
   return temp;
 }
 
 Word Word::operator+(const iWord& x) const {
   Word temp;
-  temp._value = (*this)._value + x.toInt();
+  temp._value = (*this)._value + x.ToInt();
   return temp;
 }
 
 Word Word::Subtract(const iWord& x) const {
   Word temp;
-  temp._value = (*this)._value - x.toInt();
+  temp._value = (*this)._value - x.ToInt();
   return temp;
 }
 
 Word Word::operator-(const iWord& x) const {
   Word temp;
-  temp._value = (*this)._value - x.toInt();
+  temp._value = (*this)._value - x.ToInt();
   return temp;
 }
 
 Word Word::And(const iWord& x) const {
   Word temp;
-  temp._value = (*this)._value & x.toInt();
+  temp._value = (*this)._value & x.ToInt();
   return temp;
 }
 
 Word Word::Or(const iWord& x) const {
   Word temp;
-  temp._value = (*this)._value | x.toInt();
+  temp._value = (*this)._value | x.ToInt();
   return temp;
 }
 
@@ -173,15 +173,15 @@ Word Word::Not() const {
   return temp;
 }
 
-void Word::copy(const iWord& w) {
+void Word::Copy(const iWord& w) {
   if (this != &w) {
-    _value = (short) w.toInt();
+    _value = (short) w.ToInt();
   }
 }
 
 Word& Word::operator=(const Word w) {
   if (this != &w) {
-    _value = (short) w.toInt();
+    _value = (short) w.ToInt();
   }
   return (*this);
 }
@@ -197,6 +197,6 @@ iWord& Word::operator++(int) {
 }
 
 bool Word::operator[](const int i) const {
-  return _hasBit(i);
+  return _HasBit(i);
 }
 

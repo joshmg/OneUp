@@ -8,8 +8,8 @@ int main() {
   Word w;
   Register r;
   for (int i=-10; i<10; i++) {
-    w.fromInt(i);
+    w.FromInt(i);
     r.Store(w);
-    cout << r.GetValue().toStr() << endl;
+    cout << r.GetValue().ToStr() << endl;
   }
 }

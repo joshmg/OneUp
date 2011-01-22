@@ -1,6 +1,7 @@
-// File: Register.h
-// Written by:
-//    Andrew Groot
+/*! @file Register.h
+    @author Andrew Groot
+    @brief Definition of private data for the "Register" class.
+*/
 
 #ifndef REGISTER_H
 #define REGISTER_H
@@ -10,6 +11,7 @@
 
 class Register : public iRegister {
   private:
+    //! @brief The word of data held in the register.
     Word _word;
 
   public:
