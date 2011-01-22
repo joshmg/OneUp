@@ -15,7 +15,7 @@
 
 class Word;
 
-class Memory : iMemory {
+class Memory : public iMemory {
   private:
     //! Provide constant time access to reserved memory.
     std::vector<Word*> _bounded_memory;
