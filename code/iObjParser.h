@@ -1,7 +1,7 @@
 /*! @file iObjParser.h
     @author Joshua Green
     @author Andrew Groot
-    @Definition of the Object File Parser.
+    @brief Definition of the Object File Parser.
 */
 
 #ifndef iOBJPARSER_H
@@ -45,7 +45,7 @@ struct ObjectData {
   std::vector<std::string> data;
 };
 
-/*! @brief Opens the object file and pre-processes each line.
+/*! @brief Defines how object files are processed.
 */
 class iObjParser {
   private:

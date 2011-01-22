@@ -13,7 +13,7 @@
 
 class Word;
 
-/*! @brief Mimics the functionality of memory in the Wi-11 machine.
+/*! @brief Defines the functionality of memory in the Wi-11 machine.
     
     Its size is limited only by addressability (2^16-1 16-bit words).
     It is meant to be implemented in such a way that the memory
@@ -32,7 +32,7 @@ class iMemory {
         The memory reserved here is dynamically allocated and provides
         constant-time access to addresses "initial_address" through
         "initial_address"+"length"-1.
-    */ 
+    */
     virtual Codes::RESULT Reserve(const iWord& initial_address, const iWord& length) = 0;
 
 
@@ -57,6 +57,7 @@ class iMemory {
         The efficiency constraints in ::Load() apply here as well.
     */
     virtual Codes::RESULT Store(const iWord& address, const Word& value) = 0;
+
 
     /*! 
     */

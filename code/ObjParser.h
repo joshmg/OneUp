@@ -10,6 +10,7 @@
 #include "Word.h"
 #include <ifstream>
 
+//! Implements iObjParser.
 class ObjParser : iObjParser {
   private:
     //! Maintains an input stream from the object file specified by the "name" parameter to Initialize.

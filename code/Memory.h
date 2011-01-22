@@ -15,6 +15,7 @@
 
 class Word;
 
+//! Implements iMemory.
 class Memory : public iMemory {
   private:
     //! Provide constant time access to reserved memory.

@@ -15,6 +15,7 @@
 #include "Loader.h"
 #include "ResultCodes.h"
 
+//! Implements iWi11.
 class Wi11 : public iWi11 {
   private:
     //! Acts as the Wi-11's memory.

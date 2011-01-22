@@ -10,7 +10,7 @@
 #include "ResultCodes.h"
 #include "iMemory.h"
 
-/*! @brief Initializes memory.
+/*! @brief Defines how the Wi-11 initializes memory.
     
     This class loads the instruction from the object file into memory.
 */

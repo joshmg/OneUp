@@ -1,5 +1,8 @@
-// File: ResultCodes.h
-// Written by Joshua Green
+/*! @file ResultCodes.h
+    @author Joshua Green
+    @author Andrew Groot
+    @brief Definition of the Wi-11's run-time messages.
+*/
 
 #ifndef RESULTCODES_H
 #define RESULTCODES_H
@@ -7,36 +10,41 @@
 #include <string>
 #include <map>
 
-/*  Purpose:
-      RESULT codes will be returned by most of Wi11's functions providing
-      useful debug information relating the success or failure of the
-      execution. The RESULT codes should be enumerations for efficiency--
-      directly returning a string explaining the error is resource costly
-      and not always necessary (for instance, the code can be thrown away
-      if the Wi11 is not being run in verbose mode). If the code thrown
-      requires a desciption, ResultDecoder can be used to do a look-up of
-      the error code.
-*/
+/*! @brief Values corresponding to the results of Wi-11 function calls.
 
+    An enum is used for efficiency.  The code can be returned up the
+    collaboration hierarchy quickly so that, if necessary, the program
+    can print an appropriate error message
+
+    @note
+    ResultDecoder can be used to do a look-up of the error message.
+*/
 namespace Codes {
 
   enum RESULT {
-    ERROR_0,          // quick descipription
-    SUCCESS,          // Operation succeeded
-    HALT,             // TRAP Halt Command
-    UNDEFINED,         // An error description could not be found.
+    ERROR_0,              // quick descipription
+    SUCCESS,              // Operation succeeded
+    HALT,                 // TRAP Halt Command
+    UNDEFINED,            // An error description could not be found.
     INVALID_OBJECT_FILE,  // the first letter in the object file was not a H
     INVALID_DATA_ENTRY,   // there was an invalid data entry in the object file
     OUT_OF_BOUNDS,        // attempt to save memory outside of claimed area
-    NOT_HEX           // the suposedly hex string is not hex
+    NOT_HEX               // the suposedly hex string is not hex
   };
 
 }
 
+/*! @brief Finds the messages associated with a given result code.
+*/
 class ResultDecoder {
   private:
+    /*! @brief Maps a result code to, in every case but SUCCESS, an error message.
+
+        It is static because the result code messages should be available from anyhere.
+    */
     static std::map<Codes::RESULT, std::string> _codes;
   public:
+    //! Generates the code-to-message mappings.
     ResultDecoder() {
       _codes[Codes::ERROR_0] = "This is an example description sent to the end-user upon verbose mode.";
       _codes[Codes::SUCCESS] = "The operation executed successfully.";
@@ -48,7 +56,11 @@ class ResultDecoder {
       _codes[Codes::NOT_HEX] = "There was an invalid hex string found.";
     }
 
-    std::string Find(const Codes::RESULT&) const;
+    /*! @brief Looks up a result code.
+        @param[in] result The result code to look up.
+        @returns The messages associated with "result".
+    */
+    std::string Find(const Codes::RESULT& result) const;
 };
 
 #endif

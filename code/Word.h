@@ -12,6 +12,7 @@
 
 #define WORD_SIZE 16
 
+//! Implements iWord.
 class Word : public iWord {
   private:
     /*! @brief Used to store the "word" of data.
