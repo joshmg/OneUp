@@ -104,7 +104,8 @@ int main(int argc, char* argv[]) {
       @par
       <b>At a glance:</b> There is an 'E', and the location in memory from which the first instruction should be fetched.
 
-    @section Component Interactions
+    @section Component Interaction
+s
     @subsection components Components
 
     @subsection instructions Wi11 Instruction Set
