@@ -157,6 +157,7 @@ class iWord {
     */
     virtual void Copy(const iWord& w) = 0;
 
+
     /*! @brief A standard assignment operator.
         @param[in] w
           The value to be copied.
@@ -167,6 +168,7 @@ class iWord {
     */ 
     virtual Word& operator=(const Word w) = 0;
 
+
     /*! @brief A standard pre-increment operator.
         @returns A reference to itself.
 
@@ -174,12 +176,14 @@ class iWord {
     */
     virtual iWord& operator++() = 0;
 
+
     /*! @brief A standard post-increment operator.
         @returns A reference to itself.
 
         The object increments its value AFTER the execution of the current line.
     */
     virtual iWord& operator++(int) = 0;
+
 
     /*! @brief An accessor to the 'i'th bit of the value.
         @param[in] i
@@ -194,6 +198,17 @@ class iWord {
           If it holds a negative value (Starting with a 1 in 2's complement): num[15] = 1.
     */
     virtual bool operator[](const int i) const = 0;
+
+
+    /*! @brief Sets the 'i'th bit of the value.
+        @param[in] i
+          The index of the bit in question.
+        @pre The index must be less than the size of a word, ie. 16.
+        
+        Works in a similar way to ::operator[] but sets the bit
+        instead of determining if it is set.
+    */
+    virtual void SetBit(const int i) = 0;
 };
 
 #endif

@@ -15,10 +15,6 @@
 
 class Word;
 
-/*class WordCompare {
-  bool operator() (const Word& a, const Word& b) const;
-};*/
-
 class Memory : iMemory {
   private:
     //! Provide constant time access to reserved memory.
@@ -40,6 +36,7 @@ class Memory : iMemory {
 
     virtual Codes::RESULT Store(const iWord& address, const Word& value);
 
+    std::vector<Word[2]> GetUsedMemory() const;
 };
 
 #endif

@@ -9,6 +9,7 @@
 
 #include "iWord.h"
 #include "ResultCodes.h"
+#include <vector>
 
 class Word;
 
@@ -56,6 +57,10 @@ class iMemory {
         The efficiency constraints in ::Load() apply here as well.
     */
     virtual Codes::RESULT Store(const iWord& address, const Word& value) = 0;
+
+    /*! 
+    */
+    std::vector<Word[2]> GetUsedMemory() const = 0;
 };
 
 #endif

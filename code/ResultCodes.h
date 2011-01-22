@@ -23,6 +23,7 @@ namespace Codes {
   enum RESULT {
     ERROR_0,          // quick descipription
     SUCCESS,          // Operation succeeded
+    HALT,             // TRAP Halt Command
     UNDEFINED         // An error description could not be found.
   };
 
@@ -35,6 +36,7 @@ class ResultDecoder {
     ResultDecoder() {
       _codes[Codes::ERROR_0] = "This is an example description sent to the end-user upon verbose mode.";
       _codes[Codes::SUCCESS] = "The operation executed successfully.";
+      _codes[Codes::HALT] = "Execution has been terminated (Halt).";
       _codes[Codes::UNDEFINED] = "An unexpected error occured.";
     }
 
