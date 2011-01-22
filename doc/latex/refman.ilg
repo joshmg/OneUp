@@ -1,26 +1,26 @@
 This is makeindex, version 2.15 [TeX Live 2010] (kpathsea + Thai support).
 Scanning input file refman.idx....
-!! Input index error (file = refman.idx, line = 134):
+!! Input index error (file = refman.idx, line = 140):
    -- Extra `@' at position 63 of first argument.
-!! Input index error (file = refman.idx, line = 135):
+!! Input index error (file = refman.idx, line = 141):
    -- Extra `@' at position 49 of first argument.
 
-!! Input index error (file = refman.idx, line = 172):
+!! Input index error (file = refman.idx, line = 178):
    -- Extra `@' at position 63 of first argument.
-!! Input index error (file = refman.idx, line = 173):
+!! Input index error (file = refman.idx, line = 179):
    -- Extra `@' at position 49 of first argument.
 
-!! Input index error (file = refman.idx, line = 300):
+!! Input index error (file = refman.idx, line = 318):
    -- Extra `@' at position 61 of first argument.
-!! Input index error (file = refman.idx, line = 301):
+!! Input index error (file = refman.idx, line = 319):
    -- Extra `@' at position 49 of first argument.
 
-!! Input index error (file = refman.idx, line = 340):
+!! Input index error (file = refman.idx, line = 358):
    -- Extra `@' at position 61 of first argument.
-!! Input index error (file = refman.idx, line = 341):
+!! Input index error (file = refman.idx, line = 359):
    -- Extra `@' at position 49 of first argument.
-done (339 entries accepted, 8 rejected).
-Sorting entries.....done (2996 comparisons).
-Generating output file refman.ind....done (353 lines written, 0 warnings).
+done (357 entries accepted, 8 rejected).
+Sorting entries......done (3202 comparisons).
+Generating output file refman.ind....done (367 lines written, 0 warnings).
 Output written in refman.ind.
 Transcript written in refman.ilg.

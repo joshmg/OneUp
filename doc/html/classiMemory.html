@@ -54,7 +54,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>iMemory Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="iMemory" --><!-- startSectionHeader --><div class="dynheader">
+<!-- doxytag: class="iMemory" -->
+<p>Mimics the functionality of memory in the Wi-11 machine.  
+<a href="#_details">More...</a></p>
+<!-- startSectionHeader --><div class="dynheader">
 Inheritance diagram for iMemory:<!-- endSectionHeader --></div>
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="classiMemory__inherit__graph.png" border="0" usemap="#iMemory_inherit__map" alt="Inheritance graph"/></div>
@@ -66,12 +69,12 @@ Inheritance diagram for iMemory:<!-- endSectionHeader --></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27750e74d09fb473c163a4cc4c3e697b"></a><!-- doxytag: member="iMemory::Reserve" ref="a27750e74d09fb473c163a4cc4c3e697b" args="(const iWord &amp;initial_address, const iWord &amp;length)=0" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Reserve</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;initial_address, const <a class="el" href="classiWord.html">iWord</a> &amp;length)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58fea9cebc1beb89503898d2d5f79bcd"></a><!-- doxytag: member="iMemory::Load" ref="a58fea9cebc1beb89503898d2d5f79bcd" args="(const iWord &amp;) const =0" -->
-virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2632c9999797b0799a7d6b0a59bfa91a"></a><!-- doxytag: member="iMemory::Store" ref="a2632c9999797b0799a7d6b0a59bfa91a" args="(const iWord &amp;address, const Word &amp;value)=0" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;address, const <a class="el" href="classWord.html">Word</a> &amp;value)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiMemory.html#a27750e74d09fb473c163a4cc4c3e697b">Reserve</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;initial_address, const <a class="el" href="classiWord.html">iWord</a> &amp;length)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves an initial section of memory for instructions.  <a href="#a27750e74d09fb473c163a4cc4c3e697b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiMemory.html#a3352ba391fc9b69a0b8691b2d585596a">Load</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a load.  <a href="#a3352ba391fc9b69a0b8691b2d585596a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiMemory.html#a2632c9999797b0799a7d6b0a59bfa91a">Store</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;address, const <a class="el" href="classWord.html">Word</a> &amp;value)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Peforms a store.  <a href="#a2632c9999797b0799a7d6b0a59bfa91a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27750e74d09fb473c163a4cc4c3e697b"></a><!-- doxytag: member="iMemory::Reserve" ref="a27750e74d09fb473c163a4cc4c3e697b" args="(const iWord &amp;initial_address, const iWord &amp;length)=0" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Reserve</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;initial_address, const <a class="el" href="classiWord.html">iWord</a> &amp;length)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58fea9cebc1beb89503898d2d5f79bcd"></a><!-- doxytag: member="iMemory::Load" ref="a58fea9cebc1beb89503898d2d5f79bcd" args="(const iWord &amp;) const =0" -->
@@ -79,6 +82,119 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2632c9999797b0799a7d6b0a59bfa91a"></a><!-- doxytag: member="iMemory::Store" ref="a2632c9999797b0799a7d6b0a59bfa91a" args="(const iWord &amp;address, const Word &amp;value)=0" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;address, const <a class="el" href="classWord.html">Word</a> &amp;value)=0</td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Mimics the functionality of memory in the Wi-11 machine. </p>
+<p>Its size is limited only by addressability (2^16-1 16-bit words). It is meant to be implemented in such a way that the memory initialized for instructions can be accessed in constant time while addresses outside this range are accessed in nlogn time. </p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a27750e74d09fb473c163a4cc4c3e697b"></a><!-- doxytag: member="iMemory::Reserve" ref="a27750e74d09fb473c163a4cc4c3e697b" args="(const iWord &amp;initial_address, const iWord &amp;length)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Codes::RESULT iMemory::Reserve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>initial_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reserves an initial section of memory for instructions. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">initial_address</td><td>The smallest address for the instruction memory. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The number of addresses to reserve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something goes wrong, an appropriate error code.</dd></dl>
+<p>The memory reserved here is dynamically allocated and provides constant-time access to addresses "initial_address" through "initial_address"+"length"-1. </p>
+
+<p>Implemented in <a class="el" href="classMemory.html#a80cd994d4833dde66b8005184e510dda">Memory</a>, and <a class="el" href="classMemory.html#afe683401c1656b0a077d5f666f9c8d51">Memory</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3352ba391fc9b69a0b8691b2d585596a"></a><!-- doxytag: member="iMemory::Load" ref="a3352ba391fc9b69a0b8691b2d585596a" args="(const iWord &amp;w) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iMemory::Load </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs a load. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The address from which to load data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data stored a address "w".</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If "w" is in the range created by Reserve(), it can be accessed in constant time. Otherwise, a maximum of nlogn time is required if n is the size of memory initialized outside of these boundaries. </dd></dl>
+
+<p>Implemented in <a class="el" href="classMemory.html#aca021609915080b38ca1b00d9b416e80">Memory</a>, and <a class="el" href="classMemory.html#af043b481b061644f9ff6cd7288655c93">Memory</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2632c9999797b0799a7d6b0a59bfa91a"></a><!-- doxytag: member="iMemory::Store" ref="a2632c9999797b0799a7d6b0a59bfa91a" args="(const iWord &amp;address, const Word &amp;value)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Codes::RESULT iMemory::Store </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classWord.html">Word</a> &amp;&#160;</td>
+          <td class="paramname"> <em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Peforms a store. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The address to store the data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The data to store at "address". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The efficiency constraints in Load() apply here as well. </dd></dl>
+
+<p>Implemented in <a class="el" href="classMemory.html#a23703464fb24710d09be1b2010e79edc">Memory</a>, and <a class="el" href="classMemory.html#a100745221ade9b322743514d91fcce23">Memory</a>.</p>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -94,7 +210,7 @@ virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Stor
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 01:05:32 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 02:04:03 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>
