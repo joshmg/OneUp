@@ -2,24 +2,63 @@
 \section{ResultDecoder Class Reference}
 \label{classResultDecoder}\index{ResultDecoder@{ResultDecoder}}
 }
+
+
+Finds the messages associated with a given result code.  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classResultDecoder_af36f0e04752a354748bbada8c480c2b5}{
-std::string {\bfseries Find} (const Codes::RESULT \&) const }
-\label{classResultDecoder_af36f0e04752a354748bbada8c480c2b5}
+\hypertarget{classResultDecoder_afafd3458bdbcbd7b1b95545f47151358}{
+\hyperlink{classResultDecoder_afafd3458bdbcbd7b1b95545f47151358}{ResultDecoder} ()}
+\label{classResultDecoder_afafd3458bdbcbd7b1b95545f47151358}
 
-\item 
-\hypertarget{classResultDecoder_af36f0e04752a354748bbada8c480c2b5}{
-std::string {\bfseries Find} (const Codes::RESULT \&) const }
-\label{classResultDecoder_af36f0e04752a354748bbada8c480c2b5}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates the code-\/to-\/message mappings. \item\end{DoxyCompactList}\item 
+std::string \hyperlink{classResultDecoder_ace7c2719b4f9de2a5e25fccfddc6d8f4}{Find} (const Codes::RESULT \&result) const 
+\begin{DoxyCompactList}\small\item\em Looks up a result code. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classResultDecoder_aa8ba704b726b200f20dcc99eb3d5f958}{
-static std::map$<$ Codes::RESULT, std::string $>$ {\bfseries \_\-codes}}
-\label{classResultDecoder_aa8ba704b726b200f20dcc99eb3d5f958}
+static std::map$<$ Codes::RESULT, std::string $>$ \hyperlink{classResultDecoder_ab19497e41c5d1a0546ed33642cad48dd}{\_\-codes}
+\begin{DoxyCompactList}\small\item\em Maps a result code to, in every case but SUCCESS, an error message. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\end{DoxyCompactItemize}
+
+\subsection{Detailed Description}
+Finds the messages associated with a given result code. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classResultDecoder_ace7c2719b4f9de2a5e25fccfddc6d8f4}{
+\index{ResultDecoder@{ResultDecoder}!Find@{Find}}
+\index{Find@{Find}!ResultDecoder@{ResultDecoder}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}std::string ResultDecoder::Find (
+\begin{DoxyParamCaption}
+\item[{const Codes::RESULT \&}]{ result}
+\end{DoxyParamCaption}
+) const}}
+\label{classResultDecoder_ace7c2719b4f9de2a5e25fccfddc6d8f4}
+
+
+Looks up a result code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em result} & The result code to look up. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The messages associated with \char`\"{}result\char`\"{}. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classResultDecoder_ab19497e41c5d1a0546ed33642cad48dd}{
+\index{ResultDecoder@{ResultDecoder}!\_\-codes@{\_\-codes}}
+\index{\_\-codes@{\_\-codes}!ResultDecoder@{ResultDecoder}}
+\subsubsection[{\_\-codes}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$Codes::RESULT, std::string$>$ {\bf ResultDecoder::\_\-codes}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classResultDecoder_ab19497e41c5d1a0546ed33642cad48dd}
+
+
+Maps a result code to, in every case but SUCCESS, an error message. 
+
+It is static because the result code messages should be available from anyhere. 

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -55,19 +56,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>Memory Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Memory" --><!-- doxytag: inherits="iMemory,iMemory" --><!-- startSectionHeader --><div class="dynheader">
+<!-- doxytag: class="Memory" --><!-- doxytag: inherits="iMemory" -->
+<p>Implements <a class="el" href="classiMemory.html" title="Defines the functionality of memory in the Wi-11 machine.">iMemory</a>.  
+<a href="#_details">More...</a></p>
+<!-- startSectionHeader --><div class="dynheader">
 Inheritance diagram for Memory:<!-- endSectionHeader --></div>
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="classMemory__inherit__graph.png" border="0" usemap="#Memory_inherit__map" alt="Inheritance graph"/></div>
 <map name="Memory_inherit__map" id="Memory_inherit__map">
-<area shape="rect" id="node2" href="classiMemory.html" title="Mimics the functionality of memory in the Wi&#45;11 machine." alt="" coords="5,5,83,35"/></map>
+<area shape="rect" id="node2" href="classiMemory.html" title="Defines the functionality of memory in the Wi&#45;11 machine." alt="" coords="5,5,83,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
 <!-- startSectionHeader --><div class="dynheader">
 Collaboration diagram for Memory:<!-- endSectionHeader --></div>
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="classMemory__coll__graph.png" border="0" usemap="#Memory_coll__map" alt="Collaboration graph"/></div>
 <map name="Memory_coll__map" id="Memory_coll__map">
-<area shape="rect" id="node2" href="classiMemory.html" title="Mimics the functionality of memory in the Wi&#45;11 machine." alt="" coords="5,5,83,35"/></map>
+<area shape="rect" id="node2" href="classiMemory.html" title="Defines the functionality of memory in the Wi&#45;11 machine." alt="" coords="5,5,83,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
 
 <p><a href="classMemory-members.html">List of all members.</a></p>
@@ -82,27 +86,23 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Peforms a store.  <a href="#a23703464fb24710d09be1b2010e79edc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a06a6f30a19b58795ab40f9f48dca4f"></a><!-- doxytag: member="Memory::GetUsedMemory" ref="a8a06a6f30a19b58795ab40f9f48dca4f" args="() const " -->
 std::vector&lt; <a class="el" href="classWord.html">Word</a>[2]&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetUsedMemory</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#afe683401c1656b0a077d5f666f9c8d51">Reserve</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;initial_address, const <a class="el" href="classiWord.html">iWord</a> &amp;length)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves an initial section of memory for instructions.  <a href="#afe683401c1656b0a077d5f666f9c8d51"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#af043b481b061644f9ff6cd7288655c93">Load</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a load.  <a href="#af043b481b061644f9ff6cd7288655c93"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a100745221ade9b322743514d91fcce23">Store</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;address, const <a class="el" href="classWord.html">Word</a> &amp;value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Peforms a store.  <a href="#a100745221ade9b322743514d91fcce23"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a261c779e202d16009dd48c68291266f9"></a><!-- doxytag: member="Memory::_bounded_memory" ref="a261c779e202d16009dd48c68291266f9" args="" -->
-std::vector&lt; <a class="el" href="classWord.html">Word</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a261c779e202d16009dd48c68291266f9">_bounded_memory</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6391f325c42a93f4c56f0c44e6b35fda"></a><!-- doxytag: member="Memory::_bounded_memory" ref="a6391f325c42a93f4c56f0c44e6b35fda" args="" -->
+std::vector&lt; <a class="el" href="classWord.html">Word</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a6391f325c42a93f4c56f0c44e6b35fda">_bounded_memory</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide constant time access to reserved memory. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adceb29287c4850dc78b4a66cc0890d47"></a><!-- doxytag: member="Memory::_segment_offsets" ref="adceb29287c4850dc78b4a66cc0890d47" args="" -->
-std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#adceb29287c4850dc78b4a66cc0890d47">_segment_offsets</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29d6fa2f1774f0c770130c968820d008"></a><!-- doxytag: member="Memory::_segment_offsets" ref="a29d6fa2f1774f0c770130c968820d008" args="" -->
+std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a29d6fa2f1774f0c770130c968820d008">_segment_offsets</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep track of the initial addresses. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a5f79ee8ee270287a668383ec8f4a6d"></a><!-- doxytag: member="Memory::_segment_lengths" ref="a8a5f79ee8ee270287a668383ec8f4a6d" args="" -->
-std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a8a5f79ee8ee270287a668383ec8f4a6d">_segment_lengths</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e5675ae2bc551a9c5429525e2dce857"></a><!-- doxytag: member="Memory::_segment_lengths" ref="a3e5675ae2bc551a9c5429525e2dce857" args="" -->
+std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a3e5675ae2bc551a9c5429525e2dce857">_segment_lengths</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep track of the size of reserved memory. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a390295664efe18aa33298ead1004c442"></a><!-- doxytag: member="Memory::_unbounded_memory" ref="a390295664efe18aa33298ead1004c442" args="" -->
-std::map&lt; int, <a class="el" href="classWord.html">Word</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a390295664efe18aa33298ead1004c442">_unbounded_memory</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36f459f042295fb06b4d7ec9b397f952"></a><!-- doxytag: member="Memory::_unbounded_memory" ref="a36f459f042295fb06b4d7ec9b397f952" args="" -->
+std::map&lt; int, <a class="el" href="classWord.html">Word</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a36f459f042295fb06b4d7ec9b397f952">_unbounded_memory</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Map out-of-bounds values to new Words. <br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implements <a class="el" href="classiMemory.html" title="Defines the functionality of memory in the Wi-11 machine.">iMemory</a>. </p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a80cd994d4833dde66b8005184e510dda"></a><!-- doxytag: member="Memory::Reserve" ref="a80cd994d4833dde66b8005184e510dda" args="(const iWord &amp;initial_address, const iWord &amp;length)" -->
 <div class="memitem">
@@ -213,122 +213,13 @@ std::map&lt; int, <a class="el" href="classWord.html">Word</a> &gt;&#160;</td><t
 
 </div>
 </div>
-<a class="anchor" id="afe683401c1656b0a077d5f666f9c8d51"></a><!-- doxytag: member="Memory::Reserve" ref="afe683401c1656b0a077d5f666f9c8d51" args="(const iWord &amp;initial_address, const iWord &amp;length)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual Codes::RESULT Memory::Reserve </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>initial_address</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reserves an initial section of memory for instructions. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">initial_address</td><td>The smallest address for the instruction memory. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The number of addresses to reserve. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something goes wrong, an appropriate error code.</dd></dl>
-<p>The memory reserved here is dynamically allocated and provides constant-time access to addresses "initial_address" through "initial_address"+"length"-1. </p>
-
-<p>Implements <a class="el" href="classiMemory.html#a27750e74d09fb473c163a4cc4c3e697b">iMemory</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af043b481b061644f9ff6cd7288655c93"></a><!-- doxytag: member="Memory::Load" ref="af043b481b061644f9ff6cd7288655c93" args="(const iWord &amp;) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> Memory::Load </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>w</em>&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Performs a load. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The address from which to load data. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The data stored a address "w".</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>If "w" is in the range created by Reserve(), it can be accessed in constant time. Otherwise, a maximum of nlogn time is required if n is the size of memory initialized outside of these boundaries. </dd></dl>
-
-<p>Implements <a class="el" href="classiMemory.html#a3352ba391fc9b69a0b8691b2d585596a">iMemory</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a100745221ade9b322743514d91fcce23"></a><!-- doxytag: member="Memory::Store" ref="a100745221ade9b322743514d91fcce23" args="(const iWord &amp;address, const Word &amp;value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual Codes::RESULT Memory::Store </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>address</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classWord.html">Word</a> &amp;&#160;</td>
-          <td class="paramname"> <em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Peforms a store. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The address to store the data. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The data to store at "address". </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>The efficiency constraints in Load() apply here as well. </dd></dl>
-
-<p>Implements <a class="el" href="classiMemory.html#a2632c9999797b0799a7d6b0a59bfa91a">iMemory</a>.</p>
-
-</div>
-</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -337,7 +228,7 @@ std::map&lt; int, <a class="el" href="classWord.html">Word</a> &gt;&#160;</td><t
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

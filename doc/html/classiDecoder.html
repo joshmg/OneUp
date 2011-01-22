@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -55,20 +56,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="iDecoder" -->
+<p>Defines how Wi-11 instructions are decoded.  
+<a href="#_details">More...</a></p>
+
 <p><a href="classiDecoder-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b1dc8de3935d9e3a9f7397028662eb3"></a><!-- doxytag: member="iDecoder::DecodeInstruction" ref="a7b1dc8de3935d9e3a9f7397028662eb3" args="(const iWord &amp;) const =0" -->
-virtual <a class="el" href="structInstruction.html">Instruction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>DecodeInstruction</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structInstruction.html">Instruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiDecoder.html#a156d35f70da4bd96dce3b5b0b97d138c">DecodeInstruction</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;inst) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates the binary instruction into more usable objects.  <a href="#a156d35f70da4bd96dce3b5b0b97d138c"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Defines how Wi-11 instructions are decoded. </p>
+<p>This could be a struct or even a fucntion. It is declared as an object for consistency purposes. </p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a156d35f70da4bd96dce3b5b0b97d138c"></a><!-- doxytag: member="iDecoder::DecodeInstruction" ref="a156d35f70da4bd96dce3b5b0b97d138c" args="(const iWord &amp;inst) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structInstruction.html">Instruction</a> iDecoder::DecodeInstruction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>inst</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Translates the binary instruction into more usable objects. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>The instruction to be translated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An <a class="el" href="structInstruction.html" title="Container to simplify interactions with Wi-11 instructions.">Instruction</a> object as specificied in <a class="el" href="structInstruction.html">its documentation</a>. </dd></dl>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -77,7 +111,7 @@ virtual <a class="el" href="structInstruction.html">Instruction</a>&#160;</td><t
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

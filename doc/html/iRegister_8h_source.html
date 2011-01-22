@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -58,52 +59,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="preprocessor">#ifndef iREGISTER_H</span>
 <a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#define iREGISTER_H</span>
 <a name="l00009"></a>00009 <span class="preprocessor"></span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;iWord.h&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="iWord_8h.html" title="Definition of a &amp;quot;word&amp;quot; of data.">iWord.h</a>&quot;</span>
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">class </span><a class="code" href="classWord.html">Word</a>;
-<a name="l00013"></a>00013 <span class="keyword">class </span><a class="code" href="classRegister.html">Register</a>;
+<a name="l00012"></a>00012 <span class="keyword">class </span><a class="code" href="classWord.html" title="Implements iWord.">Word</a>;
+<a name="l00013"></a>00013 <span class="keyword">class </span><a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>;
 <a name="l00014"></a>00014 
 <a name="l00022"></a><a class="code" href="classiRegister.html">00022</a> <span class="keyword">class </span><a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a> {
 <a name="l00023"></a>00023   <span class="keyword">private</span>:
 <a name="l00024"></a>00024     
 <a name="l00025"></a>00025   <span class="keyword">public</span>:
-<a name="l00030"></a>00030     <span class="keyword">virtual</span> <a class="code" href="classWord.html">Word</a> <a class="code" href="classiRegister.html#ae7266f6f981b621f53f3c7cf77d4966a" title="Retrieves a copy of the word of data store in the register.">GetValue</a>() <span class="keyword">const</span> = 0;
+<a name="l00030"></a>00030     <span class="keyword">virtual</span> <a class="code" href="classWord.html" title="Implements iWord.">Word</a> <a class="code" href="classiRegister.html#ae7266f6f981b621f53f3c7cf77d4966a" title="Retrieves a copy of the word of data store in the register.">GetValue</a>() <span class="keyword">const</span> = 0;
 <a name="l00031"></a>00031 
 <a name="l00037"></a>00037     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classiRegister.html#acb13aa880933f43088958723c9d6e564" title="Adds a word of data to the calling object.">Add</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) = 0;
 <a name="l00038"></a>00038 
-<a name="l00045"></a>00045     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> <a class="code" href="classiRegister.html#acb13aa880933f43088958723c9d6e564" title="Adds a word of data to the calling object.">Add</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
+<a name="l00045"></a>00045     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> <a class="code" href="classiRegister.html#acb13aa880933f43088958723c9d6e564" title="Adds a word of data to the calling object.">Add</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
 <a name="l00046"></a>00046 
-<a name="l00052"></a>00052     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> <a class="code" href="classiRegister.html#af8ab19234f44a0bade65cb35fd2cd036" title="A standard add operator.">operator+</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
+<a name="l00052"></a>00052     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> <a class="code" href="classiRegister.html#af8ab19234f44a0bade65cb35fd2cd036" title="A standard add operator.">operator+</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
 <a name="l00053"></a>00053 
 <a name="l00059"></a>00059     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classiRegister.html#a98de346c2d0b15bee47d76bc5f70e94b" title="Subtracts a word of data from the calling object.">Subtract</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) = 0;
 <a name="l00060"></a>00060 
-<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> <a class="code" href="classiRegister.html#a98de346c2d0b15bee47d76bc5f70e94b" title="Subtracts a word of data from the calling object.">Subtract</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
+<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> <a class="code" href="classiRegister.html#a98de346c2d0b15bee47d76bc5f70e94b" title="Subtracts a word of data from the calling object.">Subtract</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
 <a name="l00068"></a>00068 
-<a name="l00074"></a>00074     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> <a class="code" href="classiRegister.html#a01f837097cb87ec33fdc1cef606e1842" title="A standard subtraction operator.">operator-</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
+<a name="l00074"></a>00074     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> <a class="code" href="classiRegister.html#a01f837097cb87ec33fdc1cef606e1842" title="A standard subtraction operator.">operator-</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
 <a name="l00075"></a>00075 
 <a name="l00081"></a>00081     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classiRegister.html#ae8114106e70653a705f04ba3892ed9e1" title="Performs a bit-wise and.">And</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) = 0;
 <a name="l00082"></a>00082 
-<a name="l00089"></a>00089     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> <a class="code" href="classiRegister.html#ae8114106e70653a705f04ba3892ed9e1" title="Performs a bit-wise and.">And</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
+<a name="l00089"></a>00089     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> <a class="code" href="classiRegister.html#ae8114106e70653a705f04ba3892ed9e1" title="Performs a bit-wise and.">And</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
 <a name="l00090"></a>00090 
 <a name="l00096"></a>00096     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classiRegister.html#aa0eac4fe58bde4a280a42fda1c087eee" title="Performs a bit-wise &amp;quot;or&amp;quot;.">Or</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) = 0;
 <a name="l00097"></a>00097 
-<a name="l00104"></a>00104     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> <a class="code" href="classiRegister.html#aa0eac4fe58bde4a280a42fda1c087eee" title="Performs a bit-wise &amp;quot;or&amp;quot;.">Or</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
+<a name="l00104"></a>00104     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> <a class="code" href="classiRegister.html#aa0eac4fe58bde4a280a42fda1c087eee" title="Performs a bit-wise &amp;quot;or&amp;quot;.">Or</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span> = 0;
 <a name="l00105"></a>00105 
 <a name="l00109"></a>00109     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classiRegister.html#af4bbbe945b151dee3f1743c43a451cb3" title="Performs a bit-wise not.">Not</a>() = 0;
 <a name="l00110"></a>00110     
-<a name="l00115"></a>00115     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a> <a class="code" href="classiRegister.html#af4bbbe945b151dee3f1743c43a451cb3" title="Performs a bit-wise not.">Not</a>() <span class="keyword">const</span> = 0;
+<a name="l00115"></a>00115     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> <a class="code" href="classiRegister.html#af4bbbe945b151dee3f1743c43a451cb3" title="Performs a bit-wise not.">Not</a>() <span class="keyword">const</span> = 0;
 <a name="l00116"></a>00116 
 <a name="l00122"></a>00122     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classiRegister.html#a8ffac24d1d7326e1a15f9b37cd426969" title="Stores a word of data.">Store</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) = 0;
 <a name="l00123"></a>00123 
 <a name="l00129"></a>00129     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classiRegister.html#a8ffac24d1d7326e1a15f9b37cd426969" title="Stores a word of data.">Store</a>(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) = 0;
 <a name="l00130"></a>00130 
-<a name="l00136"></a>00136     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a>&amp; <a class="code" href="classiRegister.html#a16bf3f305a9588ddc85c109ac9a8b47b" title="A standard assignment operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) = 0;
+<a name="l00136"></a>00136     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; <a class="code" href="classiRegister.html#a16bf3f305a9588ddc85c109ac9a8b47b" title="A standard assignment operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w) = 0;
 <a name="l00137"></a>00137 
-<a name="l00143"></a>00143     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a>&amp; <a class="code" href="classiRegister.html#a16bf3f305a9588ddc85c109ac9a8b47b" title="A standard assignment operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classRegister.html">Register</a> r) = 0;
+<a name="l00143"></a>00143     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; <a class="code" href="classiRegister.html#a16bf3f305a9588ddc85c109ac9a8b47b" title="A standard assignment operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> r) = 0;
 <a name="l00144"></a>00144 
-<a name="l00150"></a>00150     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a>&amp; <a class="code" href="classiRegister.html#abca2bcea556d63fb4e3504df221cdc62" title="A standard pre-increment operator.">operator++</a>() = 0;
+<a name="l00150"></a>00150     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; <a class="code" href="classiRegister.html#abca2bcea556d63fb4e3504df221cdc62" title="A standard pre-increment operator.">operator++</a>() = 0;
 <a name="l00151"></a>00151 
-<a name="l00157"></a>00157     <span class="keyword">virtual</span> <a class="code" href="classRegister.html">Register</a>&amp; <a class="code" href="classiRegister.html#abca2bcea556d63fb4e3504df221cdc62" title="A standard pre-increment operator.">operator++</a>(<span class="keywordtype">int</span>) = 0;
+<a name="l00157"></a>00157     <span class="keyword">virtual</span> <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; <a class="code" href="classiRegister.html#abca2bcea556d63fb4e3504df221cdc62" title="A standard pre-increment operator.">operator++</a>(<span class="keywordtype">int</span>) = 0;
 <a name="l00158"></a>00158 };
 <a name="l00159"></a>00159 
 <a name="l00160"></a>00160 <span class="preprocessor">#endif</span>
@@ -114,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -123,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

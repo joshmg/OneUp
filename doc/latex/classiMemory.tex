@@ -4,12 +4,13 @@
 }
 
 
-Mimics the functionality of memory in the Wi-\/11 machine.  
+Defines the functionality of memory in the Wi-\/11 machine.  
 
 
 
 
-Inheritance diagram for iMemory:\nopagebreak
+Inheritance diagram for iMemory:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,26 +30,11 @@ virtual Codes::RESULT \hyperlink{classiMemory_a2632c9999797b0799a7d6b0a59bfa91a}
 std::vector$<$ \hyperlink{classWord}{Word}\mbox{[}2\mbox{]}$>$ {\bfseries GetUsedMemory} () const =0}
 \label{classiMemory_aa9b57e00c0099963ab28489008d612e8}
 
-\item 
-\hypertarget{classiMemory_a27750e74d09fb473c163a4cc4c3e697b}{
-virtual Codes::RESULT {\bfseries Reserve} (const \hyperlink{classiWord}{iWord} \&initial\_\-address, const \hyperlink{classiWord}{iWord} \&length)=0}
-\label{classiMemory_a27750e74d09fb473c163a4cc4c3e697b}
-
-\item 
-\hypertarget{classiMemory_a58fea9cebc1beb89503898d2d5f79bcd}{
-virtual \hyperlink{classWord}{Word} {\bfseries Load} (const \hyperlink{classiWord}{iWord} \&) const =0}
-\label{classiMemory_a58fea9cebc1beb89503898d2d5f79bcd}
-
-\item 
-\hypertarget{classiMemory_a2632c9999797b0799a7d6b0a59bfa91a}{
-virtual Codes::RESULT {\bfseries Store} (const \hyperlink{classiWord}{iWord} \&address, const \hyperlink{classWord}{Word} \&value)=0}
-\label{classiMemory_a2632c9999797b0799a7d6b0a59bfa91a}
-
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Mimics the functionality of memory in the Wi-\/11 machine. Its size is limited only by addressability (2$^\wedge$16-\/1 16-\/bit words). It is meant to be implemented in such a way that the memory initialized for instructions can be accessed in constant time while addresses outside this range are accessed in nlogn time. 
+Defines the functionality of memory in the Wi-\/11 machine. Its size is limited only by addressability (2$^\wedge$16-\/1 16-\/bit words). It is meant to be implemented in such a way that the memory initialized for instructions can be accessed in constant time while addresses outside this range are accessed in nlogn time. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classiMemory_a27750e74d09fb473c163a4cc4c3e697b}{
@@ -77,7 +63,7 @@ SUCCESS or, if something goes wrong, an appropriate error code.
 \end{DoxyReturn}
 The memory reserved here is dynamically allocated and provides constant-\/time access to addresses \char`\"{}initial\_\-address\char`\"{} through \char`\"{}initial\_\-address\char`\"{}+\char`\"{}length\char`\"{}-\/1. 
 
-Implemented in \hyperlink{classMemory_a80cd994d4833dde66b8005184e510dda}{Memory}, and \hyperlink{classMemory_afe683401c1656b0a077d5f666f9c8d51}{Memory}.
+Implemented in \hyperlink{classMemory_a80cd994d4833dde66b8005184e510dda}{Memory}.
 
 \hypertarget{classiMemory_a3352ba391fc9b69a0b8691b2d585596a}{
 \index{iMemory@{iMemory}!Load@{Load}}
@@ -105,7 +91,7 @@ If \char`\"{}w\char`\"{} is in the range created by Reserve(), it can be accesse
 \end{DoxyNote}
 
 
-Implemented in \hyperlink{classMemory_aca021609915080b38ca1b00d9b416e80}{Memory}, and \hyperlink{classMemory_af043b481b061644f9ff6cd7288655c93}{Memory}.
+Implemented in \hyperlink{classMemory_aca021609915080b38ca1b00d9b416e80}{Memory}.
 
 \hypertarget{classiMemory_a2632c9999797b0799a7d6b0a59bfa91a}{
 \index{iMemory@{iMemory}!Store@{Store}}
@@ -136,5 +122,5 @@ The efficiency constraints in Load() apply here as well.
 \end{DoxyNote}
 
 
-Implemented in \hyperlink{classMemory_a23703464fb24710d09be1b2010e79edc}{Memory}, and \hyperlink{classMemory_a100745221ade9b322743514d91fcce23}{Memory}.
+Implemented in \hyperlink{classMemory_a23703464fb24710d09be1b2010e79edc}{Memory}.
 

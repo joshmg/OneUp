@@ -4,9 +4,19 @@
 }
 
 
-Opens the object file and pre-\/processes each line.  
+Defines how object files are processed.  
 
 
+
+
+Inheritance diagram for iObjParser:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classiObjParser__inherit__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,7 +32,7 @@ virtual \hyperlink{structObjectData}{ObjectData} \hyperlink{classiObjParser_aeb9
 
 
 \subsection{Detailed Description}
-Opens the object file and pre-\/processes each line. 
+Defines how object files are processed. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classiObjParser_a570e7a7dfb64b66e7a78f75ec4da193a}{
@@ -46,7 +56,11 @@ Attempts to open th object file.
 \begin{DoxyReturn}{Returns}
 SUCCESS or, if something went wrong, an appropriate error code.
 \end{DoxyReturn}
-If another file is open, closes that file first before attempting to open the new one. \hypertarget{classiObjParser_aeb9af4a40a06e755d8b0e493526d82dd}{
+If another file is open, closes that file first before attempting to open the new one. 
+
+Implemented in \hyperlink{classObjParser_a71ea25b566166b7db47a894cb7629390}{ObjParser}.
+
+\hypertarget{classiObjParser_aeb9af4a40a06e755d8b0e493526d82dd}{
 \index{iObjParser@{iObjParser}!GetNext@{GetNext}}
 \index{GetNext@{GetNext}!iObjParser@{iObjParser}}
 \subsubsection[{GetNext}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ObjectData} iObjParser::GetNext (
@@ -67,3 +81,7 @@ The encoding of the next instruction.
 \end{DoxyReturn}
 If there is an error parsing the entry: \begin{DoxyItemize}
 \item \hyperlink{structObjectData_a77f1a74deb864606b1b5cc115c2a99a5}{ObjectData.type} = 0; \item \hyperlink{structObjectData_af755ea276bafd67e377e869950c1eb48}{ObjectData.data} = \mbox{[}the faulty encoding\mbox{]} \end{DoxyItemize}
+
+
+Implemented in \hyperlink{classObjParser_a653f83071fd63e3fdf04f28699f2fff5}{ObjParser}.
+

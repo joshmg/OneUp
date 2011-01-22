@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -55,7 +56,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>Register Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Register" --><!-- doxytag: inherits="iRegister" --><!-- startSectionHeader --><div class="dynheader">
+<!-- doxytag: class="Register" --><!-- doxytag: inherits="iRegister" -->
+<p>Implements <a class="el" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi-11 machine.">iRegister</a>.  
+<a href="#_details">More...</a></p>
+<!-- startSectionHeader --><div class="dynheader">
 Inheritance diagram for Register:<!-- endSectionHeader --></div>
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="classRegister__inherit__graph.png" border="0" usemap="#Register_inherit__map" alt="Inheritance graph"/></div>
@@ -67,7 +71,7 @@ Collaboration diagram for Register:<!-- endSectionHeader --></div>
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="classRegister__coll__graph.png" border="0" usemap="#Register_coll__map" alt="Collaboration graph"/></div>
 <map name="Register_coll__map" id="Register_coll__map">
-<area shape="rect" id="node2" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="5,85,80,115"/><area shape="rect" id="node4" href="classWord.html" title="Word" alt="" coords="104,85,157,115"/><area shape="rect" id="node6" href="classiWord.html" title="Defines a &quot;word&quot; of data on the Wi&#45;11 Machine." alt="" coords="103,5,159,35"/></map>
+<area shape="rect" id="node2" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="5,85,83,115"/><area shape="rect" id="node4" href="classWord.html" title="Implements iWord." alt="" coords="107,85,160,115"/><area shape="rect" id="node6" href="classiWord.html" title="Defines a &quot;word&quot; of data on the Wi&#45;11 Machine." alt="" coords="105,5,161,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
 
 <p><a href="classRegister-members.html">List of all members.</a></p>
@@ -120,6 +124,8 @@ Private Attributes</h2></td></tr>
 <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#ad716faf568aba3da6e4acca6674f9ec9">_word</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The word of data held in the register. <br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implements <a class="el" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi-11 machine.">iRegister</a>. </p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a379734c28ab8258ce528a96de24cfa1a"></a><!-- doxytag: member="Register::GetValue" ref="a379734c28ab8258ce528a96de24cfa1a" args="() const " -->
 <div class="memitem">
@@ -137,7 +143,7 @@ Private Attributes</h2></td></tr>
 
 <p>Retrieves a copy of the word of data store in the register. </p>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the calling object is not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classWord.html">Word</a> object holding the value that is stored in the register. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classWord.html" title="Implements iWord.">Word</a> object holding the value that is stored in the register. </dd></dl>
 
 <p>Implements <a class="el" href="classiRegister.html#ae7266f6f981b621f53f3c7cf77d4966a">iRegister</a>.</p>
 
@@ -194,7 +200,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and "r" will not be changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object plus the value in "r". </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the value of the calling object plus the value in "r". </dd></dl>
 
 <p>Implements <a class="el" href="classiRegister.html#abaaacfa8cb18bea90a78673bd572a1c8">iRegister</a>.</p>
 
@@ -273,7 +279,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and "r" will not be changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object minus the value in "r". </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the value of the calling object minus the value in "r". </dd></dl>
 
 <p>Implements <a class="el" href="classiRegister.html#ad7eb424400d184f1829664dd4f87ce5c">iRegister</a>.</p>
 
@@ -352,7 +358,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and r are not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object bit-wise and'ed with r. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the value of the calling object bit-wise and'ed with r. </dd></dl>
 
 <p>Implements <a class="el" href="classiRegister.html#aa9a15ebfeea1e5857a1098b73cc583ad">iRegister</a>.</p>
 
@@ -409,7 +415,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and r are not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object bit-wise or'ed with r. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the value of the calling object bit-wise or'ed with r. </dd></dl>
 
 <p>Implements <a class="el" href="classiRegister.html#af5f065e89ef31d2ed40a1e80d9231bfd">iRegister</a>.</p>
 
@@ -452,7 +458,7 @@ Private Attributes</h2></td></tr>
 
 <p>Performs a bit-wise not. </p>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object is not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the bit-wise not of the calling object. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the bit-wise not of the calling object. </dd></dl>
 
 <p>Implements <a class="el" href="classiRegister.html#aca99e377de5cd1ef136a850d85143cf3">iRegister</a>.</p>
 
@@ -609,7 +615,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -618,7 +624,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -56,27 +57,77 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="ResultDecoder" -->
+<p>Finds the messages associated with a given result code.  
+<a href="#_details">More...</a></p>
+
 <p><a href="classResultDecoder-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af36f0e04752a354748bbada8c480c2b5"></a><!-- doxytag: member="ResultDecoder::Find" ref="af36f0e04752a354748bbada8c480c2b5" args="(const Codes::RESULT &amp;) const " -->
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Find</b> (const Codes::RESULT &amp;) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af36f0e04752a354748bbada8c480c2b5"></a><!-- doxytag: member="ResultDecoder::Find" ref="af36f0e04752a354748bbada8c480c2b5" args="(const Codes::RESULT &amp;) const " -->
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Find</b> (const Codes::RESULT &amp;) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afafd3458bdbcbd7b1b95545f47151358"></a><!-- doxytag: member="ResultDecoder::ResultDecoder" ref="afafd3458bdbcbd7b1b95545f47151358" args="()" -->
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResultDecoder.html#afafd3458bdbcbd7b1b95545f47151358">ResultDecoder</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the code-to-message mappings. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResultDecoder.html#ace7c2719b4f9de2a5e25fccfddc6d8f4">Find</a> (const Codes::RESULT &amp;result) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up a result code.  <a href="#ace7c2719b4f9de2a5e25fccfddc6d8f4"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8ba704b726b200f20dcc99eb3d5f958"></a><!-- doxytag: member="ResultDecoder::_codes" ref="aa8ba704b726b200f20dcc99eb3d5f958" args="" -->
-static std::map&lt; Codes::RESULT, <br class="typebreak"/>
-std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_codes</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::map&lt; Codes::RESULT, <br class="typebreak"/>
+std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd">_codes</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a result code to, in every case but SUCCESS, an error message.  <a href="#ab19497e41c5d1a0546ed33642cad48dd"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Finds the messages associated with a given result code. </p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ace7c2719b4f9de2a5e25fccfddc6d8f4"></a><!-- doxytag: member="ResultDecoder::Find" ref="ace7c2719b4f9de2a5e25fccfddc6d8f4" args="(const Codes::RESULT &amp;result) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ResultDecoder::Find </td>
+          <td>(</td>
+          <td class="paramtype">const Codes::RESULT &amp;&#160;</td>
+          <td class="paramname"> <em>result</em>&#160;)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Looks up a result code. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result code to look up. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The messages associated with "result". </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ab19497e41c5d1a0546ed33642cad48dd"></a><!-- doxytag: member="ResultDecoder::_codes" ref="ab19497e41c5d1a0546ed33642cad48dd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;Codes::RESULT, std::string&gt; <a class="el" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd">ResultDecoder::_codes</a><code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Maps a result code to, in every case but SUCCESS, an error message. </p>
+<p>It is static because the result code messages should be available from anyhere. </p>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +136,7 @@ std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_codes</b
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

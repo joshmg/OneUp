@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -55,14 +56,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="iMemory" -->
-<p>Mimics the functionality of memory in the Wi-11 machine.  
+<p>Defines the functionality of memory in the Wi-11 machine.  
 <a href="#_details">More...</a></p>
 <!-- startSectionHeader --><div class="dynheader">
 Inheritance diagram for iMemory:<!-- endSectionHeader --></div>
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="classiMemory__inherit__graph.png" border="0" usemap="#iMemory_inherit__map" alt="Inheritance graph"/></div>
 <map name="iMemory_inherit__map" id="iMemory_inherit__map">
-<area shape="rect" id="node3" href="classMemory.html" title="Memory" alt="" coords="7,83,81,112"/></map>
+<area shape="rect" id="node3" href="classMemory.html" title="Implements iMemory." alt="" coords="7,83,81,112"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
 
 <p><a href="classiMemory-members.html">List of all members.</a></p>
@@ -77,15 +78,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Peforms a store.  <a href="#a2632c9999797b0799a7d6b0a59bfa91a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9b57e00c0099963ab28489008d612e8"></a><!-- doxytag: member="iMemory::GetUsedMemory" ref="aa9b57e00c0099963ab28489008d612e8" args="() const =0" -->
 std::vector&lt; <a class="el" href="classWord.html">Word</a>[2]&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetUsedMemory</b> () const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27750e74d09fb473c163a4cc4c3e697b"></a><!-- doxytag: member="iMemory::Reserve" ref="a27750e74d09fb473c163a4cc4c3e697b" args="(const iWord &amp;initial_address, const iWord &amp;length)=0" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Reserve</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;initial_address, const <a class="el" href="classiWord.html">iWord</a> &amp;length)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58fea9cebc1beb89503898d2d5f79bcd"></a><!-- doxytag: member="iMemory::Load" ref="a58fea9cebc1beb89503898d2d5f79bcd" args="(const iWord &amp;) const =0" -->
-virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2632c9999797b0799a7d6b0a59bfa91a"></a><!-- doxytag: member="iMemory::Store" ref="a2632c9999797b0799a7d6b0a59bfa91a" args="(const iWord &amp;address, const Word &amp;value)=0" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;address, const <a class="el" href="classWord.html">Word</a> &amp;value)=0</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Mimics the functionality of memory in the Wi-11 machine. </p>
+<p>Defines the functionality of memory in the Wi-11 machine. </p>
 <p>Its size is limited only by addressability (2^16-1 16-bit words). It is meant to be implemented in such a way that the memory initialized for instructions can be accessed in constant time while addresses outside this range are accessed in nlogn time. </p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a27750e74d09fb473c163a4cc4c3e697b"></a><!-- doxytag: member="iMemory::Reserve" ref="a27750e74d09fb473c163a4cc4c3e697b" args="(const iWord &amp;initial_address, const iWord &amp;length)=0" -->
@@ -124,7 +119,7 @@ virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Stor
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something goes wrong, an appropriate error code.</dd></dl>
 <p>The memory reserved here is dynamically allocated and provides constant-time access to addresses "initial_address" through "initial_address"+"length"-1. </p>
 
-<p>Implemented in <a class="el" href="classMemory.html#a80cd994d4833dde66b8005184e510dda">Memory</a>, and <a class="el" href="classMemory.html#afe683401c1656b0a077d5f666f9c8d51">Memory</a>.</p>
+<p>Implemented in <a class="el" href="classMemory.html#a80cd994d4833dde66b8005184e510dda">Memory</a>.</p>
 
 </div>
 </div>
@@ -153,7 +148,7 @@ virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Stor
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data stored a address "w".</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If "w" is in the range created by Reserve(), it can be accessed in constant time. Otherwise, a maximum of nlogn time is required if n is the size of memory initialized outside of these boundaries. </dd></dl>
 
-<p>Implemented in <a class="el" href="classMemory.html#aca021609915080b38ca1b00d9b416e80">Memory</a>, and <a class="el" href="classMemory.html#af043b481b061644f9ff6cd7288655c93">Memory</a>.</p>
+<p>Implemented in <a class="el" href="classMemory.html#aca021609915080b38ca1b00d9b416e80">Memory</a>.</p>
 
 </div>
 </div>
@@ -193,7 +188,7 @@ virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Stor
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The efficiency constraints in Load() apply here as well. </dd></dl>
 
-<p>Implemented in <a class="el" href="classMemory.html#a23703464fb24710d09be1b2010e79edc">Memory</a>, and <a class="el" href="classMemory.html#a100745221ade9b322743514d91fcce23">Memory</a>.</p>
+<p>Implemented in <a class="el" href="classMemory.html#a23703464fb24710d09be1b2010e79edc">Memory</a>.</p>
 
 </div>
 </div>
@@ -203,7 +198,7 @@ virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Stor
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -212,7 +207,7 @@ virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Stor
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -55,22 +56,84 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="Instruction" -->
+<p>Container to simplify interactions with Wi-11 instructions.  
+<a href="#_details">More...</a></p>
+
 <p><a href="structInstruction-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc9f26527635d9d851759eab142e5ec7"></a><!-- doxytag: member="Instruction::type" ref="afc9f26527635d9d851759eab142e5ec7" args="" -->
-INSTRUCTION_TYPE&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93f6b7366b14b17d8379ea952687960c"></a><!-- doxytag: member="Instruction::data" ref="a93f6b7366b14b17d8379ea952687960c" args="" -->
-std::vector&lt; <a class="el" href="classWord.html">Word</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+INSTRUCTION_TYPE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInstruction.html#afc9f26527635d9d851759eab142e5ec7">type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of instruction. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classWord.html">Word</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInstruction.html#a93f6b7366b14b17d8379ea952687960c">data</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The arguemnts to the operation (including unecessary bits).  <a href="#a93f6b7366b14b17d8379ea952687960c"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Container to simplify interactions with Wi-11 instructions. </p>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a93f6b7366b14b17d8379ea952687960c"></a><!-- doxytag: member="Instruction::data" ref="a93f6b7366b14b17d8379ea952687960c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classWord.html">Word</a>&gt; <a class="el" href="structInstruction.html#a93f6b7366b14b17d8379ea952687960c">Instruction::data</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The arguemnts to the operation (including unecessary bits). </p>
+<dl class="user"><dt><b>Example:</b></dt><dd>The add instruction comes in two forms: </dd></dl>
+<dl class="user"><dt><b></b></dt><dd><ul>
+<li>dest_reg = source_reg_1 + source_reg_2 For this form, the encoding (as ordered) is as follows: <ul>
+<li>
+dest_reg </li>
+<li>
+source_reg_1 </li>
+<li>
+a 0 </li>
+<li>
+2 unused bits </li>
+<li>
+source_reg_2 These segments are each an element of the data vector. </li>
+</ul>
+</li>
+</ul>
+</dd></dl>
+<dl class="user"><dt><b></b></dt><dd><ul>
+<li>dest_reg = source_reg + immediate_value For this form, the encoding (as ordered) is as follows: <ul>
+<li>
+op code </li>
+<li>
+dest_reg </li>
+<li>
+source_reg_1 </li>
+<li>
+a 1 </li>
+<li>
+a 5-bit immediate value These segments are also each an element of the data vector. </li>
+</ul>
+In short, any division specified in <a class="el" href="index.html#instructions">Wi11 Instruction Set</a> will be an element of the data vector.</li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Both of the overloaded instructions (ADD and AND) can be differentiated by the number of divisions: <ul>
+<li>ADD with two registers has 5 </li>
+<li>ADD with a register and immediate has 4 and </li>
+<li>AND with two registers has 5 </li>
+<li>AND with a register and immediate has 4 Thus the fifth bit (either a 1 or 0) is not needed to determine the variation of the instruction (HOWEVER: the 1 or 0 is still included). </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +142,7 @@ std::vector&lt; <a class="el" href="classWord.html">Word</a> &gt;&#160;</td><td 
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

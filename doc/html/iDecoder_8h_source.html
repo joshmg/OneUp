@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -54,45 +55,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>iDecoder.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// File: iDecoder.h</span>
-<a name="l00002"></a>00002 <span class="comment">// Written by Joshua Green</span>
-<a name="l00003"></a>00003 
-<a name="l00004"></a>00004 <span class="preprocessor">#ifndef iDECODER_H</span>
-<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define iDECODER_H</span>
-<a name="l00006"></a>00006 <span class="preprocessor"></span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;iWord.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="keyword">class </span><a class="code" href="classWord.html">Word</a>;
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">namespace </span>Decoder {
-<a name="l00013"></a>00013   <span class="keyword">enum</span> REGISTER_ID { R0, R1, R2, R3, R4, R5, R6, R7, PC };
-<a name="l00014"></a>00014   <span class="keyword">enum</span> INSTRUCTION_TYPE { ADD, AND, BRx, DBUG, JSR, JSRR, LD, LDI, LDR, LEA, NOT, RET, ST, STI, STR, TRAP, ERROR };
-<a name="l00015"></a>00015 }
-<a name="l00016"></a>00016 
-<a name="l00017"></a><a class="code" href="structInstruction.html">00017</a> <span class="keyword">struct </span><a class="code" href="structInstruction.html">Instruction</a> {
-<a name="l00018"></a>00018   INSTRUCTION_TYPE type;
-<a name="l00019"></a>00019   std::vector&lt;Word&gt; data;
-<a name="l00020"></a>00020 };
-<a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="classiDecoder.html">00022</a> <span class="keyword">class </span><a class="code" href="classiDecoder.html">iDecoder</a> {
-<a name="l00023"></a>00023   <span class="keyword">private</span>:
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025   <span class="keyword">public</span>:
-<a name="l00026"></a>00026     <span class="keyword">virtual</span> <a class="code" href="structInstruction.html">Instruction</a> DecodeInstruction(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) <span class="keyword">const</span> = 0;
-<a name="l00027"></a>00027     <span class="comment">/*  DecodeInstruction() parses the provided iWord and returns an</span>
-<a name="l00028"></a>00028 <span class="comment">        Instruction. Instruction.type is determined by the first four bits</span>
-<a name="l00029"></a>00029 <span class="comment">        of the iWord, and Instruction.data is a vector of structs for each</span>
-<a name="l00030"></a>00030 <span class="comment">        number of fields the respective Instruction.type should have.</span>
-<a name="l00031"></a>00031 <span class="comment">        Ensures the instruction is valid (ie. the first 4 bits represent</span>
-<a name="l00032"></a>00032 <span class="comment">        a valid instruction). [In the final spec, this needs to be</span>
-<a name="l00033"></a>00033 <span class="comment">        elaborated on, but for now, refer to page 3 of &quot;The Wi11 Machine</span>
-<a name="l00034"></a>00034 <span class="comment">        Characteristics&quot; handout.]</span>
-<a name="l00035"></a>00035 <span class="comment">    */</span>
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 };
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 <span class="preprocessor">#endif</span>
+<a href="iDecoder_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00007"></a>00007 <span class="preprocessor">#ifndef iDECODER_H</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#define iDECODER_H</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="iWord_8h.html" title="Definition of a &amp;quot;word&amp;quot; of data.">iWord.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">class </span><a class="code" href="classWord.html" title="Implements iWord.">Word</a>;
+<a name="l00014"></a>00014 
+<a name="l00021"></a><a class="code" href="namespaceDecoder.html">00021</a> <span class="keyword">namespace </span>Decoder {
+<a name="l00022"></a>00022   <span class="keyword">enum</span> REGISTER_ID { R0, R1, R2, R3, R4, R5, R6, R7, PC };
+<a name="l00023"></a>00023   <span class="keyword">enum</span> INSTRUCTION_TYPE { ADD, AND, BRx, DBUG, JSR, JSRR, LD, LDI, LDR, LEA, NOT, RET, ST, STI, STR, TRAP, ERROR };
+<a name="l00024"></a>00024 }
+<a name="l00025"></a>00025 
+<a name="l00028"></a><a class="code" href="structInstruction.html">00028</a> <span class="keyword">struct </span><a class="code" href="structInstruction.html" title="Container to simplify interactions with Wi-11 instructions.">Instruction</a> {
+<a name="l00030"></a><a class="code" href="structInstruction.html#afc9f26527635d9d851759eab142e5ec7">00030</a>   INSTRUCTION_TYPE <a class="code" href="structInstruction.html#afc9f26527635d9d851759eab142e5ec7" title="The type of instruction.">type</a>;
+<a name="l00072"></a><a class="code" href="structInstruction.html#a93f6b7366b14b17d8379ea952687960c">00072</a>   std::vector&lt;Word&gt; <a class="code" href="structInstruction.html#a93f6b7366b14b17d8379ea952687960c" title="The arguemnts to the operation (including unecessary bits).">data</a>;
+<a name="l00073"></a>00073 };
+<a name="l00074"></a>00074 
+<a name="l00080"></a><a class="code" href="classiDecoder.html">00080</a> <span class="keyword">class </span><a class="code" href="classiDecoder.html" title="Defines how Wi-11 instructions are decoded.">iDecoder</a> {
+<a name="l00081"></a>00081   <span class="keyword">private</span>:
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083   <span class="keyword">public</span>:
+<a name="l00088"></a>00088     <span class="keyword">virtual</span> <a class="code" href="structInstruction.html" title="Container to simplify interactions with Wi-11 instructions.">Instruction</a> <a class="code" href="classiDecoder.html#a156d35f70da4bd96dce3b5b0b97d138c" title="Translates the binary instruction into more usable objects.">DecodeInstruction</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; inst) <span class="keyword">const</span> = 0;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 };
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -100,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -109,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

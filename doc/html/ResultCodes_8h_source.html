@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -63,43 +64,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00008"></a>00008 <span class="preprocessor">#include &lt;map&gt;</span>
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="comment">/*  Purpose:</span>
-<a name="l00011"></a>00011 <span class="comment">      RESULT codes will be returned by most of Wi11&#39;s functions providing</span>
-<a name="l00012"></a>00012 <span class="comment">      useful debug information relating the success or failure of the</span>
-<a name="l00013"></a>00013 <span class="comment">      execution. The RESULT codes should be enumerations for efficiency--</span>
-<a name="l00014"></a>00014 <span class="comment">      directly returning a string explaining the error is resource costly</span>
-<a name="l00015"></a>00015 <span class="comment">      and not always necessary (for instance, the code can be thrown away</span>
-<a name="l00016"></a>00016 <span class="comment">      if the Wi11 is not being run in verbose mode). If the code thrown</span>
-<a name="l00017"></a>00017 <span class="comment">      requires a desciption, ResultDecoder can be used to do a look-up of</span>
-<a name="l00018"></a>00018 <span class="comment">      the error code.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
+<a name="l00019"></a><a class="code" href="namespaceCodes.html">00019</a> <span class="keyword">namespace </span>Codes {
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="keyword">namespace </span>Codes {
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023   <span class="keyword">enum</span> RESULT {
-<a name="l00024"></a>00024     ERROR_0,          <span class="comment">// quick descipription</span>
-<a name="l00025"></a>00025     SUCCESS,          <span class="comment">// Operation succeeded</span>
-<a name="l00026"></a>00026     HALT,             <span class="comment">// TRAP Halt Command</span>
-<a name="l00027"></a>00027     UNDEFINED         <span class="comment">// An error description could not be found.</span>
-<a name="l00028"></a>00028   };
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 }
+<a name="l00021"></a>00021   <span class="keyword">enum</span> RESULT {
+<a name="l00022"></a>00022     ERROR_0,              <span class="comment">// quick descipription</span>
+<a name="l00023"></a>00023     SUCCESS,              <span class="comment">// Operation succeeded</span>
+<a name="l00024"></a>00024     HALT,                 <span class="comment">// TRAP Halt Command</span>
+<a name="l00025"></a>00025     UNDEFINED,            <span class="comment">// An error description could not be found.</span>
+<a name="l00026"></a>00026     INVALID_OBJECT_FILE,  <span class="comment">// the first letter in the object file was not a H</span>
+<a name="l00027"></a>00027     INVALID_DATA_ENTRY,   <span class="comment">// there was an invalid data entry in the object file</span>
+<a name="l00028"></a>00028     OUT_OF_BOUNDS,        <span class="comment">// attempt to save memory outside of claimed area</span>
+<a name="l00029"></a>00029     NOT_HEX               <span class="comment">// the suposedly hex string is not hex</span>
+<a name="l00030"></a>00030   };
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keyword">class </span><a class="code" href="classResultDecoder.html">ResultDecoder</a> {
-<a name="l00033"></a>00033   <span class="keyword">private</span>:
-<a name="l00034"></a>00034     <span class="keyword">static</span> std::map&lt;Codes::RESULT, std::string&gt; _codes;
-<a name="l00035"></a>00035   <span class="keyword">public</span>:
-<a name="l00036"></a>00036     <a class="code" href="classResultDecoder.html">ResultDecoder</a>() {
-<a name="l00037"></a>00037       _codes[Codes::ERROR_0] = <span class="stringliteral">&quot;This is an example description sent to the end-user upon verbose mode.&quot;</span>;
-<a name="l00038"></a>00038       _codes[Codes::SUCCESS] = <span class="stringliteral">&quot;The operation executed successfully.&quot;</span>;
-<a name="l00039"></a>00039       _codes[Codes::HALT] = <span class="stringliteral">&quot;Execution has been terminated (Halt).&quot;</span>;
-<a name="l00040"></a>00040       _codes[Codes::UNDEFINED] = <span class="stringliteral">&quot;An unexpected error occured.&quot;</span>;
-<a name="l00041"></a>00041     }
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043     std::string Find(<span class="keyword">const</span> Codes::RESULT&amp;) <span class="keyword">const</span>;
-<a name="l00044"></a>00044 };
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="preprocessor">#endif</span>
+<a name="l00032"></a>00032 }
+<a name="l00033"></a>00033 
+<a name="l00036"></a><a class="code" href="classResultDecoder.html">00036</a> <span class="keyword">class </span><a class="code" href="classResultDecoder.html" title="Finds the messages associated with a given result code.">ResultDecoder</a> {
+<a name="l00037"></a>00037   <span class="keyword">private</span>:
+<a name="l00042"></a><a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd">00042</a>     <span class="keyword">static</span> std::map&lt;Codes::RESULT, std::string&gt; <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>;
+<a name="l00043"></a>00043   <span class="keyword">public</span>:
+<a name="l00045"></a><a class="code" href="classResultDecoder.html#afafd3458bdbcbd7b1b95545f47151358">00045</a>     <a class="code" href="classResultDecoder.html#afafd3458bdbcbd7b1b95545f47151358" title="Generates the code-to-message mappings.">ResultDecoder</a>() {
+<a name="l00046"></a>00046       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::ERROR_0] = <span class="stringliteral">&quot;This is an example description sent to the end-user upon verbose mode.&quot;</span>;
+<a name="l00047"></a>00047       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::SUCCESS] = <span class="stringliteral">&quot;The operation executed successfully.&quot;</span>;
+<a name="l00048"></a>00048       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::HALT] = <span class="stringliteral">&quot;Execution has been terminated (Halt).&quot;</span>;
+<a name="l00049"></a>00049       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::UNDEFINED] = <span class="stringliteral">&quot;An unexpected error occured.&quot;</span>;
+<a name="l00050"></a>00050       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::INVALID_OBJECT_FILE] = <span class="stringliteral">&quot;The First character in the object file must be a H.&quot;</span>;
+<a name="l00051"></a>00051       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::INVALID_DATA_ENTRY] = <span class="stringliteral">&quot;There is an invalid text record or there was no end record found.&quot;</span>;
+<a name="l00052"></a>00052       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::OUT_OF_BOUNDS] = <span class="stringliteral">&quot;Attempt to access memory outside of the program load area.&quot;</span>;
+<a name="l00053"></a>00053       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::NOT_HEX] = <span class="stringliteral">&quot;There was an invalid hex string found.&quot;</span>;
+<a name="l00054"></a>00054     }
+<a name="l00055"></a>00055 
+<a name="l00060"></a>00060     std::string <a class="code" href="classResultDecoder.html#ace7c2719b4f9de2a5e25fccfddc6d8f4" title="Looks up a result code.">Find</a>(<span class="keyword">const</span> Codes::RESULT&amp; result) <span class="keyword">const</span>;
+<a name="l00061"></a>00061 };
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -107,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -116,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 16:36:23 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>
