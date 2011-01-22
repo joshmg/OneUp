@@ -7,6 +7,8 @@
 #include "iWord.h"
 #include <vector>
 
+class Word;
+
 namespace Decoder {
   enum REGISTER_ID { R0, R1, R2, R3, R4, R5, R6, R7, PC };
   enum INSTRUCTION_TYPE { ADD, AND, BRx, DBUG, JSR, JSRR, LD, LDI, LDR, LEA, NOT, RET, ST, STI, STR, TRAP, ERROR };
@@ -14,7 +16,7 @@ namespace Decoder {
 
 struct Instruction {
   INSTRUCTION_TYPE type;
-  std::vector<iWord> data;
+  std::vector<Word> data;
 };
 
 class iDecoder {
