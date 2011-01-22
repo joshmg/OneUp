@@ -16,8 +16,6 @@ class ObjParser : iObjParser {
     ifstream _fileStream;
 
   public:
-    ObjParser();
-
     ~ObjParser();
 
     Codes::Result Initialize(const char* name);
