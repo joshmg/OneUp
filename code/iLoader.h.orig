@@ -16,13 +16,20 @@
 */
 class iLoader {
   private:
-    
+    //need a pointer to save the memory pointer given in the ILoader constructor
+  iMemory *Memory;
   public:
+<<<<<<< HEAD
     /*! @brief Set which Memory object is to be initialized by this object.
         @param[in] mem The address where memory is located.
         
         @note
         Without this there would be nowhere to load the instructions.
+=======
+    virtual iLoader(iMemory* Memory) = 0;
+    /*  Instantiation of a child of iLoader requires a pointer to the
+        memory object the iLoader will be store the object file's data.
+>>>>>>> 3a5f85d3674a6604e9393778de0b657555e967f0
     */
     virtual iLoader(iMemory* mem) = 0;
 
