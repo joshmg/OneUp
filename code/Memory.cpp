@@ -50,6 +50,10 @@ RESULT Memory::Store(const iWord& address, const Word& value) {
   return SUCCESS;
 }
 
+bool vect_cmp(vector<Word[2]> i, vector<Word[2]> j) {
+  return (i[0][0] < j[0][0]);
+}
+
 vector<Word[2]> GetUsedMemory() const {
   vector<Word[2]> value;
   for (int i=0;i<_bounded_memory;i++) {
@@ -69,6 +73,9 @@ vector<Word[2]> GetUsedMemory() const {
     value.push_back(begin_to_end);
     it++;
   }
+
+  // sort the addresses:
+  sort(value.begin(), value.end(), &vect_cmp);
 
   return value;
 }
