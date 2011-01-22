@@ -36,6 +36,7 @@ class ResultDecoder {
       _codes[Codes::ERROR_0] = "This is an example description sent to the end-user upon verbose mode.";
       _codes[Codes::SUCCESS] = "The operation executed successfully.";
       _codes[Codes::UNDEFINED] = "An unexpected error occured.";
+      _codes[Codes::FILE_NOT_FOUND] = "The specified object file could not be found.";
     }
 
     std::string Find(const Codes::RESULT&) const;

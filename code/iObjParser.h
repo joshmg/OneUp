@@ -36,7 +36,7 @@ struct ObjectData {
 
 class iObjParser {
   private:
-  
+
   public:
     virtual ~iObjParser() = 0;
     /*  If a file was opened successfully, it must be closed. This
@@ -45,12 +45,12 @@ class iObjParser {
 
     virtual Codes::Result Initialize(const char*) = 0;
     /*  Attempts to open the input file. Returns the SUCCESS code if there
-        was no problem opening the file. If a file was previously openened,
+        was no problem opening the file. If a file was previously opened,
         the old file must be closed before the next one is opened.
     */
 
     virtual ObjectData GetNext() = 0;
-    /*  Requires that Initialized() was invoked successfully. Returns the
+    /*  Requires that Initialize() was invoked successfully. Returns the
         next entry within the *.obj file. See the purpose of ObjEntry
         to ensure the object is defined appropriately. If there is an error
         parsing the entry:
