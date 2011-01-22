@@ -31,11 +31,13 @@ class iWord {
     */
     virtual int ToInt() const = 0;
 
+
     /*! @brief "To Integer as 2's Complement"
         @post The value of the word is not changed.
         @return The bits of the word interpreted as a signed (2's complement) integer value.
     */
     virtual int ToInt2Complement() const = 0;
+
 
     /*! @brief "To String"
         @post The value of the word is not changed.
@@ -47,6 +49,7 @@ class iWord {
     */
     virtual std::string ToStr() const = 0;
 
+
     /*! @brief "To Hexadecimal"
         @post The value of the word is not changed.
         @return "0x" + <4 characters in the range [0-9],[A-F]>
@@ -56,6 +59,7 @@ class iWord {
         If the object holds (2's comp.) value -2: "0xFFFE"
     */
     virtual std::string ToHex() const = 0;
+
 
     /*! @brief "From Integer"
         @param[in] value
@@ -68,6 +72,7 @@ class iWord {
     */
     virtual bool FromInt(int value) = 0;
 
+
     /*! @brief "From String"
         @param[in] str
           A string of characters meant to represent a "word" to be stored.
@@ -78,6 +83,7 @@ class iWord {
         Otherwise, the word now holds the value "str".
     */
     virtual bool FromStr(const std::string& str) = 0;
+
 
     /*! @brief "From Hexadecimal"
         @param[in] str
@@ -90,6 +96,7 @@ class iWord {
     */
     virtual bool FromHex(const std::string& str) = 0;
 
+
     /*! @brief Adds two words.
         @param[in] w
           A word value to be added.
@@ -101,12 +108,14 @@ class iWord {
     */
     virtual Word Add(const iWord& w) const = 0;
 
+
     /*! @brief A standard addition operator.
         
         @note
         "result = p + w" is equivalent to "result = p.Add(w)".
     */
     virtual Word operator+(const iWord& w) const = 0;
+
 
     /*! @brief Subtracts two words.
         @param[in] w
@@ -119,12 +128,14 @@ class iWord {
     */
     virtual Word Subtract(const iWord& w) const = 0;
 
+
     /*! @brief A standard subtraction operator.
         
         @note
         "result = p - w" is equivalent to "result = p.Subtract(w)".
     */
     virtual Word operator-(const iWord& w) const = 0;
+
 
     /*! @brief "And"s the bits of two words.
         @param[in] w
@@ -134,6 +145,7 @@ class iWord {
     */
     virtual Word And(const iWord& w) const = 0;
 
+
     /*! @brief "Or"s the bits of two words.
         @param[in] w
           A word value to be "or"ed.
@@ -142,11 +154,13 @@ class iWord {
     */
     virtual Word Or(const iWord& w) const = 0;
 
+
     /*! @brief "Not"s the bits of a word.
         @post The calling object do not change.
         @return A new "Word" object containing the result of performing a bit-wise not on the calling object.
     */
     virtual Word Not() const = 0;
+
 
     /*! @brief Copies a word.
         @param[out] w

@@ -19,29 +19,23 @@ class Word;
     The format of this component is dependent upon
     the kind of record it is representing.
     @par
-    @argHeader Record (type = 'H')
+    @arg Header Record (type = 'H')
     <ul>
     <li>data.size() = 3</li>
-    <li>
     <ul><li> data[0] = [Segment Name]</li>
     <li> data[1] = [Initial Load Address (as a hex string)]</li>
     <li> data[2] = [Segment Length (as a hex string)]</li></ul>
-    </li>
     </ul>
     @arg Text Records (type = 'T')
     <ul>
     <li>data.size() = 2</li>
-    <li>
     <ul><li>data[0] = [Address of Data (as a hex string)]</li>
-    <li>data[1] = [Data (as a hex string)]</li>
-    </li>
+    <li>data[1] = [Data (as a hex string)]</li></ul>
     </ul>
     @arg End Records (type = 'E')
     <ul>
     <li>data.size() = 1</li>
-    <li>
     <ul><li>data[0] = [Initial PC Address (as a hex string)]</li></ul>
-    </li>
     </ul>
 */
 struct ObjectData {
