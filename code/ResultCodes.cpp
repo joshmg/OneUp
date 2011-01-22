@@ -10,14 +10,15 @@ using namespace Codes;
 string ResultDecoder::Find () const {
 
 	// retrieve iterator from map of codes
-	map<Result, string>::iterator it = _codes.find(Result);
+	map<RESULT, string>::iterator it = _codes.find(RESULT);
 
 	// check if retrieved iterator is the same as the map::end
 	if( it == _codes.end () ) {
-		return "Error: Undefined Result Code.";
+		return "Error: Undefined Result Code Enumeration";
 	}
 	else {
 		return it -> second;
 	}
 
 }
+
