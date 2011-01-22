@@ -12,7 +12,7 @@
 
 class Word;
 
-/*! @brief Defines the register id's and instruction types.
+/*! @brief Declares register id's and instruction types for each register and instruction.
 
     With these definitions, the process of executing instructions
     is made easier as REGISTER_ID's and INSTRUCTION_TYPE's can
@@ -72,7 +72,7 @@ struct Instruction {
   std::vector<Word> data;
 };
 
-/*! @brief Decodes Wi-11 instructions.
+/*! @brief Defines how Wi-11 instructions are decoded.
     
     This could be a struct or even a fucntion.
     It is declared as an object for consistency purposes.

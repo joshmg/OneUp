@@ -9,6 +9,7 @@
 #include "iRegister.h"
 #include "Word.h"
 
+//! Implements iRegister.
 class Register : public iRegister {
   private:
     //! @brief The word of data held in the register.

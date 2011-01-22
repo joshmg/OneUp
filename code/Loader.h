@@ -1,6 +1,9 @@
-// File: Loader.h
-// Written by Logan Coulson
-//            Joshua Green
+/*! @file Loader.h
+    @author Logan Coulson
+    @author Joshua Green
+    @author Andrew Groot
+    @brief Definition of the private data for the "Loader" class.
+*/
 
 #ifndef LOADER_H
 #define LOADER_H
@@ -9,8 +12,10 @@
 #include "iMemory.h"
 #include "ResultCodes.h"
 
+//! Implements iLoader.
 class Loader : public iLoader {
   private:
+    //! The reference to Memory.
     iMemory* _memory;
     
   public:
