@@ -4,13 +4,14 @@
 */
 
 #include "ObjParser.h"
-#include <ifstream> // Necessary for reading a file.
+#include <string>
+#include <fstream> // Necessary for reading a file.
 using namespace std;
 
 //*** public ***//
 //! Closes _fileStream if it is currently open.
 ObjParser::~ObjParser() {
-  if (_fileStream.isOpen()) {
+  if (_fileStream.is_open()) {
     _fileStream.close();
   }
 }
@@ -19,9 +20,9 @@ ObjParser::~ObjParser() {
     @param name The name of the file to be opened, including extension.
     @return Codes::SUCCESS if the file is successfully opened, Codes::FILE_NOT_FOUND otherwise.
 */
-Codes::Result ObjParser::Initialize(const char* name) {
+Codes::RESULT ObjParser::Initialize(const char* name) {
   //! Closes _fileStream if it is currently open.
-  if (_fileStream.isOpen()) {
+  if (_fileStream.is_open()) {
     _fileStream.close();
   }
 
@@ -29,7 +30,7 @@ Codes::Result ObjParser::Initialize(const char* name) {
   _fileStream.open(name, ifstream::in);
 
   //! Determine whether the file was successfully opened and return the appropriate result code.
-  if (_fileStream.isOpen()) {
+  if (_fileStream.is_open()) {
     return Codes::SUCCESS;
   }
   else {

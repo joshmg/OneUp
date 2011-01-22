@@ -51,11 +51,6 @@ class iObjParser {
   private:
   
   public:
-    /*! @brief Closes a file, if necessarily, when an iObjParser object goes out of scope..
-    */
-    virtual ~iObjParser() = 0;
-
-
     /*! @brief Attempts to open th object file.
         @param[in] filename The name of the object file to be opened.
         @return SUCCESS or, if something went wrong, an appropriate error code.
@@ -63,7 +58,7 @@ class iObjParser {
         If another file is open, closes that file first before
         attempting to open the new one.
     */
-    virtual Codes::Result Initialize(const char* filename) = 0;
+    virtual Codes::RESULT Initialize(const char* filename) = 0;
 
 
     /*! @brief Pre-processes the next line of the object file.

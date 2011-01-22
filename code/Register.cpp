@@ -9,8 +9,8 @@ Register::Register () {
   _word.FromInt(0);
 }
 
-Register::Register (Word w) {
-  _word = w;
+Register::Register (const iWord& w) {
+  _word.Copy(w);
 }
 
 Word Register::GetValue() const {

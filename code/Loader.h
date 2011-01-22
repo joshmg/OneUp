@@ -19,7 +19,13 @@ class Loader : public iLoader {
     iMemory* _memory;
     
   public:
-    iLoader(iMemory* mem);
+    /*! @brief Set which Memory object is to be initialized by this object.
+        @param[in] mem The address where memory is located.
+
+        @note
+        Without this there would be nowhere to load the instructions.
+    */
+    Loader(iMemory* mem);
 
     Codes::RESULT Load(const char* filename, iWord& PC_address) const;
 };

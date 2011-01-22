@@ -4,6 +4,7 @@
 #ifndef DECODER_H
 #define DECODER_H
 
+#include "iDecoder.h"
 #include "iWord.h"
 #include <vector>
 

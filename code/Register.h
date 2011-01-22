@@ -17,7 +17,7 @@ class Register : public iRegister {
 
   public:
     Register();
-    Register(const Word w);
+    Register(const iWord& w);
 
     Word GetValue() const;
 

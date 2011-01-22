@@ -7,10 +7,10 @@
 using namespace std;
 using namespace Codes;
 
-string ResultDecoder::Find () const {
+string ResultDecoder::Find(const RESULT& result) const {
 
 	// retrieve iterator from map of codes
-	map<RESULT, string>::iterator it = _codes.find(RESULT);
+	map<RESULT, string>::const_iterator it = _codes.find(result);
 
 	// check if retrieved iterator is the same as the map::end
 	if( it == _codes.end () ) {
