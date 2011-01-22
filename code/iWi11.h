@@ -15,18 +15,12 @@ class iWi11 {
   /*  The Wi11 must have one instance of an iMemory class and needs
       multiple (7) instances of the Register class to serve as general
       purpose registers. Each register object should have an associated
-      REGISTER_ID enum token. Wi11 should also contain some sort of CCR
+      REGISTER_ID& enum token. Wi11 should also contain some sort of CCR
       structure (unprovided) which must be updated appropriately.
   */
 
   private:
-    virtual iRegister& _GetRegister(const Decoder::REGISTER_ID&) = 0;
-    /*  [This may prove useful. It is essentially a C Switch which returns
-        a reference to the appropriate instance of a Register object which
-        corresponds to the provided REGISTER_ID token.]
-    */
-
-    virtual Codes::RESULT _Add(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const Decoder::REGISTER_ID SR2) = 0;
+    virtual Codes::RESULT _Add(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR1, const Decoder::REGISTER_ID& SR2) = 0;
     /*  Adds the registers associated with SR1 and SR2 together,
         overwriting the register associated with DR with the result.
         Updates the CCR. If all operations are successful, returns the
@@ -34,7 +28,7 @@ class iWi11 {
         Registers SR1 and SR2 are unchanged by this operation.
     */
 
-    virtual Codes::RESULT _Add(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const iWord& immediate) = 0;
+    virtual Codes::RESULT _Add(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR1, const iWord& immediate) = 0;
     /*  Adds the register associated with SR1 and immediate together,
         overwriting the register associated with DR with the result.
         Updates the CCR. If all operations are successful, returns the
@@ -42,7 +36,7 @@ class iWi11 {
         Register SR1 is unchanged by this operation.
     */
 
-    virtual Codes::RESULT _And(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const Decoder::REGISTER_ID SR2) = 0;
+    virtual Codes::RESULT _And(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR1, const Decoder::REGISTER_ID& SR2) = 0;
     /*  Logically ands the registers associated with SR1 and SR2 together,
         overwriting the register associated with DR with the result.
         Updates the CCR. If all operations are successful, returns the
@@ -50,7 +44,7 @@ class iWi11 {
         Registers SR1 and SR2 are unchanged by this operation.
     */
 
-    virtual Codes::RESULT _And(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const iWord& immediate) = 0;
+    virtual Codes::RESULT _And(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR1, const iWord& immediate) = 0;
     /*  Logically ands the register associated with SR1 and immediate
         together, overwriting the register associated with DR with the
         result. Updates the CCR. If all operations are successful, returns
@@ -68,19 +62,19 @@ class iWi11 {
     /*  Does nothing.
     */
 
-    virtual Codes::RESULT _JSR(const iWord&) = 0;
+    virtual Codes::RESULT _JSR(const iWord&, bool link) = 0;
     /*  [I forget what this operation does and if the CCR is updated.]
         If the operation was successful, the SUCCESS code is returned.
         Upon failure, the respective code is returned.
     */
 
-    virtual Codes::RESULT _JSRR(const iWord& baseR, const iWord& address) = 0;
+    virtual Codes::RESULT _JSRR(const Decoder::REGISTER_ID& baseR, const iWord& address, bool link) = 0;
     /*  [I forget what this operation does and if the CCR is updated.]
         If the operation was successful, the SUCCESS code is returned.
         Upon failure, the respective code is returned.
     */
 
-    virtual Codes::RESULT _Load(const Decoder::REGISTER_ID DR, const iWord& address) = 0;
+    virtual Codes::RESULT _Load(const Decoder::REGISTER_ID& DR, const iWord& address) = 0;
     /*  Accesses the data stored within Memory at the given address and
         copies that value into the register associated with DR, overwriting
         DR's previous value. If the operation was successful, the SUCCESS
@@ -89,7 +83,7 @@ class iWi11 {
         updated by this operation.]
     */
 
-    virtual Codes::RESULT _LoadI(const Decoder::REGISTER_ID DR, const iWord& address) = 0;
+    virtual Codes::RESULT _LoadI(const Decoder::REGISTER_ID& DR, const iWord& address) = 0;
     /*  [I forget the specifics of this operation.]
         If the operation was successful, the SUCCESS code is returned.
         Upon failure, the respective code is returned. Memory is unchanged
@@ -97,7 +91,7 @@ class iWi11 {
         operation.]
     */
 
-    virtual Codes::RESULT _LoadR(const Decoder::REGISTER_ID DR, Decoder::REGISTER_ID baseR, const iWord& address) = 0;
+    virtual Codes::RESULT _LoadR(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& baseR, const iWord& address) = 0;
     /*  [I forget the specifics of this operation. I believe it loads the
         address at the address which is formed by overwriting baseR's last
         six bits with the provided iWord address]. If the operation was
@@ -106,7 +100,7 @@ class iWi11 {
         [I forget if the CCR is updated by this operation.]
     */
 
-    virtual Codes::RESULT _Not(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR) = 0;
+    virtual Codes::RESULT _Not(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR) = 0;
     /*  Not() stores the logical inversion of the value stored in register
         SR1 into the register DR. The register associated with SR1 is
         unchanged. Updates the CCR.
@@ -119,21 +113,21 @@ class iWi11 {
         by this operation.
     */
 
-    virtual Codes::RESULT _Store(const Decoder::REGISTER_ID SR1, const iWord& address) = 0;
+    virtual Codes::RESULT _Store(const Decoder::REGISTER_ID& SR, const iWord& address) = 0;
     /*  Stores the value in the register associated with SR1 in Memory at
         the address. SR1 and the CCR remain unchanged. If the operation
         was successful, the SUCCESS code is returned. Upon failure, the
         respective code is returned.
     */
 
-    virtual Codes::RESULT _STI(const Decoder::REGISTER_ID SR1, const iWord& address) = 0;
+    virtual Codes::RESULT _STI(const Decoder::REGISTER_ID& SR, const iWord& address) = 0;
     /*  [I forget the specifics of this operation.]
         If the operation was successful, the SUCCESS code is returned.
         Upon failure, the respective code is returned. Memory is unchanged
         by this operation.
     */
 
-    virtual Codes::RESULT _STR(const Decoder::REGISTER_ID SR1, const Decoder::REGISTER_ID baseR, const iWord& address) = 0;
+    virtual Codes::RESULT _STR(const Decoder::REGISTER_ID& SR, const Decoder::REGISTER_ID& baseR, const iWord& address) = 0;
     /*  [I forget the specifics of this operation. I believe it stores the
         value at the address which is formed by overwriting baseR's last
         six bits with the provided iWord address]. If the operation was

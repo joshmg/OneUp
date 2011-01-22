@@ -194,6 +194,7 @@ class iWord {
           If it holds a negative value (Starting with a 1 in 2's complement): num[15] = 1.
     */
     virtual bool operator[](const int i) const = 0;
+    virtual void SetBit(const int i) = 0;
 };
 
 #endif

@@ -58,6 +58,7 @@ class Word : public iWord {
     iWord& operator++(int);
 
     bool operator[](const int i) const;
+    void SetBit(const int, bool);
 };
 
 #endif

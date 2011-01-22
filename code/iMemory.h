@@ -7,6 +7,7 @@
 
 #include "iWord.h"
 #include "ResultCodes.h"
+#include <vector>
 
 class Word;
 
@@ -44,6 +45,8 @@ class iMemory {
         in constant time. Otherwise, maximum store time is nlogn, where
         n is the size of Memory outside of the Reserved space.
     */
+
+    std::vector<Word[2]> GetUsedMemory() const = 0;
 };
 
 #endif

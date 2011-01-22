@@ -33,6 +33,7 @@ class Memory : iMemory {
 
     virtual Codes::RESULT Store(const iWord& address, const Word& value);
 
+    std::vector<Word[2]> GetUsedMemory() const;
 };
 
 #endif

@@ -20,11 +20,11 @@ class Register : public iRegister {
 
     Word GetValue() const;
 
-    void Add(const iWord& w);
+    void Add(const iWord& w);                       // !
     Register Add(const iRegister& r) const;
     Register operator+(const iRegister& r) const;
 
-    void Subtract(const iWord& w);
+    void Subtract(const iWord& w);                  // !
     Register Subtract(const iRegister& r) const;
     Register operator-(const iRegister& r) const;
 
@@ -32,8 +32,8 @@ class Register : public iRegister {
     Register And(const iRegister& r) const;
     void Or(const iWord& w);
     Register Or(const iRegister& r) const;
-    void Not();
-    Register Not() const;
+    void Not();                                     // !
+    Register Not() const;                           // !
 
     void Store(const iWord& w);
     void Store(const iRegister& r);

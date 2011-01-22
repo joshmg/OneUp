@@ -49,3 +49,26 @@ RESULT Memory::Store(const iWord& address, const Word& value) {
   _unbounded_memory[address.toInt()] = value; // store the value in memory
   return SUCCESS;
 }
+
+vector<Word[2]> GetUsedMemory() const {
+  vector<Word[2]> value;
+  for (int i=0;i<_bounded_memory;i++) {
+    Word begin_to_end[2];
+    begin_to_end[0] = _segment_offsets[i];
+    begin_to_end[1] = _segment_offsets[i]+_segment_lengths[i]-1;
+
+    value.push_back(begin_to_end);
+  }
+
+  map<int, Word>::const_iterator it = _unbounded_memory.begin();
+  while (it != _unbounded_memory.end()) {
+    Word begin_to_end[2];
+    begin_to_end[0].FromInt(it->first);
+    begin_to_end[0].FromInt(it->first);
+
+    value.push_back(begin_to_end);
+    it++;
+  }
+
+  return value;
+}
