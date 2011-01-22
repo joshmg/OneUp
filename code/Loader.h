@@ -14,9 +14,9 @@ class Loader : public iLoader {
     iMemory* _memory;
     
   public:
-    virtual iLoader(iMemory* mem) = 0;
+    iLoader(iMemory* mem);
 
-    virtual Codes::RESULT Load(const char* filename, iWord& PC_address) const = 0;
+    Codes::RESULT Load(const char* filename, iWord& PC_address) const;
 };
 
 #endif

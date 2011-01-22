@@ -25,10 +25,10 @@ namespace Codes {
     SUCCESS,          // Operation succeeded
     HALT,             // TRAP Halt Command
     UNDEFINED,         // An error description could not be found.
-    INVALID_OBJECT_FILE,  //the first letter in the object file was not a H
-    INVALID_DATA_ENTRY,   //there was an invalid data entry in the object file
-    OUT_OF_BOUNDS,        //attempt to save memory outside of claimed area
-    NOT_HEX           //the suposedly hex string is not hex
+    INVALID_OBJECT_FILE,  // the first letter in the object file was not a H
+    INVALID_DATA_ENTRY,   // there was an invalid data entry in the object file
+    OUT_OF_BOUNDS,        // attempt to save memory outside of claimed area
+    NOT_HEX           // the suposedly hex string is not hex
   };
 
 }
@@ -43,9 +43,9 @@ class ResultDecoder {
       _codes[Codes::HALT] = "Execution has been terminated (Halt).";
       _codes[Codes::UNDEFINED] = "An unexpected error occured.";
       _codes[Codes::INVALID_OBJECT_FILE] = "The First character in the object file must be a H.";
-      _codes[Codes::INVALID_DATA_ENTRY] = "There is an invalid text record or there was no end record found";
-      _codes[Codes::OUT_OF_BOUNDS] = "Attempt to access memory outside of the program load area";
-      _codes[Codes::NOT_HEX] = "There was an invalid hex string found";
+      _codes[Codes::INVALID_DATA_ENTRY] = "There is an invalid text record or there was no end record found.";
+      _codes[Codes::OUT_OF_BOUNDS] = "Attempt to access memory outside of the program load area.";
+      _codes[Codes::NOT_HEX] = "There was an invalid hex string found.";
     }
 
     std::string Find(const Codes::RESULT&) const;
