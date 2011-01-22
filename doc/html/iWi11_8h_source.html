@@ -17,8 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -42,6 +43,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+  <div class="navpath">
+    <ul>
+      <li><a class="el" href="dir_cec1b5f0a3f18d5a6846e7c281d2df7f.html">code</a>      </li>
+    </ul>
+  </div>
+</div>
 <div class="header">
   <div class="headertitle">
 <h1>iWi11.h</h1>  </div>
@@ -54,25 +61,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="preprocessor">#ifndef iWI11_H</span>
 <a name="l00006"></a>00006 <span class="preprocessor"></span><span class="preprocessor">#define iWI11_H</span>
 <a name="l00007"></a>00007 <span class="preprocessor"></span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="iWord_8h.html" title="The interface implemented by the &amp;quot;Word&amp;quot; class.">iWord.h</a>&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;iRegister.h&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;iWord.h&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="iRegister_8h.html" title="Definition of a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister.h</a>&quot;</span>
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;iMemory.h&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;iDecoder.h&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;ResultCodes.h&quot;</span>
 <a name="l00013"></a>00013 
 <a name="l00014"></a><a class="code" href="classiWi11.html">00014</a> <span class="keyword">class </span><a class="code" href="classiWi11.html">iWi11</a> {
-<a name="l00015"></a>00015   <span class="keyword">private</span>:
-<a name="l00016"></a>00016     <span class="comment">/*  The Wi11 must have one instance of an iMemory class and needs</span>
-<a name="l00017"></a>00017 <span class="comment">        multiple (7) instances of the Register class to serve as general</span>
-<a name="l00018"></a>00018 <span class="comment">        purpose registers. Each register object should have an associated</span>
-<a name="l00019"></a>00019 <span class="comment">        REGISTER_ID enum token. Wi11 should also contain some sort of CCR</span>
-<a name="l00020"></a>00020 <span class="comment">        structure (unprovided) which must be updated appropriately.</span>
-<a name="l00021"></a>00021 <span class="comment">    */</span>
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023     <span class="comment">// virtual iRegister&amp; _GetRegister(const Decoder::REGISTER_ID&amp;) = 0;</span>
-<a name="l00024"></a>00024     <span class="comment">/*  This may prove useful. It is essentially a C Switch which returns a</span>
-<a name="l00025"></a>00025 <span class="comment">        reference to the appropriate instance of a Register object which</span>
-<a name="l00026"></a>00026 <span class="comment">        corresponds to the provided REGISTER_ID token.</span>
+<a name="l00015"></a>00015   <span class="comment">/*  The Wi11 must have one instance of an iMemory class and needs</span>
+<a name="l00016"></a>00016 <span class="comment">      multiple (7) instances of the Register class to serve as general</span>
+<a name="l00017"></a>00017 <span class="comment">      purpose registers. Each register object should have an associated</span>
+<a name="l00018"></a>00018 <span class="comment">      REGISTER_ID enum token. Wi11 should also contain some sort of CCR</span>
+<a name="l00019"></a>00019 <span class="comment">      structure (unprovided) which must be updated appropriately.</span>
+<a name="l00020"></a>00020 <span class="comment">  */</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022   <span class="keyword">private</span>:
+<a name="l00023"></a>00023     <span class="keyword">virtual</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; _GetRegister(<span class="keyword">const</span> Decoder::REGISTER_ID&amp;) = 0;
+<a name="l00024"></a>00024     <span class="comment">/*  [This may prove useful. It is essentially a C Switch which returns</span>
+<a name="l00025"></a>00025 <span class="comment">        a reference to the appropriate instance of a Register object which</span>
+<a name="l00026"></a>00026 <span class="comment">        corresponds to the provided REGISTER_ID token.]</span>
 <a name="l00027"></a>00027 <span class="comment">    */</span>
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029     <span class="keyword">virtual</span> Codes::RESULT _Add(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> Decoder::REGISTER_ID SR2) = 0;
@@ -83,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 <span class="comment">        Registers SR1 and SR2 are unchanged by this operation.</span>
 <a name="l00035"></a>00035 <span class="comment">    */</span>
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037     <span class="keyword">virtual</span> Codes::RESULT _Add(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; immediate) = 0;
+<a name="l00037"></a>00037     <span class="keyword">virtual</span> Codes::RESULT _Add(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; immediate) = 0;
 <a name="l00038"></a>00038     <span class="comment">/*  Adds the register associated with SR1 and immediate together,</span>
 <a name="l00039"></a>00039 <span class="comment">        overwriting the register associated with DR with the result.</span>
 <a name="l00040"></a>00040 <span class="comment">        Updates the CCR. If all operations are successful, returns the</span>
@@ -99,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a>00050 <span class="comment">        Registers SR1 and SR2 are unchanged by this operation.</span>
 <a name="l00051"></a>00051 <span class="comment">    */</span>
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="keyword">virtual</span> Codes::RESULT _And(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; immediate) = 0;
+<a name="l00053"></a>00053     <span class="keyword">virtual</span> Codes::RESULT _And(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; immediate) = 0;
 <a name="l00054"></a>00054     <span class="comment">/*  Logically ands the register associated with SR1 and immediate</span>
 <a name="l00055"></a>00055 <span class="comment">        together, overwriting the register associated with DR with the</span>
 <a name="l00056"></a>00056 <span class="comment">        result. Updates the CCR. If all operations are successful, returns</span>
@@ -107,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058 <span class="comment">        Register SR1 is unchanged by this operation.</span>
 <a name="l00059"></a>00059 <span class="comment">    */</span>
 <a name="l00060"></a>00060 
-<a name="l00061"></a>00061     <span class="keyword">virtual</span> Codes::RESULT _Branch(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00061"></a>00061     <span class="keyword">virtual</span> Codes::RESULT _Branch(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00062"></a>00062     <span class="comment">/*  Overwrites the PC&#39;s last nine bits with the last nine bits of address.</span>
 <a name="l00063"></a>00063 <span class="comment">        If the operation is successful, the function returns the SUCCESS</span>
 <a name="l00064"></a>00064 <span class="comment">        code. Upon a failure, the appropriate code is returned.</span>
@@ -117,19 +124,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068     <span class="comment">/*  Does nothing.</span>
 <a name="l00069"></a>00069 <span class="comment">    */</span>
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071     <span class="keyword">virtual</span> Codes::RESULT _JSR(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
+<a name="l00071"></a>00071     <span class="keyword">virtual</span> Codes::RESULT _JSR(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp;) = 0;
 <a name="l00072"></a>00072     <span class="comment">/*  [I forget what this operation does and if the CCR is updated.]</span>
 <a name="l00073"></a>00073 <span class="comment">        If the operation was successful, the SUCCESS code is returned.</span>
 <a name="l00074"></a>00074 <span class="comment">        Upon failure, the respective code is returned.</span>
 <a name="l00075"></a>00075 <span class="comment">    */</span>
 <a name="l00076"></a>00076 
-<a name="l00077"></a>00077     <span class="keyword">virtual</span> Codes::RESULT _JSRR(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00077"></a>00077     <span class="keyword">virtual</span> Codes::RESULT _JSRR(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00078"></a>00078     <span class="comment">/*  [I forget what this operation does and if the CCR is updated.]</span>
 <a name="l00079"></a>00079 <span class="comment">        If the operation was successful, the SUCCESS code is returned.</span>
 <a name="l00080"></a>00080 <span class="comment">        Upon failure, the respective code is returned.</span>
 <a name="l00081"></a>00081 <span class="comment">    */</span>
 <a name="l00082"></a>00082 
-<a name="l00083"></a>00083     <span class="keyword">virtual</span> Codes::RESULT _Load(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00083"></a>00083     <span class="keyword">virtual</span> Codes::RESULT _Load(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00084"></a>00084     <span class="comment">/*  Accesses the data stored within Memory at the given address and</span>
 <a name="l00085"></a>00085 <span class="comment">        copies that value into the register associated with DR, overwriting</span>
 <a name="l00086"></a>00086 <span class="comment">        DR&#39;s previous value. If the operation was successful, the SUCCESS</span>
@@ -138,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00089"></a>00089 <span class="comment">        updated by this operation.]</span>
 <a name="l00090"></a>00090 <span class="comment">    */</span>
 <a name="l00091"></a>00091 
-<a name="l00092"></a>00092     <span class="keyword">virtual</span> Codes::RESULT _LoadI(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00092"></a>00092     <span class="keyword">virtual</span> Codes::RESULT _LoadI(<span class="keyword">const</span> Decoder::REGISTER_ID DR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00093"></a>00093     <span class="comment">/*  [I forget the specifics of this operation.]</span>
 <a name="l00094"></a>00094 <span class="comment">        If the operation was successful, the SUCCESS code is returned.</span>
 <a name="l00095"></a>00095 <span class="comment">        Upon failure, the respective code is returned. Memory is unchanged</span>
@@ -146,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00097"></a>00097 <span class="comment">        operation.]</span>
 <a name="l00098"></a>00098 <span class="comment">    */</span>
 <a name="l00099"></a>00099 
-<a name="l00100"></a>00100     <span class="keyword">virtual</span> Codes::RESULT _LoadR(<span class="keyword">const</span> Decoder::REGISTER_ID DR, Decoder::REGISTER_ID baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00100"></a>00100     <span class="keyword">virtual</span> Codes::RESULT _LoadR(<span class="keyword">const</span> Decoder::REGISTER_ID DR, Decoder::REGISTER_ID baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00101"></a>00101     <span class="comment">/*  [I forget the specifics of this operation. I believe it loads the</span>
 <a name="l00102"></a>00102 <span class="comment">        address at the address which is formed by overwriting baseR&#39;s last</span>
 <a name="l00103"></a>00103 <span class="comment">        six bits with the provided iWord address]. If the operation was</span>
@@ -168,21 +175,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00119"></a>00119 <span class="comment">        by this operation.</span>
 <a name="l00120"></a>00120 <span class="comment">    */</span>
 <a name="l00121"></a>00121 
-<a name="l00122"></a>00122     <span class="keyword">virtual</span> Codes::RESULT _Store(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00122"></a>00122     <span class="keyword">virtual</span> Codes::RESULT _Store(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00123"></a>00123     <span class="comment">/*  Stores the value in the register associated with SR1 in Memory at</span>
 <a name="l00124"></a>00124 <span class="comment">        the address. SR1 and the CCR remain unchanged. If the operation</span>
 <a name="l00125"></a>00125 <span class="comment">        was successful, the SUCCESS code is returned. Upon failure, the</span>
 <a name="l00126"></a>00126 <span class="comment">        respective code is returned.</span>
 <a name="l00127"></a>00127 <span class="comment">    */</span>
 <a name="l00128"></a>00128 
-<a name="l00129"></a>00129     <span class="keyword">virtual</span> Codes::RESULT _STI(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00129"></a>00129     <span class="keyword">virtual</span> Codes::RESULT _STI(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00130"></a>00130     <span class="comment">/*  [I forget the specifics of this operation.]</span>
 <a name="l00131"></a>00131 <span class="comment">        If the operation was successful, the SUCCESS code is returned.</span>
 <a name="l00132"></a>00132 <span class="comment">        Upon failure, the respective code is returned. Memory is unchanged</span>
 <a name="l00133"></a>00133 <span class="comment">        by this operation.</span>
 <a name="l00134"></a>00134 <span class="comment">    */</span>
 <a name="l00135"></a>00135 
-<a name="l00136"></a>00136     <span class="keyword">virtual</span> Codes::RESULT _STR(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> Decoder::REGISTER_ID baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00136"></a>00136     <span class="keyword">virtual</span> Codes::RESULT _STR(<span class="keyword">const</span> Decoder::REGISTER_ID SR1, <span class="keyword">const</span> Decoder::REGISTER_ID baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00137"></a>00137     <span class="comment">/*  [I forget the specifics of this operation. I believe it stores the</span>
 <a name="l00138"></a>00138 <span class="comment">        value at the address which is formed by overwriting baseR&#39;s last</span>
 <a name="l00139"></a>00139 <span class="comment">        six bits with the provided iWord address]. If the operation was</span>
@@ -190,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00141"></a>00141 <span class="comment">        respective code is returned.</span>
 <a name="l00142"></a>00142 <span class="comment">    */</span>
 <a name="l00143"></a>00143 
-<a name="l00144"></a>00144     <span class="keyword">virtual</span> Codes::RESULT _Trap(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="The iWord interface class defines the a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; code) = 0;
+<a name="l00144"></a>00144     <span class="keyword">virtual</span> Codes::RESULT _Trap(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; code) = 0;
 <a name="l00145"></a>00145     <span class="comment">/*  [Performs the TRAP associated with the provided code. See page</span>
 <a name="l00146"></a>00146 <span class="comment">        4 of &quot;The Wi11 Machine Characteristics&quot;. In the case of writing</span>
 <a name="l00147"></a>00147 <span class="comment">        to the console, write to C standard out.]</span>
@@ -257,7 +264,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -266,7 +273,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 01:47:00 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 20:29:39 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

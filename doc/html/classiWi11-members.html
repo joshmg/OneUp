@@ -19,6 +19,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -58,6 +59,7 @@ This is the complete list of members for <a class="el" href="classiWi11.html">iW
   <tr bgcolor="#f0f0f0"><td><b>_And</b>(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const iWord &amp;immediate)=0 (defined in <a class="el" href="classiWi11.html">iWi11</a>)</td><td><a class="el" href="classiWi11.html">iWi11</a></td><td><code> [private, pure virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>_Branch</b>(const iWord &amp;address)=0 (defined in <a class="el" href="classiWi11.html">iWi11</a>)</td><td><a class="el" href="classiWi11.html">iWi11</a></td><td><code> [private, pure virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>_Debug</b>()=0 (defined in <a class="el" href="classiWi11.html">iWi11</a>)</td><td><a class="el" href="classiWi11.html">iWi11</a></td><td><code> [private, pure virtual]</code></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>_GetRegister</b>(const Decoder::REGISTER_ID &amp;)=0 (defined in <a class="el" href="classiWi11.html">iWi11</a>)</td><td><a class="el" href="classiWi11.html">iWi11</a></td><td><code> [private, pure virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>_JSR</b>(const iWord &amp;)=0 (defined in <a class="el" href="classiWi11.html">iWi11</a>)</td><td><a class="el" href="classiWi11.html">iWi11</a></td><td><code> [private, pure virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>_JSRR</b>(const iWord &amp;baseR, const iWord &amp;address)=0 (defined in <a class="el" href="classiWi11.html">iWi11</a>)</td><td><a class="el" href="classiWi11.html">iWi11</a></td><td><code> [private, pure virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>_Load</b>(const Decoder::REGISTER_ID DR, const iWord &amp;address)=0 (defined in <a class="el" href="classiWi11.html">iWi11</a>)</td><td><a class="el" href="classiWi11.html">iWi11</a></td><td><code> [private, pure virtual]</code></td></tr>
@@ -80,7 +82,7 @@ This is the complete list of members for <a class="el" href="classiWi11.html">iW
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,7 +91,7 @@ This is the complete list of members for <a class="el" href="classiWi11.html">iW
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 01:14:24 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 20:29:39 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

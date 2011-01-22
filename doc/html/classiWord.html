@@ -17,8 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -39,10 +40,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -54,7 +55,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="iWord" -->
-<p>The <a class="el" href="classiWord.html" title="The iWord interface class defines the a &quot;word&quot; of data on the Wi-11 Machine.">iWord</a> interface class defines the a "word" of data on the Wi-11 Machine.  
+<p>Defines a "word" of data on the Wi-11 Machine.  
 <a href="#_details">More...</a></p>
 <!-- startSectionHeader --><div class="dynheader">
 Inheritance diagram for iWord:<!-- endSectionHeader --></div>
@@ -63,9 +64,49 @@ Inheritance diagram for iWord:<!-- endSectionHeader --></div>
 <map name="iWord_inherit__map" id="iWord_inherit__map">
 <area shape="rect" id="node3" href="classWord.html" title="Word" alt="" coords="7,83,60,112"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
+
+<p><a href="classiWord-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#adcef1925ad309d54c9a3e896af5d5350">ToInt</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"To non-negative Integer"  <a href="#adcef1925ad309d54c9a3e896af5d5350"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a68129605beb127647ecc59129f1c07f7">ToInt2Complement</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"To Integer as 2's Complement"  <a href="#a68129605beb127647ecc59129f1c07f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#acebcfc4edd3498c962a6a2379a88accf">ToStr</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"To String"  <a href="#acebcfc4edd3498c962a6a2379a88accf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a7d7cb4facca44fc785899d01e47f29b1">ToHex</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"To Hexadecimal"  <a href="#a7d7cb4facca44fc785899d01e47f29b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a1229f8249c32e01ccee035a205954a62">FromInt</a> (int value)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From Integer"  <a href="#a1229f8249c32e01ccee035a205954a62"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a6e40a4873ca945b119318a85c75a0fcf">FromStr</a> (const std::string &amp;str)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From String"  <a href="#a6e40a4873ca945b119318a85c75a0fcf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#abd4229c26d0a2ff17b0a6bdb74240388">FromHex</a> (const std::string &amp;str)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From Hexadecimal"  <a href="#abd4229c26d0a2ff17b0a6bdb74240388"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ac5967eac5182607ac41b9ce6c3a74cb8">Add</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two words.  <a href="#ac5967eac5182607ac41b9ce6c3a74cb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a146bf924df8cbb03fbe8152e5e44edbe">operator+</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard addition operator.  <a href="#a146bf924df8cbb03fbe8152e5e44edbe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a8e2da1fb4c3ffcc78e1d94f1798797ec">Subtract</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts two words.  <a href="#a8e2da1fb4c3ffcc78e1d94f1798797ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a8fbd3f879952196cca2e4f03bac3890b">operator-</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard subtraction operator.  <a href="#a8fbd3f879952196cca2e4f03bac3890b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ad9caea73d7a990bf5189ba1e44ec7865">And</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"And"s the bits of two words.  <a href="#ad9caea73d7a990bf5189ba1e44ec7865"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a2f57b8b8739d1ce6c043494696a9f685">Or</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"Or"s the bits of two words.  <a href="#a2f57b8b8739d1ce6c043494696a9f685"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a6a7602a8220d84b5201a789b597fbbde">Not</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"Not"s the bits of a word.  <a href="#a6a7602a8220d84b5201a789b597fbbde"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ac5ca71cd1defb94cd1f3536a59612a4e">Copy</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a word.  <a href="#ac5ca71cd1defb94cd1f3536a59612a4e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a56d5d0a8d7e27cf8ef161f8e128ace83">operator=</a> (const <a class="el" href="classWord.html">Word</a> w)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#a56d5d0a8d7e27cf8ef161f8e128ace83"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#af20040c25b79d2aeae41f1714fbb2cbc">operator++</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard pre-increment operator.  <a href="#af20040c25b79d2aeae41f1714fbb2cbc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a6777f6f41915179c4255d3647a9eb4b5">operator++</a> (int)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard post-increment operator.  <a href="#a6777f6f41915179c4255d3647a9eb4b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a0e83901b08763247527ce61c89fd847f">operator[]</a> (const int i) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An accessor to the 'i'th bit of the value.  <a href="#a0e83901b08763247527ce61c89fd847f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a3349d0a243d3432bb35b76af8420b1d9">toInt</a> () const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"To non-negative Integer"  <a href="#a3349d0a243d3432bb35b76af8420b1d9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a1377d01257b792c748b013be60b089e6">toInt2Complement</a> () const =0</td></tr>
@@ -74,40 +115,546 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"To String"  <a href="#a0114861c4b660286834ad637f11dc4f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a7fc28d0251f8acb4dc3f388fc25c57d1">toHex</a> () const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"To Hexadecimal"  <a href="#a7fc28d0251f8acb4dc3f388fc25c57d1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a6421bf139c6eb4044446997606cb65e7">fromInt</a> (int)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From Integer"  <a href="#a6421bf139c6eb4044446997606cb65e7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ad8df9e06ccb87d1e65766120713ef545">fromStr</a> (const std::string &amp;)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From String"  <a href="#ad8df9e06ccb87d1e65766120713ef545"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a0c08832b3e9b41073fc6666407ef8c53">fromHex</a> (const std::string &amp;)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From Hexadecimal"  <a href="#a0c08832b3e9b41073fc6666407ef8c53"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a999c52ac2e7abf756eeb16fe5b31aad7">Add</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two words.  <a href="#a999c52ac2e7abf756eeb16fe5b31aad7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a8dfb66b7cd91fe0a4169f071c1f9bc53">operator+</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard addition operator.  <a href="#a8dfb66b7cd91fe0a4169f071c1f9bc53"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#af69a5e10e094e3fc30fae0b651d95ea6">Subtract</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts two words.  <a href="#af69a5e10e094e3fc30fae0b651d95ea6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a432fb05081debadb601d86cca05152c8">operator-</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard subtraction operator.  <a href="#a432fb05081debadb601d86cca05152c8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ae9f6bbc855712a208835d12cb3e40577">And</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"And"s the bits of two words.  <a href="#ae9f6bbc855712a208835d12cb3e40577"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24a8821a44701deda1dd70972447172f"></a><!-- doxytag: member="iWord::Or" ref="a24a8821a44701deda1dd70972447172f" args="(const iWord &amp;) const =0" -->
-virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Or</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a7602a8220d84b5201a789b597fbbde"></a><!-- doxytag: member="iWord::Not" ref="a6a7602a8220d84b5201a789b597fbbde" args="() const =0" -->
-virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Not</b> () const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ab9f5df8ced4937c18f16784a98ecf95f">copy</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a word.  <a href="#ab9f5df8ced4937c18f16784a98ecf95f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a45c9c82054bd2150b77d5f157734cb72">operator=</a> (const <a class="el" href="classWord.html">Word</a>)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#a45c9c82054bd2150b77d5f157734cb72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ace8c67ceca222808e6435d4aecd39787">fromInt</a> (int value)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From Integer"  <a href="#ace8c67ceca222808e6435d4aecd39787"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a6abdc96ebfa94d31cd1867fb1d4250fc">fromStr</a> (const std::string &amp;str)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From String"  <a href="#a6abdc96ebfa94d31cd1867fb1d4250fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a986481dd43fb6256197109eb69c274fe">fromHex</a> (const std::string &amp;str)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"From Hexadecimal"  <a href="#a986481dd43fb6256197109eb69c274fe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ac5967eac5182607ac41b9ce6c3a74cb8">Add</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two words.  <a href="#ac5967eac5182607ac41b9ce6c3a74cb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a146bf924df8cbb03fbe8152e5e44edbe">operator+</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard addition operator.  <a href="#a146bf924df8cbb03fbe8152e5e44edbe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a8e2da1fb4c3ffcc78e1d94f1798797ec">Subtract</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts two words.  <a href="#a8e2da1fb4c3ffcc78e1d94f1798797ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a8fbd3f879952196cca2e4f03bac3890b">operator-</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard subtraction operator.  <a href="#a8fbd3f879952196cca2e4f03bac3890b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#ad9caea73d7a990bf5189ba1e44ec7865">And</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"And"s the bits of two words.  <a href="#ad9caea73d7a990bf5189ba1e44ec7865"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a2f57b8b8739d1ce6c043494696a9f685">Or</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"Or"s the bits of two words.  <a href="#a2f57b8b8739d1ce6c043494696a9f685"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a6a7602a8220d84b5201a789b597fbbde">Not</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"Not"s the bits of a word.  <a href="#a6a7602a8220d84b5201a789b597fbbde"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a0e83b184d426a1328341eaa38bc4f4b8">copy</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a word.  <a href="#a0e83b184d426a1328341eaa38bc4f4b8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a56d5d0a8d7e27cf8ef161f8e128ace83">operator=</a> (const <a class="el" href="classWord.html">Word</a> w)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#a56d5d0a8d7e27cf8ef161f8e128ace83"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#af20040c25b79d2aeae41f1714fbb2cbc">operator++</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard pre-increment operator.  <a href="#af20040c25b79d2aeae41f1714fbb2cbc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a6777f6f41915179c4255d3647a9eb4b5">operator++</a> (int)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard post-increment operator.  <a href="#a6777f6f41915179c4255d3647a9eb4b5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a2bd140904379329b74c3e1af83eb3a85">operator[]</a> (int) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An accessor to the "i"th bit of the value.  <a href="#a2bd140904379329b74c3e1af83eb3a85"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a0e83901b08763247527ce61c89fd847f">operator[]</a> (const int i) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An accessor to the 'i'th bit of the value.  <a href="#a0e83901b08763247527ce61c89fd847f"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>The <a class="el" href="classiWord.html" title="The iWord interface class defines the a &quot;word&quot; of data on the Wi-11 Machine.">iWord</a> interface class defines the a "word" of data on the Wi-11 Machine. </p>
+<p>Defines a "word" of data on the Wi-11 Machine. </p>
 <p>The methods present in this inteface are meant to mimic the functionality of the Wi-11 machine, allowing for simplified execution of the instructions therein. As the size of a "word" depends on the architecture, classes implementing this interface should define the word length to be 16 bits in length. </p>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="adcef1925ad309d54c9a3e896af5d5350"></a><!-- doxytag: member="iWord::ToInt" ref="adcef1925ad309d54c9a3e896af5d5350" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int iWord::ToInt </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"To non-negative Integer" </p>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the word is not changed. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The bits of the word interpreted as a positive integer value. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#acf9a6c3d9cf07d66da592ec76f572464">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a68129605beb127647ecc59129f1c07f7"></a><!-- doxytag: member="iWord::ToInt2Complement" ref="a68129605beb127647ecc59129f1c07f7" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int iWord::ToInt2Complement </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"To Integer as 2's Complement" </p>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the word is not changed. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The bits of the word interpreted as a signed (2's complement) integer value. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#a4116e08d36472a287c06a4aa14e7ed4f">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acebcfc4edd3498c962a6a2379a88accf"></a><!-- doxytag: member="iWord::ToStr" ref="acebcfc4edd3498c962a6a2379a88accf" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string iWord::ToStr </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"To String" </p>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the word is not changed. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>16 characters: each either a 1 or 0</dd></dl>
+<dl class="user"><dt><b>Examples:</b></dt><dd>If the object holds a (2's comp.) value 4: "0000000000000100"<br/>
+ If the object holds a (2's comp.) value -1: "1111111111111111" </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#a5f8c5dcdb847ed96021ef9282ccc7e76">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d7cb4facca44fc785899d01e47f29b1"></a><!-- doxytag: member="iWord::ToHex" ref="a7d7cb4facca44fc785899d01e47f29b1" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string iWord::ToHex </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"To Hexadecimal" </p>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the word is not changed. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>"0x" + &lt;4 characters in the range [0-9],[A-F]&gt;</dd></dl>
+<dl class="user"><dt><b>Examples:</b></dt><dd>If the object holds (2's comp.) value 8: "0x0008"<br/>
+ If the object holds (2's comp.) value -2: "0xFFFE" </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#af71af6fa290db8e9b4719c2b95ba9af0">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1229f8249c32e01ccee035a205954a62"></a><!-- doxytag: member="iWord::FromInt" ref="a1229f8249c32e01ccee035a205954a62" args="(int value)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool iWord::FromInt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> <em>value</em>&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"From Integer" </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value to be stored into the word. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>"value" is not changed. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if and only if "value" can be represented in 16 bits</dd></dl>
+<p>When this function returns "False", the value of the word is unchanged.<br/>
+ Otherwise, the word now holds the value "value". </p>
+
+<p>Implemented in <a class="el" href="classWord.html#aed80a61d7e2da2dbcde483058acd4259">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e40a4873ca945b119318a85c75a0fcf"></a><!-- doxytag: member="iWord::FromStr" ref="a6e40a4873ca945b119318a85c75a0fcf" args="(const std::string &amp;str)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool iWord::FromStr </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"> <em>str</em>&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"From String" </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>A string of characters meant to represent a "word" to be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>"str" is not changed. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if and only if "str" is well-formed (as defined in <a class="el" href="classiWord.html#a0114861c4b660286834ad637f11dc4f4" title="&quot;To String&quot;">toStr()</a>).</dd></dl>
+<p>When this function returns "False", the value of the word is unchanged.<br/>
+ Otherwise, the word now holds the value "str". </p>
+
+<p>Implemented in <a class="el" href="classWord.html#a0b255da1e924b2ab520cc5ca271bacf0">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd4229c26d0a2ff17b0a6bdb74240388"></a><!-- doxytag: member="iWord::FromHex" ref="abd4229c26d0a2ff17b0a6bdb74240388" args="(const std::string &amp;str)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool iWord::FromHex </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"> <em>str</em>&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"From Hexadecimal" </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>A string of characters meant to represent a "word" to be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>"str" is not changed. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if and only if "str" is well-formed (as defined in <a class="el" href="classiWord.html#a7fc28d0251f8acb4dc3f388fc25c57d1" title="&quot;To Hexadecimal&quot;">toHex()</a>).</dd></dl>
+<p>When this function returns "False", the value of the word is unchanged.<br/>
+ Otherwise, the word now holds the value "str". </p>
+
+<p>Implemented in <a class="el" href="classWord.html#a247de32d413b48d2934f41caaa6cce77">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5967eac5182607ac41b9ce6c3a74cb8"></a><!-- doxytag: member="iWord::Add" ref="ac5967eac5182607ac41b9ce6c3a74cb8" args="(const iWord &amp;w) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::Add </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds two words. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>A word value to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both "w" and the calling object do not change. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing result of adding "w" and the calling object.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The addition is carried out with no regard to logical overflow. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#ae9478910c6cb8c30abeedf7fc6ba5b36">Word</a>, and <a class="el" href="classWord.html#ae9478910c6cb8c30abeedf7fc6ba5b36">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a146bf924df8cbb03fbe8152e5e44edbe"></a><!-- doxytag: member="iWord::operator+" ref="a146bf924df8cbb03fbe8152e5e44edbe" args="(const iWord &amp;w) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A standard addition operator. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>"result = p + w" is equivalent to "result = p.Add(w)". </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#a0fa830d2d54ba68107d035c316b8d3ab">Word</a>, and <a class="el" href="classWord.html#a0fa830d2d54ba68107d035c316b8d3ab">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e2da1fb4c3ffcc78e1d94f1798797ec"></a><!-- doxytag: member="iWord::Subtract" ref="a8e2da1fb4c3ffcc78e1d94f1798797ec" args="(const iWord &amp;w) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::Subtract </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Subtracts two words. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>A word value to be subtracted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both "w" and the calling object do not change. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing the result of subtracting "w" from the calling object.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The subtraction is carried out with no regard for logical overflow. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#aef1af160cdcc631473aec52ea883e2e5">Word</a>, and <a class="el" href="classWord.html#aef1af160cdcc631473aec52ea883e2e5">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fbd3f879952196cca2e4f03bac3890b"></a><!-- doxytag: member="iWord::operator&#45;" ref="a8fbd3f879952196cca2e4f03bac3890b" args="(const iWord &amp;w) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A standard subtraction operator. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>"result = p - w" is equivalent to "result = p.Subtract(w)". </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#af930dcccdcf2cdbb90df31ac61a4933c">Word</a>, and <a class="el" href="classWord.html#af930dcccdcf2cdbb90df31ac61a4933c">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9caea73d7a990bf5189ba1e44ec7865"></a><!-- doxytag: member="iWord::And" ref="ad9caea73d7a990bf5189ba1e44ec7865" args="(const iWord &amp;w) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::And </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"And"s the bits of two words. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>A word value to be "and"ed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both "w" and the calling object do not change. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing the result of performing a bit-wise and on "w" and the calling object. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#a08eca1ca0af51daee452ba719f9407c5">Word</a>, and <a class="el" href="classWord.html#a08eca1ca0af51daee452ba719f9407c5">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f57b8b8739d1ce6c043494696a9f685"></a><!-- doxytag: member="iWord::Or" ref="a2f57b8b8739d1ce6c043494696a9f685" args="(const iWord &amp;w) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::Or </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"Or"s the bits of two words. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>A word value to be "or"ed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both "w" and the calling object do not change. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing the result of performing a bit-wise or on "w" and the calling object. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#a681da292897265ae47f144a99d49d9ec">Word</a>, and <a class="el" href="classWord.html#a681da292897265ae47f144a99d49d9ec">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a7602a8220d84b5201a789b597fbbde"></a><!-- doxytag: member="iWord::Not" ref="a6a7602a8220d84b5201a789b597fbbde" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::Not </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"Not"s the bits of a word. </p>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object do not change. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing the result of performing a bit-wise not on the calling object. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#afdecfa9e3f2fda36496f249617a4cef5">Word</a>, and <a class="el" href="classWord.html#afdecfa9e3f2fda36496f249617a4cef5">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5ca71cd1defb94cd1f3536a59612a4e"></a><!-- doxytag: member="iWord::Copy" ref="ac5ca71cd1defb94cd1f3536a59612a4e" args="(const iWord &amp;w)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void iWord::Copy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copies a word. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>The value to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The caller equals that parameter.</dd></dl>
+<p>Equivalent to the assignment "caller = parameter". </p>
+
+<p>Implemented in <a class="el" href="classWord.html#a8c094d866fe9af5da5d32c98430a86f8">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56d5d0a8d7e27cf8ef161f8e128ace83"></a><!-- doxytag: member="iWord::operator=" ref="a56d5d0a8d7e27cf8ef161f8e128ace83" args="(const Word w)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a>&amp; iWord::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classWord.html">Word</a>&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A standard assignment operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The value to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A copy of the parameter.</dd></dl>
+<p>The return value and parameter here must be declared as "Word"s as C++ does not work well with polymorphic assignment operators. </p>
+
+<p>Implemented in <a class="el" href="classWord.html#a2a3d8ab2639aada7a1aafcd3acd3900f">Word</a>, and <a class="el" href="classWord.html#a4cbab3635971c12fdb2bf37d2603e36e">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af20040c25b79d2aeae41f1714fbb2cbc"></a><!-- doxytag: member="iWord::operator++" ref="af20040c25b79d2aeae41f1714fbb2cbc" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classiWord.html">iWord</a>&amp; iWord::operator++ </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A standard pre-increment operator. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to itself.</dd></dl>
+<p>The object increments its value BEFORE the execution of the current line. </p>
+
+<p>Implemented in <a class="el" href="classWord.html#a3837f49bcb44597e6d738ccb0eeed144">Word</a>, and <a class="el" href="classWord.html#a8641e9e5139b8f5bfbc52ab2557d8f9a">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6777f6f41915179c4255d3647a9eb4b5"></a><!-- doxytag: member="iWord::operator++" ref="a6777f6f41915179c4255d3647a9eb4b5" args="(int)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classiWord.html">iWord</a>&amp; iWord::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A standard post-increment operator. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to itself.</dd></dl>
+<p>The object increments its value AFTER the execution of the current line. </p>
+
+<p>Implemented in <a class="el" href="classWord.html#ae921b75d263be790fd150c5962445163">Word</a>, and <a class="el" href="classWord.html#aba1bb3e72c1262cc69d74b971d3bc7ee">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e83901b08763247527ce61c89fd847f"></a><!-- doxytag: member="iWord::operator[]" ref="a0e83901b08763247527ce61c89fd847f" args="(const int i) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool iWord::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"> <em>i</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>An accessor to the 'i'th bit of the value. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>The index of the bit in question. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The index must be less than the size of a word, ie. 16. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True &lt;=&gt; 1, False &lt;=&gt; 0.</dd></dl>
+<p>The number of the bits starts at zero and rises into the more significant bits. </p>
+<dl class="user"><dt><b>Examples:</b></dt><dd>If the object holds a value of 4 (0...100 in binary): num[2] = 1.<br/>
+ If it holds a value of 1 (0...001 in binary): num[0] = 1.<br/>
+ If it holds a negative value (Starting with a 1 in 2's complement): num[15] = 1. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#a0b08a81ced05b38d3d719ef70ecb3215">Word</a>, and <a class="el" href="classWord.html#a0b08a81ced05b38d3d719ef70ecb3215">Word</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3349d0a243d3432bb35b76af8420b1d9"></a><!-- doxytag: member="iWord::toInt" ref="a3349d0a243d3432bb35b76af8420b1d9" args="() const =0" -->
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +747,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 
 </div>
 </div>
-<a class="anchor" id="a6421bf139c6eb4044446997606cb65e7"></a><!-- doxytag: member="iWord::fromInt" ref="a6421bf139c6eb4044446997606cb65e7" args="(int)=0" -->
+<a class="anchor" id="ace8c67ceca222808e6435d4aecd39787"></a><!-- doxytag: member="iWord::fromInt" ref="ace8c67ceca222808e6435d4aecd39787" args="(int value)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -208,7 +755,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual bool iWord::fromInt </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>value</em>&#160;)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -227,11 +774,11 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <p>When this function returns "False", the value of the word is unchanged.<br/>
  Otherwise, the word now holds the value "value". </p>
 
-<p>Implemented in <a class="el" href="classWord.html#ad6499f93b487d6d550a3fd4adcee9c8d">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#ac5f869d82c443a5c39f0d4a295b61d35">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad8df9e06ccb87d1e65766120713ef545"></a><!-- doxytag: member="iWord::fromStr" ref="ad8df9e06ccb87d1e65766120713ef545" args="(const std::string &amp;)=0" -->
+<a class="anchor" id="a6abdc96ebfa94d31cd1867fb1d4250fc"></a><!-- doxytag: member="iWord::fromStr" ref="a6abdc96ebfa94d31cd1867fb1d4250fc" args="(const std::string &amp;str)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -239,7 +786,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual bool iWord::fromStr </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>str</em>&#160;)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -258,11 +805,11 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <p>When this function returns "False", the value of the word is unchanged.<br/>
  Otherwise, the word now holds the value "str". </p>
 
-<p>Implemented in <a class="el" href="classWord.html#a614b52f3312d82ac5681403651040714">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#a56fb0f409b1610afd30492e848c95825">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0c08832b3e9b41073fc6666407ef8c53"></a><!-- doxytag: member="iWord::fromHex" ref="a0c08832b3e9b41073fc6666407ef8c53" args="(const std::string &amp;)=0" -->
+<a class="anchor" id="a986481dd43fb6256197109eb69c274fe"></a><!-- doxytag: member="iWord::fromHex" ref="a986481dd43fb6256197109eb69c274fe" args="(const std::string &amp;str)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -270,7 +817,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual bool iWord::fromHex </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>str</em>&#160;)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -289,11 +836,11 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <p>When this function returns "False", the value of the word is unchanged.<br/>
  Otherwise, the word now holds the value "str". </p>
 
-<p>Implemented in <a class="el" href="classWord.html#a4e26eb82e8f7426dd46be2bbec9e41c5">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#a2cb556e157d56e97d623b2e120ee0a6c">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a999c52ac2e7abf756eeb16fe5b31aad7"></a><!-- doxytag: member="iWord::Add" ref="a999c52ac2e7abf756eeb16fe5b31aad7" args="(const iWord &amp;) const =0" -->
+<a class="anchor" id="ac5967eac5182607ac41b9ce6c3a74cb8"></a><!-- doxytag: member="iWord::Add" ref="ac5967eac5182607ac41b9ce6c3a74cb8" args="(const iWord &amp;w) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -301,7 +848,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::Add </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
           <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -319,11 +866,11 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing result of adding "w" and the calling object.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The addition is carried out with no regard to logical overflow. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWord.html#a5cb9115a6cee6666e88390e56eb32071">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#ae9478910c6cb8c30abeedf7fc6ba5b36">Word</a>, and <a class="el" href="classWord.html#ae9478910c6cb8c30abeedf7fc6ba5b36">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8dfb66b7cd91fe0a4169f071c1f9bc53"></a><!-- doxytag: member="iWord::operator+" ref="a8dfb66b7cd91fe0a4169f071c1f9bc53" args="(const iWord &amp;) const =0" -->
+<a class="anchor" id="a146bf924df8cbb03fbe8152e5e44edbe"></a><!-- doxytag: member="iWord::operator+" ref="a146bf924df8cbb03fbe8152e5e44edbe" args="(const iWord &amp;w) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -331,7 +878,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::operator+ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
           <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -341,11 +888,11 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <p>A standard addition operator. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>"result = p + w" is equivalent to "result = p.Add(w)". </dd></dl>
 
-<p>Implemented in <a class="el" href="classWord.html#a88e945efd81d13e15adb1ed9e4e95a5a">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#a0fa830d2d54ba68107d035c316b8d3ab">Word</a>, and <a class="el" href="classWord.html#a0fa830d2d54ba68107d035c316b8d3ab">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af69a5e10e094e3fc30fae0b651d95ea6"></a><!-- doxytag: member="iWord::Subtract" ref="af69a5e10e094e3fc30fae0b651d95ea6" args="(const iWord &amp;) const =0" -->
+<a class="anchor" id="a8e2da1fb4c3ffcc78e1d94f1798797ec"></a><!-- doxytag: member="iWord::Subtract" ref="a8e2da1fb4c3ffcc78e1d94f1798797ec" args="(const iWord &amp;w) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -353,7 +900,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::Subtract </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
           <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -371,11 +918,11 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing the result of subtracting "w" from the calling object.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The subtraction is carried out with no regard for logical overflow. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWord.html#a3ef457fb6f6ce54f5e98a83db4ae4472">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#aef1af160cdcc631473aec52ea883e2e5">Word</a>, and <a class="el" href="classWord.html#aef1af160cdcc631473aec52ea883e2e5">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a432fb05081debadb601d86cca05152c8"></a><!-- doxytag: member="iWord::operator&#45;" ref="a432fb05081debadb601d86cca05152c8" args="(const iWord &amp;) const =0" -->
+<a class="anchor" id="a8fbd3f879952196cca2e4f03bac3890b"></a><!-- doxytag: member="iWord::operator&#45;" ref="a8fbd3f879952196cca2e4f03bac3890b" args="(const iWord &amp;w) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -383,7 +930,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::operator- </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
           <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -393,11 +940,11 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <p>A standard subtraction operator. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>"result = p - w" is equivalent to "result = p.Subtract(w)". </dd></dl>
 
-<p>Implemented in <a class="el" href="classWord.html#a9ec270f103a3a755bd7b627e4b899bb4">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#af930dcccdcf2cdbb90df31ac61a4933c">Word</a>, and <a class="el" href="classWord.html#af930dcccdcf2cdbb90df31ac61a4933c">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae9f6bbc855712a208835d12cb3e40577"></a><!-- doxytag: member="iWord::And" ref="ae9f6bbc855712a208835d12cb3e40577" args="(const iWord &amp;) const =0" -->
+<a class="anchor" id="ad9caea73d7a990bf5189ba1e44ec7865"></a><!-- doxytag: member="iWord::And" ref="ad9caea73d7a990bf5189ba1e44ec7865" args="(const iWord &amp;w) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -405,7 +952,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::And </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
           <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -422,11 +969,62 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both "w" and the calling object do not change. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing the result of performing a bit-wise and on "w" and the calling object. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWord.html#a4e1926ab5f4af7b63ec1bf4fadf873ad">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#a08eca1ca0af51daee452ba719f9407c5">Word</a>, and <a class="el" href="classWord.html#a08eca1ca0af51daee452ba719f9407c5">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab9f5df8ced4937c18f16784a98ecf95f"></a><!-- doxytag: member="iWord::copy" ref="ab9f5df8ced4937c18f16784a98ecf95f" args="(const iWord &amp;)=0" -->
+<a class="anchor" id="a2f57b8b8739d1ce6c043494696a9f685"></a><!-- doxytag: member="iWord::Or" ref="a2f57b8b8739d1ce6c043494696a9f685" args="(const iWord &amp;w) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::Or </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"Or"s the bits of two words. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>A word value to be "or"ed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both "w" and the calling object do not change. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing the result of performing a bit-wise or on "w" and the calling object. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#a681da292897265ae47f144a99d49d9ec">Word</a>, and <a class="el" href="classWord.html#a681da292897265ae47f144a99d49d9ec">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a7602a8220d84b5201a789b597fbbde"></a><!-- doxytag: member="iWord::Not" ref="a6a7602a8220d84b5201a789b597fbbde" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classWord.html">Word</a> iWord::Not </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>"Not"s the bits of a word. </p>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object do not change. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new "Word" object containing the result of performing a bit-wise not on the calling object. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWord.html#afdecfa9e3f2fda36496f249617a4cef5">Word</a>, and <a class="el" href="classWord.html#afdecfa9e3f2fda36496f249617a4cef5">Word</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e83b184d426a1328341eaa38bc4f4b8"></a><!-- doxytag: member="iWord::copy" ref="a0e83b184d426a1328341eaa38bc4f4b8" args="(const iWord &amp;w)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -434,7 +1032,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
           <td class="memname">virtual void iWord::copy </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -444,26 +1042,26 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <p>Copies a word. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">The</td><td>value to be copied. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>The value to be copied. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The caller equals that parameter.</dd></dl>
 <p>Equivalent to the assignment "caller = parameter". </p>
 
-<p>Implemented in <a class="el" href="classWord.html#abb97142e332c7cc25d2a0c2bdb6c3d9b">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#a2e48d9b78f13d08e7817c392fdc76b27">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a45c9c82054bd2150b77d5f157734cb72"></a><!-- doxytag: member="iWord::operator=" ref="a45c9c82054bd2150b77d5f157734cb72" args="(const Word)=0" -->
+<a class="anchor" id="a56d5d0a8d7e27cf8ef161f8e128ace83"></a><!-- doxytag: member="iWord::operator=" ref="a56d5d0a8d7e27cf8ef161f8e128ace83" args="(const Word w)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="classWord.html">Word</a>&amp; iWord::operator= </td>
           <td>(</td>
-          <td class="paramtype">const &#160;</td>
-          <td class="paramname"> <em>Word</em>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classWord.html">Word</a>&#160;</td>
+          <td class="paramname"> <em>w</em>&#160;)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
@@ -473,14 +1071,14 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <p>A standard assignment operator. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">The</td><td>value to be copied. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The value to be copied. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A copy of the parameter.</dd></dl>
 <p>The return value and parameter here must be declared as "Word"s as C++ does not work well with polymorphic assignment operators. </p>
 
-<p>Implemented in <a class="el" href="classWord.html#a2ae41869cb0f1855fc18c6bce05f7c4d">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#a2a3d8ab2639aada7a1aafcd3acd3900f">Word</a>, and <a class="el" href="classWord.html#a4cbab3635971c12fdb2bf37d2603e36e">Word</a>.</p>
 
 </div>
 </div>
@@ -497,11 +1095,12 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
       </table>
 </div>
 <div class="memdoc">
+
 <p>A standard pre-increment operator. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to itself.</dd></dl>
 <p>The object increments its value BEFORE the execution of the current line. </p>
 
-<p>Implemented in <a class="el" href="classWord.html#a3837f49bcb44597e6d738ccb0eeed144">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#a3837f49bcb44597e6d738ccb0eeed144">Word</a>, and <a class="el" href="classWord.html#a8641e9e5139b8f5bfbc52ab2557d8f9a">Word</a>.</p>
 
 </div>
 </div>
@@ -524,29 +1123,29 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to itself.</dd></dl>
 <p>The object increments its value AFTER the execution of the current line. </p>
 
-<p>Implemented in <a class="el" href="classWord.html#ae921b75d263be790fd150c5962445163">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#ae921b75d263be790fd150c5962445163">Word</a>, and <a class="el" href="classWord.html#aba1bb3e72c1262cc69d74b971d3bc7ee">Word</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2bd140904379329b74c3e1af83eb3a85"></a><!-- doxytag: member="iWord::operator[]" ref="a2bd140904379329b74c3e1af83eb3a85" args="(int) const =0" -->
+<a class="anchor" id="a0e83901b08763247527ce61c89fd847f"></a><!-- doxytag: member="iWord::operator[]" ref="a0e83901b08763247527ce61c89fd847f" args="(const int i) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual bool iWord::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname">&#160;)</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"> <em>i</em>&#160;)</td>
           <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>An accessor to the "i"th bit of the value. </p>
+<p>An accessor to the 'i'th bit of the value. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">The</td><td>index of the bit in question. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>The index of the bit in question. </td></tr>
   </table>
   </dd>
 </dl>
@@ -557,20 +1156,17 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
  If it holds a value of 1 (0...001 in binary): num[0] = 1.<br/>
  If it holds a negative value (Starting with a 1 in 2's complement): num[15] = 1. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWord.html#ab0f10ac1a0397559b859774b503538fe">Word</a>.</p>
+<p>Implemented in <a class="el" href="classWord.html#a0b08a81ced05b38d3d719ef70ecb3215">Word</a>, and <a class="el" href="classWord.html#a0b08a81ced05b38d3d719ef70ecb3215">Word</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="iWord_8h_source.html">iWord.h</a></li>
-</ul>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -579,7 +1175,7 @@ virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memIte
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 01:47:00 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 20:29:39 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

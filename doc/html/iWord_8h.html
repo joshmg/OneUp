@@ -17,8 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -45,13 +46,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
 <h1>iWord.h File Reference</h1>  </div>
 </div>
 <div class="contents">
 
-<p>The interface implemented by the "Word" class.  
+<p>Definition of a "word" of data.  
 <a href="#_details">More...</a></p>
 <!-- startSectionHeader --><div class="dynheader">
 Include dependency graph for iWord.h:<!-- endSectionHeader --></div>
@@ -63,29 +64,29 @@ This graph shows which files directly or indirectly include this file:<!-- endSe
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="iWord_8h__dep__incl.png" border="0" usemap="#iWord_8hdep" alt=""/></div>
 <map name="iWord_8hdep" id="iWord_8hdep">
-<area shape="rect" id="node3" href="iDecoder_8h_source.html" title="iDecoder.h" alt="" coords="23,83,114,112"/><area shape="rect" id="node5" href="iWi11_8h_source.html" title="iWi11.h" alt="" coords="41,160,107,189"/><area shape="rect" id="node7" href="iMemory_8h_source.html" title="iMemory.h" alt="" coords="138,83,223,112"/><area shape="rect" id="node11" href="iSimulator_8h_source.html" title="iSimulator.h" alt="" coords="242,160,341,189"/><area shape="rect" id="node14" href="iRegister_8h_source.html" title="iRegister.h" alt="" coords="247,83,333,112"/><area shape="rect" id="node22" href="Word_8h_source.html" title="Word.h" alt="" coords="407,83,471,112"/><area shape="rect" id="node9" href="iLoader_8h_source.html" title="iLoader.h" alt="" coords="138,160,218,189"/><area shape="rect" id="node18" href="Register_8h_source.html" title="Register.h" alt="" coords="382,160,465,189"/></map>
+<area shape="rect" id="node3" href="iDecoder_8h_source.html" title="iDecoder.h" alt="" coords="24,83,114,112"/><area shape="rect" id="node5" href="iWi11_8h_source.html" title="iWi11.h" alt="" coords="42,160,109,189"/><area shape="rect" id="node7" href="iMemory_8h_source.html" title="iMemory.h" alt="" coords="138,83,226,112"/><area shape="rect" id="node11" href="iSimulator_8h_source.html" title="iSimulator.h" alt="" coords="245,160,344,189"/><area shape="rect" id="node14" href="iRegister_8h.html" title="Definition of a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="250,83,338,112"/><area shape="rect" id="node22" href="Word_8h.html" title="Definition of private data for the &quot;Word&quot; class." alt="" coords="413,83,480,112"/><area shape="rect" id="node9" href="iLoader_8h_source.html" title="iLoader.h" alt="" coords="141,160,221,189"/><area shape="rect" id="node18" href="Register_8h.html" title="Definition of private data for the &quot;Register&quot; class." alt="" coords="368,160,453,189"/><area shape="rect" id="node25" href="Word_8cpp.html" title="Implements the delcarations in &quot;Word.h&quot;." alt="" coords="477,160,557,189"/></map>
 <!-- endSectionContent --></div>
 
 <p><a href="iWord_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
+Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html">iWord</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classiWord.html" title="The iWord interface class defines the a &quot;word&quot; of data on the Wi-11 Machine.">iWord</a> interface class defines the a "word" of data on the Wi-11 Machine.  <a href="classiWord.html#_details">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a "word" of data on the Wi-11 Machine.  <a href="classiWord.html#_details">More...</a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>The interface implemented by the "Word" class. </p>
+<p>Definition of a "word" of data. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Joshua Green </dd>
 <dd>
 Andrew Groot</dd></dl>
-<p>Defines the operations and signatures by which the "Word" class should operate. The signatures, while intended to be coded to the interface, are done as to this as C++ allows. </p>
+<p>Defines the operations and signatures by which a "word" class should operate. The signatures, while intended to be coded to the interface, are done as to this as C++ allows. </p>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,7 +95,7 @@ Andrew Groot</dd></dl>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 01:47:00 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 19:18:45 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

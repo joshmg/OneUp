@@ -19,6 +19,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -52,25 +53,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 This is the complete list of members for <a class="el" href="classiWord.html">iWord</a>, including all inherited members.<table>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#a999c52ac2e7abf756eeb16fe5b31aad7">Add</a>(const iWord &amp;) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#ae9f6bbc855712a208835d12cb3e40577">And</a>(const iWord &amp;) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#ab9f5df8ced4937c18f16784a98ecf95f">copy</a>(const iWord &amp;)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#a0c08832b3e9b41073fc6666407ef8c53">fromHex</a>(const std::string &amp;)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#a6421bf139c6eb4044446997606cb65e7">fromInt</a>(int)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#ad8df9e06ccb87d1e65766120713ef545">fromStr</a>(const std::string &amp;)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>Not</b>() const =0 (defined in <a class="el" href="classiWord.html">iWord</a>)</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#a8dfb66b7cd91fe0a4169f071c1f9bc53">operator+</a>(const iWord &amp;) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#ac5967eac5182607ac41b9ce6c3a74cb8">Add</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#ac5967eac5182607ac41b9ce6c3a74cb8">Add</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#ad9caea73d7a990bf5189ba1e44ec7865">And</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#ad9caea73d7a990bf5189ba1e44ec7865">And</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a0e83b184d426a1328341eaa38bc4f4b8">copy</a>(const iWord &amp;w)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#ac5ca71cd1defb94cd1f3536a59612a4e">Copy</a>(const iWord &amp;w)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#abd4229c26d0a2ff17b0a6bdb74240388">FromHex</a>(const std::string &amp;str)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a986481dd43fb6256197109eb69c274fe">fromHex</a>(const std::string &amp;str)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#ace8c67ceca222808e6435d4aecd39787">fromInt</a>(int value)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a1229f8249c32e01ccee035a205954a62">FromInt</a>(int value)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a6abdc96ebfa94d31cd1867fb1d4250fc">fromStr</a>(const std::string &amp;str)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a6e40a4873ca945b119318a85c75a0fcf">FromStr</a>(const std::string &amp;str)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a6a7602a8220d84b5201a789b597fbbde">Not</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a6a7602a8220d84b5201a789b597fbbde">Not</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a146bf924df8cbb03fbe8152e5e44edbe">operator+</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a146bf924df8cbb03fbe8152e5e44edbe">operator+</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classiWord.html#af20040c25b79d2aeae41f1714fbb2cbc">operator++</a>()=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classiWord.html#a6777f6f41915179c4255d3647a9eb4b5">operator++</a>(int)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#a432fb05081debadb601d86cca05152c8">operator-</a>(const iWord &amp;) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#a45c9c82054bd2150b77d5f157734cb72">operator=</a>(const Word)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#a2bd140904379329b74c3e1af83eb3a85">operator[]</a>(int) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>Or</b>(const iWord &amp;) const =0 (defined in <a class="el" href="classiWord.html">iWord</a>)</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>print</b>() const =0 (defined in <a class="el" href="classiWord.html">iWord</a>)</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classiWord.html#af69a5e10e094e3fc30fae0b651d95ea6">Subtract</a>(const iWord &amp;) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#af20040c25b79d2aeae41f1714fbb2cbc">operator++</a>()=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a6777f6f41915179c4255d3647a9eb4b5">operator++</a>(int)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a8fbd3f879952196cca2e4f03bac3890b">operator-</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a8fbd3f879952196cca2e4f03bac3890b">operator-</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a56d5d0a8d7e27cf8ef161f8e128ace83">operator=</a>(const Word w)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a56d5d0a8d7e27cf8ef161f8e128ace83">operator=</a>(const Word w)=0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a0e83901b08763247527ce61c89fd847f">operator[]</a>(const int i) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a0e83901b08763247527ce61c89fd847f">operator[]</a>(const int i) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a2f57b8b8739d1ce6c043494696a9f685">Or</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a2f57b8b8739d1ce6c043494696a9f685">Or</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a8e2da1fb4c3ffcc78e1d94f1798797ec">Subtract</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a8e2da1fb4c3ffcc78e1d94f1798797ec">Subtract</a>(const iWord &amp;w) const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classiWord.html#a7fc28d0251f8acb4dc3f388fc25c57d1">toHex</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a7d7cb4facca44fc785899d01e47f29b1">ToHex</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classiWord.html#a3349d0a243d3432bb35b76af8420b1d9">toInt</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#adcef1925ad309d54c9a3e896af5d5350">ToInt</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#a68129605beb127647ecc59129f1c07f7">ToInt2Complement</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classiWord.html#a1377d01257b792c748b013be60b089e6">toInt2Complement</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classiWord.html#acebcfc4edd3498c962a6a2379a88accf">ToStr</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classiWord.html#a0114861c4b660286834ad637f11dc4f4">toStr</a>() const =0</td><td><a class="el" href="classiWord.html">iWord</a></td><td><code> [pure virtual]</code></td></tr>
 </table></div>
 <!--- window showing the filter options -->
@@ -78,7 +97,7 @@ This is the complete list of members for <a class="el" href="classiWord.html">iW
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,7 +106,7 @@ This is the complete list of members for <a class="el" href="classiWord.html">iW
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 01:14:24 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 20:29:39 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

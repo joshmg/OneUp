@@ -17,8 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -43,13 +44,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>OneUp Wi-11 Simulator Documentation</h1>  </div>
 </div>
 <div class="contents">
+<h2><a class="anchor" id="intro"></a>
+Introduction</h2>
+<p>The "Wi-11 Machine" is a simple, 16-bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). This software package is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-the-scenes details, one must understand the environment. In particular, an understanding the object file syntax and the interactions between the components used in this project is necessary.</p>
+<h2><a class="anchor" id="syntax"></a>
+Object Files</h2>
+<dl class="user"><dt><b></b></dt><dd>The object files (ususally file_name.o) that this simulator accepts are ascii text files with the following structure: <ul>
+<li>One <a class="el" href="index.html#header">Header Record</a> </li>
+<li>Several <a class="el" href="index.html#text">Text Records</a> </li>
+<li>One <a class="el" href="index.html#end">End Record</a></li>
+</ul>
+</dd></dl>
+<h3><a class="anchor" id="header"></a>
+The Header Record</h3>
+<dl class="user"><dt><b></b></dt><dd>The Header Record is a single line that prepares the system for the storing the instructions to come. </dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>Components</b> <ul>
+<li>A capital 'H'. This designates that it is the Header Record. </li>
+<li>A 6 character "segment name" (anything will do). </li>
+<li>A 4-digit Hexadecimal value that corresponds to the "load address" of the program. Instructions can be written starting at this address. </li>
+<li>A second 4-digit Hexadecimal value that denotes the length of the program-load segment (the size of memory into which the instructions will be loaded). </li>
+</ul>
+</dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is an 'H', a segment name, the first location where instructions can be written, and the number of memory locations for instuctions.</dd></dl>
+<h3><a class="anchor" id="text"></a>
+Text Records</h3>
+<dl class="user"><dt><b></b></dt><dd>Following the Header Record are serveral Text Records. Each Text Record corresponds to a single machine instruction and, like the header record, is on a single line. </dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>Components</b> <ul>
+<li>A capital 'T'. This designates that it is a Text Record. </li>
+<li>A 4-digit hexadecimal value -- The location in memory at which the instruction will be stored. </li>
+<li>A second 4-digit Hexadecimal value -- The encoding of the instruction to be stored. </li>
+</ul>
+</dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is a T, the location to store the instruction, and the instruction itself.</dd></dl>
+<h3><a class="anchor" id="end"></a>
+The End Record</h3>
+<dl class="user"><dt><b></b></dt><dd>The End Record is, as the name would suggest, the last line of the line. Its purpose is to denote the end of instructions to be written and to give an initial value for the PC.<br/>
+<br/>
+ </dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>Components</b> <ul>
+<li>The End Record begins with a capital 'E'.<br/>
+ </li>
+<li>Next, and last, a 4-digit hexadecimal value to be put into the PC. </li>
+</ul>
+</dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is an E, and the location in memory from which the first instruction should be fetched.</dd></dl>
+<h2><a class="anchor" id="Component"></a>
+Interactions</h2>
+<div align="center">
+<img src="software_interaction.png" alt="software_interaction.png"/>
 </div>
+ </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -58,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 01:47:00 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jan 21 2011 20:29:39 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>
