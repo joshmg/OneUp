@@ -7,56 +7,47 @@
 Defines a \char`\"{}register\char`\"{} in the Wi-\/11 machine.  
 
 
-
-
-Inheritance diagram for iRegister:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=136pt]{classiRegister__inherit__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiRegister_ae7266f6f981b621f53f3c7cf77d4966a}{GetValue} () const =0
-\begin{DoxyCompactList}\small\item\em Retrieves a copy of the word of data store in the register. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiRegister_acb13aa880933f43088958723c9d6e564}{Add} (const \hyperlink{classiWord}{iWord} \&w)=0
 \begin{DoxyCompactList}\small\item\em Adds a word of data to the calling object. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_abaaacfa8cb18bea90a78673bd572a1c8}{Add} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
 \begin{DoxyCompactList}\small\item\em Adds a word of data to the calling object. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_af8ab19234f44a0bade65cb35fd2cd036}{operator+} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
-\begin{DoxyCompactList}\small\item\em A standard add operator. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiRegister_a98de346c2d0b15bee47d76bc5f70e94b}{Subtract} (const \hyperlink{classiWord}{iWord} \&w)=0
-\begin{DoxyCompactList}\small\item\em Subtracts a word of data from the calling object. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_ad7eb424400d184f1829664dd4f87ce5c}{Subtract} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
-\begin{DoxyCompactList}\small\item\em Subtracts a word of data from the calling object. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_a01f837097cb87ec33fdc1cef606e1842}{operator-\/} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
-\begin{DoxyCompactList}\small\item\em A standard subtraction operator. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiRegister_ae8114106e70653a705f04ba3892ed9e1}{And} (const \hyperlink{classiWord}{iWord} \&w)=0
 \begin{DoxyCompactList}\small\item\em Performs a bit-\/wise and. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_aa9a15ebfeea1e5857a1098b73cc583ad}{And} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
 \begin{DoxyCompactList}\small\item\em Performs a bit-\/wise and. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiRegister_aa0eac4fe58bde4a280a42fda1c087eee}{Or} (const \hyperlink{classiWord}{iWord} \&w)=0
-\begin{DoxyCompactList}\small\item\em Performs a bit-\/wise \char`\"{}or\char`\"{}. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_af5f065e89ef31d2ed40a1e80d9231bfd}{Or} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
-\begin{DoxyCompactList}\small\item\em Performs a bit-\/wise or. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiRegister_ae7266f6f981b621f53f3c7cf77d4966a}{GetValue} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves a copy of the word of data store in the register. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiRegister_af4bbbe945b151dee3f1743c43a451cb3}{Not} ()=0
 \begin{DoxyCompactList}\small\item\em Performs a bit-\/wise not. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_aca99e377de5cd1ef136a850d85143cf3}{Not} () const =0
 \begin{DoxyCompactList}\small\item\em Performs a bit-\/wise not. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiRegister_a8ffac24d1d7326e1a15f9b37cd426969}{Store} (const \hyperlink{classiWord}{iWord} \&w)=0
-\begin{DoxyCompactList}\small\item\em Stores a word of data. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiRegister_ac2b021b80a890f010fc68826e29fee47}{Store} (const \hyperlink{classiRegister}{iRegister} \&r)=0
-\begin{DoxyCompactList}\small\item\em Stores a copy of another register. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a16bf3f305a9588ddc85c109ac9a8b47b}{operator=} (const \hyperlink{classiWord}{iWord} \&w)=0
-\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a3280dc5af6b828d875c57c3a3eac54d9}{operator=} (const \hyperlink{classRegister}{Register} r)=0
-\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_af8ab19234f44a0bade65cb35fd2cd036}{operator+} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
+\begin{DoxyCompactList}\small\item\em A standard add operator. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_abca2bcea556d63fb4e3504df221cdc62}{operator++} ()=0
 \begin{DoxyCompactList}\small\item\em A standard pre-\/increment operator. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a36e6e1bfbc6a9fe203e8fb5b9f6396cb}{operator++} (int)=0
-\begin{DoxyCompactList}\small\item\em A standard post-\/increment operator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A standard post-\/increment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_a01f837097cb87ec33fdc1cef606e1842}{operator-\/} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
+\begin{DoxyCompactList}\small\item\em A standard subtraction operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a3280dc5af6b828d875c57c3a3eac54d9}{operator=} (const \hyperlink{classRegister}{Register} r)=0
+\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a16bf3f305a9588ddc85c109ac9a8b47b}{operator=} (const \hyperlink{classiWord}{iWord} \&w)=0
+\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiRegister_aa0eac4fe58bde4a280a42fda1c087eee}{Or} (const \hyperlink{classiWord}{iWord} \&w)=0
+\begin{DoxyCompactList}\small\item\em Performs a bit-\/wise \char`\"{}or\char`\"{}. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_af5f065e89ef31d2ed40a1e80d9231bfd}{Or} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
+\begin{DoxyCompactList}\small\item\em Performs a bit-\/wise or. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiRegister_ac2b021b80a890f010fc68826e29fee47}{Store} (const \hyperlink{classiRegister}{iRegister} \&r)=0
+\begin{DoxyCompactList}\small\item\em Stores a copy of another register. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiRegister_a8ffac24d1d7326e1a15f9b37cd426969}{Store} (const \hyperlink{classiWord}{iWord} \&w)=0
+\begin{DoxyCompactList}\small\item\em Stores a word of data. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiRegister_a98de346c2d0b15bee47d76bc5f70e94b}{Subtract} (const \hyperlink{classiWord}{iWord} \&w)=0
+\begin{DoxyCompactList}\small\item\em Subtracts a word of data from the calling object. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_ad7eb424400d184f1829664dd4f87ce5c}{Subtract} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
+\begin{DoxyCompactList}\small\item\em Subtracts a word of data from the calling object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -82,10 +73,6 @@ The value of the calling object is not changed.
 \begin{DoxyReturn}{Returns}
 A new \hyperlink{classWord}{Word} object holding the value that is stored in the register. 
 \end{DoxyReturn}
-
-
-Implemented in \hyperlink{classRegister_a379734c28ab8258ce528a96de24cfa1a}{Register}.
-
 \hypertarget{classiRegister_acb13aa880933f43088958723c9d6e564}{
 \index{iRegister@{iRegister}!Add@{Add}}
 \index{Add@{Add}!iRegister@{iRegister}}
@@ -107,10 +94,6 @@ Adds a word of data to the calling object.
 \begin{DoxyPostcond}{Postcondition}
 The calling object equals its previous value plus the value of \char`\"{}w\char`\"{}; \char`\"{}w\char`\"{}, however, will remain unchanged. 
 \end{DoxyPostcond}
-
-
-Implemented in \hyperlink{classRegister_a73d8564754d7ddb7e8349001010e688b}{Register}.
-
 \hypertarget{classiRegister_abaaacfa8cb18bea90a78673bd572a1c8}{
 \index{iRegister@{iRegister}!Add@{Add}}
 \index{Add@{Add}!iRegister@{iRegister}}
@@ -135,10 +118,6 @@ Both the calling object and \char`\"{}r\char`\"{} will not be changed.
 \begin{DoxyReturn}{Returns}
 A new \hyperlink{classRegister}{Register} object holding the value of the calling object plus the value in \char`\"{}r\char`\"{}. 
 \end{DoxyReturn}
-
-
-Implemented in \hyperlink{classRegister_a9d9c6801db55e8706eb242b1e0e0fa3f}{Register}.
-
 \hypertarget{classiRegister_af8ab19234f44a0bade65cb35fd2cd036}{
 \index{iRegister@{iRegister}!operator+@{operator+}}
 \index{operator+@{operator+}!iRegister@{iRegister}}
@@ -155,10 +134,6 @@ A standard add operator.
 \begin{DoxyNote}{Note}
 \char`\"{}result = p + r\char`\"{} is equivalent to \char`\"{}result = p.Add(r)\char`\"{}. 
 \end{DoxyNote}
-
-
-Implemented in \hyperlink{classRegister_a55de0c3b5f8fe14df7c24bce777204e0}{Register}.
-
 \hypertarget{classiRegister_a98de346c2d0b15bee47d76bc5f70e94b}{
 \index{iRegister@{iRegister}!Subtract@{Subtract}}
 \index{Subtract@{Subtract}!iRegister@{iRegister}}
@@ -180,10 +155,6 @@ Subtracts a word of data from the calling object.
 \begin{DoxyPostcond}{Postcondition}
 The calling object equals its previous value minus the value of \char`\"{}w\char`\"{}; \char`\"{}w\char`\"{}, however, will remain unchanged. 
 \end{DoxyPostcond}
-
-
-Implemented in \hyperlink{classRegister_a726a720b6bcca282945f1c0a65ca0dd4}{Register}.
-
 \hypertarget{classiRegister_ad7eb424400d184f1829664dd4f87ce5c}{
 \index{iRegister@{iRegister}!Subtract@{Subtract}}
 \index{Subtract@{Subtract}!iRegister@{iRegister}}
@@ -208,10 +179,6 @@ Both the calling object and \char`\"{}r\char`\"{} will not be changed.
 \begin{DoxyReturn}{Returns}
 A new \hyperlink{classRegister}{Register} object holding the value of the calling object minus the value in \char`\"{}r\char`\"{}. 
 \end{DoxyReturn}
-
-
-Implemented in \hyperlink{classRegister_a05132a4a62f5c6883fdf78731970ab6a}{Register}.
-
 \hypertarget{classiRegister_a01f837097cb87ec33fdc1cef606e1842}{
 \index{iRegister@{iRegister}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!iRegister@{iRegister}}
@@ -228,10 +195,6 @@ A standard subtraction operator.
 \begin{DoxyNote}{Note}
 \char`\"{}result = p -\/ r\char`\"{} is equivalent to \char`\"{}result = r.Subtract(w)\char`\"{}. 
 \end{DoxyNote}
-
-
-Implemented in \hyperlink{classRegister_a43c957e4b6a3103f0634258891c82b46}{Register}.
-
 \hypertarget{classiRegister_ae8114106e70653a705f04ba3892ed9e1}{
 \index{iRegister@{iRegister}!And@{And}}
 \index{And@{And}!iRegister@{iRegister}}
@@ -253,10 +216,6 @@ Performs a bit-\/wise and.
 \begin{DoxyPostcond}{Postcondition}
 The calling object equals its previous value bit-\/wise and'ed with w. 
 \end{DoxyPostcond}
-
-
-Implemented in \hyperlink{classRegister_a312263efb06ef459409879f5119b3b81}{Register}.
-
 \hypertarget{classiRegister_aa9a15ebfeea1e5857a1098b73cc583ad}{
 \index{iRegister@{iRegister}!And@{And}}
 \index{And@{And}!iRegister@{iRegister}}
@@ -281,10 +240,6 @@ Both the calling object and r are not changed.
 \begin{DoxyReturn}{Returns}
 A new \hyperlink{classRegister}{Register} object holding the value of the calling object bit-\/wise and'ed with r. 
 \end{DoxyReturn}
-
-
-Implemented in \hyperlink{classRegister_af3502239502c214b8c9362a6fd9f8ff8}{Register}.
-
 \hypertarget{classiRegister_aa0eac4fe58bde4a280a42fda1c087eee}{
 \index{iRegister@{iRegister}!Or@{Or}}
 \index{Or@{Or}!iRegister@{iRegister}}
@@ -306,10 +261,6 @@ Performs a bit-\/wise \char`\"{}or\char`\"{}.
 \begin{DoxyPostcond}{Postcondition}
 The calling object equals its previous value bit-\/wise or'ed with w. 
 \end{DoxyPostcond}
-
-
-Implemented in \hyperlink{classRegister_ab2f8407fab157d8deea936fa74424115}{Register}.
-
 \hypertarget{classiRegister_af5f065e89ef31d2ed40a1e80d9231bfd}{
 \index{iRegister@{iRegister}!Or@{Or}}
 \index{Or@{Or}!iRegister@{iRegister}}
@@ -334,10 +285,6 @@ Both the calling object and r are not changed.
 \begin{DoxyReturn}{Returns}
 A new \hyperlink{classRegister}{Register} object holding the value of the calling object bit-\/wise or'ed with r. 
 \end{DoxyReturn}
-
-
-Implemented in \hyperlink{classRegister_a9400801cc625144c4606cd7f5cbbaa21}{Register}.
-
 \hypertarget{classiRegister_af4bbbe945b151dee3f1743c43a451cb3}{
 \index{iRegister@{iRegister}!Not@{Not}}
 \index{Not@{Not}!iRegister@{iRegister}}
@@ -354,10 +301,6 @@ Performs a bit-\/wise not.
 \begin{DoxyPostcond}{Postcondition}
 The calling object's bits are all flipped (e.g. 1001 -\/$>$ 0110). 
 \end{DoxyPostcond}
-
-
-Implemented in \hyperlink{classRegister_abbf5f6793328db8b28845cac84c0e82d}{Register}.
-
 \hypertarget{classiRegister_aca99e377de5cd1ef136a850d85143cf3}{
 \index{iRegister@{iRegister}!Not@{Not}}
 \index{Not@{Not}!iRegister@{iRegister}}
@@ -377,10 +320,6 @@ The calling object is not changed.
 \begin{DoxyReturn}{Returns}
 A new \hyperlink{classRegister}{Register} object holding the bit-\/wise not of the calling object. 
 \end{DoxyReturn}
-
-
-Implemented in \hyperlink{classRegister_a387bb50d01b47071c366708ea10ebdf0}{Register}.
-
 \hypertarget{classiRegister_a8ffac24d1d7326e1a15f9b37cd426969}{
 \index{iRegister@{iRegister}!Store@{Store}}
 \index{Store@{Store}!iRegister@{iRegister}}
@@ -402,10 +341,6 @@ Stores a word of data.
 \begin{DoxyPostcond}{Postcondition}
 The calling object's value is now \char`\"{}w\char`\"{}. 
 \end{DoxyPostcond}
-
-
-Implemented in \hyperlink{classRegister_affcc16cc88cdc896803b1ab6af5d38e0}{Register}.
-
 \hypertarget{classiRegister_ac2b021b80a890f010fc68826e29fee47}{
 \index{iRegister@{iRegister}!Store@{Store}}
 \index{Store@{Store}!iRegister@{iRegister}}
@@ -427,10 +362,6 @@ Stores a copy of another register.
 \begin{DoxyPostcond}{Postcondition}
 The calling object's value is now \char`\"{}r\char`\"{}. 
 \end{DoxyPostcond}
-
-
-Implemented in \hyperlink{classRegister_a2ac7bd6f2e0eb38800c0a8c8d045e18e}{Register}.
-
 \hypertarget{classiRegister_a16bf3f305a9588ddc85c109ac9a8b47b}{
 \index{iRegister@{iRegister}!operator=@{operator=}}
 \index{operator=@{operator=}!iRegister@{iRegister}}
@@ -447,10 +378,6 @@ A standard assignment operator.
 \begin{DoxyNote}{Note}
 \char`\"{}r = w\char`\"{} is equivalent to \char`\"{}r.Store(w)\char`\"{} 
 \end{DoxyNote}
-
-
-Implemented in \hyperlink{classRegister_afc5f775405700146638e392d81ad7d0b}{Register}.
-
 \hypertarget{classiRegister_a3280dc5af6b828d875c57c3a3eac54d9}{
 \index{iRegister@{iRegister}!operator=@{operator=}}
 \index{operator=@{operator=}!iRegister@{iRegister}}
@@ -467,10 +394,6 @@ A standard assignment operator.
 \begin{DoxyNote}{Note}
 \char`\"{}r1 = r2\char`\"{} is equivalent to \char`\"{}r1.Store(r2)\char`\"{} 
 \end{DoxyNote}
-
-
-Implemented in \hyperlink{classRegister_a00f7aaf798102e5c7a6fb311551b492f}{Register}.
-
 \hypertarget{classiRegister_abca2bcea556d63fb4e3504df221cdc62}{
 \index{iRegister@{iRegister}!operator++@{operator++}}
 \index{operator++@{operator++}!iRegister@{iRegister}}
@@ -487,11 +410,7 @@ A standard pre-\/increment operator.
 \begin{DoxyReturn}{Returns}
 A reference to itself.
 \end{DoxyReturn}
-The object increments its value BEFORE the execution of the current line. 
-
-Implemented in \hyperlink{classRegister_ac4e78cff131bc5c69695a9db5ca35255}{Register}.
-
-\hypertarget{classiRegister_a36e6e1bfbc6a9fe203e8fb5b9f6396cb}{
+The object increments its value BEFORE the execution of the current line. \hypertarget{classiRegister_a36e6e1bfbc6a9fe203e8fb5b9f6396cb}{
 \index{iRegister@{iRegister}!operator++@{operator++}}
 \index{operator++@{operator++}!iRegister@{iRegister}}
 \subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Register}\& iRegister::operator++ (
@@ -508,6 +427,3 @@ A standard post-\/increment operator.
 A reference to itself.
 \end{DoxyReturn}
 The object increments its value AFTER the execution of the current line. 
-
-Implemented in \hyperlink{classRegister_ae3414befdccf70a18df0f67dc19d86b7}{Register}.
-

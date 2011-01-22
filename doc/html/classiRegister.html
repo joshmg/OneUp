@@ -17,9 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,56 +57,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="iRegister" -->
 <p>Defines a "register" in the Wi-11 machine.  
 <a href="#_details">More...</a></p>
-<!-- startSectionHeader --><div class="dynheader">
-Inheritance diagram for iRegister:<!-- endSectionHeader --></div>
-<!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
-<div class="center"><img src="classiRegister__inherit__graph.png" border="0" usemap="#iRegister_inherit__map" alt="Inheritance graph"/></div>
-<map name="iRegister_inherit__map" id="iRegister_inherit__map">
-<area shape="rect" id="node3" href="classRegister.html" title="Register" alt="" coords="7,83,79,112"/></map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
 
 <p><a href="classiRegister-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#ae7266f6f981b621f53f3c7cf77d4966a">GetValue</a> () const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a copy of the word of data store in the register.  <a href="#ae7266f6f981b621f53f3c7cf77d4966a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#acb13aa880933f43088958723c9d6e564">Add</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a word of data to the calling object.  <a href="#acb13aa880933f43088958723c9d6e564"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#abaaacfa8cb18bea90a78673bd572a1c8">Add</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a word of data to the calling object.  <a href="#abaaacfa8cb18bea90a78673bd572a1c8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#af8ab19234f44a0bade65cb35fd2cd036">operator+</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard add operator.  <a href="#af8ab19234f44a0bade65cb35fd2cd036"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a98de346c2d0b15bee47d76bc5f70e94b">Subtract</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts a word of data from the calling object.  <a href="#a98de346c2d0b15bee47d76bc5f70e94b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#ad7eb424400d184f1829664dd4f87ce5c">Subtract</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts a word of data from the calling object.  <a href="#ad7eb424400d184f1829664dd4f87ce5c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a01f837097cb87ec33fdc1cef606e1842">operator-</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard subtraction operator.  <a href="#a01f837097cb87ec33fdc1cef606e1842"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#ae8114106e70653a705f04ba3892ed9e1">And</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise and.  <a href="#ae8114106e70653a705f04ba3892ed9e1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#aa9a15ebfeea1e5857a1098b73cc583ad">And</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise and.  <a href="#aa9a15ebfeea1e5857a1098b73cc583ad"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#aa0eac4fe58bde4a280a42fda1c087eee">Or</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise "or".  <a href="#aa0eac4fe58bde4a280a42fda1c087eee"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#af5f065e89ef31d2ed40a1e80d9231bfd">Or</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise or.  <a href="#af5f065e89ef31d2ed40a1e80d9231bfd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#ae7266f6f981b621f53f3c7cf77d4966a">GetValue</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a copy of the word of data store in the register.  <a href="#ae7266f6f981b621f53f3c7cf77d4966a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#af4bbbe945b151dee3f1743c43a451cb3">Not</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise not.  <a href="#af4bbbe945b151dee3f1743c43a451cb3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#aca99e377de5cd1ef136a850d85143cf3">Not</a> () const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise not.  <a href="#aca99e377de5cd1ef136a850d85143cf3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a8ffac24d1d7326e1a15f9b37cd426969">Store</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a word of data.  <a href="#a8ffac24d1d7326e1a15f9b37cd426969"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#ac2b021b80a890f010fc68826e29fee47">Store</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a copy of another register.  <a href="#ac2b021b80a890f010fc68826e29fee47"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a16bf3f305a9588ddc85c109ac9a8b47b">operator=</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#a16bf3f305a9588ddc85c109ac9a8b47b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a3280dc5af6b828d875c57c3a3eac54d9">operator=</a> (const <a class="el" href="classRegister.html">Register</a> r)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#a3280dc5af6b828d875c57c3a3eac54d9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#af8ab19234f44a0bade65cb35fd2cd036">operator+</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard add operator.  <a href="#af8ab19234f44a0bade65cb35fd2cd036"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#abca2bcea556d63fb4e3504df221cdc62">operator++</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard pre-increment operator.  <a href="#abca2bcea556d63fb4e3504df221cdc62"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a36e6e1bfbc6a9fe203e8fb5b9f6396cb">operator++</a> (int)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard post-increment operator.  <a href="#a36e6e1bfbc6a9fe203e8fb5b9f6396cb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a01f837097cb87ec33fdc1cef606e1842">operator-</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard subtraction operator.  <a href="#a01f837097cb87ec33fdc1cef606e1842"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a3280dc5af6b828d875c57c3a3eac54d9">operator=</a> (const <a class="el" href="classRegister.html">Register</a> r)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#a3280dc5af6b828d875c57c3a3eac54d9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a16bf3f305a9588ddc85c109ac9a8b47b">operator=</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#a16bf3f305a9588ddc85c109ac9a8b47b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#aa0eac4fe58bde4a280a42fda1c087eee">Or</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise "or".  <a href="#aa0eac4fe58bde4a280a42fda1c087eee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#af5f065e89ef31d2ed40a1e80d9231bfd">Or</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise or.  <a href="#af5f065e89ef31d2ed40a1e80d9231bfd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#ac2b021b80a890f010fc68826e29fee47">Store</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a copy of another register.  <a href="#ac2b021b80a890f010fc68826e29fee47"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a8ffac24d1d7326e1a15f9b37cd426969">Store</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a word of data.  <a href="#a8ffac24d1d7326e1a15f9b37cd426969"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#a98de346c2d0b15bee47d76bc5f70e94b">Subtract</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts a word of data from the calling object.  <a href="#a98de346c2d0b15bee47d76bc5f70e94b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiRegister.html#ad7eb424400d184f1829664dd4f87ce5c">Subtract</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts a word of data from the calling object.  <a href="#ad7eb424400d184f1829664dd4f87ce5c"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Defines a "register" in the Wi-11 machine. </p>
@@ -128,9 +121,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Retrieves a copy of the word of data store in the register. </p>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the calling object is not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classWord.html">Word</a> object holding the value that is stored in the register. </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#a379734c28ab8258ce528a96de24cfa1a">Register</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classWord.html" title="Implements iWord.">Word</a> object holding the value that is stored in the register. </dd></dl>
 
 </div>
 </div>
@@ -158,8 +149,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object equals its previous value plus the value of "w"; "w", however, will remain unchanged. </dd></dl>
 
-<p>Implemented in <a class="el" href="classRegister.html#a73d8564754d7ddb7e8349001010e688b">Register</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="abaaacfa8cb18bea90a78673bd572a1c8"></a><!-- doxytag: member="iRegister::Add" ref="abaaacfa8cb18bea90a78673bd572a1c8" args="(const iRegister &amp;r) const =0" -->
@@ -185,9 +174,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and "r" will not be changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object plus the value in "r". </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#a9d9c6801db55e8706eb242b1e0e0fa3f">Register</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the value of the calling object plus the value in "r". </dd></dl>
 
 </div>
 </div>
@@ -208,8 +195,6 @@ Public Member Functions</h2></td></tr>
 
 <p>A standard add operator. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>"result = p + r" is equivalent to "result = p.Add(r)". </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#a55de0c3b5f8fe14df7c24bce777204e0">Register</a>.</p>
 
 </div>
 </div>
@@ -237,8 +222,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object equals its previous value minus the value of "w"; "w", however, will remain unchanged. </dd></dl>
 
-<p>Implemented in <a class="el" href="classRegister.html#a726a720b6bcca282945f1c0a65ca0dd4">Register</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ad7eb424400d184f1829664dd4f87ce5c"></a><!-- doxytag: member="iRegister::Subtract" ref="ad7eb424400d184f1829664dd4f87ce5c" args="(const iRegister &amp;r) const =0" -->
@@ -264,9 +247,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and "r" will not be changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object minus the value in "r". </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#a05132a4a62f5c6883fdf78731970ab6a">Register</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the value of the calling object minus the value in "r". </dd></dl>
 
 </div>
 </div>
@@ -287,8 +268,6 @@ Public Member Functions</h2></td></tr>
 
 <p>A standard subtraction operator. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>"result = p - r" is equivalent to "result = r.Subtract(w)". </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#a43c957e4b6a3103f0634258891c82b46">Register</a>.</p>
 
 </div>
 </div>
@@ -316,8 +295,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object equals its previous value bit-wise and'ed with w. </dd></dl>
 
-<p>Implemented in <a class="el" href="classRegister.html#a312263efb06ef459409879f5119b3b81">Register</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aa9a15ebfeea1e5857a1098b73cc583ad"></a><!-- doxytag: member="iRegister::And" ref="aa9a15ebfeea1e5857a1098b73cc583ad" args="(const iRegister &amp;r) const =0" -->
@@ -343,9 +320,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and r are not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object bit-wise and'ed with r. </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#af3502239502c214b8c9362a6fd9f8ff8">Register</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the value of the calling object bit-wise and'ed with r. </dd></dl>
 
 </div>
 </div>
@@ -373,8 +348,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object equals its previous value bit-wise or'ed with w. </dd></dl>
 
-<p>Implemented in <a class="el" href="classRegister.html#ab2f8407fab157d8deea936fa74424115">Register</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="af5f065e89ef31d2ed40a1e80d9231bfd"></a><!-- doxytag: member="iRegister::Or" ref="af5f065e89ef31d2ed40a1e80d9231bfd" args="(const iRegister &amp;r) const =0" -->
@@ -400,9 +373,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and r are not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object bit-wise or'ed with r. </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#a9400801cc625144c4606cd7f5cbbaa21">Register</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the value of the calling object bit-wise or'ed with r. </dd></dl>
 
 </div>
 </div>
@@ -423,8 +394,6 @@ Public Member Functions</h2></td></tr>
 <p>Performs a bit-wise not. </p>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object's bits are all flipped (e.g. 1001 -&gt; 0110). </dd></dl>
 
-<p>Implemented in <a class="el" href="classRegister.html#abbf5f6793328db8b28845cac84c0e82d">Register</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aca99e377de5cd1ef136a850d85143cf3"></a><!-- doxytag: member="iRegister::Not" ref="aca99e377de5cd1ef136a850d85143cf3" args="() const =0" -->
@@ -443,9 +412,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Performs a bit-wise not. </p>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object is not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the bit-wise not of the calling object. </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#a387bb50d01b47071c366708ea10ebdf0">Register</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> object holding the bit-wise not of the calling object. </dd></dl>
 
 </div>
 </div>
@@ -473,8 +440,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object's value is now "w". </dd></dl>
 
-<p>Implemented in <a class="el" href="classRegister.html#affcc16cc88cdc896803b1ab6af5d38e0">Register</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ac2b021b80a890f010fc68826e29fee47"></a><!-- doxytag: member="iRegister::Store" ref="ac2b021b80a890f010fc68826e29fee47" args="(const iRegister &amp;r)=0" -->
@@ -501,8 +466,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object's value is now "r". </dd></dl>
 
-<p>Implemented in <a class="el" href="classRegister.html#a2ac7bd6f2e0eb38800c0a8c8d045e18e">Register</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a16bf3f305a9588ddc85c109ac9a8b47b"></a><!-- doxytag: member="iRegister::operator=" ref="a16bf3f305a9588ddc85c109ac9a8b47b" args="(const iWord &amp;w)=0" -->
@@ -522,8 +485,6 @@ Public Member Functions</h2></td></tr>
 
 <p>A standard assignment operator. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>"r = w" is equivalent to "r.Store(w)" </dd></dl>
-
-<p>Implemented in <a class="el" href="classRegister.html#afc5f775405700146638e392d81ad7d0b">Register</a>.</p>
 
 </div>
 </div>
@@ -545,8 +506,6 @@ Public Member Functions</h2></td></tr>
 <p>A standard assignment operator. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>"r1 = r2" is equivalent to "r1.Store(r2)" </dd></dl>
 
-<p>Implemented in <a class="el" href="classRegister.html#a00f7aaf798102e5c7a6fb311551b492f">Register</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="abca2bcea556d63fb4e3504df221cdc62"></a><!-- doxytag: member="iRegister::operator++" ref="abca2bcea556d63fb4e3504df221cdc62" args="()=0" -->
@@ -566,8 +525,6 @@ Public Member Functions</h2></td></tr>
 <p>A standard pre-increment operator. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to itself.</dd></dl>
 <p>The object increments its value BEFORE the execution of the current line. </p>
-
-<p>Implemented in <a class="el" href="classRegister.html#ac4e78cff131bc5c69695a9db5ca35255">Register</a>.</p>
 
 </div>
 </div>
@@ -590,8 +547,6 @@ Public Member Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to itself.</dd></dl>
 <p>The object increments its value AFTER the execution of the current line. </p>
 
-<p>Implemented in <a class="el" href="classRegister.html#ae3414befdccf70a18df0f67dc19d86b7">Register</a>.</p>
-
 </div>
 </div>
 </div>
@@ -600,7 +555,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -609,7 +564,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

@@ -17,9 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -55,22 +55,93 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="iLoader" -->
+<p>Defines how the Wi-11 initializes memory.  
+<a href="#_details">More...</a></p>
+
 <p><a href="classiLoader-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af176ab81c798d222d0bd533b0ce902e8"></a><!-- doxytag: member="iLoader::iLoader" ref="af176ab81c798d222d0bd533b0ce902e8" args="(iMemory *)=0" -->
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>iLoader</b> (<a class="el" href="classiMemory.html">iMemory</a> *)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc5e510d785dae098511075bb683b273"></a><!-- doxytag: member="iLoader::Load" ref="abc5e510d785dae098511075bb683b273" args="(const char *filename, iWord &amp;PC_address)=0" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const char *filename, <a class="el" href="classiWord.html">iWord</a> &amp;PC_address)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiLoader.html#aeb68364c9e80d9dc5cb0f0299073c719">iLoader</a> (<a class="el" href="classiMemory.html">iMemory</a> *mem)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set which <a class="el" href="classMemory.html" title="Implements iMemory.">Memory</a> object is to be initialized by this object.  <a href="#aeb68364c9e80d9dc5cb0f0299073c719"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiLoader.html#a012bf942ef5210dd8797e1a20d8c5e13">Load</a> (const char *filename, <a class="el" href="classiWord.html">iWord</a> &amp;PC_address) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the loads to memory (storing the instructions).  <a href="#a012bf942ef5210dd8797e1a20d8c5e13"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Defines how the Wi-11 initializes memory. </p>
+<p>This class loads the instruction from the object file into memory. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aeb68364c9e80d9dc5cb0f0299073c719"></a><!-- doxytag: member="iLoader::iLoader" ref="aeb68364c9e80d9dc5cb0f0299073c719" args="(iMemory *mem)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">iLoader::iLoader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classiMemory.html">iMemory</a> *&#160;</td>
+          <td class="paramname"> <em>mem</em>&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set which <a class="el" href="classMemory.html" title="Implements iMemory.">Memory</a> object is to be initialized by this object. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mem</td><td>The address where memory is located.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Without this there would be nowhere to load the instructions. </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a012bf942ef5210dd8797e1a20d8c5e13"></a><!-- doxytag: member="iLoader::Load" ref="a012bf942ef5210dd8797e1a20d8c5e13" args="(const char *filename, iWord &amp;PC_address) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Codes::RESULT iLoader::Load </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"> <em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
+          <td class="paramname"> <em>PC_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Perform the loads to memory (storing the instructions). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>The name of the object file to be read. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">PC_address</td><td>The value to be stored in the PC to start execution.  SUCCESS or, if something goes wrong, an appropriate error code.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Multiple object files can be loaded using this, but the PC will be overwritten every time, so only the last End Record will matter (HOWEVER: the End Records still need to be present in each file). </dd></dl>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +150,7 @@ virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>Load
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

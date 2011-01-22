@@ -17,9 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -55,561 +55,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>Register Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Register" --><!-- doxytag: inherits="iRegister" --><!-- startSectionHeader --><div class="dynheader">
-Inheritance diagram for Register:<!-- endSectionHeader --></div>
-<!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
-<div class="center"><img src="classRegister__inherit__graph.png" border="0" usemap="#Register_inherit__map" alt="Inheritance graph"/></div>
-<map name="Register_inherit__map" id="Register_inherit__map">
-<area shape="rect" id="node2" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="5,5,80,35"/></map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
+<!-- doxytag: class="Register" --><!-- doxytag: inherits="iRegister" -->
+<p>Implements <a class="el" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi-11 machine.">iRegister</a>.  
+<a href="#_details">More...</a></p>
 <!-- startSectionHeader --><div class="dynheader">
 Collaboration diagram for Register:<!-- endSectionHeader --></div>
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="classRegister__coll__graph.png" border="0" usemap="#Register_coll__map" alt="Collaboration graph"/></div>
 <map name="Register_coll__map" id="Register_coll__map">
-<area shape="rect" id="node2" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="5,85,80,115"/><area shape="rect" id="node4" href="classWord.html" title="Word" alt="" coords="104,85,157,115"/><area shape="rect" id="node6" href="classiWord.html" title="Defines a &quot;word&quot; of data on the Wi&#45;11 Machine." alt="" coords="103,5,159,35"/></map>
+<area shape="rect" id="node2" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="5,85,83,115"/><area shape="rect" id="node4" href="classWord.html" title="Implements iWord." alt="" coords="107,85,160,115"/><area shape="rect" id="node6" href="classiWord.html" title="Defines a &quot;word&quot; of data on the Wi&#45;11 Machine." alt="" coords="105,5,161,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
 
 <p><a href="classRegister-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73d8564754d7ddb7e8349001010e688b"></a><!-- doxytag: member="Register::Add" ref="a73d8564754d7ddb7e8349001010e688b" args="(const iWord &amp;w)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Add</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d9c6801db55e8706eb242b1e0e0fa3f"></a><!-- doxytag: member="Register::Add" ref="a9d9c6801db55e8706eb242b1e0e0fa3f" args="(const iRegister &amp;r) const " -->
+<a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Add</b> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a312263efb06ef459409879f5119b3b81"></a><!-- doxytag: member="Register::And" ref="a312263efb06ef459409879f5119b3b81" args="(const iWord &amp;w)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>And</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3502239502c214b8c9362a6fd9f8ff8"></a><!-- doxytag: member="Register::And" ref="af3502239502c214b8c9362a6fd9f8ff8" args="(const iRegister &amp;r) const " -->
+<a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><b>And</b> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a379734c28ab8258ce528a96de24cfa1a"></a><!-- doxytag: member="Register::GetValue" ref="a379734c28ab8258ce528a96de24cfa1a" args="() const " -->
+<a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetValue</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbf5f6793328db8b28845cac84c0e82d"></a><!-- doxytag: member="Register::Not" ref="abbf5f6793328db8b28845cac84c0e82d" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Not</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a387bb50d01b47071c366708ea10ebdf0"></a><!-- doxytag: member="Register::Not" ref="a387bb50d01b47071c366708ea10ebdf0" args="() const " -->
+<a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Not</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55de0c3b5f8fe14df7c24bce777204e0"></a><!-- doxytag: member="Register::operator+" ref="a55de0c3b5f8fe14df7c24bce777204e0" args="(const iRegister &amp;r) const " -->
+<a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4e78cff131bc5c69695a9db5ca35255"></a><!-- doxytag: member="Register::operator++" ref="ac4e78cff131bc5c69695a9db5ca35255" args="()" -->
+<a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3414befdccf70a18df0f67dc19d86b7"></a><!-- doxytag: member="Register::operator++" ref="ae3414befdccf70a18df0f67dc19d86b7" args="(int)" -->
+<a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43c957e4b6a3103f0634258891c82b46"></a><!-- doxytag: member="Register::operator&#45;" ref="a43c957e4b6a3103f0634258891c82b46" args="(const iRegister &amp;r) const " -->
+<a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc5f775405700146638e392d81ad7d0b"></a><!-- doxytag: member="Register::operator=" ref="afc5f775405700146638e392d81ad7d0b" args="(const iWord &amp;w)" -->
+<a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00f7aaf798102e5c7a6fb311551b492f"></a><!-- doxytag: member="Register::operator=" ref="a00f7aaf798102e5c7a6fb311551b492f" args="(const Register r)" -->
+<a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classRegister.html">Register</a> r)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2f8407fab157d8deea936fa74424115"></a><!-- doxytag: member="Register::Or" ref="ab2f8407fab157d8deea936fa74424115" args="(const iWord &amp;w)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Or</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9400801cc625144c4606cd7f5cbbaa21"></a><!-- doxytag: member="Register::Or" ref="a9400801cc625144c4606cd7f5cbbaa21" args="(const iRegister &amp;r) const " -->
+<a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Or</b> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6aea43b4c4ad669073f20fbcd274b49c"></a><!-- doxytag: member="Register::Register" ref="a6aea43b4c4ad669073f20fbcd274b49c" args="(const Word w)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>Register</b> (const <a class="el" href="classWord.html">Word</a> w)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a379734c28ab8258ce528a96de24cfa1a">GetValue</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a copy of the word of data store in the register.  <a href="#a379734c28ab8258ce528a96de24cfa1a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a73d8564754d7ddb7e8349001010e688b">Add</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a word of data to the calling object.  <a href="#a73d8564754d7ddb7e8349001010e688b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a9d9c6801db55e8706eb242b1e0e0fa3f">Add</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a word of data to the calling object.  <a href="#a9d9c6801db55e8706eb242b1e0e0fa3f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a55de0c3b5f8fe14df7c24bce777204e0">operator+</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard add operator.  <a href="#a55de0c3b5f8fe14df7c24bce777204e0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a726a720b6bcca282945f1c0a65ca0dd4">Subtract</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts a word of data from the calling object.  <a href="#a726a720b6bcca282945f1c0a65ca0dd4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a05132a4a62f5c6883fdf78731970ab6a">Subtract</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts a word of data from the calling object.  <a href="#a05132a4a62f5c6883fdf78731970ab6a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a43c957e4b6a3103f0634258891c82b46">operator-</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard subtraction operator.  <a href="#a43c957e4b6a3103f0634258891c82b46"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a312263efb06ef459409879f5119b3b81">And</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise and.  <a href="#a312263efb06ef459409879f5119b3b81"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#af3502239502c214b8c9362a6fd9f8ff8">And</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise and.  <a href="#af3502239502c214b8c9362a6fd9f8ff8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#ab2f8407fab157d8deea936fa74424115">Or</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise "or".  <a href="#ab2f8407fab157d8deea936fa74424115"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a9400801cc625144c4606cd7f5cbbaa21">Or</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise or.  <a href="#a9400801cc625144c4606cd7f5cbbaa21"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#abbf5f6793328db8b28845cac84c0e82d">Not</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise not.  <a href="#abbf5f6793328db8b28845cac84c0e82d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a387bb50d01b47071c366708ea10ebdf0">Not</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a bit-wise not.  <a href="#a387bb50d01b47071c366708ea10ebdf0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#affcc16cc88cdc896803b1ab6af5d38e0">Store</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a word of data.  <a href="#affcc16cc88cdc896803b1ab6af5d38e0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a2ac7bd6f2e0eb38800c0a8c8d045e18e">Store</a> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a copy of another register.  <a href="#a2ac7bd6f2e0eb38800c0a8c8d045e18e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#afc5f775405700146638e392d81ad7d0b">operator=</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#afc5f775405700146638e392d81ad7d0b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#a00f7aaf798102e5c7a6fb311551b492f">operator=</a> (const <a class="el" href="classRegister.html">Register</a> r)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard assignment operator.  <a href="#a00f7aaf798102e5c7a6fb311551b492f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#ac4e78cff131bc5c69695a9db5ca35255">operator++</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard pre-increment operator.  <a href="#ac4e78cff131bc5c69695a9db5ca35255"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegister.html">Register</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#ae3414befdccf70a18df0f67dc19d86b7">operator++</a> (int)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard post-increment operator.  <a href="#ae3414befdccf70a18df0f67dc19d86b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affcc16cc88cdc896803b1ab6af5d38e0"></a><!-- doxytag: member="Register::Store" ref="affcc16cc88cdc896803b1ab6af5d38e0" args="(const iWord &amp;w)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ac7bd6f2e0eb38800c0a8c8d045e18e"></a><!-- doxytag: member="Register::Store" ref="a2ac7bd6f2e0eb38800c0a8c8d045e18e" args="(const iRegister &amp;r)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Store</b> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05132a4a62f5c6883fdf78731970ab6a"></a><!-- doxytag: member="Register::Subtract" ref="a05132a4a62f5c6883fdf78731970ab6a" args="(const iRegister &amp;r) const " -->
+<a class="el" href="classRegister.html">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Subtract</b> (const <a class="el" href="classiRegister.html">iRegister</a> &amp;r) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a726a720b6bcca282945f1c0a65ca0dd4"></a><!-- doxytag: member="Register::Subtract" ref="a726a720b6bcca282945f1c0a65ca0dd4" args="(const iWord &amp;w)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Subtract</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;w)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad716faf568aba3da6e4acca6674f9ec9"></a><!-- doxytag: member="Register::_word" ref="ad716faf568aba3da6e4acca6674f9ec9" args="" -->
 <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegister.html#ad716faf568aba3da6e4acca6674f9ec9">_word</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The word of data held in the register. <br/></td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a379734c28ab8258ce528a96de24cfa1a"></a><!-- doxytag: member="Register::GetValue" ref="a379734c28ab8258ce528a96de24cfa1a" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classWord.html">Word</a> Register::GetValue </td>
-          <td>(</td>
-          <td class="paramname">&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Retrieves a copy of the word of data store in the register. </p>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The value of the calling object is not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classWord.html">Word</a> object holding the value that is stored in the register. </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#ae7266f6f981b621f53f3c7cf77d4966a">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a73d8564754d7ddb7e8349001010e688b"></a><!-- doxytag: member="Register::Add" ref="a73d8564754d7ddb7e8349001010e688b" args="(const iWord &amp;w)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Register::Add </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>w</em>&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Adds a word of data to the calling object. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The value to be added. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object equals its previous value plus the value of "w"; "w", however, will remain unchanged. </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#acb13aa880933f43088958723c9d6e564">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9d9c6801db55e8706eb242b1e0e0fa3f"></a><!-- doxytag: member="Register::Add" ref="a9d9c6801db55e8706eb242b1e0e0fa3f" args="(const iRegister &amp;r) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> Register::Add </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td>
-          <td class="paramname"> <em>r</em>&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Adds a word of data to the calling object. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The value to be added. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and "r" will not be changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object plus the value in "r". </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#abaaacfa8cb18bea90a78673bd572a1c8">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a55de0c3b5f8fe14df7c24bce777204e0"></a><!-- doxytag: member="Register::operator+" ref="a55de0c3b5f8fe14df7c24bce777204e0" args="(const iRegister &amp;r) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> Register::operator+ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td>
-          <td class="paramname"> <em>r</em>&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>A standard add operator. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>"result = p + r" is equivalent to "result = p.Add(r)". </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#af8ab19234f44a0bade65cb35fd2cd036">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a726a720b6bcca282945f1c0a65ca0dd4"></a><!-- doxytag: member="Register::Subtract" ref="a726a720b6bcca282945f1c0a65ca0dd4" args="(const iWord &amp;w)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Register::Subtract </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>w</em>&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Subtracts a word of data from the calling object. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The value to be subtracted. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object equals its previous value minus the value of "w"; "w", however, will remain unchanged. </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#a98de346c2d0b15bee47d76bc5f70e94b">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a05132a4a62f5c6883fdf78731970ab6a"></a><!-- doxytag: member="Register::Subtract" ref="a05132a4a62f5c6883fdf78731970ab6a" args="(const iRegister &amp;r) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> Register::Subtract </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td>
-          <td class="paramname"> <em>r</em>&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Subtracts a word of data from the calling object. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The value to be subtracted. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and "r" will not be changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object minus the value in "r". </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#ad7eb424400d184f1829664dd4f87ce5c">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a43c957e4b6a3103f0634258891c82b46"></a><!-- doxytag: member="Register::operator&#45;" ref="a43c957e4b6a3103f0634258891c82b46" args="(const iRegister &amp;r) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> Register::operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td>
-          <td class="paramname"> <em>r</em>&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>A standard subtraction operator. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>"result = p - r" is equivalent to "result = r.Subtract(w)". </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#a01f837097cb87ec33fdc1cef606e1842">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a312263efb06ef459409879f5119b3b81"></a><!-- doxytag: member="Register::And" ref="a312263efb06ef459409879f5119b3b81" args="(const iWord &amp;w)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Register::And </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>w</em>&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Performs a bit-wise and. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The value to be "and"ed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object equals its previous value bit-wise and'ed with w. </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#ae8114106e70653a705f04ba3892ed9e1">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af3502239502c214b8c9362a6fd9f8ff8"></a><!-- doxytag: member="Register::And" ref="af3502239502c214b8c9362a6fd9f8ff8" args="(const iRegister &amp;r) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> Register::And </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td>
-          <td class="paramname"> <em>r</em>&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Performs a bit-wise and. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The value to be "and"ed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and r are not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object bit-wise and'ed with r. </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#aa9a15ebfeea1e5857a1098b73cc583ad">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab2f8407fab157d8deea936fa74424115"></a><!-- doxytag: member="Register::Or" ref="ab2f8407fab157d8deea936fa74424115" args="(const iWord &amp;w)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Register::Or </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>w</em>&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Performs a bit-wise "or". </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The value to be "or"ed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object equals its previous value bit-wise or'ed with w. </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#aa0eac4fe58bde4a280a42fda1c087eee">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9400801cc625144c4606cd7f5cbbaa21"></a><!-- doxytag: member="Register::Or" ref="a9400801cc625144c4606cd7f5cbbaa21" args="(const iRegister &amp;r) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> Register::Or </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td>
-          <td class="paramname"> <em>r</em>&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Performs a bit-wise or. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The value to be "or"ed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>Both the calling object and r are not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the value of the calling object bit-wise or'ed with r. </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#af5f065e89ef31d2ed40a1e80d9231bfd">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abbf5f6793328db8b28845cac84c0e82d"></a><!-- doxytag: member="Register::Not" ref="abbf5f6793328db8b28845cac84c0e82d" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Register::Not </td>
-          <td>(</td>
-          <td class="paramname">&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Performs a bit-wise not. </p>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object's bits are all flipped (e.g. 1001 -&gt; 0110). </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#af4bbbe945b151dee3f1743c43a451cb3">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a387bb50d01b47071c366708ea10ebdf0"></a><!-- doxytag: member="Register::Not" ref="a387bb50d01b47071c366708ea10ebdf0" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> Register::Not </td>
-          <td>(</td>
-          <td class="paramname">&#160;)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Performs a bit-wise not. </p>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object is not changed. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new <a class="el" href="classRegister.html">Register</a> object holding the bit-wise not of the calling object. </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#aca99e377de5cd1ef136a850d85143cf3">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="affcc16cc88cdc896803b1ab6af5d38e0"></a><!-- doxytag: member="Register::Store" ref="affcc16cc88cdc896803b1ab6af5d38e0" args="(const iWord &amp;w)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Register::Store </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>w</em>&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Stores a word of data. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The value to be store. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object's value is now "w". </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#a8ffac24d1d7326e1a15f9b37cd426969">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2ac7bd6f2e0eb38800c0a8c8d045e18e"></a><!-- doxytag: member="Register::Store" ref="a2ac7bd6f2e0eb38800c0a8c8d045e18e" args="(const iRegister &amp;r)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Register::Store </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td>
-          <td class="paramname"> <em>r</em>&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Stores a copy of another register. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The register to be copied. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The calling object's value is now "r". </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#ac2b021b80a890f010fc68826e29fee47">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afc5f775405700146638e392d81ad7d0b"></a><!-- doxytag: member="Register::operator=" ref="afc5f775405700146638e392d81ad7d0b" args="(const iWord &amp;w)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> &amp; Register::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classiWord.html">iWord</a> &amp;&#160;</td>
-          <td class="paramname"> <em>w</em>&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>A standard assignment operator. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>"r = w" is equivalent to "r.Store(w)" </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#a16bf3f305a9588ddc85c109ac9a8b47b">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a00f7aaf798102e5c7a6fb311551b492f"></a><!-- doxytag: member="Register::operator=" ref="a00f7aaf798102e5c7a6fb311551b492f" args="(const Register r)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> &amp; Register::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classRegister.html">Register</a>&#160;</td>
-          <td class="paramname"> <em>r</em>&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>A standard assignment operator. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>"r1 = r2" is equivalent to "r1.Store(r2)" </dd></dl>
-
-<p>Implements <a class="el" href="classiRegister.html#a3280dc5af6b828d875c57c3a3eac54d9">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac4e78cff131bc5c69695a9db5ca35255"></a><!-- doxytag: member="Register::operator++" ref="ac4e78cff131bc5c69695a9db5ca35255" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> &amp; Register::operator++ </td>
-          <td>(</td>
-          <td class="paramname">&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>A standard pre-increment operator. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to itself.</dd></dl>
-<p>The object increments its value BEFORE the execution of the current line. </p>
-
-<p>Implements <a class="el" href="classiRegister.html#abca2bcea556d63fb4e3504df221cdc62">iRegister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae3414befdccf70a18df0f67dc19d86b7"></a><!-- doxytag: member="Register::operator++" ref="ae3414befdccf70a18df0f67dc19d86b7" args="(int)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRegister.html">Register</a> &amp; Register::operator++ </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname">&#160;)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>A standard post-increment operator. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to itself.</dd></dl>
-<p>The object increments its value AFTER the execution of the current line. </p>
-
-<p>Implements <a class="el" href="classiRegister.html#a36e6e1bfbc6a9fe203e8fb5b9f6396cb">iRegister</a>.</p>
-
-</div>
-</div>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implements <a class="el" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi-11 machine.">iRegister</a>. </p>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -618,7 +133,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

@@ -17,9 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -43,52 +43,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
-  <div class="navpath">
-    <ul>
-      <li><a class="el" href="dir_cec1b5f0a3f18d5a6846e7c281d2df7f.html">code</a>      </li>
-    </ul>
-  </div>
-</div>
 <div class="header">
   <div class="headertitle">
 <h1>iLoader.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// File: iLoader.h</span>
-<a name="l00002"></a>00002 <span class="comment">// Written by Joshua Green</span>
-<a name="l00003"></a>00003 
-<a name="l00004"></a>00004 <span class="preprocessor">#ifndef iLOADER_H</span>
-<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define iLOADER_H</span>
-<a name="l00006"></a>00006 <span class="preprocessor"></span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;ResultCodes.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;iMemory.h&quot;</span>
-<a name="l00009"></a>00009 
-<a name="l00010"></a><a class="code" href="classiLoader.html">00010</a> <span class="keyword">class </span><a class="code" href="classiLoader.html">iLoader</a> {
-<a name="l00011"></a>00011   <span class="keyword">private</span>:
-<a name="l00012"></a>00012   
-<a name="l00013"></a>00013   <span class="keyword">public</span>:
-<a name="l00014"></a>00014     <span class="keyword">virtual</span> <a class="code" href="classiLoader.html">iLoader</a>(<a class="code" href="classiMemory.html" title="Mimics the functionality of memory in the Wi-11 machine.">iMemory</a>*) = 0;
-<a name="l00015"></a>00015     <span class="comment">/*  Instantiation of a child of iLoader requires a pointer to the</span>
-<a name="l00016"></a>00016 <span class="comment">        memory object the iLoader will be store the object file&#39;s data.</span>
-<a name="l00017"></a>00017 <span class="comment">    */</span>
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019     <span class="keyword">virtual</span> Codes::RESULT Load(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; PC_address) = 0;
-<a name="l00020"></a>00020     <span class="comment">/*  Requires the filename of the object file. Returns the respective</span>
-<a name="l00021"></a>00021 <span class="comment">        result code upon success/failure. This function can be invoked</span>
-<a name="l00022"></a>00022 <span class="comment">        multiple times if loading multiple obj files. Load() opens the</span>
-<a name="l00023"></a>00023 <span class="comment">        filename, and checks for success. If the file is opened successfully</span>
-<a name="l00024"></a>00024 <span class="comment">        it begins parsing the file, ensuring the format of the *.obj is</span>
-<a name="l00025"></a>00025 <span class="comment">        valid. iLoader should utilize iObjParser but is not required.</span>
-<a name="l00026"></a>00026 <span class="comment">        Load() obtains the first line, ensuring it is a proper header;</span>
-<a name="l00027"></a>00027 <span class="comment">        upon success it reserves the requested space within its pointer to</span>
-<a name="l00028"></a>00028 <span class="comment">        iMemory. Load() then obtains every Text entry, ensuring validity,</span>
-<a name="l00029"></a>00029 <span class="comment">        then storing its value at its respective address. Once an End entry</span>
-<a name="l00030"></a>00030 <span class="comment">        is reached, it is checked for validity, and then PC_address is set</span>
-<a name="l00031"></a>00031 <span class="comment">        to that value.</span>
-<a name="l00032"></a>00032 <span class="comment">    */</span>
-<a name="l00033"></a>00033 };
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
+<a href="iLoader_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00007"></a>00007 <span class="preprocessor">#ifndef iLOADER_H</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#define iLOADER_H</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="ResultCodes_8h.html" title="Definition of the Wi-11&amp;#39;s run-time messages.">ResultCodes.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="iMemory_8h.html" title="Definition of Wi-11 memory.">iMemory.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00017"></a><a class="code" href="classiLoader.html">00017</a> <span class="keyword">class </span><a class="code" href="classiLoader.html" title="Defines how the Wi-11 initializes memory.">iLoader</a> {
+<a name="l00018"></a>00018   <span class="keyword">private</span>:
+<a name="l00019"></a>00019     
+<a name="l00020"></a>00020   <span class="keyword">public</span>:
+<a name="l00027"></a>00027     <span class="keyword">virtual</span> <a class="code" href="classiLoader.html#aeb68364c9e80d9dc5cb0f0299073c719" title="Set which Memory object is to be initialized by this object.">iLoader</a>(<a class="code" href="classiMemory.html" title="Defines the functionality of memory in the Wi-11 machine.">iMemory</a>* mem) = 0;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 
+<a name="l00040"></a>00040     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiLoader.html#a012bf942ef5210dd8797e1a20d8c5e13" title="Perform the loads to memory (storing the instructions).">Load</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; PC_address) <span class="keyword">const</span> = 0;
+<a name="l00041"></a>00041 };
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -96,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

@@ -159,7 +159,7 @@ MULTILINE_CPP_IS_BRIEF = NO
 # member inherits the documentation from any documented member that it
 # re-implements.
 
-INHERIT_DOCS           = YES
+INHERIT_DOCS           = NO
 
 # If the SEPARATE_MEMBER_PAGES tag is set to YES, then doxygen will produce
 # a new page for each member. If set to NO, the documentation of a member will
@@ -410,7 +410,7 @@ SORT_MEMBER_DOCS       = NO
 # by member name. If set to NO (the default) the members will appear in
 # declaration order.
 
-SORT_BRIEF_DOCS        = NO
+SORT_BRIEF_DOCS        = YES
 
 # If the SORT_MEMBERS_CTORS_1ST tag is set to YES then doxygen
 # will sort the (brief and detailed) documentation of class members so that
@@ -436,7 +436,7 @@ SORT_GROUP_NAMES       = NO
 # Note: This option applies only to the class list, not to the
 # alphabetical list.
 
-SORT_BY_SCOPE_NAME     = NO
+SORT_BY_SCOPE_NAME     = YES
 
 # The GENERATE_TODOLIST tag can be used to enable (YES) or
 # disable (NO) the todo list. This list is created by putting \todo
@@ -487,7 +487,7 @@ SHOW_USED_FILES        = NO
 # then setting the SHOW_DIRECTORIES tag to YES will show the directory hierarchy
 # in the documentation. The default is NO.
 
-SHOW_DIRECTORIES       = YES
+SHOW_DIRECTORIES       = NO
 
 # Set the SHOW_FILES tag to NO to disable the generation of the Files page.
 # This will remove the Files entry from the Quick Index and from the
@@ -1518,7 +1518,7 @@ DOT_FONTPATH           =
 # indirect inheritance relations. Setting this tag to YES will force the
 # the CLASS_DIAGRAMS tag to NO.
 
-CLASS_GRAPH            = YES
+CLASS_GRAPH            = NO
 
 # If the COLLABORATION_GRAPH and HAVE_DOT tags are set to YES then doxygen
 # will generate a graph for each documented class showing the direct and

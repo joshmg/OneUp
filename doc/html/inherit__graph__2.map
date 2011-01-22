@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$classiMemory.html" title="Mimics the functionality of memory in the Wi&#45;11 machine." alt="" coords="5,5,83,35"/>
-<area shape="rect" id="node3" href="$classMemory.html" title="Memory" alt="" coords="131,5,205,35"/>
+<area shape="rect" id="node1" href="$classiMemory.html" title="Defines the functionality of memory in the Wi&#45;11 machine." alt="" coords="5,5,83,35"/>
+<area shape="rect" id="node3" href="$classMemory.html" title="Implements iMemory." alt="" coords="131,5,205,35"/>
 </map>

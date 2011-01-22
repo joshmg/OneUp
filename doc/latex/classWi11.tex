@@ -4,13 +4,9 @@
 }
 
 
-Inheritance diagram for Wi11:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=120pt]{classWi11__inherit__graph}
-\end{center}
-\end{figure}
+Implements \hyperlink{classiWi11}{iWi11}.  
+
+
 
 
 Collaboration diagram for Wi11:\nopagebreak
@@ -28,30 +24,33 @@ struct \hyperlink{structWi11_1_1CCR}{CCR}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual \hyperlink{classWi11_ab1df37ddc05a51bc3adabf51b50ad39e}{iWi11} ()
-\begin{DoxyCompactList}\small\item\em Creates and organizes the componts of the \hyperlink{classWi11}{Wi11} machine. \item\end{DoxyCompactList}\item 
-virtual bool \hyperlink{classWi11_a50af76350b3e72c75d42035582aeb321}{LoadObj} (const char $\ast$)
-\begin{DoxyCompactList}\small\item\em Loads the object file and sets up memory as it describes. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classWi11_a0f532cefdebd3c33ddc93e8bce4dc06b}{DisplayMemory} () const 
-\begin{DoxyCompactList}\small\item\em Prints the state of memory to standard out. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classWi11_a201359b2506539dda72075b908076492}{DisplayRegisters} () const 
-\begin{DoxyCompactList}\small\item\em Prints the state of every register to standard out. \item\end{DoxyCompactList}\item 
-virtual bool \hyperlink{classWi11_ace44826e4f92aabd233b68bdd9437c1b}{ExecuteNext} (bool verbose=false)
-\begin{DoxyCompactList}\small\item\em Executes the instruction pointed to by the PC. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\hypertarget{classWi11_a0f532cefdebd3c33ddc93e8bce4dc06b}{
+virtual void {\bfseries DisplayMemory} () const }
+\label{classWi11_a0f532cefdebd3c33ddc93e8bce4dc06b}
+
+\item 
+\hypertarget{classWi11_a201359b2506539dda72075b908076492}{
+virtual void {\bfseries DisplayRegisters} () const }
+\label{classWi11_a201359b2506539dda72075b908076492}
+
+\item 
+\hypertarget{classWi11_ace44826e4f92aabd233b68bdd9437c1b}{
+virtual bool {\bfseries ExecuteNext} (bool verbose=false)}
+\label{classWi11_ace44826e4f92aabd233b68bdd9437c1b}
+
+\item 
+\hypertarget{classWi11_ab1df37ddc05a51bc3adabf51b50ad39e}{
+virtual {\bfseries iWi11} ()}
+\label{classWi11_ab1df37ddc05a51bc3adabf51b50ad39e}
+
+\item 
+\hypertarget{classWi11_a50af76350b3e72c75d42035582aeb321}{
+virtual bool {\bfseries LoadObj} (const char $\ast$)}
+\label{classWi11_a50af76350b3e72c75d42035582aeb321}
+
+\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-\hypertarget{classWi11_abba9724054093a987468c0b14bf8fcda}{
-REGISTER\_\-ID {\bfseries \_\-Word2RegisterID} (const \hyperlink{classWord}{Word} \&) const }
-\label{classWi11_abba9724054093a987468c0b14bf8fcda}
-
-\item 
-\hyperlink{classiRegister}{iRegister} \& \hyperlink{classWi11_a22228a86b6d5c60c8f403e8fc087077f}{\_\-GetRegister} (const Decoder::REGISTER\_\-ID \&)
-\begin{DoxyCompactList}\small\item\em Retrieves a reference to the register corresponding to \char`\"{}id\char`\"{}. \item\end{DoxyCompactList}\item 
-\hypertarget{classWi11_a55dd619a7cf329849f5a3b22e37d00ed}{
-void {\bfseries \_\-UpdateCCR} (int)}
-\label{classWi11_a55dd619a7cf329849f5a3b22e37d00ed}
-
 \item 
 \hypertarget{classWi11_a82892426bc10c28481476ee9fdfc163d}{
 virtual Codes::RESULT {\bfseries \_\-Add} (const Decoder::REGISTER\_\-ID \&DR, const Decoder::REGISTER\_\-ID \&SR1, const Decoder::REGISTER\_\-ID \&SR2)}
@@ -73,10 +72,21 @@ virtual Codes::RESULT {\bfseries \_\-And} (const Decoder::REGISTER\_\-ID \&DR, c
 \label{classWi11_a276affccb92fa84d879ed1b5081247f4}
 
 \item 
-virtual Codes::RESULT \hyperlink{classWi11_a01960bc45e7a70a276d91ff01cd637f9}{\_\-Branch} (const \hyperlink{classiWord}{iWord} \&address)
-\begin{DoxyCompactList}\small\item\em Changes the last 9 bits of the PC. \item\end{DoxyCompactList}\item 
-virtual Codes::RESULT \hyperlink{classWi11_a10d6c79140c97919e2778d1c4d6f8102}{\_\-Debug} ()
-\begin{DoxyCompactList}\small\item\em Deprecated? \item\end{DoxyCompactList}\item 
+\hypertarget{classWi11_a01960bc45e7a70a276d91ff01cd637f9}{
+virtual Codes::RESULT {\bfseries \_\-Branch} (const \hyperlink{classiWord}{iWord} \&address)}
+\label{classWi11_a01960bc45e7a70a276d91ff01cd637f9}
+
+\item 
+\hypertarget{classWi11_a10d6c79140c97919e2778d1c4d6f8102}{
+virtual Codes::RESULT {\bfseries \_\-Debug} ()}
+\label{classWi11_a10d6c79140c97919e2778d1c4d6f8102}
+
+\item 
+\hypertarget{classWi11_a22228a86b6d5c60c8f403e8fc087077f}{
+\hyperlink{classiRegister}{iRegister} \& {\bfseries \_\-GetRegister} (const Decoder::REGISTER\_\-ID \&)}
+\label{classWi11_a22228a86b6d5c60c8f403e8fc087077f}
+
+\item 
 \hypertarget{classWi11_a52b3325579e31ff96b4b441e682f7a9d}{
 virtual Codes::RESULT {\bfseries \_\-JSR} (const \hyperlink{classiWord}{iWord} \&, bool)}
 \label{classWi11_a52b3325579e31ff96b4b441e682f7a9d}
@@ -92,6 +102,11 @@ virtual Codes::RESULT {\bfseries \_\-Load} (const Decoder::REGISTER\_\-ID \&DR, 
 \label{classWi11_afb3e3507402d031a76b2e0bf3cc87b66}
 
 \item 
+\hypertarget{classWi11_af8489eac0842d1a532be30ccc99f6f49}{
+virtual Codes::RESULT {\bfseries \_\-LoadEA} (const Decoder::REGISTER\_\-ID \&DR, const \hyperlink{classiWord}{iWord} \&address)}
+\label{classWi11_af8489eac0842d1a532be30ccc99f6f49}
+
+\item 
 \hypertarget{classWi11_a671e0d7845b262149005cd834cf28c31}{
 virtual Codes::RESULT {\bfseries \_\-LoadI} (const Decoder::REGISTER\_\-ID \&DR, const \hyperlink{classiWord}{iWord} \&address)}
 \label{classWi11_a671e0d7845b262149005cd834cf28c31}
@@ -102,21 +117,14 @@ virtual Codes::RESULT {\bfseries \_\-LoadR} (const Decoder::REGISTER\_\-ID \&DR,
 \label{classWi11_a8ebf9deef5d86157aa1f4c01fe888a4f}
 
 \item 
-\hypertarget{classWi11_af8489eac0842d1a532be30ccc99f6f49}{
-virtual Codes::RESULT {\bfseries \_\-LoadEA} (const Decoder::REGISTER\_\-ID \&DR, const \hyperlink{classiWord}{iWord} \&address)}
-\label{classWi11_af8489eac0842d1a532be30ccc99f6f49}
-
-\item 
 \hypertarget{classWi11_a82aa3fdb656277723b2c0937206ccdae}{
 virtual Codes::RESULT {\bfseries \_\-Not} (const Decoder::REGISTER\_\-ID \&DR, const Decoder::REGISTER\_\-ID \&SR)}
 \label{classWi11_a82aa3fdb656277723b2c0937206ccdae}
 
 \item 
-virtual Codes::RESULT \hyperlink{classWi11_a8cbd4e75c8c10f69f4159c02955b4a1f}{\_\-Ret} ()
-\begin{DoxyCompactList}\small\item\em Return from a subroutine. \item\end{DoxyCompactList}\item 
-\hypertarget{classWi11_aeaafd928d0e450924a1b29fd3a6b828a}{
-virtual Codes::RESULT {\bfseries \_\-Store} (const Decoder::REGISTER\_\-ID \&SR, const \hyperlink{classiWord}{iWord} \&address)}
-\label{classWi11_aeaafd928d0e450924a1b29fd3a6b828a}
+\hypertarget{classWi11_a8cbd4e75c8c10f69f4159c02955b4a1f}{
+virtual Codes::RESULT {\bfseries \_\-Ret} ()}
+\label{classWi11_a8cbd4e75c8c10f69f4159c02955b4a1f}
 
 \item 
 \hypertarget{classWi11_a466a425d5490850afc2f385b1ce47573}{
@@ -124,21 +132,59 @@ virtual Codes::RESULT {\bfseries \_\-STI} (const Decoder::REGISTER\_\-ID \&SR, c
 \label{classWi11_a466a425d5490850afc2f385b1ce47573}
 
 \item 
+\hypertarget{classWi11_aeaafd928d0e450924a1b29fd3a6b828a}{
+virtual Codes::RESULT {\bfseries \_\-Store} (const Decoder::REGISTER\_\-ID \&SR, const \hyperlink{classiWord}{iWord} \&address)}
+\label{classWi11_aeaafd928d0e450924a1b29fd3a6b828a}
+
+\item 
 \hypertarget{classWi11_a0f6249d939e8f1aa2219a0f7c5e732e6}{
 virtual Codes::RESULT {\bfseries \_\-STR} (const Decoder::REGISTER\_\-ID \&SR, const Decoder::REGISTER\_\-ID \&baseR, const \hyperlink{classiWord}{iWord} \&address)}
 \label{classWi11_a0f6249d939e8f1aa2219a0f7c5e732e6}
 
 \item 
-virtual Codes::RESULT \hyperlink{classWi11_ac62ce0a9f8df8dacab577cee514cb199}{\_\-Trap} (const \hyperlink{classiWord}{iWord} \&code)
-\begin{DoxyCompactList}\small\item\em Branches to a trap vector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\hypertarget{classWi11_ac62ce0a9f8df8dacab577cee514cb199}{
+virtual Codes::RESULT {\bfseries \_\-Trap} (const \hyperlink{classiWord}{iWord} \&code)}
+\label{classWi11_ac62ce0a9f8df8dacab577cee514cb199}
+
+\item 
+\hypertarget{classWi11_a55dd619a7cf329849f5a3b22e37d00ed}{
+void {\bfseries \_\-UpdateCCR} (int)}
+\label{classWi11_a55dd619a7cf329849f5a3b22e37d00ed}
+
+\item 
+\hypertarget{classWi11_abba9724054093a987468c0b14bf8fcda}{
+REGISTER\_\-ID {\bfseries \_\-Word2RegisterID} (const \hyperlink{classWord}{Word} \&) const }
+\label{classWi11_abba9724054093a987468c0b14bf8fcda}
+
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\hypertarget{classWi11_a84cb35829890fca6122c023229007002}{
+struct \hyperlink{structWi11_1_1CCR}{Wi11::CCR} {\bfseries \_\-CCR}}
+\label{classWi11_a84cb35829890fca6122c023229007002}
+
+\item 
+\hypertarget{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{
+Decoder \hyperlink{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{\_\-decoder}}
+\label{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}
+
+\begin{DoxyCompactList}\small\item\em For decoding instructions fetch from memory. \item\end{DoxyCompactList}\item 
+\hypertarget{classWi11_a22efbed824867b4f355062a31f93d8e2}{
+ObjLoader \hyperlink{classWi11_a22efbed824867b4f355062a31f93d8e2}{\_\-loader}}
+\label{classWi11_a22efbed824867b4f355062a31f93d8e2}
+
+\begin{DoxyCompactList}\small\item\em For loading the object file. \item\end{DoxyCompactList}\item 
 \hypertarget{classWi11_a07d3ee0573a4ea7d260574120da9dec1}{
 \hyperlink{classMemory}{Memory} \hyperlink{classWi11_a07d3ee0573a4ea7d260574120da9dec1}{\_\-memory}}
 \label{classWi11_a07d3ee0573a4ea7d260574120da9dec1}
 
 \begin{DoxyCompactList}\small\item\em Acts as the Wi-\/11's memory. \item\end{DoxyCompactList}\item 
+\hypertarget{classWi11_af60b1a832f564e3ac52b4edf7edc8c9a}{
+\hyperlink{classRegister}{Register} {\bfseries \_\-PC}}
+\label{classWi11_af60b1a832f564e3ac52b4edf7edc8c9a}
+
+\item 
 \hypertarget{classWi11_afdde77e5fbf30ef6647572f5c3050b7c}{
 \hyperlink{classRegister}{Register} \hyperlink{classWi11_afdde77e5fbf30ef6647572f5c3050b7c}{\_\-R0}}
 \label{classWi11_afdde77e5fbf30ef6647572f5c3050b7c}
@@ -179,26 +225,6 @@ virtual Codes::RESULT \hyperlink{classWi11_ac62ce0a9f8df8dacab577cee514cb199}{\_
 \label{classWi11_a0515ac512e8f8e3a122695f823d3abd7}
 
 \item 
-\hypertarget{classWi11_af60b1a832f564e3ac52b4edf7edc8c9a}{
-\hyperlink{classRegister}{Register} {\bfseries \_\-PC}}
-\label{classWi11_af60b1a832f564e3ac52b4edf7edc8c9a}
-
-\item 
-\hypertarget{classWi11_a84cb35829890fca6122c023229007002}{
-struct \hyperlink{structWi11_1_1CCR}{Wi11::CCR} {\bfseries \_\-CCR}}
-\label{classWi11_a84cb35829890fca6122c023229007002}
-
-\item 
-\hypertarget{classWi11_a22efbed824867b4f355062a31f93d8e2}{
-ObjLoader \hyperlink{classWi11_a22efbed824867b4f355062a31f93d8e2}{\_\-loader}}
-\label{classWi11_a22efbed824867b4f355062a31f93d8e2}
-
-\begin{DoxyCompactList}\small\item\em For loading the object file. \item\end{DoxyCompactList}\item 
-\hypertarget{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{
-Decoder \hyperlink{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{\_\-decoder}}
-\label{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}
-
-\begin{DoxyCompactList}\small\item\em For decoding instructions fetch from memory. \item\end{DoxyCompactList}\item 
 \hypertarget{classWi11_a18515d6caafb4aba3d8a9220b4ac227e}{
 \hyperlink{classResultDecoder}{ResultDecoder} \hyperlink{classWi11_a18515d6caafb4aba3d8a9220b4ac227e}{\_\-result\_\-decoder}}
 \label{classWi11_a18515d6caafb4aba3d8a9220b4ac227e}
@@ -206,270 +232,5 @@ Decoder \hyperlink{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{\_\-decoder}}
 \begin{DoxyCompactList}\small\item\em For error messages. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Member Function Documentation}
-\hypertarget{classWi11_a22228a86b6d5c60c8f403e8fc087077f}{
-\index{Wi11@{Wi11}!\_\-GetRegister@{\_\-GetRegister}}
-\index{\_\-GetRegister@{\_\-GetRegister}!Wi11@{Wi11}}
-\subsubsection[{\_\-GetRegister}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iRegister} \& Wi11::\_\-GetRegister (
-\begin{DoxyParamCaption}
-\item[{const Decoder::REGISTER\_\-ID \&}]{ id}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{classWi11_a22228a86b6d5c60c8f403e8fc087077f}
-
-
-Retrieves a reference to the register corresponding to \char`\"{}id\char`\"{}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & A REGISTER\_\-ID corresponding to one of the private registers. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A reference to the id'd register. 
-\end{DoxyReturn}
-
-
-Implements \hyperlink{classiWi11_aa1696b5bb260a94e1fb4a9922369cebf}{iWi11}.
-
-\hypertarget{classWi11_a01960bc45e7a70a276d91ff01cd637f9}{
-\index{Wi11@{Wi11}!\_\-Branch@{\_\-Branch}}
-\index{\_\-Branch@{\_\-Branch}!Wi11@{Wi11}}
-\subsubsection[{\_\-Branch}]{\setlength{\rightskip}{0pt plus 5cm}RESULT Wi11::\_\-Branch (
-\begin{DoxyParamCaption}
-\item[{const {\bf iWord} \&}]{ address}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{classWi11_a01960bc45e7a70a276d91ff01cd637f9}
-
-
-Changes the last 9 bits of the PC. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em address} & The 9 bits to become the end of the PC. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyPostcond}{Postcondition}
-\char`\"{}address\char`\"{} is not changed. 
-\end{DoxyPostcond}
-\begin{DoxyReturn}{Returns}
-SUCCESS or, if something went wrong, an appropriate error code. 
-\end{DoxyReturn}
-
-
-Implements \hyperlink{classiWi11_a42d2c50609424634873413d7a6614397}{iWi11}.
-
-\hypertarget{classWi11_a10d6c79140c97919e2778d1c4d6f8102}{
-\index{Wi11@{Wi11}!\_\-Debug@{\_\-Debug}}
-\index{\_\-Debug@{\_\-Debug}!Wi11@{Wi11}}
-\subsubsection[{\_\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}RESULT Wi11::\_\-Debug (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{classWi11_a10d6c79140c97919e2778d1c4d6f8102}
-
-
-Deprecated? 
-
-Does nothing. 
-
-Implements \hyperlink{classiWi11_ae510f127a0c3b87d42cdbe5b14204a65}{iWi11}.
-
-\hypertarget{classWi11_a8cbd4e75c8c10f69f4159c02955b4a1f}{
-\index{Wi11@{Wi11}!\_\-Ret@{\_\-Ret}}
-\index{\_\-Ret@{\_\-Ret}!Wi11@{Wi11}}
-\subsubsection[{\_\-Ret}]{\setlength{\rightskip}{0pt plus 5cm}RESULT Wi11::\_\-Ret (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{classWi11_a8cbd4e75c8c10f69f4159c02955b4a1f}
-
-
-Return from a subroutine. 
-
-\begin{DoxyPostcond}{Postcondition}
-The PC now holds the value that was (and still is) in R7. 
-\end{DoxyPostcond}
-\begin{DoxyReturn}{Returns}
-SUCCESS or, if something went wrong, an appropriate error code.
-\end{DoxyReturn}
-\begin{DoxyNote}{Note}
-
-\end{DoxyNote}
-\begin{DoxyParagraph}{}
-This can be used to jump anywhere in memory. However, this is not the intended usage. 
-\end{DoxyParagraph}
-\begin{DoxyParagraph}{}
-Updates the \hyperlink{structWi11_1_1CCR}{CCR}. 
-\end{DoxyParagraph}
-
-
-Implements \hyperlink{classiWi11_ae6c1048642dbf2c03c60062f6aaabfd2}{iWi11}.
-
-\hypertarget{classWi11_ac62ce0a9f8df8dacab577cee514cb199}{
-\index{Wi11@{Wi11}!\_\-Trap@{\_\-Trap}}
-\index{\_\-Trap@{\_\-Trap}!Wi11@{Wi11}}
-\subsubsection[{\_\-Trap}]{\setlength{\rightskip}{0pt plus 5cm}RESULT Wi11::\_\-Trap (
-\begin{DoxyParamCaption}
-\item[{const {\bf iWord} \&}]{ code}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{classWi11_ac62ce0a9f8df8dacab577cee514cb199}
-
-
-Branches to a trap vector. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em code} & The trap code. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyPostcond}{Postcondition}
-\char`\"{}code\char`\"{} is not changed. 
-\end{DoxyPostcond}
-\begin{DoxyReturn}{Returns}
-SUCCESS or, if something went wrong, an appropriate error code.
-\end{DoxyReturn}
-\begin{DoxyParagraph}{}
-The traps are as follows: \begin{DoxyItemize}
-\item 0x21 -\/ OUT -\/ Write the character formed from the eight least significant bits of R0 to standard out. \item 0x22 -\/ PUTS -\/ Write the a string to standard out starting at the address pointed to by R0 and ending at a null character. \item 0x23 -\/ IN -\/ Prompt for, and read, a single character from standard in. Re-\/print it and store its ascii value in R0 (with leading zeros). \item 0x25 -\/ HALT -\/ End execution and print an appropriate message to standard out. \item 0x31 -\/ INN -\/ Prompt for, and read, a positive decimal number from standard in. Re-\/print it and store it in R0 (the number must in 16-\/bit range). \item 0x43 -\/ RND -\/ Generate a random number and store it in R0.\end{DoxyItemize}
-
-\end{DoxyParagraph}
-\begin{DoxyNote}{Note}
-
-\end{DoxyNote}
-\begin{DoxyParagraph}{}
-Traps 0x23, 0x31, and 0x43 all update the \hyperlink{structWi11_1_1CCR}{CCR}. 
-\end{DoxyParagraph}
-\begin{DoxyParagraph}{}
-Standard in is the keyboard.\par
- Stardard out is the console. 
-\end{DoxyParagraph}
-
-
-Implements \hyperlink{classiWi11_a74da9304180f3cbece4b7e87e8a53a5d}{iWi11}.
-
-\hypertarget{classWi11_ab1df37ddc05a51bc3adabf51b50ad39e}{
-\index{Wi11@{Wi11}!iWi11@{iWi11}}
-\index{iWi11@{iWi11}!Wi11@{Wi11}}
-\subsubsection[{iWi11}]{\setlength{\rightskip}{0pt plus 5cm}Wi11::iWi11 (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{classWi11_ab1df37ddc05a51bc3adabf51b50ad39e}
-
-
-Creates and organizes the componts of the \hyperlink{classWi11}{Wi11} machine. 
-
-Initializes the general purpose registers, \hyperlink{structWi11_1_1CCR}{CCR}, and memory. 
-
-Implements \hyperlink{classiWi11_a379b2619c928a8dde1df28d596440ec0}{iWi11}.
-
-\hypertarget{classWi11_a50af76350b3e72c75d42035582aeb321}{
-\index{Wi11@{Wi11}!LoadObj@{LoadObj}}
-\index{LoadObj@{LoadObj}!Wi11@{Wi11}}
-\subsubsection[{LoadObj}]{\setlength{\rightskip}{0pt plus 5cm}bool Wi11::LoadObj (
-\begin{DoxyParamCaption}
-\item[{const char $\ast$}]{ filename}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{classWi11_a50af76350b3e72c75d42035582aeb321}
-
-
-Loads the object file and sets up memory as it describes. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em filename} & The name of the object file. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyPostcond}{Postcondition}
-\char`\"{}filename\char`\"{} is not changed. 
-\end{DoxyPostcond}
-\begin{DoxyReturn}{Returns}
-True if and only if the load was successful.
-\end{DoxyReturn}
-If \char`\"{}false\char`\"{} is returned, prints an appropriate error message to the user.
-
-\begin{DoxyNote}{Note}
-This fucntion can be called multiple times. Each time the PC is overwritten. 
-\end{DoxyNote}
-
-
-Implements \hyperlink{classiWi11_a87f8cd9014f7ae2edaa8928257fc84e9}{iWi11}.
-
-\hypertarget{classWi11_a0f532cefdebd3c33ddc93e8bce4dc06b}{
-\index{Wi11@{Wi11}!DisplayMemory@{DisplayMemory}}
-\index{DisplayMemory@{DisplayMemory}!Wi11@{Wi11}}
-\subsubsection[{DisplayMemory}]{\setlength{\rightskip}{0pt plus 5cm}void Wi11::DisplayMemory (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{classWi11_a0f532cefdebd3c33ddc93e8bce4dc06b}
-
-
-Prints the state of memory to standard out. 
-
-\begin{DoxyPostcond}{Postcondition}
-The calling object is not changed. 
-\end{DoxyPostcond}
-
-
-Implements \hyperlink{classiWi11_ad9b13831ad9a83a8abbc3a77794b38bc}{iWi11}.
-
-\hypertarget{classWi11_a201359b2506539dda72075b908076492}{
-\index{Wi11@{Wi11}!DisplayRegisters@{DisplayRegisters}}
-\index{DisplayRegisters@{DisplayRegisters}!Wi11@{Wi11}}
-\subsubsection[{DisplayRegisters}]{\setlength{\rightskip}{0pt plus 5cm}void Wi11::DisplayRegisters (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{classWi11_a201359b2506539dda72075b908076492}
-
-
-Prints the state of every register to standard out. 
-
-\begin{DoxyPostcond}{Postcondition}
-The calling object is not changed.
-\end{DoxyPostcond}
-The values of all 8 general purpose registers, the \hyperlink{structWi11_1_1CCR}{CCR}, and PC are all printed. 
-
-Implements \hyperlink{classiWi11_a143e669e3c7f46c3d1524838c8d74d94}{iWi11}.
-
-\hypertarget{classWi11_ace44826e4f92aabd233b68bdd9437c1b}{
-\index{Wi11@{Wi11}!ExecuteNext@{ExecuteNext}}
-\index{ExecuteNext@{ExecuteNext}!Wi11@{Wi11}}
-\subsubsection[{ExecuteNext}]{\setlength{\rightskip}{0pt plus 5cm}bool Wi11::ExecuteNext (
-\begin{DoxyParamCaption}
-\item[{bool}]{ verbose = {\ttfamily false}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{classWi11_ace44826e4f92aabd233b68bdd9437c1b}
-
-
-Executes the instruction pointed to by the PC. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em verbose} & If true, machine state information is displayed after each step. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if and only if the end of the program have been reached.
-\end{DoxyReturn}
-\begin{DoxyParagraph}{}
-This function is the brains of the operation, so to speak. Almost the entire fetch-\/execute loop of the Wi-\/11 is present here. In particular, this function must interpret the instructions and manage the CCRs. 
-\end{DoxyParagraph}
-\begin{DoxyParagraph}{}
-For a complete list of the instructions, see \hyperlink{index_instructions}{Wi-\/11 Instructions}. 
-\end{DoxyParagraph}
-
-
-Implements \hyperlink{classiWi11_ae502d86eb25fe6e1169e800939362074}{iWi11}.
-
+\subsection{Detailed Description}
+Implements \hyperlink{classiWi11}{iWi11}. 

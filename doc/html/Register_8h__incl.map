@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$iRegister_8h.html" title="Definition of a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="5,83,91,112"/>
-<area shape="rect" id="node9" href="$Word_8h_source.html" title="Word.h" alt="" coords="115,83,179,112"/>
-<area shape="rect" id="node5" href="$MemoryTest_2iWord_8h_source.html" title="iWord.h" alt="" coords="43,160,109,189"/>
+<area shape="rect" id="node3" href="$iRegister_8h.html" title="Definition of a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="5,83,93,112"/>
+<area shape="rect" id="node9" href="$Word_8h.html" title="Definition of private data for the &quot;Word&quot; class." alt="" coords="117,83,184,112"/>
+<area shape="rect" id="node5" href="$iWord_8h.html" title="Definition of a &quot;word&quot; of data." alt="" coords="44,160,113,189"/>
 </map>

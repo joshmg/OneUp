@@ -17,9 +17,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="dirs.html"><span>Directories</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -62,21 +62,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77f1a74deb864606b1b5cc115c2a99a5"></a><!-- doxytag: member="ObjectData::type" ref="a77f1a74deb864606b1b5cc115c2a99a5" args="" -->
-char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structObjectData.html#a77f1a74deb864606b1b5cc115c2a99a5">type</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of record: 'H', 'T', or 'E'. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af755ea276bafd67e377e869950c1eb48"></a><!-- doxytag: member="ObjectData::data" ref="af755ea276bafd67e377e869950c1eb48" args="" -->
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structObjectData.html#af755ea276bafd67e377e869950c1eb48">data</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The segments of the record. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77f1a74deb864606b1b5cc115c2a99a5"></a><!-- doxytag: member="ObjectData::type" ref="a77f1a74deb864606b1b5cc115c2a99a5" args="" -->
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structObjectData.html#a77f1a74deb864606b1b5cc115c2a99a5">type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of record: 'H', 'T', or 'E'. <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>A simple encoding of a "record". </p>
 <dl class="user"><dt><b></b></dt><dd>The format of this component is dependent upon the kind of record it is representing. </dd></dl>
-<dl class="user"><dt><b></b></dt><dd>Record (type = 'H') <ul>
+<dl class="user"><dt><b></b></dt><dd><ul>
+<li>Header Record (type = 'H') <ul>
 <li>
-data.size() = 3 </li>
-<li>
-<ul>
+data.size() = 3 <ul>
 <li>
 data[0] = [Segment Name] </li>
 <li>
@@ -86,28 +85,23 @@ data[2] = [Segment Length (as a hex string)]</li>
 </ul>
 </li>
 </ul>
-<ul>
+</li>
 <li>Text Records (type = 'T') <ul>
 <li>
-data.size() = 2 </li>
-<li>
-<ul>
+data.size() = 2 <ul>
 <li>
 data[0] = [Address of Data (as a hex string)] </li>
 <li>
-data[1] = [Data (as a hex string)]  </li>
+data[1] = [Data (as a hex string)]</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>End Records (type = 'E') <ul>
 <li>
-End Records (type = 'E') <ul>
-<li>
-data.size() = 1 </li>
-<li>
-<ul>
+data.size() = 1 <ul>
 <li>
 data[0] = [Initial PC Address (as a hex string)]</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -120,7 +114,7 @@ data[0] = [Initial PC Address (as a hex string)]</li>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -129,7 +123,7 @@ data[0] = [Initial PC Address (as a hex string)]</li>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>
