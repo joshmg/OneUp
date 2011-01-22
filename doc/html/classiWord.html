@@ -107,6 +107,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard post-increment operator.  <a href="#a6777f6f41915179c4255d3647a9eb4b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a0e83901b08763247527ce61c89fd847f">operator[]</a> (const int i) const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An accessor to the 'i'th bit of the value.  <a href="#a0e83901b08763247527ce61c89fd847f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#adfc0d2e05f06bc51ef29a385a062a435">SetBit</a> (const int i)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the 'i'th bit of the value.  <a href="#adfc0d2e05f06bc51ef29a385a062a435"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a3349d0a243d3432bb35b76af8420b1d9">toInt</a> () const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"To non-negative Integer"  <a href="#a3349d0a243d3432bb35b76af8420b1d9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a1377d01257b792c748b013be60b089e6">toInt2Complement</a> () const =0</td></tr>
@@ -655,6 +657,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="adfc0d2e05f06bc51ef29a385a062a435"></a><!-- doxytag: member="iWord::SetBit" ref="adfc0d2e05f06bc51ef29a385a062a435" args="(const int i)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void iWord::SetBit </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"> <em>i</em>&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the 'i'th bit of the value. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>The index of the bit in question. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The index must be less than the size of a word, ie. 16.</dd></dl>
+<p>Works in a similar way to operator[] but sets the bit instead of determining if it is set. </p>
+
+</div>
+</div>
 <a class="anchor" id="a3349d0a243d3432bb35b76af8420b1d9"></a><!-- doxytag: member="iWord::toInt" ref="a3349d0a243d3432bb35b76af8420b1d9" args="() const =0" -->
 <div class="memitem">
 <div class="memproto">
@@ -1175,7 +1204,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 02:04:03 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

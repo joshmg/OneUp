@@ -55,15 +55,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="ObjectData" -->
+<p>A simple encoding of a "record".  
+<a href="#_details">More...</a></p>
+
 <p><a href="structObjectData-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77f1a74deb864606b1b5cc115c2a99a5"></a><!-- doxytag: member="ObjectData::type" ref="a77f1a74deb864606b1b5cc115c2a99a5" args="" -->
-char&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structObjectData.html#a77f1a74deb864606b1b5cc115c2a99a5">type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of record: 'H', 'T', or 'E'. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af755ea276bafd67e377e869950c1eb48"></a><!-- doxytag: member="ObjectData::data" ref="af755ea276bafd67e377e869950c1eb48" args="" -->
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structObjectData.html#af755ea276bafd67e377e869950c1eb48">data</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The segments of the record. <br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>A simple encoding of a "record". </p>
+<dl class="user"><dt><b></b></dt><dd>The format of this component is dependent upon the kind of record it is representing. </dd></dl>
+<dl class="user"><dt><b></b></dt><dd>Record (type = 'H') <ul>
+<li>
+data.size() = 3 </li>
+<li>
+<ul>
+<li>
+data[0] = [Segment Name] </li>
+<li>
+data[1] = [Initial Load Address (as a hex string)] </li>
+<li>
+data[2] = [Segment Length (as a hex string)]</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Text Records (type = 'T') <ul>
+<li>
+data.size() = 2 </li>
+<li>
+<ul>
+<li>
+data[0] = [Address of Data (as a hex string)] </li>
+<li>
+data[1] = [Data (as a hex string)]  </li>
+</ul>
+</li>
+<li>
+End Records (type = 'E') <ul>
+<li>
+data.size() = 1 </li>
+<li>
+<ul>
+<li>
+data[0] = [Initial PC Address (as a hex string)]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</dd></dl>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,7 +129,7 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 02:04:03 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

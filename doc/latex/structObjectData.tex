@@ -2,16 +2,57 @@
 \section{ObjectData Struct Reference}
 \label{structObjectData}\index{ObjectData@{ObjectData}}
 }
+
+
+A simple encoding of a \char`\"{}record\char`\"{}.  
+
+
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{structObjectData_a77f1a74deb864606b1b5cc115c2a99a5}{
-char {\bfseries type}}
+char \hyperlink{structObjectData_a77f1a74deb864606b1b5cc115c2a99a5}{type}}
 \label{structObjectData_a77f1a74deb864606b1b5cc115c2a99a5}
 
-\item 
+\begin{DoxyCompactList}\small\item\em The type of record: 'H', 'T', or 'E'. \item\end{DoxyCompactList}\item 
 \hypertarget{structObjectData_af755ea276bafd67e377e869950c1eb48}{
-std::vector$<$ std::string $>$ {\bfseries data}}
+std::vector$<$ std::string $>$ \hyperlink{structObjectData_af755ea276bafd67e377e869950c1eb48}{data}}
 \label{structObjectData_af755ea276bafd67e377e869950c1eb48}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The segments of the record. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple encoding of a \char`\"{}record\char`\"{}. \begin{DoxyParagraph}{}
+The format of this component is dependent upon the kind of record it is representing. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Record (type = 'H') 
+\begin{DoxyItemize}
+\item data.size() = 3 
+\item 
+\begin{DoxyItemize}
+\item data\mbox{[}0\mbox{]} = \mbox{[}Segment Name\mbox{]} 
+\item data\mbox{[}1\mbox{]} = \mbox{[}Initial Load Address (as a hex string)\mbox{]} 
+\item data\mbox{[}2\mbox{]} = \mbox{[}Segment Length (as a hex string)\mbox{]}
+\end{DoxyItemize}
+\end{DoxyItemize}\begin{DoxyItemize}
+\item Text Records (type = 'T') 
+\begin{DoxyItemize}
+\item data.size() = 2 
+\item 
+\begin{DoxyItemize}
+\item data\mbox{[}0\mbox{]} = \mbox{[}Address of Data (as a hex string)\mbox{]} 
+\item data\mbox{[}1\mbox{]} = \mbox{[}Data (as a hex string)\mbox{]}  
+\end{DoxyItemize}
+\item End Records (type = 'E') 
+\begin{DoxyItemize}
+\item data.size() = 1 
+\item 
+\begin{DoxyItemize}
+\item data\mbox{[}0\mbox{]} = \mbox{[}Initial PC Address (as a hex string)\mbox{]}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}\end{DoxyItemize}
+
+\end{DoxyParagraph}

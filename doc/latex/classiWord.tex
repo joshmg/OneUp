@@ -57,6 +57,8 @@ virtual \hyperlink{classiWord}{iWord} \& \hyperlink{classiWord_a6777f6f41915179c
 \begin{DoxyCompactList}\small\item\em A standard post-\/increment operator. \item\end{DoxyCompactList}\item 
 virtual bool \hyperlink{classiWord_a0e83901b08763247527ce61c89fd847f}{operator\mbox{[}$\,$\mbox{]}} (const int i) const =0
 \begin{DoxyCompactList}\small\item\em An accessor to the 'i'th bit of the value. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiWord_adfc0d2e05f06bc51ef29a385a062a435}{SetBit} (const int i)=0
+\begin{DoxyCompactList}\small\item\em Sets the 'i'th bit of the value. \item\end{DoxyCompactList}\item 
 virtual int \hyperlink{classiWord_a3349d0a243d3432bb35b76af8420b1d9}{toInt} () const =0
 \begin{DoxyCompactList}\small\item\em \char`\"{}To non-\/negative Integer\char`\"{} \item\end{DoxyCompactList}\item 
 virtual int \hyperlink{classiWord_a1377d01257b792c748b013be60b089e6}{toInt2Complement} () const =0
@@ -592,7 +594,28 @@ If the object holds a value of 4 (0...100 in binary): num\mbox{[}2\mbox{]} = 1.\
 
 Implemented in \hyperlink{classWord_a0b08a81ced05b38d3d719ef70ecb3215}{Word}, and \hyperlink{classWord_a0b08a81ced05b38d3d719ef70ecb3215}{Word}.
 
-\hypertarget{classiWord_a3349d0a243d3432bb35b76af8420b1d9}{
+\hypertarget{classiWord_adfc0d2e05f06bc51ef29a385a062a435}{
+\index{iWord@{iWord}!SetBit@{SetBit}}
+\index{SetBit@{SetBit}!iWord@{iWord}}
+\subsubsection[{SetBit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void iWord::SetBit (
+\begin{DoxyParamCaption}
+\item[{const int}]{ i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_adfc0d2e05f06bc51ef29a385a062a435}
+
+
+Sets the 'i'th bit of the value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The index of the bit in question. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The index must be less than the size of a word, ie. 16.
+\end{DoxyPrecond}
+Works in a similar way to operator\mbox{[}$\,$\mbox{]} but sets the bit instead of determining if it is set. \hypertarget{classiWord_a3349d0a243d3432bb35b76af8420b1d9}{
 \index{iWord@{iWord}!toInt@{toInt}}
 \index{toInt@{toInt}!iWord@{iWord}}
 \subsubsection[{toInt}]{\setlength{\rightskip}{0pt plus 5cm}virtual int iWord::toInt (

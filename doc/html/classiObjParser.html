@@ -55,15 +55,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="iObjParser" -->
+<p>Opens the object file and pre-processes each line.  
+<a href="#_details">More...</a></p>
+
 <p><a href="classiObjParser-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d22273d8d83454547a650c0053619d3"></a><!-- doxytag: member="iObjParser::Initialize" ref="a1d22273d8d83454547a650c0053619d3" args="(const char *)=0" -->
-virtual Codes::Result&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (const char *)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb9af4a40a06e755d8b0e493526d82dd"></a><!-- doxytag: member="iObjParser::GetNext" ref="aeb9af4a40a06e755d8b0e493526d82dd" args="()=0" -->
-virtual <a class="el" href="structObjectData.html">ObjectData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetNext</b> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae88aacaa19a6aa6d4a7c82c02eabc3dc"></a><!-- doxytag: member="iObjParser::~iObjParser" ref="ae88aacaa19a6aa6d4a7c82c02eabc3dc" args="()=0" -->
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiObjParser.html#ae88aacaa19a6aa6d4a7c82c02eabc3dc">~iObjParser</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a file, if necessarily, when an <a class="el" href="classiObjParser.html" title="Opens the object file and pre-processes each line.">iObjParser</a> object goes out of scope.. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Codes::Result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiObjParser.html#a570e7a7dfb64b66e7a78f75ec4da193a">Initialize</a> (const char *filename)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to open th object file.  <a href="#a570e7a7dfb64b66e7a78f75ec4da193a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structObjectData.html">ObjectData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiObjParser.html#aeb9af4a40a06e755d8b0e493526d82dd">GetNext</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-processes the next line of the object file.  <a href="#aeb9af4a40a06e755d8b0e493526d82dd"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Opens the object file and pre-processes each line. </p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a570e7a7dfb64b66e7a78f75ec4da193a"></a><!-- doxytag: member="iObjParser::Initialize" ref="a570e7a7dfb64b66e7a78f75ec4da193a" args="(const char *filename)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Codes::Result iObjParser::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"> <em>filename</em>&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attempts to open th object file. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>The name of the object file to be opened. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
+<p>If another file is open, closes that file first before attempting to open the new one. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeb9af4a40a06e755d8b0e493526d82dd"></a><!-- doxytag: member="iObjParser::GetNext" ref="aeb9af4a40a06e755d8b0e493526d82dd" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structObjectData.html">ObjectData</a> iObjParser::GetNext </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pre-processes the next line of the object file. </p>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Initialize must have successfully opened a file. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The encoding of the next instruction.</dd></dl>
+<p>If there is an error parsing the entry: </p>
+<ul>
+<li><a class="el" href="structObjectData.html#a77f1a74deb864606b1b5cc115c2a99a5" title="The type of record: &#39;H&#39;, &#39;T&#39;, or &#39;E&#39;.">ObjectData.type</a> = 0; </li>
+<li><a class="el" href="structObjectData.html#af755ea276bafd67e377e869950c1eb48" title="The segments of the record.">ObjectData.data</a> = [the faulty encoding] </li>
+</ul>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,7 +140,7 @@ virtual <a class="el" href="structObjectData.html">ObjectData</a>&#160;</td><td 
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 02:04:03 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 12:09:35 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>
