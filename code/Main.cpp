@@ -1,3 +1,10 @@
+// File: Main.cpp
+// Written by Joshua Green
+//            Andrew Groot
+
+#include "Wi11.h"
+#include <vector>
+#include <string>
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -11,34 +18,98 @@ using namespace std;
     mode of execution before each step.
 */
 int main(int argc, char* argv[]) {
-  if (argc != 2) {
-    cerr << "Usage: " << argv[0] << " object_file\n";
-    return 1;
+  bool DEBUG = false;
+  vector<string> obj_files;
+  for (int i=1;i<argc;i++) {
+    if (argv[i] == "-d" || argv[i] == "-d") DEBUG = true;
+    else obj_files.push_back(string(argv[i]));
+  }
+
+  if (argc < 2 || (DEBUG && argc < 3)) {
+    // prompt users for object files
+    string ask_again = "Yes";
+    while (ask_again[0] == 'y' || ask_again[0] == 'Y') {
+      cout << "Enter Obj Filename: ";
+      string filename;
+      getline(cin, filename);
+      obj_files.push_back(filename);
+      cout << "Add another object filename? (y/n) ";
+      getline(cin, ask_again);
+    }
   }
   
-  ifstream file;
-  file.exceptions(ifstream::failbit | ifstream::badbit | ifstream::eofbit);
-  // throw exception __ if __:
-  // 1) ifstream::failbit, logical error
-  // 2) ifstream::badbit, i/o error
-  // 3) ifstream::eofbit, unexpected eof
+  Wi11 simulator;
 
-  try {
-    // command-line argument 1 should be the name
-    // of the object file to take as input
-    file.open(argv[1]);
-  } catch (ifstream::failure e) {
-    cerr << "Error: File " << argv[1] << " not found.\n";
-    return 1;
+  if (DEBUG) cout << "Loading object files... ";
+  for (int i=0;i<obj_files.size();i++) {
+    if (!simulator.LoadObj(obj_files[i].c_str())) {
+      cout << " Aborting." << endl;
+      return 1;
+    }
+  }
+  if (DEBUG) cout << "done." << endl;
+
+  if (DEBUG) {
+    // print initial status
+    simulator.DisplayRegisters();
+    simulator.DisplayMemory();
+
+    // prompt to execute
+    cout << "Maximum Execution Iterations: (-1 for infinite) ";
+    int iterations;
+    string iteration_input;
+    getline(cin, iteration_input);
+
+    iterations = atoi(iteration_input.c_str());
+
+
+    cout << "Select Execution Mode: (Trace, Step, Full) ";
+    string mode;
+    getline(cin, mode);
+    if (mode[0] == 'T' || mode[0] == 't') {
+      cout << "[Trace Mode]" << endl;
+
+      while (simulator.ExecuteNext(true) && iterations != 0) {
+        --iterations;
+      }
+
+      simulator.DisplayRegisters();
+      simulator.DisplayMemory();
+    }
+    else if (mode[0] == 'S' || mode[0] == 's') {
+      cout << "[Step Mode]" << endl;
+
+      while (simulator.ExecuteNext(true) && iterations != 0) {
+        --iterations;
+        cout << "Continue? (y/n) ";
+        string temp;
+        getline(cin, temp);
+
+        if (temp[0] != 'Y' && temp[0] != 'y') {
+          cout << "User Abort." < endl;
+          break;
+        }
+      }
+
+      simulator.DisplayRegisters();
+      simulator.DisplayMemory();
+    }
+    else if (mode[0] == 'F' || mode[0] == 'f') {
+      cout << "[Full Mode]" << endl;
+
+      while (simulator.ExecuteNext(true) && iterations != 0) {
+        --iterations;
+      }
+    }
+    if (iterations == 0) {
+      cout << "Maximum iterations reached. Aborting." << endl;
+    }
+  }
+  else {
+    // Not in debug mode:
+    while (simulator.ExecuteNext(true));
   }
 
-  // parse file
-
-  file.close();
-
-  // start simulator
-
-  // return
   return 0;
 }
 
