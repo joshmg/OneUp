@@ -107,7 +107,7 @@ int main(int argc, char* argv[]) {
   }
   else {
     // Not in debug mode:
-    while (simulator.ExecuteNext(true));
+    while (simulator.ExecuteNext(false));
   }
 
   return 0;

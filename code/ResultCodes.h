@@ -49,7 +49,7 @@ class ResultDecoder {
     //! Generates the code-to-message mappings.
     ResultDecoder() {
       _codes[Codes::ERROR_0] = "This is an example description sent to the end-user upon verbose mode.";
-      _codes[Codes::SUCCESS] = "The operation executed successfully.";
+      _codes[Codes::SUCCESS] = "Successful.";
       _codes[Codes::HALT] = "Execution has been terminated (Halt).";
       _codes[Codes::UNDEFINED] = "An unexpected error occured.";
       _codes[Codes::INVALID_OBJECT_FILE] = "The First character in the object file must be a H.";
