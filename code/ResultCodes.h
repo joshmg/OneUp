@@ -50,7 +50,7 @@ class ResultDecoder {
     ResultDecoder() {
       _codes[Codes::ERROR_0] = "This is an example description sent to the end-user upon verbose mode.";
       _codes[Codes::SUCCESS] = "Successful.";
-      _codes[Codes::HALT] = "Execution has been terminated (Halt).";
+      _codes[Codes::HALT] = "Execution has been terminated (Halt).\n";
       _codes[Codes::UNDEFINED] = "An unexpected error occured.";
       _codes[Codes::INVALID_OBJECT_FILE] = "The First character in the object file must be a H.";
       _codes[Codes::INVALID_DATA_ENTRY] = "There is an invalid text record or there was no end record found.";
