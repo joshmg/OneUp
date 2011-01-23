@@ -1,0 +1,5 @@
+Start at 3000, 4 instructions
+3000: Load this instruction into register 1
+3001: Add 15 to register 1
+3002: If positive, branch to 3000
+3003: Exit program

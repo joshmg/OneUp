@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
   bool DEBUG = false;
   vector<string> obj_files;
   for (int i=1;i<argc;i++) {
-    if (argv[i] == "-d" || argv[i] == "-d") DEBUG = true;
+    if (argv[i][0] == '-' && (argv[i][1] == 'd' || argv[i][1] == 'D')) DEBUG = true;
     else obj_files.push_back(string(argv[i]));
   }
 
@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
   if (DEBUG) cout << "Loading object files... ";
   for (int i=0;i<obj_files.size();i++) {
     if (!simulator.LoadObj(obj_files[i].c_str())) {
-      cout << " Aborting." << endl;
+      cout << "Aborting." << endl;
       return 1;
     }
   }
