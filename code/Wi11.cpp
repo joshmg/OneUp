@@ -417,7 +417,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case LD: {
-      if (verbose) cout << "LD operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[" << instruction.data[0].ToHex() << "] :: ";
+      if (verbose) cout << "LD operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[Raw Value=" << instruction.data[0].ToHex() << "] :: ";
       RESULT result = _Load(_Word2RegisterID(instruction.data[0]), instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -512,4 +512,6 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
   }
+
+  if (verbose) cout << "The PC is now: " << _PC.GetValue().ToHex() << endl;
 }
