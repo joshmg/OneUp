@@ -72,7 +72,8 @@ int main(int argc, char* argv[]) {
       while (simulator.ExecuteNext(true) && iterations != 0) {
         --iterations;
       }
-
+    
+      cout << endl;
       simulator.DisplayRegisters();
       simulator.DisplayMemory();
     }
@@ -91,6 +92,7 @@ int main(int argc, char* argv[]) {
         }
       }
 
+      cout << endl;
       simulator.DisplayRegisters();
       simulator.DisplayMemory();
     }
@@ -109,6 +111,8 @@ int main(int argc, char* argv[]) {
     // Not in debug mode:
     while (simulator.ExecuteNext(false));
   }
+
+  simulator.poo();
 
   return 0;
 }
