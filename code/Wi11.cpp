@@ -336,7 +336,7 @@ bool Wi11::ExecuteNext(bool verbose) {
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
                                        instruction.data[3].ToHex() << endl << '\t';
         }
-        RESULT result = _Add(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), instruction.data[4]);
+        RESULT result = _Add(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), instruction.data[3]);
         if (verbose) cout << _result_decoder.Find(result) << endl;
 
         if (result == SUCCESS) return true;
@@ -361,7 +361,7 @@ bool Wi11::ExecuteNext(bool verbose) {
         if (verbose) {
           cout << "And operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
-                                       instruction.data[4].ToHex() << endl << '\t';
+                                       instruction.data[3].ToHex() << endl << '\t';
         }
         RESULT result = _Add(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), instruction.data[3]);
         if (verbose) cout << _result_decoder.Find(result) << endl;
