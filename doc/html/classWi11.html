@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OneUp Wi-11 Simulator: Wi11 Class Reference</title>
+<title>OneUp Wi-11 Simulator - Programmer&#39;s Guide: Wi11 Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -84,6 +84,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DisplayRegist
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>ExecuteNext</b> (bool verbose=false)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50af76350b3e72c75d42035582aeb321"></a><!-- doxytag: member="Wi11::LoadObj" ref="a50af76350b3e72c75d42035582aeb321" args="(const char *)" -->
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadObj</b> (const char *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99a02dc05270d20ad6ad39823ee976b6"></a><!-- doxytag: member="Wi11::poo" ref="a99a02dc05270d20ad6ad39823ee976b6" args="() const " -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>poo</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWi11.html#ad8e6d1a1e39832bdc650f2ca3cfa2d3e">Wi11</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and organizes the componts of the <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> machine.  <a href="#ad8e6d1a1e39832bdc650f2ca3cfa2d3e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
@@ -92,10 +94,10 @@ Private Member Functions</h2></td></tr>
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Add</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b5e86294f943344021336108309bb52"></a><!-- doxytag: member="Wi11::_Add" ref="a9b5e86294f943344021336108309bb52" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const iWord &amp;immediate)" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Add</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const <a class="el" href="classiWord.html">iWord</a> &amp;immediate)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b6fb3285c524e01ae94f2204a4b50f1"></a><!-- doxytag: member="Wi11::_And" ref="a9b6fb3285c524e01ae94f2204a4b50f1" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_And</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7a7fcfe6f5ebae0a2ab31be6029002e"></a><!-- doxytag: member="Wi11::_And" ref="aa7a7fcfe6f5ebae0a2ab31be6029002e" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const iWord &amp;immediate)" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_And</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const <a class="el" href="classiWord.html">iWord</a> &amp;immediate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b6fb3285c524e01ae94f2204a4b50f1"></a><!-- doxytag: member="Wi11::_And" ref="a9b6fb3285c524e01ae94f2204a4b50f1" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_And</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01960bc45e7a70a276d91ff01cd637f9"></a><!-- doxytag: member="Wi11::_Branch" ref="a01960bc45e7a70a276d91ff01cd637f9" args="(const iWord &amp;address)" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Branch</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10d6c79140c97919e2778d1c4d6f8102"></a><!-- doxytag: member="Wi11::_Debug" ref="a10d6c79140c97919e2778d1c4d6f8102" args="()" -->
@@ -116,6 +118,9 @@ virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Loa
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_LoadR</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;baseR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad343c78722e67d6bcfa8f5f52c525a97"></a><!-- doxytag: member="Wi11::_Not" ref="ad343c78722e67d6bcfa8f5f52c525a97" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR)" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Not</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dcc11c26d454f639b1a924966ede86c"></a><!-- doxytag: member="Wi11::_RegisterID2String" ref="a1dcc11c26d454f639b1a924966ede86c" args="(const Decoder_Directory::REGISTER_ID &amp;) const " -->
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWi11.html#a1dcc11c26d454f639b1a924966ede86c">_RegisterID2String</a> (const Decoder_Directory::REGISTER_ID &amp;) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates an internal <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> ID identifier into human readable string format. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cbd4e75c8c10f69f4159c02955b4a1f"></a><!-- doxytag: member="Wi11::_Ret" ref="a8cbd4e75c8c10f69f4159c02955b4a1f" args="()" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Ret</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a914c3e753a0182effc6d01f3de4cdd24"></a><!-- doxytag: member="Wi11::_STI" ref="a914c3e753a0182effc6d01f3de4cdd24" args="(const Decoder_Directory::REGISTER_ID &amp;SR, const iWord &amp;address)" -->
@@ -203,7 +208,7 @@ struct <a class="el" href="structWi11_1_1CCR.html">Wi11::CCR</a>&#160;</td><td c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 19:01:10 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 18:47:49 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

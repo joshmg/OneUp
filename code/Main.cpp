@@ -120,11 +120,11 @@ int main(int argc, char* argv[]) {
 ///////////////////////////////////////
 //*** Project-wide documentation ***///
 ///////////////////////////////////////
-/*! @mainpage
+/*! @mainpage Introduction
     @section intro Introduction
     The "Wi-11 Machine" is a simple, 16-bit computer architecture.
     It has 8 general purpose registers, 3 condition code registers (CCRs),
-    and a program counter (PC).  This software package is meant to emulate
+    and a program counter (PC).  The Wi-11 Simulator is meant to emulate
     its execution, as well as present the user with information regarding the
     state of the machine after each instruction is executed.  However,
     before one can delve into the behind-the-scenes details, one must understand
@@ -180,9 +180,45 @@ int main(int argc, char* argv[]) {
       <b>At a glance:</b> There is an 'E', and the location in memory from which the first instruction should be fetched.
 
     @section Component Interaction
-    @image latex software_interaction.png width=\textwidth
+    The components described in this document are, for the most part,
+    representative of the actual hardware components that would be present
+    in the Wi-11 machine.  The following section describes these components
+    and their interactions.  After that, a list of the \ref instructions "instructions"
+    that the Wi-11 can execute (along with their encodings) completes the introduction
+    to this simulator.  The rest of the document details the workings of each
+    component and provides the reader with the knowledge necessary for
+    altering, fixing, or even just understanding the code itself.
+
     @subsection components Components
+    The Wi-11 Simulator uses 5 major components (for a visual, see \ref interactions).
+    The main function, however, is only aware of one: Wi11.  It creates one Wi11
+    object and uses it to parse object files, decode the instructions, and execute them.
+    In order to perform these tasks it first creates Loader, Memory, Decoder, and Register
+    objects.  The Register objects correspond all those mentioned in the \ref intro,
+    with the exception of the CCRs which are declared as their own entity.
+    
+    @note The Word class is not described below but nearly all transfers of data
+    and mathematical operations are performed using (an) object(s) of this type.
 
-    @subsection instructions Wi11 Instruction Set
+    @subsubsection loading Loading
+    The Loader object, recieving a pointer to memory and a filename, creates
+    an ObjParser object (the fifth major component).  The ObjParser pulls the
+    relevant data from the file and the Loader puts it into memory.  After some input
+    by the user is accepted (assuming the simulator is in debug mode), the Wi11 is
+    ready to begin executing instructions.
 
+    @subsubsection execution Executing
+    The Wi11 component executes instructions in a way very similar to how an
+    actual Wi-11 machine would execute them.  It first has the Memory object
+    return the instruction referenced by the current value of the PC.  After
+    incrementing the PC, the raw instruction is given to the Decoder.  The Decoder
+    returns an Instruction object that allows the Wi11 to call one of its many
+    private functions that correspond (one-to-one) to each kind of instruction.
+    This process is then repeated until either the HALT trap code is found or the
+    user-specified instruction limit is reached.
+    
+    @image latex software_interaction.png "This diagram shows the awareness of each component with those operating below it." width=\textwidth
+
+    @subsection instructions Wi-11 Instruction Set
+    
 */

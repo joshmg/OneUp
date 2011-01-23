@@ -11,6 +11,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <cmath>
 
 using namespace Decoder_Directory;
 using namespace Codes;

@@ -153,13 +153,11 @@
 \indexentry{Memory@{Memory}|hyperpage}{50}
 \indexentry{ObjectData@{ObjectData}|hyperpage}{52}
 \indexentry{ObjParser@{ObjParser}|hyperpage}{52}
-\indexentry{ObjParser@{ObjParser}!$\sim $ObjParser@{$\sim $ObjParser}|hyperpage}{54}
-\indexentry{$\sim $ObjParser@{$\sim $ObjParser}!ObjParser@{ObjParser}|hyperpage}{54}
 \indexentry{ObjParser@{ObjParser}!Initialize@{Initialize}|hyperpage}{54}
 \indexentry{Initialize@{Initialize}!ObjParser@{ObjParser}|hyperpage}{54}
 \indexentry{ObjParser@{ObjParser}!GetNext@{GetNext}|hyperpage}{54}
 \indexentry{GetNext@{GetNext}!ObjParser@{ObjParser}|hyperpage}{54}
-\indexentry{Register@{Register}|hyperpage}{55}
+\indexentry{Register@{Register}|hyperpage}{54}
 \indexentry{ResultDecoder@{ResultDecoder}|hyperpage}{56}
 \indexentry{ResultDecoder@{ResultDecoder}!Find@{Find}|hyperpage}{57}
 \indexentry{Find@{Find}!ResultDecoder@{ResultDecoder}|hyperpage}{57}
