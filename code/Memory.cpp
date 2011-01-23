@@ -55,8 +55,8 @@ bool vect_cmp(vector<Word> i, vector<Word> j) {
   return (i[0].ToInt() < j[0].ToInt());
 }
 
-vector<vector<Word>> Memory::GetUsedMemory() const {
-  vector<vector<Word>> value;
+vector< vector<Word> > Memory::GetUsedMemory() const {
+  vector< vector<Word> > value;
   for (int i=0;i<_bounded_memory.size();i++) {
     vector<Word> begin_to_end;
     begin_to_end.push_back(Word());

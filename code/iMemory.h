@@ -61,7 +61,7 @@ class iMemory {
 
     /*! 
     */
-    virtual std::vector<std::vector<Word>> GetUsedMemory() const = 0;
+    virtual std::vector< std::vector<Word> > GetUsedMemory() const = 0;
 };
 
 #endif

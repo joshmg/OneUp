@@ -248,7 +248,7 @@ bool Wi11::LoadObj(const char* filename) {
 }
 
 void Wi11::DisplayMemory() const {
-  vector<vector<Word>> memory_addresses = _memory.GetUsedMemory();
+  vector< vector<Word> > memory_addresses = _memory.GetUsedMemory();
 
   cout << "Wi11 Machine Memory" << endl;
   for (int i=0;i<memory_addresses.size();i++) {

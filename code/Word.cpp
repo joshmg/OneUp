@@ -192,9 +192,8 @@ iWord& Word::operator++() {
 }
 
 iWord& Word::operator++(int) {
-  Word temp(*this);
   _value++;
-  return temp;
+  return (*this);
 }
 
 bool Word::operator[](const int i) const {
