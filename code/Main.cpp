@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
     iterations = atoi(iteration_input.c_str());
 
 
-    cout << "Select Execution Mode: (Trace, Step, Full) ";
+    cout << "Select Execution Mode: (Trace, Step, Quiet) ";
     string mode;
     getline(cin, mode);
     if (mode[0] == 'T' || mode[0] == 't') {
@@ -94,10 +94,10 @@ int main(int argc, char* argv[]) {
       simulator.DisplayRegisters();
       simulator.DisplayMemory();
     }
-    else if (mode[0] == 'F' || mode[0] == 'f') {
-      cout << "[Full Mode]" << endl;
+    else if (mode[0] == 'Q' || mode[0] == 'q') {
+      cout << "[Quiet Mode]" << endl;
 
-      while (simulator.ExecuteNext(true) && iterations != 0) {
+      while (simulator.ExecuteNext(false) && iterations != 0) {
         --iterations;
       }
     }

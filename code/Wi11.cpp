@@ -71,7 +71,7 @@ void Wi11::_UpdateCCR(int value) {
 
 RESULT Wi11::_Add(const REGISTER_ID& DR, const REGISTER_ID& SR1, const REGISTER_ID& SR2) {
   _GetRegister(DR) = _GetRegister(SR1) + _GetRegister(SR2);
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
   return SUCCESS;
 }
 
@@ -83,13 +83,13 @@ RESULT Wi11::_Add(const REGISTER_ID& DR, const REGISTER_ID& SR1, const iWord& im
   for (int i=5;i<16;i++) sign_extended.SetBit(i, extend);
 
   _GetRegister(DR) = _GetRegister(SR1).GetValue() + sign_extended;
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
   return SUCCESS;
 }
 
 RESULT Wi11::_And(const REGISTER_ID& DR, const REGISTER_ID& SR1, const REGISTER_ID& SR2) {
   _GetRegister(DR) = _GetRegister(SR1).And(_GetRegister(SR2));
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
   return SUCCESS;
 }
 
@@ -102,7 +102,7 @@ RESULT Wi11::_And(const REGISTER_ID& DR, const REGISTER_ID& SR1, const iWord& im
 
   Register temp_reg(sign_extended);
   _GetRegister(DR) = _GetRegister(SR1).And(temp_reg);
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
   return SUCCESS;
 }
 
@@ -145,7 +145,7 @@ RESULT Wi11::_Load(const REGISTER_ID& DR, const iWord& address) {
   for (int i=0;i<9;i++) new_address.SetBit(i, address[i]);
 
   _GetRegister(DR) = _memory.Load(new_address);
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
 
   return SUCCESS;
 }
@@ -155,7 +155,7 @@ RESULT Wi11::_LoadI(const REGISTER_ID& DR, const iWord& address) {
   for (int i=0;i<9;i++) new_address.SetBit(i, address[i]);
 
   _GetRegister(DR) = _memory.Load(_memory.Load(new_address));
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
 
   return SUCCESS;
 }
@@ -163,7 +163,7 @@ RESULT Wi11::_LoadI(const REGISTER_ID& DR, const iWord& address) {
 RESULT Wi11::_LoadR(const REGISTER_ID& DR, const REGISTER_ID& baseR, const iWord& address) {
   Register temp_rep(address);
   _GetRegister(DR) = _memory.Load((_GetRegister(baseR) + temp_rep).GetValue());
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
 
   return SUCCESS;
 }
@@ -173,7 +173,7 @@ RESULT Wi11::_LoadEA(const REGISTER_ID& DR, const iWord& address) {
   for (int i=0;i<9;i++) new_address.SetBit(i, address[i]);
 
   _GetRegister(DR) = _memory.Load(new_address);
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
 
   return SUCCESS;
 }
@@ -181,7 +181,7 @@ RESULT Wi11::_LoadEA(const REGISTER_ID& DR, const iWord& address) {
 RESULT Wi11::_Not(const REGISTER_ID& DR, const REGISTER_ID& SR) {
   _GetRegister(DR) = _GetRegister(SR);
   _GetRegister(DR).Not();
-  _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
+  _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
   return SUCCESS;
 }
 
@@ -229,7 +229,7 @@ RESULT Wi11::_Trap(const iWord& code) {
       new_R0_value.FromInt((int)c);
       _R0 = new_R0_value;
 
-      _UpdateCCR(_R0.GetValue().ToInt());
+      _UpdateCCR(_R0.GetValue().ToInt2Complement());
     } break;
     case 0x25: {
       return HALT;
@@ -246,7 +246,7 @@ RESULT Wi11::_Trap(const iWord& code) {
       new_R0_value.FromInt(c);
       _R0 = new_R0_value;
 
-      _UpdateCCR(_R0.GetValue().ToInt());
+      _UpdateCCR(_R0.GetValue().ToInt2Complement());
     } break;
     case 0x43: {
       srand(time(NULL));
@@ -254,7 +254,7 @@ RESULT Wi11::_Trap(const iWord& code) {
       new_R0_value.FromInt(rand()%65536); // 2^16 = 65,536
       _R0 = new_R0_value;
 
-      _UpdateCCR(_R0.GetValue().ToInt());
+      _UpdateCCR(_R0.GetValue().ToInt2Complement());
     } break;
     default: {
       return INVALID_TRAP_CODE;
