@@ -33,6 +33,9 @@ class Wi11 : public iWi11 {
     Decoder _decoder;
     //! For error messages.
     ResultDecoder _result_decoder;
+
+    //! Translates an internal Register ID identifier into human readable string format.
+    std::string _RegisterID2String(const Decoder_Directory::REGISTER_ID&) const;
     
     Decoder_Directory::REGISTER_ID _Word2RegisterID(const Word&) const;
     iRegister& _GetRegister(const Decoder_Directory::REGISTER_ID&);
