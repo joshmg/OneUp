@@ -308,8 +308,10 @@ void Wi11::DisplayRegisters() const {
 }
 
 bool Wi11::ExecuteNext(bool verbose) {
+  if (verbose) cout << "PC[" << _PC.GetValue().ToHex() << "]: ";
   Instruction instruction = _decoder.DecodeInstruction(_memory.Load(_PC.GetValue()));
   _PC++;
+  cout << instruction.type << endl;
 
   switch (instruction.type) {
     case ADD: {
@@ -417,7 +419,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case LD: {
-      if (verbose) cout << "LD operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[" << instruction.data[0].ToHex() << "] :: ";
+      if (verbose) cout << "LD operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[Raw Value=" << instruction.data[0].ToHex() << "] :: ";
       RESULT result = _Load(_Word2RegisterID(instruction.data[0]), instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
