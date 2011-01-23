@@ -1,4 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$classiLoader.html" title="Defines how the Wi&#45;11 initializes memory." alt="" coords="5,5,75,35"/>
-<area shape="rect" id="node3" href="$classLoader.html" title="Implements iLoader." alt="" coords="123,5,189,35"/>
+<area shape="rect" id="node1" href="$classiDecoder.html" title="Defines how Wi&#45;11 instructions are decoded." alt="" coords="7,5,84,35"/>
 </map>

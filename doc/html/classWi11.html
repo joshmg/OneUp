@@ -65,7 +65,7 @@ Collaboration diagram for Wi11:<!-- endSectionHeader --></div>
 <!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
 <div class="center"><img src="classWi11__coll__graph.png" border="0" usemap="#Wi11_coll__map" alt="Collaboration graph"/></div>
 <map name="Wi11_coll__map" id="Wi11_coll__map">
-<area shape="rect" id="node2" href="classiWi11.html" title="Defines the internal logic of the Wi&#45;11." alt="" coords="5,181,59,211"/><area shape="rect" id="node4" href="classResultDecoder.html" title="Finds the messages associated with a given result code." alt="" coords="83,181,197,211"/><area shape="rect" id="node6" href="classRegister.html" title="Implements iRegister." alt="" coords="221,181,296,211"/><area shape="rect" id="node8" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="187,85,264,115"/><area shape="rect" id="node10" href="classWord.html" title="Implements iWord." alt="" coords="288,85,341,115"/><area shape="rect" id="node12" href="classiWord.html" title="Defines a &quot;word&quot; of data on the Wi&#45;11 Machine." alt="" coords="287,5,343,35"/><area shape="rect" id="node14" href="structWi11_1_1CCR.html" title="Condition code registers: negative, zero, positive." alt="" coords="320,181,405,211"/><area shape="rect" id="node16" href="classMemory.html" title="Implements iMemory." alt="" coords="429,181,504,211"/><area shape="rect" id="node18" href="classiMemory.html" title="Defines the functionality of memory in the Wi&#45;11 machine." alt="" coords="428,85,505,115"/></map>
+<area shape="rect" id="node2" href="classiWi11.html" title="Defines the internal logic of the Wi&#45;11." alt="" coords="5,181,59,211"/><area shape="rect" id="node4" href="classResultDecoder.html" title="Finds the messages associated with a given result code." alt="" coords="83,181,197,211"/><area shape="rect" id="node6" href="classLoader.html" title="Implements iLoader." alt="" coords="221,181,288,211"/><area shape="rect" id="node8" href="classiLoader.html" title="Defines how the Wi&#45;11 initializes memory." alt="" coords="189,85,259,115"/><area shape="rect" id="node10" href="classiMemory.html" title="Defines the functionality of memory in the Wi&#45;11 machine." alt="" coords="295,85,372,115"/><area shape="rect" id="node24" href="classMemory.html" title="Implements iMemory." alt="" coords="312,181,387,211"/><area shape="rect" id="node12" href="classRegister.html" title="Implements iRegister." alt="" coords="411,181,485,211"/><area shape="rect" id="node14" href="classiRegister.html" title="Defines a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="403,85,480,115"/><area shape="rect" id="node16" href="classWord.html" title="Implements iWord." alt="" coords="504,85,557,115"/><area shape="rect" id="node18" href="classiWord.html" title="Defines a &quot;word&quot; of data on the Wi&#45;11 Machine." alt="" coords="503,5,559,35"/><area shape="rect" id="node20" href="classDecoder.html" title="Decoder" alt="" coords="509,181,584,211"/><area shape="rect" id="node22" href="structWi11_1_1CCR.html" title="Condition code registers: negative, zero, positive." alt="" coords="608,181,693,211"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center><!-- endSectionContent --></div>
 
 <p><a href="classWi11-members.html">List of all members.</a></p>
@@ -82,63 +82,63 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DisplayMemory
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DisplayRegisters</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace44826e4f92aabd233b68bdd9437c1b"></a><!-- doxytag: member="Wi11::ExecuteNext" ref="ace44826e4f92aabd233b68bdd9437c1b" args="(bool verbose=false)" -->
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>ExecuteNext</b> (bool verbose=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1df37ddc05a51bc3adabf51b50ad39e"></a><!-- doxytag: member="Wi11::iWi11" ref="ab1df37ddc05a51bc3adabf51b50ad39e" args="()" -->
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>iWi11</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50af76350b3e72c75d42035582aeb321"></a><!-- doxytag: member="Wi11::LoadObj" ref="a50af76350b3e72c75d42035582aeb321" args="(const char *)" -->
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadObj</b> (const char *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWi11.html#ad8e6d1a1e39832bdc650f2ca3cfa2d3e">Wi11</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and organizes the componts of the <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> machine.  <a href="#ad8e6d1a1e39832bdc650f2ca3cfa2d3e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82892426bc10c28481476ee9fdfc163d"></a><!-- doxytag: member="Wi11::_Add" ref="a82892426bc10c28481476ee9fdfc163d" args="(const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR1, const Decoder::REGISTER_ID &amp;SR2)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Add</b> (const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR1, const Decoder::REGISTER_ID &amp;SR2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a858c595ea8ef9c96a13c579e0de5b5e6"></a><!-- doxytag: member="Wi11::_Add" ref="a858c595ea8ef9c96a13c579e0de5b5e6" args="(const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR1, const iWord &amp;immediate)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Add</b> (const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR1, const <a class="el" href="classiWord.html">iWord</a> &amp;immediate)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75d0c6dd25cf3268da64475243b4a622"></a><!-- doxytag: member="Wi11::_And" ref="a75d0c6dd25cf3268da64475243b4a622" args="(const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR1, const Decoder::REGISTER_ID &amp;SR2)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_And</b> (const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR1, const Decoder::REGISTER_ID &amp;SR2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a276affccb92fa84d879ed1b5081247f4"></a><!-- doxytag: member="Wi11::_And" ref="a276affccb92fa84d879ed1b5081247f4" args="(const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR1, const iWord &amp;immediate)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_And</b> (const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR1, const <a class="el" href="classiWord.html">iWord</a> &amp;immediate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90f2c17048a889b52b99ef2334f0ba55"></a><!-- doxytag: member="Wi11::_Add" ref="a90f2c17048a889b52b99ef2334f0ba55" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Add</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b5e86294f943344021336108309bb52"></a><!-- doxytag: member="Wi11::_Add" ref="a9b5e86294f943344021336108309bb52" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const iWord &amp;immediate)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Add</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const <a class="el" href="classiWord.html">iWord</a> &amp;immediate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b6fb3285c524e01ae94f2204a4b50f1"></a><!-- doxytag: member="Wi11::_And" ref="a9b6fb3285c524e01ae94f2204a4b50f1" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_And</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const Decoder_Directory::REGISTER_ID &amp;SR2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7a7fcfe6f5ebae0a2ab31be6029002e"></a><!-- doxytag: member="Wi11::_And" ref="aa7a7fcfe6f5ebae0a2ab31be6029002e" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const iWord &amp;immediate)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_And</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR1, const <a class="el" href="classiWord.html">iWord</a> &amp;immediate)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01960bc45e7a70a276d91ff01cd637f9"></a><!-- doxytag: member="Wi11::_Branch" ref="a01960bc45e7a70a276d91ff01cd637f9" args="(const iWord &amp;address)" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Branch</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10d6c79140c97919e2778d1c4d6f8102"></a><!-- doxytag: member="Wi11::_Debug" ref="a10d6c79140c97919e2778d1c4d6f8102" args="()" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Debug</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22228a86b6d5c60c8f403e8fc087077f"></a><!-- doxytag: member="Wi11::_GetRegister" ref="a22228a86b6d5c60c8f403e8fc087077f" args="(const Decoder::REGISTER_ID &amp;)" -->
-<a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>_GetRegister</b> (const Decoder::REGISTER_ID &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b4a726a80ca57b9ce37d73d641b2072"></a><!-- doxytag: member="Wi11::_GetRegister" ref="a7b4a726a80ca57b9ce37d73d641b2072" args="(const Decoder_Directory::REGISTER_ID &amp;)" -->
+<a class="el" href="classiRegister.html">iRegister</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>_GetRegister</b> (const Decoder_Directory::REGISTER_ID &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52b3325579e31ff96b4b441e682f7a9d"></a><!-- doxytag: member="Wi11::_JSR" ref="a52b3325579e31ff96b4b441e682f7a9d" args="(const iWord &amp;, bool)" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_JSR</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;, bool)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1237dd5c6468b287113a5d500bef9b3a"></a><!-- doxytag: member="Wi11::_JSRR" ref="a1237dd5c6468b287113a5d500bef9b3a" args="(const Decoder::REGISTER_ID &amp;baseR, const iWord &amp;address, bool link)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_JSRR</b> (const Decoder::REGISTER_ID &amp;baseR, const <a class="el" href="classiWord.html">iWord</a> &amp;address, bool link)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb3e3507402d031a76b2e0bf3cc87b66"></a><!-- doxytag: member="Wi11::_Load" ref="afb3e3507402d031a76b2e0bf3cc87b66" args="(const Decoder::REGISTER_ID &amp;DR, const iWord &amp;address)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Load</b> (const Decoder::REGISTER_ID &amp;DR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8489eac0842d1a532be30ccc99f6f49"></a><!-- doxytag: member="Wi11::_LoadEA" ref="af8489eac0842d1a532be30ccc99f6f49" args="(const Decoder::REGISTER_ID &amp;DR, const iWord &amp;address)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_LoadEA</b> (const Decoder::REGISTER_ID &amp;DR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a671e0d7845b262149005cd834cf28c31"></a><!-- doxytag: member="Wi11::_LoadI" ref="a671e0d7845b262149005cd834cf28c31" args="(const Decoder::REGISTER_ID &amp;DR, const iWord &amp;address)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_LoadI</b> (const Decoder::REGISTER_ID &amp;DR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ebf9deef5d86157aa1f4c01fe888a4f"></a><!-- doxytag: member="Wi11::_LoadR" ref="a8ebf9deef5d86157aa1f4c01fe888a4f" args="(const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;baseR, const iWord &amp;address)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_LoadR</b> (const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;baseR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82aa3fdb656277723b2c0937206ccdae"></a><!-- doxytag: member="Wi11::_Not" ref="a82aa3fdb656277723b2c0937206ccdae" args="(const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Not</b> (const Decoder::REGISTER_ID &amp;DR, const Decoder::REGISTER_ID &amp;SR)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9b81d78bd364390dbe12bb29c3f0967"></a><!-- doxytag: member="Wi11::_JSRR" ref="ac9b81d78bd364390dbe12bb29c3f0967" args="(const Decoder_Directory::REGISTER_ID &amp;baseR, const iWord &amp;address, bool link)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_JSRR</b> (const Decoder_Directory::REGISTER_ID &amp;baseR, const <a class="el" href="classiWord.html">iWord</a> &amp;address, bool link)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0538e8d3ca35e6ca84646ae4b81ad5bd"></a><!-- doxytag: member="Wi11::_Load" ref="a0538e8d3ca35e6ca84646ae4b81ad5bd" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const iWord &amp;address)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Load</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b78bd154ed91178ea798bfd83bdc781"></a><!-- doxytag: member="Wi11::_LoadEA" ref="a8b78bd154ed91178ea798bfd83bdc781" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const iWord &amp;address)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_LoadEA</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1eabd2329888b4ac7785fe67a066f814"></a><!-- doxytag: member="Wi11::_LoadI" ref="a1eabd2329888b4ac7785fe67a066f814" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const iWord &amp;address)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_LoadI</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff3d7b77430caa90933276c664c303fc"></a><!-- doxytag: member="Wi11::_LoadR" ref="aff3d7b77430caa90933276c664c303fc" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;baseR, const iWord &amp;address)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_LoadR</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;baseR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad343c78722e67d6bcfa8f5f52c525a97"></a><!-- doxytag: member="Wi11::_Not" ref="ad343c78722e67d6bcfa8f5f52c525a97" args="(const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Not</b> (const Decoder_Directory::REGISTER_ID &amp;DR, const Decoder_Directory::REGISTER_ID &amp;SR)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cbd4e75c8c10f69f4159c02955b4a1f"></a><!-- doxytag: member="Wi11::_Ret" ref="a8cbd4e75c8c10f69f4159c02955b4a1f" args="()" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Ret</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a466a425d5490850afc2f385b1ce47573"></a><!-- doxytag: member="Wi11::_STI" ref="a466a425d5490850afc2f385b1ce47573" args="(const Decoder::REGISTER_ID &amp;SR, const iWord &amp;address)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_STI</b> (const Decoder::REGISTER_ID &amp;SR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeaafd928d0e450924a1b29fd3a6b828a"></a><!-- doxytag: member="Wi11::_Store" ref="aeaafd928d0e450924a1b29fd3a6b828a" args="(const Decoder::REGISTER_ID &amp;SR, const iWord &amp;address)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Store</b> (const Decoder::REGISTER_ID &amp;SR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f6249d939e8f1aa2219a0f7c5e732e6"></a><!-- doxytag: member="Wi11::_STR" ref="a0f6249d939e8f1aa2219a0f7c5e732e6" args="(const Decoder::REGISTER_ID &amp;SR, const Decoder::REGISTER_ID &amp;baseR, const iWord &amp;address)" -->
-virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_STR</b> (const Decoder::REGISTER_ID &amp;SR, const Decoder::REGISTER_ID &amp;baseR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a914c3e753a0182effc6d01f3de4cdd24"></a><!-- doxytag: member="Wi11::_STI" ref="a914c3e753a0182effc6d01f3de4cdd24" args="(const Decoder_Directory::REGISTER_ID &amp;SR, const iWord &amp;address)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_STI</b> (const Decoder_Directory::REGISTER_ID &amp;SR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac65b835648a3ecdaa76ceaf49141d3d6"></a><!-- doxytag: member="Wi11::_Store" ref="ac65b835648a3ecdaa76ceaf49141d3d6" args="(const Decoder_Directory::REGISTER_ID &amp;SR, const iWord &amp;address)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Store</b> (const Decoder_Directory::REGISTER_ID &amp;SR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac623d5c7aac534d1eb774892b82c28ec"></a><!-- doxytag: member="Wi11::_STR" ref="ac623d5c7aac534d1eb774892b82c28ec" args="(const Decoder_Directory::REGISTER_ID &amp;SR, const Decoder_Directory::REGISTER_ID &amp;baseR, const iWord &amp;address)" -->
+virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_STR</b> (const Decoder_Directory::REGISTER_ID &amp;SR, const Decoder_Directory::REGISTER_ID &amp;baseR, const <a class="el" href="classiWord.html">iWord</a> &amp;address)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac62ce0a9f8df8dacab577cee514cb199"></a><!-- doxytag: member="Wi11::_Trap" ref="ac62ce0a9f8df8dacab577cee514cb199" args="(const iWord &amp;code)" -->
 virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>_Trap</b> (const <a class="el" href="classiWord.html">iWord</a> &amp;code)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55dd619a7cf329849f5a3b22e37d00ed"></a><!-- doxytag: member="Wi11::_UpdateCCR" ref="a55dd619a7cf329849f5a3b22e37d00ed" args="(int)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>_UpdateCCR</b> (int)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abba9724054093a987468c0b14bf8fcda"></a><!-- doxytag: member="Wi11::_Word2RegisterID" ref="abba9724054093a987468c0b14bf8fcda" args="(const Word &amp;) const " -->
-REGISTER_ID&#160;</td><td class="memItemRight" valign="bottom"><b>_Word2RegisterID</b> (const <a class="el" href="classWord.html">Word</a> &amp;) const </td></tr>
+Decoder_Directory::REGISTER_ID&#160;</td><td class="memItemRight" valign="bottom"><b>_Word2RegisterID</b> (const <a class="el" href="classWord.html">Word</a> &amp;) const </td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84cb35829890fca6122c023229007002"></a><!-- doxytag: member="Wi11::_CCR" ref="a84cb35829890fca6122c023229007002" args="" -->
 struct <a class="el" href="structWi11_1_1CCR.html">Wi11::CCR</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_CCR</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a145d0e52ef8bfd21d7b5a0ff3fea43d1"></a><!-- doxytag: member="Wi11::_decoder" ref="a145d0e52ef8bfd21d7b5a0ff3fea43d1" args="" -->
-Decoder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWi11.html#a145d0e52ef8bfd21d7b5a0ff3fea43d1">_decoder</a></td></tr>
+<a class="el" href="classDecoder.html">Decoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWi11.html#a145d0e52ef8bfd21d7b5a0ff3fea43d1">_decoder</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For decoding instructions fetch from memory. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22efbed824867b4f355062a31f93d8e2"></a><!-- doxytag: member="Wi11::_loader" ref="a22efbed824867b4f355062a31f93d8e2" args="" -->
-ObjLoader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWi11.html#a22efbed824867b4f355062a31f93d8e2">_loader</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adedbd5442a90d131f8cfadc8d3eb233f"></a><!-- doxytag: member="Wi11::_loader" ref="adedbd5442a90d131f8cfadc8d3eb233f" args="" -->
+<a class="el" href="classLoader.html">Loader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWi11.html#adedbd5442a90d131f8cfadc8d3eb233f">_loader</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For loading the object file. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07d3ee0573a4ea7d260574120da9dec1"></a><!-- doxytag: member="Wi11::_memory" ref="a07d3ee0573a4ea7d260574120da9dec1" args="" -->
 <a class="el" href="classMemory.html">Memory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWi11.html#a07d3ee0573a4ea7d260574120da9dec1">_memory</a></td></tr>
@@ -168,6 +168,26 @@ ObjLoader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Implements <a class="el" href="classiWi11.html" title="Defines the internal logic of the Wi-11.">iWi11</a>. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad8e6d1a1e39832bdc650f2ca3cfa2d3e"></a><!-- doxytag: member="Wi11::Wi11" ref="ad8e6d1a1e39832bdc650f2ca3cfa2d3e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Wi11::Wi11 </td>
+          <td>(</td>
+          <td class="paramname">&#160;)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates and organizes the componts of the <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> machine. </p>
+<p>Initializes the general purpose registers, <a class="el" href="structWi11_1_1CCR.html" title="Condition code registers: negative, zero, positive.">CCR</a>, and memory. </p>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -183,7 +203,7 @@ ObjLoader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 19:01:10 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

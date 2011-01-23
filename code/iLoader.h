@@ -14,19 +14,11 @@
     
     This class loads the instruction from the object file into memory.
 */
+
 class iLoader {
   private:
     
   public:
-    /*! @brief Set which Memory object is to be initialized by this object.
-        @param[in] mem The address where memory is located.
-        
-        @note
-        Without this there would be nowhere to load the instructions.
-    */
-    virtual iLoader(iMemory* mem) = 0;
-
-
     /*! @brief Perform the loads to memory (storing the instructions).
         @param[in] filename The name of the object file to be read.
         @param[out] PC_address The value to be stored in the PC to start execution.

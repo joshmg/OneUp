@@ -10,38 +10,12 @@ Defines how the Wi-\/11 initializes memory.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual \hyperlink{classiLoader_aeb68364c9e80d9dc5cb0f0299073c719}{iLoader} (\hyperlink{classiMemory}{iMemory} $\ast$mem)=0
-\begin{DoxyCompactList}\small\item\em Set which \hyperlink{classMemory}{Memory} object is to be initialized by this object. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiLoader_a012bf942ef5210dd8797e1a20d8c5e13}{Load} (const char $\ast$filename, \hyperlink{classiWord}{iWord} \&PC\_\-address) const =0
 \begin{DoxyCompactList}\small\item\em Perform the loads to memory (storing the instructions). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Defines how the Wi-\/11 initializes memory. This class loads the instruction from the object file into memory. 
-
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classiLoader_aeb68364c9e80d9dc5cb0f0299073c719}{
-\index{iLoader@{iLoader}!iLoader@{iLoader}}
-\index{iLoader@{iLoader}!iLoader@{iLoader}}
-\subsubsection[{iLoader}]{\setlength{\rightskip}{0pt plus 5cm}iLoader::iLoader (
-\begin{DoxyParamCaption}
-\item[{{\bf iMemory} $\ast$}]{ mem}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{classiLoader_aeb68364c9e80d9dc5cb0f0299073c719}
-
-
-Set which \hyperlink{classMemory}{Memory} object is to be initialized by this object. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em mem} & The address where memory is located.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyNote}{Note}
-Without this there would be nowhere to load the instructions. 
-\end{DoxyNote}
-
 
 \subsection{Member Function Documentation}
 \hypertarget{classiLoader_a012bf942ef5210dd8797e1a20d8c5e13}{

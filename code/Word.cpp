@@ -201,7 +201,8 @@ bool Word::operator[](const int i) const {
   return _HasBit(i);
 }
 
-void Word::SetBit(const int i) {
-  _value |= (int)(pow(2.0f, (float)i)); // logical OR
+void Word::SetBit(const int i, bool on) {
+  if (on) _value |= (int)(pow(2.0f, (float)i)); // logical OR
+  else _value &= ~((int)(pow(2.0f, (float)i))); // logical And with inverted integer
 }
 

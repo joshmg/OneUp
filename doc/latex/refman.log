@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/MacPorts 2010_1) (format=pdflatex 2011.1.20)  22 JAN 2011 17:34
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/MacPorts 2010_1) (format=pdflatex 2011.1.20)  22 JAN 2011 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -846,7 +846,841 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 
 
 Writing index file refman.idx
-(./refman.aux)
+(./refman.aux
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 <
+      <<<<<< HEAD
+? 
+
+LaTeX Warning: Label `namespaceCodes' multiply defined.
+
+
+LaTeX Warning: Label `namespaceDecoder' multiply defined.
+
+
+LaTeX Warning: Label `classiDecoder' multiply defined.
+
+
+LaTeX Warning: Label `classiDecoder_a156d35f70da4bd96dce3b5b0b97d138c' multiply
+ defined.
+
+
+LaTeX Warning: Label `classiLoader' multiply defined.
+
+
+LaTeX Warning: Label `classiLoader_aeb68364c9e80d9dc5cb0f0299073c719' multiply 
+defined.
+
+
+LaTeX Warning: Label `classiLoader_a012bf942ef5210dd8797e1a20d8c5e13' multiply 
+defined.
+
+
+LaTeX Warning: Label `classiMemory' multiply defined.
+
+
+LaTeX Warning: Label `classiMemory_aa9b57e00c0099963ab28489008d612e8' multiply 
+defined.
+
+
+LaTeX Warning: Label `classiMemory_a27750e74d09fb473c163a4cc4c3e697b' multiply 
+defined.
+
+
+LaTeX Warning: Label `classiMemory_a3352ba391fc9b69a0b8691b2d585596a' multiply 
+defined.
+
+
+LaTeX Warning: Label `classiMemory_a2632c9999797b0799a7d6b0a59bfa91a' multiply 
+defined.
+
+
+LaTeX Warning: Label `structInstruction' multiply defined.
+
+
+LaTeX Warning: Label `structInstruction_afc9f26527635d9d851759eab142e5ec7' mult
+iply defined.
+
+
+LaTeX Warning: Label `structInstruction_a93f6b7366b14b17d8379ea952687960c' mult
+iply defined.
+
+
+LaTeX Warning: Label `classiObjParser' multiply defined.
+
+
+LaTeX Warning: Label `classiObjParser_ae88aacaa19a6aa6d4a7c82c02eabc3dc' multip
+ly defined.
+
+
+LaTeX Warning: Label `classiObjParser_a570e7a7dfb64b66e7a78f75ec4da193a' multip
+ly defined.
+
+
+LaTeX Warning: Label `classiObjParser_aeb9af4a40a06e755d8b0e493526d82dd' multip
+ly defined.
+
+
+LaTeX Warning: Label `classiRegister' multiply defined.
+
+
+LaTeX Warning: Label `classiRegister_ae7266f6f981b621f53f3c7cf77d4966a' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_acb13aa880933f43088958723c9d6e564' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_abaaacfa8cb18bea90a78673bd572a1c8' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_af8ab19234f44a0bade65cb35fd2cd036' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_a98de346c2d0b15bee47d76bc5f70e94b' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_ad7eb424400d184f1829664dd4f87ce5c' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_a01f837097cb87ec33fdc1cef606e1842' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_ae8114106e70653a705f04ba3892ed9e1' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_aa9a15ebfeea1e5857a1098b73cc583ad' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_aa0eac4fe58bde4a280a42fda1c087eee' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_af5f065e89ef31d2ed40a1e80d9231bfd' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_af4bbbe945b151dee3f1743c43a451cb3' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_aca99e377de5cd1ef136a850d85143cf3' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_a8ffac24d1d7326e1a15f9b37cd426969' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_ac2b021b80a890f010fc68826e29fee47' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_a16bf3f305a9588ddc85c109ac9a8b47b' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_a3280dc5af6b828d875c57c3a3eac54d9' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_abca2bcea556d63fb4e3504df221cdc62' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiRegister_a36e6e1bfbc6a9fe203e8fb5b9f6396cb' multipl
+y defined.
+
+
+LaTeX Warning: Label `classiWi11' multiply defined.
+
+
+LaTeX Warning: Label `classiWi11_a379b2619c928a8dde1df28d596440ec0' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_aa1696b5bb260a94e1fb4a9922369cebf' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a65f699c773084a631cd7373cae05b5da' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a6345dc089e3a699bd30fc442bd8f6d85' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a90cd8f3daa1788f029cabe198c19efb3' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a4785e197f77fb0861e97e8d18c3be96f' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a42d2c50609424634873413d7a6614397' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_ae510f127a0c3b87d42cdbe5b14204a65' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_ace280c40256d3e0c575b08cf6a0d36f5' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_aeabd561f2728e2345b6a5ae5cdd5b84a' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_aed1f870b129617436434bb6dcee521ce' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_ab8f6fc32bfc363f9798c795320c00894' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a47fd64cc3629f9239c75fa4fea753c41' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a942ecd7956af6ad9c65c976b968d7832' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_ae6c1048642dbf2c03c60062f6aaabfd2' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a52659070aca67bf8fba76f059bc120aa' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a3a299e4526c8c9865f529cc10e293a0c' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a5002f010e61f0677feb9f8a116504a0c' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a74da9304180f3cbece4b7e87e8a53a5d' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a87f8cd9014f7ae2edaa8928257fc84e9' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_ad9b13831ad9a83a8abbc3a77794b38bc' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_a143e669e3c7f46c3d1524838c8d74d94' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWi11_ae502d86eb25fe6e1169e800939362074' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord' multiply defined.
+
+
+LaTeX Warning: Label `classiWord_adcef1925ad309d54c9a3e896af5d5350' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a68129605beb127647ecc59129f1c07f7' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_acebcfc4edd3498c962a6a2379a88accf' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a7d7cb4facca44fc785899d01e47f29b1' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a1229f8249c32e01ccee035a205954a62' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a6e40a4873ca945b119318a85c75a0fcf' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_abd4229c26d0a2ff17b0a6bdb74240388' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_ac5967eac5182607ac41b9ce6c3a74cb8' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a146bf924df8cbb03fbe8152e5e44edbe' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a8e2da1fb4c3ffcc78e1d94f1798797ec' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a8fbd3f879952196cca2e4f03bac3890b' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_ad9caea73d7a990bf5189ba1e44ec7865' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a2f57b8b8739d1ce6c043494696a9f685' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a6a7602a8220d84b5201a789b597fbbde' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_ac5ca71cd1defb94cd1f3536a59612a4e' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a56d5d0a8d7e27cf8ef161f8e128ace83' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_af20040c25b79d2aeae41f1714fbb2cbc' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a6777f6f41915179c4255d3647a9eb4b5' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_a0e83901b08763247527ce61c89fd847f' multiply de
+fined.
+
+
+LaTeX Warning: Label `classiWord_adfc0d2e05f06bc51ef29a385a062a435' multiply de
+fined.
+
+
+LaTeX Warning: Label `classLoader' multiply defined.
+
+
+LaTeX Warning: Label `structWi11_1_1CCR' multiply defined.
+
+
+LaTeX Warning: Label `structWi11_1_1CCR_a7e9b9c393d64db1165ea6a8cd2e58dee' mult
+iply defined.
+
+
+LaTeX Warning: Label `structWi11_1_1CCR_add5febe92839418fdb0e54c0d94085b5' mult
+iply defined.
+
+
+LaTeX Warning: Label `structWi11_1_1CCR_ad6f366ac578bd093ce61f20792ad2eb8' mult
+iply defined.
+
+
+LaTeX Warning: Label `classLoader_a5e7c0fcca7b8bf89db54e1b65d28e309' multiply d
+efined.
+
+
+LaTeX Warning: Label `classLoader_a337a13cc72c420d978660a2858ef8847' multiply d
+efined.
+
+
+LaTeX Warning: Label `classLoader_a134e26c9454ca019080aa9c06a4d52b4' multiply d
+efined.
+
+
+LaTeX Warning: Label `classMemory' multiply defined.
+
+
+LaTeX Warning: Label `classMemory_a8a06a6f30a19b58795ab40f9f48dca4f' multiply d
+efined.
+
+
+LaTeX Warning: Label `classMemory_a6391f325c42a93f4c56f0c44e6b35fda' multiply d
+efined.
+
+
+LaTeX Warning: Label `classMemory_a29d6fa2f1774f0c770130c968820d008' multiply d
+efined.
+
+
+LaTeX Warning: Label `classMemory_a3e5675ae2bc551a9c5429525e2dce857' multiply d
+efined.
+
+
+LaTeX Warning: Label `classMemory_a36f459f042295fb06b4d7ec9b397f952' multiply d
+efined.
+
+
+LaTeX Warning: Label `classMemory_a80cd994d4833dde66b8005184e510dda' multiply d
+efined.
+
+
+LaTeX Warning: Label `classMemory_aca021609915080b38ca1b00d9b416e80' multiply d
+efined.
+
+
+LaTeX Warning: Label `classMemory_a23703464fb24710d09be1b2010e79edc' multiply d
+efined.
+
+
+LaTeX Warning: Label `structObjectData' multiply defined.
+
+
+LaTeX Warning: Label `structObjectData_a77f1a74deb864606b1b5cc115c2a99a5' multi
+ply defined.
+
+
+LaTeX Warning: Label `structObjectData_af755ea276bafd67e377e869950c1eb48' multi
+ply defined.
+
+
+LaTeX Warning: Label `classObjParser' multiply defined.
+
+
+LaTeX Warning: Label `classObjParser_aea8cf97813333011fcfa8ed67327009d' multipl
+y defined.
+
+
+LaTeX Warning: Label `classObjParser_a93bd0dad6c35eaac9d537670c896660b' multipl
+y defined.
+
+
+LaTeX Warning: Label `classObjParser_a71ea25b566166b7db47a894cb7629390' multipl
+y defined.
+
+
+LaTeX Warning: Label `classObjParser_a653f83071fd63e3fdf04f28699f2fff5' multipl
+y defined.
+
+
+LaTeX Warning: Label `classRegister' multiply defined.
+
+
+LaTeX Warning: Label `classRegister_a6aea43b4c4ad669073f20fbcd274b49c' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_ad716faf568aba3da6e4acca6674f9ec9' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a379734c28ab8258ce528a96de24cfa1a' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a73d8564754d7ddb7e8349001010e688b' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a9d9c6801db55e8706eb242b1e0e0fa3f' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a55de0c3b5f8fe14df7c24bce777204e0' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a726a720b6bcca282945f1c0a65ca0dd4' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a05132a4a62f5c6883fdf78731970ab6a' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a43c957e4b6a3103f0634258891c82b46' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a312263efb06ef459409879f5119b3b81' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_af3502239502c214b8c9362a6fd9f8ff8' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_ab2f8407fab157d8deea936fa74424115' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a9400801cc625144c4606cd7f5cbbaa21' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_abbf5f6793328db8b28845cac84c0e82d' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a387bb50d01b47071c366708ea10ebdf0' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_affcc16cc88cdc896803b1ab6af5d38e0' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a2ac7bd6f2e0eb38800c0a8c8d045e18e' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_afc5f775405700146638e392d81ad7d0b' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_a00f7aaf798102e5c7a6fb311551b492f' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_ac4e78cff131bc5c69695a9db5ca35255' multiply
+ defined.
+
+
+LaTeX Warning: Label `classRegister_ae3414befdccf70a18df0f67dc19d86b7' multiply
+ defined.
+
+
+LaTeX Warning: Label `classResultDecoder' multiply defined.
+
+
+LaTeX Warning: Label `classResultDecoder_afafd3458bdbcbd7b1b95545f47151358' mul
+tiply defined.
+
+
+LaTeX Warning: Label `classResultDecoder_ace7c2719b4f9de2a5e25fccfddc6d8f4' mul
+tiply defined.
+
+
+LaTeX Warning: Label `classResultDecoder_ab19497e41c5d1a0546ed33642cad48dd' mul
+tiply defined.
+
+
+LaTeX Warning: Label `classWi11' multiply defined.
+
+
+LaTeX Warning: Label `classWi11_abba9724054093a987468c0b14bf8fcda' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a55dd619a7cf329849f5a3b22e37d00ed' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a82892426bc10c28481476ee9fdfc163d' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a858c595ea8ef9c96a13c579e0de5b5e6' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a75d0c6dd25cf3268da64475243b4a622' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a276affccb92fa84d879ed1b5081247f4' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a52b3325579e31ff96b4b441e682f7a9d' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a1237dd5c6468b287113a5d500bef9b3a' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_afb3e3507402d031a76b2e0bf3cc87b66' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a671e0d7845b262149005cd834cf28c31' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a8ebf9deef5d86157aa1f4c01fe888a4f' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_af8489eac0842d1a532be30ccc99f6f49' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a82aa3fdb656277723b2c0937206ccdae' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_aeaafd928d0e450924a1b29fd3a6b828a' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a466a425d5490850afc2f385b1ce47573' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a0f6249d939e8f1aa2219a0f7c5e732e6' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a07d3ee0573a4ea7d260574120da9dec1' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_afdde77e5fbf30ef6647572f5c3050b7c' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_aa3d29c00067f173976406a1b294abe21' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_af7831a8e06325bf439bfa5121663fe84' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a1d05b03b7df1196df0abddd7d2a37e09' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a3ce79df6a51764e7705aa259177bd420' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a3deb52eb81c25cb36572b4285eedebcb' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_af45f08232aa903851a295b5259f18905' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a0515ac512e8f8e3a122695f823d3abd7' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_af60b1a832f564e3ac52b4edf7edc8c9a' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a84cb35829890fca6122c023229007002' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a22efbed824867b4f355062a31f93d8e2' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a18515d6caafb4aba3d8a9220b4ac227e' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a22228a86b6d5c60c8f403e8fc087077f' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a01960bc45e7a70a276d91ff01cd637f9' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a10d6c79140c97919e2778d1c4d6f8102' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a8cbd4e75c8c10f69f4159c02955b4a1f' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_ac62ce0a9f8df8dacab577cee514cb199' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_ab1df37ddc05a51bc3adabf51b50ad39e' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a50af76350b3e72c75d42035582aeb321' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a0f532cefdebd3c33ddc93e8bce4dc06b' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_a201359b2506539dda72075b908076492' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWi11_ace44826e4f92aabd233b68bdd9437c1b' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord' multiply defined.
+
+
+LaTeX Warning: Label `classWord_a8449f26fb840ca22dcc2ba3fc816d068' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a7190b6fab0a952eac77da5c0f4ddd0cf' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_acf9a6c3d9cf07d66da592ec76f572464' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a4116e08d36472a287c06a4aa14e7ed4f' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a5f8c5dcdb847ed96021ef9282ccc7e76' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_af71af6fa290db8e9b4719c2b95ba9af0' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_aed80a61d7e2da2dbcde483058acd4259' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a0b255da1e924b2ab520cc5ca271bacf0' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a247de32d413b48d2934f41caaa6cce77' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_ae9478910c6cb8c30abeedf7fc6ba5b36' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a0fa830d2d54ba68107d035c316b8d3ab' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_aef1af160cdcc631473aec52ea883e2e5' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_af930dcccdcf2cdbb90df31ac61a4933c' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a08eca1ca0af51daee452ba719f9407c5' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a681da292897265ae47f144a99d49d9ec' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_afdecfa9e3f2fda36496f249617a4cef5' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a8c094d866fe9af5da5d32c98430a86f8' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a2a3d8ab2639aada7a1aafcd3acd3900f' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a3837f49bcb44597e6d738ccb0eeed144' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_ae921b75d263be790fd150c5962445163' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a0b08a81ced05b38d3d719ef70ecb3215' multiply def
+ined.
+
+
+LaTeX Warning: Label `classWord_a8b0aa1f2042266f307c51b3bdafa9128' multiply def
+ined.
+
+
+LaTeX Warning: Label `iDecoder_8h' multiply defined.
+
+
+LaTeX Warning: Label `iLoader_8h' multiply defined.
+
+
+LaTeX Warning: Label `iMemory_8h' multiply defined.
+
+
+LaTeX Warning: Label `iObjParser_8h' multiply defined.
+
+
+LaTeX Warning: Label `iRegister_8h' multiply defined.
+
+
+LaTeX Warning: Label `iWi11_8h' multiply defined.
+
+
+LaTeX Warning: Label `iWord_8h' multiply defined.
+
+
+LaTeX Warning: Label `Memory_8h' multiply defined.
+
+
+LaTeX Warning: Label `ObjParser_8cpp' multiply defined.
+
+
+LaTeX Warning: Label `ObjParser_8h' multiply defined.
+
+
+LaTeX Warning: Label `Register_8h' multiply defined.
+
+
+LaTeX Warning: Label `Wi11_8h' multiply defined.
+
+
+LaTeX Warning: Label `Word_8cpp' multiply defined.
+
+
+LaTeX Warning: Label `Word_8h' multiply defined.
+
+
+LaTeX Warning: Label `Word_8h_a92ed8507d1cd2331ad09275c5c4c1c89' multiply defin
+ed.
+
+)
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -880,6 +1714,150 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 38.
 
 (/opt/local/share/texmf-texlive-dist/tex/context/base/supp-pdf.mkii
+Overfull \hbox (1.02332pt too wide) in paragraph at lines 40--13
+[]\T1/cmr/m/n/10 <<<<<<< HEAD   =======   >>>>>>> 0c2784b7b8fc17f14329c62b3e2a4
+2023b685c4a
+ []
+
+
+Overfull \hbox (7.68396pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b685c4a  <<<<<<< HEAD  
+     =======
+ []
+
+
+Overfull \hbox (9.90454pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b685c4a  <<<<<<< HEAD  
+      =======
+ []
+
+
+Overfull \hbox (49.88379pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b685c4a          <<<<<<
+< HEAD                  =======
+ []
+
+
+Overfull \hbox (25.44861pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b685c4a  <<<<<<< HEAD  
+             =======
+ []
+
+
+Overfull \hbox (27.67908pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b685c4a           <<<<<
+<< HEAD       =======
+ []
+
+
+Overfull \hbox (27.67688pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b685c4a         <<<<<<<
+ HEAD         =======
+ []
+
+
+Overfull \hbox (43.21875pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 HEAD                  =======                   >>>>>>> 0c2784b7
+b8fc17f14329c62b3e2a42023b685c4a
+ []
+
+
+Overfull \hbox (25.4552pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD         =======        >>>>>>> 0c2784b7b8fc17f14329
+c62b3e2a42023b685c4a
+ []
+
+
+Overfull \hbox (9.90784pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD     =======     >>>>>>> 0c2784b7b8fc17f14329c62b3e2
+a42023b685c4a
+ []
+
+
+Overfull \hbox (9.90784pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD     =======     >>>>>>> 0c2784b7b8fc17f14329c62b3e2
+a42023b685c4a
+ []
+
+
+Overfull \hbox (14.349pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD       =======     >>>>>>> 0c2784b7b8fc17f14329c62b3
+e2a42023b685c4a
+ []
+
+
+Overfull \hbox (9.90784pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD     =======     >>>>>>> 0c2784b7b8fc17f14329c62b3e2
+a42023b685c4a
+ []
+
+
+Overfull \hbox (14.3512pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD     =======       >>>>>>> 0c2784b7b8fc17f14329c62b3
+e2a42023b685c4a
+ []
+
+
+Overfull \hbox (1.02112pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD     ======= >>>>>>> 0c2784b7b8fc17f14329c62b3e2a420
+23b685c4a
+ []
+
+
+Overfull \hbox (9.90784pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD     =======     >>>>>>> 0c2784b7b8fc17f14329c62b3e2
+a42023b685c4a
+ []
+
+
+Overfull \hbox (58.7716pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD                 =======               >>>>>>> 0c278
+4b7b8fc17f14329c62b3e2a42023b685c4a
+ []
+
+
+Overfull \hbox (5.46887pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD =======       >>>>>>> 0c2784b7b8fc17f14329c62b3e2a4
+2023b685c4a
+ []
+
+
+Overfull \hbox (1.02551pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD =======     >>>>>>> 0c2784b7b8fc17f14329c62b3e2a420
+23b685c4a
+ []
+
+
+Overfull \hbox (14.3512pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD     =======       >>>>>>> 0c2784b7b8fc17f14329c62b3
+e2a42023b685c4a
+ []
+
+
+Overfull \hbox (1.02551pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD =======     >>>>>>> 0c2784b7b8fc17f14329c62b3e2a420
+23b685c4a
+ []
+
+
+Overfull \hbox (5.46887pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD =======       >>>>>>> 0c2784b7b8fc17f14329c62b3e2a4
+2023b685c4a
+ []
+
+
+Overfull \hbox (23.23572pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 <<<<<<< HEAD       =======         >>>>>>> 0c2784b7b8fc17f14329c
+62b3e2a42023b685c4a
+ []
+
+
+Overfull \hbox (271.91992pt too wide) in paragraph at lines 40--13
+\T1/cmr/m/n/10 0c2784b7b8fc17f14329c62b3e2a42023b685c4a  <<<<<<< HEAD          
+                                                                               
+                                                 =======
+ []
+
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count125
 \scratchdimen=\dimen125
@@ -931,40 +1909,49 @@ LaTeX Info: Redefining \nameref on input line 38.
 
 \big@size=\dimen127
 Package hyperref Info: Option `pageanchor' set `false' on input line 39.
+
+Overfull \hbox (7.18134pt too wide) in paragraph at lines 10--40
+[]\T1/phv/m/n/10 <<<<<<< HEAD ======= >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023
+b685c4a <<<<<<< HEAD
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 40.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 6.29996pt on input line 40.
+[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+] [2
+
+]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 12.9599pt on input line 43.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 10.79993pt on input line 45.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 47.
- [1
-
-
-{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+ [1]
+[2
 
 ]
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 52.
-
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ot1phv.fd
+ (/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 17.99988pt on input line 52.
- (./refman.toc
+
+(./refman.toc
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 9.89993pt on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 1.
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 1.
 
-
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ot1ztmcm.fd
+ (/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 1.
 
-
-(/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/omlztmcm.fd
+ (/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 1.
@@ -1001,18 +1988,169 @@ LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
 (Font)              scaled to size 9.89993pt on input line 1.
 LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
 (Font)              scaled to size 8.99994pt on input line 2.
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...mberline {2}Namespace Index}{5}{chapter.2}
+                                                  
+? 
 LaTeX Font Info:    Font shape `OT1/phv/c/n' will be
-(Font)              scaled to size 8.09995pt on input line 27.
-[1]
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 78.
- [2] [3] [4])
+(Font)              scaled to size 8.09995pt on input line 28.
+[1] [2] [3] [4]
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.185 ...ine {2}Directory Hierarchy}{5}{chapter.2}
+                                                  
+? 
+[5] [6] [7] [8]
+Overfull \hbox (1.0618pt too wide) detected at line 389
+ \OT1/phv/c/n/10 100
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 390
+ \OT1/phv/c/n/10 101
+ []
+
+[9]
+Overfull \hbox (1.0618pt too wide) detected at line 391
+ \OT1/phv/c/n/10 101
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 392
+ \OT1/phv/c/n/10 102
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 393
+ \OT1/phv/c/n/10 102
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 394
+ \OT1/phv/c/n/10 103
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 395
+ \OT1/phv/c/n/10 103
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 396
+ \OT1/phv/c/n/10 103
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 397
+ \OT1/phv/c/n/10 104
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 398
+ \OT1/phv/c/n/10 104
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 399
+ \OT1/phv/c/n/10 105
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 400
+ \OT1/phv/c/n/10 106
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 401
+ \OT1/phv/c/n/10 106
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 402
+ \OT1/phv/c/n/10 106
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 403
+ \OT1/phv/c/n/10 107
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 404
+ \OT1/phv/c/n/10 108
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 405
+ \OT1/phv/c/n/10 108
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 406
+ \OT1/phv/c/n/10 109
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 407
+ \OT1/phv/c/n/10 109
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 408
+ \OT1/phv/c/n/10 110
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 409
+ \OT1/phv/c/n/10 110
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 410
+ \OT1/phv/c/n/10 111
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 411
+ \OT1/phv/c/n/10 111
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 412
+ \OT1/phv/c/n/10 112
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 413
+ \OT1/phv/c/n/10 112
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 414
+ \OT1/phv/c/n/10 112
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 415
+ \OT1/phv/c/n/10 113
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [5] [6
-
-]
+ [10]
 Package hyperref Info: Option `pageanchor' set `true' on input line 55.
 
 Chapter 1.
@@ -1046,7 +2184,8 @@ LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 
 [1
 
-] [2] <software_interaction.png, id=965, 548.80031pt x 301.125pt>
+
+] [2] <software_interaction.png, id=2129, 548.80031pt x 301.125pt>
 File: software_interaction.png Graphic file (type png)
 
 <use software_interaction.png>) [3 <./software_interaction.png (PNG copy)>]
@@ -1054,31 +2193,114 @@ File: software_interaction.png Graphic file (type png)
 
 ]
 Chapter 2.
-(./namespaces.tex) [5] [6
+(./namespaces.tex
+
+LaTeX Warning: Reference `namespaceDecoder__Directory' on page 5 undefined on i
+nput line 4.
+
+) [5] [6
 
 ]
 Chapter 3.
-(./hierarchy.tex) [7] [8
+(./hierarchy.tex
+
+LaTeX Warning: Reference `classDecoder' on page 7 undefined on input line 3.
+
+) [7] [8
 
 ]
 Chapter 4.
-(./annotated.tex) [9] [10
+(./annotated.tex
+
+LaTeX Warning: Reference `classDecoder' on page 9 undefined on input line 3.
+
+) [9] [10
 
 ]
 Chapter 5.
-(./files.tex) [11] [12
+(./files.tex
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 3.
+
+
+LaTeX Warning: Reference `Decoder_8h' on page 11 undefined on input line 3.
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 5
+ [][]\OT1/phv/c/n/10 101[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 6
+ [][]\OT1/phv/c/n/10 102[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 7
+ [][]\OT1/phv/c/n/10 103[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 8
+ [][]\OT1/phv/c/n/10 103[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 9
+ [][]\OT1/phv/c/n/10 104[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 10
+ [][]\OT1/phv/c/n/10 106[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 12
+ [][]\OT1/phv/c/n/10 106[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 13
+ [][]\OT1/phv/c/n/10 108[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 14
+ [][]\OT1/phv/c/n/10 109[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 15
+ [][]\OT1/phv/c/n/10 110[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 17
+ [][]\OT1/phv/c/n/10 111[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 18
+ [][]\OT1/phv/c/n/10 112[][]
+ []
+
+
+Overfull \hbox (1.0618pt too wide) detected at line 19
+ [][]\OT1/phv/c/n/10 112[][]
+ []
+
+) [11] [12
 
 ]
 Chapter 6.
-(./namespaceCodes.tex) (./namespaceDecoder.tex [13]) [14]
+(./namespaceCodes.tex) (./namespaceDecoder__Directory.tex [13]) [14]
 Chapter 7.
-(./classiDecoder.tex
+(./classDecoder.tex) (./classiDecoder.tex
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 14.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 14.
-LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 28.
 LaTeX Font Info:    Font shape `OT1/phv/bc/it' in size <10> not available
 (Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/phv/bc/sl' will be
@@ -1092,7 +2314,14 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
 (Font)              using `OT1/pcr/m/n' instead on input line 28.
 
+
+Underfull \vbox (badness 1546) has occurred while \output is active []
+
+ [15
+
+]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 36.
+
 (/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -1109,34 +2338,20 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 35--38
 Underfull \vbox (badness 10000) detected at line 38
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15
-
-])
-(./classiLoader.tex
-Overfull \hbox (22.2886pt too wide) in alignment at lines 37--40
+) (./classiLoader.tex
+Overfull \hbox (22.2886pt too wide) in alignment at lines 36--41
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 40
+Underfull \vbox (badness 10000) detected at line 41
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 62--67
- [] [] [] 
- []
+Overfull \vbox (5.88121pt too high) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) detected at line 67
- []
-
-) (./classiMemory.tex
+[16]) (./classiMemory.tex
 Overfull \hbox (20.96019pt too wide) in paragraph at lines 20--21
 []\T1/phv/m/n/10 virtual Codes::RESULT [][]Re-serve[][] (const [][]iWord[][] &i
 nitial_-address, const [][]iWord[][] &length)=0
@@ -1147,7 +2362,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[17]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 45--50
  [] [] [] 
  []
@@ -1157,6 +2372,10 @@ Underfull \vbox (badness 10000) detected at line 50
  []
 
 
+Overfull \vbox (13.71176pt too high) has occurred while \output is active []
+
+
+[17]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 68--71
  [] [] [] 
  []
@@ -1174,20 +2393,20 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 93--98
 Underfull \vbox (badness 10000) detected at line 98
  []
 
-
-Overfull \vbox (8.12341pt too high) has occurred while \output is active []
-
-
-[18]) (./structInstruction.tex [19]) (./classiObjParser.tex [20]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 42--45
+) (./structInstruction.tex [18] [19]) (./classiObjParser.tex
+Overfull \hbox (22.2886pt too wide) in alignment at lines 37--40
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 45
+Underfull \vbox (badness 10000) detected at line 40
  []
 
-) (./classiRegister.tex [21] [22]
+
+Overfull \vbox (4.10565pt too high) has occurred while \output is active []
+
+
+[20]) (./classiRegister.tex [21] [22]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 90--93
  [] [] [] 
  []
@@ -1214,7 +2433,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 151--154
 Underfull \vbox (badness 10000) detected at line 154
  []
 
-[24]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 172--175
  [] [] [] 
  []
@@ -1224,6 +2443,9 @@ Underfull \vbox (badness 10000) detected at line 175
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 212--215
  [] [] [] 
  []
@@ -1232,7 +2454,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 212--215
 Underfull \vbox (badness 10000) detected at line 215
  []
 
-[25]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 233--236
  [] [] [] 
  []
@@ -1241,7 +2463,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 233--236
 Underfull \vbox (badness 10000) detected at line 236
  []
 
-
+[25]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 257--260
  [] [] [] 
  []
@@ -1277,234 +2499,233 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 358--361
 Underfull \vbox (badness 10000) detected at line 361
  []
 
-[27]) (./classiWi11.tex [28]
-Overfull \hbox (58.36087pt too wide) in paragraph at lines 26--27
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder::REGISTER_-
-ID DR, const Decoder::REGISTER_-
+[27]) (./classiWi11.tex
+Overfull \hbox (10.16687pt too wide) in paragraph at lines 24--25
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder_-Directory:
+:REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (58.36087pt too wide) in paragraph at lines 28--29
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder::REGISTER_-
-ID DR, const Decoder::REGISTER_-
+Overfull \hbox (7.95518pt too wide) in paragraph at lines 24--25
+\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
+:REGISTER_-
  []
 
 
-Overfull \hbox (58.36087pt too wide) in paragraph at lines 30--31
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-And[][] (const Decoder::REGISTER_-
-ID DR, const Decoder::REGISTER_-
+Overfull \hbox (10.16687pt too wide) in paragraph at lines 26--27
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder_-Directory:
+:REGISTER_-ID &DR, const
+ []
+
+[28]
+Overfull \hbox (10.16687pt too wide) in paragraph at lines 28--29
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-And[][] (const Decoder_-Directory:
+:REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (58.36087pt too wide) in paragraph at lines 32--33
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-And[][] (const Decoder::REGISTER_-
-ID DR, const Decoder::REGISTER_-
- []
-
-[29]
-Overfull \hbox (45.44553pt too wide) in paragraph at lines 48--49
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-LoadR[][] (const Decoder::REGISTER
-_-ID DR, Decoder::REGISTER_-
+Overfull \hbox (7.95518pt too wide) in paragraph at lines 28--29
+\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
+:REGISTER_-
  []
 
 
-Overfull \hbox (56.3539pt too wide) in paragraph at lines 50--51
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Not[][] (const Decoder::REGISTER_-
-ID DR, const Decoder::REGISTER_-
+Overfull \hbox (10.16687pt too wide) in paragraph at lines 30--31
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-And[][] (const Decoder_-Directory:
+:REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (64.977pt too wide) in paragraph at lines 58--59
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-STR[][] (const Decoder::REGISTER_-
-ID SR1, const Decoder::REGISTER_-
+Overfull \hbox (1.40138pt too wide) in paragraph at lines 36--37
+[]\T1/phv/m/n/10 virtual [][]iReg-is-ter[][] & [][]_-GetRegister[][] (const Dec
+oder_-Directory::REGISTER_-ID &id)=0
  []
 
-[30]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 104--107
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+
+Overfull \hbox (7.25044pt too wide) in paragraph at lines 40--41
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-JSRR[][] (const Decoder_-Directory
+::REGISTER_-ID &baseR,
+ []
+
+
+Overfull \hbox (8.1599pt too wide) in paragraph at lines 48--49
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Not[][] (const Decoder_-Directory:
+:REGISTER_-ID &DR, const
+ []
+
+[29] [30]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 86--89
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 107
+Underfull \vbox (badness 10000) detected at line 89
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 127--134
+Overfull \hbox (22.2886pt too wide) in alignment at lines 109--116
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 134
+Underfull \vbox (badness 10000) detected at line 116
  []
 
 [31]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 160--167
+Overfull \hbox (22.2886pt too wide) in alignment at lines 142--149
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 167
+Underfull \vbox (badness 10000) detected at line 149
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 193--200
+Overfull \hbox (22.2886pt too wide) in alignment at lines 175--182
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 200
+Underfull \vbox (badness 10000) detected at line 182
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [32]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 226--233
+[32]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 208--215
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 233
+Underfull \vbox (badness 10000) detected at line 215
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 257--260
+Overfull \hbox (22.2886pt too wide) in alignment at lines 239--242
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 260
+Underfull \vbox (badness 10000) detected at line 242
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 294--297
+[33]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 277--280
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 297
+Underfull \vbox (badness 10000) detected at line 280
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 322--325
+Overfull \hbox (22.2886pt too wide) in alignment at lines 306--309
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 325
+Underfull \vbox (badness 10000) detected at line 309
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 350--355
+Overfull \hbox (22.2886pt too wide) in alignment at lines 334--339
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 355
+Underfull \vbox (badness 10000) detected at line 339
  []
 
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 380--385
+[34]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 364--369
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 385
+Underfull \vbox (badness 10000) detected at line 369
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 413--420
+[35]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 397--404
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 420
+Underfull \vbox (badness 10000) detected at line 404
+ []
+
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 431--436
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 436
  []
 
 [36]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 447--452
+Overfull \hbox (22.2886pt too wide) in alignment at lines 486--491
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 452
+Underfull \vbox (badness 10000) detected at line 491
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 502--507
+Overfull \hbox (22.2886pt too wide) in alignment at lines 513--518
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 507
+Underfull \vbox (badness 10000) detected at line 518
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 529--534
+[37]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 541--548
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 534
+Underfull \vbox (badness 10000) detected at line 548
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 557--564
+Overfull \hbox (22.2886pt too wide) in alignment at lines 569--572
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 564
+Underfull \vbox (badness 10000) detected at line 572
  []
 
 [38]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 585--588
+Overfull \hbox (22.2886pt too wide) in alignment at lines 608--611
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 588
+Underfull \vbox (badness 10000) detected at line 611
  []
 
 [39]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 624--627
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 627
- []
-
 
 LaTeX Font Warning: Font shape `OT1/pcr/bc/it' undefined
-(Font)              using `OT1/pcr/bc/n' instead on input line 678.
+(Font)              using `OT1/pcr/bc/n' instead on input line 662.
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 685--688
+Overfull \hbox (22.2886pt too wide) in alignment at lines 669--672
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 688
+Underfull \vbox (badness 10000) detected at line 672
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [40])
-(./classiWord.tex [41] [42] [43]
+) (./classiWord.tex [40] [41] [42] [43]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 157--160
  [] [] [] 
  []
@@ -1523,9 +2744,6 @@ Underfull \vbox (badness 10000) detected at line 185
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 207--210
  [] [] [] 
  []
@@ -1535,6 +2753,9 @@ Underfull \vbox (badness 10000) detected at line 210
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 232--235
  [] [] [] 
  []
@@ -1544,9 +2765,6 @@ Underfull \vbox (badness 10000) detected at line 235
  []
 
 
-Underfull \vbox (badness 5374) has occurred while \output is active []
-
- [45]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 275--278
  [] [] [] 
  []
@@ -1555,7 +2773,11 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 275--278
 Underfull \vbox (badness 10000) detected at line 278
  []
 
-[46]
+
+Overfull \vbox (9.48224pt too high) has occurred while \output is active []
+
+
+[45]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 318--321
  [] [] [] 
  []
@@ -1573,7 +2795,10 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 342--345
 Underfull \vbox (badness 10000) detected at line 345
  []
 
-[47]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 385--388
  [] [] [] 
  []
@@ -1591,7 +2816,10 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 406--409
 Underfull \vbox (badness 10000) detected at line 409
  []
 
-[48]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 459--462
  [] [] [] 
  []
@@ -1600,28 +2828,39 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 459--462
 Underfull \vbox (badness 10000) detected at line 462
  []
 
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 488--491
+[48]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 489--492
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 491
+Underfull \vbox (badness 10000) detected at line 492
  []
 
 ) (./classLoader.tex
-<classLoader__coll__graph.pdf, id=1606, 209.78375pt x 174.6525pt>
+<classLoader__coll__graph.pdf, id=2804, 209.78375pt x 174.6525pt>
 File: classLoader__coll__graph.pdf Graphic file (type pdf)
 
 <use classLoader__coll__graph.pdf>
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2229) has occurred while \output is active []
 
- [49])
-(./classMemory.tex
-<classMemory__coll__graph.pdf, id=1620, 138.5175pt x 160.6pt>
+ [49 <./classLoader__coll__graph.pdf>]
+Overfull \hbox (22.2886pt too wide) in alignment at lines 57--60
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 60
+ []
+
+) (./classMemory.tex
+<classMemory__coll__graph.pdf, id=2829, 138.5175pt x 160.6pt>
 File: classMemory__coll__graph.pdf Graphic file (type pdf)
 
-<use classMemory__coll__graph.pdf> [50 <./classLoader__coll__graph.pdf>]
+<use classMemory__coll__graph.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
 Overfull \hbox (5.93924pt too wide) in paragraph at lines 33--35
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 Re-serve \T1/phv/m/n/10 
 (const [][]iWord[][] &initial_-address, const [][]iWord[][] &length)
@@ -1629,21 +2868,33 @@ Overfull \hbox (5.93924pt too wide) in paragraph at lines 33--35
 
 ) (./structObjectData.tex [51 <./classMemory__coll__graph.pdf>])
 (./classObjParser.tex
-<classObjParser__coll__graph.pdf, id=1678, 144.54pt x 160.6pt>
+<classObjParser__coll__graph.pdf, id=2882, 144.54pt x 160.6pt>
 File: classObjParser__coll__graph.pdf Graphic file (type pdf)
 
-<use classObjParser__coll__graph.pdf> [52] [53 <./classObjParser__coll__graph.p
-df>]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 59--62
+<use classObjParser__coll__graph.pdf> [52]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 50.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sim' on input line 50.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 50.
+
+[53 <./classObjParser__coll__graph.pdf>]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 73--76
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 62
+Underfull \vbox (badness 10000) detected at line 76
  []
 
-) (./classRegister.tex [54]
-<classRegister__coll__graph.pdf, id=1720, 197.73875pt x 234.8775pt>
+[54]) (./classRegister.tex
+<classRegister__coll__graph.pdf, id=2931, 197.73875pt x 234.8775pt>
 File: classRegister__coll__graph.pdf Graphic file (type pdf)
 
 <use classRegister__coll__graph.pdf> [55 <./classRegister__coll__graph.pdf>])
@@ -1657,11 +2908,11 @@ Underfull \vbox (badness 10000) detected at line 48
  []
 
 ) (./classWi11.tex
-<classWi11__coll__graph.pdf, id=1800, 469.755pt x 411.5375pt>
+<classWi11__coll__graph.pdf, id=3011, 598.235pt x 411.5375pt>
 File: classWi11__coll__graph.pdf Graphic file (type pdf)
 
 <use classWi11__coll__graph.pdf>
-Overfull \hbox (55.0pt too wide) in paragraph at lines 15--17
+Overfull \hbox (55.0pt too wide) in paragraph at lines 16--18
  [] 
  []
 
@@ -1669,62 +2920,73 @@ Overfull \hbox (55.0pt too wide) in paragraph at lines 15--17
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [57]
+Overfull \hbox (7.53883pt too wide) in paragraph at lines 54--56
+[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
+nst Decoder_-Directory::REGISTER_-ID &DR, const
+ []
+
+
+Overfull \hbox (7.95518pt too wide) in paragraph at lines 54--56
+\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
+:REGISTER_-
+ []
+
 [58 <./classWi11__coll__graph.pdf>]
-Overfull \hbox (61.73572pt too wide) in paragraph at lines 56--58
+Overfull \hbox (7.53883pt too wide) in paragraph at lines 59--61
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID &DR, const Decoder::REGISTER_-
+nst Decoder_-Directory::REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (61.73572pt too wide) in paragraph at lines 61--63
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID &DR, const Decoder::REGISTER_-
- []
-
-
-Overfull \hbox (61.79868pt too wide) in paragraph at lines 66--68
+Overfull \hbox (7.60179pt too wide) in paragraph at lines 64--66
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-And \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID &DR, const Decoder::REGISTER_-
+nst Decoder_-Directory::REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (61.79868pt too wide) in paragraph at lines 71--73
+Overfull \hbox (7.95518pt too wide) in paragraph at lines 64--66
+\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
+:REGISTER_-
+ []
+
+
+Overfull \hbox (7.60179pt too wide) in paragraph at lines 69--71
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-And \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID &DR, const Decoder::REGISTER_-
+nst Decoder_-Directory::REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (10.08528pt too wide) in paragraph at lines 96--98
+Overfull \hbox (2.53435pt too wide) in paragraph at lines 94--96
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-JSRR \T1/phv/m/n/10 (c
-onst Decoder::REGISTER_-ID &baseR, const [][]iWord[][]
+onst Decoder_-Directory::REGISTER_-ID &baseR,
  []
 
 
-Overfull \hbox (5.27023pt too wide) in paragraph at lines 106--108
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-LoadEA \T1/phv/m/n/10 
-(const Decoder::REGISTER_-ID &DR, const [][]iWord[][]
+Overfull \hbox (10.88669pt too wide) in paragraph at lines 99--101
+[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Load \T1/phv/m/n/10 (c
+onst Decoder_-Directory::REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (70.41087pt too wide) in paragraph at lines 116--118
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-LoadR \T1/phv/m/n/10 (
-const Decoder::REGISTER_-ID &DR, const Decoder::REGISTER_-
- []
-
-
-Overfull \hbox (59.74677pt too wide) in paragraph at lines 121--123
+Overfull \hbox (5.54988pt too wide) in paragraph at lines 119--121
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Not \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID &DR, const Decoder::REGISTER_-
+nst Decoder_-Directory::REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (61.71712pt too wide) in paragraph at lines 141--143
+Overfull \hbox (4.24425pt too wide) in paragraph at lines 129--131
+[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-STI \T1/phv/m/n/10 (co
+nst Decoder_-Directory::REGISTER_-ID &SR, const
+ []
+
+
+Overfull \hbox (7.52023pt too wide) in paragraph at lines 139--141
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-STR \T1/phv/m/n/10 (co
-nst Decoder::REGISTER_-ID &SR, const Decoder::REGISTER_-
+nst Decoder_-Directory::REGISTER_-ID &SR, const
  []
 
-[59]) (./structWi11_1_1CCR.tex) (./classWord.tex [60]
-<classWord__coll__graph.pdf, id=1911, 122.4575pt x 160.6pt>
+[59]) (./structWi11_1_1CCR.tex [60]) (./classWord.tex
+<classWord__coll__graph.pdf, id=3130, 122.4575pt x 160.6pt>
 File: classWord__coll__graph.pdf Graphic file (type pdf)
 
 <use classWord__coll__graph.pdf> [61 <./classWord__coll__graph.pdf>]
@@ -1744,134 +3006,1079 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 8.
-(./iDecoder_8h.tex <iDecoder_8h__incl.pdf, id=1984, 196.735pt x 218.8175pt>
+(./iDecoder_8h.tex <iDecoder_8h__incl.pdf, id=3213, 196.735pt x 218.8175pt>
 File: iDecoder_8h__incl.pdf Graphic file (type pdf)
 
 <use iDecoder_8h__incl.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65 <./iDecoder_8h__incl.pdf>]) (./iLoader_8h.tex
-<iLoader_8h__incl.pdf, id=2001, 299.1175pt x 277.035pt>
+<iLoader_8h__incl.pdf, id=3230, 299.1175pt x 277.035pt>
 File: iLoader_8h__incl.pdf Graphic file (type pdf)
 
 <use iLoader_8h__incl.pdf> [66]) (./iMemory_8h.tex [67 <./iLoader_8h__incl.pdf>
-] <iMemory_8h__incl.pdf, id=2023, 299.1175pt x 218.8175pt>
+] <iMemory_8h__incl.pdf, id=3252, 299.1175pt x 218.8175pt>
 File: iMemory_8h__incl.pdf Graphic file (type pdf)
 
 <use iMemory_8h__incl.pdf>) (./iObjParser_8h.tex
 Underfull \vbox (badness 1867) has occurred while \output is active []
 
- [68 <./iMemory_8h__incl.pdf>] <iObjParser_8h__incl.pdf, id=2038, 273.02pt x 21
+ [68 <./iMemory_8h__incl.pdf>] <iObjParser_8h__incl.pdf, id=3267, 273.02pt x 21
 8.8175pt>
 File: iObjParser_8h__incl.pdf Graphic file (type pdf)
 
 <use iObjParser_8h__incl.pdf>) (./iRegister_8h.tex [69 <./iObjParser_8h__incl.p
-df>] <iRegister_8h__incl.pdf, id=2054, 146.5475pt x 218.8175pt>
+df>] <iRegister_8h__incl.pdf, id=3284, 146.5475pt x 218.8175pt>
 File: iRegister_8h__incl.pdf Graphic file (type pdf)
 
 <use iRegister_8h__incl.pdf>) (./iWi11_8h.tex
 Underfull \vbox (badness 1859) has occurred while \output is active []
 
- [70 <./iRegister_8h__incl.pdf>] <iWi11_8h__incl.pdf, id=2070, 396.48125pt x 27
+ [70 <./iRegister_8h__incl.pdf>] <iWi11_8h__incl.pdf, id=3299, 396.48125pt x 27
 7.035pt>
 File: iWi11_8h__incl.pdf Graphic file (type pdf)
 
 <use iWi11_8h__incl.pdf>
-Overfull \hbox (50.0pt too wide) in paragraph at lines 13--15
+Overfull \hbox (50.0pt too wide) in paragraph at lines 14--16
  [] 
  []
 
 ) (./iWord_8h.tex [71 <./iWi11_8h__incl.pdf>]
-<iWord_8h__incl.pdf, id=2086, 132.495pt x 160.6pt>
+<iWord_8h__incl.pdf, id=3315, 132.495pt x 160.6pt>
 File: iWord_8h__incl.pdf Graphic file (type pdf)
  <use iWord_8h__incl.pdf>)
-(./Loader_8h.tex <Loader_8h__incl.pdf, id=2088, 299.1175pt x 335.2525pt>
+(./Loader_8h.tex <Loader_8h__incl.pdf, id=3317, 299.1175pt x 335.2525pt>
 File: Loader_8h__incl.pdf Graphic file (type pdf)
 
 <use Loader_8h__incl.pdf> [72 <./iWord_8h__incl.pdf>] [73 <./Loader_8h__incl.pd
-f>]) (./Memory_8h.tex <Memory_8h__incl.pdf, id=2117, 311.1625pt x 277.035pt>
+f>]) (./Memory_8h.tex <Memory_8h__incl.pdf, id=3346, 311.1625pt x 277.035pt>
 File: Memory_8h__incl.pdf Graphic file (type pdf)
 
 <use Memory_8h__incl.pdf> [74 <./Memory_8h__incl.pdf>]) (./ObjParser_8cpp.tex
-<ObjParser_8cpp__incl.pdf, id=2133, 394.47375pt x 335.2525pt>
+<ObjParser_8cpp__incl.pdf, id=3362, 400.49625pt x 335.2525pt>
 File: ObjParser_8cpp__incl.pdf Graphic file (type pdf)
 
 <use ObjParser_8cpp__incl.pdf>
-Overfull \hbox (48.0pt too wide) in paragraph at lines 13--15
+Overfull \hbox (54.0pt too wide) in paragraph at lines 14--16
  [] 
  []
 
 [75 <./ObjParser_8cpp__incl.pdf>]) (./ObjParser_8h.tex
-<ObjParser_8h__incl.pdf, id=2146, 394.47375pt x 277.035pt>
+<ObjParser_8h__incl.pdf, id=3375, 392.46625pt x 277.035pt>
 File: ObjParser_8h__incl.pdf Graphic file (type pdf)
 
 <use ObjParser_8h__incl.pdf>
-Overfull \hbox (48.0pt too wide) in paragraph at lines 13--15
+Overfull \hbox (46.0pt too wide) in paragraph at lines 14--16
  [] 
  []
 
 [76 <./ObjParser_8h__incl.pdf>]) (./Register_8h.tex
-<Register_8h__incl.pdf, id=2162, 214.8025pt x 277.035pt>
+<Register_8h__incl.pdf, id=3391, 214.8025pt x 277.035pt>
 File: Register_8h__incl.pdf Graphic file (type pdf)
 
 <use Register_8h__incl.pdf> [77 <./Register_8h__incl.pdf>])
-(./ResultCodes_8h.tex <ResultCodes_8h__incl.pdf, id=2180, 180.675pt x 160.6pt>
+(./ResultCodes_8h.tex <ResultCodes_8h__incl.pdf, id=3409, 180.675pt x 160.6pt>
 File: ResultCodes_8h__incl.pdf Graphic file (type pdf)
 
 <use ResultCodes_8h__incl.pdf> [78 <./ResultCodes_8h__incl.pdf>])
-(./Wi11_8h.tex <Wi11_8h__incl.pdf, id=2198, 648.4225pt x 393.47pt>
+(./Wi11_8h.tex <Wi11_8h__incl.pdf, id=3427, 703.62875pt x 393.47pt>
 File: Wi11_8h__incl.pdf Graphic file (type pdf)
 
 <use Wi11_8h__incl.pdf>
-Overfull \hbox (55.0pt too wide) in paragraph at lines 13--15
+Overfull \hbox (55.0pt too wide) in paragraph at lines 14--16
  [] 
  []
 
 [79 <./Wi11_8h__incl.pdf>]) (./Word_8cpp.tex
-<Word_8cpp__incl.pdf, id=2215, 273.02pt x 277.035pt>
+<Word_8cpp__incl.pdf, id=3444, 273.02pt x 277.035pt>
 File: Word_8cpp__incl.pdf Graphic file (type pdf)
  <use Word_8cpp__incl.pdf>
-Underfull \vbox (badness 1755) has occurred while \output is active []
-
- [80 <./Word_8cpp__incl.pdf>]) (./Word_8h.tex
-<Word_8h__incl.pdf, id=2228, 158.5925pt x 218.8175pt>
+[80 <./Word_8cpp__incl.pdf>]) (./Word_8h.tex
+<Word_8h__incl.pdf, id=3457, 158.5925pt x 218.8175pt>
 File: Word_8h__incl.pdf Graphic file (type pdf)
  <use Word_8h__incl.pdf>
 [81 <./Word_8h__incl.pdf>]) (./refman.ind [82] [83
 
-] [84] [85])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
- (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
-Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 3B8A67191EBEDA08C7F870C8D9A7B11E;26131.
+]
+Overfull \hbox (105.48721pt too wide) in paragraph at lines 84--86
+[]| \T1/phv/m/n/10 Word, [][]97[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b6
+85c4a 
+ []
 
+
+Overfull \hbox (105.48721pt too wide) in paragraph at lines 120--122
+[]| \T1/phv/m/n/10 Word, [][]95[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b6
+85c4a 
+ []
+
+
+Overfull \hbox (104.75818pt too wide) in paragraph at lines 145--147
+[]| \T1/phv/m/n/10 Wi11, [][]86[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b6
+85c4a 
+ []
+
+
+Overfull \hbox (104.75818pt too wide) in paragraph at lines 155--157
+[]| \T1/phv/m/n/10 Wi11, [][]86[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b6
+85c4a 
+ []
+
+
+Overfull \hbox (105.48721pt too wide) in paragraph at lines 179--181
+[]| \T1/phv/m/n/10 Word, [][]92[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b6
+85c4a 
+ []
+
+[84] [85]
+Overfull \hbox (99.99487pt too wide) in paragraph at lines 357--359
+[]\T1/phv/m/n/10 iWord.h, [][]106[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023
+b685c4a 
+ []
+
+
+Overfull \hbox (108.63467pt too wide) in paragraph at lines 393--395
+[]\T1/phv/m/n/10 Memory.h, [][]106[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a4202
+3b685c4a 
+ []
+
+[86]
+Overfull \hbox (101.76125pt too wide) in paragraph at lines 497--499
+[]| \T1/phv/m/n/10 Find, [][]78[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b6
+85c4a 
+ []
+
+[87]
+Overfull \hbox (105.48721pt too wide) in paragraph at lines 522--524
+[]| \T1/phv/m/n/10 Word, [][]93[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b6
+85c4a 
+ []
+
+
+Overfull \hbox (97.99692pt too wide) in paragraph at lines 596--598
+[]\T1/phv/m/n/10 Word.h, [][]112[][] >>>>>>> 0c2784b7b8fc17f14329c62b3e2a42023b
+685c4a 
+ []
+
+[88])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+ (./refman.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
+
+
+Package rerunfilecheck Warning: File `refman.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `refman.out':
+(rerunfilecheck)             Before: 6BB4A4433085845120544595B5E99404;58027
+(rerunfilecheck)             After:  4450F6787ED6ED854C853F2CEA1BD6B1;26749.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 11212 strings out of 495074
- 170944 string characters out of 3182082
+ 11801 strings out of 495074
+ 183246 string characters out of 3182082
  249711 words of memory out of 3000000
- 13446 multiletter control sequences out of 15000+200000
+ 13736 multiletter control sequences out of 15000+200000
  66725 words of font info for 87 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,58p,770b,587s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/opt/local/share/texmf-texlive-dist/fonts/enc/dvips/base/8r.enc}</opt/local/
-share/texmf-texlive-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/
-share/texmf-texlive-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/
-share/texmf-texlive-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/local/share/t
-exmf-texlive-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/local/share/texmf-t
-exlive-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></opt/local/share/texmf-texliv
-e-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></opt/local/share/texmf-texlive-di
-st/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/local/share/texmf-texlive-dist/fon
-ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (93 pages, 387445 bytes).
+ 42i,12n,58p,775b,592s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{page.112} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{page.111} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.110} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.96} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.109} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.108} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.106} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.104} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.103} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.102} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.101} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.99} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.91} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.92} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.95} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.94} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.93} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.97} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.90} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.14.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.14} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.13.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.13} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.12.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.12} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.11.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.11} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.10.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.10} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.9.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.9} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.8.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.8} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.7.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.7} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.6.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.6} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.5.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.5} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.4.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.4} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.3.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.3} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.2.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.2} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.1.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.1} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.10} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.3.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.17.3} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.20} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.19} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.18} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.17} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.16} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.15} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.14} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.13} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.12} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.11} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.10} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.9} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.8} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.7} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.6} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.5} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.4} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.17.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.17.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.17.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.17} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.10} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.9} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.8} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.7} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.6} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.5} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.4} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.16.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.16.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.16.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.16} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.15.3.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.15.3} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.15.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.15.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.15.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.15} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.19} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.18} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.17} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.16} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.15} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.14} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.13} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.12} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.11} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.10} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.9} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.8} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.7} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.6} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.5} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.4} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.14.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.14.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.14.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.14} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.13.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.13.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.13.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.13.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.13} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.12.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.12} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.11.2.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.11.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.11.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.11.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.11.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.11} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.10.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.10.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.10.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.10.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.10} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.20} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.19} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.18} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.17} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.16} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.15} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.14} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.13} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.12} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.11} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.10} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.9} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.9.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.9.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.9.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.22} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.21} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.20} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.19} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.18} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.17} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.16} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.15} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.14} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.13} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.12} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.11} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.10} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.9} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.3.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.8.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.8.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.8.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.8.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.19} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.18} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.17} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.16} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.15} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.14} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.13} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.12} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.11} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.10} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.9} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.7.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.7.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.7.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.6.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.6.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.6.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.6.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.5.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.5.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.5.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.4.2.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.4.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.4.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.4.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.4.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.3.3.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.3.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.3.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.3.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.9.2.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.2.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.2.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.9} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.17.3.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.17.3} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.17.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.17.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.14.3.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.14.3} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.14.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.14.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.12.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.12.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.12.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.22} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.21} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.20} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.19} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.18} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.17} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.16} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.15} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.14} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.13} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.12} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.11} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.10} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.9} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.7.3.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.7.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.19} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.18} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.17} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.16} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.15} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.14} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.13} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.12} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.11} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.10} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.9} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.6.2.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.5.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.3.2.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.3.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.2.3.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.2.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.1.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.1.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/opt/local/share/texmf-texlive-dist/fonts/enc/dvips/base/8r.enc}{/opt/local/sh
+are/texmf-texlive-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</opt/local/sha
+re/texmf-texlive-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sha
+re/texmf-texlive-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/sha
+re/texmf-texlive-dist/fonts/type1/public/cm-super/sfrm1000.pfb></opt/local/shar
+e/texmf-texlive-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/local/share/texmf
+-texlive-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/local/share/texmf-texli
+ve-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></opt/local/share/texmf-texlive-di
+st/fonts/type1/urw/helvetic/uhvbo8ac.pfb></opt/local/share/texmf-texlive-dist/f
+onts/type1/urw/helvetic/uhvr8a.pfb></opt/local/share/texmf-texlive-dist/fonts/t
+ype1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (102 pages, 450734 bytes).
 PDF statistics:
- 2592 PDF objects out of 2984 (max. 8388607)
- 2398 compressed objects within 24 object streams
- 591 named destinations out of 1000 (max. 500000)
- 1572 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4177 PDF objects out of 4296 (max. 8388607)
+ 3957 compressed objects within 40 object streams
+ 888 named destinations out of 1000 (max. 500000)
+ 3420 words of extra memory for PDF output out of 10000 (max. 10000000)
 

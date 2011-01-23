@@ -29,7 +29,9 @@ namespace Codes {
     INVALID_OBJECT_FILE,  // the first letter in the object file was not a H
     INVALID_DATA_ENTRY,   // there was an invalid data entry in the object file
     OUT_OF_BOUNDS,        // attempt to save memory outside of claimed area
-    NOT_HEX               // the suposedly hex string is not hex
+    NOT_HEX,              // the suposedly hex string is not hex
+    FILE_NOT_FOUND,       // Object file could not be opened
+    INVALID_TRAP_CODE     // The provded trap code is not valid.
   };
 
 }
@@ -42,7 +44,7 @@ class ResultDecoder {
 
         It is static because the result code messages should be available from anyhere.
     */
-    static std::map<Codes::RESULT, std::string> _codes;
+    std::map<Codes::RESULT, std::string> _codes;
   public:
     //! Generates the code-to-message mappings.
     ResultDecoder() {
@@ -54,6 +56,8 @@ class ResultDecoder {
       _codes[Codes::INVALID_DATA_ENTRY] = "There is an invalid text record or there was no end record found.";
       _codes[Codes::OUT_OF_BOUNDS] = "Attempt to access memory outside of the program load area.";
       _codes[Codes::NOT_HEX] = "There was an invalid hex string found.";
+      _codes[Codes::FILE_NOT_FOUND] = "The specified object file could not be found.";
+      _codes[Codes::INVALID_TRAP_CODE] = "The provded trap code is not valid.";
     }
 
     /*! @brief Looks up a result code.

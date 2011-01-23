@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
         getline(cin, temp);
 
         if (temp[0] != 'Y' && temp[0] != 'y') {
-          cout << "User Abort." < endl;
+          cout << "User Abort." << endl;
           break;
         }
       }

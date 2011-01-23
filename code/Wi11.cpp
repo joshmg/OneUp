@@ -12,7 +12,7 @@
 #include <ctime>
 #include <cstdlib>
 
-using namespace Decoder;
+using namespace Decoder_Directory;
 using namespace Codes;
 using namespace std;
 
@@ -41,13 +41,17 @@ iRegister& Wi11::_GetRegister(const REGISTER_ID& reg_id) {
     case R6: { return _R6; } break;
     case R7: { return _R7; } break;
     case PC: { return _PC; } break;
+    default: { 
+      cout << "Errorus Register Selection!" << endl;
+      return _PC;
+    } break;
   }
 }
 
 void Wi11::_UpdateCCR(int value) {
-  if (value < 0) { CCR.n = 1, CCR.z = 0, CCR.p = 0; }
-  else if (value > 0) { CCR.n = 0, CCR.z = 0, CCR.p = 1; }
-  else { CCR.n = 0, CCR.z = 1, CCR.p = 0; }
+  if (value < 0) { _CCR.n = 1, _CCR.z = 0, _CCR.p = 0; }
+  else if (value > 0) { _CCR.n = 0, _CCR.z = 0, _CCR.p = 1; }
+  else { _CCR.n = 0, _CCR.z = 1, _CCR.p = 0; }
 }
 
 RESULT Wi11::_Add(const REGISTER_ID& DR, const REGISTER_ID& SR1, const REGISTER_ID& SR2) {
@@ -69,7 +73,8 @@ RESULT Wi11::_And(const REGISTER_ID& DR, const REGISTER_ID& SR1, const REGISTER_
 }
 
 RESULT Wi11::_And(const REGISTER_ID& DR, const REGISTER_ID& SR1, const iWord& immediate) {
-  _GetRegister(DR) = _GetRegister(SR1).And(immediate);
+  Register temp_reg(immediate);
+  _GetRegister(DR) = _GetRegister(SR1).And(temp_reg);
   _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
   return SUCCESS;
 }
@@ -101,7 +106,9 @@ RESULT Wi11::_JSR(const iWord& address, bool link) {
 
 RESULT Wi11::_JSRR(const REGISTER_ID& baseR, const iWord& address, bool link) {
   if (link) _R7 = _PC;
-  _PC = baseR + address;
+  Register temp_reg(address);
+
+  _PC = _GetRegister(baseR) + temp_reg;
 
   return SUCCESS;
 }
@@ -127,7 +134,8 @@ RESULT Wi11::_LoadI(const REGISTER_ID& DR, const iWord& address) {
 }
 
 RESULT Wi11::_LoadR(const REGISTER_ID& DR, const REGISTER_ID& baseR, const iWord& address) {
-  _GetRegister(DR) = _memory.Load((_GetRegister(baseR) + address).GetValue());
+  Register temp_rep(address);
+  _GetRegister(DR) = _memory.Load((_GetRegister(baseR) + temp_rep).GetValue());
   _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
 
   return SUCCESS;
@@ -152,6 +160,7 @@ RESULT Wi11::_Not(const REGISTER_ID& DR, const REGISTER_ID& SR) {
 
 RESULT Wi11::_Ret() {
   _PC = _R7;
+  return SUCCESS;
 }
 
 RESULT Wi11::_Store(const REGISTER_ID& SR, const iWord& address) {
@@ -169,7 +178,7 @@ RESULT Wi11::_STI(const REGISTER_ID& SR, const iWord& address) {
 }
 
 RESULT Wi11::_STR(const REGISTER_ID& SR, const REGISTER_ID& baseR, const iWord& address) {
-  return _memory.Store(_GetRegister(baseR).GetValue() + address, _GetRegister(SR));
+  return _memory.Store(_GetRegister(baseR).GetValue() + address, _GetRegister(SR).GetValue());
 }
 
 RESULT Wi11::_Trap(const iWord& code) {
@@ -189,7 +198,8 @@ RESULT Wi11::_Trap(const iWord& code) {
       cout << "Enter Character: ";
       cin >> c;
 
-      Word new_R0_value.FromInt((int)c);
+      Word new_R0_value;
+      new_R0_value.FromInt((int)c);
       _R0 = new_R0_value;
 
       _UpdateCCR(_R0.GetValue().ToInt());
@@ -205,26 +215,32 @@ RESULT Wi11::_Trap(const iWord& code) {
       cout << "Enter Integer: ";
       cin >> c;
 
-      Word new_R0_value.FromInt(c);
+      Word new_R0_value;
+      new_R0_value.FromInt(c);
       _R0 = new_R0_value;
 
       _UpdateCCR(_R0.GetValue().ToInt());
     } break;
     case 0x43: {
       srand(time(NULL));
-      Word new_R0_value.FromInt(rand()%65536); // 2^16 = 65,536
+      Word new_R0_value;
+      new_R0_value.FromInt(rand()%65536); // 2^16 = 65,536
       _R0 = new_R0_value;
 
       _UpdateCCR(_R0.GetValue().ToInt());
     } break;
+    default: {
+      return INVALID_TRAP_CODE;
+    } break;
   }
+  return SUCCESS;
 }
 
-Wi11::iWi11() : _loader(&_memory) { }
+Wi11::Wi11() : _loader(&_memory) { }
 
 bool Wi11::LoadObj(const char* filename) {
   Word initial_pc_value;
-  if (Load(filename, initial_pc_value) == SUCCESS) {
+  if (_loader.Load(filename, initial_pc_value) == SUCCESS) {
     _PC = initial_pc_value;
     return true;
   }
@@ -232,7 +248,7 @@ bool Wi11::LoadObj(const char* filename) {
 }
 
 void Wi11::DisplayMemory() const {
-  vector<Word[2]> memory_addresses = _memory.GetUsedMemory();
+  vector<vector<Word>> memory_addresses = _memory.GetUsedMemory();
 
   cout << "Wi11 Machine Memory" << endl;
   for (int i=0;i<memory_addresses.size();i++) {
@@ -241,7 +257,7 @@ void Wi11::DisplayMemory() const {
     while (begin_address <= end_address) {
       Word temp_address;
       temp_address.FromInt(begin_address);
-      cout << "[" << begin_address << "] = " << _memory.Load(temp_address) << endl;
+      cout << "[" << begin_address << "] = " << _memory.Load(temp_address).ToStr() << endl;
     }
   }
   cout << endl;
@@ -249,15 +265,15 @@ void Wi11::DisplayMemory() const {
 
 void Wi11::DisplayRegisters() const {
   cout << "Wi11 Register Values" << endl << endl;
-  cout << "PC = " << _PC.ToStr() << endl;
-  cout << "R0 = " << _R0.ToStr() << '\t' << "R1 = " << _R1.ToStr() << endl;
-  cout << "R2 = " << _R0.ToStr() << '\t' << "R1 = " << _R3.ToStr() << endl;
-  cout << "R4 = " << _R0.ToStr() << '\t' << "R1 = " << _R5.ToStr() << endl;
-  cout << "R6 = " << _R0.ToStr() << '\t' << "R1 = " << _R7.ToStr() << endl;
+  cout << "PC = " << _PC.GetValue().ToStr() << endl;
+  cout << "R0 = " << _R0.GetValue().ToStr() << '\t' << "R1 = " << _R1.GetValue().ToStr() << endl;
+  cout << "R2 = " << _R2.GetValue().ToStr() << '\t' << "R1 = " << _R3.GetValue().ToStr() << endl;
+  cout << "R4 = " << _R4.GetValue().ToStr() << '\t' << "R1 = " << _R5.GetValue().ToStr() << endl;
+  cout << "R6 = " << _R6.GetValue().ToStr() << '\t' << "R1 = " << _R7.GetValue().ToStr() << endl;
   cout << endl;
 }
 
-bool Wi11::ExecuteNext(bool verbose=false) {
+bool Wi11::ExecuteNext(bool verbose) {
   Instruction instruction = _decoder.DecodeInstruction(_PC.GetValue());
   _PC++;
 
@@ -309,7 +325,7 @@ bool Wi11::ExecuteNext(bool verbose=false) {
       if ((instruction.data[0].ToInt() > 0 && _CCR.n) || 
           (instruction.data[1].ToInt() > 0 && _CCR.z) || 
           (instruction.data[2].ToInt() > 0 && _CCR.p)) {
-        RESULT result = _Branch(_Word2RegisterID(instruction.data[3]));
+        RESULT result = _Branch(instruction.data[3]);
         if (verbose) cout << _result_decoder.Find(result) << endl;
 
         if (result == SUCCESS) return true;
@@ -332,7 +348,7 @@ bool Wi11::ExecuteNext(bool verbose=false) {
 
     case JSR: {
       if (verbose) cout << "JSR operation: ";
-      RESULT result = _JSR(instruction.data[2], instruction.data[0]>0);
+      RESULT result = _JSR(instruction.data[2], instruction.data[0].ToInt()>0);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
       if (result == SUCCESS) return true;
@@ -341,7 +357,7 @@ bool Wi11::ExecuteNext(bool verbose=false) {
 
     case JSRR: {
       if (verbose) cout << "JSRR operation: ";
-      RESULT result = _JSRR(_Word2RegisterID(instruction.data[2]), instruction.data[3], instruction.data[0]>0);
+      RESULT result = _JSRR(_Word2RegisterID(instruction.data[2]), instruction.data[3], instruction.data[0].ToInt()>0);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
       if (result == SUCCESS) return true;

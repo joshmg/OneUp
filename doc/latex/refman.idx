@@ -1,26 +1,25 @@
 \indexentry{Codes@{Codes}|hyperpage}{13}
-\indexentry{Decoder@{Decoder}|hyperpage}{13}
+\indexentry{Decoder\_\discretionary {-}{}{}Directory@{Decoder\_\discretionary {-}{}{}Directory}|hyperpage}{13}
+\indexentry{Decoder@{Decoder}|hyperpage}{15}
 \indexentry{iDecoder@{iDecoder}|hyperpage}{15}
-\indexentry{iDecoder@{iDecoder}!DecodeInstruction@{DecodeInstruction}|hyperpage}{15}
-\indexentry{DecodeInstruction@{DecodeInstruction}!iDecoder@{iDecoder}|hyperpage}{15}
+\indexentry{iDecoder@{iDecoder}!DecodeInstruction@{DecodeInstruction}|hyperpage}{16}
+\indexentry{DecodeInstruction@{DecodeInstruction}!iDecoder@{iDecoder}|hyperpage}{16}
 \indexentry{iLoader@{iLoader}|hyperpage}{16}
-\indexentry{iLoader@{iLoader}!iLoader@{iLoader}|hyperpage}{16}
-\indexentry{iLoader@{iLoader}!iLoader@{iLoader}|hyperpage}{16}
-\indexentry{iLoader@{iLoader}!Load@{Load}|hyperpage}{17}
-\indexentry{Load@{Load}!iLoader@{iLoader}|hyperpage}{17}
+\indexentry{iLoader@{iLoader}!Load@{Load}|hyperpage}{16}
+\indexentry{Load@{Load}!iLoader@{iLoader}|hyperpage}{16}
 \indexentry{iMemory@{iMemory}|hyperpage}{17}
-\indexentry{iMemory@{iMemory}!Reserve@{Reserve}|hyperpage}{18}
-\indexentry{Reserve@{Reserve}!iMemory@{iMemory}|hyperpage}{18}
+\indexentry{iMemory@{iMemory}!Reserve@{Reserve}|hyperpage}{17}
+\indexentry{Reserve@{Reserve}!iMemory@{iMemory}|hyperpage}{17}
 \indexentry{iMemory@{iMemory}!Load@{Load}|hyperpage}{18}
 \indexentry{Load@{Load}!iMemory@{iMemory}|hyperpage}{18}
 \indexentry{iMemory@{iMemory}!Store@{Store}|hyperpage}{18}
 \indexentry{Store@{Store}!iMemory@{iMemory}|hyperpage}{18}
-\indexentry{Instruction@{Instruction}|hyperpage}{19}
+\indexentry{Instruction@{Instruction}|hyperpage}{18}
 \indexentry{Instruction@{Instruction}!data@{data}|hyperpage}{19}
 \indexentry{data@{data}!Instruction@{Instruction}|hyperpage}{19}
 \indexentry{iObjParser@{iObjParser}|hyperpage}{20}
-\indexentry{iObjParser@{iObjParser}!Initialize@{Initialize}|hyperpage}{21}
-\indexentry{Initialize@{Initialize}!iObjParser@{iObjParser}|hyperpage}{21}
+\indexentry{iObjParser@{iObjParser}!Initialize@{Initialize}|hyperpage}{20}
+\indexentry{Initialize@{Initialize}!iObjParser@{iObjParser}|hyperpage}{20}
 \indexentry{iObjParser@{iObjParser}!GetNext@{GetNext}|hyperpage}{21}
 \indexentry{GetNext@{GetNext}!iObjParser@{iObjParser}|hyperpage}{21}
 \indexentry{iRegister@{iRegister}|hyperpage}{21}
@@ -28,120 +27,118 @@
 \indexentry{GetValue@{GetValue}!iRegister@{iRegister}|hyperpage}{23}
 \indexentry{iRegister@{iRegister}!Add@{Add}|hyperpage}{23}
 \indexentry{Add@{Add}!iRegister@{iRegister}|hyperpage}{23}
-\indexentry{iRegister@{iRegister}!Add@{Add}|hyperpage}{24}
-\indexentry{Add@{Add}!iRegister@{iRegister}|hyperpage}{24}
+\indexentry{iRegister@{iRegister}!Add@{Add}|hyperpage}{23}
+\indexentry{Add@{Add}!iRegister@{iRegister}|hyperpage}{23}
 \indexentry{iRegister@{iRegister}!operator+@{operator+}|hyperpage}{24}
 \indexentry{operator+@{operator+}!iRegister@{iRegister}|hyperpage}{24}
 \indexentry{iRegister@{iRegister}!Subtract@{Subtract}|hyperpage}{24}
 \indexentry{Subtract@{Subtract}!iRegister@{iRegister}|hyperpage}{24}
-\indexentry{iRegister@{iRegister}!Subtract@{Subtract}|hyperpage}{25}
-\indexentry{Subtract@{Subtract}!iRegister@{iRegister}|hyperpage}{25}
+\indexentry{iRegister@{iRegister}!Subtract@{Subtract}|hyperpage}{24}
+\indexentry{Subtract@{Subtract}!iRegister@{iRegister}|hyperpage}{24}
 \indexentry{iRegister@{iRegister}!operator-\/@{operator-\/}|hyperpage}{25}
 \indexentry{operator-\/@{operator-\/}!iRegister@{iRegister}|hyperpage}{25}
 \indexentry{iRegister@{iRegister}!And@{And}|hyperpage}{25}
 \indexentry{And@{And}!iRegister@{iRegister}|hyperpage}{25}
 \indexentry{iRegister@{iRegister}!And@{And}|hyperpage}{25}
 \indexentry{And@{And}!iRegister@{iRegister}|hyperpage}{25}
-\indexentry{iRegister@{iRegister}!Or@{Or}|hyperpage}{26}
-\indexentry{Or@{Or}!iRegister@{iRegister}|hyperpage}{26}
+\indexentry{iRegister@{iRegister}!Or@{Or}|hyperpage}{25}
+\indexentry{Or@{Or}!iRegister@{iRegister}|hyperpage}{25}
 \indexentry{iRegister@{iRegister}!Or@{Or}|hyperpage}{26}
 \indexentry{Or@{Or}!iRegister@{iRegister}|hyperpage}{26}
 \indexentry{iRegister@{iRegister}!Not@{Not}|hyperpage}{26}
 \indexentry{Not@{Not}!iRegister@{iRegister}|hyperpage}{26}
 \indexentry{iRegister@{iRegister}!Not@{Not}|hyperpage}{26}
 \indexentry{Not@{Not}!iRegister@{iRegister}|hyperpage}{26}
-\indexentry{iRegister@{iRegister}!Store@{Store}|hyperpage}{27}
-\indexentry{Store@{Store}!iRegister@{iRegister}|hyperpage}{27}
+\indexentry{iRegister@{iRegister}!Store@{Store}|hyperpage}{26}
+\indexentry{Store@{Store}!iRegister@{iRegister}|hyperpage}{26}
 \indexentry{iRegister@{iRegister}!Store@{Store}|hyperpage}{27}
 \indexentry{Store@{Store}!iRegister@{iRegister}|hyperpage}{27}
 \indexentry{iRegister@{iRegister}!operator=@{operator=}|hyperpage}{27}
 \indexentry{operator=@{operator=}!iRegister@{iRegister}|hyperpage}{27}
 \indexentry{iRegister@{iRegister}!operator=@{operator=}|hyperpage}{27}
 \indexentry{operator=@{operator=}!iRegister@{iRegister}|hyperpage}{27}
-\indexentry{iRegister@{iRegister}!operator++@{operator++}|hyperpage}{28}
-\indexentry{operator++@{operator++}!iRegister@{iRegister}|hyperpage}{28}
+\indexentry{iRegister@{iRegister}!operator++@{operator++}|hyperpage}{27}
+\indexentry{operator++@{operator++}!iRegister@{iRegister}|hyperpage}{27}
 \indexentry{iRegister@{iRegister}!operator++@{operator++}|hyperpage}{28}
 \indexentry{operator++@{operator++}!iRegister@{iRegister}|hyperpage}{28}
 \indexentry{iWi11@{iWi11}|hyperpage}{28}
-\indexentry{iWi11@{iWi11}!iWi11@{iWi11}|hyperpage}{31}
-\indexentry{iWi11@{iWi11}!iWi11@{iWi11}|hyperpage}{31}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}GetRegister@{\_\discretionary {-}{}{}GetRegister}|hyperpage}{31}
 \indexentry{\_\discretionary {-}{}{}GetRegister@{\_\discretionary {-}{}{}GetRegister}!iWi11@{iWi11}|hyperpage}{31}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Add@{\_\discretionary {-}{}{}Add}|hyperpage}{31}
 \indexentry{\_\discretionary {-}{}{}Add@{\_\discretionary {-}{}{}Add}!iWi11@{iWi11}|hyperpage}{31}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Add@{\_\discretionary {-}{}{}Add}|hyperpage}{32}
-\indexentry{\_\discretionary {-}{}{}Add@{\_\discretionary {-}{}{}Add}!iWi11@{iWi11}|hyperpage}{32}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Add@{\_\discretionary {-}{}{}Add}|hyperpage}{31}
+\indexentry{\_\discretionary {-}{}{}Add@{\_\discretionary {-}{}{}Add}!iWi11@{iWi11}|hyperpage}{31}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}And@{\_\discretionary {-}{}{}And}|hyperpage}{32}
 \indexentry{\_\discretionary {-}{}{}And@{\_\discretionary {-}{}{}And}!iWi11@{iWi11}|hyperpage}{32}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}And@{\_\discretionary {-}{}{}And}|hyperpage}{33}
-\indexentry{\_\discretionary {-}{}{}And@{\_\discretionary {-}{}{}And}!iWi11@{iWi11}|hyperpage}{33}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}And@{\_\discretionary {-}{}{}And}|hyperpage}{32}
+\indexentry{\_\discretionary {-}{}{}And@{\_\discretionary {-}{}{}And}!iWi11@{iWi11}|hyperpage}{32}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Branch@{\_\discretionary {-}{}{}Branch}|hyperpage}{33}
 \indexentry{\_\discretionary {-}{}{}Branch@{\_\discretionary {-}{}{}Branch}!iWi11@{iWi11}|hyperpage}{33}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Debug@{\_\discretionary {-}{}{}Debug}|hyperpage}{34}
-\indexentry{\_\discretionary {-}{}{}Debug@{\_\discretionary {-}{}{}Debug}!iWi11@{iWi11}|hyperpage}{34}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}JSR@{\_\discretionary {-}{}{}JSR}|hyperpage}{34}
-\indexentry{\_\discretionary {-}{}{}JSR@{\_\discretionary {-}{}{}JSR}!iWi11@{iWi11}|hyperpage}{34}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Debug@{\_\discretionary {-}{}{}Debug}|hyperpage}{33}
+\indexentry{\_\discretionary {-}{}{}Debug@{\_\discretionary {-}{}{}Debug}!iWi11@{iWi11}|hyperpage}{33}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}JSR@{\_\discretionary {-}{}{}JSR}|hyperpage}{33}
+\indexentry{\_\discretionary {-}{}{}JSR@{\_\discretionary {-}{}{}JSR}!iWi11@{iWi11}|hyperpage}{33}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}JSRR@{\_\discretionary {-}{}{}JSRR}|hyperpage}{34}
 \indexentry{\_\discretionary {-}{}{}JSRR@{\_\discretionary {-}{}{}JSRR}!iWi11@{iWi11}|hyperpage}{34}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Load@{\_\discretionary {-}{}{}Load}|hyperpage}{35}
-\indexentry{\_\discretionary {-}{}{}Load@{\_\discretionary {-}{}{}Load}!iWi11@{iWi11}|hyperpage}{35}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Load@{\_\discretionary {-}{}{}Load}|hyperpage}{34}
+\indexentry{\_\discretionary {-}{}{}Load@{\_\discretionary {-}{}{}Load}!iWi11@{iWi11}|hyperpage}{34}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}LoadI@{\_\discretionary {-}{}{}LoadI}|hyperpage}{35}
 \indexentry{\_\discretionary {-}{}{}LoadI@{\_\discretionary {-}{}{}LoadI}!iWi11@{iWi11}|hyperpage}{35}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}LoadR@{\_\discretionary {-}{}{}LoadR}|hyperpage}{36}
-\indexentry{\_\discretionary {-}{}{}LoadR@{\_\discretionary {-}{}{}LoadR}!iWi11@{iWi11}|hyperpage}{36}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}LoadR@{\_\discretionary {-}{}{}LoadR}|hyperpage}{35}
+\indexentry{\_\discretionary {-}{}{}LoadR@{\_\discretionary {-}{}{}LoadR}!iWi11@{iWi11}|hyperpage}{35}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Not@{\_\discretionary {-}{}{}Not}|hyperpage}{36}
 \indexentry{\_\discretionary {-}{}{}Not@{\_\discretionary {-}{}{}Not}!iWi11@{iWi11}|hyperpage}{36}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Ret@{\_\discretionary {-}{}{}Ret}|hyperpage}{37}
-\indexentry{\_\discretionary {-}{}{}Ret@{\_\discretionary {-}{}{}Ret}!iWi11@{iWi11}|hyperpage}{37}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Ret@{\_\discretionary {-}{}{}Ret}|hyperpage}{36}
+\indexentry{\_\discretionary {-}{}{}Ret@{\_\discretionary {-}{}{}Ret}!iWi11@{iWi11}|hyperpage}{36}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Store@{\_\discretionary {-}{}{}Store}|hyperpage}{37}
 \indexentry{\_\discretionary {-}{}{}Store@{\_\discretionary {-}{}{}Store}!iWi11@{iWi11}|hyperpage}{37}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}STI@{\_\discretionary {-}{}{}STI}|hyperpage}{38}
-\indexentry{\_\discretionary {-}{}{}STI@{\_\discretionary {-}{}{}STI}!iWi11@{iWi11}|hyperpage}{38}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}STI@{\_\discretionary {-}{}{}STI}|hyperpage}{37}
+\indexentry{\_\discretionary {-}{}{}STI@{\_\discretionary {-}{}{}STI}!iWi11@{iWi11}|hyperpage}{37}
 \indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}STR@{\_\discretionary {-}{}{}STR}|hyperpage}{38}
 \indexentry{\_\discretionary {-}{}{}STR@{\_\discretionary {-}{}{}STR}!iWi11@{iWi11}|hyperpage}{38}
-\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Trap@{\_\discretionary {-}{}{}Trap}|hyperpage}{39}
-\indexentry{\_\discretionary {-}{}{}Trap@{\_\discretionary {-}{}{}Trap}!iWi11@{iWi11}|hyperpage}{39}
+\indexentry{iWi11@{iWi11}!\_\discretionary {-}{}{}Trap@{\_\discretionary {-}{}{}Trap}|hyperpage}{38}
+\indexentry{\_\discretionary {-}{}{}Trap@{\_\discretionary {-}{}{}Trap}!iWi11@{iWi11}|hyperpage}{38}
 \indexentry{iWi11@{iWi11}!LoadObj@{LoadObj}|hyperpage}{39}
 \indexentry{LoadObj@{LoadObj}!iWi11@{iWi11}|hyperpage}{39}
-\indexentry{iWi11@{iWi11}!DisplayMemory@{DisplayMemory}|hyperpage}{40}
-\indexentry{DisplayMemory@{DisplayMemory}!iWi11@{iWi11}|hyperpage}{40}
+\indexentry{iWi11@{iWi11}!DisplayMemory@{DisplayMemory}|hyperpage}{39}
+\indexentry{DisplayMemory@{DisplayMemory}!iWi11@{iWi11}|hyperpage}{39}
 \indexentry{iWi11@{iWi11}!DisplayRegisters@{DisplayRegisters}|hyperpage}{40}
 \indexentry{DisplayRegisters@{DisplayRegisters}!iWi11@{iWi11}|hyperpage}{40}
 \indexentry{iWi11@{iWi11}!ExecuteNext@{ExecuteNext}|hyperpage}{40}
 \indexentry{ExecuteNext@{ExecuteNext}!iWi11@{iWi11}|hyperpage}{40}
-\indexentry{iWord@{iWord}|hyperpage}{41}
-\indexentry{iWord@{iWord}!ToInt@{ToInt}|hyperpage}{43}
-\indexentry{ToInt@{ToInt}!iWord@{iWord}|hyperpage}{43}
-\indexentry{iWord@{iWord}!ToInt2Complement@{ToInt2Complement}|hyperpage}{43}
-\indexentry{ToInt2Complement@{ToInt2Complement}!iWord@{iWord}|hyperpage}{43}
+\indexentry{iWord@{iWord}|hyperpage}{40}
+\indexentry{iWord@{iWord}!ToInt@{ToInt}|hyperpage}{42}
+\indexentry{ToInt@{ToInt}!iWord@{iWord}|hyperpage}{42}
+\indexentry{iWord@{iWord}!ToInt2Complement@{ToInt2Complement}|hyperpage}{42}
+\indexentry{ToInt2Complement@{ToInt2Complement}!iWord@{iWord}|hyperpage}{42}
 \indexentry{iWord@{iWord}!ToStr@{ToStr}|hyperpage}{43}
 \indexentry{ToStr@{ToStr}!iWord@{iWord}|hyperpage}{43}
 \indexentry{iWord@{iWord}!ToHex@{ToHex}|hyperpage}{43}
 \indexentry{ToHex@{ToHex}!iWord@{iWord}|hyperpage}{43}
-\indexentry{iWord@{iWord}!FromInt@{FromInt}|hyperpage}{44}
-\indexentry{FromInt@{FromInt}!iWord@{iWord}|hyperpage}{44}
+\indexentry{iWord@{iWord}!FromInt@{FromInt}|hyperpage}{43}
+\indexentry{FromInt@{FromInt}!iWord@{iWord}|hyperpage}{43}
 \indexentry{iWord@{iWord}!FromStr@{FromStr}|hyperpage}{44}
 \indexentry{FromStr@{FromStr}!iWord@{iWord}|hyperpage}{44}
-\indexentry{iWord@{iWord}!FromHex@{FromHex}|hyperpage}{45}
-\indexentry{FromHex@{FromHex}!iWord@{iWord}|hyperpage}{45}
+\indexentry{iWord@{iWord}!FromHex@{FromHex}|hyperpage}{44}
+\indexentry{FromHex@{FromHex}!iWord@{iWord}|hyperpage}{44}
 \indexentry{iWord@{iWord}!Add@{Add}|hyperpage}{45}
 \indexentry{Add@{Add}!iWord@{iWord}|hyperpage}{45}
-\indexentry{iWord@{iWord}!operator+@{operator+}|hyperpage}{46}
-\indexentry{operator+@{operator+}!iWord@{iWord}|hyperpage}{46}
-\indexentry{iWord@{iWord}!Subtract@{Subtract}|hyperpage}{46}
-\indexentry{Subtract@{Subtract}!iWord@{iWord}|hyperpage}{46}
+\indexentry{iWord@{iWord}!operator+@{operator+}|hyperpage}{45}
+\indexentry{operator+@{operator+}!iWord@{iWord}|hyperpage}{45}
+\indexentry{iWord@{iWord}!Subtract@{Subtract}|hyperpage}{45}
+\indexentry{Subtract@{Subtract}!iWord@{iWord}|hyperpage}{45}
 \indexentry{iWord@{iWord}!operator-\/@{operator-\/}|hyperpage}{46}
 \indexentry{operator-\/@{operator-\/}!iWord@{iWord}|hyperpage}{46}
 \indexentry{iWord@{iWord}!And@{And}|hyperpage}{46}
 \indexentry{And@{And}!iWord@{iWord}|hyperpage}{46}
-\indexentry{iWord@{iWord}!Or@{Or}|hyperpage}{47}
-\indexentry{Or@{Or}!iWord@{iWord}|hyperpage}{47}
+\indexentry{iWord@{iWord}!Or@{Or}|hyperpage}{46}
+\indexentry{Or@{Or}!iWord@{iWord}|hyperpage}{46}
 \indexentry{iWord@{iWord}!Not@{Not}|hyperpage}{47}
 \indexentry{Not@{Not}!iWord@{iWord}|hyperpage}{47}
 \indexentry{iWord@{iWord}!Copy@{Copy}|hyperpage}{47}
 \indexentry{Copy@{Copy}!iWord@{iWord}|hyperpage}{47}
-\indexentry{iWord@{iWord}!operator=@{operator=}|hyperpage}{48}
-\indexentry{operator=@{operator=}!iWord@{iWord}|hyperpage}{48}
+\indexentry{iWord@{iWord}!operator=@{operator=}|hyperpage}{47}
+\indexentry{operator=@{operator=}!iWord@{iWord}|hyperpage}{47}
 \indexentry{iWord@{iWord}!operator++@{operator++}|hyperpage}{48}
 \indexentry{operator++@{operator++}!iWord@{iWord}|hyperpage}{48}
 \indexentry{iWord@{iWord}!operator++@{operator++}|hyperpage}{48}
@@ -151,9 +148,13 @@
 \indexentry{iWord@{iWord}!SetBit@{SetBit}|hyperpage}{49}
 \indexentry{SetBit@{SetBit}!iWord@{iWord}|hyperpage}{49}
 \indexentry{Loader@{Loader}|hyperpage}{49}
+\indexentry{Loader@{Loader}!Loader@{Loader}|hyperpage}{50}
+\indexentry{Loader@{Loader}!Loader@{Loader}|hyperpage}{50}
 \indexentry{Memory@{Memory}|hyperpage}{50}
 \indexentry{ObjectData@{ObjectData}|hyperpage}{52}
 \indexentry{ObjParser@{ObjParser}|hyperpage}{52}
+\indexentry{ObjParser@{ObjParser}!$\sim $ObjParser@{$\sim $ObjParser}|hyperpage}{54}
+\indexentry{$\sim $ObjParser@{$\sim $ObjParser}!ObjParser@{ObjParser}|hyperpage}{54}
 \indexentry{ObjParser@{ObjParser}!Initialize@{Initialize}|hyperpage}{54}
 \indexentry{Initialize@{Initialize}!ObjParser@{ObjParser}|hyperpage}{54}
 \indexentry{ObjParser@{ObjParser}!GetNext@{GetNext}|hyperpage}{54}
@@ -165,6 +166,8 @@
 \indexentry{ResultDecoder@{ResultDecoder}!\_\discretionary {-}{}{}codes@{\_\discretionary {-}{}{}codes}|hyperpage}{57}
 \indexentry{\_\discretionary {-}{}{}codes@{\_\discretionary {-}{}{}codes}!ResultDecoder@{ResultDecoder}|hyperpage}{57}
 \indexentry{Wi11@{Wi11}|hyperpage}{57}
+\indexentry{Wi11@{Wi11}!Wi11@{Wi11}|hyperpage}{60}
+\indexentry{Wi11@{Wi11}!Wi11@{Wi11}|hyperpage}{60}
 \indexentry{Wi11::CCR@{Wi11::CCR}|hyperpage}{60}
 \indexentry{Word@{Word}|hyperpage}{61}
 \indexentry{Word@{Word}!\_\discretionary {-}{}{}HasBit@{\_\discretionary {-}{}{}HasBit}|hyperpage}{62}

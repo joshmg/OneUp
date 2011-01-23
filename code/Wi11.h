@@ -7,6 +7,7 @@
 #ifndef WI11_H
 #define WI11_H
 
+#include "iWi11.h"
 #include "Word.h"
 #include "Register.h"
 #include "Memory.h"
@@ -27,36 +28,40 @@ class Wi11 : public iWi11 {
       bool n, z, p;
     } _CCR;
     //! For loading the object file.
-    ObjLoader _loader;
+    Loader _loader;
     //! For decoding instructions fetch from memory.
     Decoder _decoder;
     //! For error messages.
     ResultDecoder _result_decoder;
     
-    REGISTER_ID _Word2RegisterID(const Word&) const;
-    iRegister& _GetRegister(const Decoder::REGISTER_ID&);
+    Decoder_Directory::REGISTER_ID _Word2RegisterID(const Word&) const;
+    iRegister& _GetRegister(const Decoder_Directory::REGISTER_ID&);
     void _UpdateCCR(int);
-    virtual Codes::RESULT _Add(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR1, const Decoder::REGISTER_ID& SR2);
-    virtual Codes::RESULT _Add(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR1, const iWord& immediate);
-    virtual Codes::RESULT _And(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR1, const Decoder::REGISTER_ID& SR2);
-    virtual Codes::RESULT _And(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR1, const iWord& immediate);
+    virtual Codes::RESULT _Add(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR1, const Decoder_Directory::REGISTER_ID& SR2);
+    virtual Codes::RESULT _Add(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR1, const iWord& immediate);
+    virtual Codes::RESULT _And(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR1, const Decoder_Directory::REGISTER_ID& SR2);
+    virtual Codes::RESULT _And(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR1, const iWord& immediate);
     virtual Codes::RESULT _Branch(const iWord& address);
     virtual Codes::RESULT _Debug();
     virtual Codes::RESULT _JSR(const iWord&, bool);
-    virtual Codes::RESULT _JSRR(const Decoder::REGISTER_ID& baseR, const iWord& address, bool link);
-    virtual Codes::RESULT _Load(const Decoder::REGISTER_ID& DR, const iWord& address);
-    virtual Codes::RESULT _LoadI(const Decoder::REGISTER_ID& DR, const iWord& address);
-    virtual Codes::RESULT _LoadR(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& baseR, const iWord& address);
-    virtual Codes::RESULT _LoadEA(const Decoder::REGISTER_ID& DR, const iWord& address);
-    virtual Codes::RESULT _Not(const Decoder::REGISTER_ID& DR, const Decoder::REGISTER_ID& SR);
+    virtual Codes::RESULT _JSRR(const Decoder_Directory::REGISTER_ID& baseR, const iWord& address, bool link);
+    virtual Codes::RESULT _Load(const Decoder_Directory::REGISTER_ID& DR, const iWord& address);
+    virtual Codes::RESULT _LoadI(const Decoder_Directory::REGISTER_ID& DR, const iWord& address);
+    virtual Codes::RESULT _LoadR(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& baseR, const iWord& address);
+    virtual Codes::RESULT _LoadEA(const Decoder_Directory::REGISTER_ID& DR, const iWord& address);
+    virtual Codes::RESULT _Not(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR);
     virtual Codes::RESULT _Ret();
-    virtual Codes::RESULT _Store(const Decoder::REGISTER_ID& SR, const iWord& address);
-    virtual Codes::RESULT _STI(const Decoder::REGISTER_ID& SR, const iWord& address);
-    virtual Codes::RESULT _STR(const Decoder::REGISTER_ID& SR, const Decoder::REGISTER_ID& baseR, const iWord& address);
+    virtual Codes::RESULT _Store(const Decoder_Directory::REGISTER_ID& SR, const iWord& address);
+    virtual Codes::RESULT _STI(const Decoder_Directory::REGISTER_ID& SR, const iWord& address);
+    virtual Codes::RESULT _STR(const Decoder_Directory::REGISTER_ID& SR, const Decoder_Directory::REGISTER_ID& baseR, const iWord& address);
     virtual Codes::RESULT _Trap(const iWord& code);
     
   public:
-    virtual iWi11();
+    /*! @brief Creates and organizes the componts of the Wi11 machine.
+        
+        Initializes the general purpose registers, CCR, and memory.
+    */
+    Wi11();
 
     virtual bool LoadObj(const char*);
 

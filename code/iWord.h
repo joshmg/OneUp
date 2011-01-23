@@ -222,7 +222,7 @@ class iWord {
         Works in a similar way to ::operator[] but sets the bit
         instead of determining if it is set.
     */
-    virtual void SetBit(const int i) = 0;
+    virtual void SetBit(const int i, bool) = 0;
 };
 
 #endif

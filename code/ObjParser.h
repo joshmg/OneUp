@@ -8,18 +8,20 @@
 
 #include "iObjParser.h"
 #include "Word.h"
-#include <ifstream>
+#include <fstream>
 
 //! Implements iObjParser.
-class ObjParser : iObjParser {
+class ObjParser : public iObjParser {
   private:
     //! Maintains an input stream from the object file specified by the "name" parameter to Initialize.
-    ifstream _fileStream;
+    std::ifstream _fileStream;
 
   public:
+    /*! @brief Closes a file, if necessary, when an iObjParser object goes out of scope..
+    */
     ~ObjParser();
 
-    Codes::Result Initialize(const char* name);
+    Codes::RESULT Initialize(const char* name);
 
     ObjectData GetNext();
 };

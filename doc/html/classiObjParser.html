@@ -64,21 +64,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structObjectData.html">ObjectData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiObjParser.html#aeb9af4a40a06e755d8b0e493526d82dd">GetNext</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-processes the next line of the object file.  <a href="#aeb9af4a40a06e755d8b0e493526d82dd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual Codes::Result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiObjParser.html#a570e7a7dfb64b66e7a78f75ec4da193a">Initialize</a> (const char *filename)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to open th object file.  <a href="#a570e7a7dfb64b66e7a78f75ec4da193a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae88aacaa19a6aa6d4a7c82c02eabc3dc"></a><!-- doxytag: member="iObjParser::~iObjParser" ref="ae88aacaa19a6aa6d4a7c82c02eabc3dc" args="()=0" -->
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiObjParser.html#ae88aacaa19a6aa6d4a7c82c02eabc3dc">~iObjParser</a> ()=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a file, if necessarily, when an <a class="el" href="classiObjParser.html" title="Defines how object files are processed.">iObjParser</a> object goes out of scope.. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Codes::RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiObjParser.html#a772e3a012952c19a56a4cdbb76b6a59a">Initialize</a> (const char *filename)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to open th object file.  <a href="#a772e3a012952c19a56a4cdbb76b6a59a"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Defines how object files are processed. </p>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a570e7a7dfb64b66e7a78f75ec4da193a"></a><!-- doxytag: member="iObjParser::Initialize" ref="a570e7a7dfb64b66e7a78f75ec4da193a" args="(const char *filename)=0" -->
+<a class="anchor" id="a772e3a012952c19a56a4cdbb76b6a59a"></a><!-- doxytag: member="iObjParser::Initialize" ref="a772e3a012952c19a56a4cdbb76b6a59a" args="(const char *filename)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Codes::Result iObjParser::Initialize </td>
+          <td class="memname">virtual Codes::RESULT iObjParser::Initialize </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"> <em>filename</em>&#160;)</td>
@@ -98,7 +95,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS or, if something went wrong, an appropriate error code.</dd></dl>
 <p>If another file is open, closes that file first before attempting to open the new one. </p>
 
-<p>Implemented in <a class="el" href="classObjParser.html#a71ea25b566166b7db47a894cb7629390">ObjParser</a>.</p>
+<p>Implemented in <a class="el" href="classObjParser.html#ae8d9939f390a68901e256d8a3187c24a">ObjParser</a>.</p>
 
 </div>
 </div>
@@ -144,7 +141,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 19:01:10 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

@@ -10,17 +10,17 @@ Finds the messages associated with a given result code.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std::string \hyperlink{classResultDecoder_ace7c2719b4f9de2a5e25fccfddc6d8f4}{Find} (const Codes::RESULT \&result) const 
+std::string \hyperlink{classResultDecoder_a3da4876ac5cd585a7d6176b568248b1d}{Find} (const Codes::RESULT \&result) const 
 \begin{DoxyCompactList}\small\item\em Looks up a result code. \item\end{DoxyCompactList}\item 
 \hypertarget{classResultDecoder_afafd3458bdbcbd7b1b95545f47151358}{
 \hyperlink{classResultDecoder_afafd3458bdbcbd7b1b95545f47151358}{ResultDecoder} ()}
 \label{classResultDecoder_afafd3458bdbcbd7b1b95545f47151358}
 
 \begin{DoxyCompactList}\small\item\em Generates the code-\/to-\/message mappings. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static std::map$<$ Codes::RESULT, std::string $>$ \hyperlink{classResultDecoder_ab19497e41c5d1a0546ed33642cad48dd}{\_\-codes}
+std::map$<$ Codes::RESULT, std::string $>$ \hyperlink{classResultDecoder_ab19497e41c5d1a0546ed33642cad48dd}{\_\-codes}
 \begin{DoxyCompactList}\small\item\em Maps a result code to, in every case but SUCCESS, an error message. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -28,15 +28,15 @@ static std::map$<$ Codes::RESULT, std::string $>$ \hyperlink{classResultDecoder_
 Finds the messages associated with a given result code. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classResultDecoder_ace7c2719b4f9de2a5e25fccfddc6d8f4}{
+\hypertarget{classResultDecoder_a3da4876ac5cd585a7d6176b568248b1d}{
 \index{ResultDecoder@{ResultDecoder}!Find@{Find}}
 \index{Find@{Find}!ResultDecoder@{ResultDecoder}}
-\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}std::string ResultDecoder::Find (
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}string ResultDecoder::Find (
 \begin{DoxyParamCaption}
 \item[{const Codes::RESULT \&}]{ result}
 \end{DoxyParamCaption}
 ) const}}
-\label{classResultDecoder_ace7c2719b4f9de2a5e25fccfddc6d8f4}
+\label{classResultDecoder_a3da4876ac5cd585a7d6176b568248b1d}
 
 
 Looks up a result code. 
@@ -55,7 +55,7 @@ The messages associated with \char`\"{}result\char`\"{}.
 \hypertarget{classResultDecoder_ab19497e41c5d1a0546ed33642cad48dd}{
 \index{ResultDecoder@{ResultDecoder}!\_\-codes@{\_\-codes}}
 \index{\_\-codes@{\_\-codes}!ResultDecoder@{ResultDecoder}}
-\subsubsection[{\_\-codes}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$Codes::RESULT, std::string$>$ {\bf ResultDecoder::\_\-codes}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\subsubsection[{\_\-codes}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$Codes::RESULT, std::string$>$ {\bf ResultDecoder::\_\-codes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
 \label{classResultDecoder_ab19497e41c5d1a0546ed33642cad48dd}
 
 

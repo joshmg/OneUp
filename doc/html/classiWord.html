@@ -90,8 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An accessor to the 'i'th bit of the value.  <a href="#a0e83901b08763247527ce61c89fd847f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a2f57b8b8739d1ce6c043494696a9f685">Or</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"Or"s the bits of two words.  <a href="#a2f57b8b8739d1ce6c043494696a9f685"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#adfc0d2e05f06bc51ef29a385a062a435">SetBit</a> (const int i)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the 'i'th bit of the value.  <a href="#adfc0d2e05f06bc51ef29a385a062a435"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a6442bd382be2d072d6243cfcb9dd2312">SetBit</a> (const int i, bool)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the 'i'th bit of the value.  <a href="#a6442bd382be2d072d6243cfcb9dd2312"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classWord.html">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a8e2da1fb4c3ffcc78e1d94f1798797ec">Subtract</a> (const <a class="el" href="classiWord.html">iWord</a> &amp;w) const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts two words.  <a href="#a8e2da1fb4c3ffcc78e1d94f1798797ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classiWord.html#a7d7cb4facca44fc785899d01e47f29b1">ToHex</a> () const =0</td></tr>
@@ -574,7 +574,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adfc0d2e05f06bc51ef29a385a062a435"></a><!-- doxytag: member="iWord::SetBit" ref="adfc0d2e05f06bc51ef29a385a062a435" args="(const int i)=0" -->
+<a class="anchor" id="a6442bd382be2d072d6243cfcb9dd2312"></a><!-- doxytag: member="iWord::SetBit" ref="a6442bd382be2d072d6243cfcb9dd2312" args="(const int i, bool)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -582,8 +582,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual void iWord::SetBit </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"> <em>i</em>&#160;)</td>
-          <td><code> [pure virtual]</code></td>
+          <td class="paramname"> <em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -616,7 +626,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 19:01:10 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

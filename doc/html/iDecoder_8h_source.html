@@ -57,13 +57,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="keyword">class </span><a class="code" href="classWord.html" title="Implements iWord.">Word</a>;
 <a name="l00014"></a>00014 
-<a name="l00021"></a><a class="code" href="namespaceDecoder.html">00021</a> <span class="keyword">namespace </span>Decoder {
+<a name="l00021"></a><a class="code" href="namespaceDecoder__Directory.html">00021</a> <span class="keyword">namespace </span>Decoder_Directory {
 <a name="l00022"></a>00022   <span class="keyword">enum</span> REGISTER_ID { R0, R1, R2, R3, R4, R5, R6, R7, PC };
 <a name="l00023"></a>00023   <span class="keyword">enum</span> INSTRUCTION_TYPE { ADD, AND, BRx, DBUG, JSR, JSRR, LD, LDI, LDR, LEA, NOT, RET, ST, STI, STR, TRAP, ERROR };
 <a name="l00024"></a>00024 }
 <a name="l00025"></a>00025 
 <a name="l00028"></a><a class="code" href="structInstruction.html">00028</a> <span class="keyword">struct </span><a class="code" href="structInstruction.html" title="Container to simplify interactions with Wi-11 instructions.">Instruction</a> {
-<a name="l00030"></a><a class="code" href="structInstruction.html#afc9f26527635d9d851759eab142e5ec7">00030</a>   INSTRUCTION_TYPE <a class="code" href="structInstruction.html#afc9f26527635d9d851759eab142e5ec7" title="The type of instruction.">type</a>;
+<a name="l00030"></a><a class="code" href="structInstruction.html#a2f5e91a25d72c7ec993a1cb472602d95">00030</a>   Decoder_Directory::INSTRUCTION_TYPE <a class="code" href="structInstruction.html#a2f5e91a25d72c7ec993a1cb472602d95" title="The type of instruction.">type</a>;
 <a name="l00072"></a><a class="code" href="structInstruction.html#a93f6b7366b14b17d8379ea952687960c">00072</a>   std::vector&lt;Word&gt; <a class="code" href="structInstruction.html#a93f6b7366b14b17d8379ea952687960c" title="The arguemnts to the operation (including unecessary bits).">data</a>;
 <a name="l00073"></a>00073 };
 <a name="l00074"></a>00074 
@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 17:34:26 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 19:01:10 for OneUp Wi-11 Simulator by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

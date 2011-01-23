@@ -18,7 +18,7 @@ class Word;
     is made easier as REGISTER_ID's and INSTRUCTION_TYPE's can
     be used instead of strings.
 */
-namespace Decoder {
+namespace Decoder_Directory {
   enum REGISTER_ID { R0, R1, R2, R3, R4, R5, R6, R7, PC };
   enum INSTRUCTION_TYPE { ADD, AND, BRx, DBUG, JSR, JSRR, LD, LDI, LDR, LEA, NOT, RET, ST, STI, STR, TRAP, ERROR };
 }
@@ -27,7 +27,7 @@ namespace Decoder {
 */
 struct Instruction {
   //! The type of instruction.
-  INSTRUCTION_TYPE type;
+  Decoder_Directory::INSTRUCTION_TYPE type;
   /*! @brief The arguemnts to the operation (including unecessary bits).
 
       @par Example:

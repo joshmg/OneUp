@@ -12,28 +12,23 @@ Defines how object files are processed.
 \item 
 virtual \hyperlink{structObjectData}{ObjectData} \hyperlink{classiObjParser_aeb9af4a40a06e755d8b0e493526d82dd}{GetNext} ()=0
 \begin{DoxyCompactList}\small\item\em Pre-\/processes the next line of the object file. \item\end{DoxyCompactList}\item 
-virtual Codes::Result \hyperlink{classiObjParser_a570e7a7dfb64b66e7a78f75ec4da193a}{Initialize} (const char $\ast$filename)=0
-\begin{DoxyCompactList}\small\item\em Attempts to open th object file. \item\end{DoxyCompactList}\item 
-\hypertarget{classiObjParser_ae88aacaa19a6aa6d4a7c82c02eabc3dc}{
-virtual \hyperlink{classiObjParser_ae88aacaa19a6aa6d4a7c82c02eabc3dc}{$\sim$iObjParser} ()=0}
-\label{classiObjParser_ae88aacaa19a6aa6d4a7c82c02eabc3dc}
-
-\begin{DoxyCompactList}\small\item\em Closes a file, if necessarily, when an \hyperlink{classiObjParser}{iObjParser} object goes out of scope.. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual Codes::RESULT \hyperlink{classiObjParser_a772e3a012952c19a56a4cdbb76b6a59a}{Initialize} (const char $\ast$filename)=0
+\begin{DoxyCompactList}\small\item\em Attempts to open th object file. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Defines how object files are processed. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classiObjParser_a570e7a7dfb64b66e7a78f75ec4da193a}{
+\hypertarget{classiObjParser_a772e3a012952c19a56a4cdbb76b6a59a}{
 \index{iObjParser@{iObjParser}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!iObjParser@{iObjParser}}
-\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual Codes::Result iObjParser::Initialize (
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual Codes::RESULT iObjParser::Initialize (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{ filename}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{classiObjParser_a570e7a7dfb64b66e7a78f75ec4da193a}
+\label{classiObjParser_a772e3a012952c19a56a4cdbb76b6a59a}
 
 
 Attempts to open th object file. 
@@ -48,7 +43,7 @@ SUCCESS or, if something went wrong, an appropriate error code.
 \end{DoxyReturn}
 If another file is open, closes that file first before attempting to open the new one. 
 
-Implemented in \hyperlink{classObjParser_a71ea25b566166b7db47a894cb7629390}{ObjParser}.
+Implemented in \hyperlink{classObjParser_ae8d9939f390a68901e256d8a3187c24a}{ObjParser}.
 
 \hypertarget{classiObjParser_aeb9af4a40a06e755d8b0e493526d82dd}{
 \index{iObjParser@{iObjParser}!GetNext@{GetNext}}

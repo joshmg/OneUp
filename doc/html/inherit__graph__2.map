@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$classiMemory.html" title="Defines the functionality of memory in the Wi&#45;11 machine." alt="" coords="5,5,83,35"/>
-<area shape="rect" id="node3" href="$classMemory.html" title="Implements iMemory." alt="" coords="131,5,205,35"/>
+<area shape="rect" id="node1" href="$classiLoader.html" title="Defines how the Wi&#45;11 initializes memory." alt="" coords="5,5,75,35"/>
+<area shape="rect" id="node3" href="$classLoader.html" title="Implements iLoader." alt="" coords="123,5,189,35"/>
 </map>

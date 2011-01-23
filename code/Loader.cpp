@@ -6,24 +6,24 @@
 #include "ResultCodes.h"
 #include "iMemory.h"
 #include "iLoader.h"
-#include "iObjParser.h"
+#include "ObjParser.h"
 
 using namespace Codes;
 
 
 // establish the Memory pointer of the class
-iLoader::iLoader(iMemory* mem) {
+Loader::Loader(iMemory* mem) {
   _memory = mem;
 }
 
-RESULT Loader::Load(const char* filename, iWord& PC_address) {
+RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   ObjParser Parser; // the parser is just the iobjparser object
 
   Word Hex1,Hex2; // used to manipulate memory.  memory has the functions i need, so no hex conversion is needed, as everything is a word
   
   ObjectData Data; // the Parser return the Data to this
 
-  RESULTS returns; // meant to save the return values, and check if sucesses, or, if not, return itself.
+  RESULT returns; // meant to save the return values, and check if sucesses, or, if not, return itself.
 
   int min_memory, max_memory, mem_location; // check for out of bounds acess on memory
   
@@ -32,7 +32,7 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) {
     return returns;
   }
   
-  Data=Parser.Get_Next(); // getting my first header
+  Data=Parser.GetNext(); // getting my first header
   
   if (Data.type!='H') { //if it is not a H, problem
     return INVALID_OBJECT_FILE;
@@ -50,12 +50,12 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) {
   }
 
   // establishing the upper bound on memory
-  max_memory=init_memory+Hex2.ToInt();
-  returns=Memory->Reserve(Hex1,Hex2);
+  max_memory=min_memory+Hex2.ToInt();
+  returns=_memory->Reserve(Hex1,Hex2);
   if (returns!=SUCCESS) {
     return returns;
   }
-  Data=Parser.Get_Next();
+  Data=Parser.GetNext();
 
   // this loop goes through the Test records
   while (Data.type=='T') {
@@ -74,11 +74,11 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) {
     }
 
     // if it is in bounds, store it
-    returns=Memory->Store(Hex1,Hex2);
+    returns=_memory->Store(Hex1,Hex2);
     if (returns!=SUCCESS) {
      return returns;
     }
-    Data=Parser.Get_Next();
+    Data=Parser.GetNext();
   }
 
   // if we ended the loop, and dectected something other that an E, we have an issue

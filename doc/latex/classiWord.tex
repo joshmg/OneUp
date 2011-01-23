@@ -38,7 +38,7 @@ virtual bool \hyperlink{classiWord_a0e83901b08763247527ce61c89fd847f}{operator\m
 \begin{DoxyCompactList}\small\item\em An accessor to the 'i'th bit of the value. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a2f57b8b8739d1ce6c043494696a9f685}{Or} (const \hyperlink{classiWord}{iWord} \&w) const =0
 \begin{DoxyCompactList}\small\item\em \char`\"{}Or\char`\"{}s the bits of two words. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiWord_adfc0d2e05f06bc51ef29a385a062a435}{SetBit} (const int i)=0
+virtual void \hyperlink{classiWord_a6442bd382be2d072d6243cfcb9dd2312}{SetBit} (const int i, bool)=0
 \begin{DoxyCompactList}\small\item\em Sets the 'i'th bit of the value. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a8e2da1fb4c3ffcc78e1d94f1798797ec}{Subtract} (const \hyperlink{classiWord}{iWord} \&w) const =0
 \begin{DoxyCompactList}\small\item\em Subtracts two words. \item\end{DoxyCompactList}\item 
@@ -471,15 +471,16 @@ If the object holds a value of 4 (0...100 in binary): num\mbox{[}2\mbox{]} = 1.\
  If it holds a value of 1 (0...001 in binary): num\mbox{[}0\mbox{]} = 1.\par
  If it holds a negative value (Starting with a 1 in 2's complement): num\mbox{[}15\mbox{]} = 1. 
 \end{DoxyParagraph}
-\hypertarget{classiWord_adfc0d2e05f06bc51ef29a385a062a435}{
+\hypertarget{classiWord_a6442bd382be2d072d6243cfcb9dd2312}{
 \index{iWord@{iWord}!SetBit@{SetBit}}
 \index{SetBit@{SetBit}!iWord@{iWord}}
 \subsubsection[{SetBit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void iWord::SetBit (
 \begin{DoxyParamCaption}
-\item[{const int}]{ i}
+\item[{const int}]{ i, }
+\item[{bool}]{}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{classiWord_adfc0d2e05f06bc51ef29a385a062a435}
+\label{classiWord_a6442bd382be2d072d6243cfcb9dd2312}
 
 
 Sets the 'i'th bit of the value. 

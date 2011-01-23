@@ -7,17 +7,18 @@
 using namespace std;
 using namespace Codes;
 
-string ResultDecoder::Find () const {
+string ResultDecoder::Find(const RESULT& result) const {
 
 	// retrieve iterator from map of codes
-	map<Result, string>::iterator it = _codes.find(Result);
+	map<RESULT, string>::const_iterator it = _codes.find(result);
 
 	// check if retrieved iterator is the same as the map::end
 	if( it == _codes.end () ) {
-		return "Error: Undefined Result Code.";
+		return "Error: Undefined Result Code Enumeration";
 	}
 	else {
 		return it -> second;
 	}
 
 }
+

@@ -35,7 +35,7 @@ class iWi11 {
         @param[in] id A REGISTER_ID corresponding to one of the private registers.
         @return A reference to the id'd register.
     */
-    virtual iRegister& _GetRegister(const Decoder::REGISTER_ID& id) = 0;
+    virtual iRegister& _GetRegister(const Decoder_Directory::REGISTER_ID& id) = 0;
     //  [This may prove useful. It is essentially a C Switch which returns
     //  a reference to the appropriate instance of a Register object which
     //  corresponds to the provided REGISTER_ID token.]
@@ -51,7 +51,7 @@ class iWi11 {
         @note
         Updates the CCR.
     */
-    virtual Codes::RESULT _Add(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const Decoder::REGISTER_ID SR2) = 0;
+    virtual Codes::RESULT _Add(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR1, const Decoder_Directory::REGISTER_ID& SR2) = 0;
 
 
     /*! @brief Adds a constant to a register and stores the result in another.
@@ -64,7 +64,7 @@ class iWi11 {
         @note
         Updates the CCR.
     */
-    virtual Codes::RESULT _Add(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const iWord& immediate) = 0;
+    virtual Codes::RESULT _Add(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR1, const iWord& immediate) = 0;
 
 
     /*! @brief Bit-wise ands two registers and stores the result in a third.
@@ -77,7 +77,7 @@ class iWi11 {
         @note
         Updates the CCR.
     */
-    virtual Codes::RESULT _And(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const Decoder::REGISTER_ID SR2) = 0;
+    virtual Codes::RESULT _And(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR1, const Decoder_Directory::REGISTER_ID& SR2) = 0;
 
 
     /*! @brief Bit-wise ands a register with a constant and stores the result in another register.
@@ -90,7 +90,7 @@ class iWi11 {
         @note
         Updates the CCR.
     */
-    virtual Codes::RESULT _And(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR1, const iWord& immediate) = 0;
+    virtual Codes::RESULT _And(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR1, const iWord& immediate) = 0;
 
 
     /*! @brief Changes the last 9 bits of the PC.
@@ -117,7 +117,7 @@ class iWi11 {
         If the link bit was set for this instruction, R7 will hold the old value of the PC.
         However, the CCR will not be altered for this instruction, depite R7 being altered.
     */
-    virtual Codes::RESULT _JSR(const iWord& w) = 0;
+    virtual Codes::RESULT _JSR(const iWord& w, bool) = 0;
 
 
     /*! @brief Initiate a jump to a subroutine (alter the PC).
@@ -130,7 +130,7 @@ class iWi11 {
         If the link bit was set for this instruction, R7 will hold the old value of the PC.
         However, the CCR will not be altered for this instruction, depite R7 being altered.
     */
-    virtual Codes::RESULT _JSRR(const iWord& baseR, const iWord& address) = 0;
+    virtual Codes::RESULT _JSRR(const Decoder_Directory::REGISTER_ID& baseR, const iWord& address, bool) = 0;
 
 
     /*! @brief Loads a word in memory into a register.
@@ -142,7 +142,7 @@ class iWi11 {
         @note
         Updates the CCR.
     */
-    virtual Codes::RESULT _Load(const Decoder::REGISTER_ID DR, const iWord& address) = 0;
+    virtual Codes::RESULT _Load(const Decoder_Directory::REGISTER_ID& DR, const iWord& address) = 0;
 
 
     /*! @brief Performs an indirect load.
@@ -158,7 +158,7 @@ class iWi11 {
         @note
         Updates the CCR.
     */
-    virtual Codes::RESULT _LoadI(const Decoder::REGISTER_ID DR, const iWord& address) = 0;
+    virtual Codes::RESULT _LoadI(const Decoder_Directory::REGISTER_ID& DR, const iWord& address) = 0;
 
 
     /*! @brief Performs a register-relative load.
@@ -173,7 +173,7 @@ class iWi11 {
         @note
         Updates the CCR.
     */ 
-    virtual Codes::RESULT _LoadR(const Decoder::REGISTER_ID DR, Decoder::REGISTER_ID baseR, const iWord& address) = 0;
+    virtual Codes::RESULT _LoadR(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& baseR, const iWord& address) = 0;
 
 
     /*! @brief Bit-wise nots a register and stores the result in another.
@@ -184,7 +184,7 @@ class iWi11 {
         @note
         Updates the CCR.
     */
-    virtual Codes::RESULT _Not(const Decoder::REGISTER_ID DR, const Decoder::REGISTER_ID SR) = 0;
+    virtual Codes::RESULT _Not(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& SR) = 0;
 
 
     /*! @brief Return from a subroutine.
@@ -207,7 +207,7 @@ class iWi11 {
         @post SR1 and "address" are not changed.
         @return SUCCESS or, if something went wrong, an appropriate error code.
     */
-    virtual Codes::RESULT _Store(const Decoder::REGISTER_ID SR1, const iWord& address) = 0;
+    virtual Codes::RESULT _Store(const Decoder_Directory::REGISTER_ID& SR1, const iWord& address) = 0;
 
 
     /*! @brief Performs an indirect store.
@@ -220,7 +220,7 @@ class iWi11 {
         to again access memory.  In this indirect way, a store can be made to anywhere
         in Memory.
     */
-    virtual Codes::RESULT _STI(const Decoder::REGISTER_ID SR1, const iWord& address) = 0;
+    virtual Codes::RESULT _STI(const Decoder_Directory::REGISTER_ID& SR1, const iWord& address) = 0;
 
 
     /*! @brief Perfroms a register-relative store.
@@ -230,7 +230,7 @@ class iWi11 {
         @post SR1, baseR, and "address" are not changed.
         @return SUCCESS or, if something went wrong, an appropriate error code.
     */  
-    virtual Codes::RESULT _STR(const Decoder::REGISTER_ID SR1, const Decoder::REGISTER_ID baseR, const iWord& address) = 0;
+    virtual Codes::RESULT _STR(const Decoder_Directory::REGISTER_ID& SR1, const Decoder_Directory::REGISTER_ID& baseR, const iWord& address) = 0;
 
 
     /*! @brief Branches to a trap vector.
@@ -261,11 +261,6 @@ class iWi11 {
     virtual Codes::RESULT _Trap(const iWord& code) = 0;
    
    public:
-    /*! @brief Creates and organizes the componts of the Wi11 machine.
-        
-        Initializes the general purpose registers, CCR, and memory.
-    */
-    virtual iWi11() = 0;
 
     /*  This will prove to be a useful command, but is not necessary at this
         time.
