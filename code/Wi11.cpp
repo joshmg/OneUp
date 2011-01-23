@@ -308,8 +308,10 @@ void Wi11::DisplayRegisters() const {
 }
 
 bool Wi11::ExecuteNext(bool verbose) {
+  if (verbose) cout << "PC[" << _PC.GetValue().ToHex() << "]: ";
   Instruction instruction = _decoder.DecodeInstruction(_memory.Load(_PC.GetValue()));
   _PC++;
+  cout << instruction.type << endl;
 
   switch (instruction.type) {
     case ADD: {
@@ -512,6 +514,4 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
   }
-
-  if (verbose) cout << "The PC is now: " << _PC.GetValue().ToHex() << endl;
 }
