@@ -105,7 +105,7 @@ bool Word::FromHex(const string& value) {
     return false;
   }
   for (int i=2; i<proper.length(); i++) {
-    if ( !((value[i] >= '0' || value[i] <= '9') || (value[i] >= 'A' && value[i] <= 'F')) ) {
+    if ( !((value[i] >= '0' && value[i] <= '9') || (value[i] >= 'A' && value[i] <= 'F')) ) {
       // not hex
       return false;
     }

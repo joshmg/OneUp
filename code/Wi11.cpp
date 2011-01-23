@@ -161,7 +161,7 @@ RESULT Wi11::_LoadEA(const REGISTER_ID& DR, const iWord& address) {
   Word new_address(_PC.GetValue());
   for (int i=0;i<9;i++) new_address.SetBit(i, address[i]);
 
-  _GetRegister(DR) = _memory.Load(new_address);
+  _GetRegister(DR) = new_address;
   _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
 
   return SUCCESS;
@@ -270,6 +270,8 @@ void Wi11::DisplayMemory() const {
   vector< vector<Word> > memory_addresses = _memory.GetUsedMemory();
 
   cout << "Wi11 Machine Memory" << endl;
+  int column = 0; // used to maintain 3 columns of data
+
   for (int i=0;i<memory_addresses.size();i++) {
     int begin_address = memory_addresses[i][0].ToInt();
     int end_address = memory_addresses[i][1].ToInt();
@@ -278,7 +280,12 @@ void Wi11::DisplayMemory() const {
       temp_address.FromInt(begin_address);
       Word current_mem_address;
       current_mem_address.FromInt(begin_address);
-      cout << "M[" << current_mem_address.ToHex() << "] = " << _memory.Load(temp_address).ToHex() << endl;
+      cout << "M[" << current_mem_address.ToHex() << "] = " << _memory.Load(temp_address).ToHex();
+      if (column == 0 || column == 1) cout << '\t';
+      else cout << endl;
+
+      column = (column+1)%3;
+      
       begin_address++;
     }
   }
@@ -304,7 +311,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     case ADD: {
       if (instruction.data.size() == 5) {
         if (verbose) {
-          cout << "Add operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
+          cout << "Add op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[4])) << " :: ";
         }
@@ -320,7 +327,7 @@ bool Wi11::ExecuteNext(bool verbose) {
       }
       else {
         if (verbose) {
-          cout << "Add operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
+          cout << "Add op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
                                        instruction.data[3].ToHex() << " :: ";
         }
@@ -335,8 +342,8 @@ bool Wi11::ExecuteNext(bool verbose) {
     case AND: {
       if (instruction.data.size() == 5) {
         if (verbose) {
-          cout << "And operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
-                                       _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
+          cout << "And op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
+                                       _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " & " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[4])) << " :: ";
         }
         RESULT result = _And(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), _Word2RegisterID(instruction.data[4]));
@@ -347,8 +354,8 @@ bool Wi11::ExecuteNext(bool verbose) {
       }
       else {
         if (verbose) {
-          cout << "And operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
-                                       _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
+          cout << "And op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
+                                       _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " & " <<
                                        instruction.data[3].ToHex() << " :: ";
         }
         RESULT result = _Add(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), instruction.data[3]);
@@ -361,7 +368,9 @@ bool Wi11::ExecuteNext(bool verbose) {
 
     case BRx: {
       if (verbose) {
-        cout << "Branch operation: [" << instruction.data[0][0] << "|" << instruction.data[1][0] << "|" << instruction.data[2][0] << "] (" << instruction.data[3].ToHex() << ") :: ";
+        Word actual(_PC.GetValue());
+        for (int i=0;i<9;i++) actual.SetBit(i, instruction.data[3][i]);
+        cout << "Branch op: [" << instruction.data[0][0] << "|" << instruction.data[1][0] << "|" << instruction.data[2][0] << "] [Offset=" << instruction.data[3].ToHex() << "] To Address: " << actual.ToHex() << " :: ";
       }
       if ((instruction.data[0].ToInt() > 0 && _CCR.n) || 
           (instruction.data[1].ToInt() > 0 && _CCR.z) || 
@@ -379,7 +388,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case DBUG: {
-      if (verbose) cout << "Debug operation: " << endl;
+      if (verbose) cout << "Debug op: " << endl;
 
       RESULT result = _Debug();
 
@@ -388,7 +397,11 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case JSR: {
-      if (verbose) cout << "JSR operation: (Store PC=" << instruction.data[0][0] << ") Raw Value: " << instruction.data[2].ToHex() << " :: ";
+      if (verbose) {
+        Word actual(_PC.GetValue());
+        for (int i=0;i<9;i++) actual.SetBit(i, instruction.data[2][i]);
+        cout << "JSR op: (Store PC=" << instruction.data[0][0] << ") [Immediate=" << instruction.data[2].ToHex() << "] To Address: " << actual.ToHex() << " :: ";
+      }
       RESULT result = _JSR(instruction.data[2], instruction.data[0].ToInt()>0);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -397,7 +410,11 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case JSRR: {
-      if (verbose) cout << "JSRR operation: (Store PC=" << instruction.data[0][0] << ")" << endl << "\tBase Register: " << _RegisterID2String(_Word2RegisterID(instruction.data[2])) << "  Raw Value: " << instruction.data[3].ToHex() << " :: ";;
+      if (verbose) {
+        Register temp_reg = instruction.data[3];
+        Word actual((_GetRegister(_Word2RegisterID(instruction.data[2])) + temp_reg).GetValue());
+        cout << "JSRR op: (Store PC=" << instruction.data[0][0] << ") [Base Register=" << _RegisterID2String(_Word2RegisterID(instruction.data[2])) << "] [Index=" << instruction.data[3].ToHex() << "] To Address: " << actual.ToHex() << " :: ";;
+      }
       RESULT result = _JSRR(_Word2RegisterID(instruction.data[2]), instruction.data[3], instruction.data[0].ToInt()>0);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -406,7 +423,11 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case LD: {
-      if (verbose) cout << "LD operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[Raw Value=" << instruction.data[0].ToHex() << "] :: ";
+      if (verbose) {
+        Word actual(_PC.GetValue());
+        for (int i=0;i<9;i++) actual.SetBit(i, instruction.data[0][i]);
+        cout << "LD op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[" << actual.ToHex() << "] [Offset=" << instruction.data[0].ToHex() << "] :: ";
+      }
       RESULT result = _Load(_Word2RegisterID(instruction.data[0]), instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -415,7 +436,12 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case LDI: {
-      if (verbose) cout << "LDI operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[Raw Value=" << instruction.data[0].ToHex() << "] :: ";
+      if (verbose) {
+        Word indirect_address(_PC.GetValue()), actual;
+        for (int i=0;i<9;i++) indirect_address.SetBit(i, instruction.data[0][i]);
+        actual = _memory.Load(indirect_address);
+        cout << "LDI op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[" << actual.ToHex() << "] [Indirect Address=" << indirect_address.ToHex() << "] [Offset=" << instruction.data[0].ToHex() << "] :: ";
+      }
       RESULT result = _LoadI(_Word2RegisterID(instruction.data[0]), instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -424,7 +450,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case LDR: {
-      if (verbose) cout << "LDR operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[" << _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " << instruction.data[0].ToHex() << "] :: ";
+      if (verbose) cout << "LDR op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[" << _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " << instruction.data[0].ToHex() << "] :: ";
       RESULT result = _LoadR(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), instruction.data[2]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -433,7 +459,11 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case LEA: {
-      if (verbose) cout << "LEA operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = Memory[Raw Value=" << instruction.data[1].ToHex() << "] :: ";
+      if (verbose) {
+        Word actual(_PC.GetValue());
+        for (int i=0;i<9;i++) actual.SetBit(i, instruction.data[1][i]);
+        cout << "LEA op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " << actual.ToHex() << " [Offset=" << instruction.data[1].ToHex() << "] :: ";
+      }
       RESULT result = _LoadEA(_Word2RegisterID(instruction.data[0]), instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -442,7 +472,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case NOT: {
-      if (verbose) cout << "NOT operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = ~" << _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " :: ";
+      if (verbose) cout << "NOT op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = ~" << _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " :: ";
       RESULT result = _Not(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]));
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -451,7 +481,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case RET: {
-      if (verbose) cout << "RET operation: ";
+      if (verbose) cout << "RET op: ";
       RESULT result = _Ret();
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -460,7 +490,11 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case ST: {
-      if (verbose) cout << "ST operation: Memory[Raw Value=" << instruction.data[1].ToHex() << "] = " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " :: ";
+      if (verbose) {
+        Word actual(_PC.GetValue());
+        for (int i=0;i<9;i++) actual.SetBit(i, instruction.data[1][i]);
+        cout << "ST op: Memory[" << actual.ToHex() << "] = " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " [Offset=" << instruction.data[1].ToHex() << "] :: ";
+      }
       RESULT result = _Store(_Word2RegisterID(instruction.data[0]), instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -469,7 +503,12 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case STI: {
-      if (verbose) cout << "STI operation: Memory[Raw Value=" << instruction.data[1].ToHex() << "] = " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " :: ";
+      if (verbose) {
+        Word indirect_address(_PC.GetValue()), actual;
+        for (int i=0;i<9;i++) indirect_address.SetBit(i, instruction.data[1][i]);
+        actual = _memory.Load(indirect_address);
+        cout << "STI op: Memory[" << actual.ToHex() << "] = " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " [Offset=" << instruction.data[1].ToHex() << "] :: ";
+      }
       RESULT result = _STI(_Word2RegisterID(instruction.data[0]), instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -478,7 +517,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case STR: {
-      if (verbose) cout << "STR operation: Memory[" << _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " << instruction.data[2].ToHex() << "] = " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " :: ";
+      if (verbose) cout << "STR op: Memory[" << _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " << instruction.data[2].ToHex() << "] = " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " :: ";
       RESULT result = _STR(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), instruction.data[2]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
@@ -487,7 +526,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case TRAP: {
-      if (verbose) cout << "Trap(" << instruction.data[1].ToHex() << ") operation: ";
+      if (verbose) cout << "Trap(" << instruction.data[1].ToHex() << ") op: ";
       RESULT result = _Trap(instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 

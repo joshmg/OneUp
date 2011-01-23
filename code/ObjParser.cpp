@@ -64,6 +64,12 @@ ObjectData ObjParser::GetNext() {
 
     // Header line
     case 'H':
+      if (_line.size() < 15) { // improper header entry length
+        _object.type = 0;
+        _object.data.push_back(string());
+        return _object;
+      }
+
       _object.type = 'H';
       _object.data.push_back(_line.substr(1,6));
       _object.data.push_back(_line.substr(7,4));
@@ -72,6 +78,12 @@ ObjectData ObjParser::GetNext() {
 
     // Text line
     case 'T':
+      if (_line.size() < 9) { // improper text entry length
+        _object.type = 0;
+        _object.data.push_back(string());
+        return _object;
+      }
+
       _object.type = 'T';
       _object.data.push_back(_line.substr(1,4));
       _object.data.push_back(_line.substr(5,4));
@@ -79,6 +91,12 @@ ObjectData ObjParser::GetNext() {
 
     // End line
     case 'E':
+      if (_line.size() < 5) { // improper end entry length
+        _object.type = 0;
+        _object.data.push_back(string());
+        return _object;
+      }
+
       _object.type = 'E';
       _object.data.push_back(_line.substr(1,4));
       break;

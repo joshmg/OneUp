@@ -34,9 +34,9 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   }
 
   Data=Parser.GetNext(); // getting my first header
-  
+
   if (Data.type!='H') { //if it is not a H, problem
-    return INVALID_OBJECT_FILE;
+    return INVALID_HEADER_ENTRY;
   }
 
   if  (!(Hex1.FromHex(string("0x") + Data.data[1]))) { // setting up the words to use the reserve command memory has.  seemed to me to be an time improver.

@@ -53,6 +53,7 @@ int main(int argc, char* argv[]) {
     // print initial status
     simulator.DisplayRegisters();
     simulator.DisplayMemory();
+    cout << endl;
 
     // prompt to execute
     cout << "Maximum Execution Iterations: (-1 for infinite) ";
