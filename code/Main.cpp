@@ -112,8 +112,6 @@ int main(int argc, char* argv[]) {
     while (simulator.ExecuteNext(false));
   }
 
-  simulator.poo();
-
   return 0;
 }
 
