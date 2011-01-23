@@ -22,10 +22,10 @@ Instruction Decoder::DecodeInstruction(const iWord& word) const {
   string newstr(16, '0');
 
   //copy opcode from str into newstr to isolate it
-  newstr[12] = str[3];
-  newstr[13] = str[2];
-  newstr[14] = str[1];
-  newstr[15] = str[0];
+  newstr[12] = str[0];
+  newstr[13] = str[1];
+  newstr[14] = str[2];
+  newstr[15] = str[3];
 
   //create an Word with newstr, and then convert back into an int, for the switch below
   Word opcode;

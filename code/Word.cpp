@@ -87,7 +87,7 @@ bool Word::FromStr(const string& value) {
   for (int i=0;i<WORD_SIZE;i++) {
     // accumulate the value of the ith character
     // times the value of it's binary "decimal place." 
-    _value += pow_of_two * (value[i] - '0');
+    _value += pow_of_two * (value[(WORD_SIZE-1)-i] - '0');
     pow_of_two *= 2;
   }
 

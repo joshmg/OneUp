@@ -10,7 +10,7 @@ int main() {
     cout << w.ToInt() << " = ";
 
     // test hex
-    if (x.FromHex(w.ToHex())) {
+    if (x.FromStr(w.ToStr())) {
       cout << x.ToInt() << endl;
       w = x.Not();
       cout << "!(" << w.ToInt2Complement() << ")\n";
