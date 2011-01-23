@@ -1,5 +1,5 @@
 // File: Loader.cpp
-// Written by Logal Coulson
+// Written by Logan Coulson
 
 #include "Loader.h"
 #include "Word.h"
@@ -7,9 +7,10 @@
 #include "iMemory.h"
 #include "iLoader.h"
 #include "ObjParser.h"
+#include <iostream>
 
 using namespace Codes;
-
+using namespace std;
 
 // establish the Memory pointer of the class
 Loader::Loader(iMemory* mem) {
@@ -31,20 +32,20 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   if (returns!=SUCCESS) {
     return returns;
   }
-  
+
   Data=Parser.GetNext(); // getting my first header
   
   if (Data.type!='H') { //if it is not a H, problem
     return INVALID_OBJECT_FILE;
   }
 
-  if  (!(Hex1.FromHex(Data.data[1]))) { // setting up the words to use the reserve command memory has.  seemed to me to be an time improver.
+  if  (!(Hex1.FromHex(string("0x") + Data.data[1]))) { // setting up the words to use the reserve command memory has.  seemed to me to be an time improver.
     return NOT_HEX;
   }
 
   // establishing the lower bound on memory
   min_memory=Hex1.ToInt();
-  if  (!(Hex2.FromHex(Data.data[2])))
+  if  (!(Hex2.FromHex(string("0x") + Data.data[2])))
   {
     return NOT_HEX;
   }
@@ -59,17 +60,17 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
 
   // this loop goes through the Test records
   while (Data.type=='T') {
-    if  (!(Hex1.FromHex(Data.data[0]))) {
+    if  (!(Hex1.FromHex(string("0x") + Data.data[0]))) {
       return NOT_HEX;
     }
 
     // converting the hex memory location to int
     mem_location=Hex1.ToInt();
     // ensureing that the memory location is in bounds
-    if (!(mem_location>min_memory && mem_location<max_memory)) {
+    if (!(mem_location>=min_memory && mem_location<max_memory)) {
       return OUT_OF_BOUNDS;
     }
-    if  (!(Hex2.FromHex(Data.data[1]))) {
+    if  (!(Hex2.FromHex(string("0x") + Data.data[1]))) {
       return NOT_HEX;
     }
 
@@ -85,7 +86,7 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   if (Data.type!='E') {
     return INVALID_DATA_ENTRY;
   }
-  if  (!(Hex1.FromHex(Data.data[0]))) {
+  if  (!(Hex1.FromHex(string("0x") + Data.data[0]))) {
     return NOT_HEX;
   }
 

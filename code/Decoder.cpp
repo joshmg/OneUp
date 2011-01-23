@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include "ResultCodes.h"
-
+#include <iostream>
 
 using namespace std;
 using namespace Decoder_Directory;

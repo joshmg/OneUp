@@ -240,11 +240,15 @@ Wi11::Wi11() : _loader(&_memory) { }
 
 bool Wi11::LoadObj(const char* filename) {
   Word initial_pc_value;
-  if (_loader.Load(filename, initial_pc_value) == SUCCESS) {
+  RESULT loader_result = _loader.Load(filename, initial_pc_value);
+  if (loader_result == SUCCESS) {
     _PC = initial_pc_value;
     return true;
   }
-  else return false;
+  else {
+    cout << _result_decoder.Find(loader_result) << endl;
+    return false;
+  }
 }
 
 void Wi11::DisplayMemory() const {
@@ -257,19 +261,22 @@ void Wi11::DisplayMemory() const {
     while (begin_address <= end_address) {
       Word temp_address;
       temp_address.FromInt(begin_address);
-      cout << "[" << begin_address << "] = " << _memory.Load(temp_address).ToStr() << endl;
+      Word current_mem_address;
+      current_mem_address.FromInt(begin_address);
+      cout << "M[" << current_mem_address.ToHex() << "] = " << _memory.Load(temp_address).ToHex() << endl;
+      begin_address++;
     }
   }
   cout << endl;
 }
 
 void Wi11::DisplayRegisters() const {
-  cout << "Wi11 Register Values" << endl << endl;
-  cout << "PC = " << _PC.GetValue().ToStr() << endl;
-  cout << "R0 = " << _R0.GetValue().ToStr() << '\t' << "R1 = " << _R1.GetValue().ToStr() << endl;
-  cout << "R2 = " << _R2.GetValue().ToStr() << '\t' << "R1 = " << _R3.GetValue().ToStr() << endl;
-  cout << "R4 = " << _R4.GetValue().ToStr() << '\t' << "R1 = " << _R5.GetValue().ToStr() << endl;
-  cout << "R6 = " << _R6.GetValue().ToStr() << '\t' << "R1 = " << _R7.GetValue().ToStr() << endl;
+  cout << "Wi11 Register Values" << endl;
+  cout << "PC = " << _PC.GetValue().ToHex() << endl;
+  cout << "R0 = " << _R0.GetValue().ToHex() << '\t' << "R1 = " << _R1.GetValue().ToHex() << endl;
+  cout << "R2 = " << _R2.GetValue().ToHex() << '\t' << "R3 = " << _R3.GetValue().ToHex() << endl;
+  cout << "R4 = " << _R4.GetValue().ToHex() << '\t' << "R5 = " << _R5.GetValue().ToHex() << endl;
+  cout << "R6 = " << _R6.GetValue().ToHex() << '\t' << "R7 = " << _R7.GetValue().ToHex() << endl;
   cout << endl;
 }
 
