@@ -76,13 +76,7 @@ RESULT Wi11::_Add(const REGISTER_ID& DR, const REGISTER_ID& SR1, const REGISTER_
 }
 
 RESULT Wi11::_Add(const REGISTER_ID& DR, const REGISTER_ID& SR1, const iWord& immediate) {
-  // sign extend the immediate value
-  Word sign_extended;
-  sign_extended.Copy(immediate);
-  bool extend = immediate[4];
-  for (int i=5;i<16;i++) sign_extended.SetBit(i, extend);
-
-  _GetRegister(DR) = _GetRegister(SR1).GetValue() + sign_extended;
+  _GetRegister(DR) = _GetRegister(SR1).GetValue() + immediate;
   _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
   return SUCCESS;
 }
@@ -94,13 +88,7 @@ RESULT Wi11::_And(const REGISTER_ID& DR, const REGISTER_ID& SR1, const REGISTER_
 }
 
 RESULT Wi11::_And(const REGISTER_ID& DR, const REGISTER_ID& SR1, const iWord& immediate) {
-  // sign extend the immediate value
-  Word sign_extended;
-  sign_extended.Copy(immediate);
-  bool extend = immediate[4];
-  for (int i=5;i<16;i++) sign_extended.SetBit(i, extend);
-
-  Register temp_reg(sign_extended);
+  Register temp_reg(immediate);
   _GetRegister(DR) = _GetRegister(SR1).And(temp_reg);
   _UpdateCCR(_GetRegister(DR).GetValue().ToInt2Complement());
   return SUCCESS;
@@ -249,7 +237,6 @@ RESULT Wi11::_Trap(const iWord& code) {
       _UpdateCCR(_R0.GetValue().ToInt2Complement());
     } break;
     case 0x43: {
-      srand(time(NULL));
       Word new_R0_value;
       new_R0_value.FromInt(rand()%65536); // 2^16 = 65,536
       _R0 = new_R0_value;
@@ -263,7 +250,7 @@ RESULT Wi11::_Trap(const iWord& code) {
   return SUCCESS;
 }
 
-Wi11::Wi11() : _loader(&_memory) { }
+Wi11::Wi11() : _loader(&_memory) { srand(time(NULL)); }
 
 bool Wi11::LoadObj(const char* filename) {
   Word initial_pc_value;
@@ -318,7 +305,7 @@ bool Wi11::ExecuteNext(bool verbose) {
         if (verbose) {
           cout << "Add operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
-                                       _RegisterID2String(_Word2RegisterID(instruction.data[4])) << endl << '\t';
+                                       _RegisterID2String(_Word2RegisterID(instruction.data[4])) << " :: ";
         }
         RESULT result = _Add(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), _Word2RegisterID(instruction.data[4]));
         if (result == SUCCESS) {
@@ -334,7 +321,7 @@ bool Wi11::ExecuteNext(bool verbose) {
         if (verbose) {
           cout << "Add operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
-                                       instruction.data[3].ToHex() << endl << '\t';
+                                       instruction.data[3].ToHex() << " :: ";
         }
         RESULT result = _Add(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), instruction.data[3]);
         if (verbose) cout << _result_decoder.Find(result) << endl;
@@ -349,7 +336,7 @@ bool Wi11::ExecuteNext(bool verbose) {
         if (verbose) {
           cout << "And operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
-                                       _RegisterID2String(_Word2RegisterID(instruction.data[4])) << endl << '\t';
+                                       _RegisterID2String(_Word2RegisterID(instruction.data[4])) << " :: ";
         }
         RESULT result = _And(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), _Word2RegisterID(instruction.data[4]));
         if (verbose) cout << _result_decoder.Find(result) << endl;
@@ -361,7 +348,7 @@ bool Wi11::ExecuteNext(bool verbose) {
         if (verbose) {
           cout << "And operation: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
-                                       instruction.data[3].ToHex() << endl << '\t';
+                                       instruction.data[3].ToHex() << " :: ";
         }
         RESULT result = _Add(_Word2RegisterID(instruction.data[0]), _Word2RegisterID(instruction.data[1]), instruction.data[3]);
         if (verbose) cout << _result_decoder.Find(result) << endl;

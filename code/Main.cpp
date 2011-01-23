@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
       string filename;
       getline(cin, filename);
       obj_files.push_back(filename);
-      cout << "Add another object filename? (y/n) ";
+      cout << "Add another object filename? (y/N) ";
       getline(cin, ask_again);
     }
   }
@@ -81,11 +81,11 @@ int main(int argc, char* argv[]) {
 
       while (simulator.ExecuteNext(true) && iterations != 0) {
         --iterations;
-        cout << "Continue? (y/n) ";
+        cout << "Continue? (Y/n) ";
         string temp;
         getline(cin, temp);
 
-        if (temp[0] != 'Y' && temp[0] != 'y') {
+        if (!(temp[0] != 'n' && temp[0] != 'N')) {
           cout << "User Abort." << endl;
           break;
         }

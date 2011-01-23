@@ -102,6 +102,11 @@ Instruction Decoder::DecodeInstruction(const iWord& word) const {
 
         // newstr to Word, and push onto the end of Instruction.data
         param.FromStr(newstr);
+
+        // sign extend the immediate value
+        bool extend = param[4];
+        for (int i=5;i<16;i++) param.SetBit(i, extend);
+
         return_instruction.data.push_back(param);
       }
     } break;
@@ -167,6 +172,11 @@ Instruction Decoder::DecodeInstruction(const iWord& word) const {
 
         // newstr to Word, and push onto the end of Instruction.data
         param.FromStr(newstr);
+
+        // sign extend the immediate value
+        bool extend = param[4];
+        for (int i=5;i<16;i++) param.SetBit(i, extend);
+
         return_instruction.data.push_back(param);
       }
     } break;
