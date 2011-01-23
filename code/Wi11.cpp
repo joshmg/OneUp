@@ -16,6 +16,16 @@ using namespace Decoder_Directory;
 using namespace Codes;
 using namespace std;
 
+
+static int total=0; static int above_half=0;
+static int mini=65000; static int maxi=0;
+
+void Wi11::poo() const {
+  cout << "Above Halfway: " << ((float)above_half/(float)total)*100.0f << '%' << endl;
+  cout << "Min: " << mini << endl;
+  cout << "Max: " << maxi << endl;
+}
+
 string Wi11::_RegisterID2String(const REGISTER_ID& reg_id) const {
   switch (reg_id) {
     case R0: { return string("R0"); } break;
@@ -238,8 +248,14 @@ RESULT Wi11::_Trap(const iWord& code) {
     } break;
     case 0x43: {
       Word new_R0_value;
-      new_R0_value.FromInt(rand()%65536); // 2^16 = 65,536
+      new_R0_value.FromInt(rand()*pow(-1.0f, (float)rand())); // 2^16 = 65,536
       _R0 = new_R0_value;
+
+      if (new_R0_value.ToInt() > maxi) maxi = new_R0_value.ToInt();
+      if (new_R0_value.ToInt() < mini) mini = new_R0_value.ToInt();
+
+      if (new_R0_value.ToInt() > 65536/2.0) {above_half++;}
+      total++;
 
       _UpdateCCR(_R0.GetValue().ToInt2Complement());
     } break;
