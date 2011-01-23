@@ -61,7 +61,12 @@ RESULT Wi11::_Add(const REGISTER_ID& DR, const REGISTER_ID& SR1, const REGISTER_
 }
 
 RESULT Wi11::_Add(const REGISTER_ID& DR, const REGISTER_ID& SR1, const iWord& immediate) {
-  _GetRegister(DR) = _GetRegister(SR1).GetValue() + immediate;
+  // sign extend the immediate value
+  Word sign_extended(immediate);
+  bool extend = immediate[4];
+  for (int i=5;i<16;i++) sign_extended.SetBit(i, extend);
+
+  _GetRegister(DR) = _GetRegister(SR1).GetValue() + sign_extended;
   _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
   return SUCCESS;
 }
@@ -73,7 +78,12 @@ RESULT Wi11::_And(const REGISTER_ID& DR, const REGISTER_ID& SR1, const REGISTER_
 }
 
 RESULT Wi11::_And(const REGISTER_ID& DR, const REGISTER_ID& SR1, const iWord& immediate) {
-  Register temp_reg(immediate);
+  // sign extend the immediate value
+  Word sign_extended(immediate);
+  bool extend = immediate[4];
+  for (int i=5;i<16;i++) sign_extended.SetBit(i, extend);
+
+  Register temp_reg(sign_extended);
   _GetRegister(DR) = _GetRegister(SR1).And(temp_reg);
   _UpdateCCR(_GetRegister(DR).GetValue().ToInt());
   return SUCCESS;
