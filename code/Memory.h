@@ -37,7 +37,7 @@ class Memory : public iMemory {
 
     virtual Codes::RESULT Store(const iWord& address, const Word& value);
 
-    std::vector<std::vector<Word>> GetUsedMemory() const;
+    std::vector< std::vector<Word> > GetUsedMemory() const;
 };
 
 #endif
