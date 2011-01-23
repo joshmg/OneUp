@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
     if (mode[0] == 'T' || mode[0] == 't') {
       cout << "[Trace Mode]" << endl;
 
-      while (simulator.ExecuteNext(true) && iterations != 0) {
+      while (iterations != 0 && simulator.ExecuteNext(true)) {
         --iterations;
       }
     
@@ -81,7 +81,7 @@ int main(int argc, char* argv[]) {
     else if (mode[0] == 'S' || mode[0] == 's') {
       cout << "[Step Mode]" << endl;
 
-      while (simulator.ExecuteNext(true) && iterations != 0) {
+      while (iterations != 0 && simulator.ExecuteNext(true)) {
         --iterations;
         cout << "Continue? (Y/n) ";
         string temp;
@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
     else if (mode[0] == 'Q' || mode[0] == 'q') {
       cout << "[Quiet Mode]" << endl;
 
-      while (simulator.ExecuteNext(false) && iterations != 0) {
+      while (iterations != 0 && simulator.ExecuteNext(false)) {
         --iterations;
       }
     }
