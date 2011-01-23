@@ -137,7 +137,7 @@ Instruction Decoder::DecodeInstruction(const iWord& word) const {
       // third parameter: extended OP which differentiates between the two ANDs.
       newstr[13] = '0';
       newstr[14] = '0';
-      newstr[15] = str[15];
+      newstr[15] = str[10];
 
       // newstr to Word, and push onto Instruction.data
       param.FromStr(newstr);

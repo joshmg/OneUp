@@ -311,7 +311,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     case ADD: {
       if (instruction.data.size() == 5) {
         if (verbose) {
-          cout << "Add op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
+          cout << "ADD op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[4])) << " :: ";
         }
@@ -327,7 +327,7 @@ bool Wi11::ExecuteNext(bool verbose) {
       }
       else {
         if (verbose) {
-          cout << "Add op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
+          cout << "ADD op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " + " <<
                                        instruction.data[3].ToHex() << " :: ";
         }
@@ -342,7 +342,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     case AND: {
       if (instruction.data.size() == 5) {
         if (verbose) {
-          cout << "And op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
+          cout << "AND op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " & " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[4])) << " :: ";
         }
@@ -354,7 +354,7 @@ bool Wi11::ExecuteNext(bool verbose) {
       }
       else {
         if (verbose) {
-          cout << "And op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
+          cout << "AND op: " << _RegisterID2String(_Word2RegisterID(instruction.data[0])) << " = " <<
                                        _RegisterID2String(_Word2RegisterID(instruction.data[1])) << " & " <<
                                        instruction.data[3].ToHex() << " :: ";
         }
@@ -370,7 +370,7 @@ bool Wi11::ExecuteNext(bool verbose) {
       if (verbose) {
         Word actual(_PC.GetValue());
         for (int i=0;i<9;i++) actual.SetBit(i, instruction.data[3][i]);
-        cout << "Branch op: [" << instruction.data[0][0] << "|" << instruction.data[1][0] << "|" << instruction.data[2][0] << "] [Offset=" << instruction.data[3].ToHex() << "] To Address: " << actual.ToHex() << " :: ";
+        cout << "BRx op: [" << instruction.data[0][0] << "|" << instruction.data[1][0] << "|" << instruction.data[2][0] << "] [Offset=" << instruction.data[3].ToHex() << "] To Address: " << actual.ToHex() << " :: ";
       }
       if ((instruction.data[0].ToInt() > 0 && _CCR.n) || 
           (instruction.data[1].ToInt() > 0 && _CCR.z) || 
@@ -388,7 +388,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case DBUG: {
-      if (verbose) cout << "Debug op: " << endl;
+      if (verbose) cout << "DBUG op: " << endl;
 
       RESULT result = _Debug();
 
@@ -526,7 +526,7 @@ bool Wi11::ExecuteNext(bool verbose) {
     } break;
 
     case TRAP: {
-      if (verbose) cout << "Trap(" << instruction.data[1].ToHex() << ") op: ";
+      if (verbose) cout << "TRAP(" << instruction.data[1].ToHex() << ") op: ";
       RESULT result = _Trap(instruction.data[1]);
       if (verbose) cout << _result_decoder.Find(result) << endl;
 
