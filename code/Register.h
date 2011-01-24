@@ -12,10 +12,11 @@
 //! Implements iRegister.
 class Register : public iRegister {
   private:
-    //! @brief The word of data held in the register.
+    //! The word of data held in the register.
     Word _word;
 
   public:
+    //! Sets a new Register's value to 0.
     Register();
     Register(const iWord& w);
 

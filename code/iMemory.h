@@ -59,7 +59,8 @@ class iMemory {
     virtual Codes::RESULT Store(const iWord& address, const Word& value) = 0;
 
 
-    /*! 
+    /*! @brief Details memory's current state.
+        @return The values in memory that have been written to or reserved. 
     */
     virtual std::vector< std::vector<Word> > GetUsedMemory() const = 0;
 };

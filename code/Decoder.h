@@ -1,5 +1,8 @@
-// File: Decoder.h
-// Written by Andrew Canale
+/*! @file Decoder.h
+    @author Andrew Canale
+    @author Andrew Groot
+    @brief Definition of the private data for the Decoder class. (none)
+*/
 
 #ifndef DECODER_H
 #define DECODER_H
@@ -10,6 +13,7 @@
 
 class Word;
 
+//! Implements iDecoder.
 class Decoder {
   private:
 

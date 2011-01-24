@@ -10,11 +10,8 @@ Defines the functionality of memory in the Wi-\/11 machine.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classiMemory_a1aba88f98a91fa2858b03422979e57d5}{
-virtual std::vector$<$ std::vector$<$ \hyperlink{classWord}{Word} $>$ $>$ {\bfseries GetUsedMemory} () const =0}
-\label{classiMemory_a1aba88f98a91fa2858b03422979e57d5}
-
-\item 
+virtual std::vector$<$ std::vector$<$ \hyperlink{classWord}{Word} $>$ $>$ \hyperlink{classiMemory_a1aba88f98a91fa2858b03422979e57d5}{GetUsedMemory} () const =0
+\begin{DoxyCompactList}\small\item\em Details memory's current state. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classWord}{Word} \hyperlink{classiMemory_a3352ba391fc9b69a0b8691b2d585596a}{Load} (const \hyperlink{classiWord}{iWord} \&w) const =0
 \begin{DoxyCompactList}\small\item\em Performs a load. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiMemory_a27750e74d09fb473c163a4cc4c3e697b}{Reserve} (const \hyperlink{classiWord}{iWord} \&initial\_\-address, const \hyperlink{classiWord}{iWord} \&length)=0
@@ -102,3 +99,19 @@ SUCCESS or, if something went wrong, an appropriate error code.
 \begin{DoxyNote}{Note}
 The efficiency constraints in Load() apply here as well. 
 \end{DoxyNote}
+\hypertarget{classiMemory_a1aba88f98a91fa2858b03422979e57d5}{
+\index{iMemory@{iMemory}!GetUsedMemory@{GetUsedMemory}}
+\index{GetUsedMemory@{GetUsedMemory}!iMemory@{iMemory}}
+\subsubsection[{GetUsedMemory}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::vector$<$ std::vector$<${\bf Word}$>$ $>$ iMemory::GetUsedMemory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiMemory_a1aba88f98a91fa2858b03422979e57d5}
+
+
+Details memory's current state. 
+
+\begin{DoxyReturn}{Returns}
+The values in memory that have been written to or reserved. 
+\end{DoxyReturn}

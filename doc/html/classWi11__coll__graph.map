@@ -9,6 +9,6 @@
 <area shape="rect" id="node14" href="$classiRegister.html" title="Defines a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="403,85,480,115"/>
 <area shape="rect" id="node16" href="$classWord.html" title="Implements iWord." alt="" coords="504,85,557,115"/>
 <area shape="rect" id="node18" href="$classiWord.html" title="Defines a &quot;word&quot; of data on the Wi&#45;11 Machine." alt="" coords="503,5,559,35"/>
-<area shape="rect" id="node20" href="$classDecoder.html" title="Decoder" alt="" coords="509,181,584,211"/>
+<area shape="rect" id="node20" href="$classDecoder.html" title="Implements iDecoder." alt="" coords="509,181,584,211"/>
 <area shape="rect" id="node22" href="$structWi11_1_1CCR.html" title="Condition code registers: negative, zero, positive." alt="" coords="608,181,693,211"/>
 </map>

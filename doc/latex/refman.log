@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/MacPorts 2010_1) (format=pdflatex 2011.1.20)  23 JAN 2011 20:41
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/MacPorts 2010_1) (format=pdflatex 2011.1.20)  23 JAN 2011 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1049,7 +1049,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 ] [2]
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 8.99994pt on input line 54.
- <software_interaction.png, id=1011, 548.80031pt x 301.125pt>
+ <software_interaction.png, id=1032, 548.80031pt x 301.125pt>
 File: software_interaction.png Graphic file (type png)
 
 <use software_interaction.png> [3] [4 <./software_interaction.png (PNG copy)>]
@@ -1069,11 +1069,7 @@ Chapter 4.
 
 ]
 Chapter 5.
-(./files.tex
-
-LaTeX Warning: Reference `Decoder_8h' on page 15 undefined on input line 3.
-
-) [15] [16
+(./files.tex) [15] [16
 
 ]
 Chapter 6.
@@ -1084,6 +1080,9 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 14.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 14.
+ [19
+
+]
 LaTeX Font Info:    Font shape `OT1/phv/bc/it' in size <10> not available
 (Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/phv/bc/sl' will be
@@ -1097,14 +1096,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
 (Font)              using `OT1/pcr/m/n' instead on input line 28.
 
-
-Underfull \vbox (badness 1546) has occurred while \output is active []
-
- [19
-
-]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 36.
-
 (/opt/local/share/texmf-texlive-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -1121,7 +1113,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 35--38
 Underfull \vbox (badness 10000) detected at line 38
  []
 
-) (./classiLoader.tex
+) (./classiLoader.tex [20]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 36--41
  [] [] [] 
  []
@@ -1130,53 +1122,49 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 36--41
 Underfull \vbox (badness 10000) detected at line 41
  []
 
-
-Overfull \vbox (5.88121pt too high) has occurred while \output is active []
-
-
-[20]) (./classiMemory.tex
-Overfull \hbox (20.96019pt too wide) in paragraph at lines 20--21
+) (./classiMemory.tex
+Overfull \hbox (20.96019pt too wide) in paragraph at lines 17--18
 []\T1/phv/m/n/10 virtual Codes::RESULT [][]Re-serve[][] (const [][]iWord[][] &i
 nitial_-address, const [][]iWord[][] &length)=0
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
-
-
-Overfull \hbox (22.2886pt too wide) in alignment at lines 45--50
- [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 50
- []
-
-
-Overfull \vbox (13.71176pt too high) has occurred while \output is active []
-
 
 [21]
-Overfull \hbox (22.2886pt too wide) in alignment at lines 68--71
+Overfull \hbox (22.2886pt too wide) in alignment at lines 42--47
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 71
+Underfull \vbox (badness 10000) detected at line 47
  []
 
 
-Overfull \hbox (22.2886pt too wide) in alignment at lines 93--98
+Overfull \hbox (22.2886pt too wide) in alignment at lines 65--68
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 98
+Underfull \vbox (badness 10000) detected at line 68
  []
 
-) (./structInstruction.tex [22] [23]) (./classiObjParser.tex
+
+Overfull \hbox (22.2886pt too wide) in alignment at lines 90--95
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 95
+ []
+
+
+Overfull \vbox (8.12341pt too high) has occurred while \output is active []
+
+
+[22]) (./structInstruction.tex [23]) (./classiObjParser.tex [24]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 37--40
  [] [] [] 
  []
@@ -1185,11 +1173,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 37--40
 Underfull \vbox (badness 10000) detected at line 40
  []
 
-
-Overfull \vbox (4.10565pt too high) has occurred while \output is active []
-
-
-[24]) (./classiRegister.tex [25] [26]
+[25]) (./classiRegister.tex [26] [27]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 86--89
  [] [] [] 
  []
@@ -1208,9 +1192,6 @@ Underfull \vbox (badness 10000) detected at line 110
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 147--150
  [] [] [] 
  []
@@ -1220,6 +1201,10 @@ Underfull \vbox (badness 10000) detected at line 150
  []
 
 
+Overfull \vbox (9.88242pt too high) has occurred while \output is active []
+
+
+[28]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 168--171
  [] [] [] 
  []
@@ -1229,9 +1214,6 @@ Underfull \vbox (badness 10000) detected at line 171
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 208--211
  [] [] [] 
  []
@@ -1241,6 +1223,9 @@ Underfull \vbox (badness 10000) detected at line 211
  []
 
 
+Underfull \vbox (badness 4316) has occurred while \output is active []
+
+ [29]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 229--232
  [] [] [] 
  []
@@ -1249,7 +1234,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 229--232
 Underfull \vbox (badness 10000) detected at line 232
  []
 
-[29]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 253--256
  [] [] [] 
  []
@@ -1268,6 +1253,9 @@ Underfull \vbox (badness 10000) detected at line 277
  []
 
 
+Underfull \vbox (badness 5417) has occurred while \output is active []
+
+ [30]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 320--323
  [] [] [] 
  []
@@ -1276,7 +1264,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 320--323
 Underfull \vbox (badness 10000) detected at line 323
  []
 
-[30]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 341--344
  [] [] [] 
  []
@@ -1285,7 +1273,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 341--344
 Underfull \vbox (badness 10000) detected at line 344
  []
 
-) (./classiWi11.tex [31]
+[31]) (./classiWi11.tex
 Overfull \hbox (10.16687pt too wide) in paragraph at lines 24--25
 []\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder_-Directory:
 :REGISTER_-ID &DR, const
@@ -1297,7 +1285,7 @@ Overfull \hbox (7.95518pt too wide) in paragraph at lines 24--25
 :REGISTER_-
  []
 
-
+[32]
 Overfull \hbox (10.16687pt too wide) in paragraph at lines 26--27
 []\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder_-Directory:
 :REGISTER_-ID &DR, const
@@ -1321,7 +1309,7 @@ Overfull \hbox (10.16687pt too wide) in paragraph at lines 30--31
 :REGISTER_-ID &DR, const
  []
 
-[32]
+
 Overfull \hbox (1.40138pt too wide) in paragraph at lines 36--37
 []\T1/phv/m/n/10 virtual [][]iReg-is-ter[][] & [][]_-GetRegister[][] (const Dec
 oder_-Directory::REGISTER_-ID &id)=0
@@ -1338,13 +1326,13 @@ Overfull \hbox (7.25044pt too wide) in paragraph at lines 40--41
 ::REGISTER_-ID &baseR,
  []
 
-
+[33]
 Overfull \hbox (8.1599pt too wide) in paragraph at lines 48--49
 []\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Not[][] (const Decoder_-Directory:
 :REGISTER_-ID &DR, const
  []
 
-[33]
+[34]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 86--89
  [] [] [] 
  []
@@ -1354,9 +1342,6 @@ Underfull \vbox (badness 10000) detected at line 89
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 109--116
  [] [] [] 
  []
@@ -1365,7 +1350,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 109--116
 Underfull \vbox (badness 10000) detected at line 116
  []
 
-
+[35]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 142--149
  [] [] [] 
  []
@@ -1374,7 +1359,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 142--149
 Underfull \vbox (badness 10000) detected at line 149
  []
 
-[35]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 175--182
  [] [] [] 
  []
@@ -1383,7 +1368,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 175--182
 Underfull \vbox (badness 10000) detected at line 182
  []
 
-
+[36]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 208--215
  [] [] [] 
  []
@@ -1392,7 +1377,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 208--215
 Underfull \vbox (badness 10000) detected at line 215
  []
 
-[36]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 239--242
  [] [] [] 
  []
@@ -1401,7 +1386,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 239--242
 Underfull \vbox (badness 10000) detected at line 242
  []
 
-
+[37]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 277--280
  [] [] [] 
  []
@@ -1411,9 +1396,6 @@ Underfull \vbox (badness 10000) detected at line 280
  []
 
 
-Underfull \vbox (badness 1009) has occurred while \output is active []
-
- [37]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 306--309
  [] [] [] 
  []
@@ -1440,7 +1422,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 364--369
 Underfull \vbox (badness 10000) detected at line 369
  []
 
-
+[39]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 397--404
  [] [] [] 
  []
@@ -1449,7 +1431,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 397--404
 Underfull \vbox (badness 10000) detected at line 404
  []
 
-[39]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 431--436
  [] [] [] 
  []
@@ -1476,7 +1458,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 513--518
 Underfull \vbox (badness 10000) detected at line 518
  []
 
-
+[41]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 541--548
  [] [] [] 
  []
@@ -1485,7 +1467,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 541--548
 Underfull \vbox (badness 10000) detected at line 548
  []
 
-[41]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 569--572
  [] [] [] 
  []
@@ -1503,11 +1485,12 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 608--611
 Underfull \vbox (badness 10000) detected at line 611
  []
 
+[43]
 
 LaTeX Font Warning: Font shape `OT1/pcr/bc/it' undefined
 (Font)              using `OT1/pcr/bc/n' instead on input line 662.
 
-[43]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 669--672
  [] [] [] 
  []
@@ -1516,7 +1499,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 669--672
 Underfull \vbox (badness 10000) detected at line 672
  []
 
-) (./classiWord.tex [44] [45] [46]
+) (./classiWord.tex [44] [45] [46] [47]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 157--160
  [] [] [] 
  []
@@ -1525,7 +1508,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 157--160
 Underfull \vbox (badness 10000) detected at line 160
  []
 
-[47]
+
 Overfull \hbox (22.2886pt too wide) in alignment at lines 182--185
  [] [] [] 
  []
@@ -1544,6 +1527,9 @@ Underfull \vbox (badness 10000) detected at line 210
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 232--235
  [] [] [] 
  []
@@ -1553,9 +1539,6 @@ Underfull \vbox (badness 10000) detected at line 235
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 275--278
  [] [] [] 
  []
@@ -1563,6 +1546,10 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 275--278
 
 Underfull \vbox (badness 10000) detected at line 278
  []
+
+
+Overfull \vbox (9.48224pt too high) has occurred while \output is active []
+
 
 [49]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 318--321
@@ -1582,7 +1569,10 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 342--345
 Underfull \vbox (badness 10000) detected at line 345
  []
 
-[50]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 385--388
  [] [] [] 
  []
@@ -1600,7 +1590,10 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 406--409
 Underfull \vbox (badness 10000) detected at line 409
  []
 
-[51]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 459--462
  [] [] [] 
  []
@@ -1609,7 +1602,7 @@ Overfull \hbox (22.2886pt too wide) in alignment at lines 459--462
 Underfull \vbox (badness 10000) detected at line 462
  []
 
-
+[52]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 489--492
  [] [] [] 
  []
@@ -1619,10 +1612,13 @@ Underfull \vbox (badness 10000) detected at line 492
  []
 
 ) (./classLoader.tex
-<classLoader__coll__graph.pdf, id=1668, 209.78375pt x 174.6525pt>
+<classLoader__coll__graph.pdf, id=1702, 209.78375pt x 174.6525pt>
 File: classLoader__coll__graph.pdf Graphic file (type pdf)
 
-<use classLoader__coll__graph.pdf> [52] [53 <./classLoader__coll__graph.pdf>]
+<use classLoader__coll__graph.pdf>
+Underfull \vbox (badness 2229) has occurred while \output is active []
+
+ [53 <./classLoader__coll__graph.pdf>]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 57--60
  [] [] [] 
  []
@@ -1632,21 +1628,24 @@ Underfull \vbox (badness 10000) detected at line 60
  []
 
 ) (./classMemory.tex
-<classMemory__coll__graph.pdf, id=1704, 138.5175pt x 160.6pt>
+<classMemory__coll__graph.pdf, id=1727, 138.5175pt x 160.6pt>
 File: classMemory__coll__graph.pdf Graphic file (type pdf)
 
 <use classMemory__coll__graph.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
 Overfull \hbox (5.93924pt too wide) in paragraph at lines 33--35
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 Re-serve \T1/phv/m/n/10 
 (const [][]iWord[][] &initial_-address, const [][]iWord[][] &length)
  []
 
-[54 <./classMemory__coll__graph.pdf>]) (./structObjectData.tex [55])
-(./classObjParser.tex
-<classObjParser__coll__graph.pdf, id=1750, 144.54pt x 160.6pt>
+) (./structObjectData.tex [55 <./classMemory__coll__graph.pdf>])
+(./classObjParser.tex [56]
+<classObjParser__coll__graph.pdf, id=1785, 144.54pt x 160.6pt>
 File: classObjParser__coll__graph.pdf Graphic file (type pdf)
 
-<use classObjParser__coll__graph.pdf> [56 <./classObjParser__coll__graph.pdf>]
+<use classObjParser__coll__graph.pdf> [57 <./classObjParser__coll__graph.pdf>]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 59--62
  [] [] 
  []
@@ -1655,12 +1654,12 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 59--62
 Underfull \vbox (badness 10000) detected at line 62
  []
 
-) (./classRegister.tex [57]
-<classRegister__coll__graph.pdf, id=1787, 197.73875pt x 234.8775pt>
+) (./classRegister.tex
+<classRegister__coll__graph.pdf, id=1816, 197.73875pt x 234.8775pt>
 File: classRegister__coll__graph.pdf Graphic file (type pdf)
 
-<use classRegister__coll__graph.pdf> [58 <./classRegister__coll__graph.pdf>])
-(./classResultDecoder.tex [59]
+<use classRegister__coll__graph.pdf> [58] [59 <./classRegister__coll__graph.pdf
+>]) (./classResultDecoder.tex [60]
 Overfull \hbox (22.2886pt too wide) in alignment at lines 45--48
  [] [] [] 
  []
@@ -1670,7 +1669,7 @@ Underfull \vbox (badness 10000) detected at line 48
  []
 
 ) (./classWi11.tex
-<classWi11__coll__graph.pdf, id=1862, 598.235pt x 411.5375pt>
+<classWi11__coll__graph.pdf, id=1899, 598.235pt x 411.5375pt>
 File: classWi11__coll__graph.pdf Graphic file (type pdf)
 
 <use classWi11__coll__graph.pdf>
@@ -1681,7 +1680,7 @@ Overfull \hbox (55.0pt too wide) in paragraph at lines 15--17
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [60]
+ [61]
 Overfull \hbox (7.53883pt too wide) in paragraph at lines 58--60
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
 nst Decoder_-Directory::REGISTER_-ID &DR, const
@@ -1693,7 +1692,7 @@ Overfull \hbox (7.95518pt too wide) in paragraph at lines 58--60
 :REGISTER_-
  []
 
-[61 <./classWi11__coll__graph.pdf>]
+[62 <./classWi11__coll__graph.pdf>]
 Overfull \hbox (7.53883pt too wide) in paragraph at lines 63--65
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
 nst Decoder_-Directory::REGISTER_-ID &DR, const
@@ -1753,56 +1752,71 @@ Overfull \hbox (7.52023pt too wide) in paragraph at lines 148--150
 nst Decoder_-Directory::REGISTER_-ID &SR, const
  []
 
-[62]) (./structWi11_1_1CCR.tex [63]) (./classWord.tex
-<classWord__coll__graph.pdf, id=1979, 122.4575pt x 160.6pt>
+[63]) (./structWi11_1_1CCR.tex [64]) (./classWord.tex
+<classWord__coll__graph.pdf, id=2015, 122.4575pt x 160.6pt>
 File: classWord__coll__graph.pdf Graphic file (type pdf)
 
-<use classWord__coll__graph.pdf> [64 <./classWord__coll__graph.pdf>]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 152--155
+<use classWord__coll__graph.pdf> [65 <./classWord__coll__graph.pdf>]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 157--160
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 155
+Underfull \vbox (badness 10000) detected at line 160
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65])
-[66]
-Chapter 8.
-(./iDecoder_8h.tex <iDecoder_8h__incl.pdf, id=2052, 196.735pt x 218.8175pt>
-File: iDecoder_8h__incl.pdf Graphic file (type pdf)
+ [66])
+[67] [68
 
-<use iDecoder_8h__incl.pdf>
+]
+Chapter 8.
+(./Decoder_8h.tex <Decoder_8h__incl.pdf, id=2096, 224.84pt x 277.035pt>
+File: Decoder_8h__incl.pdf Graphic file (type pdf)
+
+<use Decoder_8h__incl.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67
+ [69])
+(./iDecoder_8h.tex
+Underfull \vbox (badness 1024) has occurred while \output is active []
 
- <./iDecoder_8h__incl.pdf>]) (./iLoader_8h.tex
-<iLoader_8h__incl.pdf, id=2068, 299.1175pt x 277.035pt>
+ [70 <./Decoder_8h__incl.pdf>] <iDecoder_8h__incl.pdf, id=2117, 196.735pt x 218
+.8175pt>
+File: iDecoder_8h__incl.pdf Graphic file (type pdf)
+
+<use iDecoder_8h__incl.pdf> [71 <./iDecoder_8h__incl.pdf>]) (./iLoader_8h.tex
+<iLoader_8h__incl.pdf, id=2136, 299.1175pt x 277.035pt>
 File: iLoader_8h__incl.pdf Graphic file (type pdf)
 
-<use iLoader_8h__incl.pdf> [68]) (./iMemory_8h.tex [69 <./iLoader_8h__incl.pdf>
-] <iMemory_8h__incl.pdf, id=2091, 299.1175pt x 218.8175pt>
+<use iLoader_8h__incl.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [72])
+(./iMemory_8h.tex
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+ [73 <./iLoader_8h__incl.pdf>] <iMemory_8h__incl.pdf, id=2156, 299.1175pt x 218
+.8175pt>
 File: iMemory_8h__incl.pdf Graphic file (type pdf)
 
 <use iMemory_8h__incl.pdf>) (./iObjParser_8h.tex
 Underfull \vbox (badness 1867) has occurred while \output is active []
 
- [70 <./iMemory_8h__incl.pdf>] <iObjParser_8h__incl.pdf, id=2106, 273.02pt x 21
+ [74 <./iMemory_8h__incl.pdf>] <iObjParser_8h__incl.pdf, id=2171, 273.02pt x 21
 8.8175pt>
 File: iObjParser_8h__incl.pdf Graphic file (type pdf)
 
-<use iObjParser_8h__incl.pdf>) (./iRegister_8h.tex [71 <./iObjParser_8h__incl.p
-df>] <iRegister_8h__incl.pdf, id=2123, 146.5475pt x 218.8175pt>
+<use iObjParser_8h__incl.pdf>) (./iRegister_8h.tex [75 <./iObjParser_8h__incl.p
+df>] <iRegister_8h__incl.pdf, id=2188, 146.5475pt x 218.8175pt>
 File: iRegister_8h__incl.pdf Graphic file (type pdf)
 
 <use iRegister_8h__incl.pdf>) (./iWi11_8h.tex
 Underfull \vbox (badness 1859) has occurred while \output is active []
 
- [72 <./iRegister_8h__incl.pdf>] <iWi11_8h__incl.pdf, id=2138, 396.48125pt x 27
+ [76 <./iRegister_8h__incl.pdf>] <iWi11_8h__incl.pdf, id=2203, 396.48125pt x 27
 7.035pt>
 File: iWi11_8h__incl.pdf Graphic file (type pdf)
 
@@ -1811,19 +1825,19 @@ Overfull \hbox (50.0pt too wide) in paragraph at lines 13--15
  [] 
  []
 
-) (./iWord_8h.tex [73 <./iWi11_8h__incl.pdf>]
-<iWord_8h__incl.pdf, id=2153, 132.495pt x 160.6pt>
+) (./iWord_8h.tex [77 <./iWi11_8h__incl.pdf>]
+<iWord_8h__incl.pdf, id=2219, 132.495pt x 160.6pt>
 File: iWord_8h__incl.pdf Graphic file (type pdf)
  <use iWord_8h__incl.pdf>)
-(./Loader_8h.tex <Loader_8h__incl.pdf, id=2155, 299.1175pt x 335.2525pt>
+(./Loader_8h.tex <Loader_8h__incl.pdf, id=2221, 299.1175pt x 335.2525pt>
 File: Loader_8h__incl.pdf Graphic file (type pdf)
 
-<use Loader_8h__incl.pdf> [74 <./iWord_8h__incl.pdf>] [75 <./Loader_8h__incl.pd
-f>]) (./Memory_8h.tex <Memory_8h__incl.pdf, id=2185, 311.1625pt x 277.035pt>
+<use Loader_8h__incl.pdf> [78 <./iWord_8h__incl.pdf>] [79 <./Loader_8h__incl.pd
+f>]) (./Memory_8h.tex <Memory_8h__incl.pdf, id=2250, 311.1625pt x 277.035pt>
 File: Memory_8h__incl.pdf Graphic file (type pdf)
 
-<use Memory_8h__incl.pdf> [76 <./Memory_8h__incl.pdf>]) (./ObjParser_8cpp.tex
-<ObjParser_8cpp__incl.pdf, id=2201, 497.86pt x 335.2525pt>
+<use Memory_8h__incl.pdf> [80 <./Memory_8h__incl.pdf>]) (./ObjParser_8cpp.tex
+<ObjParser_8cpp__incl.pdf, id=2266, 497.86pt x 335.2525pt>
 File: ObjParser_8cpp__incl.pdf Graphic file (type pdf)
 
 <use ObjParser_8cpp__incl.pdf>
@@ -1831,8 +1845,8 @@ Overfull \hbox (55.0pt too wide) in paragraph at lines 13--15
  [] 
  []
 
-) (./ObjParser_8h.tex [77 <./ObjParser_8cpp__incl.pdf>]
-<ObjParser_8h__incl.pdf, id=2215, 392.46625pt x 277.035pt>
+) (./ObjParser_8h.tex [81 <./ObjParser_8cpp__incl.pdf>]
+<ObjParser_8h__incl.pdf, id=2279, 392.46625pt x 277.035pt>
 File: ObjParser_8h__incl.pdf Graphic file (type pdf)
 
 <use ObjParser_8h__incl.pdf>
@@ -1840,16 +1854,16 @@ Overfull \hbox (46.0pt too wide) in paragraph at lines 13--15
  [] 
  []
 
-) (./Register_8h.tex [78 <./ObjParser_8h__incl.pdf>]
-<Register_8h__incl.pdf, id=2231, 214.8025pt x 277.035pt>
+) (./Register_8h.tex [82 <./ObjParser_8h__incl.pdf>]
+<Register_8h__incl.pdf, id=2296, 214.8025pt x 277.035pt>
 File: Register_8h__incl.pdf Graphic file (type pdf)
 
-<use Register_8h__incl.pdf>) (./ResultCodes_8h.tex [79 <./Register_8h__incl.pdf
->] <ResultCodes_8h__incl.pdf, id=2247, 180.675pt x 160.6pt>
+<use Register_8h__incl.pdf>) (./ResultCodes_8h.tex [83 <./Register_8h__incl.pdf
+>] <ResultCodes_8h__incl.pdf, id=2313, 180.675pt x 160.6pt>
 File: ResultCodes_8h__incl.pdf Graphic file (type pdf)
 
-<use ResultCodes_8h__incl.pdf> [80 <./ResultCodes_8h__incl.pdf>])
-(./Wi11_8h.tex <Wi11_8h__incl.pdf, id=2265, 703.62875pt x 393.47pt>
+<use ResultCodes_8h__incl.pdf> [84 <./ResultCodes_8h__incl.pdf>])
+(./Wi11_8h.tex <Wi11_8h__incl.pdf, id=2331, 703.62875pt x 393.47pt>
 File: Wi11_8h__incl.pdf Graphic file (type pdf)
 
 <use Wi11_8h__incl.pdf>
@@ -1857,39 +1871,36 @@ Overfull \hbox (55.0pt too wide) in paragraph at lines 13--15
  [] 
  []
 
-[81 <./Wi11_8h__incl.pdf>]) (./Word_8cpp.tex
-<Word_8cpp__incl.pdf, id=2282, 273.02pt x 277.035pt>
+[85 <./Wi11_8h__incl.pdf>]) (./Word_8cpp.tex
+<Word_8cpp__incl.pdf, id=2348, 273.02pt x 277.035pt>
 File: Word_8cpp__incl.pdf Graphic file (type pdf)
  <use Word_8cpp__incl.pdf>
-[82 <./Word_8cpp__incl.pdf>]) (./Word_8h.tex
-<Word_8h__incl.pdf, id=2296, 158.5925pt x 218.8175pt>
+[86 <./Word_8cpp__incl.pdf>]) (./Word_8h.tex
+<Word_8h__incl.pdf, id=2361, 158.5925pt x 218.8175pt>
 File: Word_8h__incl.pdf Graphic file (type pdf)
  <use Word_8h__incl.pdf>
-[83 <./Word_8h__incl.pdf>]) (./refman.ind [84] [85
+[87 <./Word_8h__incl.pdf>]) (./refman.ind [88] [89
 
-] [86] [87])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+] [90] [91])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: E45122C0C31EB438544B7AF4CE0A96EC;26839.
+(rerunfilecheck)             Checksum: BDE78E783FFC6F94B14EEA6D2ECB4B77;27494.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 11237 strings out of 495074
- 171085 string characters out of 3182082
+ 11264 strings out of 495074
+ 171699 string characters out of 3182082
  249755 words of memory out of 3000000
- 13457 multiletter control sequences out of 15000+200000
+ 13468 multiletter control sequences out of 15000+200000
  66725 words of font info for 87 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,58p,810b,587s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,58p,810b,592s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/opt/local/share/texmf-texlive-dist/fonts/enc/dvips/base/8r.enc}</opt/local/
 share/texmf-texlive-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/
 share/texmf-texlive-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/
@@ -1899,10 +1910,10 @@ exlive-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></opt/local/share/texmf-texliv
 e-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></opt/local/share/texmf-texlive-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/local/share/texmf-texlive-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (95 pages, 394549 bytes).
+Output written on refman.pdf (99 pages, 404114 bytes).
 PDF statistics:
- 2663 PDF objects out of 2984 (max. 8388607)
- 2466 compressed objects within 25 object streams
- 603 named destinations out of 1000 (max. 500000)
- 1612 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2731 PDF objects out of 2984 (max. 8388607)
+ 2526 compressed objects within 26 object streams
+ 616 named destinations out of 1000 (max. 500000)
+ 1649 words of extra memory for PDF output out of 10000 (max. 10000000)
 

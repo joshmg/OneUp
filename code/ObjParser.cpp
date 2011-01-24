@@ -109,3 +109,4 @@ ObjectData ObjParser::GetNext() {
 
   return _object;
 }
+

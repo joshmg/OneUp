@@ -17,8 +17,7 @@ class ObjParser : public iObjParser {
     std::ifstream _fileStream;
 
   public:
-    /*! @brief Closes a file, if necessary, when an iObjParser object goes out of scope..
-    */
+    //! Closes a file, if necessary, when an iObjParser object goes out of scope.
     ~ObjParser();
 
     Codes::RESULT Initialize(const char* name);

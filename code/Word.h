@@ -31,6 +31,7 @@ class Word : public iWord {
     bool _HasBit(int) const;
 
   public:
+    //! Sets a new Word's value to 0.
     Word();
 
     int ToInt() const;

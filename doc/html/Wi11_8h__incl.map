@@ -4,7 +4,7 @@
 <area shape="rect" id="node27" href="$Word_8h.html" title="Definition of private data for the &quot;Word&quot; class." alt="" coords="5,237,72,267"/>
 <area shape="rect" id="node31" href="$Register_8h.html" title="Definition of private data for the &quot;Register&quot; class." alt="" coords="148,160,233,189"/>
 <area shape="rect" id="node35" href="$Memory_8h.html" title="Definition of private data for the &quot;Memory&quot; class." alt="" coords="547,160,632,189"/>
-<area shape="rect" id="node42" href="$Decoder_8h_source.html" title="Decoder.h" alt="" coords="279,160,364,189"/>
+<area shape="rect" id="node42" href="$Decoder_8h.html" title="Definition of the private data for the Decoder class. (none)" alt="" coords="279,160,364,189"/>
 <area shape="rect" id="node48" href="$Loader_8h.html" title="Definition of the private data for the &quot;Loader&quot; class." alt="" coords="671,83,748,112"/>
 <area shape="rect" id="node5" href="$iWord_8h.html" title="Definition of a &quot;word&quot; of data." alt="" coords="269,315,339,344"/>
 <area shape="rect" id="node9" href="$iRegister_8h.html" title="Definition of a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="147,237,235,267"/>

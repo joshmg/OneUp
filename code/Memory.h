@@ -29,6 +29,7 @@ class Memory : public iMemory {
     std::map<int, Word> _unbounded_memory;
 
   public:
+    //! Deletes any dynamically allocated memory.
     virtual ~Memory();
 
     virtual Codes::RESULT Reserve(const iWord& initial_address, const iWord& length);

@@ -60,35 +60,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a><a class="code" href="classRegister.html#ad716faf568aba3da6e4acca6674f9ec9">00016</a>     <a class="code" href="classWord.html" title="Implements iWord.">Word</a> <a class="code" href="classRegister.html#ad716faf568aba3da6e4acca6674f9ec9" title="The word of data held in the register.">_word</a>;
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018   <span class="keyword">public</span>:
-<a name="l00019"></a>00019     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>();
-<a name="l00020"></a>00020     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022     <a class="code" href="classWord.html" title="Implements iWord.">Word</a> GetValue() <span class="keyword">const</span>;
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024     <span class="keywordtype">void</span> Add(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);                       <span class="comment">// !</span>
-<a name="l00025"></a>00025     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> Add(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
-<a name="l00026"></a>00026     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> operator+(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <span class="keywordtype">void</span> Subtract(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);                  <span class="comment">// !</span>
-<a name="l00029"></a>00029     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> Subtract(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
-<a name="l00030"></a>00030     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> operator-(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <span class="keywordtype">void</span> And(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
-<a name="l00033"></a>00033     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> And(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
-<a name="l00034"></a>00034     <span class="keywordtype">void</span> Or(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
-<a name="l00035"></a>00035     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> Or(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
-<a name="l00036"></a>00036     <span class="keywordtype">void</span> Not();                                     <span class="comment">// !</span>
-<a name="l00037"></a>00037     <span class="comment">//Register Not() const;                           // !</span>
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keywordtype">void</span> Store(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
-<a name="l00040"></a>00040     <span class="keywordtype">void</span> Store(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r);
-<a name="l00041"></a>00041     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; operator++();
-<a name="l00044"></a>00044     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; operator++(<span class="keywordtype">int</span>);
-<a name="l00045"></a>00045 };
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
+<a name="l00020"></a>00020     <a class="code" href="classRegister.html#a669b96861697fb8c04bce79f04390c66" title="Sets a new Register&amp;#39;s value to 0.">Register</a>();
+<a name="l00021"></a>00021     <a class="code" href="classRegister.html#a669b96861697fb8c04bce79f04390c66" title="Sets a new Register&amp;#39;s value to 0.">Register</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023     <a class="code" href="classWord.html" title="Implements iWord.">Word</a> GetValue() <span class="keyword">const</span>;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025     <span class="keywordtype">void</span> Add(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);                       <span class="comment">// !</span>
+<a name="l00026"></a>00026     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> Add(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
+<a name="l00027"></a>00027     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> operator+(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029     <span class="keywordtype">void</span> Subtract(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);                  <span class="comment">// !</span>
+<a name="l00030"></a>00030     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> Subtract(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
+<a name="l00031"></a>00031     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> operator-(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033     <span class="keywordtype">void</span> And(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
+<a name="l00034"></a>00034     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> And(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
+<a name="l00035"></a>00035     <span class="keywordtype">void</span> Or(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
+<a name="l00036"></a>00036     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a> Or(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r) <span class="keyword">const</span>;
+<a name="l00037"></a>00037     <span class="keywordtype">void</span> Not();                                     <span class="comment">// !</span>
+<a name="l00038"></a>00038     <span class="comment">//Register Not() const;                           // !</span>
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> Store(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
+<a name="l00041"></a>00041     <span class="keywordtype">void</span> Store(<span class="keyword">const</span> <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; r);
+<a name="l00042"></a>00042     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; w);
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; operator++();
+<a name="l00045"></a>00045     <a class="code" href="classRegister.html" title="Implements iRegister.">Register</a>&amp; operator++(<span class="keywordtype">int</span>);
+<a name="l00046"></a>00046 };
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 20:38:02 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 21:50:24 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>
