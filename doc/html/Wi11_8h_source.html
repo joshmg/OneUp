@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OneUp Wi-11 Simulator - Programmer&#39;s Guide: Wi11.h Source File</title>
+<title>OneUp Wi-11 Simulator: Programmer&#39;s Guide: Wi11.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -56,7 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="Word_8h.html" title="Definition of private data for the &amp;quot;Word&amp;quot; class.">Word.h</a>&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="Register_8h.html" title="Definition of private data for the &amp;quot;Register&amp;quot; class.">Register.h</a>&quot;</span>
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="Memory_8h.html" title="Definition of private data for the &amp;quot;Memory&amp;quot; class.">Memory.h</a>&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="Decoder_8h.html" title="Definition of the private data for the Decoder class. (none)">Decoder.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="Decoder_8h.html" title="Definition of the private data for the &amp;quot;Decoder&amp;quot; class. (none)">Decoder.h</a>&quot;</span>
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="ResultCodes_8h.html" title="Definition of the Wi-11&amp;#39;s run-time messages.">ResultCodes.h</a>&quot;</span>
 <a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="Loader_8h.html" title="Definition of the private data for the &amp;quot;Loader&amp;quot; class.">Loader.h</a>&quot;</span>
 <a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="ResultCodes_8h.html" title="Definition of the Wi-11&amp;#39;s run-time messages.">ResultCodes.h</a>&quot;</span>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a><a class="code" href="classWi11.html#a18515d6caafb4aba3d8a9220b4ac227e">00035</a>     <a class="code" href="classResultDecoder.html" title="Finds the messages associated with a given result code.">ResultDecoder</a> <a class="code" href="classWi11.html#a18515d6caafb4aba3d8a9220b4ac227e" title="For error messages.">_result_decoder</a>;
 <a name="l00036"></a>00036 
 <a name="l00038"></a>00038     std::string <a class="code" href="classWi11.html#a1dcc11c26d454f639b1a924966ede86c" title="Translates an internal Register ID identifier into human readable string format.">_RegisterID2String</a>(<span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp;) <span class="keyword">const</span>;
-<a name="l00039"></a>00039     
+<a name="l00039"></a>00039 
 <a name="l00040"></a>00040     Decoder_Directory::REGISTER_ID _Word2RegisterID(<span class="keyword">const</span> <a class="code" href="classWord.html" title="Implements iWord.">Word</a>&amp;) <span class="keyword">const</span>;
 <a name="l00041"></a>00041     <a class="code" href="classiRegister.html" title="Defines a &amp;quot;register&amp;quot; in the Wi-11 machine.">iRegister</a>&amp; _GetRegister(<span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp;);
 <a name="l00042"></a>00042     <span class="keywordtype">void</span> _UpdateCCR(<span class="keywordtype">int</span>);
@@ -95,9 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058     <span class="keyword">virtual</span> Codes::RESULT _STI(<span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; SR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
 <a name="l00059"></a>00059     <span class="keyword">virtual</span> Codes::RESULT _STR(<span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; SR, <span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address);
 <a name="l00060"></a>00060     <span class="keyword">virtual</span> Codes::RESULT _Trap(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; code);
-<a name="l00061"></a>00061     
+<a name="l00061"></a>00061 
 <a name="l00062"></a>00062   <span class="keyword">public</span>:
-<a name="l00067"></a>00067     <a class="code" href="classWi11.html#ad8e6d1a1e39832bdc650f2ca3cfa2d3e" title="Creates and organizes the componts of the Wi11 machine.">Wi11</a>();
+<a name="l00067"></a>00067     <a class="code" href="classWi11.html#ad8e6d1a1e39832bdc650f2ca3cfa2d3e" title="Creates and organizes the components of the Wi11 machine.">Wi11</a>();
 <a name="l00068"></a>00068 
 <a name="l00069"></a>00069     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> LoadObj(<span class="keyword">const</span> <span class="keywordtype">char</span>*);
 <a name="l00070"></a>00070 
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 21:50:24 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jan 24 2011 06:16:22 for OneUp Wi-11 Simulator: Programmer's Guide by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

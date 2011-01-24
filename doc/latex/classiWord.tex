@@ -10,50 +10,50 @@ Defines a \char`\"{}word\char`\"{} of data on the Wi-\/11 Machine.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_ac5967eac5182607ac41b9ce6c3a74cb8}{Add} (const \hyperlink{classiWord}{iWord} \&w) const =0
-\begin{DoxyCompactList}\small\item\em Adds two words. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_ad9caea73d7a990bf5189ba1e44ec7865}{And} (const \hyperlink{classiWord}{iWord} \&w) const =0
-\begin{DoxyCompactList}\small\item\em \char`\"{}And\char`\"{}s the bits of two words. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiWord_ac5ca71cd1defb94cd1f3536a59612a4e}{Copy} (const \hyperlink{classiWord}{iWord} \&w)=0
-\begin{DoxyCompactList}\small\item\em Copies a word. \item\end{DoxyCompactList}\item 
-virtual bool \hyperlink{classiWord_abd4229c26d0a2ff17b0a6bdb74240388}{FromHex} (const std::string \&str)=0
-\begin{DoxyCompactList}\small\item\em \char`\"{}From Hexadecimal\char`\"{} \item\end{DoxyCompactList}\item 
-virtual bool \hyperlink{classiWord_a1229f8249c32e01ccee035a205954a62}{FromInt} (int value)=0
-\begin{DoxyCompactList}\small\item\em \char`\"{}From Integer\char`\"{} \item\end{DoxyCompactList}\item 
-virtual bool \hyperlink{classiWord_a6e40a4873ca945b119318a85c75a0fcf}{FromStr} (const std::string \&str)=0
-\begin{DoxyCompactList}\small\item\em \char`\"{}From String\char`\"{} \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a6a7602a8220d84b5201a789b597fbbde}{Not} () const =0
-\begin{DoxyCompactList}\small\item\em \char`\"{}Not\char`\"{}s the bits of a word. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a146bf924df8cbb03fbe8152e5e44edbe}{operator+} (const \hyperlink{classiWord}{iWord} \&w) const =0
-\begin{DoxyCompactList}\small\item\em A standard addition operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classiWord}{iWord} \& \hyperlink{classiWord_af20040c25b79d2aeae41f1714fbb2cbc}{operator++} ()=0
-\begin{DoxyCompactList}\small\item\em A standard pre-\/increment operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classiWord}{iWord} \& \hyperlink{classiWord_a6777f6f41915179c4255d3647a9eb4b5}{operator++} (int)=0
-\begin{DoxyCompactList}\small\item\em A standard post-\/increment operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a8fbd3f879952196cca2e4f03bac3890b}{operator-\/} (const \hyperlink{classiWord}{iWord} \&w) const =0
-\begin{DoxyCompactList}\small\item\em A standard subtraction operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \& \hyperlink{classiWord_aaee78600a625153a8282bcec181d0a24}{operator=} (const \hyperlink{classWord}{Word} \&w)=0
-\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
-virtual bool \hyperlink{classiWord_a0e83901b08763247527ce61c89fd847f}{operator\mbox{[}$\,$\mbox{]}} (const int i) const =0
-\begin{DoxyCompactList}\small\item\em An accessor to the 'i'th bit of the value. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a2f57b8b8739d1ce6c043494696a9f685}{Or} (const \hyperlink{classiWord}{iWord} \&w) const =0
-\begin{DoxyCompactList}\small\item\em \char`\"{}Or\char`\"{}s the bits of two words. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiWord_a6442bd382be2d072d6243cfcb9dd2312}{SetBit} (const int i, bool)=0
-\begin{DoxyCompactList}\small\item\em Sets the 'i'th bit of the value. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a8e2da1fb4c3ffcc78e1d94f1798797ec}{Subtract} (const \hyperlink{classiWord}{iWord} \&w) const =0
-\begin{DoxyCompactList}\small\item\em Subtracts two words. \item\end{DoxyCompactList}\item 
-virtual std::string \hyperlink{classiWord_a7d7cb4facca44fc785899d01e47f29b1}{ToHex} () const =0
-\begin{DoxyCompactList}\small\item\em \char`\"{}To Hexadecimal\char`\"{} \item\end{DoxyCompactList}\item 
 virtual int \hyperlink{classiWord_adcef1925ad309d54c9a3e896af5d5350}{ToInt} () const =0
 \begin{DoxyCompactList}\small\item\em \char`\"{}To non-\/negative Integer\char`\"{} \item\end{DoxyCompactList}\item 
 virtual int \hyperlink{classiWord_a68129605beb127647ecc59129f1c07f7}{ToInt2Complement} () const =0
 \begin{DoxyCompactList}\small\item\em \char`\"{}To Integer as 2's Complement\char`\"{} \item\end{DoxyCompactList}\item 
 virtual std::string \hyperlink{classiWord_acebcfc4edd3498c962a6a2379a88accf}{ToStr} () const =0
-\begin{DoxyCompactList}\small\item\em \char`\"{}To String\char`\"{} \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \char`\"{}To String\char`\"{} \item\end{DoxyCompactList}\item 
+virtual std::string \hyperlink{classiWord_a7d7cb4facca44fc785899d01e47f29b1}{ToHex} () const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}To Hexadecimal\char`\"{} \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classiWord_a1229f8249c32e01ccee035a205954a62}{FromInt} (int value)=0
+\begin{DoxyCompactList}\small\item\em \char`\"{}From Integer\char`\"{} \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classiWord_a6e40a4873ca945b119318a85c75a0fcf}{FromStr} (const std::string \&str)=0
+\begin{DoxyCompactList}\small\item\em \char`\"{}From String\char`\"{} \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classiWord_abd4229c26d0a2ff17b0a6bdb74240388}{FromHex} (const std::string \&str)=0
+\begin{DoxyCompactList}\small\item\em \char`\"{}From Hexadecimal\char`\"{} \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_ac5967eac5182607ac41b9ce6c3a74cb8}{Add} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em Adds two words. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a146bf924df8cbb03fbe8152e5e44edbe}{operator+} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em A standard addition operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a8e2da1fb4c3ffcc78e1d94f1798797ec}{Subtract} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em Subtracts two words. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a8fbd3f879952196cca2e4f03bac3890b}{operator-\/} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em A standard subtraction operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_ad9caea73d7a990bf5189ba1e44ec7865}{And} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}And\char`\"{}s the bits of two words. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a2f57b8b8739d1ce6c043494696a9f685}{Or} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}Or\char`\"{}s the bits of two words. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a6a7602a8220d84b5201a789b597fbbde}{Not} () const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}Not\char`\"{}s the bits of a word. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiWord_ac5ca71cd1defb94cd1f3536a59612a4e}{Copy} (const \hyperlink{classiWord}{iWord} \&w)=0
+\begin{DoxyCompactList}\small\item\em Copies a word. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \& \hyperlink{classiWord_aaee78600a625153a8282bcec181d0a24}{operator=} (const \hyperlink{classWord}{Word} \&w)=0
+\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classiWord}{iWord} \& \hyperlink{classiWord_af20040c25b79d2aeae41f1714fbb2cbc}{operator++} ()=0
+\begin{DoxyCompactList}\small\item\em A standard pre-\/increment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classiWord}{iWord} \& \hyperlink{classiWord_a6777f6f41915179c4255d3647a9eb4b5}{operator++} (int)=0
+\begin{DoxyCompactList}\small\item\em A standard post-\/increment operator. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classiWord_a0e83901b08763247527ce61c89fd847f}{operator\mbox{[}$\,$\mbox{]}} (const int i) const =0
+\begin{DoxyCompactList}\small\item\em An accessor to the 'i'th bit of the value. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiWord_a6442bd382be2d072d6243cfcb9dd2312}{SetBit} (const int i, bool)=0
+\begin{DoxyCompactList}\small\item\em Sets the 'i'th bit of the value. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Defines a \char`\"{}word\char`\"{} of data on the Wi-\/11 Machine. The methods present in this inteface are meant to mimic the functionality of the Wi-\/11 machine, allowing for simplified execution of the instructions therein. As the size of a \char`\"{}word\char`\"{} depends on the architecture, classes implementing this interface should define the word length to be 16 bits in length. 
+Defines a \char`\"{}word\char`\"{} of data on the Wi-\/11 Machine. The methods present in this interface are meant to mimic the functionality of the Wi-\/11 machine, allowing for simplified execution of the instructions therein. As the size of a \char`\"{}word\char`\"{} depends on the architecture, classes implementing this interface should define the word length to be 16 bits in length. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classiWord_adcef1925ad309d54c9a3e896af5d5350}{

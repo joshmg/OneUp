@@ -19,6 +19,21 @@ Collaboration diagram for Register:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hypertarget{classRegister_a669b96861697fb8c04bce79f04390c66}{
+\hyperlink{classRegister_a669b96861697fb8c04bce79f04390c66}{Register} ()}
+\label{classRegister_a669b96861697fb8c04bce79f04390c66}
+
+\begin{DoxyCompactList}\small\item\em Sets a new Register's value to 0. \item\end{DoxyCompactList}\item 
+\hypertarget{classRegister_a1a18c39fc5cbc479c0f32fb9e0172376}{
+{\bfseries Register} (const \hyperlink{classiWord}{iWord} \&w)}
+\label{classRegister_a1a18c39fc5cbc479c0f32fb9e0172376}
+
+\item 
+\hypertarget{classRegister_a379734c28ab8258ce528a96de24cfa1a}{
+\hyperlink{classWord}{Word} {\bfseries GetValue} () const }
+\label{classRegister_a379734c28ab8258ce528a96de24cfa1a}
+
+\item 
 \hypertarget{classRegister_a73d8564754d7ddb7e8349001010e688b}{
 void {\bfseries Add} (const \hyperlink{classiWord}{iWord} \&w)}
 \label{classRegister_a73d8564754d7ddb7e8349001010e688b}
@@ -27,6 +42,26 @@ void {\bfseries Add} (const \hyperlink{classiWord}{iWord} \&w)}
 \hypertarget{classRegister_a9d9c6801db55e8706eb242b1e0e0fa3f}{
 \hyperlink{classRegister}{Register} {\bfseries Add} (const \hyperlink{classiRegister}{iRegister} \&r) const }
 \label{classRegister_a9d9c6801db55e8706eb242b1e0e0fa3f}
+
+\item 
+\hypertarget{classRegister_a55de0c3b5f8fe14df7c24bce777204e0}{
+\hyperlink{classRegister}{Register} {\bfseries operator+} (const \hyperlink{classiRegister}{iRegister} \&r) const }
+\label{classRegister_a55de0c3b5f8fe14df7c24bce777204e0}
+
+\item 
+\hypertarget{classRegister_a726a720b6bcca282945f1c0a65ca0dd4}{
+void {\bfseries Subtract} (const \hyperlink{classiWord}{iWord} \&w)}
+\label{classRegister_a726a720b6bcca282945f1c0a65ca0dd4}
+
+\item 
+\hypertarget{classRegister_a05132a4a62f5c6883fdf78731970ab6a}{
+\hyperlink{classRegister}{Register} {\bfseries Subtract} (const \hyperlink{classiRegister}{iRegister} \&r) const }
+\label{classRegister_a05132a4a62f5c6883fdf78731970ab6a}
+
+\item 
+\hypertarget{classRegister_a43c957e4b6a3103f0634258891c82b46}{
+\hyperlink{classRegister}{Register} {\bfseries operator-\/} (const \hyperlink{classiRegister}{iRegister} \&r) const }
+\label{classRegister_a43c957e4b6a3103f0634258891c82b46}
 
 \item 
 \hypertarget{classRegister_a312263efb06ef459409879f5119b3b81}{
@@ -39,41 +74,6 @@ void {\bfseries And} (const \hyperlink{classiWord}{iWord} \&w)}
 \label{classRegister_af3502239502c214b8c9362a6fd9f8ff8}
 
 \item 
-\hypertarget{classRegister_a379734c28ab8258ce528a96de24cfa1a}{
-\hyperlink{classWord}{Word} {\bfseries GetValue} () const }
-\label{classRegister_a379734c28ab8258ce528a96de24cfa1a}
-
-\item 
-\hypertarget{classRegister_abbf5f6793328db8b28845cac84c0e82d}{
-void {\bfseries Not} ()}
-\label{classRegister_abbf5f6793328db8b28845cac84c0e82d}
-
-\item 
-\hypertarget{classRegister_a55de0c3b5f8fe14df7c24bce777204e0}{
-\hyperlink{classRegister}{Register} {\bfseries operator+} (const \hyperlink{classiRegister}{iRegister} \&r) const }
-\label{classRegister_a55de0c3b5f8fe14df7c24bce777204e0}
-
-\item 
-\hypertarget{classRegister_ac4e78cff131bc5c69695a9db5ca35255}{
-\hyperlink{classRegister}{Register} \& {\bfseries operator++} ()}
-\label{classRegister_ac4e78cff131bc5c69695a9db5ca35255}
-
-\item 
-\hypertarget{classRegister_ae3414befdccf70a18df0f67dc19d86b7}{
-\hyperlink{classRegister}{Register} \& {\bfseries operator++} (int)}
-\label{classRegister_ae3414befdccf70a18df0f67dc19d86b7}
-
-\item 
-\hypertarget{classRegister_a43c957e4b6a3103f0634258891c82b46}{
-\hyperlink{classRegister}{Register} {\bfseries operator-\/} (const \hyperlink{classiRegister}{iRegister} \&r) const }
-\label{classRegister_a43c957e4b6a3103f0634258891c82b46}
-
-\item 
-\hypertarget{classRegister_afc5f775405700146638e392d81ad7d0b}{
-\hyperlink{classRegister}{Register} \& {\bfseries operator=} (const \hyperlink{classiWord}{iWord} \&w)}
-\label{classRegister_afc5f775405700146638e392d81ad7d0b}
-
-\item 
 \hypertarget{classRegister_ab2f8407fab157d8deea936fa74424115}{
 void {\bfseries Or} (const \hyperlink{classiWord}{iWord} \&w)}
 \label{classRegister_ab2f8407fab157d8deea936fa74424115}
@@ -84,19 +84,9 @@ void {\bfseries Or} (const \hyperlink{classiWord}{iWord} \&w)}
 \label{classRegister_a9400801cc625144c4606cd7f5cbbaa21}
 
 \item 
-\hypertarget{classRegister_a1a18c39fc5cbc479c0f32fb9e0172376}{
-{\bfseries Register} (const \hyperlink{classiWord}{iWord} \&w)}
-\label{classRegister_a1a18c39fc5cbc479c0f32fb9e0172376}
-
-\item 
-\hypertarget{classRegister_a669b96861697fb8c04bce79f04390c66}{
-\hyperlink{classRegister_a669b96861697fb8c04bce79f04390c66}{Register} ()}
-\label{classRegister_a669b96861697fb8c04bce79f04390c66}
-
-\begin{DoxyCompactList}\small\item\em Sets a new Register's value to 0. \item\end{DoxyCompactList}\item 
-\hypertarget{classRegister_a2ac7bd6f2e0eb38800c0a8c8d045e18e}{
-void {\bfseries Store} (const \hyperlink{classiRegister}{iRegister} \&r)}
-\label{classRegister_a2ac7bd6f2e0eb38800c0a8c8d045e18e}
+\hypertarget{classRegister_abbf5f6793328db8b28845cac84c0e82d}{
+void {\bfseries Not} ()}
+\label{classRegister_abbf5f6793328db8b28845cac84c0e82d}
 
 \item 
 \hypertarget{classRegister_affcc16cc88cdc896803b1ab6af5d38e0}{
@@ -104,14 +94,24 @@ void {\bfseries Store} (const \hyperlink{classiWord}{iWord} \&w)}
 \label{classRegister_affcc16cc88cdc896803b1ab6af5d38e0}
 
 \item 
-\hypertarget{classRegister_a05132a4a62f5c6883fdf78731970ab6a}{
-\hyperlink{classRegister}{Register} {\bfseries Subtract} (const \hyperlink{classiRegister}{iRegister} \&r) const }
-\label{classRegister_a05132a4a62f5c6883fdf78731970ab6a}
+\hypertarget{classRegister_a2ac7bd6f2e0eb38800c0a8c8d045e18e}{
+void {\bfseries Store} (const \hyperlink{classiRegister}{iRegister} \&r)}
+\label{classRegister_a2ac7bd6f2e0eb38800c0a8c8d045e18e}
 
 \item 
-\hypertarget{classRegister_a726a720b6bcca282945f1c0a65ca0dd4}{
-void {\bfseries Subtract} (const \hyperlink{classiWord}{iWord} \&w)}
-\label{classRegister_a726a720b6bcca282945f1c0a65ca0dd4}
+\hypertarget{classRegister_afc5f775405700146638e392d81ad7d0b}{
+\hyperlink{classRegister}{Register} \& {\bfseries operator=} (const \hyperlink{classiWord}{iWord} \&w)}
+\label{classRegister_afc5f775405700146638e392d81ad7d0b}
+
+\item 
+\hypertarget{classRegister_ac4e78cff131bc5c69695a9db5ca35255}{
+\hyperlink{classRegister}{Register} \& {\bfseries operator++} ()}
+\label{classRegister_ac4e78cff131bc5c69695a9db5ca35255}
+
+\item 
+\hypertarget{classRegister_ae3414befdccf70a18df0f67dc19d86b7}{
+\hyperlink{classRegister}{Register} \& {\bfseries operator++} (int)}
+\label{classRegister_ae3414befdccf70a18df0f67dc19d86b7}
 
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}

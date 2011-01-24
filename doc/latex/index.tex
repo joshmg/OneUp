@@ -1,13 +1,13 @@
-\hypertarget{index_intro}{}\section{Introduction}\label{index_intro}
+Primary author of this document: Andrew Groot \hypertarget{index_intro}{}\section{Introduction}\label{index_intro}
 The \char`\"{}Wi-\/11 Machine\char`\"{} is a simple, 16-\/bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). The Wi-\/11 Simulator is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-\/the-\/scenes details, one must understand the environment. In particular, an understanding of the object file syntax and the interactions between the components used in this project is necessary.\hypertarget{index_syntax}{}\section{Object Files}\label{index_syntax}
 \begin{DoxyParagraph}{}
-The object files (ususally file\_\-name.o) that this simulator accepts are ascii text files with the following structure: \begin{DoxyItemize}
-\item One \hyperlink{index_header}{Header Record} \item Several \hyperlink{index_text}{Text Records} \item One \hyperlink{index_end}{End Record}\end{DoxyItemize}
+The object files (usually file\_\-name.o) that this simulator accepts are ASCII text files with the following structure: \begin{DoxyItemize}
+\item One \hyperlink{index_header}{Header Record} \item Zero or more \hyperlink{index_text}{Text Records} \item One \hyperlink{index_end}{End Record}\end{DoxyItemize}
 
 \end{DoxyParagraph}
 \hypertarget{index_header}{}\subsection{The Header Record}\label{index_header}
 \begin{DoxyParagraph}{}
-The Header Record is a single line that prepares the system for the storing the instructions to come. 
+The Header Record is a single line that prepares the system for storing the instructions to come. 
 \end{DoxyParagraph}
 \begin{DoxyParagraph}{}
 {\bfseries Components} \begin{DoxyItemize}
@@ -15,11 +15,11 @@ The Header Record is a single line that prepares the system for the storing the 
 
 \end{DoxyParagraph}
 \begin{DoxyParagraph}{}
-{\bfseries At a glance:} There is an 'H', a segment name, the first location where instructions can be written, and the number of memory locations for instuctions.
+{\bfseries At a glance:} There is an 'H', a segment name, the first location where instructions can be written, and the number of memory locations for instructions.
 \end{DoxyParagraph}
 \hypertarget{index_text}{}\subsection{Text Records}\label{index_text}
 \begin{DoxyParagraph}{}
-Following the Header Record are serveral Text Records. Each Text Record corresponds to a single machine instruction and, like the header record, is on a single line. 
+Following the Header Record are several Text Records. Each Text Record corresponds to a single machine instruction and, like the header record, is on a single line. 
 \end{DoxyParagraph}
 \begin{DoxyParagraph}{}
 {\bfseries Components} \begin{DoxyItemize}
@@ -31,7 +31,7 @@ Following the Header Record are serveral Text Records. Each Text Record correspo
 \end{DoxyParagraph}
 \hypertarget{index_end}{}\subsection{The End Record}\label{index_end}
 \begin{DoxyParagraph}{}
-The End Record is, as the name would suggest, the last line of the line. Its purpose is to denote the end of instructions to be written and to give an initial value for the PC.\par
+The End Record is, as the name would suggest, the last line of the file. Its purpose is to denote the end of instructions to be written and to give an initial value for the PC.\par
 \par
  
 \end{DoxyParagraph}
@@ -46,13 +46,13 @@ The End Record is, as the name would suggest, the last line of the line. Its pur
 \end{DoxyParagraph}
 \hypertarget{index_Component}{}\section{Interaction}\label{index_Component}
 The components described in this document are, for the most part, representative of the actual hardware components that would be present in the Wi-\/11 machine. The following section describes these components and their interactions. After that, a list of the \hyperlink{index_instructions}{instructions} that the Wi-\/11 can execute (along with their encodings) completes the introduction to this simulator. The rest of the document details the workings of each component and provides the reader with the knowledge necessary for altering, fixing, or even just understanding the code itself.\hypertarget{index_components}{}\subsection{Components}\label{index_components}
-The Wi-\/11 Simulator uses 5 major components (for a visual, see interactions). The main function, however, is only aware of one: \hyperlink{classWi11}{Wi11}. It creates one \hyperlink{classWi11}{Wi11} object and uses it to parse object files, decode the instructions, and execute them. In order to perform these tasks it first creates \hyperlink{classLoader}{Loader}, \hyperlink{classMemory}{Memory}, \hyperlink{classDecoder}{Decoder}, and \hyperlink{classRegister}{Register} objects. The \hyperlink{classRegister}{Register} objects correspond all those mentioned in the \hyperlink{index_intro}{Introduction}, with the exception of the CCRs which are declared as their own entity.
+The Wi-\/11 Simulator uses 5 major components (for a visual, see interactions). The main function, however, is only aware of one: \hyperlink{classWi11}{Wi11}. It creates one \hyperlink{classWi11}{Wi11} object and uses it to parse object files, decode the instructions, and execute them. In order to perform these tasks it first creates \hyperlink{classLoader}{Loader}, \hyperlink{classMemory}{Memory}, \hyperlink{classDecoder}{Decoder}, and \hyperlink{classRegister}{Register} objects. The \hyperlink{classRegister}{Register} objects correspond to all those mentioned in the \hyperlink{index_intro}{Introduction}, with the exception of the CCRs which are declared as their own entity.
 
 \begin{DoxyNote}{Note}
 The \hyperlink{classWord}{Word} class is not described below but nearly all transfers of data and mathematical operations are performed using (an) object(s) of this type.
 \end{DoxyNote}
 \hypertarget{index_loading}{}\subsubsection{Loading}\label{index_loading}
-The \hyperlink{classLoader}{Loader} object, recieving a pointer to memory and a filename, creates an \hyperlink{classObjParser}{ObjParser} object (the fifth major component). The \hyperlink{classObjParser}{ObjParser} pulls the relevant data from the file and the \hyperlink{classLoader}{Loader} puts it into memory. After some input by the user is accepted (assuming the simulator is in debug mode), the \hyperlink{classWi11}{Wi11} is ready to begin executing instructions.\hypertarget{index_execution}{}\subsubsection{Executing}\label{index_execution}
+The \hyperlink{classLoader}{Loader} object, receiving a pointer to memory and a filename, creates an \hyperlink{classObjParser}{ObjParser} object (the fifth major component). The \hyperlink{classObjParser}{ObjParser} pulls the relevant data from the file and the \hyperlink{classLoader}{Loader} puts it into memory. After some input by the user is accepted (assuming the simulator is in debug mode), the \hyperlink{classWi11}{Wi11} is ready to begin executing instructions.\hypertarget{index_execution}{}\subsubsection{Executing}\label{index_execution}
 The \hyperlink{classWi11}{Wi11} component executes instructions in a way very similar to how an actual Wi-\/11 machine would execute them. It first has the \hyperlink{classMemory}{Memory} object return the instruction referenced by the current value of the PC. After incrementing the PC, the raw instruction is given to the \hyperlink{classDecoder}{Decoder}. The \hyperlink{classDecoder}{Decoder} returns an \hyperlink{structInstruction}{Instruction} object that allows the \hyperlink{classWi11}{Wi11} to call one of its many private functions that correspond (one-\/to-\/one) to each kind of instruction. This process is then repeated until either the HALT trap code is found or the user-\/specified instruction limit is reached.
 
 
@@ -62,7 +62,7 @@ The \hyperlink{classWi11}{Wi11} component executes instructions in a way very si
 \end{DoxyImage}
 \hypertarget{index_instructions}{}\subsection{Wi-\/11 Instruction Set}\label{index_instructions}
 \begin{DoxyParagraph}{}
-This section describes the format of each operation on the Wi-\/11. First there are necessary definitions and then the list of instructions. The name of each instruction is followed by the opcode; this includes any base conversions that may be necessary. Then there is a list of the arguments to the command. The opcode is the first four bits of the instruction; the list following the opcode delagates purpose to the following 12 bits.
+This section describes the format of each operation on the Wi-\/11. First there are necessary definitions and then the list of instructions. The name of each instruction is followed by the opcode; this includes any base conversions that may be necessary. Then there is a list of the arguments to the command. The opcode is the first four bits of the instruction; the list following the opcode delegates purpose to the following 12 bits.
 \end{DoxyParagraph}
 \hypertarget{index_offset}{}\subsubsection{Offsets}\label{index_offset}
 Offsets to the PC are used by concatenating them with the PC. Specifically, the first 7 bits of the PC and the 9 bit offset form the new PC value. This essentially separates memory into pages (the first seven bits of the PC corresponding a \char`\"{}page number\char`\"{}).\hypertarget{index_indexes}{}\subsubsection{Indexes}\label{index_indexes}

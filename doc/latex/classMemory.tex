@@ -19,9 +19,14 @@ Collaboration diagram for Memory:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classMemory_a98671c2e4238df99efd56cb26185a17c}{
-std::vector$<$ std::vector$<$ \hyperlink{classWord}{Word} $>$ $>$ {\bfseries GetUsedMemory} () const }
-\label{classMemory_a98671c2e4238df99efd56cb26185a17c}
+\hypertarget{classMemory_a0ffa9759ebbf103f11132a505b93bdc0}{
+virtual \hyperlink{classMemory_a0ffa9759ebbf103f11132a505b93bdc0}{$\sim$Memory} ()}
+\label{classMemory_a0ffa9759ebbf103f11132a505b93bdc0}
+
+\begin{DoxyCompactList}\small\item\em Deletes any dynamically allocated memory. \item\end{DoxyCompactList}\item 
+\hypertarget{classMemory_a80cd994d4833dde66b8005184e510dda}{
+virtual Codes::RESULT {\bfseries Reserve} (const \hyperlink{classiWord}{iWord} \&initial\_\-address, const \hyperlink{classiWord}{iWord} \&length)}
+\label{classMemory_a80cd994d4833dde66b8005184e510dda}
 
 \item 
 \hypertarget{classMemory_aca021609915080b38ca1b00d9b416e80}{
@@ -29,21 +34,16 @@ virtual \hyperlink{classWord}{Word} {\bfseries Load} (const \hyperlink{classiWor
 \label{classMemory_aca021609915080b38ca1b00d9b416e80}
 
 \item 
-\hypertarget{classMemory_a80cd994d4833dde66b8005184e510dda}{
-virtual Codes::RESULT {\bfseries Reserve} (const \hyperlink{classiWord}{iWord} \&initial\_\-address, const \hyperlink{classiWord}{iWord} \&length)}
-\label{classMemory_a80cd994d4833dde66b8005184e510dda}
-
-\item 
 \hypertarget{classMemory_a23703464fb24710d09be1b2010e79edc}{
 virtual Codes::RESULT {\bfseries Store} (const \hyperlink{classiWord}{iWord} \&address, const \hyperlink{classWord}{Word} \&value)}
 \label{classMemory_a23703464fb24710d09be1b2010e79edc}
 
 \item 
-\hypertarget{classMemory_a0ffa9759ebbf103f11132a505b93bdc0}{
-virtual \hyperlink{classMemory_a0ffa9759ebbf103f11132a505b93bdc0}{$\sim$Memory} ()}
-\label{classMemory_a0ffa9759ebbf103f11132a505b93bdc0}
+\hypertarget{classMemory_a98671c2e4238df99efd56cb26185a17c}{
+std::vector$<$ std::vector$<$ \hyperlink{classWord}{Word} $>$ $>$ {\bfseries GetUsedMemory} () const }
+\label{classMemory_a98671c2e4238df99efd56cb26185a17c}
 
-\begin{DoxyCompactList}\small\item\em Deletes any dynamically allocated memory. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -52,16 +52,16 @@ std::vector$<$ \hyperlink{classWord}{Word} $\ast$ $>$ \hyperlink{classMemory_a63
 \label{classMemory_a6391f325c42a93f4c56f0c44e6b35fda}
 
 \begin{DoxyCompactList}\small\item\em Provide constant time access to reserved memory. \item\end{DoxyCompactList}\item 
-\hypertarget{classMemory_a3e5675ae2bc551a9c5429525e2dce857}{
-std::vector$<$ int $>$ \hyperlink{classMemory_a3e5675ae2bc551a9c5429525e2dce857}{\_\-segment\_\-lengths}}
-\label{classMemory_a3e5675ae2bc551a9c5429525e2dce857}
-
-\begin{DoxyCompactList}\small\item\em Keep track of the size of reserved memory. \item\end{DoxyCompactList}\item 
 \hypertarget{classMemory_a29d6fa2f1774f0c770130c968820d008}{
 std::vector$<$ int $>$ \hyperlink{classMemory_a29d6fa2f1774f0c770130c968820d008}{\_\-segment\_\-offsets}}
 \label{classMemory_a29d6fa2f1774f0c770130c968820d008}
 
 \begin{DoxyCompactList}\small\item\em Keep track of the initial addresses. \item\end{DoxyCompactList}\item 
+\hypertarget{classMemory_a3e5675ae2bc551a9c5429525e2dce857}{
+std::vector$<$ int $>$ \hyperlink{classMemory_a3e5675ae2bc551a9c5429525e2dce857}{\_\-segment\_\-lengths}}
+\label{classMemory_a3e5675ae2bc551a9c5429525e2dce857}
+
+\begin{DoxyCompactList}\small\item\em Keep track of the size of reserved memory. \item\end{DoxyCompactList}\item 
 \hypertarget{classMemory_a36f459f042295fb06b4d7ec9b397f952}{
 std::map$<$ int, \hyperlink{classWord}{Word} $>$ \hyperlink{classMemory_a36f459f042295fb06b4d7ec9b397f952}{\_\-unbounded\_\-memory}}
 \label{classMemory_a36f459f042295fb06b4d7ec9b397f952}

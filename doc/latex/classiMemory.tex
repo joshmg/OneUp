@@ -10,14 +10,14 @@ Defines the functionality of memory in the Wi-\/11 machine.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual std::vector$<$ std::vector$<$ \hyperlink{classWord}{Word} $>$ $>$ \hyperlink{classiMemory_a1aba88f98a91fa2858b03422979e57d5}{GetUsedMemory} () const =0
-\begin{DoxyCompactList}\small\item\em Details memory's current state. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiMemory_a3352ba391fc9b69a0b8691b2d585596a}{Load} (const \hyperlink{classiWord}{iWord} \&w) const =0
-\begin{DoxyCompactList}\small\item\em Performs a load. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiMemory_a27750e74d09fb473c163a4cc4c3e697b}{Reserve} (const \hyperlink{classiWord}{iWord} \&initial\_\-address, const \hyperlink{classiWord}{iWord} \&length)=0
 \begin{DoxyCompactList}\small\item\em Reserves an initial section of memory for instructions. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiMemory_a3352ba391fc9b69a0b8691b2d585596a}{Load} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em Performs a load. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiMemory_a2632c9999797b0799a7d6b0a59bfa91a}{Store} (const \hyperlink{classiWord}{iWord} \&address, const \hyperlink{classWord}{Word} \&value)=0
-\begin{DoxyCompactList}\small\item\em Peforms a store. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Peforms a store. \item\end{DoxyCompactList}\item 
+virtual std::vector$<$ std::vector$<$ \hyperlink{classWord}{Word} $>$ $>$ \hyperlink{classiMemory_a1aba88f98a91fa2858b03422979e57d5}{GetUsedMemory} () const =0
+\begin{DoxyCompactList}\small\item\em Details memory's current state. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/MacPorts 2010_1) (format=pdflatex 2011.1.20)  23 JAN 2011 21:50
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010/MacPorts 2010_1) (format=pdflatex 2011.1.20)  24 JAN 2011 06:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1044,20 +1044,23 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 10.79993pt on input line 8.
 
-[1
+Underfull \vbox (badness 5711) has occurred while \output is active []
 
-] [2]
-LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 54.
- <software_interaction.png, id=1032, 548.80031pt x 301.125pt>
-File: software_interaction.png Graphic file (type png)
-
-<use software_interaction.png> [3] [4 <./software_interaction.png (PNG copy)>]
-[5] [6]) [7] [8
+ [1
 
 ]
+[2]
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 54.
+ [3] <software_interaction.png, id=1048, 548.80031pt x 301.125pt>
+File: software_interaction.png Graphic file (type png)
+
+<use software_interaction.png> [4 <./software_interaction.png (PNG copy)>]
+[5] [6] [7]) [8]
 Chapter 2.
-(./namespaces.tex) [9] [10
+(./namespaces.tex) [9
+
+] [10
 
 ]
 Chapter 3.
@@ -1123,13 +1126,13 @@ Underfull \vbox (badness 10000) detected at line 41
  []
 
 ) (./classiMemory.tex
-Overfull \hbox (20.96019pt too wide) in paragraph at lines 17--18
+Overfull \hbox (20.96019pt too wide) in paragraph at lines 13--14
 []\T1/phv/m/n/10 virtual Codes::RESULT [][]Re-serve[][] (const [][]iWord[][] &i
 nitial_-address, const [][]iWord[][] &length)=0
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
@@ -1274,15 +1277,14 @@ Underfull \vbox (badness 10000) detected at line 344
  []
 
 [31]) (./classiWi11.tex
-Overfull \hbox (10.16687pt too wide) in paragraph at lines 24--25
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder_-Directory:
-:REGISTER_-ID &DR, const
+Overfull \hbox (1.40138pt too wide) in paragraph at lines 24--25
+[]\T1/phv/m/n/10 virtual [][]iReg-is-ter[][] & [][]_-GetRegister[][] (const Dec
+oder_-Directory::REGISTER_-ID &id)=0
  []
 
 
-Overfull \hbox (7.95518pt too wide) in paragraph at lines 24--25
-\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
-:REGISTER_-
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
  []
 
 [32]
@@ -1292,15 +1294,15 @@ Overfull \hbox (10.16687pt too wide) in paragraph at lines 26--27
  []
 
 
-Overfull \hbox (10.16687pt too wide) in paragraph at lines 28--29
-[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-And[][] (const Decoder_-Directory:
-:REGISTER_-ID &DR, const
+Overfull \hbox (7.95518pt too wide) in paragraph at lines 26--27
+\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
+:REGISTER_-
  []
 
 
-Overfull \hbox (7.95518pt too wide) in paragraph at lines 28--29
-\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
-:REGISTER_-
+Overfull \hbox (10.16687pt too wide) in paragraph at lines 28--29
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-Add[][] (const Decoder_-Directory:
+:REGISTER_-ID &DR, const
  []
 
 
@@ -1310,14 +1312,15 @@ Overfull \hbox (10.16687pt too wide) in paragraph at lines 30--31
  []
 
 
-Overfull \hbox (1.40138pt too wide) in paragraph at lines 36--37
-[]\T1/phv/m/n/10 virtual [][]iReg-is-ter[][] & [][]_-GetRegister[][] (const Dec
-oder_-Directory::REGISTER_-ID &id)=0
+Overfull \hbox (7.95518pt too wide) in paragraph at lines 30--31
+\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
+:REGISTER_-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-
+Overfull \hbox (10.16687pt too wide) in paragraph at lines 32--33
+[]\T1/phv/m/n/10 virtual Codes::RESULT [][]_-And[][] (const Decoder_-Directory:
+:REGISTER_-ID &DR, const
  []
 
 
@@ -1612,7 +1615,7 @@ Underfull \vbox (badness 10000) detected at line 492
  []
 
 ) (./classLoader.tex
-<classLoader__coll__graph.pdf, id=1702, 209.78375pt x 174.6525pt>
+<classLoader__coll__graph.pdf, id=1701, 209.78375pt x 174.6525pt>
 File: classLoader__coll__graph.pdf Graphic file (type pdf)
 
 <use classLoader__coll__graph.pdf>
@@ -1628,21 +1631,21 @@ Underfull \vbox (badness 10000) detected at line 60
  []
 
 ) (./classMemory.tex
-<classMemory__coll__graph.pdf, id=1727, 138.5175pt x 160.6pt>
+<classMemory__coll__graph.pdf, id=1726, 138.5175pt x 160.6pt>
 File: classMemory__coll__graph.pdf Graphic file (type pdf)
 
 <use classMemory__coll__graph.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54]
-Overfull \hbox (5.93924pt too wide) in paragraph at lines 33--35
+Overfull \hbox (5.93924pt too wide) in paragraph at lines 28--30
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 Re-serve \T1/phv/m/n/10 
 (const [][]iWord[][] &initial_-address, const [][]iWord[][] &length)
  []
 
 ) (./structObjectData.tex [55 <./classMemory__coll__graph.pdf>])
 (./classObjParser.tex [56]
-<classObjParser__coll__graph.pdf, id=1785, 144.54pt x 160.6pt>
+<classObjParser__coll__graph.pdf, id=1784, 144.54pt x 160.6pt>
 File: classObjParser__coll__graph.pdf Graphic file (type pdf)
 
 <use classObjParser__coll__graph.pdf> [57 <./classObjParser__coll__graph.pdf>]
@@ -1655,7 +1658,7 @@ Underfull \vbox (badness 10000) detected at line 62
  []
 
 ) (./classRegister.tex
-<classRegister__coll__graph.pdf, id=1816, 197.73875pt x 234.8775pt>
+<classRegister__coll__graph.pdf, id=1815, 197.73875pt x 234.8775pt>
 File: classRegister__coll__graph.pdf Graphic file (type pdf)
 
 <use classRegister__coll__graph.pdf> [58] [59 <./classRegister__coll__graph.pdf
@@ -1669,7 +1672,7 @@ Underfull \vbox (badness 10000) detected at line 48
  []
 
 ) (./classWi11.tex
-<classWi11__coll__graph.pdf, id=1899, 598.235pt x 411.5375pt>
+<classWi11__coll__graph.pdf, id=1898, 598.235pt x 411.5375pt>
 File: classWi11__coll__graph.pdf Graphic file (type pdf)
 
 <use classWi11__coll__graph.pdf>
@@ -1681,79 +1684,79 @@ Overfull \hbox (55.0pt too wide) in paragraph at lines 15--17
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-Overfull \hbox (7.53883pt too wide) in paragraph at lines 58--60
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
-nst Decoder_-Directory::REGISTER_-ID &DR, const
- []
-
-
-Overfull \hbox (7.95518pt too wide) in paragraph at lines 58--60
-\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
-:REGISTER_-
+Overfull \hbox (0.15916pt too wide) in paragraph at lines 58--60
+[]\T1/phv/m/n/10 std::string [][]_-RegisterID2String[][] (const Decoder_-Direct
+ory::REGISTER_-ID &) const
  []
 
 [62 <./classWi11__coll__graph.pdf>]
-Overfull \hbox (7.53883pt too wide) in paragraph at lines 63--65
+Overfull \hbox (7.53883pt too wide) in paragraph at lines 78--80
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
 nst Decoder_-Directory::REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (7.60179pt too wide) in paragraph at lines 68--70
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-And \T1/phv/m/n/10 (co
-nst Decoder_-Directory::REGISTER_-ID &DR, const
- []
-
-
-Overfull \hbox (7.60179pt too wide) in paragraph at lines 73--75
-[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-And \T1/phv/m/n/10 (co
-nst Decoder_-Directory::REGISTER_-ID &DR, const
- []
-
-
-Overfull \hbox (7.95518pt too wide) in paragraph at lines 73--75
+Overfull \hbox (7.95518pt too wide) in paragraph at lines 78--80
 \T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
 :REGISTER_-
  []
 
 
-Overfull \hbox (2.53435pt too wide) in paragraph at lines 98--100
+Overfull \hbox (7.53883pt too wide) in paragraph at lines 83--85
+[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Add \T1/phv/m/n/10 (co
+nst Decoder_-Directory::REGISTER_-ID &DR, const
+ []
+
+
+Overfull \hbox (7.60179pt too wide) in paragraph at lines 88--90
+[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-And \T1/phv/m/n/10 (co
+nst Decoder_-Directory::REGISTER_-ID &DR, const
+ []
+
+
+Overfull \hbox (7.95518pt too wide) in paragraph at lines 88--90
+\T1/phv/m/n/10 Decoder_-Directory::REGISTER_-ID &SR1, const Decoder_-Directory:
+:REGISTER_-
+ []
+
+
+Overfull \hbox (7.60179pt too wide) in paragraph at lines 93--95
+[]\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-And \T1/phv/m/n/10 (co
+nst Decoder_-Directory::REGISTER_-ID &DR, const
+ []
+
+
+Overfull \hbox (2.53435pt too wide) in paragraph at lines 113--115
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-JSRR \T1/phv/m/n/10 (c
 onst Decoder_-Directory::REGISTER_-ID &baseR,
  []
 
 
-Overfull \hbox (10.88669pt too wide) in paragraph at lines 103--105
+Overfull \hbox (10.88669pt too wide) in paragraph at lines 118--120
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Load \T1/phv/m/n/10 (c
 onst Decoder_-Directory::REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (5.54988pt too wide) in paragraph at lines 123--125
+Overfull \hbox (5.54988pt too wide) in paragraph at lines 138--140
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-Not \T1/phv/m/n/10 (co
 nst Decoder_-Directory::REGISTER_-ID &DR, const
  []
 
 
-Overfull \hbox (0.15916pt too wide) in paragraph at lines 128--130
-[]\T1/phv/m/n/10 std::string [][]_-RegisterID2String[][] (const Decoder_-Direct
-ory::REGISTER_-ID &) const
- []
-
-
-Overfull \hbox (4.24425pt too wide) in paragraph at lines 138--140
+Overfull \hbox (4.24425pt too wide) in paragraph at lines 153--155
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-STI \T1/phv/m/n/10 (co
 nst Decoder_-Directory::REGISTER_-ID &SR, const
  []
 
 
-Overfull \hbox (7.52023pt too wide) in paragraph at lines 148--150
+Overfull \hbox (7.52023pt too wide) in paragraph at lines 158--160
 []\T1/phv/m/n/10 virtual Codes::RESULT \T1/phv/bc/n/10 _-STR \T1/phv/m/n/10 (co
 nst Decoder_-Directory::REGISTER_-ID &SR, const
  []
 
 [63]) (./structWi11_1_1CCR.tex [64]) (./classWord.tex
-<classWord__coll__graph.pdf, id=2015, 122.4575pt x 160.6pt>
+<classWord__coll__graph.pdf, id=2014, 122.4575pt x 160.6pt>
 File: classWord__coll__graph.pdf Graphic file (type pdf)
 
 <use classWord__coll__graph.pdf> [65 <./classWord__coll__graph.pdf>]
@@ -1773,7 +1776,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 8.
-(./Decoder_8h.tex <Decoder_8h__incl.pdf, id=2096, 224.84pt x 277.035pt>
+(./Decoder_8h.tex <Decoder_8h__incl.pdf, id=2094, 224.84pt x 277.035pt>
 File: Decoder_8h__incl.pdf Graphic file (type pdf)
 
 <use Decoder_8h__incl.pdf>
@@ -1783,12 +1786,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (./iDecoder_8h.tex
 Underfull \vbox (badness 1024) has occurred while \output is active []
 
- [70 <./Decoder_8h__incl.pdf>] <iDecoder_8h__incl.pdf, id=2117, 196.735pt x 218
+ [70 <./Decoder_8h__incl.pdf>] <iDecoder_8h__incl.pdf, id=2114, 196.735pt x 218
 .8175pt>
 File: iDecoder_8h__incl.pdf Graphic file (type pdf)
 
 <use iDecoder_8h__incl.pdf> [71 <./iDecoder_8h__incl.pdf>]) (./iLoader_8h.tex
-<iLoader_8h__incl.pdf, id=2136, 299.1175pt x 277.035pt>
+<iLoader_8h__incl.pdf, id=2133, 299.1175pt x 277.035pt>
 File: iLoader_8h__incl.pdf Graphic file (type pdf)
 
 <use iLoader_8h__incl.pdf>
@@ -1798,25 +1801,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (./iMemory_8h.tex
 Underfull \vbox (badness 1014) has occurred while \output is active []
 
- [73 <./iLoader_8h__incl.pdf>] <iMemory_8h__incl.pdf, id=2156, 299.1175pt x 218
+ [73 <./iLoader_8h__incl.pdf>] <iMemory_8h__incl.pdf, id=2153, 299.1175pt x 218
 .8175pt>
 File: iMemory_8h__incl.pdf Graphic file (type pdf)
 
 <use iMemory_8h__incl.pdf>) (./iObjParser_8h.tex
 Underfull \vbox (badness 1867) has occurred while \output is active []
 
- [74 <./iMemory_8h__incl.pdf>] <iObjParser_8h__incl.pdf, id=2171, 273.02pt x 21
+ [74 <./iMemory_8h__incl.pdf>] <iObjParser_8h__incl.pdf, id=2168, 273.02pt x 21
 8.8175pt>
 File: iObjParser_8h__incl.pdf Graphic file (type pdf)
 
 <use iObjParser_8h__incl.pdf>) (./iRegister_8h.tex [75 <./iObjParser_8h__incl.p
-df>] <iRegister_8h__incl.pdf, id=2188, 146.5475pt x 218.8175pt>
+df>] <iRegister_8h__incl.pdf, id=2184, 146.5475pt x 218.8175pt>
 File: iRegister_8h__incl.pdf Graphic file (type pdf)
 
 <use iRegister_8h__incl.pdf>) (./iWi11_8h.tex
 Underfull \vbox (badness 1859) has occurred while \output is active []
 
- [76 <./iRegister_8h__incl.pdf>] <iWi11_8h__incl.pdf, id=2203, 396.48125pt x 27
+ [76 <./iRegister_8h__incl.pdf>] <iWi11_8h__incl.pdf, id=2200, 396.48125pt x 27
 7.035pt>
 File: iWi11_8h__incl.pdf Graphic file (type pdf)
 
@@ -1826,18 +1829,18 @@ Overfull \hbox (50.0pt too wide) in paragraph at lines 13--15
  []
 
 ) (./iWord_8h.tex [77 <./iWi11_8h__incl.pdf>]
-<iWord_8h__incl.pdf, id=2219, 132.495pt x 160.6pt>
+<iWord_8h__incl.pdf, id=2216, 132.495pt x 160.6pt>
 File: iWord_8h__incl.pdf Graphic file (type pdf)
  <use iWord_8h__incl.pdf>)
-(./Loader_8h.tex <Loader_8h__incl.pdf, id=2221, 299.1175pt x 335.2525pt>
+(./Loader_8h.tex <Loader_8h__incl.pdf, id=2218, 299.1175pt x 335.2525pt>
 File: Loader_8h__incl.pdf Graphic file (type pdf)
 
 <use Loader_8h__incl.pdf> [78 <./iWord_8h__incl.pdf>] [79 <./Loader_8h__incl.pd
-f>]) (./Memory_8h.tex <Memory_8h__incl.pdf, id=2250, 311.1625pt x 277.035pt>
+f>]) (./Memory_8h.tex <Memory_8h__incl.pdf, id=2247, 311.1625pt x 277.035pt>
 File: Memory_8h__incl.pdf Graphic file (type pdf)
 
 <use Memory_8h__incl.pdf> [80 <./Memory_8h__incl.pdf>]) (./ObjParser_8cpp.tex
-<ObjParser_8cpp__incl.pdf, id=2266, 497.86pt x 335.2525pt>
+<ObjParser_8cpp__incl.pdf, id=2263, 497.86pt x 335.2525pt>
 File: ObjParser_8cpp__incl.pdf Graphic file (type pdf)
 
 <use ObjParser_8cpp__incl.pdf>
@@ -1846,7 +1849,7 @@ Overfull \hbox (55.0pt too wide) in paragraph at lines 13--15
  []
 
 ) (./ObjParser_8h.tex [81 <./ObjParser_8cpp__incl.pdf>]
-<ObjParser_8h__incl.pdf, id=2279, 392.46625pt x 277.035pt>
+<ObjParser_8h__incl.pdf, id=2276, 392.46625pt x 277.035pt>
 File: ObjParser_8h__incl.pdf Graphic file (type pdf)
 
 <use ObjParser_8h__incl.pdf>
@@ -1855,15 +1858,15 @@ Overfull \hbox (46.0pt too wide) in paragraph at lines 13--15
  []
 
 ) (./Register_8h.tex [82 <./ObjParser_8h__incl.pdf>]
-<Register_8h__incl.pdf, id=2296, 214.8025pt x 277.035pt>
+<Register_8h__incl.pdf, id=2292, 214.8025pt x 277.035pt>
 File: Register_8h__incl.pdf Graphic file (type pdf)
 
 <use Register_8h__incl.pdf>) (./ResultCodes_8h.tex [83 <./Register_8h__incl.pdf
->] <ResultCodes_8h__incl.pdf, id=2313, 180.675pt x 160.6pt>
+>] <ResultCodes_8h__incl.pdf, id=2310, 180.675pt x 160.6pt>
 File: ResultCodes_8h__incl.pdf Graphic file (type pdf)
 
 <use ResultCodes_8h__incl.pdf> [84 <./ResultCodes_8h__incl.pdf>])
-(./Wi11_8h.tex <Wi11_8h__incl.pdf, id=2331, 703.62875pt x 393.47pt>
+(./Wi11_8h.tex <Wi11_8h__incl.pdf, id=2328, 703.62875pt x 393.47pt>
 File: Wi11_8h__incl.pdf Graphic file (type pdf)
 
 <use Wi11_8h__incl.pdf>
@@ -1872,11 +1875,11 @@ Overfull \hbox (55.0pt too wide) in paragraph at lines 13--15
  []
 
 [85 <./Wi11_8h__incl.pdf>]) (./Word_8cpp.tex
-<Word_8cpp__incl.pdf, id=2348, 273.02pt x 277.035pt>
+<Word_8cpp__incl.pdf, id=2345, 273.02pt x 277.035pt>
 File: Word_8cpp__incl.pdf Graphic file (type pdf)
  <use Word_8cpp__incl.pdf>
 [86 <./Word_8cpp__incl.pdf>]) (./Word_8h.tex
-<Word_8h__incl.pdf, id=2361, 158.5925pt x 218.8175pt>
+<Word_8h__incl.pdf, id=2358, 158.5925pt x 218.8175pt>
 File: Word_8h__incl.pdf Graphic file (type pdf)
  <use Word_8h__incl.pdf>
 [87 <./Word_8h__incl.pdf>]) (./refman.ind [88] [89
@@ -1896,7 +1899,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  11264 strings out of 495074
  171699 string characters out of 3182082
- 249755 words of memory out of 3000000
+ 249751 words of memory out of 3000000
  13468 multiletter control sequences out of 15000+200000
  66725 words of font info for 87 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1910,10 +1913,10 @@ exlive-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></opt/local/share/texmf-texliv
 e-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></opt/local/share/texmf-texlive-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/local/share/texmf-texlive-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (99 pages, 404114 bytes).
+Output written on refman.pdf (99 pages, 404493 bytes).
 PDF statistics:
- 2731 PDF objects out of 2984 (max. 8388607)
- 2526 compressed objects within 26 object streams
+ 2728 PDF objects out of 2984 (max. 8388607)
+ 2523 compressed objects within 26 object streams
  616 named destinations out of 1000 (max. 500000)
  1649 words of extra memory for PDF output out of 10000 (max. 10000000)
 

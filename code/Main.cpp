@@ -139,6 +139,7 @@ int main(int argc, char* argv[]) {
 //*** Project-wide documentation ***///
 ///////////////////////////////////////
 /*! @mainpage Introduction
+    Primary author of this document: Andrew Groot
     @section intro Introduction
     The "Wi-11 Machine" is a simple, 16-bit computer architecture.
     It has 8 general purpose registers, 3 condition code registers (CCRs),
@@ -151,16 +152,16 @@ int main(int argc, char* argv[]) {
 
     @section syntax Object Files
     @par
-    The object files (ususally file_name.o) that this simulator accepts
-    are ascii text files with the following structure:
+    The object files (usually file_name.o) that this simulator accepts
+    are ASCII text files with the following structure:
     @arg One \ref header "Header Record"
-    @arg Several \ref text "Text Records"
+    @arg Zero or more \ref text "Text Records"
     @arg One \ref end "End Record"
     
       @subsection header The Header Record
       @par
       The Header Record is a single line that prepares the system for
-      the storing the instructions to come.
+      storing the instructions to come.
       @par
       <b>Components</b>
       @arg A capital 'H'.  This designates that it is the Header Record.
@@ -171,11 +172,11 @@ int main(int argc, char* argv[]) {
       (the size of memory into which the instructions will be loaded).
       @par
       <b>At a glance:</b> There is an 'H', a segment name, the first location where instructions can be written,
-      and the number of memory locations for instuctions.
+      and the number of memory locations for instructions.
 
       @subsection text Text Records
       @par
-      Following the Header Record are serveral Text Records.
+      Following the Header Record are several Text Records.
       Each Text Record corresponds to a single machine instruction
       and, like the header record, is on a single line.
       @par
@@ -188,7 +189,7 @@ int main(int argc, char* argv[]) {
 
       @subsection end The End Record
       @par
-      The End Record is, as the name would suggest, the last line of the line.
+      The End Record is, as the name would suggest, the last line of the file.
       Its purpose is to denote the end of instructions to be written and to give an initial value for the PC.\n\n
       @par
       <b>Components</b>
@@ -212,14 +213,14 @@ int main(int argc, char* argv[]) {
     The main function, however, is only aware of one: Wi11.  It creates one Wi11
     object and uses it to parse object files, decode the instructions, and execute them.
     In order to perform these tasks it first creates Loader, Memory, Decoder, and Register
-    objects.  The Register objects correspond all those mentioned in the \ref intro,
+    objects.  The Register objects correspond to all those mentioned in the \ref intro,
     with the exception of the CCRs which are declared as their own entity.
     
     @note The Word class is not described below but nearly all transfers of data
     and mathematical operations are performed using (an) object(s) of this type.
 
     @subsubsection loading Loading
-    The Loader object, recieving a pointer to memory and a filename, creates
+    The Loader object, receiving a pointer to memory and a filename, creates
     an ObjParser object (the fifth major component).  The ObjParser pulls the
     relevant data from the file and the Loader puts it into memory.  After some input
     by the user is accepted (assuming the simulator is in debug mode), the Wi11 is
@@ -244,7 +245,7 @@ int main(int argc, char* argv[]) {
     The name of each instruction is followed by the opcode; this includes any
     base conversions that may be necessary.  Then there is a list of
     the arguments to the command.  The opcode is the first four bits
-    of the instruction; the list following the opcode delagates
+    of the instruction; the list following the opcode delegates
     purpose to the following 12 bits.
 
     @subsubsection offset Offsets    

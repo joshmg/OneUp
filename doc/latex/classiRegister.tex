@@ -10,44 +10,44 @@ Defines a \char`\"{}register\char`\"{} in the Wi-\/11 machine.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiRegister_ae7266f6f981b621f53f3c7cf77d4966a}{GetValue} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves a copy of the word of data store in the register. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiRegister_acb13aa880933f43088958723c9d6e564}{Add} (const \hyperlink{classiWord}{iWord} \&w)=0
 \begin{DoxyCompactList}\small\item\em Adds a word of data to the calling object. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_abaaacfa8cb18bea90a78673bd572a1c8}{Add} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
 \begin{DoxyCompactList}\small\item\em Adds a word of data to the calling object. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_af8ab19234f44a0bade65cb35fd2cd036}{operator+} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
+\begin{DoxyCompactList}\small\item\em A standard add operator. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiRegister_a98de346c2d0b15bee47d76bc5f70e94b}{Subtract} (const \hyperlink{classiWord}{iWord} \&w)=0
+\begin{DoxyCompactList}\small\item\em Subtracts a word of data from the calling object. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_ad7eb424400d184f1829664dd4f87ce5c}{Subtract} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
+\begin{DoxyCompactList}\small\item\em Subtracts a word of data from the calling object. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_a01f837097cb87ec33fdc1cef606e1842}{operator-\/} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
+\begin{DoxyCompactList}\small\item\em A standard subtraction operator. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiRegister_ae8114106e70653a705f04ba3892ed9e1}{And} (const \hyperlink{classiWord}{iWord} \&w)=0
 \begin{DoxyCompactList}\small\item\em Performs a bit-\/wise and. \item\end{DoxyCompactList}\item 
 virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_aa9a15ebfeea1e5857a1098b73cc583ad}{And} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
 \begin{DoxyCompactList}\small\item\em Performs a bit-\/wise and. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classWord}{Word} \hyperlink{classiRegister_ae7266f6f981b621f53f3c7cf77d4966a}{GetValue} () const =0
-\begin{DoxyCompactList}\small\item\em Retrieves a copy of the word of data store in the register. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiRegister_af4bbbe945b151dee3f1743c43a451cb3}{Not} ()=0
-\begin{DoxyCompactList}\small\item\em Performs a bit-\/wise not. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_af8ab19234f44a0bade65cb35fd2cd036}{operator+} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
-\begin{DoxyCompactList}\small\item\em A standard add operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_abca2bcea556d63fb4e3504df221cdc62}{operator++} ()=0
-\begin{DoxyCompactList}\small\item\em A standard pre-\/increment operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a36e6e1bfbc6a9fe203e8fb5b9f6396cb}{operator++} (int)=0
-\begin{DoxyCompactList}\small\item\em A standard post-\/increment operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_a01f837097cb87ec33fdc1cef606e1842}{operator-\/} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
-\begin{DoxyCompactList}\small\item\em A standard subtraction operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a16bf3f305a9588ddc85c109ac9a8b47b}{operator=} (const \hyperlink{classiWord}{iWord} \&w)=0
-\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_af5f065e89ef31d2ed40a1e80d9231bfd}{Or} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
-\begin{DoxyCompactList}\small\item\em Performs a bit-\/wise or. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiRegister_aa0eac4fe58bde4a280a42fda1c087eee}{Or} (const \hyperlink{classiWord}{iWord} \&w)=0
 \begin{DoxyCompactList}\small\item\em Performs a bit-\/wise \char`\"{}or\char`\"{}. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_af5f065e89ef31d2ed40a1e80d9231bfd}{Or} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
+\begin{DoxyCompactList}\small\item\em Performs a bit-\/wise or. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiRegister_af4bbbe945b151dee3f1743c43a451cb3}{Not} ()=0
+\begin{DoxyCompactList}\small\item\em Performs a bit-\/wise not. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiRegister_a8ffac24d1d7326e1a15f9b37cd426969}{Store} (const \hyperlink{classiWord}{iWord} \&w)=0
 \begin{DoxyCompactList}\small\item\em Performs a bit-\/wise not. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiRegister_ac2b021b80a890f010fc68826e29fee47}{Store} (const \hyperlink{classiRegister}{iRegister} \&r)=0
 \begin{DoxyCompactList}\small\item\em Stores a copy of another register. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classRegister}{Register} \hyperlink{classiRegister_ad7eb424400d184f1829664dd4f87ce5c}{Subtract} (const \hyperlink{classiRegister}{iRegister} \&r) const =0
-\begin{DoxyCompactList}\small\item\em Subtracts a word of data from the calling object. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classiRegister_a98de346c2d0b15bee47d76bc5f70e94b}{Subtract} (const \hyperlink{classiWord}{iWord} \&w)=0
-\begin{DoxyCompactList}\small\item\em Subtracts a word of data from the calling object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a16bf3f305a9588ddc85c109ac9a8b47b}{operator=} (const \hyperlink{classiWord}{iWord} \&w)=0
+\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_abca2bcea556d63fb4e3504df221cdc62}{operator++} ()=0
+\begin{DoxyCompactList}\small\item\em A standard pre-\/increment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRegister}{Register} \& \hyperlink{classiRegister_a36e6e1bfbc6a9fe203e8fb5b9f6396cb}{operator++} (int)=0
+\begin{DoxyCompactList}\small\item\em A standard post-\/increment operator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Defines a \char`\"{}register\char`\"{} in the Wi-\/11 machine. The methods present in this inteface are meant to mimic the functionality of the Wi-\/11 machine, allowing for simplified execution of the instructions therein. This interace class will serve as a base from which the general purpose registers and program counter of the Wi-\/11 can be defined. 
+Defines a \char`\"{}register\char`\"{} in the Wi-\/11 machine. The methods present in this interface are meant to mimic the functionality of the Wi-\/11 machine, allowing for simplified execution of the instructions therein. This interace class will serve as a base from which the general purpose registers and program counter of the Wi-\/11 can be defined. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classiRegister_ae7266f6f981b621f53f3c7cf77d4966a}{

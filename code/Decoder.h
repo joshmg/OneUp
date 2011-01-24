@@ -1,7 +1,7 @@
 /*! @file Decoder.h
     @author Andrew Canale
     @author Andrew Groot
-    @brief Definition of the private data for the Decoder class. (none)
+    @brief Definition of the private data for the "Decoder" class. (none)
 */
 
 #ifndef DECODER_H

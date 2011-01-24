@@ -24,6 +24,13 @@ struct \hyperlink{structWi11_1_1CCR}{CCR}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{classWi11_ad8e6d1a1e39832bdc650f2ca3cfa2d3e}{Wi11} ()
+\begin{DoxyCompactList}\small\item\em Creates and organizes the components of the \hyperlink{classWi11}{Wi11} machine. \item\end{DoxyCompactList}\item 
+\hypertarget{classWi11_a50af76350b3e72c75d42035582aeb321}{
+virtual bool {\bfseries LoadObj} (const char $\ast$)}
+\label{classWi11_a50af76350b3e72c75d42035582aeb321}
+
+\item 
 \hypertarget{classWi11_a0f532cefdebd3c33ddc93e8bce4dc06b}{
 virtual void {\bfseries DisplayMemory} () const }
 \label{classWi11_a0f532cefdebd3c33ddc93e8bce4dc06b}
@@ -39,20 +46,33 @@ virtual bool {\bfseries ExecuteNext} (bool verbose=false)}
 \label{classWi11_ace44826e4f92aabd233b68bdd9437c1b}
 
 \item 
-\hypertarget{classWi11_a50af76350b3e72c75d42035582aeb321}{
-virtual bool {\bfseries LoadObj} (const char $\ast$)}
-\label{classWi11_a50af76350b3e72c75d42035582aeb321}
-
-\item 
 \hypertarget{classWi11_a99a02dc05270d20ad6ad39823ee976b6}{
 void {\bfseries poo} () const }
 \label{classWi11_a99a02dc05270d20ad6ad39823ee976b6}
 
-\item 
-\hyperlink{classWi11_ad8e6d1a1e39832bdc650f2ca3cfa2d3e}{Wi11} ()
-\begin{DoxyCompactList}\small\item\em Creates and organizes the componts of the \hyperlink{classWi11}{Wi11} machine. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+\hypertarget{classWi11_a1dcc11c26d454f639b1a924966ede86c}{
+std::string \hyperlink{classWi11_a1dcc11c26d454f639b1a924966ede86c}{\_\-RegisterID2String} (const Decoder\_\-Directory::REGISTER\_\-ID \&) const }
+\label{classWi11_a1dcc11c26d454f639b1a924966ede86c}
+
+\begin{DoxyCompactList}\small\item\em Translates an internal \hyperlink{classRegister}{Register} ID identifier into human readable string format. \item\end{DoxyCompactList}\item 
+\hypertarget{classWi11_abba9724054093a987468c0b14bf8fcda}{
+Decoder\_\-Directory::REGISTER\_\-ID {\bfseries \_\-Word2RegisterID} (const \hyperlink{classWord}{Word} \&) const }
+\label{classWi11_abba9724054093a987468c0b14bf8fcda}
+
+\item 
+\hypertarget{classWi11_a7b4a726a80ca57b9ce37d73d641b2072}{
+\hyperlink{classiRegister}{iRegister} \& {\bfseries \_\-GetRegister} (const Decoder\_\-Directory::REGISTER\_\-ID \&)}
+\label{classWi11_a7b4a726a80ca57b9ce37d73d641b2072}
+
+\item 
+\hypertarget{classWi11_a55dd619a7cf329849f5a3b22e37d00ed}{
+void {\bfseries \_\-UpdateCCR} (int)}
+\label{classWi11_a55dd619a7cf329849f5a3b22e37d00ed}
+
 \item 
 \hypertarget{classWi11_a90f2c17048a889b52b99ef2334f0ba55}{
 virtual Codes::RESULT {\bfseries \_\-Add} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const Decoder\_\-Directory::REGISTER\_\-ID \&SR2)}
@@ -64,14 +84,14 @@ virtual Codes::RESULT {\bfseries \_\-Add} (const Decoder\_\-Directory::REGISTER\
 \label{classWi11_a9b5e86294f943344021336108309bb52}
 
 \item 
-\hypertarget{classWi11_aa7a7fcfe6f5ebae0a2ab31be6029002e}{
-virtual Codes::RESULT {\bfseries \_\-And} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const \hyperlink{classiWord}{iWord} \&immediate)}
-\label{classWi11_aa7a7fcfe6f5ebae0a2ab31be6029002e}
-
-\item 
 \hypertarget{classWi11_a9b6fb3285c524e01ae94f2204a4b50f1}{
 virtual Codes::RESULT {\bfseries \_\-And} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const Decoder\_\-Directory::REGISTER\_\-ID \&SR2)}
 \label{classWi11_a9b6fb3285c524e01ae94f2204a4b50f1}
+
+\item 
+\hypertarget{classWi11_aa7a7fcfe6f5ebae0a2ab31be6029002e}{
+virtual Codes::RESULT {\bfseries \_\-And} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const \hyperlink{classiWord}{iWord} \&immediate)}
+\label{classWi11_aa7a7fcfe6f5ebae0a2ab31be6029002e}
 
 \item 
 \hypertarget{classWi11_a01960bc45e7a70a276d91ff01cd637f9}{
@@ -82,11 +102,6 @@ virtual Codes::RESULT {\bfseries \_\-Branch} (const \hyperlink{classiWord}{iWord
 \hypertarget{classWi11_a10d6c79140c97919e2778d1c4d6f8102}{
 virtual Codes::RESULT {\bfseries \_\-Debug} ()}
 \label{classWi11_a10d6c79140c97919e2778d1c4d6f8102}
-
-\item 
-\hypertarget{classWi11_a7b4a726a80ca57b9ce37d73d641b2072}{
-\hyperlink{classiRegister}{iRegister} \& {\bfseries \_\-GetRegister} (const Decoder\_\-Directory::REGISTER\_\-ID \&)}
-\label{classWi11_a7b4a726a80ca57b9ce37d73d641b2072}
 
 \item 
 \hypertarget{classWi11_a52b3325579e31ff96b4b441e682f7a9d}{
@@ -104,11 +119,6 @@ virtual Codes::RESULT {\bfseries \_\-Load} (const Decoder\_\-Directory::REGISTER
 \label{classWi11_a0538e8d3ca35e6ca84646ae4b81ad5bd}
 
 \item 
-\hypertarget{classWi11_a8b78bd154ed91178ea798bfd83bdc781}{
-virtual Codes::RESULT {\bfseries \_\-LoadEA} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const \hyperlink{classiWord}{iWord} \&address)}
-\label{classWi11_a8b78bd154ed91178ea798bfd83bdc781}
-
-\item 
 \hypertarget{classWi11_a1eabd2329888b4ac7785fe67a066f814}{
 virtual Codes::RESULT {\bfseries \_\-LoadI} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const \hyperlink{classiWord}{iWord} \&address)}
 \label{classWi11_a1eabd2329888b4ac7785fe67a066f814}
@@ -119,29 +129,29 @@ virtual Codes::RESULT {\bfseries \_\-LoadR} (const Decoder\_\-Directory::REGISTE
 \label{classWi11_aff3d7b77430caa90933276c664c303fc}
 
 \item 
+\hypertarget{classWi11_a8b78bd154ed91178ea798bfd83bdc781}{
+virtual Codes::RESULT {\bfseries \_\-LoadEA} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const \hyperlink{classiWord}{iWord} \&address)}
+\label{classWi11_a8b78bd154ed91178ea798bfd83bdc781}
+
+\item 
 \hypertarget{classWi11_ad343c78722e67d6bcfa8f5f52c525a97}{
 virtual Codes::RESULT {\bfseries \_\-Not} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const Decoder\_\-Directory::REGISTER\_\-ID \&SR)}
 \label{classWi11_ad343c78722e67d6bcfa8f5f52c525a97}
 
 \item 
-\hypertarget{classWi11_a1dcc11c26d454f639b1a924966ede86c}{
-std::string \hyperlink{classWi11_a1dcc11c26d454f639b1a924966ede86c}{\_\-RegisterID2String} (const Decoder\_\-Directory::REGISTER\_\-ID \&) const }
-\label{classWi11_a1dcc11c26d454f639b1a924966ede86c}
-
-\begin{DoxyCompactList}\small\item\em Translates an internal \hyperlink{classRegister}{Register} ID identifier into human readable string format. \item\end{DoxyCompactList}\item 
 \hypertarget{classWi11_a8cbd4e75c8c10f69f4159c02955b4a1f}{
 virtual Codes::RESULT {\bfseries \_\-Ret} ()}
 \label{classWi11_a8cbd4e75c8c10f69f4159c02955b4a1f}
 
 \item 
-\hypertarget{classWi11_a914c3e753a0182effc6d01f3de4cdd24}{
-virtual Codes::RESULT {\bfseries \_\-STI} (const Decoder\_\-Directory::REGISTER\_\-ID \&SR, const \hyperlink{classiWord}{iWord} \&address)}
-\label{classWi11_a914c3e753a0182effc6d01f3de4cdd24}
-
-\item 
 \hypertarget{classWi11_ac65b835648a3ecdaa76ceaf49141d3d6}{
 virtual Codes::RESULT {\bfseries \_\-Store} (const Decoder\_\-Directory::REGISTER\_\-ID \&SR, const \hyperlink{classiWord}{iWord} \&address)}
 \label{classWi11_ac65b835648a3ecdaa76ceaf49141d3d6}
+
+\item 
+\hypertarget{classWi11_a914c3e753a0182effc6d01f3de4cdd24}{
+virtual Codes::RESULT {\bfseries \_\-STI} (const Decoder\_\-Directory::REGISTER\_\-ID \&SR, const \hyperlink{classiWord}{iWord} \&address)}
+\label{classWi11_a914c3e753a0182effc6d01f3de4cdd24}
 
 \item 
 \hypertarget{classWi11_ac623d5c7aac534d1eb774892b82c28ec}{
@@ -153,45 +163,15 @@ virtual Codes::RESULT {\bfseries \_\-STR} (const Decoder\_\-Directory::REGISTER\
 virtual Codes::RESULT {\bfseries \_\-Trap} (const \hyperlink{classiWord}{iWord} \&code)}
 \label{classWi11_ac62ce0a9f8df8dacab577cee514cb199}
 
-\item 
-\hypertarget{classWi11_a55dd619a7cf329849f5a3b22e37d00ed}{
-void {\bfseries \_\-UpdateCCR} (int)}
-\label{classWi11_a55dd619a7cf329849f5a3b22e37d00ed}
-
-\item 
-\hypertarget{classWi11_abba9724054093a987468c0b14bf8fcda}{
-Decoder\_\-Directory::REGISTER\_\-ID {\bfseries \_\-Word2RegisterID} (const \hyperlink{classWord}{Word} \&) const }
-\label{classWi11_abba9724054093a987468c0b14bf8fcda}
-
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classWi11_a84cb35829890fca6122c023229007002}{
-struct \hyperlink{structWi11_1_1CCR}{Wi11::CCR} {\bfseries \_\-CCR}}
-\label{classWi11_a84cb35829890fca6122c023229007002}
-
-\item 
-\hypertarget{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{
-\hyperlink{classDecoder}{Decoder} \hyperlink{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{\_\-decoder}}
-\label{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}
-
-\begin{DoxyCompactList}\small\item\em For decoding instructions fetch from memory. \item\end{DoxyCompactList}\item 
-\hypertarget{classWi11_adedbd5442a90d131f8cfadc8d3eb233f}{
-\hyperlink{classLoader}{Loader} \hyperlink{classWi11_adedbd5442a90d131f8cfadc8d3eb233f}{\_\-loader}}
-\label{classWi11_adedbd5442a90d131f8cfadc8d3eb233f}
-
-\begin{DoxyCompactList}\small\item\em For loading the object file. \item\end{DoxyCompactList}\item 
 \hypertarget{classWi11_a07d3ee0573a4ea7d260574120da9dec1}{
 \hyperlink{classMemory}{Memory} \hyperlink{classWi11_a07d3ee0573a4ea7d260574120da9dec1}{\_\-memory}}
 \label{classWi11_a07d3ee0573a4ea7d260574120da9dec1}
 
 \begin{DoxyCompactList}\small\item\em Acts as the Wi-\/11's memory. \item\end{DoxyCompactList}\item 
-\hypertarget{classWi11_af60b1a832f564e3ac52b4edf7edc8c9a}{
-\hyperlink{classRegister}{Register} {\bfseries \_\-PC}}
-\label{classWi11_af60b1a832f564e3ac52b4edf7edc8c9a}
-
-\item 
 \hypertarget{classWi11_afdde77e5fbf30ef6647572f5c3050b7c}{
 \hyperlink{classRegister}{Register} \hyperlink{classWi11_afdde77e5fbf30ef6647572f5c3050b7c}{\_\-R0}}
 \label{classWi11_afdde77e5fbf30ef6647572f5c3050b7c}
@@ -232,6 +212,26 @@ struct \hyperlink{structWi11_1_1CCR}{Wi11::CCR} {\bfseries \_\-CCR}}
 \label{classWi11_a0515ac512e8f8e3a122695f823d3abd7}
 
 \item 
+\hypertarget{classWi11_af60b1a832f564e3ac52b4edf7edc8c9a}{
+\hyperlink{classRegister}{Register} {\bfseries \_\-PC}}
+\label{classWi11_af60b1a832f564e3ac52b4edf7edc8c9a}
+
+\item 
+\hypertarget{classWi11_a84cb35829890fca6122c023229007002}{
+struct \hyperlink{structWi11_1_1CCR}{Wi11::CCR} {\bfseries \_\-CCR}}
+\label{classWi11_a84cb35829890fca6122c023229007002}
+
+\item 
+\hypertarget{classWi11_adedbd5442a90d131f8cfadc8d3eb233f}{
+\hyperlink{classLoader}{Loader} \hyperlink{classWi11_adedbd5442a90d131f8cfadc8d3eb233f}{\_\-loader}}
+\label{classWi11_adedbd5442a90d131f8cfadc8d3eb233f}
+
+\begin{DoxyCompactList}\small\item\em For loading the object file. \item\end{DoxyCompactList}\item 
+\hypertarget{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{
+\hyperlink{classDecoder}{Decoder} \hyperlink{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}{\_\-decoder}}
+\label{classWi11_a145d0e52ef8bfd21d7b5a0ff3fea43d1}
+
+\begin{DoxyCompactList}\small\item\em For decoding instructions fetch from memory. \item\end{DoxyCompactList}\item 
 \hypertarget{classWi11_a18515d6caafb4aba3d8a9220b4ac227e}{
 \hyperlink{classResultDecoder}{ResultDecoder} \hyperlink{classWi11_a18515d6caafb4aba3d8a9220b4ac227e}{\_\-result\_\-decoder}}
 \label{classWi11_a18515d6caafb4aba3d8a9220b4ac227e}
@@ -254,6 +254,6 @@ Implements \hyperlink{classiWi11}{iWi11}.
 \label{classWi11_ad8e6d1a1e39832bdc650f2ca3cfa2d3e}
 
 
-Creates and organizes the componts of the \hyperlink{classWi11}{Wi11} machine. 
+Creates and organizes the components of the \hyperlink{classWi11}{Wi11} machine. 
 
 Initializes the general purpose registers, \hyperlink{structWi11_1_1CCR}{CCR}, and memory. 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OneUp Wi-11 Simulator - Programmer&#39;s Guide: iWi11.h Source File</title>
+<title>OneUp Wi-11 Simulator: Programmer&#39;s Guide: iWi11.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a>00039     <span class="comment">//  [This may prove useful. It is essentially a C Switch which returns</span>
 <a name="l00040"></a>00040     <span class="comment">//  a reference to the appropriate instance of a Register object which</span>
 <a name="l00041"></a>00041     <span class="comment">//  corresponds to the provided REGISTER_ID token.]</span>
-<a name="l00042"></a>00042     
+<a name="l00042"></a>00042 
 <a name="l00043"></a>00043 
 <a name="l00054"></a>00054     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiWi11.html#a45ebe6e8d33dbc94bfbec0aef22dae6a" title="Adds two registers and stores the result in a third.">_Add</a>(<span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; DR, <span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; SR1, <span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; SR2) = 0;
 <a name="l00055"></a>00055 
@@ -111,11 +111,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00223"></a>00223     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiWi11.html#a1bd8c4396aa8f3d01b18e14083c25056" title="Performs an indirect store.">_STI</a>(<span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; SR1, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00224"></a>00224 
 <a name="l00225"></a>00225 
-<a name="l00233"></a>00233     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiWi11.html#aec2d6cb4a20c44ce3f9468964831d39b" title="Perfroms a register-relative store.">_STR</a>(<span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; SR1, <span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
+<a name="l00233"></a>00233     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiWi11.html#aec2d6cb4a20c44ce3f9468964831d39b" title="Performs a register-relative store.">_STR</a>(<span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; SR1, <span class="keyword">const</span> Decoder_Directory::REGISTER_ID&amp; baseR, <span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; address) = 0;
 <a name="l00234"></a>00234 
 <a name="l00235"></a>00235 
 <a name="l00261"></a>00261     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiWi11.html#a74da9304180f3cbece4b7e87e8a53a5d" title="Branches to a trap vector.">_Trap</a>(<span class="keyword">const</span> <a class="code" href="classiWord.html" title="Defines a &amp;quot;word&amp;quot; of data on the Wi-11 Machine.">iWord</a>&amp; code) = 0;
-<a name="l00262"></a>00262    
+<a name="l00262"></a>00262 
 <a name="l00263"></a>00263    <span class="keyword">public</span>:
 <a name="l00264"></a>00264 
 <a name="l00265"></a>00265     <span class="comment">/*  This will prove to be a useful command, but is not necessary at this</span>
@@ -143,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00319"></a>00319 <span class="comment">        type field coupled with the size of the data field determines the</span>
 <a name="l00320"></a>00320 <span class="comment">        appropriate parameters. If the end of the program has been reached,</span>
 <a name="l00321"></a>00321 <span class="comment">        ExecuteStep() returns true. [In the official spec, the list of the</span>
-<a name="l00322"></a>00322 <span class="comment">        commands and how they are determined must be included in this </span>
+<a name="l00322"></a>00322 <span class="comment">        commands and how they are determined must be included in this</span>
 <a name="l00323"></a>00323 <span class="comment">        section. For now, reference page 3 of &quot;The Wi11 Machine</span>
 <a name="l00324"></a>00324 <span class="comment">        Characteristics&quot; handout.]</span>
 <a name="l00325"></a>00325 <span class="comment">    */</span>
@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 21:50:24 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jan 24 2011 06:16:22 for OneUp Wi-11 Simulator: Programmer's Guide by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

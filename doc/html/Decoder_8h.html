@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OneUp Wi-11 Simulator: Programmer&#39;s Guide: iObjParser.h Source File</title>
+<title>OneUp Wi-11 Simulator: Programmer&#39;s Guide: Decoder.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -43,39 +43,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div>
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<h1>iObjParser.h</h1>  </div>
+<h1>Decoder.h File Reference</h1>  </div>
 </div>
 <div class="contents">
-<a href="iObjParser_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00007"></a>00007 <span class="preprocessor">#ifndef iOBJPARSER_H</span>
-<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#define iOBJPARSER_H</span>
-<a name="l00009"></a>00009 <span class="preprocessor"></span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="ResultCodes_8h.html" title="Definition of the Wi-11&amp;#39;s run-time messages.">ResultCodes.h</a>&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;string&gt;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="keyword">class </span><a class="code" href="classWord.html" title="Implements iWord.">Word</a>;
-<a name="l00015"></a>00015 
-<a name="l00041"></a><a class="code" href="structObjectData.html">00041</a> <span class="keyword">struct </span><a class="code" href="structObjectData.html" title="A simple encoding of a &amp;quot;record&amp;quot;.">ObjectData</a> {
-<a name="l00043"></a><a class="code" href="structObjectData.html#a77f1a74deb864606b1b5cc115c2a99a5">00043</a>   <span class="keywordtype">char</span> <a class="code" href="structObjectData.html#a77f1a74deb864606b1b5cc115c2a99a5" title="The type of record: &amp;#39;H&amp;#39;, &amp;#39;T&amp;#39;, or &amp;#39;E&amp;#39;.">type</a>;
-<a name="l00045"></a><a class="code" href="structObjectData.html#af755ea276bafd67e377e869950c1eb48">00045</a>   std::vector&lt;std::string&gt; <a class="code" href="structObjectData.html#af755ea276bafd67e377e869950c1eb48" title="The segments of the record.">data</a>;
-<a name="l00046"></a>00046 };
-<a name="l00047"></a>00047 
-<a name="l00050"></a><a class="code" href="classiObjParser.html">00050</a> <span class="keyword">class </span><a class="code" href="classiObjParser.html" title="Defines how object files are processed.">iObjParser</a> {
-<a name="l00051"></a>00051   <span class="keyword">private</span>:
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053   <span class="keyword">public</span>:
-<a name="l00061"></a>00061     <span class="keyword">virtual</span> Codes::RESULT <a class="code" href="classiObjParser.html#a772e3a012952c19a56a4cdbb76b6a59a" title="Attempts to open the object file.">Initialize</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename) = 0;
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 
-<a name="l00072"></a>00072     <span class="keyword">virtual</span> <a class="code" href="structObjectData.html" title="A simple encoding of a &amp;quot;record&amp;quot;.">ObjectData</a> <a class="code" href="classiObjParser.html#aeb9af4a40a06e755d8b0e493526d82dd" title="Pre-processes the next line of the object file.">GetNext</a>() = 0;
-<a name="l00073"></a>00073 };
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075 <span class="preprocessor">#endif</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span>
-</pre></div></div>
+
+<p>Definition of the private data for the "Decoder" class. (none)  
+<a href="#_details">More...</a></p>
+<!-- startSectionHeader --><div class="dynheader">
+Include dependency graph for Decoder.h:<!-- endSectionHeader --></div>
+<!-- startSectionSummary --><!-- endSectionSummary --><!-- startSectionContent --><div class="dyncontent">
+<div class="center"><img src="Decoder_8h__incl.png" border="0" usemap="#Decoder_8h" alt=""/></div>
+<map name="Decoder_8h" id="Decoder_8h">
+<area shape="rect" id="node3" href="iDecoder_8h.html" title="Definition of the Wi&#45;11 instruction decoder." alt="" coords="59,83,149,112"/><area shape="rect" id="node5" href="iWord_8h.html" title="Definition of a &quot;word&quot; of data." alt="" coords="5,160,75,189"/></map>
+<!-- endSectionContent --></div>
+
+<p><a href="Decoder_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDecoder.html">Decoder</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements <a class="el" href="classiDecoder.html" title="Defines how Wi-11 instructions are decoded.">iDecoder</a>.  <a href="classDecoder.html#_details">More...</a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Definition of the private data for the "Decoder" class. (none) </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Andrew Canale </dd>
+<dd>
+Andrew Groot </dd></dl>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"

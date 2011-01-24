@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OneUp Wi-11 Simulator - Programmer&#39;s Guide: Introduction</title>
+<title>OneUp Wi-11 Simulator: Programmer&#39;s Guide: Introduction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -44,20 +44,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>Introduction </h1>  </div>
 </div>
 <div class="contents">
+<p>Primary author of this document: Andrew Groot </p>
 <h2><a class="anchor" id="intro"></a>
 Introduction</h2>
 <p>The "Wi-11 Machine" is a simple, 16-bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). The Wi-11 Simulator is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-the-scenes details, one must understand the environment. In particular, an understanding of the object file syntax and the interactions between the components used in this project is necessary.</p>
 <h2><a class="anchor" id="syntax"></a>
 Object Files</h2>
-<dl class="user"><dt><b></b></dt><dd>The object files (ususally file_name.o) that this simulator accepts are ascii text files with the following structure: <ul>
+<dl class="user"><dt><b></b></dt><dd>The object files (usually file_name.o) that this simulator accepts are ASCII text files with the following structure: <ul>
 <li>One <a class="el" href="index.html#header">Header Record</a> </li>
-<li>Several <a class="el" href="index.html#text">Text Records</a> </li>
+<li>Zero or more <a class="el" href="index.html#text">Text Records</a> </li>
 <li>One <a class="el" href="index.html#end">End Record</a></li>
 </ul>
 </dd></dl>
 <h3><a class="anchor" id="header"></a>
 The Header Record</h3>
-<dl class="user"><dt><b></b></dt><dd>The Header Record is a single line that prepares the system for the storing the instructions to come. </dd></dl>
+<dl class="user"><dt><b></b></dt><dd>The Header Record is a single line that prepares the system for storing the instructions to come. </dd></dl>
 <dl class="user"><dt><b></b></dt><dd><b>Components</b> <ul>
 <li>A capital 'H'. This designates that it is the Header Record. </li>
 <li>A 6 character "segment name" (anything will do). </li>
@@ -65,10 +66,10 @@ The Header Record</h3>
 <li>A second 4-digit Hexadecimal value that denotes the length of the program-load segment (the size of memory into which the instructions will be loaded). </li>
 </ul>
 </dd></dl>
-<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is an 'H', a segment name, the first location where instructions can be written, and the number of memory locations for instuctions.</dd></dl>
+<dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is an 'H', a segment name, the first location where instructions can be written, and the number of memory locations for instructions.</dd></dl>
 <h3><a class="anchor" id="text"></a>
 Text Records</h3>
-<dl class="user"><dt><b></b></dt><dd>Following the Header Record are serveral Text Records. Each Text Record corresponds to a single machine instruction and, like the header record, is on a single line. </dd></dl>
+<dl class="user"><dt><b></b></dt><dd>Following the Header Record are several Text Records. Each Text Record corresponds to a single machine instruction and, like the header record, is on a single line. </dd></dl>
 <dl class="user"><dt><b></b></dt><dd><b>Components</b> <ul>
 <li>A capital 'T'. This designates that it is a Text Record. </li>
 <li>A 4-digit hexadecimal value -- The location in memory at which the instruction will be stored. </li>
@@ -78,7 +79,7 @@ Text Records</h3>
 <dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is a 'T', the location to store the instruction, and the instruction itself.</dd></dl>
 <h3><a class="anchor" id="end"></a>
 The End Record</h3>
-<dl class="user"><dt><b></b></dt><dd>The End Record is, as the name would suggest, the last line of the line. Its purpose is to denote the end of instructions to be written and to give an initial value for the PC.<br/>
+<dl class="user"><dt><b></b></dt><dd>The End Record is, as the name would suggest, the last line of the file. Its purpose is to denote the end of instructions to be written and to give an initial value for the PC.<br/>
 <br/>
  </dd></dl>
 <dl class="user"><dt><b></b></dt><dd><b>Components</b> <ul>
@@ -93,17 +94,17 @@ Interaction</h2>
 <p>The components described in this document are, for the most part, representative of the actual hardware components that would be present in the Wi-11 machine. The following section describes these components and their interactions. After that, a list of the <a class="el" href="index.html#instructions">instructions</a> that the Wi-11 can execute (along with their encodings) completes the introduction to this simulator. The rest of the document details the workings of each component and provides the reader with the knowledge necessary for altering, fixing, or even just understanding the code itself.</p>
 <h3><a class="anchor" id="components"></a>
 Components</h3>
-<p>The Wi-11 Simulator uses 5 major components (for a visual, see interactions). The main function, however, is only aware of one: <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a>. It creates one <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> object and uses it to parse object files, decode the instructions, and execute them. In order to perform these tasks it first creates <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a>, <a class="el" href="classMemory.html" title="Implements iMemory.">Memory</a>, <a class="el" href="classDecoder.html" title="Implements iDecoder.">Decoder</a>, and <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> objects. The <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> objects correspond all those mentioned in the <a class="el" href="index.html#intro">Introduction</a>, with the exception of the CCRs which are declared as their own entity.</p>
+<p>The Wi-11 Simulator uses 5 major components (for a visual, see interactions). The main function, however, is only aware of one: <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a>. It creates one <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> object and uses it to parse object files, decode the instructions, and execute them. In order to perform these tasks it first creates <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a>, <a class="el" href="classMemory.html" title="Implements iMemory.">Memory</a>, <a class="el" href="classDecoder.html" title="Implements iDecoder.">Decoder</a>, and <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> objects. The <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> objects correspond to all those mentioned in the <a class="el" href="index.html#intro">Introduction</a>, with the exception of the CCRs which are declared as their own entity.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>The <a class="el" href="classWord.html" title="Implements iWord.">Word</a> class is not described below but nearly all transfers of data and mathematical operations are performed using (an) object(s) of this type.</dd></dl>
 <h4><a class="anchor" id="loading"></a>
 Loading</h4>
-<p>The <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a> object, recieving a pointer to memory and a filename, creates an <a class="el" href="classObjParser.html" title="Implements iObjParser.">ObjParser</a> object (the fifth major component). The <a class="el" href="classObjParser.html" title="Implements iObjParser.">ObjParser</a> pulls the relevant data from the file and the <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a> puts it into memory. After some input by the user is accepted (assuming the simulator is in debug mode), the <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> is ready to begin executing instructions.</p>
+<p>The <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a> object, receiving a pointer to memory and a filename, creates an <a class="el" href="classObjParser.html" title="Implements iObjParser.">ObjParser</a> object (the fifth major component). The <a class="el" href="classObjParser.html" title="Implements iObjParser.">ObjParser</a> pulls the relevant data from the file and the <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a> puts it into memory. After some input by the user is accepted (assuming the simulator is in debug mode), the <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> is ready to begin executing instructions.</p>
 <h4><a class="anchor" id="execution"></a>
 Executing</h4>
 <p>The <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> component executes instructions in a way very similar to how an actual Wi-11 machine would execute them. It first has the <a class="el" href="classMemory.html" title="Implements iMemory.">Memory</a> object return the instruction referenced by the current value of the PC. After incrementing the PC, the raw instruction is given to the <a class="el" href="classDecoder.html" title="Implements iDecoder.">Decoder</a>. The <a class="el" href="classDecoder.html" title="Implements iDecoder.">Decoder</a> returns an <a class="el" href="structInstruction.html" title="Container to simplify interactions with Wi-11 instructions.">Instruction</a> object that allows the <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> to call one of its many private functions that correspond (one-to-one) to each kind of instruction. This process is then repeated until either the HALT trap code is found or the user-specified instruction limit is reached.</p>
 <h3><a class="anchor" id="instructions"></a>
 Wi-11 Instruction Set</h3>
-<dl class="user"><dt><b></b></dt><dd>This section describes the format of each operation on the Wi-11. First there are necessary definitions and then the list of instructions. The name of each instruction is followed by the opcode; this includes any base conversions that may be necessary. Then there is a list of the arguments to the command. The opcode is the first four bits of the instruction; the list following the opcode delagates purpose to the following 12 bits.</dd></dl>
+<dl class="user"><dt><b></b></dt><dd>This section describes the format of each operation on the Wi-11. First there are necessary definitions and then the list of instructions. The name of each instruction is followed by the opcode; this includes any base conversions that may be necessary. Then there is a list of the arguments to the command. The opcode is the first four bits of the instruction; the list following the opcode delegates purpose to the following 12 bits.</dd></dl>
 <h4><a class="anchor" id="offset"></a>
 Offsets</h4>
 <p>Offsets to the PC are used by concatenating them with the PC. Specifically, the first 7 bits of the PC and the 9 bit offset form the new PC value. This essentially separates memory into pages (the first seven bits of the PC corresponding a "page number").</p>
@@ -327,7 +328,7 @@ Generate a random integer and store it in R0.</li>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 21:50:24 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jan 24 2011 06:16:22 for OneUp Wi-11 Simulator: Programmer's Guide by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

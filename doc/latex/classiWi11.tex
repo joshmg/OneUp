@@ -10,17 +10,19 @@ Defines the internal logic of the Wi-\/11.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+virtual bool \hyperlink{classiWi11_a87f8cd9014f7ae2edaa8928257fc84e9}{LoadObj} (const char $\ast$filename)=0
+\begin{DoxyCompactList}\small\item\em Loads the object file and sets up memory as it describes. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiWi11_ad9b13831ad9a83a8abbc3a77794b38bc}{DisplayMemory} () const =0
 \begin{DoxyCompactList}\small\item\em Prints the state of memory to standard out. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classiWi11_a143e669e3c7f46c3d1524838c8d74d94}{DisplayRegisters} () const =0
 \begin{DoxyCompactList}\small\item\em Prints the state of every register to standard out. \item\end{DoxyCompactList}\item 
 virtual bool \hyperlink{classiWi11_ae502d86eb25fe6e1169e800939362074}{ExecuteNext} (bool verbose=false)=0
-\begin{DoxyCompactList}\small\item\em Executes the instruction pointed to by the PC. \item\end{DoxyCompactList}\item 
-virtual bool \hyperlink{classiWi11_a87f8cd9014f7ae2edaa8928257fc84e9}{LoadObj} (const char $\ast$filename)=0
-\begin{DoxyCompactList}\small\item\em Loads the object file and sets up memory as it describes. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Executes the instruction pointed to by the PC. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+virtual \hyperlink{classiRegister}{iRegister} \& \hyperlink{classiWi11_a00f9ff87c8948464f435f00b10d20dfd}{\_\-GetRegister} (const Decoder\_\-Directory::REGISTER\_\-ID \&id)=0
+\begin{DoxyCompactList}\small\item\em Retrieves a reference to the register corresponding to \char`\"{}id\char`\"{}. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_a45ebe6e8d33dbc94bfbec0aef22dae6a}{\_\-Add} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const Decoder\_\-Directory::REGISTER\_\-ID \&SR2)=0
 \begin{DoxyCompactList}\small\item\em Adds two registers and stores the result in a third. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_aee7d9647106b62eae74b6eeb29d0ab2d}{\_\-Add} (const Decoder\_\-Directory::REGISTER\_\-ID \&DR, const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const \hyperlink{classiWord}{iWord} \&immediate)=0
@@ -33,8 +35,6 @@ virtual Codes::RESULT \hyperlink{classiWi11_a42d2c50609424634873413d7a6614397}{\
 \begin{DoxyCompactList}\small\item\em Changes the last 9 bits of the PC. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_ae510f127a0c3b87d42cdbe5b14204a65}{\_\-Debug} ()=0
 \begin{DoxyCompactList}\small\item\em Deprecated? \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classiRegister}{iRegister} \& \hyperlink{classiWi11_a00f9ff87c8948464f435f00b10d20dfd}{\_\-GetRegister} (const Decoder\_\-Directory::REGISTER\_\-ID \&id)=0
-\begin{DoxyCompactList}\small\item\em Retrieves a reference to the register corresponding to \char`\"{}id\char`\"{}. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_a44e0e3fef9c35401b5a026fb448e872c}{\_\-JSR} (const \hyperlink{classiWord}{iWord} \&w, bool)=0
 \begin{DoxyCompactList}\small\item\em Initiate a jump to a subroutine (alter the PC). \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_ac8fece98ceab4592a5761e6917b5b7a2}{\_\-JSRR} (const Decoder\_\-Directory::REGISTER\_\-ID \&baseR, const \hyperlink{classiWord}{iWord} \&address, bool)=0
@@ -49,12 +49,12 @@ virtual Codes::RESULT \hyperlink{classiWi11_a8925fab615cdc317ab256d514c23bc5e}{\
 \begin{DoxyCompactList}\small\item\em Bit-\/wise nots a register and stores the result in another. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_ae6c1048642dbf2c03c60062f6aaabfd2}{\_\-Ret} ()=0
 \begin{DoxyCompactList}\small\item\em Return from a subroutine. \item\end{DoxyCompactList}\item 
-virtual Codes::RESULT \hyperlink{classiWi11_a1bd8c4396aa8f3d01b18e14083c25056}{\_\-STI} (const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const \hyperlink{classiWord}{iWord} \&address)=0
-\begin{DoxyCompactList}\small\item\em Performs an indirect store. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_aed4eb93ca7dd50a00dbed816a3ab2e28}{\_\-Store} (const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const \hyperlink{classiWord}{iWord} \&address)=0
 \begin{DoxyCompactList}\small\item\em Stores a register's value into memory at a specified address. \item\end{DoxyCompactList}\item 
+virtual Codes::RESULT \hyperlink{classiWi11_a1bd8c4396aa8f3d01b18e14083c25056}{\_\-STI} (const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const \hyperlink{classiWord}{iWord} \&address)=0
+\begin{DoxyCompactList}\small\item\em Performs an indirect store. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_aec2d6cb4a20c44ce3f9468964831d39b}{\_\-STR} (const Decoder\_\-Directory::REGISTER\_\-ID \&SR1, const Decoder\_\-Directory::REGISTER\_\-ID \&baseR, const \hyperlink{classiWord}{iWord} \&address)=0
-\begin{DoxyCompactList}\small\item\em Perfroms a register-\/relative store. \item\end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Performs a register-\/relative store. \item\end{DoxyCompactList}\item 
 virtual Codes::RESULT \hyperlink{classiWi11_a74da9304180f3cbece4b7e87e8a53a5d}{\_\-Trap} (const \hyperlink{classiWord}{iWord} \&code)=0
 \begin{DoxyCompactList}\small\item\em Branches to a trap vector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -535,7 +535,7 @@ Works similar to \_\-Store() but when memory is read, it uses the address found 
 \label{classiWi11_aec2d6cb4a20c44ce3f9468964831d39b}
 
 
-Perfroms a register-\/relative store. 
+Performs a register-\/relative store. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -589,7 +589,7 @@ Traps 0x23, 0x31, and 0x43 all update the CCR.
 \end{DoxyParagraph}
 \begin{DoxyParagraph}{}
 Standard in is the keyboard.\par
- Stardard out is the console. 
+ Standard out is the console. 
 \end{DoxyParagraph}
 \hypertarget{classiWi11_a87f8cd9014f7ae2edaa8928257fc84e9}{
 \index{iWi11@{iWi11}!LoadObj@{LoadObj}}
@@ -618,7 +618,7 @@ True if and only if the load was successful.
 If \char`\"{}false\char`\"{} is returned, prints an appropriate error message to the user.
 
 \begin{DoxyNote}{Note}
-This fucntion can be called multiple times. Each time the PC is overwritten. 
+This function can be called multiple times. Each time the PC is overwritten. 
 \end{DoxyNote}
 \hypertarget{classiWi11_ad9b13831ad9a83a8abbc3a77794b38bc}{
 \index{iWi11@{iWi11}!DisplayMemory@{DisplayMemory}}
