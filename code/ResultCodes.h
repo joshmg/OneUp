@@ -42,7 +42,7 @@ class ResultDecoder {
   private:
     /*! @brief Maps a result code to, in every case but SUCCESS, an error message.
 
-        It is static because the result code messages should be available from anyhere.
+        It is static because the result code messages should be available from anywhere.
     */
     std::map<Codes::RESULT, std::string> _codes;
   public:

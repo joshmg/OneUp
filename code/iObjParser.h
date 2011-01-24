@@ -14,7 +14,7 @@
 class Word;
 
 /*! @brief A simple encoding of a "record".
-    
+
     @par
     The format of this component is dependent upon
     the kind of record it is representing.
@@ -49,12 +49,12 @@ struct ObjectData {
 */
 class iObjParser {
   private:
-  
+
   public:
-    /*! @brief Attempts to open th object file.
+    /*! @brief Attempts to open the object file.
         @param[in] filename The name of the object file to be opened.
         @return SUCCESS or, if something went wrong, an appropriate error code.
-        
+
         If another file is open, closes that file first before
         attempting to open the new one.
     */

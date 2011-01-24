@@ -2,7 +2,7 @@
     @author Joshua Green
     @author Andrew Groot
     @brief Definition of a "word" of data.
-    
+
     @details Defines the operations and signatures by which a "word" class should operate.
     The signatures, while intended to be coded to the interface, are done as to this as C++ allows.
 */
@@ -16,14 +16,14 @@ class Word;
 
 /*! @brief Defines a "word" of data on the Wi-11 Machine.
 
-    The methods present in this inteface are meant to mimic the functionality of the Wi-11
+    The methods present in this interface are meant to mimic the functionality of the Wi-11
     machine, allowing for simplified execution of the instructions therein.
     As the size of a "word" depends on the architecture, classes implementing this
     interface should define the word length to be 16 bits in length.
 */
 class iWord {
   private:
-    
+
   public:
     /*! @brief "To non-negative Integer"
         @post The value of the word is not changed.
@@ -42,7 +42,7 @@ class iWord {
     /*! @brief "To String"
         @post The value of the word is not changed.
         @return 16 characters: each either a 1 or 0
-        
+
         @par Examples:
         If the object holds a (2's comp.) value 4:  "0000000000000100"\n
         If the object holds a (2's comp.) value -1: "1111111111111111"
@@ -53,7 +53,7 @@ class iWord {
     /*! @brief "To Hexadecimal"
         @post The value of the word is not changed.
         @return "0x" + <4 characters in the range [0-9],[A-F]>
-        
+
         @par Examples:
         If the object holds (2's comp.) value 8:  "0x0008"\n
         If the object holds (2's comp.) value -2: "0xFFFE"
@@ -66,7 +66,7 @@ class iWord {
           The value to be stored into the word.
         @post "value" is not changed.
         @return True if and only if "value" can be represented in 16 bits
-        
+
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "value".
     */
@@ -78,7 +78,7 @@ class iWord {
           A string of characters meant to represent a "word" to be stored.
         @post "str" is not changed.
         @return True if and only if "str" is well-formed (as defined in #toStr()).
-        
+
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "str".
     */
@@ -90,7 +90,7 @@ class iWord {
           A string of characters meant to represent a "word" to be stored.
         @post "str" is not changed.
         @return True if and only if "str" is well-formed (as defined in #toHex()).
-        
+
         When this function returns "False", the value of the word is unchanged.\n
         Otherwise, the word now holds the value "str".
     */
@@ -110,7 +110,7 @@ class iWord {
 
 
     /*! @brief A standard addition operator.
-        
+
         @note
         "result = p + w" is equivalent to "result = p.Add(w)".
     */
@@ -122,7 +122,7 @@ class iWord {
           A word value to be subtracted.
         @post Both "w" and the calling object do not change.
         @return A new "Word" object containing the result of subtracting "w" from the calling object.
-        
+
         @note
         The subtraction is carried out with no regard for logical overflow.
     */
@@ -130,7 +130,7 @@ class iWord {
 
 
     /*! @brief A standard subtraction operator.
-        
+
         @note
         "result = p - w" is equivalent to "result = p.Subtract(w)".
     */
@@ -179,7 +179,7 @@ class iWord {
 
         The return value and parameter here must be declared as "Word"s
         as C++ does not work well with polymorphic assignment operators.
-    */ 
+    */
     virtual Word& operator=(const Word& w) = 0;
 
 
@@ -218,7 +218,7 @@ class iWord {
         @param[in] i
           The index of the bit in question.
         @pre The index must be less than the size of a word, ie. 16.
-        
+
         Works in a similar way to ::operator[] but sets the bit
         instead of determining if it is set.
     */

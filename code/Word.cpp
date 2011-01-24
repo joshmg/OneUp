@@ -1,7 +1,7 @@
 /*! @file Word.cpp
     @author Joshua Green
     @author Andrew Groot
-    @brief Implements the delcarations in "Word.h".
+    @brief Implements the declarations in "Word.h".
 */
 
 #include "Word.h"
@@ -57,7 +57,7 @@ string Word::ToHex() const {
     }
     value += temp;
   }
-  return "0x" + value;  
+  return "0x" + value;
 }
 
 bool Word::FromInt(int value) {
@@ -81,12 +81,12 @@ bool Word::FromStr(const string& value) {
       return false;
     }
   }
-  
+
   _value = 0;
   int pow_of_two = 1;
   for (int i=0;i<WORD_SIZE;i++) {
     // accumulate the value of the ith character
-    // times the value of it's binary "decimal place." 
+    // times the value of it's binary "decimal place."
     _value += pow_of_two * (value[(WORD_SIZE-1)-i] - '0');
     pow_of_two *= 2;
   }

@@ -28,7 +28,7 @@ namespace Decoder_Directory {
 struct Instruction {
   //! The type of instruction.
   Decoder_Directory::INSTRUCTION_TYPE type;
-  /*! @brief The arguemnts to the operation (including unecessary bits).
+  /*! @brief The arguments to the operation (including unnecessary bits).
 
       @par Example:
       The add instruction comes in two forms:
@@ -73,8 +73,8 @@ struct Instruction {
 };
 
 /*! @brief Defines how Wi-11 instructions are decoded.
-    
-    This could be a struct or even a fucntion.
+
+    This could be a struct or even a function.
     It is declared as an object for consistency purposes.
 */
 class iDecoder {
@@ -83,7 +83,7 @@ class iDecoder {
   public:
     /*! @brief Translates the binary instruction into more usable objects.
         @param[in] inst The instruction to be translated.
-        @return An Instruction object as specificied in \ref Instruction "its documentation".
+        @return An Instruction object as specified in \ref Instruction "its documentation".
     */
     virtual Instruction DecodeInstruction(const iWord& inst) const = 0;
 

@@ -14,7 +14,7 @@
 #include "ResultCodes.h"
 
 /*! @brief Defines the internal logic of the Wi-11.
-    
+
     @par
     The methods present in this interface are meant to
     simulate the Wi-11's fetch-execute loop.
@@ -39,7 +39,7 @@ class iWi11 {
     //  [This may prove useful. It is essentially a C Switch which returns
     //  a reference to the appropriate instance of a Register object which
     //  corresponds to the provided REGISTER_ID token.]
-    
+
 
     /*! @brief Adds two registers and stores the result in a third.
         @param[out] DR The destination register.
@@ -150,11 +150,11 @@ class iWi11 {
         @param[in] address A 9-bit offset to the PC.
         @post Memory and "address" have not changed.
         @return SUCCESS or, if something went wrong, an appropriate error code.
-        
+
         Works similar to ::_Load() but when memory is read, it uses the address found
         to again access memory.  In this indirect way, a load can be made from anywhere
         in Memory.
-        
+
         @note
         Updates the CCR.
     */
@@ -169,10 +169,10 @@ class iWi11 {
         @return SUCCESS or, if something went wrong, an appropriate error code.
 
         Loads from "baseR" plus "address".
-        
+
         @note
         Updates the CCR.
-    */ 
+    */
     virtual Codes::RESULT _LoadR(const Decoder_Directory::REGISTER_ID& DR, const Decoder_Directory::REGISTER_ID& baseR, const iWord& address) = 0;
 
 
@@ -180,7 +180,7 @@ class iWi11 {
         @param[out] DR The destination register.
         @param[in] SR The source register.
         @return SUCCESS or, if something went wrong, an appropriate error code.
-        
+
         @note
         Updates the CCR.
     */
@@ -197,7 +197,7 @@ class iWi11 {
         However, this is not the intended usage.
         @par
         Updates the CCR.
-    */        
+    */
     virtual Codes::RESULT _Ret() = 0;
 
 
@@ -223,13 +223,13 @@ class iWi11 {
     virtual Codes::RESULT _STI(const Decoder_Directory::REGISTER_ID& SR1, const iWord& address) = 0;
 
 
-    /*! @brief Perfroms a register-relative store.
+    /*! @brief Performs a register-relative store.
         @param[in] SR1 The source register (holds the data to be stored).
         @param[in] baseR A register whose value acts as a base address.
         @param[in] address A 6-bit index from the base address.
         @post SR1, baseR, and "address" are not changed.
         @return SUCCESS or, if something went wrong, an appropriate error code.
-    */  
+    */
     virtual Codes::RESULT _STR(const Decoder_Directory::REGISTER_ID& SR1, const Decoder_Directory::REGISTER_ID& baseR, const iWord& address) = 0;
 
 
@@ -256,10 +256,10 @@ class iWi11 {
         Traps 0x23, 0x31, and 0x43 all update the CCR.
         @par
         Standard in is the keyboard.\n
-        Stardard out is the console.
+        Standard out is the console.
     */
     virtual Codes::RESULT _Trap(const iWord& code) = 0;
-   
+
    public:
 
     /*  This will prove to be a useful command, but is not necessary at this
@@ -276,7 +276,7 @@ class iWi11 {
         If "false" is returned, prints an appropriate error message to the user.
 
         @note
-        This fucntion can be called multiple times.
+        This function can be called multiple times.
         Each time the PC is overwritten.
     */
     virtual bool LoadObj(const char* filename) = 0;
@@ -290,7 +290,7 @@ class iWi11 {
 
     /*! @brief Prints the state of every register to standard out.
         @post The calling object is not changed.
-        
+
         The values of all 8 general purpose registers, the CCR, and PC
         are all printed.
     */
@@ -319,7 +319,7 @@ class iWi11 {
         type field coupled with the size of the data field determines the
         appropriate parameters. If the end of the program has been reached,
         ExecuteStep() returns true. [In the official spec, the list of the
-        commands and how they are determined must be included in this 
+        commands and how they are determined must be included in this
         section. For now, reference page 3 of "The Wi11 Machine
         Characteristics" handout.]
     */
