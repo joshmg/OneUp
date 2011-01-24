@@ -13,15 +13,15 @@ class Word;
 class Register;
 
 /*! @brief Defines a "register" in the Wi-11 machine.
-    
-    The methods present in this inteface are meant to mimic the functionality of the Wi-11
+
+    The methods present in this interface are meant to mimic the functionality of the Wi-11
     machine, allowing for simplified execution of the instructions therein.
     This interace class will serve as a base from which the general purpose
     registers and program counter of the Wi-11 can be defined.
 */
 class iRegister {
   private:
-    
+
   public:
     /*! @brief Retrieves a copy of the word of data store in the register.
         @post The value of the calling object is not changed.
@@ -45,8 +45,8 @@ class iRegister {
     virtual Register Add(const iRegister& r) const = 0;
 
     /*! @brief A standard add operator.
-    
-        @note    
+
+        @note
         "result = p + r" is equivalent to "result = p.Add(r)".
     */
     virtual Register operator+(const iRegister& r) const = 0;
@@ -67,7 +67,7 @@ class iRegister {
     virtual Register Subtract(const iRegister& r) const = 0;
 
     /*! @brief A standard subtraction operator.
-        
+
         @note
         "result = p - r" is equivalent to "result = r.Subtract(w)".
     */
@@ -107,7 +107,7 @@ class iRegister {
         @post The calling object's bits are all flipped (e.g. 1001 -> 0110).
     */
     virtual void Not() = 0;
-    
+
     /*! @brief Performs a bit-wise not.
         @post The calling object is not changed.
         @return A new Register object holding the bit-wise not of the calling object.
@@ -129,7 +129,7 @@ class iRegister {
     virtual void Store(const iRegister& r) = 0;
 
     /*! @brief A standard assignment operator.
-        
+
         @note
         "r = w" is equivalent to "r.Store(w)"
     */

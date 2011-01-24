@@ -36,7 +36,7 @@ class Wi11 : public iWi11 {
 
     //! Translates an internal Register ID identifier into human readable string format.
     std::string _RegisterID2String(const Decoder_Directory::REGISTER_ID&) const;
-    
+
     Decoder_Directory::REGISTER_ID _Word2RegisterID(const Word&) const;
     iRegister& _GetRegister(const Decoder_Directory::REGISTER_ID&);
     void _UpdateCCR(int);
@@ -58,10 +58,10 @@ class Wi11 : public iWi11 {
     virtual Codes::RESULT _STI(const Decoder_Directory::REGISTER_ID& SR, const iWord& address);
     virtual Codes::RESULT _STR(const Decoder_Directory::REGISTER_ID& SR, const Decoder_Directory::REGISTER_ID& baseR, const iWord& address);
     virtual Codes::RESULT _Trap(const iWord& code);
-    
+
   public:
-    /*! @brief Creates and organizes the componts of the Wi11 machine.
-        
+    /*! @brief Creates and organizes the components of the Wi11 machine.
+
         Initializes the general purpose registers, CCR, and memory.
     */
     Wi11();
