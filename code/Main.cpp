@@ -83,11 +83,30 @@ int main(int argc, char* argv[]) {
 
       while (iterations != 0 && simulator.ExecuteNext(true)) {
         --iterations;
-        cout << "Continue? (Y/n) ";
+        cout << "Continue? (Y/n/(p)rint) ";
         string temp;
         getline(cin, temp);
 
-        if (!(temp[0] != 'n' && temp[0] != 'N')) {
+        if (temp[0] == 'p' || temp[0] == 'P') {
+          cout << "Print? (m)emory/(r)egisters/(B)oth ";
+          getline(cin, temp);
+
+          cout << endl;
+
+          if ((temp[0] == 'B' || temp[0] == 'b')) {
+            simulator.DisplayRegisters();
+            simulator.DisplayMemory();
+          }
+          else if (temp[0] == 'm' || temp[0] == 'M') simulator.DisplayMemory();
+          else if (temp[0] == 'r' || temp[0] == 'R') simulator.DisplayRegisters();
+          else {
+            simulator.DisplayRegisters();
+            simulator.DisplayMemory();
+          }
+
+          cout << endl;
+        }
+        else if (!(temp[0] != 'n' && temp[0] != 'N')) {
           cout << "User Abort." << endl;
           break;
         }
