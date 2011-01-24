@@ -234,7 +234,7 @@ int main(int argc, char* argv[]) {
     essentially separates memory into pages (the first seven bits of 
     the PC corresponding a "page number").
 
-    @subsubsection index Indexes
+    @subsubsection indexes Indexes
     Indexes are used to specify a distance from a base value.
     Generally, there is a register holding an address.  The
     index is added to the base address as a positive quantity
@@ -245,7 +245,7 @@ int main(int argc, char* argv[]) {
     @subsubsection inst Intructions
     @arg ADD (two registers), OPCODE: 0001 (1)
     <ul>
-    <li>3 bits: Destination register</li>
+    <li>3 bits: The destination register</li>
     <li>3 bits: First source register</li>
     <li>1 bit:  A zero</li>
     <li>2 bits: Junk - not used.</li>
@@ -253,14 +253,14 @@ int main(int argc, char* argv[]) {
     </ul>
     @arg ADD (register and immediate), OPCODE: 0001 (1)
     <ul>
-    <li>3 bits: Destination register</li>
-    <li>3 bits: Source register</li>
+    <li>3 bits: The destination register</li>
+    <li>3 bits: The source register</li>
     <li>1 bit:  A one</li>
     <li>5 bits: An immediate value (2's complement)</li>
     </ul>
     @arg AND (two registers), OPCODE: 0101 (5)
     <ul>
-    <li>3 bits: Destination register</li>
+    <li>3 bits: The destination register</li>
     <li>3 bits: First source register</li>
     <li>1 bit:  A zero</li>
     <li>2 bits: Junk - not used</li>
@@ -268,8 +268,8 @@ int main(int argc, char* argv[]) {
     </ul>
     @arg AND (register and immediate), OPCODE: 0101 (5)
     <ul>
-    <li>3 bits: Destination register</li>
-    <li>3 bits: Source register</li>
+    <li>3 bits: The destination register</li>
+    <li>3 bits: The source register</li>
     <li>1 bit:  A one</li>
     <li>5 bits: An immediate value (2's complement)</li>
     </ul>
@@ -278,7 +278,7 @@ int main(int argc, char* argv[]) {
     <li>1 bit:  Corresponds to the CCR's negative bit</li>
     <li>1 bit:  Corresponds to the CCR's zero bit</li>
     <li>1 bit:  Corresponds to the CCR's positive bit</li>
-    <li>9-bits: An \ref offset to the PC</li>
+    <li>9-bits: An \ref offset "offset" to the PC</li>
     </ul>
     @arg DBUG, OPCODE: 1000 (8)
     <ul>
@@ -288,40 +288,40 @@ int main(int argc, char* argv[]) {
     <ul>
     <li>1 bit:  The link bit (The PC is stored in R7 if this is set)</li>
     <li>2 bits: Junk - not used</li>
-    <li>9 bits: An \ref offset to the PC</li>
+    <li>9 bits: An \ref offset "offset" to the PC</li>
     </ul>
     @arg JSRR, OPCODE: 1100 (12 - C)
     <ul>
     <li>1 bit:  The link bit (The PC is stored in R7 if this is set)</li>
     <li>2 bits: Junk - not used</li>
     <li>3 bits: A base register</li>
-    <li>6 bits: An \ref index to the base register</li>
+    <li>6 bits: An \ref indexes "index" to the base register</li>
     </ul>
     @arg LD, OPCODE: 0010 (2)
     <ul>
-    <li>3 bits: Destination register</li>
-    <li>9 bits: An \ref offset to the PC</li>
+    <li>3 bits: The destination register</li>
+    <li>9 bits: An \ref offset "offset" to the PC</li>
     </ul>
     @arg LDI, OPCODE: 1010 (10 - A)
     <ul>
-    <li>3 bits: Destination register</li>
-    <li>9 bits: An \ref offset to the PC</li>
+    <li>3 bits: The destination register</li>
+    <li>9 bits: An \ref offset "offset" to the PC</li>
     </ul>
     @arg LDR, OPCODE: 0110 (6)
     <ul>
-    <li>3 bits: Destination register</li>
+    <li>3 bits: The destination register</li>
     <li>3 bits: A base register</li>
-    <li>6 bits: An \ref index to the base register</li>
+    <li>6 bits: An \ref indexes "index" to the base register</li>
     </ul>
     @arg LEA, OPCODE: 1110 (14 - E)
     <ul>
-    <li>3 bits: Destination register</li>
-    <li>9 bits: An \ref offset to the PC</li>
+    <li>3 bits: The destination register</li>
+    <li>9 bits: An \ref offset "offset" to the PC</li>
     </ul>
     @arg NOT, OPCODE: 1001 (9)
     <ul>
-    <li>3 bits: Destination register</li>
-    <li>3 bits: Source register</li>
+    <li>3 bits: The destination register</li>
+    <li>3 bits: The source register</li>
     <li>6 bits: Junk - not used</li>
     </ul>
     @arg RET, OPCODE: 1101 (13 - D)
@@ -330,25 +330,25 @@ int main(int argc, char* argv[]) {
     </ul>
     @arg ST, OPCODE: 0011 (3)
     <ul>
-    <li>3 bits: Source register</li>
-    <li>9 bits: An \ref offset to the PC</li>
+    <li>3 bits: The source register</li>
+    <li>9 bits: An \ref offset "offset" to the PC</li>
     </ul>
     @arg STI, OPCODE: 1011 (11 - B)
     <ul>
-    <li>3 bits: Source register</li>
-    <li>9 bits: An \ref offset to the PC</li>
-    <ul>
+    <li>3 bits: The source register</li>
+    <li>9 bits: An \ref offset "offset" to the PC</li>
+    </ul>
     @arg STR, OPCODE: 0111 (7)
     <ul>
-    <li>3 bits: Source register</li>
+    <li>3 bits: The source register</li>
     <li>3 bits: A base register</li>
-    <li>6 bits: An \ref index to the base register</li>
-    <ul>
+    <li>6 bits: An \ref indexes "index" to the base register</li>
+    </ul>
     @arg TRAP, OPCODE: 1111 (15 - F)
     <ul>
     <li>4 bits: Junk - not used</li>
     <li>8 bits: A trap vector</li>
-    <ul>
+    </ul>
 
     @subsubsection trap Traps
     Traps execute a system call.

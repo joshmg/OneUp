@@ -107,15 +107,15 @@ Wi-11 Instruction Set</h3>
 <h4><a class="anchor" id="offset"></a>
 Offsets</h4>
 <p>Offsets to the PC are used by concatenating them with the PC. Specifically, the first 7 bits of the PC and the 9 bit offset form the new PC value. This essentially separates memory into pages (the first seven bits of the PC corresponding a "page number").</p>
-<h4><a class="anchor" id="index"></a>
-Introduction</h4>
+<h4><a class="anchor" id="indexes"></a>
+Indexes</h4>
 <p>Indexes are used to specify a distance from a base value. Generally, there is a register holding an address. The index is added to the base address as a positive quantity (zero-extended) in order to form a new address. Because the index is zero-extended, the new address is always greater than the base address.</p>
 <h4><a class="anchor" id="inst"></a>
 Intructions</h4>
 <ul>
 <li>ADD (two registers), OPCODE: 0001 (1) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
 3 bits: First source register </li>
 <li>
@@ -128,9 +128,9 @@ Intructions</h4>
 </li>
 <li>ADD (register and immediate), OPCODE: 0001 (1) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
-3 bits: Source register </li>
+3 bits: The source register </li>
 <li>
 1 bit: A one </li>
 <li>
@@ -139,7 +139,7 @@ Intructions</h4>
 </li>
 <li>AND (two registers), OPCODE: 0101 (5) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
 3 bits: First source register </li>
 <li>
@@ -152,9 +152,9 @@ Intructions</h4>
 </li>
 <li>AND (register and immediate), OPCODE: 0101 (5) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
-3 bits: Source register </li>
+3 bits: The source register </li>
 <li>
 1 bit: A one </li>
 <li>
@@ -169,7 +169,7 @@ Intructions</h4>
 <li>
 1 bit: Corresponds to the CCR's positive bit </li>
 <li>
-9-bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+9-bits: An <a class="el" href="index.html#offset">offset</a> to the PC </li>
 </ul>
 </li>
 <li>DBUG, OPCODE: 1000 (8) <ul>
@@ -183,7 +183,7 @@ Intructions</h4>
 <li>
 2 bits: Junk - not used </li>
 <li>
-9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+9 bits: An <a class="el" href="index.html#offset">offset</a> to the PC </li>
 </ul>
 </li>
 <li>JSRR, OPCODE: 1100 (12 - C) <ul>
@@ -194,44 +194,44 @@ Intructions</h4>
 <li>
 3 bits: A base register </li>
 <li>
-6 bits: An <a class="el" href="index.html">Introduction</a> to the base register </li>
+6 bits: An <a class="el" href="index.html#indexes">index</a> to the base register </li>
 </ul>
 </li>
 <li>LD, OPCODE: 0010 (2) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
-9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+9 bits: An <a class="el" href="index.html#offset">offset</a> to the PC </li>
 </ul>
 </li>
 <li>LDI, OPCODE: 1010 (10 - A) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
-9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+9 bits: An <a class="el" href="index.html#offset">offset</a> to the PC </li>
 </ul>
 </li>
 <li>LDR, OPCODE: 0110 (6) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
 3 bits: A base register </li>
 <li>
-6 bits: An <a class="el" href="index.html">Introduction</a> to the base register </li>
+6 bits: An <a class="el" href="index.html#indexes">index</a> to the base register </li>
 </ul>
 </li>
 <li>LEA, OPCODE: 1110 (14 - E) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
-9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+9 bits: An <a class="el" href="index.html#offset">offset</a> to the PC </li>
 </ul>
 </li>
 <li>NOT, OPCODE: 1001 (9) <ul>
 <li>
-3 bits: Destination register </li>
+3 bits: The destination register </li>
 <li>
-3 bits: Source register </li>
+3 bits: The source register </li>
 <li>
 6 bits: Junk - not used </li>
 </ul>
@@ -243,78 +243,72 @@ Intructions</h4>
 </li>
 <li>ST, OPCODE: 0011 (3) <ul>
 <li>
-3 bits: Source register </li>
+3 bits: The source register </li>
 <li>
-9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+9 bits: An <a class="el" href="index.html#offset">offset</a> to the PC </li>
 </ul>
 </li>
 <li>STI, OPCODE: 1011 (11 - B) <ul>
 <li>
-3 bits: Source register </li>
+3 bits: The source register </li>
 <li>
-9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC <ul>
+9 bits: An <a class="el" href="index.html#offset">offset</a> to the PC </li>
 </ul>
-STR, OPCODE: 0111 (7) <ul>
+</li>
+<li>STR, OPCODE: 0111 (7) <ul>
 <li>
-3 bits: Source register </li>
+3 bits: The source register </li>
 <li>
 3 bits: A base register </li>
 <li>
-6 bits: An <a class="el" href="index.html">Introduction</a> to the base register <ul>
+6 bits: An <a class="el" href="index.html#indexes">index</a> to the base register </li>
 </ul>
-TRAP, OPCODE: 1111 (15 - F) <ul>
+</li>
+<li>TRAP, OPCODE: 1111 (15 - F) <ul>
 <li>
 4 bits: Junk - not used </li>
 <li>
-8 bits: A trap vector <ul>
+8 bits: A trap vector </li>
 </ul>
-trap Traps Traps execute a system call. The details of these so-called "trap vectors" are below. </li>
-<li>
-0x21 - OUT <ul>
+</li>
+</ul>
+<h4><a class="anchor" id="trap"></a>
+Traps</h4>
+<p>Traps execute a system call. The details of these so-called "trap vectors" are below. </p>
+<ul>
+<li>0x21 - OUT <ul>
 <li>
 Print the ASCII character in the last 8 bits of R0.</li>
 </ul>
 </li>
-<li>
-0x22 - PUTS <ul>
+<li>0x22 - PUTS <ul>
 <li>
 Print the string starting at the address in R0 and ending at a null character.</li>
 </ul>
 </li>
-<li>
-0x23 - IN <ul>
+<li>0x23 - IN <ul>
 <li>
 Prompt for and read an ASCII character. Put the result in R0.</li>
 </ul>
 </li>
-<li>
-0x25 - HALT <ul>
+<li>0x25 - HALT <ul>
 <li>
 End execution.</li>
 </ul>
 </li>
-<li>
-0x31 - OUTN <ul>
+<li>0x31 - OUTN <ul>
 <li>
 Print the value in R0 as a decimal integer.</li>
 </ul>
 </li>
-<li>
-0x33 - INN <ul>
+<li>0x33 - INN <ul>
 <li>
 Prompt for and read a decimal number. Put the result in R0.</li>
 </ul>
 </li>
-<li>
-0x43 - RND <ul>
+<li>0x43 - RND <ul>
 <li>
 Generate a random integer and store it in R0.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -333,7 +327,7 @@ Generate a random integer and store it in R0.</li>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 20:23:14 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 20:38:02 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

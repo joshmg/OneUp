@@ -65,33 +65,33 @@ The \hyperlink{classWi11}{Wi11} component executes instructions in a way very si
 This section describes the format of each operation on the Wi-\/11. First there are necessary definitions and then the list of instructions. The name of each instruction is followed by the opcode; this includes any base conversions that may be necessary. Then there is a list of the arguments to the command. The opcode is the first four bits of the instruction; the list following the opcode delagates purpose to the following 12 bits.
 \end{DoxyParagraph}
 \hypertarget{index_offset}{}\subsubsection{Offsets}\label{index_offset}
-Offsets to the PC are used by concatenating them with the PC. Specifically, the first 7 bits of the PC and the 9 bit offset form the new PC value. This essentially separates memory into pages (the first seven bits of the PC corresponding a \char`\"{}page number\char`\"{}).\hypertarget{index_index}{}\subsubsection{Introduction}\label{index_index}
+Offsets to the PC are used by concatenating them with the PC. Specifically, the first 7 bits of the PC and the 9 bit offset form the new PC value. This essentially separates memory into pages (the first seven bits of the PC corresponding a \char`\"{}page number\char`\"{}).\hypertarget{index_indexes}{}\subsubsection{Indexes}\label{index_indexes}
 Indexes are used to specify a distance from a base value. Generally, there is a register holding an address. The index is added to the base address as a positive quantity (zero-\/extended) in order to form a new address. Because the index is zero-\/extended, the new address is always greater than the base address.\hypertarget{index_inst}{}\subsubsection{Intructions}\label{index_inst}
 \begin{DoxyItemize}
 \item ADD (two registers), OPCODE: 0001 (1) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
+\item 3 bits: The destination register 
 \item 3 bits: First source register 
 \item 1 bit: A zero 
 \item 2 bits: Junk -\/ not used. 
 \item 3 bits: Second source register 
 \end{DoxyItemize}\item ADD (register and immediate), OPCODE: 0001 (1) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
-\item 3 bits: Source register 
+\item 3 bits: The destination register 
+\item 3 bits: The source register 
 \item 1 bit: A one 
 \item 5 bits: An immediate value (2's complement) 
 \end{DoxyItemize}\item AND (two registers), OPCODE: 0101 (5) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
+\item 3 bits: The destination register 
 \item 3 bits: First source register 
 \item 1 bit: A zero 
 \item 2 bits: Junk -\/ not used 
 \item 3 bits: Second source register 
 \end{DoxyItemize}\item AND (register and immediate), OPCODE: 0101 (5) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
-\item 3 bits: Source register 
+\item 3 bits: The destination register 
+\item 3 bits: The source register 
 \item 1 bit: A one 
 \item 5 bits: An immediate value (2's complement) 
 \end{DoxyItemize}\item BRx, OPCODE: 0000 (0) 
@@ -99,7 +99,7 @@ Indexes are used to specify a distance from a base value. Generally, there is a 
 \item 1 bit: Corresponds to the CCR's negative bit 
 \item 1 bit: Corresponds to the CCR's zero bit 
 \item 1 bit: Corresponds to the CCR's positive bit 
-\item 9-\/bits: An \hyperlink{index_offset}{Offsets} to the PC 
+\item 9-\/bits: An \hyperlink{index_offset}{offset} to the PC 
 \end{DoxyItemize}\item DBUG, OPCODE: 1000 (8) 
 \begin{DoxyItemize}
 \item 12 bits: Junk -\/ not used 
@@ -107,87 +107,77 @@ Indexes are used to specify a distance from a base value. Generally, there is a 
 \begin{DoxyItemize}
 \item 1 bit: The link bit (The PC is stored in R7 if this is set) 
 \item 2 bits: Junk -\/ not used 
-\item 9 bits: An \hyperlink{index_offset}{Offsets} to the PC 
+\item 9 bits: An \hyperlink{index_offset}{offset} to the PC 
 \end{DoxyItemize}\item JSRR, OPCODE: 1100 (12 -\/ C) 
 \begin{DoxyItemize}
 \item 1 bit: The link bit (The PC is stored in R7 if this is set) 
 \item 2 bits: Junk -\/ not used 
 \item 3 bits: A base register 
-\item 6 bits: An \hyperlink{index}{Introduction} to the base register 
+\item 6 bits: An \hyperlink{index_indexes}{index} to the base register 
 \end{DoxyItemize}\item LD, OPCODE: 0010 (2) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
-\item 9 bits: An \hyperlink{index_offset}{Offsets} to the PC 
+\item 3 bits: The destination register 
+\item 9 bits: An \hyperlink{index_offset}{offset} to the PC 
 \end{DoxyItemize}\item LDI, OPCODE: 1010 (10 -\/ A) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
-\item 9 bits: An \hyperlink{index_offset}{Offsets} to the PC 
+\item 3 bits: The destination register 
+\item 9 bits: An \hyperlink{index_offset}{offset} to the PC 
 \end{DoxyItemize}\item LDR, OPCODE: 0110 (6) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
+\item 3 bits: The destination register 
 \item 3 bits: A base register 
-\item 6 bits: An \hyperlink{index}{Introduction} to the base register 
+\item 6 bits: An \hyperlink{index_indexes}{index} to the base register 
 \end{DoxyItemize}\item LEA, OPCODE: 1110 (14 -\/ E) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
-\item 9 bits: An \hyperlink{index_offset}{Offsets} to the PC 
+\item 3 bits: The destination register 
+\item 9 bits: An \hyperlink{index_offset}{offset} to the PC 
 \end{DoxyItemize}\item NOT, OPCODE: 1001 (9) 
 \begin{DoxyItemize}
-\item 3 bits: Destination register 
-\item 3 bits: Source register 
+\item 3 bits: The destination register 
+\item 3 bits: The source register 
 \item 6 bits: Junk -\/ not used 
 \end{DoxyItemize}\item RET, OPCODE: 1101 (13 -\/ D) 
 \begin{DoxyItemize}
 \item 12 bits: Junk -\/ not used 
 \end{DoxyItemize}\item ST, OPCODE: 0011 (3) 
 \begin{DoxyItemize}
-\item 3 bits: Source register 
-\item 9 bits: An \hyperlink{index_offset}{Offsets} to the PC 
+\item 3 bits: The source register 
+\item 9 bits: An \hyperlink{index_offset}{offset} to the PC 
 \end{DoxyItemize}\item STI, OPCODE: 1011 (11 -\/ B) 
 \begin{DoxyItemize}
-\item 3 bits: Source register 
-\item 9 bits: An \hyperlink{index_offset}{Offsets} to the PC 
+\item 3 bits: The source register 
+\item 9 bits: An \hyperlink{index_offset}{offset} to the PC 
+\end{DoxyItemize}\item STR, OPCODE: 0111 (7) 
 \begin{DoxyItemize}
-\end{DoxyItemize}STR, OPCODE: 0111 (7) 
-\begin{DoxyItemize}
-\item 3 bits: Source register 
+\item 3 bits: The source register 
 \item 3 bits: A base register 
-\item 6 bits: An \hyperlink{index}{Introduction} to the base register 
-\begin{DoxyItemize}
-\end{DoxyItemize}TRAP, OPCODE: 1111 (15 -\/ F) 
+\item 6 bits: An \hyperlink{index_indexes}{index} to the base register 
+\end{DoxyItemize}\item TRAP, OPCODE: 1111 (15 -\/ F) 
 \begin{DoxyItemize}
 \item 4 bits: Junk -\/ not used 
 \item 8 bits: A trap vector 
-\begin{DoxyItemize}
-\end{DoxyItemize}trap Traps Traps execute a system call. The details of these so-\/called \char`\"{}trap vectors\char`\"{} are below. 
+\end{DoxyItemize}\end{DoxyItemize}
+\hypertarget{index_trap}{}\subsubsection{Traps}\label{index_trap}
+Traps execute a system call. The details of these so-\/called \char`\"{}trap vectors\char`\"{} are below. \begin{DoxyItemize}
 \item 0x21 -\/ OUT 
 \begin{DoxyItemize}
 \item Print the ASCII character in the last 8 bits of R0.
-\end{DoxyItemize}
-\item 0x22 -\/ PUTS 
+\end{DoxyItemize}\item 0x22 -\/ PUTS 
 \begin{DoxyItemize}
 \item Print the string starting at the address in R0 and ending at a null character.
-\end{DoxyItemize}
-\item 0x23 -\/ IN 
+\end{DoxyItemize}\item 0x23 -\/ IN 
 \begin{DoxyItemize}
 \item Prompt for and read an ASCII character. Put the result in R0.
-\end{DoxyItemize}
-\item 0x25 -\/ HALT 
+\end{DoxyItemize}\item 0x25 -\/ HALT 
 \begin{DoxyItemize}
 \item End execution.
-\end{DoxyItemize}
-\item 0x31 -\/ OUTN 
+\end{DoxyItemize}\item 0x31 -\/ OUTN 
 \begin{DoxyItemize}
 \item Print the value in R0 as a decimal integer.
-\end{DoxyItemize}
-\item 0x33 -\/ INN 
+\end{DoxyItemize}\item 0x33 -\/ INN 
 \begin{DoxyItemize}
 \item Prompt for and read a decimal number. Put the result in R0.
-\end{DoxyItemize}
-\item 0x43 -\/ RND 
+\end{DoxyItemize}\item 0x43 -\/ RND 
 \begin{DoxyItemize}
 \item Generate a random integer and store it in R0.
-\end{DoxyItemize}
-\end{DoxyItemize}
-\end{DoxyItemize}
 \end{DoxyItemize}\end{DoxyItemize}

@@ -1,0 +1,63 @@
+\hypertarget{classLoader}{
+\section{Loader Class Reference}
+\label{classLoader}\index{Loader@{Loader}}
+}
+
+
+Implements \hyperlink{classiLoader}{iLoader}.  
+
+
+
+
+Collaboration diagram for Loader:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classLoader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLoader_acc964f5d36a91baa584a8ecfa1e3945f}{
+Codes::RESULT {\bfseries Load} (const char $\ast$filename, \hyperlink{classiWord}{iWord} \&PC\_\-address) const }
+\label{classLoader_acc964f5d36a91baa584a8ecfa1e3945f}
+
+\item 
+\hyperlink{classLoader_ab2155ac99a41ba255c88161b9a3d218a}{Loader} (\hyperlink{classiMemory}{iMemory} $\ast$mem)
+\begin{DoxyCompactList}\small\item\em Set which \hyperlink{classMemory}{Memory} object is to be initialized by this object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLoader_a5e7c0fcca7b8bf89db54e1b65d28e309}{
+\hyperlink{classiMemory}{iMemory} $\ast$ \hyperlink{classLoader_a5e7c0fcca7b8bf89db54e1b65d28e309}{\_\-memory}}
+\label{classLoader_a5e7c0fcca7b8bf89db54e1b65d28e309}
+
+\begin{DoxyCompactList}\small\item\em The reference to \hyperlink{classMemory}{Memory}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements \hyperlink{classiLoader}{iLoader}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLoader_ab2155ac99a41ba255c88161b9a3d218a}{
+\index{Loader@{Loader}!Loader@{Loader}}
+\index{Loader@{Loader}!Loader@{Loader}}
+\subsubsection[{Loader}]{\setlength{\rightskip}{0pt plus 5cm}Loader::Loader (
+\begin{DoxyParamCaption}
+\item[{{\bf iMemory} $\ast$}]{ mem}
+\end{DoxyParamCaption}
+)}}
+\label{classLoader_ab2155ac99a41ba255c88161b9a3d218a}
+
+
+Set which \hyperlink{classMemory}{Memory} object is to be initialized by this object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mem} & The address where memory is located.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Without this there would be nowhere to load the instructions. 
+\end{DoxyNote}
