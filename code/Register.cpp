@@ -72,11 +72,11 @@ void Register::Not() {
   _word = _word.Not();
 }
 
-Register Register::Not() const {
-  Register temp;
-  temp._word = (*this)._word.Not();
+/*Register Register::Not() const {
+  Register temp(*this);
+  temp.Not();
   return temp;
-}
+}*/
 
 void Register::Store(const iWord& w) {
   _word.Copy(w);
@@ -90,13 +90,6 @@ void Register::Store(const iRegister& r) {
 
 Register& Register::operator=(const iWord& w) {
   _word.Copy(w);
-  return (*this);
-}
-
-Register& Register::operator=(const Register r) {
-  if (this != &r) {
-    _word.Copy(r.GetValue());
-  }
   return (*this);
 }
 

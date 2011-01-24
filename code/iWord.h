@@ -180,7 +180,7 @@ class iWord {
         The return value and parameter here must be declared as "Word"s
         as C++ does not work well with polymorphic assignment operators.
     */ 
-    virtual Word& operator=(const Word w) = 0;
+    virtual Word& operator=(const Word& w) = 0;
 
 
     /*! @brief A standard pre-increment operator.
