@@ -219,5 +219,152 @@ int main(int argc, char* argv[]) {
     @image latex software_interaction.png "This diagram shows the awareness of each component with those operating below it." width=\textwidth
 
     @subsection instructions Wi-11 Instruction Set
-    
+    @par
+    This section describes the format of each operation on the Wi-11.
+    First there are necessary definitions and then the list of instructions.
+    The name of each instruction is followed by the opcode; this includes any
+    base conversions that may be necessary.  Then there is a list of
+    the arguments to the command.  The opcode is the first four bits
+    of the instruction; the list following the opcode delagates
+    purpose to the following 12 bits.
+
+    @subsubsection offset Offsets    
+    Offsets to the PC are used by concatenating them with the PC.  Specifically, the first
+    7 bits of the PC and the 9 bit offset form the new PC value.  This
+    essentially separates memory into pages (the first seven bits of 
+    the PC corresponding a "page number").
+
+    @subsubsection index Indexes
+    Indexes are used to specify a distance from a base value.
+    Generally, there is a register holding an address.  The
+    index is added to the base address as a positive quantity
+    (zero-extended) in order to form a new address.  Because
+    the index is zero-extended, the new address is always
+    greater than the base address.
+
+    @subsubsection inst Intructions
+    @arg ADD (two registers), OPCODE: 0001 (1)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>3 bits: First source register</li>
+    <li>1 bit:  A zero</li>
+    <li>2 bits: Junk - not used.</li>
+    <li>3 bits: Second source register</li>
+    </ul>
+    @arg ADD (register and immediate), OPCODE: 0001 (1)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>3 bits: Source register</li>
+    <li>1 bit:  A one</li>
+    <li>5 bits: An immediate value (2's complement)</li>
+    </ul>
+    @arg AND (two registers), OPCODE: 0101 (5)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>3 bits: First source register</li>
+    <li>1 bit:  A zero</li>
+    <li>2 bits: Junk - not used</li>
+    <li>3 bits: Second source register</li>
+    </ul>
+    @arg AND (register and immediate), OPCODE: 0101 (5)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>3 bits: Source register</li>
+    <li>1 bit:  A one</li>
+    <li>5 bits: An immediate value (2's complement)</li>
+    </ul>
+    @arg BRx, OPCODE: 0000 (0)
+    <ul>
+    <li>1 bit:  Corresponds to the CCR's negative bit</li>
+    <li>1 bit:  Corresponds to the CCR's zero bit</li>
+    <li>1 bit:  Corresponds to the CCR's positive bit</li>
+    <li>9-bits: An \ref offset to the PC</li>
+    </ul>
+    @arg DBUG, OPCODE: 1000 (8)
+    <ul>
+    <li>12 bits: Junk - not used</li>
+    </ul>
+    @arg JSR, OPCODE: 0100 (4)
+    <ul>
+    <li>1 bit:  The link bit (The PC is stored in R7 if this is set)</li>
+    <li>2 bits: Junk - not used</li>
+    <li>9 bits: An \ref offset to the PC</li>
+    </ul>
+    @arg JSRR, OPCODE: 1100 (12 - C)
+    <ul>
+    <li>1 bit:  The link bit (The PC is stored in R7 if this is set)</li>
+    <li>2 bits: Junk - not used</li>
+    <li>3 bits: A base register</li>
+    <li>6 bits: An \ref index to the base register</li>
+    </ul>
+    @arg LD, OPCODE: 0010 (2)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>9 bits: An \ref offset to the PC</li>
+    </ul>
+    @arg LDI, OPCODE: 1010 (10 - A)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>9 bits: An \ref offset to the PC</li>
+    </ul>
+    @arg LDR, OPCODE: 0110 (6)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>3 bits: A base register</li>
+    <li>6 bits: An \ref index to the base register</li>
+    </ul>
+    @arg LEA, OPCODE: 1110 (14 - E)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>9 bits: An \ref offset to the PC</li>
+    </ul>
+    @arg NOT, OPCODE: 1001 (9)
+    <ul>
+    <li>3 bits: Destination register</li>
+    <li>3 bits: Source register</li>
+    <li>6 bits: Junk - not used</li>
+    </ul>
+    @arg RET, OPCODE: 1101 (13 - D)
+    <ul>
+    <li>12 bits: Junk - not used</li>
+    </ul>
+    @arg ST, OPCODE: 0011 (3)
+    <ul>
+    <li>3 bits: Source register</li>
+    <li>9 bits: An \ref offset to the PC</li>
+    </ul>
+    @arg STI, OPCODE: 1011 (11 - B)
+    <ul>
+    <li>3 bits: Source register</li>
+    <li>9 bits: An \ref offset to the PC</li>
+    <ul>
+    @arg STR, OPCODE: 0111 (7)
+    <ul>
+    <li>3 bits: Source register</li>
+    <li>3 bits: A base register</li>
+    <li>6 bits: An \ref index to the base register</li>
+    <ul>
+    @arg TRAP, OPCODE: 1111 (15 - F)
+    <ul>
+    <li>4 bits: Junk - not used</li>
+    <li>8 bits: A trap vector</li>
+    <ul>
+
+    @subsubsection trap Traps
+    Traps execute a system call.
+    The details of these so-called "trap vectors" are below.
+    @arg 0x21 - OUT
+    <ul><li>Print the ASCII character in the last 8 bits of R0.</li></ul>
+    @arg 0x22 - PUTS
+    <ul><li>Print the string starting at the address in R0 and ending at a null character.</li></ul>
+    @arg 0x23 - IN
+    <ul><li>Prompt for and read an ASCII character. Put the result in R0.</li></ul>
+    @arg 0x25 - HALT
+    <ul><li>End execution.</li></ul>
+    @arg 0x31 - OUTN
+    <ul><li>Print the value in R0 as a decimal integer.</li></ul>
+    @arg 0x33 - INN
+    <ul><li>Prompt for and read a decimal number.  Put the result in R0.</li></ul>
+    @arg 0x43 - RND
+    <ul><li>Generate a random integer and store it in R0.</li></ul>
 */
