@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OneUp Wi-11 Simulator: Main Page</title>
+<title>OneUp Wi-11 Simulator - Programmer&#39;s Guide: Introduction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -41,12 +41,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="headertitle">
-<h1>OneUp Wi-11 Simulator Documentation</h1>  </div>
+<h1>Introduction </h1>  </div>
 </div>
 <div class="contents">
 <h2><a class="anchor" id="intro"></a>
 Introduction</h2>
-<p>The "Wi-11 Machine" is a simple, 16-bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). This software package is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-the-scenes details, one must understand the environment. In particular, an understanding of the object file syntax and the interactions between the components used in this project is necessary.</p>
+<p>The "Wi-11 Machine" is a simple, 16-bit computer architecture. It has 8 general purpose registers, 3 condition code registers (CCRs), and a program counter (PC). The Wi-11 Simulator is meant to emulate its execution, as well as present the user with information regarding the state of the machine after each instruction is executed. However, before one can delve into the behind-the-scenes details, one must understand the environment. In particular, an understanding of the object file syntax and the interactions between the components used in this project is necessary.</p>
 <h2><a class="anchor" id="syntax"></a>
 Object Files</h2>
 <dl class="user"><dt><b></b></dt><dd>The object files (ususally file_name.o) that this simulator accepts are ascii text files with the following structure: <ul>
@@ -90,10 +90,234 @@ The End Record</h3>
 <dl class="user"><dt><b></b></dt><dd><b>At a glance:</b> There is an 'E', and the location in memory from which the first instruction should be fetched.</dd></dl>
 <h2><a class="anchor" id="Component"></a>
 Interaction</h2>
- <h3><a class="anchor" id="components"></a>
+<p>The components described in this document are, for the most part, representative of the actual hardware components that would be present in the Wi-11 machine. The following section describes these components and their interactions. After that, a list of the <a class="el" href="index.html#instructions">instructions</a> that the Wi-11 can execute (along with their encodings) completes the introduction to this simulator. The rest of the document details the workings of each component and provides the reader with the knowledge necessary for altering, fixing, or even just understanding the code itself.</p>
+<h3><a class="anchor" id="components"></a>
 Components</h3>
+<p>The Wi-11 Simulator uses 5 major components (for a visual, see interactions). The main function, however, is only aware of one: <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a>. It creates one <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> object and uses it to parse object files, decode the instructions, and execute them. In order to perform these tasks it first creates <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a>, <a class="el" href="classMemory.html" title="Implements iMemory.">Memory</a>, <a class="el" href="classDecoder.html">Decoder</a>, and <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> objects. The <a class="el" href="classRegister.html" title="Implements iRegister.">Register</a> objects correspond all those mentioned in the <a class="el" href="index.html#intro">Introduction</a>, with the exception of the CCRs which are declared as their own entity.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>The <a class="el" href="classWord.html" title="Implements iWord.">Word</a> class is not described below but nearly all transfers of data and mathematical operations are performed using (an) object(s) of this type.</dd></dl>
+<h4><a class="anchor" id="loading"></a>
+Loading</h4>
+<p>The <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a> object, recieving a pointer to memory and a filename, creates an <a class="el" href="classObjParser.html" title="Implements iObjParser.">ObjParser</a> object (the fifth major component). The <a class="el" href="classObjParser.html" title="Implements iObjParser.">ObjParser</a> pulls the relevant data from the file and the <a class="el" href="classLoader.html" title="Implements iLoader.">Loader</a> puts it into memory. After some input by the user is accepted (assuming the simulator is in debug mode), the <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> is ready to begin executing instructions.</p>
+<h4><a class="anchor" id="execution"></a>
+Executing</h4>
+<p>The <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> component executes instructions in a way very similar to how an actual Wi-11 machine would execute them. It first has the <a class="el" href="classMemory.html" title="Implements iMemory.">Memory</a> object return the instruction referenced by the current value of the PC. After incrementing the PC, the raw instruction is given to the <a class="el" href="classDecoder.html">Decoder</a>. The <a class="el" href="classDecoder.html">Decoder</a> returns an <a class="el" href="structInstruction.html" title="Container to simplify interactions with Wi-11 instructions.">Instruction</a> object that allows the <a class="el" href="classWi11.html" title="Implements iWi11.">Wi11</a> to call one of its many private functions that correspond (one-to-one) to each kind of instruction. This process is then repeated until either the HALT trap code is found or the user-specified instruction limit is reached.</p>
 <h3><a class="anchor" id="instructions"></a>
-Wi11 Instruction Set</h3>
+Wi-11 Instruction Set</h3>
+<dl class="user"><dt><b></b></dt><dd>This section describes the format of each operation on the Wi-11. First there are necessary definitions and then the list of instructions. The name of each instruction is followed by the opcode; this includes any base conversions that may be necessary. Then there is a list of the arguments to the command. The opcode is the first four bits of the instruction; the list following the opcode delagates purpose to the following 12 bits.</dd></dl>
+<h4><a class="anchor" id="offset"></a>
+Offsets</h4>
+<p>Offsets to the PC are used by concatenating them with the PC. Specifically, the first 7 bits of the PC and the 9 bit offset form the new PC value. This essentially separates memory into pages (the first seven bits of the PC corresponding a "page number").</p>
+<h4><a class="anchor" id="index"></a>
+Introduction</h4>
+<p>Indexes are used to specify a distance from a base value. Generally, there is a register holding an address. The index is added to the base address as a positive quantity (zero-extended) in order to form a new address. Because the index is zero-extended, the new address is always greater than the base address.</p>
+<h4><a class="anchor" id="inst"></a>
+Intructions</h4>
+<ul>
+<li>ADD (two registers), OPCODE: 0001 (1) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+3 bits: First source register </li>
+<li>
+1 bit: A zero </li>
+<li>
+2 bits: Junk - not used. </li>
+<li>
+3 bits: Second source register </li>
+</ul>
+</li>
+<li>ADD (register and immediate), OPCODE: 0001 (1) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+3 bits: Source register </li>
+<li>
+1 bit: A one </li>
+<li>
+5 bits: An immediate value (2's complement) </li>
+</ul>
+</li>
+<li>AND (two registers), OPCODE: 0101 (5) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+3 bits: First source register </li>
+<li>
+1 bit: A zero </li>
+<li>
+2 bits: Junk - not used </li>
+<li>
+3 bits: Second source register </li>
+</ul>
+</li>
+<li>AND (register and immediate), OPCODE: 0101 (5) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+3 bits: Source register </li>
+<li>
+1 bit: A one </li>
+<li>
+5 bits: An immediate value (2's complement) </li>
+</ul>
+</li>
+<li>BRx, OPCODE: 0000 (0) <ul>
+<li>
+1 bit: Corresponds to the CCR's negative bit </li>
+<li>
+1 bit: Corresponds to the CCR's zero bit </li>
+<li>
+1 bit: Corresponds to the CCR's positive bit </li>
+<li>
+9-bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+</ul>
+</li>
+<li>DBUG, OPCODE: 1000 (8) <ul>
+<li>
+12 bits: Junk - not used </li>
+</ul>
+</li>
+<li>JSR, OPCODE: 0100 (4) <ul>
+<li>
+1 bit: The link bit (The PC is stored in R7 if this is set) </li>
+<li>
+2 bits: Junk - not used </li>
+<li>
+9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+</ul>
+</li>
+<li>JSRR, OPCODE: 1100 (12 - C) <ul>
+<li>
+1 bit: The link bit (The PC is stored in R7 if this is set) </li>
+<li>
+2 bits: Junk - not used </li>
+<li>
+3 bits: A base register </li>
+<li>
+6 bits: An <a class="el" href="index.html">Introduction</a> to the base register </li>
+</ul>
+</li>
+<li>LD, OPCODE: 0010 (2) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+</ul>
+</li>
+<li>LDI, OPCODE: 1010 (10 - A) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+</ul>
+</li>
+<li>LDR, OPCODE: 0110 (6) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+3 bits: A base register </li>
+<li>
+6 bits: An <a class="el" href="index.html">Introduction</a> to the base register </li>
+</ul>
+</li>
+<li>LEA, OPCODE: 1110 (14 - E) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+</ul>
+</li>
+<li>NOT, OPCODE: 1001 (9) <ul>
+<li>
+3 bits: Destination register </li>
+<li>
+3 bits: Source register </li>
+<li>
+6 bits: Junk - not used </li>
+</ul>
+</li>
+<li>RET, OPCODE: 1101 (13 - D) <ul>
+<li>
+12 bits: Junk - not used </li>
+</ul>
+</li>
+<li>ST, OPCODE: 0011 (3) <ul>
+<li>
+3 bits: Source register </li>
+<li>
+9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC </li>
+</ul>
+</li>
+<li>STI, OPCODE: 1011 (11 - B) <ul>
+<li>
+3 bits: Source register </li>
+<li>
+9 bits: An <a class="el" href="index.html#offset">Offsets</a> to the PC <ul>
+</ul>
+STR, OPCODE: 0111 (7) <ul>
+<li>
+3 bits: Source register </li>
+<li>
+3 bits: A base register </li>
+<li>
+6 bits: An <a class="el" href="index.html">Introduction</a> to the base register <ul>
+</ul>
+TRAP, OPCODE: 1111 (15 - F) <ul>
+<li>
+4 bits: Junk - not used </li>
+<li>
+8 bits: A trap vector <ul>
+</ul>
+trap Traps Traps execute a system call. The details of these so-called "trap vectors" are below. </li>
+<li>
+0x21 - OUT <ul>
+<li>
+Print the ASCII character in the last 8 bits of R0.</li>
+</ul>
+</li>
+<li>
+0x22 - PUTS <ul>
+<li>
+Print the string starting at the address in R0 and ending at a null character.</li>
+</ul>
+</li>
+<li>
+0x23 - IN <ul>
+<li>
+Prompt for and read an ASCII character. Put the result in R0.</li>
+</ul>
+</li>
+<li>
+0x25 - HALT <ul>
+<li>
+End execution.</li>
+</ul>
+</li>
+<li>
+0x31 - OUTN <ul>
+<li>
+Print the value in R0 as a decimal integer.</li>
+</ul>
+</li>
+<li>
+0x33 - INN <ul>
+<li>
+Prompt for and read a decimal number. Put the result in R0.</li>
+</ul>
+</li>
+<li>
+0x43 - RND <ul>
+<li>
+Generate a random integer and store it in R0.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -109,7 +333,7 @@ Wi11 Instruction Set</h3>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 19:01:10 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 20:23:14 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

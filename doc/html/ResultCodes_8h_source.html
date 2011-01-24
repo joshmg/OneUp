@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OneUp Wi-11 Simulator: ResultCodes.h Source File</title>
+<title>OneUp Wi-11 Simulator - Programmer&#39;s Guide: ResultCodes.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -62,7 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026     SUCCESS,              <span class="comment">// Operation succeeded</span>
 <a name="l00027"></a>00027     HALT,                 <span class="comment">// TRAP Halt Command</span>
 <a name="l00028"></a>00028     UNDEFINED,            <span class="comment">// An error description could not be found.</span>
-<a name="l00029"></a>00029     INVALID_OBJECT_FILE,  <span class="comment">// the first letter in the object file was not a H</span>
+<a name="l00029"></a>00029     INVALID_HEADER_ENTRY, <span class="comment">// Invalid object file header</span>
 <a name="l00030"></a>00030     INVALID_DATA_ENTRY,   <span class="comment">// there was an invalid data entry in the object file</span>
 <a name="l00031"></a>00031     OUT_OF_BOUNDS,        <span class="comment">// attempt to save memory outside of claimed area</span>
 <a name="l00032"></a>00032     NOT_HEX,              <span class="comment">// the suposedly hex string is not hex</span>
@@ -78,10 +78,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a>00048   <span class="keyword">public</span>:
 <a name="l00050"></a><a class="code" href="classResultDecoder.html#afafd3458bdbcbd7b1b95545f47151358">00050</a>     <a class="code" href="classResultDecoder.html#afafd3458bdbcbd7b1b95545f47151358" title="Generates the code-to-message mappings.">ResultDecoder</a>() {
 <a name="l00051"></a>00051       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::ERROR_0] = <span class="stringliteral">&quot;This is an example description sent to the end-user upon verbose mode.&quot;</span>;
-<a name="l00052"></a>00052       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::SUCCESS] = <span class="stringliteral">&quot;The operation executed successfully.&quot;</span>;
+<a name="l00052"></a>00052       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::SUCCESS] = <span class="stringliteral">&quot;Successful.&quot;</span>;
 <a name="l00053"></a>00053       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::HALT] = <span class="stringliteral">&quot;Execution has been terminated (Halt).&quot;</span>;
 <a name="l00054"></a>00054       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::UNDEFINED] = <span class="stringliteral">&quot;An unexpected error occured.&quot;</span>;
-<a name="l00055"></a>00055       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::INVALID_OBJECT_FILE] = <span class="stringliteral">&quot;The First character in the object file must be a H.&quot;</span>;
+<a name="l00055"></a>00055       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::INVALID_HEADER_ENTRY] = <span class="stringliteral">&quot;Invalid object file header (Was the first character an &#39;H&#39;?).&quot;</span>;
 <a name="l00056"></a>00056       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::INVALID_DATA_ENTRY] = <span class="stringliteral">&quot;There is an invalid text record or there was no end record found.&quot;</span>;
 <a name="l00057"></a>00057       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::OUT_OF_BOUNDS] = <span class="stringliteral">&quot;Attempt to access memory outside of the program load area.&quot;</span>;
 <a name="l00058"></a>00058       <a class="code" href="classResultDecoder.html#ab19497e41c5d1a0546ed33642cad48dd" title="Maps a result code to, in every case but SUCCESS, an error message.">_codes</a>[Codes::NOT_HEX] = <span class="stringliteral">&quot;There was an invalid hex string found.&quot;</span>;
@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jan 22 2011 19:01:10 for OneUp Wi-11 Simulator by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jan 23 2011 20:23:15 for OneUp Wi-11 Simulator - Programmer's Guide by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>
