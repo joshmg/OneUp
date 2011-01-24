@@ -179,7 +179,7 @@ void Word::Copy(const iWord& w) {
   }
 }
 
-Word& Word::operator=(const Word w) {
+Word& Word::operator=(const Word& w) {
   if (this != &w) {
     _value = (short) w.ToInt();
   }

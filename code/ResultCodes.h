@@ -31,7 +31,7 @@ namespace Codes {
     OUT_OF_BOUNDS,        // attempt to save memory outside of claimed area
     NOT_HEX,              // the suposedly hex string is not hex
     FILE_NOT_FOUND,       // Object file could not be opened
-    INVALID_TRAP_CODE     // The provded trap code is not valid.
+    INVALID_TRAP_CODE     // The provided trap code is not valid.
   };
 
 }
@@ -57,7 +57,7 @@ class ResultDecoder {
       _codes[Codes::OUT_OF_BOUNDS] = "Attempt to access memory outside of the program load area.";
       _codes[Codes::NOT_HEX] = "There was an invalid hex string found.";
       _codes[Codes::FILE_NOT_FOUND] = "The specified object file could not be found.";
-      _codes[Codes::INVALID_TRAP_CODE] = "The provded trap code is not valid.";
+      _codes[Codes::INVALID_TRAP_CODE] = "The provided trap code is not valid.";
     }
 
     /*! @brief Looks up a result code.

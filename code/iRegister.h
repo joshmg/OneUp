@@ -112,7 +112,7 @@ class iRegister {
         @post The calling object is not changed.
         @return A new Register object holding the bit-wise not of the calling object.
     */
-    virtual Register Not() const = 0;
+    //virtual Register Not() const = 0;
 
     /*! @brief Stores a word of data.
         @param[in] w
@@ -134,13 +134,6 @@ class iRegister {
         "r = w" is equivalent to "r.Store(w)"
     */
     virtual Register& operator=(const iWord& w) = 0;
-
-    /*! @brief A standard assignment operator.
-
-        @note
-        "r1 = r2" is equivalent to "r1.Store(r2)"
-    */
-    virtual Register& operator=(const Register r) = 0;
 
     /*! @brief A standard pre-increment operator.
         @returns A reference to itself.

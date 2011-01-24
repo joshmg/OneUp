@@ -34,12 +34,11 @@ class Register : public iRegister {
     void Or(const iWord& w);
     Register Or(const iRegister& r) const;
     void Not();                                     // !
-    Register Not() const;                           // !
+    //Register Not() const;                           // !
 
     void Store(const iWord& w);
     void Store(const iRegister& r);
     Register& operator=(const iWord& w);
-    Register& operator=(const Register r);
 
     Register& operator++();
     Register& operator++(int);

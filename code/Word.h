@@ -53,7 +53,7 @@ class Word : public iWord {
     Word Not() const;
 
     void Copy(const iWord& w);
-    Word& operator=(const Word w);
+    Word& operator=(const Word& w);
 
     iWord& operator++();
     iWord& operator++(int);
