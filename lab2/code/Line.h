@@ -1,0 +1,30 @@
+/*! @file Line.h
+    @author Andrew Groot
+    @brief Definition of the private data for the "Line" class.
+*/
+
+#ifndef LINE_H
+#define LINE_H
+
+#include <iLine.h>
+#include <string>
+#include <vector>
+
+class Line : public iLine {
+  private:
+    std::string _label;
+    OP_CODE _op;
+    vector<std::string> _args;
+    std::string _code;
+
+  public:
+    Line(std::string line);
+
+    ReadLine(std::string line);
+    std::string Label() const;
+    OP_CODE OpCode() const;
+    std::string ToString() const;
+    operator[] (int index) const;
+    int Size() const;
+
+#endif
