@@ -20,6 +20,6 @@ class Printer : public iPrinter {
 
     bool Open(std::string filename);
     void Print(iListing& listing);
-}
+};
 
 #endif

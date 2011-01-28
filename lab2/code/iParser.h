@@ -6,17 +6,18 @@
 #ifndef iPARSER_H
 #define iPARSER_H
 
+#include "iWord.h"
 #include "iLine.h"
 #include <string>
-#include <vector>
+#include <map>
 
 class iParser {
   private:
 
   public:
-    virtual bool Load(std::string filename) = 0;
+    virtual bool Load(std::string filename, bool include_traps) = 0;
 
-    virtual std::vector<iLine&> GetLines() = 0;
-}
+    virtual std::map<iWord&, iLine&> GetLines() = 0;
+};
 
 #endif

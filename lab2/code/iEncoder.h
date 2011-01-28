@@ -15,6 +15,6 @@ class iEncoder {
 
   public:
     virtual iListing& Encode(vector<iLine&> lines) const = 0;
-}
+};
 
 #endif

@@ -22,6 +22,6 @@ class Listing : public iListing {
     iWord& Address(int index) const;
     iWord& Instruction(int index) const;
     std::string Text(int index) const;
-}
+};
 
 #endif

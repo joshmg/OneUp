@@ -20,6 +20,6 @@ class iListing {
     virtual iWord& Instruction(int index) const = 0;
 
     virtual iWord& Text(int index) const = 0;
-}
+};
 
 #endif

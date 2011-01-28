@@ -7,20 +7,22 @@
 #define PARSER_H
 
 #include "iParser.h"
+#include "iWord.h"
 #include "iLine.h"
 #include <string>
-#include <vector>
+#include <map>
 #include <fstream>
 
 class Parser : public iParser {
   private:
     std::ifstream _fileStream;
+    bool _traps;
 
   public:
     ~Parser();
 
-    bool Load(std::string filename);
-    std::vector<iLine&> GetLines();
-}
+    bool Load(std::string filename, bool include_traps);
+    std::map<iWord&, iLine&> GetLines();
+};
 
 #endif

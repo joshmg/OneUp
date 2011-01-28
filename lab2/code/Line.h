@@ -13,7 +13,7 @@
 class Line : public iLine {
   private:
     std::string _label;
-    OP_CODE _op;
+    std::string _inst;
     vector<std::string> _args;
     std::string _code;
 
@@ -22,9 +22,10 @@ class Line : public iLine {
 
     ReadLine(std::string line);
     std::string Label() const;
-    OP_CODE OpCode() const;
+    std::string Instruction() const;
     std::string ToString() const;
     operator[] (int index) const;
     int Size() const;
+};
 
 #endif

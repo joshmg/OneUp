@@ -16,6 +16,6 @@ class iPrinter {
     virtual bool Open(std::string filename) = 0;
 
     virtual void Print(iListing& listing) = 0;
-}
+};
 
 #endif

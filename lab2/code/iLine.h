@@ -8,8 +8,6 @@
 
 #include <string>
 
-enum OP_CODE;
-
 class iLine {
   private:
 
@@ -18,12 +16,13 @@ class iLine {
 
     virtual std::string Label() const = 0;
 
-    virtual OP_CODE OpCode() const = 0;
+    virtual std::string Instruction() const = 0;
 
     virtual std::string ToString() const = 0;
 
     virtual operator[] (int index) const = 0;
 
     virtual int Size() const = 0;
+};
 
 #endif
