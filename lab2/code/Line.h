@@ -7,6 +7,7 @@
 #define LINE_H
 
 #include <iLine.h>
+#include<iWord.h>
 #include <string>
 #include <vector>
 
@@ -23,9 +24,10 @@ class Line : public iLine {
     ReadLine(std::string line);
     std::string Label() const;
     std::string Instruction() const;
-    std::string ToString() const;
     operator[] (int index) const;
     int Size() const;
+    std::string ToString() const;
+    iWord& ToWord() const;
 };
 
 #endif
