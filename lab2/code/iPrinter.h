@@ -15,7 +15,7 @@ class iPrinter {
   public:
     virtual bool Open(std::string filename) = 0;
 
-    virtual void Print(iListing& listing) = 0;
+    virtual void Print() = 0;
 };
 
 #endif
