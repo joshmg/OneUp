@@ -7,6 +7,8 @@
 #define iPRINTER_H
 
 #include "iListing.h"
+#include "iWord.h"
+#include "ResultCodes.h"
 #include <string>
 
 class iPrinter {
@@ -15,7 +17,7 @@ class iPrinter {
   public:
     virtual bool Open(std::string filename) = 0;
 
-    virtual void Print() = 0;
+    virtual Codes::RESULT Print(iWord& file_length) = 0;
 };
 
 #endif

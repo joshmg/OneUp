@@ -6,8 +6,8 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include <iLine.h>
-#include<iWord.h>
+#include "iLine.h"
+#include "iWord.h"
 #include <string>
 #include <vector>
 
@@ -15,8 +15,12 @@ class Line : public iLine {
   private:
     std::string _label;
     std::string _inst;
+    // OP_CODE _inst;
     vector<std::string> _args;
     std::string _code;
+
+    std::string _RmLeadWS();
+    std::string _GetNext();
 
   public:
     Line(std::string line);
