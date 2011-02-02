@@ -19,8 +19,7 @@ class Line : public iLine {
     vector<std::string> _args;
     std::string _code;
 
-    std::string _RmLeadWS();
-    std::string _GetNext();
+    std::string _GetNext(std::string& str);
 
   public:
     Line(std::string line);
