@@ -19,16 +19,23 @@ class Line : public iLine {
     vector<std::string> _args;
     std::string _code;
 
-    std::string _GetNext(std::string& str);
+    bool _IsWS(char ch) const;
+    std::string _GetNext(std::string& str) const;
+    void _SetBits(iWord& w, int value, int index);
+    Codes::RESULT _IsReg(string reg);
+    int _RegNum(string reg);
+    Codes::RESULT _IsConstant(string constant, size);
+    int _ReadConstant(string constant);
 
   public:
-     ReadLine(std::string line);
+    Codes::RESULT ReadLine(std::string line);
     std::string Label() const;
     std::string Instruction() const;
     std::string operator[] (int index) const;
     int Size() const;
     std::string ToString() const;
     iWord& ToWord() const;
+    bool IsComment() const;
 };
 
 #endif

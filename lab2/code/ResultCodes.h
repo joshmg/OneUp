@@ -21,11 +21,30 @@
 */
 namespace Codes {
 
-  enum RESULT {
+  enum ERRORS {
     ERROR_0,              // quick descipription
-    SUCCESS              // Operation succeeded
+    SUCCESS,              // Operation succeeded
+    INV_LBL,          // Label starts with an invalid character
+    LBL_WO_INST,          // Label does not accompany an instruction
+    INV_INST,         // Instruction does not exist
+    ARG_SIZE,             // Wrong number of arguments
+    EMPTY_ARG,            // Argument is the empty string
+    EXP_REG,              // Expected a register as an arugment
+    INV_REG,              // Invalid register number
+    EXP_CONST,            // Expected a constant as an argument
+    INV_CONST,            // Constant out of range
+    INV_ARG,              // Invalid argument found
   };
 
+  struct RESULT {
+    std::string info;
+    ERROR msg;
+
+    RESULT(std::string inf = "", RESULT err) {
+      info = inf;
+      msg = err;
+    }
+  };
 }
 
 /*! @brief Finds the messages associated with a given result code.
@@ -42,6 +61,16 @@ class ResultDecoder {
     ResultDecoder() {
       _codes[Codes::ERROR_0] = "This is an example description sent to the end-user upon verbose mode.";
       _codes[Codes::SUCCESS] = "Successful.";
+      _codes[Codes::INV_LBL] = "Label starting with 'R' or 'x'.";
+      _codes[Codes::LBL_WO_INST] = "Label is not followed by an instruction.";
+      _codes[Codes::INV_INST] = "Instruction not recognized.";
+      _codes[Codes::ARG_SIZE] = "Invalid number of arguments.";
+      _codes[Codes::EMPTY_ARG] = "Argugment is the empty string (misplaced comma?).";
+      _codes[Codes::EXP_REG] = "Expected a register as an argument.";
+      _codes[Codes::INV_REG] = "Non-existent register as arugment.";
+      _codes[Codes::EXP_CONST] = "Expected a constant as an argument.";
+      _codes[Codes::INV_CONST] = "Constant value out of range.";
+      _codes[Codes::INV_ARG] = "Invalid arugment.";
     }
 
     /*! @brief Looks up a result code.
