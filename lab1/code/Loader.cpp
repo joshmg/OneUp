@@ -52,7 +52,8 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
 
   // establishing the upper bound on memory
   max_memory=min_memory+Hex2.ToInt();
-  returns=_memory->Reserve(Hex1,Hex2);
+  if (Hex2.ToInt() < (short)~0) returns=_memory->Reserve(Hex1,Hex2);
+  else return REQUESTED_MEMORY_2LARGE;
   if (returns!=SUCCESS) {
     return returns;
   }
@@ -88,6 +89,10 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   }
   if  (!(Hex1.FromHex(string("0x") + Data.data[0]))) {
     return NOT_HEX;
+  }
+
+  if (Hex1.ToInt() < min_memory || Hex1.ToInt() >= max_memory) {
+    return INVALID_START_PC;
   }
 
   //this should be copying Hex1 onto the PC_address.  if it is not, that is what it is meant to be doing

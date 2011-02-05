@@ -208,7 +208,11 @@ RESULT Wi11::_Trap(const iWord& code) {
     case 0x22: {
       Word temp_R0 = _GetRegister(R0).GetValue();
       Word data = _memory.Load(temp_R0);
-      while (data.ToInt() != 0) cout << (char)_memory.Load(++temp_R0).ToInt();
+      while (data.ToInt() != 0) {
+        data = _memory.Load(temp_R0);
+        cout << (char)data.ToInt();
+        temp_R0++;
+      }
     } break;
     case 0x23: {
       char c;
@@ -225,7 +229,7 @@ RESULT Wi11::_Trap(const iWord& code) {
       return HALT;
     } break;
     case 0x31: {
-      cout << _R0.GetValue().ToInt();
+      cout << _R0.GetValue().ToInt2Complement();
     } break;
     case 0x33: {
       int c;

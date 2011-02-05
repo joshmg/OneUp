@@ -26,12 +26,14 @@ namespace Codes {
     SUCCESS,              // Operation succeeded
     HALT,                 // TRAP Halt Command
     UNDEFINED,            // An error description could not be found.
+    REQUESTED_MEMORY_2LARGE, // Requested memory size is too large.
     INVALID_HEADER_ENTRY, // Invalid object file header
     INVALID_DATA_ENTRY,   // there was an invalid data entry in the object file
     OUT_OF_BOUNDS,        // attempt to save memory outside of claimed area
     NOT_HEX,              // the suposedly hex string is not hex
     FILE_NOT_FOUND,       // Object file could not be opened
-    INVALID_TRAP_CODE     // The provided trap code is not valid.
+    INVALID_TRAP_CODE,    // The provided trap code is not valid.
+    INVALID_START_PC      // The initial value of the PC is out of bounds.
   };
 
 }
@@ -58,6 +60,8 @@ class ResultDecoder {
       _codes[Codes::NOT_HEX] = "There was an invalid hex string found.";
       _codes[Codes::FILE_NOT_FOUND] = "The specified object file could not be found.";
       _codes[Codes::INVALID_TRAP_CODE] = "The provided trap code is not valid.";
+      _codes[Codes::REQUESTED_MEMORY_2LARGE] = "The memory size requested in the header is beyond the scope of memory.";
+      _codes[Codes::INVALID_START_PC] = "The initial value of the PC is out of bounds.";
     }
 
     /*! @brief Looks up a result code.
