@@ -7,6 +7,7 @@
 #define EXTRACTOR_H
 
 #include "iExtractor.h"
+#include "iSymbolTable.h"
 #include "iWord.h"
 #include "ResultCodes.h"
 #include <string>
@@ -16,16 +17,13 @@
 class Extractor : public iExtractor {
   private:
     std::ifstream _fileStream;
-    std::map<std::string, iWord&>* _symbols;
-    std::map<int, iWord&>* _literals;
 
   public:
     ~Extractor();
 
-    bool Load(std::string filename);
+    bool Open(std::string filename);
     Codes::RESULT Read();
-    std::map<std::string, iWord&>& GetSymbols() const;
-    std::map<int, iWord&>& GetLiterals() const;
+    iSymbolTable* GetSymbolTable();
     iWord& GetLength() const;
 };
 

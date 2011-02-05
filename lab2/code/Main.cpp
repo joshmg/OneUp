@@ -2,6 +2,7 @@
 // Written by Andrew Groot
 
 #include "Extractor.h"
+#include "SymbolTable.h"
 #include "Printer.h"
 #include "ResultCodes.h"
 #include <string>
@@ -47,30 +48,36 @@ int main (int argc, char* argv[]) {
     }
 
     // get everything from first pass though the file
-    map<string, Word> symbols = extract.Symbols();
-    map<int, Word> literals = extract.Literals();
+    iSymbolTable* symbols = extract.GetSymbolTable();
     Word length = extract.Length();
 
     // add trap codes if desired
     if (TRAP_LABELS) {
       Word temp;
+      // OUT
       temp.FromHex("0x0021");
-      symbols["OUT"] = temp;
+      symbols->InsertLabel("OUT", temp);
+      // PUTS
       temp.FromHex("0x0022");
-      symbols["PUTS"] = temp;
+      symbols->InsertLabel("PUTS", temp);
+      // IN
       temp.FromHex("0x0023");
-      symbols["IN"] = temp;
+      symbols->InsertLabel("IN", temp);
+      // HALT
       temp.FromHex("0x0025");
-      symbols["HALT"] = temp;
+      symbols->InsertLabel("HALT", temp);
+      // OUTN
       temp.FromHex("0x0031");
-      symbols["OUTN"] = temp;
+      symbols->InsertLabel("OUTN", temp);
+      // INN
       temp.FromHex("0x0033");
-      symbols["INN"] = temp;
+      symbols->InsertLabel("INN", temp);
+      // RND
       temp.FromHex("0x0043");
-      symbols["RND"] = temp;
+      symbols->InsertLabel("RND", temp);
     }
 
-    Printer printer(symbols, literals);
+    Printer printer(symbols);
 
     if (!printer.Open(outfile)) {
       cout << "Error: file " << outfile << " could not be opened.\n";

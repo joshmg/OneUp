@@ -7,7 +7,7 @@
 #define PRINTER_H
 
 #include "iPrinter.h"
-#include "iListing.h"
+#include "iSymbolTable.h"
 #include "ResultCodes.h"
 #include <string>
 #include <fstream>
@@ -16,12 +16,10 @@
 class Printer : public iPrinter {
   private:
     std::ofstream _fileStream;
-    std::map<std::string, iWord&> _symbols;
-    std::map<int, iWord&> _literals;
-    iWord& _length;
+    iSymbolTable* _symbols;
 
   public:
-    Printer(std::map<std::string, iWord&>& symbols, std::map<int, iWord&>& literals);
+    Printer(iSymbolTable* symbols);
     ~Printer();
 
     bool Open(std::string filename);

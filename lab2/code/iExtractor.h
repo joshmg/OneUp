@@ -6,6 +6,7 @@
 #ifndef iEXTRACTOR_H
 #define iEXTRACTOR_H
 
+#include "iSymbolTable.h"
 #include "iWord.h"
 #include "iLine.h"
 #include "ResultCodes.h"
@@ -16,13 +17,11 @@ class iExtractor {
   private:
 
   public:
-    virtual bool Load(std::string filename) = 0;
+    virtual bool Open(std::string filename) = 0;
 
     virtual Codes::RESULT Read() = 0;
 
-    virtual std::map<std::string, iWord&>& GetSymbols() const = 0;
-
-    virtual std::map<int, iWord&>& GetLiterals() const = 0;
+    virtual iSymbolTable* GetSymbols() const = 0;
 
     virtual iWord& GetLength() const = 0;
 };
