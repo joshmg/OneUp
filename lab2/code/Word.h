@@ -33,6 +33,7 @@ class Word : public iWord {
   public:
     //! Sets a new Word's value to 0.
     Word();
+    Word(int);
 
     int ToInt() const;
     int ToInt2Complement() const;

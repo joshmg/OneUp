@@ -7,7 +7,7 @@
 #define EXTRACTOR_H
 
 #include "iExtractor.h"
-#include "iSymbolTable.h"
+#include "SymbolTable.h"
 #include "iWord.h"
 #include "ResultCodes.h"
 #include <string>
@@ -22,8 +22,7 @@ class Extractor : public iExtractor {
     ~Extractor();
 
     bool Open(std::string filename);
-    Codes::RESULT Read();
-    iSymbolTable* GetSymbolTable();
+    Codes::RESULT GetSymbolTable(SymbolTable symbols);
     iWord& GetLength() const;
 };
 

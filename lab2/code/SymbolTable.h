@@ -22,11 +22,11 @@ class SymbolTable : public iSymbolTable {
 
     void InsertLiteral(int value, iWord& addr);
 
-    iWord& GetLabelAddr(std::string symbol);
+    iWord& GetLabelAddr(std::string symbol) const;
 
-    iWord& GetLiteralAddr(int value);
+    iWord& GetLiteralAddr(int value) const;
 
-    bool IsRelocatable(std::string label);
+    bool IsRelocatable(std::string label) const;
 };
 
 #endif

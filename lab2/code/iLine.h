@@ -6,13 +6,14 @@
 #ifndef iLINE_H
 #define iLINE_H
 
+#include "ResultCodes.h"
 #include <string>
 
 class iLine {
   private:
 
   public:
-    virtual ReadLine(std::string line) = 0;
+    virtual Codes::RESULT ReadLine(std::string line) = 0;
 
     virtual std::string GetLabel() const = 0;
 
@@ -20,7 +21,7 @@ class iLine {
 
     virtual std::string OpCode() const = 0;
 
-    virtual operator[] (int index) const = 0;
+    virtual std::string operator[] (int index) const = 0;
 
     virtual int Size() const = 0;
 

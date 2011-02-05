@@ -37,53 +37,43 @@ int main (int argc, char* argv[]) {
 
   Extractor extract;
   ResultDecoder results;
-  if (!extract.Load(infile)) {
+  if (!extract.Open(infile)) {
     cout << "Error: file " << infile << " could not be opened.\n";
     return 2; // i/o error
   } else {
-    RESULT result = extract.Read();
+    // First pass of file, get symbols
+    SymbolTable symbols;
+    RESULT result = extract.GetSymbols(symbols);
     if (result != SUCCESS) {
       cout << results.Find(result);
       return 3; // syntax error
     }
-
-    // get everything from first pass though the file
-    iSymbolTable* symbols = extract.GetSymbolTable();
     Word length = extract.Length();
 
     // add trap codes if desired
     if (TRAP_LABELS) {
-      Word temp;
       // OUT
-      temp.FromHex("0x0021");
-      symbols->InsertLabel("OUT", temp);
+      symbols.InsertLabel("OUT", Word(0x21));
       // PUTS
-      temp.FromHex("0x0022");
-      symbols->InsertLabel("PUTS", temp);
+      symbols.InsertLabel("PUTS", Word(0x22));
       // IN
-      temp.FromHex("0x0023");
-      symbols->InsertLabel("IN", temp);
+      symbols.InsertLabel("IN", Word(0x23));
       // HALT
-      temp.FromHex("0x0025");
-      symbols->InsertLabel("HALT", temp);
+      symbols.InsertLabel("HALT", Word(0x25));
       // OUTN
-      temp.FromHex("0x0031");
-      symbols->InsertLabel("OUTN", temp);
+      symbols.InsertLabel("OUTN", Word(0x31));
       // INN
-      temp.FromHex("0x0033");
-      symbols->InsertLabel("INN", temp);
+      symbols.InsertLabel("INN", Word(0x33));
       // RND
-      temp.FromHex("0x0043");
-      symbols->InsertLabel("RND", temp);
+      symbols.InsertLabel("RND", Word(0x43));
     }
 
-    Printer printer(symbols);
-
+    Printer printer;
     if (!printer.Open(outfile)) {
       cout << "Error: file " << outfile << " could not be opened.\n";
       return 2; // i/o error
     } else {
-      RESULT result = printer.Print(length);
+      RESULT result = printer.Print(symbols, length);
       if (result != SUCCESS) {
         cout << results.Find(result);
         return 3; // syntax error

@@ -22,6 +22,10 @@ Word::Word() {
   _value = 0;
 }
 
+Word::Word(int i) {
+  _value = (unsigned short) i;
+}
+
 int Word::ToInt() const {
   // always positive
   return (int) _value;
