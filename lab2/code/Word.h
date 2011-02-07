@@ -33,16 +33,37 @@ class Word : public iWord {
   public:
     //! Sets a new Word's value to 0.
     Word();
-    Word(int);
+    /*! @brief Sets a new Word's value to "i".
+        @param[in] i The value for the new Word to hold.
+        @pre "i" must fit within 16 bits.
+    */
+    Word(int i);
 
     int ToInt() const;
     int ToInt2Complement() const;
     std::string ToStr() const;
     std::string ToHex() const;
+    /*! @brief Same as ToHex() but with a different format.
+
+        The format in question is the same as ToHex() but
+        without leading the "0x" or leading zeros.
+
+        @par Examples
+        A value of 4 would give "4".\n
+        A value of 17 would give "11".\n
+        A vallue of -2 would give "FFFE".
+    */
+    std::string ToHexAbbr() const;
 
     bool FromInt(int value);
     bool FromStr(const std::string& str);
     bool FromHex(const std::string& str);
+    /*! @brief Same as FromHex() but with a different format.
+        @pre The hex string cannot exceed the values a Word can hold.
+
+        The format this function uses is the same as ToHexAbbr().
+    */
+    bool FromHexAbbr(const std::string& str);
 
     Word Add(const iWord& w) const;
     Word operator+(const iWord& w) const;

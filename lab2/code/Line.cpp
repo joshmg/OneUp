@@ -5,6 +5,7 @@
 #include <string>
 #include <cctype>
 #include <cstdlib>
+#include <cmath>
 using namespace std;
 using namespace Codes;
 
@@ -43,16 +44,54 @@ RESULT _IsReg(string reg) {
 }
 
 int _RegNum(string reg) {
-  return atoi(reg[0]);
+  return atoi(reg[1]);
 }
 
 RESULT ReadConstant(string constant, int size) {
-  if (constant.length() > 0 && (constant[0] == '#' || constant[0] == 'x' || constant[0] == '=') ) {
+  if (constant.length() > 0) {
+    if (constant[0] == '=') {
+      _hasLiteral = true;
+    }
 
-    return RESULT(SUCCESS);
-  } else {
-    return RESULT(EXP_CONST);
-  } 
+    Word w;
+    if (constant[0] == '#') {
+      // take off # and convert string to integer to word
+      if (w.FromInt(atoi(constant.substr(1)))) {
+        // conversion successful
+        if (w.ToInt() < (int)pow(2.0, size-1)) {
+          // store literal, if one
+          if (_hasLiteral) {
+            _literal = w.ToInt();
+          }
+          return RESULT(SUCCESS);
+        } else {
+          // out of range
+          return RESULT(INV_CONST);
+      } else {
+        // out of range
+        return RESULT(INV_DEC);
+      }
+    } else if (constant[0] == 'x') {
+      // take off x and convert hex string to word
+      if (w.FromHexAbbr(constant.substr(1))) {
+        // conversion successful
+        if (w.ToInt() < (int)pow(2.0, size-1)) {
+          // store literal, if one
+          if (_hasLiteral) {
+            _literal = w.ToInt();
+          }
+          return RESULT(SUCCESS);
+        } else {
+          // out of range
+          return RESULT(INV_CONST);
+        }
+      } else {
+        return RESULT(INV_HEX);
+      }
+    }
+  }
+  // empty string / not =, #, or x
+  return RESULT(EXP_CONST);
 }
 
 RESULT Line::ReadLine (string line) {

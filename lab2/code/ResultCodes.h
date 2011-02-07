@@ -22,18 +22,20 @@
 namespace Codes {
 
   enum ERRORS {
-    ERROR_0,              // quick descipription
-    SUCCESS,              // Operation succeeded
-    INV_LBL,          // Label starts with an invalid character
-    LBL_WO_INST,          // Label does not accompany an instruction
-    INV_INST,         // Instruction does not exist
-    ARG_SIZE,             // Wrong number of arguments
-    EMPTY_ARG,            // Argument is the empty string
-    EXP_REG,              // Expected a register as an arugment
-    INV_REG,              // Invalid register number
-    EXP_CONST,            // Expected a constant as an argument
-    INV_CONST,            // Constant out of range
-    INV_ARG,              // Invalid argument found
+    ERROR_0,        // quick descipription
+    SUCCESS,        // Operation succeeded
+    INV_LBL,        // Label starts with an invalid character
+    LBL_WO_INST,    // Label does not accompany an instruction
+    INV_INST,       // Instruction does not exist
+    ARG_SIZE,       // Wrong number of arguments
+    EMPTY_ARG,      // Argument is the empty string
+    EXP_REG,        // Expected a register as an arugment
+    INV_REG,        // Invalid register number
+    EXP_CONST,      // Expected a constant as an argument
+    INV_CONST,      // Constant out of range
+    INV_ARG,        // Invalid argument found
+    INV_HEX,        // Non-hex character after x.
+    INV_DEC,        // Non-digit after #.
   };
 
   struct RESULT {
@@ -71,6 +73,8 @@ class ResultDecoder {
       _codes[Codes::EXP_CONST] = "Expected a constant as an argument.";
       _codes[Codes::INV_CONST] = "Constant value out of range.";
       _codes[Codes::INV_ARG] = "Invalid arugment.";
+      _codes[Codes::INV_HEX] = "Non-hex character after 'x'.";
+      _codes[Codes::INV_DEC] = "Non-digit after '#'.";
     }
 
     /*! @brief Looks up a result code.

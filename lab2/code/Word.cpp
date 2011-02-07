@@ -64,6 +64,27 @@ string Word::ToHex() const {
   return "0x" + value;
 }
 
+string Word::ToHexAbbr() const {
+  string value("");
+
+  for (int i=0;i<WORD_SIZE;i+=4) {
+    // bits i to i+3, shifted down i bits
+    int hex_bit = (_value & 0x000F * (int)pow(2.0, i)) / (int)pow(2.0, i);
+    string temp = value;
+    if (hex_bit < 10) {
+      if (hex_bit != 0) {
+        // no leading zeros
+        value = '0' + hex_bit;
+      }
+    } else {
+      // 'A' = 10, so offset hex_bit by 10
+      value = 'A' + (hex_bit - 10);
+    }
+    value += temp;
+  }
+  return value; 
+}
+
 bool Word::FromInt(int value) {
   if (((unsigned short) value) < (int) pow(2.0, WORD_SIZE)) {
     // value is within allowable range
@@ -130,6 +151,40 @@ bool Word::FromHex(const string& value) {
     // (i+1)-2 comes from:
     //  the string accessor starting at zero (+1) and
     //  the index starting at 2 (-2)
+  }
+
+  return true;
+}
+
+bool Word::FromHexAbbr(string value) {
+  if (value[0] != 'x') {
+    // no '0x' prefix
+    return false;
+  }
+  for (int i=1; i<value.length(); i++) {
+    if ( !((value[i] >= '0' && value[i] <= '9') || (value[i] >= 'A' && value[i] <= 'F')) ) {
+      // not hex
+      return false;
+    }
+  }
+
+  _value = 0;
+  for (int i=value.length(); i>1; i--) {
+    int hex_val;
+    if (value[i] <= '9') {
+      // decimal digit
+      hex_val = value[i] - '0';
+    } else {
+      // capital letter, A = 10
+      hex_val = value[i] - 'A' + 10;
+    }
+    // shift up 4 bits per remaining hex digit
+    _value += hex_val * (int)pow(2.0, 4*(value.length()-i));
+    // length - i = the digit index witht he last one being zero.
+    // first iteration: length - i = 0
+    // second iteration: length - i = 1
+    // ...
+    // last iteration: length - i = # of hex digits - 1
   }
 
   return true;
