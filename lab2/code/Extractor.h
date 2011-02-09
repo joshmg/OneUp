@@ -16,13 +16,16 @@
 
 class Extractor : public iExtractor {
   private:
+    //! The input file
     std::ifstream _fileStream;
+    //! Keep length after SymbolTable is filled
+    Word _length;
 
   public:
     ~Extractor();
 
     bool Open(std::string filename);
-    Codes::RESULT GetSymbolTable(SymbolTable symbols);
+    Codes::RESULT GetSymbolTable(SymbolTable& symbols);
     Word GetLength() const;
 };
 

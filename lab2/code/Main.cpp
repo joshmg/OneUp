@@ -69,12 +69,13 @@ int main (int argc, char* argv[]) {
     }
 
     Printer printer;
-    if (!printer.Open(outfile)) {
-      cout << "Error: file " << outfile << " could not be opened.\n";
+    RESULT result = printer.Open(infile, outfile);
+    if (result.msg != SUCCESS) {
+      cout << results.Find(result);
       return 2; // i/o error
     } else {
       RESULT result = printer.Print(symbols, length);
-      if (result != SUCCESS) {
+      if (result.msg != SUCCESS) {
         cout << results.Find(result);
         return 3; // syntax error
       }

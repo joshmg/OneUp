@@ -118,25 +118,35 @@ RESULT Printer::_LineToWord(Line& line, SymbolTable& symbols, Word& w) {
 //*** public ***//
 
 Printer::~Printer() {
-  if (_fileStream.is_open()) {
-    _fileStream.close();
+  if (_infile.is_open()) {
+    _inStream.close();
+  }
+  if (_outStream.is_open()) {
+    _outStream.close();
   }
 }
 
-RESULT Printer::Open(string filename) {
+RESULT Printer::Open(string infile, string outfile) {
   //  Closes _fileStream if it is currently open.
-  if (_fileStream.is_open()) {
-    _fileStream.close();
+  if (_inStream.is_open()) {
+    _inStream.close();
+  }
+  if (_outStream.is_open()) {
+    _outStream.close();
   }
 
   //  Opens the file defined by "name".
-  _fileStream.open(filename);
+  _fileStream.open(infile);
+  _fileStream.open(outfile)
 
   //  Determine whether the file was successfully opened and return the appropriate result code.
-  if (_fileStream.is_open()) {
-    return RESULT(SUCCESS);
+  if (_inStream.is_open()) {
+    if (_outStream.is_open()) {
+      return RESULT(SUCCESS);
+    } else {
+      return RESULT(outfile, FILE_NOT_OPENED);
   } else {
-    return RESULT(FILE_NOT_FOUND);
+    return RESULT(infile, FILE_NOT_FOUND);
   }
 }
 

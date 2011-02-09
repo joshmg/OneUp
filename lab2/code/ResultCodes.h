@@ -35,13 +35,16 @@ namespace Codes {
     INV_HEX,        // Non-hex character after x.
     INV_DEC,        // Non-digit after #.
     NON_LD_LIT,     // Literal as an argument to something other than LD.
+
+    FILE_NOT_FOUND, // File not found
+    FILE_NOT_OPENED // File could not be opened
   };
 
   struct RESULT {
     std::string info;
     ERROR msg;
 
-    RESULT(std::string inf = "", RESULT err) {
+    RESULT(std::string inf = "", ERROR err) {
       info = inf;
       msg = err;
     }
@@ -76,6 +79,9 @@ class ResultDecoder {
       _codes[Codes::INV_HEX] = "Non-hex character after 'x'.";
       _codes[Codes::INV_DEC] = "Non-digit after '#'.";
       _codes[Codes::NON_LD_LIT] = "Literals may only be used with the LD instruction.";
+
+      _codes[Codes::FILE_NOT_FOUND] = "File not found."
+      _codes[Codes::FILE_NOT_OPENED] = "File could not be opened."
     }
 
     /*! @brief Looks up a result code.

@@ -15,9 +15,8 @@ string ResultDecoder::Find(const RESULT& result) const {
 	// check if retrieved iterator is the same as the map::end
 	if( it == _codes.end () ) {
 		return "Error: Undefined Result Code Enumeration";
-	}
-	else {
-		return it -> second;
+	} else {
+		return result.info + ": " + (it -> second);
 	}
 
 }

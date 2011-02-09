@@ -15,7 +15,10 @@
 
 class Printer : public iPrinter {
   private:
-    std::ofstream _fileStream;
+    //! The input file.
+    std::ifstream _inStream;
+    //! The output file.
+    std::ofstream _outStream;
 
     /*! @brief Set 0 or more bits of a word.
         @param[in:out] w The word whose bits are to be set.
@@ -65,7 +68,7 @@ class Printer : public iPrinter {
   public:
     ~Printer();
 
-    bool Open(std::string filename);
+    bool Open(std::string infile, std::string outfile);
     Codes::RESULT Print(SymbolTable& symbols, Word file_length);
 };
 

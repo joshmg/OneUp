@@ -15,7 +15,7 @@ class iPrinter {
   private:
 
   public:
-    virtual bool Open(std::string filename) = 0;
+    virtual bool Open(std::string infile, std::string outname) = 0;
 
     virtual Codes::RESULT Print(SymbolTable& symbols, Word file_length) const = 0;
 };
