@@ -1,5 +1,4 @@
 #include "Line.h"
-#include "iWord.h"
 #include "Word.h"
 #include "ResultCodes.h"
 #include <string>
@@ -27,71 +26,71 @@ string Line::_GetNext(string& str) const {
   return next;
 }
 
-void Line::_SetBits(Word &w, int value, int index);
-  w = w.Or( Word(value*pow(2.0, index)) );
-}
-
-RESULT _IsReg(string reg) {
-  if (reg.length() == 0 || reg[0] != 'R') {
-    return RESULT(EMPTY_ARG);
-  }
-
-  if (reg[1] >= '0' && reg[1] <= '7') {
-    return RESULT(SUCCESS);
-  } else {
-    return RESULT(INV_REG);
-  }
-}
-
-int _RegNum(string reg) {
-  return atoi(reg[1]);
-}
-
-RESULT ReadConstant(string constant, int size) {
-  if (constant.length() > 0) {
-    if (constant[0] == '=') {
+RESULT _CheckArgs() {
+  if (arg.length() > 1) {
+    if (arg[0] == '=') {
+      if (_inst != "LD") {
+        return RESULT(NON_LD_LIT);
+      }
       _hasLiteral = true;
     }
 
     Word w;
-    if (constant[0] == '#') {
+    if (arg[0] == '#') {
       // take off # and convert string to integer to word
-      if (w.FromInt(atoi(constant.substr(1)))) {
+      if (w.FromInt(atoi(arg.substr(1)))) {
         // conversion successful
-        if (w.ToInt() < (int)pow(2.0, size-1)) {
-          // store literal, if one
-          if (_hasLiteral) {
-            _literal = w.ToInt();
-          }
-          return RESULT(SUCCESS);
-        } else {
-          // out of range
-          return RESULT(INV_CONST);
-      } else {
-        // out of range
-        return RESULT(INV_DEC);
-      }
-    } else if (constant[0] == 'x') {
-      // take off x and convert hex string to word
-      if (w.FromHexAbbr(constant.substr(1))) {
-        // conversion successful
-        if (w.ToInt() < (int)pow(2.0, size-1)) {
-          // store literal, if one
-          if (_hasLiteral) {
-            _literal = w.ToInt();
-          }
-          return RESULT(SUCCESS);
-        } else {
-          // out of range
-          return RESULT(INV_CONST);
+        
+        // store literal, if one
+        if (_hasLiteral) {
+          w.FromInt(atoi(arg.substr(1)));
+          _literal = w.ToInt();
         }
+        return RESULT(SUCCESS);
       } else {
+          // Not a decimal number
+          return RESULT(INV_DEC);
+      }
+    } else if (arg[0] == 'x') {
+      // take off x and convert hex string to word
+      if (w.FromHexAbbr(arg.substr(1))) {
+        // conversion successful
+        
+        // store literal, if one
+        if (_hasLiteral) {
+          _literal = w.ToInt();
+        }
+        return RESULT(SUCCESS);
+      } else {
+        // Not a hexadecimal number
         return RESULT(INV_HEX);
       }
+    } else if (arg[0] == 'R') {
+      // Register.  0-7?
+      if (arg.length == 2 && isdigit(arg[1])) {
+        int n = atoi(arg[1]);
+        if (n >= 0 && n <= 7) {
+          return SUCCESS;
+        }
+      }
+      // invalid size or register number
+      return RESULT(INV_REG);
+    } else if (isalnum(arg[0])){
+      // Label
+      return RESULT(SUCCESS);
+    } else {
+      // Invalid
+      return RESULT(INV_ARG);
+    }
+  } else {
+    if (arg.length == 1 && isalnum(arg[0]) && arg[0] != 'R' && arg[0] != 'x') {
+      // could be a label
+      return RESULT(SUCCESS);
     }
   }
-  // empty string / not =, #, or x
-  return RESULT(EXP_CONST);
+
+  // Empty or invalid
+  return RESULT(INV_ARG);
 }
 
 RESULT Line::ReadLine (string line) {
@@ -131,7 +130,7 @@ RESULT Line::ReadLine (string line) {
       return RESULT(SUCCESS);
   }
 
-  // Get arugument, if any
+  // Get aruguments, if any
   if (line.length() > 0) {
     // aruguments as one line, separated by commas
     string args = _GetNext(line);
@@ -153,93 +152,39 @@ RESULT Line::ReadLine (string line) {
     }
   }
 
-  // argument types
-  Word w;
-  if (_inst == "ADD" || _inst == "AND") {
+  // check number of arguments
+  if (_inst == "DEBUG" || _inst == "RET") {
+    if (args.size() != 0) {
+      return RESULT(ARG_SIZE);
+    }
+  } else if (_inst == "JSR" || _inst == "JMP" || _inst == "TRAP" ||
+              _inst == ".END" || _inst == ".EQU" || _inst == ".FILL" ||
+              _inst == ".STRZ" || _inst == ".BLKW") {
+    if (args.size() != 1) {
+      return RESULT(ARG_SIZE);
+    }
+  } else if (_inst == "JSRR" || _inst == "JMPR" || _inst == "LD" ||
+              _inst == "LDI" || _inst == "LEA" || _inst == "ST" ||
+              _inst == "STI" || _inst == "NOT") {
+    if (args.size() != 2) {
+      return RESULT(ARG_SIZE);
+    }
+  } else if (_inst == "ADD" || _inst == "AND" || _inst == "LDR" || _inst == "STR") {
     if (args.size() != 3) {
       return RESULT(ARG_SIZE);
     }
-
-    // OP CODE
-    if (_inst == "ADD") {
-      _SetBits(w, 1, 12);
-    } else {
-      // AND
-      _SetBits(w, 3, 12);
+  } else if (_inst == ".ORIG") {
+    // could be zero or one
+    if (args.size() > 2) {
+      return RESULT(ARG_SIZE);
     }
-
-    // Arg 1
-    RESULT result = _IsReg(arg[0]);
-    if (result.msg == SUCCESS) {
-      _SetBits(w, _RegNum(args[0], 9));
-    } else {
-      return arg1;
-    }
-
-    // Arg 2
-    result = _IsReg(arg[1]);
-    if (result.msg == SUCCESS) {
-      _SetBits(w, _RegNum(args[1], 6));
-    } else {
-      return result;
-    }
-
-    // Arg3
-    result = _IsReg(arg[2]);
-    if (result.msg == SUCCESS) {
-      // set register bits
-      _SetBits(w, _RegNum(arg[2]), 0);
-    } else {
-      // not register
-      result = _IsConstant(arg[2], 5);
-      if (result.msg == SUCCESS) {
-        // set immediate bits
-        _SetBits(w, _ReadConstant(arg[2]), 0);
-      } else {
-        // not register or constant
-        return RESULT(INV_ARG);
-      }
-    }
-
-  } else if (_inst == "DEBUG" || _inst == "RET") {
-    // just op code
-    if (_inst == "DEBUG") {
-      _SetBits(w, 8, 12);
-    } else {
-      // RET
-      _SetBits(w, 13, 12);
-    }
-  } else if (_inst == "JSR" || _inst == "JMP") {
-
-
-  } else if (_inst == "JSRR" || _inst == "JMPR") {
-
-
-  } else if (_inst == "LD" || _inst == "LDI" || _inst == "LEA" || _inst == "ST" || _inst == "STI") {
-    
-
-  } else if (_inst == "LDR" || _inst == "STR") {
-
-
-  } else if (_inst == "NOT") {
-
-
-  } else if (_inst == "TRAP") {
-
-
   } else {
-    // Handle psuedo ops
-    if (_inst == ".ORIG") {
-
-    } else if (_inst == ".END" || _inst == ".EQU" || _inst == ".FILL" || _inst == ".STRZ" || _inst == ".BLKW") {
-    
-    } else {
-      // not a real instruction
-      return RESULT(INV_INST);
-    }
+    // not a real instruction
+    return RESULT(INV_INST);
   }
 
-  return SUCCESS;
+  // check arguments for validity
+  return _CheckArgs();
 }
 
 string Line::Label() const {
@@ -262,7 +207,7 @@ string Line::ToString() const {
   return _code;
 }
 
-iWord& ToWord() const {
+Word ToWord() const {
   return _word;
 }
 

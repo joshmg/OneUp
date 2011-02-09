@@ -1,4 +1,4 @@
-/*! @file iExtractor.h
+/*! @file Extractor.h
     @author Andrew Groot
     @brief Definition of the private data for the "Extractor" class.
 */
@@ -7,8 +7,8 @@
 #define EXTRACTOR_H
 
 #include "iExtractor.h"
+#include "Word.h"
 #include "SymbolTable.h"
-#include "iWord.h"
 #include "ResultCodes.h"
 #include <string>
 #include <map>
@@ -23,7 +23,7 @@ class Extractor : public iExtractor {
 
     bool Open(std::string filename);
     Codes::RESULT GetSymbolTable(SymbolTable symbols);
-    iWord& GetLength() const;
+    Word GetLength() const;
 };
 
 #endif

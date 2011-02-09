@@ -6,6 +6,7 @@
 #ifndef iLINE_H
 #define iLINE_H
 
+#include "Word.h"
 #include "ResultCodes.h"
 #include <string>
 
@@ -26,8 +27,6 @@ class iLine {
     virtual int Size() const = 0;
 
     virtual std::string ToString() const = 0;
-
-    virtual iWord& ToWord() const = 0;
 
     virtual bool IsComment() const = 0;
 };

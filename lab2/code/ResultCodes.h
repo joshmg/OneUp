@@ -29,13 +29,12 @@ namespace Codes {
     INV_INST,       // Instruction does not exist
     ARG_SIZE,       // Wrong number of arguments
     EMPTY_ARG,      // Argument is the empty string
-    EXP_REG,        // Expected a register as an arugment
     INV_REG,        // Invalid register number
-    EXP_CONST,      // Expected a constant as an argument
     INV_CONST,      // Constant out of range
     INV_ARG,        // Invalid argument found
     INV_HEX,        // Non-hex character after x.
     INV_DEC,        // Non-digit after #.
+    NON_LD_LIT,     // Literal as an argument to something other than LD.
   };
 
   struct RESULT {
@@ -58,6 +57,7 @@ class ResultDecoder {
         It is static because the result code messages should be available from anywhere.
     */
     std::map<Codes::RESULT, std::string> _codes;
+
   public:
     //! Generates the code-to-message mappings.
     ResultDecoder() {
@@ -75,6 +75,7 @@ class ResultDecoder {
       _codes[Codes::INV_ARG] = "Invalid arugment.";
       _codes[Codes::INV_HEX] = "Non-hex character after 'x'.";
       _codes[Codes::INV_DEC] = "Non-digit after '#'.";
+      _codes[Codes::NON_LD_LIT] = "Literals may only be used with the LD instruction.";
     }
 
     /*! @brief Looks up a result code.

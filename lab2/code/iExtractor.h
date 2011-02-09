@@ -7,8 +7,6 @@
 #define iEXTRACTOR_H
 
 #include "SymbolTable.h"
-#include "iWord.h"
-#include "iLine.h"
 #include "ResultCodes.h"
 #include <string>
 #include <map>
@@ -21,7 +19,7 @@ class iExtractor {
 
     virtual Codes::RESULT GetSymbols(SymbolTable symbols) = 0;
 
-    virtual iWord& GetLength() const = 0;
+    virtual Word GetLength() const = 0;
 };
 
 #endif

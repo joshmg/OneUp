@@ -7,7 +7,6 @@
 #define LINE_H
 
 #include "iLine.h"
-#include "iWord.h"
 #include "ResultCodes.h"
 #include <string>
 #include <vector>
@@ -32,6 +31,7 @@ class Line : public iLine {
         @return True iff ch is a space or a tab.
     */
     bool _IsWS(char ch) const;
+
     /*! @brief Get the next whitespace-free sub-string.
         @param[in] str The string from which to obtain the substring.
         @returns The first whitespace-free substring of str.
@@ -39,45 +39,43 @@ class Line : public iLine {
         If str contains only whitespace, the empty string is returned.
     */
     std::string _GetNext(std::string& str) const;
-    /*! @brief Set 0 or more bits of a word.
-        @param[in:out] w The word whose bits are to be set.
-        @param[in] value An integer corresponding to a bit mask.
-        @param[in] index The starting position of bit-setting.
-        @pre "index" is less than the size of the word.
-        @pre "value" can be contained in |size of word| - "index" bits.
 
-        @note
-        This is essentially a localized bit-wise or.
-
-        @par Examples
-        Word=8, value=1, index=0 => Word=9.\n
-        Word=1F, value=14, index=11 => Word=E01F.
-    */
-    void _SetBits(iWord& w, int value, int index);
-    /*! @brief Tests a string as a valid register.
-        @param[in] reg The string to be tested.
-        @return SUCCESS if reg is in the form RX where x is a number from 0 to 7.
-        Otherwise, an appropriate error is returned.
-    */
-    Codes::RESULT _IsReg(string reg);
-    /*! @brief Get the index of register from a string.
-        @param[in] reg The register string.
-        @pre reg is a valid register.
-        @return The index of register alluded to by reg
-    */
-    int _RegNum(string reg);
-    /*! @brief Tests a string as a valid constant and store any literals.
-        @param[in] constant The string representation of the constant.
-        @param[in] size The number of bits allowed for this constant.
+    /*! @brief Tests a string for validity as an argument.
+        @param[in] arg The string to be checked.
         @return SUCCESS if the string is valid; an appropriate error otherwise.
         
-        @par Acceptable formats
-        Decimal numbers should be preceeded with a "#" symbol.
-        @arg Positive and negative numbers are allowed.
-        Hexadecimal number should be preceeded with an "x".
-        @arg No leading zeros are necessary.
+        @par Criteria for an arugment
+        A valid argument fits into one of the following categories:
+        <ul>
+        <li>Register</li>
+          <ul>
+          <li>Something of the form RX, 0 < X < 7.</li>
+          </ul>
+        <li>Constant</li>
+          <ul>
+          <li>A decimal or hexadecimal value.</li>
+          <li>A decimal value is denoted with a preceding '#'.
+            <ul>
+            <li>Example: #14 = 14 in decimal.</li>
+            </ul>
+          <li>A hexadecimal value is denoted with a preceding 'x'.
+            <ul>
+            <li>Example: x14 = 20 in decimal.<li>
+            <li>Example: xFFFF = -1 in decimal (for 16-bit constant).
+            </ul>
+          <li>Either of these can be a literal (denoted with an '=').
+            <ul>
+            <li>Literals are 
+          </ul>
+
+        <li>Label</li>
+          <ul>
+          <li>
+
+          </ul>
+        <ul>
     */
-    int _ReadConstant(string constant);
+    int _CheckArg(string arg);
 
   public:
     Codes::RESULT ReadLine(std::string line);
@@ -88,7 +86,6 @@ class Line : public iLine {
     int Size() const;
 
     std::string ToString() const;
-    iWord& ToWord() const;
 
     bool HasLiteral() const;
     bool IsComment() const;

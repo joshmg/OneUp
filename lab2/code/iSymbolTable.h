@@ -6,20 +6,20 @@
 #ifndef iSYMBOLTABLE_H
 #define iSYMBOLTABLE_H
 
-#include "iWord.h"
+#include "Word.h"
 #include <string>
 
 class iSymbolTable {
   private:
 
   public:
-    virtual void InsertLabel(std::string label, iWord& addr, bool relocate=false) = 0;
+    virtual void InsertLabel(std::string label, Word addr, bool relocate=false) = 0;
 
-    virtual void InsertLiteral(int value, iWord& addr) = 0;
+    virtual void InsertLiteral(int value, Word addr) = 0;
 
-    virtual iWord& GetLabelAddr(std::string symbol) const = 0;
+    virtual Word GetLabelAddr(std::string symbol) const = 0;
 
-    virtual iWord& GetLiteralAddr(int value) const = 0;
+    virtual Word GetLiteralAddr(int value) const = 0;
 
     virtual bool IsRelocatable(std::string label) const = 0;
 };
