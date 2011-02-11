@@ -1,8 +1,6 @@
-/*! @file Word.cpp
-    @author Joshua Green
-    @author Andrew Groot
-    @brief Implements the declarations in "Word.h".
-*/
+// File:        Word.cpp
+// Written by:  Joshua Green
+//              Andrew Groot
 
 #include "Word.h"
 #include <string>

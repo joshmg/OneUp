@@ -1,3 +1,6 @@
+// File:        Printer.cpp
+// Written by:  Ryan Paulson
+
 #include "Printer.h"
 #include "Word.h"
 #include "Line.h"

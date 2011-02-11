@@ -1,5 +1,6 @@
-// File: ResultCodes.cpp
-// coded by Andrew Canale
+// File:        ResultCodes.cpp
+// Written by:  Andrew Canale
+// Edited by:   Andrew Groot
 
 #include "ResultCodes.h"
 #include <string>

@@ -1,5 +1,5 @@
-// File: Main.cpp
-// Written by Andrew Groot
+// File:        Main.cpp
+// Written by:  Andrew Groot
 
 #include "Extractor.h"
 #include "SymbolTable.h"
