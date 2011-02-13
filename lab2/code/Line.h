@@ -21,6 +21,8 @@ class Line : public iLine {
     vector<std::string> _args;
     //! Holds a literal value, if any.
     int _literal;
+    //! True iff line contained a label.
+    bool _hasLabel;
     //! True iff line contained a literal.
     bool _hasLiteral;
     //! True iff line was a comment.
@@ -84,9 +86,12 @@ class Line : public iLine {
     std::string Instruction() const;
     std::string operator[] (int index) const;
     int Size() const;
+    int Literal() const;
 
     std::string ToString() const;
 
+    bool HasLabel() const;
+    bool IsPseudoOp() const;
     bool HasLiteral() const;
     bool IsComment() const;
 };

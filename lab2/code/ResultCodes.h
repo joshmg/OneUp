@@ -35,6 +35,11 @@ namespace Codes {
     INV_HEX,        // Non-hex character after x.
     INV_DEC,        // Non-digit after #.
     NON_LD_LIT,     // Literal as an argument to something other than LD.
+    ORIG,           // ORIG not first non-comment line
+    ORIG_LABEL,     // ORIG does not have label
+    ORIG_HEX,       // ORIG arg not hex
+    EQU_LABEL,      // EQU does not have label
+    LBL_NOT_FOUND,  // Could not find label
 
     FILE_NOT_FOUND, // File not found
     FILE_NOT_OPENED // File could not be opened
@@ -79,6 +84,11 @@ class ResultDecoder {
       _codes[Codes::INV_HEX] = "Non-hex character after 'x'.";
       _codes[Codes::INV_DEC] = "Non-digit after '#'.";
       _codes[Codes::NON_LD_LIT] = "Literals may only be used with the LD instruction.";
+      _codes[Codes::ORIG] = "First non-comment line should contain \".ORIG\" instruction.";
+      _codes[Codes::ORIG_LABEL] = "\".ORIG\" does not have a label.";
+      _codes[Codes::ORIG_HEX] = "Argument to \".ORIG\" not hex.";
+      _codes[Codes::EQU_LABEL] = "\".EQU\" does not have a label.";
+      _codes[Codes::LBL_NOT_FOUND] = "Label not found.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found."
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened."

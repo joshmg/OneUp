@@ -28,6 +28,8 @@ class iLine {
 
     virtual std::string ToString() const = 0;
 
+    virtual bool IsPsuedoOp() const = 0;
+
     virtual bool IsComment() const = 0;
 };
 

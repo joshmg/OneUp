@@ -19,11 +19,11 @@ class SymbolTable : public iSymbolTable {
 
   public:
     void InsertLabel(std::string label, Word addr, bool relocate=false);
-
     void InsertLiteral(int value, Word addr);
 
-    Word GetLabelAddr(std::string symbol) const;
+    bool Contains(std::string symbol) const;
 
+    Word GetLabelAddr(std::string symbol) const;
     Word GetLiteralAddr(int value) const;
 
     bool IsRelocatable(std::string label) const;

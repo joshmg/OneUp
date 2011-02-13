@@ -19,6 +19,10 @@ void SymbolTable::InsertLiteral(int value, Word addr) {
   
 }
 
+bool SymbolTable::Contains(string symbol) const {
+
+}
+
 Word SymbolTable::GetLabelAddr(string symbol) const {
   
 }

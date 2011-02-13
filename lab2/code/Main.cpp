@@ -48,7 +48,7 @@ int main (int argc, char* argv[]) {
       cout << results.Find(result);
       return 3; // syntax error
     }
-    Word length = extract.Length();
+    Word length = extract.GetLength();
 
     // add trap codes if desired
     if (TRAP_LABELS) {

@@ -17,6 +17,8 @@ class iSymbolTable {
 
     virtual void InsertLiteral(int value, Word addr) = 0;
 
+    virtual void Contains(std::string symbol) const = 0;
+
     virtual Word GetLabelAddr(std::string symbol) const = 0;
 
     virtual Word GetLiteralAddr(int value) const = 0;

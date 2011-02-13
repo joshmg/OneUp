@@ -8,7 +8,7 @@
 using namespace std;
 using namespace Codes;
 
-bool Line::IsWS(char ch) const {
+bool Line::_IsWS(char ch) const {
   return (ch == ' ' || ch == '\t');
 }
 
@@ -26,7 +26,7 @@ string Line::_GetNext(string& str) const {
   return next;
 }
 
-RESULT _CheckArgs() {
+RESULT Line::_CheckArgs() {
   if (arg.length() > 1) {
     if (arg[0] == '=') {
       if (_inst != "LD") {
@@ -94,11 +94,22 @@ RESULT _CheckArgs() {
 }
 
 RESULT Line::ReadLine (string line) {
+  // get code
   _code = line;
+
+  // reset important values
+  _hasLabel = false;
+  _hasLiteral = false;
+  _comment = false;
+
+  if (line.length() == 0) {
+    _comment = true;
+    return RESULT(SUCCESS);
+  }
 
   if ( !IsWS(line[0]) ) {
     // begins with label
-    if ( line[0] = ';' || line == "") {
+    if ( line[0] = ';') {
       // Line contained only a comment or nothing
       _comment = true;
       return RESULT(SUCCESS);
@@ -109,6 +120,7 @@ RESULT Line::ReadLine (string line) {
         // Invalid label
         return RESULT(INVALID_LBL);
       }
+      _hasLabel = true;
     }
     // get instruction
     if (line.length() > 0) {
@@ -203,15 +215,29 @@ int Line::Size() const {
   return _args.size();
 }
 
+int Line::Literal() const {
+  return _literal;
+}
+
+
 string Line::ToString() const {
   return _code;
 }
 
-Word ToWord() const {
-  return _word;
+
+bool Line::HasLabel() const {
+  return _hasLabel;
 }
 
-bool IsComment() {
+bool Line::IsPseudoOp() const {
+  return _inst[0] == '.';
+}
+
+bool Line::HasLiteral() const {
+  return _hasLiteral;
+}
+
+bool Line::IsComment() const {
   return _comment;
 }
 
