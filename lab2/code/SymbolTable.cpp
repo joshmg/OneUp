@@ -11,7 +11,7 @@ using namespace std;
 //    map<int, Word> _literals;
 //    map<std::string, bool> _relocatable;
 
-void SymbolTable::InsertLabel(string label, Word addr, bool relocate=false) {
+void SymbolTable::InsertLabel(string label, Word addr, bool relocate) {
   
 }
 

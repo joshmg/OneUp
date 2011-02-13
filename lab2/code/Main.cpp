@@ -44,7 +44,7 @@ int main (int argc, char* argv[]) {
     // First pass of file, get symbols
     SymbolTable symbols;
     RESULT result = extract.GetSymbols(symbols);
-    if (result != SUCCESS) {
+    if (result.msg != SUCCESS) {
       cout << results.Find(result);
       return 3; // syntax error
     }
@@ -69,12 +69,12 @@ int main (int argc, char* argv[]) {
     }
 
     Printer printer;
-    RESULT result = printer.Open(infile, outfile);
+    result = printer.Open(infile, outfile);
     if (result.msg != SUCCESS) {
       cout << results.Find(result);
       return 2; // i/o error
     } else {
-      RESULT result = printer.Print(symbols, length);
+      result = printer.Print(symbols, length);
       if (result.msg != SUCCESS) {
         cout << results.Find(result);
         return 3; // syntax error

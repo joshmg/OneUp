@@ -34,7 +34,7 @@ class iPrinter {
         @param[in] file_length The size the program should occupy in memory.
         @return SUCCESS iff the object file could be created; otherwise an appropriate error message.
     */
-    virtual Codes::RESULT Print(SymbolTable& symbols, Word file_length) const = 0;
+    virtual Codes::RESULT Print(SymbolTable& symbols, Word& file_length) = 0;
 };
 
 #endif

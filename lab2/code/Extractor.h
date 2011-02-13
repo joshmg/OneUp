@@ -21,12 +21,18 @@ class Extractor : public iExtractor {
     //! Keep length after SymbolTable is filled
     Word _length;
 
+    /*! @brief Creates a string "Line n", with n = pos.
+        @param[in] pos The line number.
+        @return A string as described above.
+    */
+    std::string _LineNumber(int pos);
+
   public:
     //! Closes the input file, if necessary.
     ~Extractor();
 
     bool Open(std::string filename);
-    Codes::RESULT GetSymbolTable(SymbolTable& symbols);
+    Codes::RESULT GetSymbols(SymbolTable& symbols);
     Word GetLength() const;
 };
 

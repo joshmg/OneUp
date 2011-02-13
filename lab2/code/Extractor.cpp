@@ -3,10 +3,12 @@
 
 #include "Extractor.h"
 #include "Word.h"
+#include "Line.h"
 #include "SymbolTable.h"
 #include "ResultCodes.h"
+#include <cstdlib>
 #include <string>
-#include <ssteam> // for line numbers
+#include <sstream> // for line numbers
 #include <map>
 #include <vector>
 #include <fstream>
@@ -14,9 +16,10 @@ using namespace std;
 using namespace Codes;
 
 // private
-string Extractor::_LineNumber(int& pos) {
-  stringstream s << "Line " << pos;
-  return = s.str();
+string Extractor::_LineNumber(int pos) {
+  stringstream s;
+  s << "Line " << pos;
+  return s.str();
 }
 
 // public
@@ -26,18 +29,18 @@ Extractor::~Extractor() {
   }
 }
 
-bool Extractor::Open(std::string filename) {
+bool Extractor::Open(string filename) {
   if (_fileStream.is_open()) {
     _fileStream.close();
   }
 
-  _fileStream.open(filename);
+  _fileStream.open(filename.c_str());
 
   return _fileStream.is_open();
 }
 
-RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
-  _length.fromInt(0); // zero until .ORIG is found
+RESULT Extractor::GetSymbols(SymbolTable& symbols) {
+  _length.FromInt(0); // zero until .ORIG is found
                       // actual length starts at one
   int pos = 0;
   // store literals
@@ -75,17 +78,18 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
             result.info = _LineNumber(pos) + ": .ORIG: ";
             return result;
           }
-
+          
           if (line.Size() == 1) {
-            if (!line[0] == 'x') {
+            if (! line[0][0] == 'x' ) {
               // not hex, error
               return RESULT(ORIG_HEX);
             } else {
-              begin.FromHexAbbr(line);
+              begin.FromHexAbbr(line[0]);
             }
           } else {
             relocatable = true;
           }
+          
         } else if (line.Instruction() == ".END") {
           // .END, do nothing
         } else if (line.Instruction() == ".EQU") {
@@ -96,7 +100,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
             return result;
           }
           if (symbols.Contains(line[0])) {
-            Word w = symbols.GetLabel(line[0]);
+            Word w = symbols.GetLabelAddr(line[0]);
             symbols.InsertLabel(line.Label(), w, symbols.IsRelocatable(line[0]));
           } else if (line[0][0] == 'x') {
             Word w;
@@ -104,29 +108,30 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
             symbols.InsertLabel(line.Label(), w);
           } else if (line[0][0] == '#') {
             Word w;
-            w.FromInt(atoi(line[0].substr(1)));
+            w.FromInt(atoi(line[0].substr(1).c_str()));
             symbols.InsertLabel(line.Label(), w);
           } else {
-            result.msg = LABEL_NOT_FOUND;
+            result.msg = LBL_NOT_FOUND;
             result.info = _LineNumber(pos) + ": " + line[0];
             return result;
           }
+          
         } else if (line.Instruction() == ".FILL") {
           // .FILL
           Word w;
           bool hasvalue = true;
           switch(line[0][0]) {
-            'x': {
+            case 'x': {
               w.FromHexAbbr(line[0]);
             } break;
 
-            '#': {
-              w.FromInt(atoi(line[0].substr(1)));
+            case '#': {
+              w.FromInt(atoi(line[0].substr(1).c_str()));
             } break;
 
             default: {
               if (symbols.Contains(line[0])) {
-                w = symbols.GetLabel(line[0]);
+                w = symbols.GetLabelAddr(line[0]);
               } else {
                 // don't know this value yet
                 hasvalue = false;
@@ -135,7 +140,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
           }
                     
           if (hasvalue && line.HasLabel()) {
-            if (symbols.Contain(line.Label())) {
+            if (symbols.Contains(line.Label())) {
               result.msg = REDEF_LBL;
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
@@ -146,7 +151,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
         } else if (line.Instruction() == ".STRZ") {
           // .STRZ
           if (line.HasLabel()) {
-            if (symbols.Contain(line.Label())) {
+            if (symbols.Contains(line.Label())) {
               result.msg = REDEF_LBL;
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
@@ -154,11 +159,11 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
             symbols.InsertLabel(line.Label(), begin + _length);
           }
           // adding on length of string (+1 for null termination)
-          _length = _length + WORD(line[0].length() + 1);
+          _length = _length + Word(line[0].length() + 1);
         } else if (line.Instruction() == ".BLKW") {
           // .BLKW
           if (line.HasLabel()) {
-            if (symbols.Contain(line.Label())) {
+            if (symbols.Contains(line.Label())) {
               result.msg = REDEF_LBL;
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
@@ -168,19 +173,20 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
           // get arugment
           Word w;
           switch(line[0][0]) {
-            'x': {
+            case 'x': {
               w.FromHexAbbr(line[0]);
             } break;
-            '#': {
-              w.FromInt(atoi(line[0].substr(1)));
+            case '#': {
+              w.FromInt(atoi(line[0].substr(1).c_str()));
             } break;
             default: {
               if (symbols.Contains(line[0])) {
-                w = symbols.GetLabel(line[0]);
+                w = symbols.GetLabelAddr(line[0]);
               } else {
-                result.msg = LABEL_NOT_FOUND;
+                result.msg = LBL_NOT_FOUND;
                 result.info = _LineNumber(pos) + ": " + line[0];
                 return result;
+              }
             } break;
           }
           _length = _length + w;
@@ -188,7 +194,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
       } else {
         // not a pseduo-op
         if (line.HasLabel()) {
-          if (symbols.Contain(line.Label())) {
+          if (symbols.Contains(line.Label())) {
             result.msg = REDEF_LBL;
             result.info = _LineNumber(pos) + ": " + line.Label();
             return result;
@@ -196,21 +202,22 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
           symbols.InsertLabel(line.Label(), begin + _length, relocatable);
         }
         _length++;
-        
       }
+         
 
       if (line.HasLiteral()) {
         literals.push_back(line.Literal());
       }
     }
   }
-
-  for (int i=0; i<literal.size(); i++) {
-    symbols.InsertLiteral(literals[0], _length++);
+  
+  for (int i=0; i<literals.size(); i++) {
+    symbols.InsertLiteral(literals[i], _length);
+    _length++;
   }
 }
 
-Word Extractor::GetLength() {
+Word Extractor::GetLength() const {
   return _length;
 }
 

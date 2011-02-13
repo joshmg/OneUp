@@ -36,7 +36,7 @@ class iSymbolTable {
     /*! @param[in] symbol The symbol to look for.
         @returns True iff "symbol" is in the table.
     */
-    virtual void Contains(std::string symbol) const = 0;
+    virtual bool Contains(std::string symbol) const = 0;
 
 
     /*! @brief Look up the address for a symbol.

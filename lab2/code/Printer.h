@@ -7,6 +7,7 @@
 #define PRINTER_H
 
 #include "iPrinter.h"
+#include "Line.h"
 #include "SymbolTable.h"
 #include "ResultCodes.h"
 #include <string>
@@ -42,7 +43,7 @@ class Printer : public iPrinter {
         @return SUCCESS if reg is in the form RX where x is a number from 0 to 7.
         Otherwise, an appropriate error is returned.
     */
-    Codes::RESULT _IsReg(string reg);
+    Codes::RESULT _IsReg(std::string reg);
 
 
     /*! @brief Get the index of register from a string.
@@ -50,31 +51,14 @@ class Printer : public iPrinter {
         @pre reg is a valid register.
         @return The index of register alluded to by reg
     */
-    int _RegNum(string reg);
-
-
-    /*! @brief Get the index of register from a string.
-        @param[in] reg The register string.
-        @pre reg is a valid register.
-        @return The index of register alluded to by reg
-    */
-    int _RegNum(string reg);
-
-
-    /*! @brief Converts a Line into a Word.
-        @param[in] line The Line to be converted.
-        @param[in] symbols Any symbols that might show up.
-        @param[out] w The Word representation of "line" given "symbols".
-        @return SUCCESS or, if something went wrong, an appropriate error message.
-    */
-    Codes::RESULT _LineToWord(Line line, SymbolTable& symbols, Word& w);
+    int _RegNum(std::string reg);
 
   public:
     //! @brief Closes the input and output files, if necessary.
     ~Printer();
 
     Codes::RESULT Open(std::string infile, std::string outfile);
-    Codes::RESULT Print(SymbolTable& symbols, Word file_length);
+    Codes::RESULT Print(SymbolTable& symbols, Word& file_length);
 };
 
 #endif
