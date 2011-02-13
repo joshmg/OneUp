@@ -53,7 +53,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
     string str;
     Line line;
     // get line, return error with line number if invalid
-    _fileStream >> str;
+    getline(_fileStream, str);
     RESULT result = line.ReadLine(str);
     if (result.msg != SUCCESS) {
       result.info = _LineNumber(pos);
@@ -81,7 +81,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
               // not hex, error
               return RESULT(ORIG_HEX);
             } else {
-              begin.FromHexAbbr(line.substr(1));
+              begin.FromHexAbbr(line);
             }
           } else {
             relocatable = true;
@@ -100,7 +100,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
             symbols.InsertLabel(line.Label(), w, symbols.IsRelocatable(line[0]));
           } else if (line[0][0] == 'x') {
             Word w;
-            w.FromHexAbbr(line[0].substr(1));
+            w.FromHexAbbr(line[0]);
             symbols.InsertLabel(line.Label(), w);
           } else if (line[0][0] == '#') {
             Word w;
@@ -117,7 +117,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
           bool hasvalue = true;
           switch(line[0][0]) {
             'x': {
-              w.FromHexAbbr(line[0].substr(1));
+              w.FromHexAbbr(line[0]);
             } break;
 
             '#': {
@@ -169,7 +169,7 @@ RESULT Extractor::GetSymbolTable(SymbolTable& symbols) {
           Word w;
           switch(line[0][0]) {
             'x': {
-              w.FromHexAbbr(line[0].substr(1));
+              w.FromHexAbbr(line[0]);
             } break;
             '#': {
               w.FromInt(atoi(line[0].substr(1)));

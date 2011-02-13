@@ -18,7 +18,9 @@ class Line : public iLine {
     //! Instruction, if any. Empty string otherwise.
     std::string _inst;
     //! Holds each argument to the instruction, if any.
-    vector<std::string> _args;
+    std::vector<std::string> _args;
+    //! Holds a copy of the line of code.
+    std::string _code;
     //! Holds a literal value, if any.
     int _literal;
     //! True iff line contained a label.
@@ -81,7 +83,7 @@ class Line : public iLine {
           </ul>
         <ul>
     */
-    int _CheckArgs();
+    Codes::RESULT _CheckArgs();
 
   public:
     Codes::RESULT ReadLine(std::string line);

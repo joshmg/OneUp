@@ -154,7 +154,7 @@ bool Word::FromHex(const string& value) {
   return true;
 }
 
-bool Word::FromHexAbbr(string value) {
+bool Word::FromHexAbbr(const string& value) {
   if (value[0] != 'x') {
     // no '0x' prefix
     return false;
@@ -167,7 +167,7 @@ bool Word::FromHexAbbr(string value) {
   }
 
   _value = 0;
-  for (int i=value.length(); i>1; i--) {
+  for (int i=(value.length()-1); i>1; i--) {
     int hex_val;
     if (value[i] <= '9') {
       // decimal digit
@@ -177,7 +177,7 @@ bool Word::FromHexAbbr(string value) {
       hex_val = value[i] - 'A' + 10;
     }
     // shift up 4 bits per remaining hex digit
-    _value += hex_val * (int)pow(2.0, 4*(value.length()-i));
+    _value += hex_val * (int)pow(2.0, 4.0*(value.length()-i-1));
     // length - i = the digit index witht he last one being zero.
     // first iteration: length - i = 0
     // second iteration: length - i = 1

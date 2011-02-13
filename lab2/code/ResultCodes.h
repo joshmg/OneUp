@@ -27,6 +27,8 @@ namespace Codes {
     INV_LBL,        // Label starts with an invalid character
     LBL_WO_INST,    // Label does not accompany an instruction
     INV_INST,       // Instruction does not exist
+    STRZ_NOT_STR,   // Argument to .STRZ not a string
+    END_OF_STR,     // No end quote
     ARG_SIZE,       // Wrong number of arguments
     EMPTY_ARG,      // Argument is the empty string
     INV_REG,        // Invalid register number
@@ -39,7 +41,7 @@ namespace Codes {
     ORIG_HEX,       // ORIG arg not hex
     REQ_LABEL,      // Instruction requires label
     LBL_NOT_FOUND,  // Could not find label
-    REDEF_LABEL,    // Attempt to redefine label
+    REDEF_LBL,      // Attempt to redefine label
 
     FILE_NOT_FOUND, // File not found
     FILE_NOT_OPENED // File could not be opened
@@ -49,7 +51,7 @@ namespace Codes {
     std::string info;
     ERROR msg;
 
-    RESULT(std::string inf = "", ERROR err) {
+    RESULT(ERROR err, std::string inf = "") {
       info = inf;
       msg = err;
     }
@@ -74,11 +76,11 @@ class ResultDecoder {
       _codes[Codes::INV_LBL] = "Label starting with 'R' or 'x'.";
       _codes[Codes::LBL_WO_INST] = "Label is not followed by an instruction.";
       _codes[Codes::INV_INST] = "Instruction not recognized.";
+      _codes[Codes::STRZ_NOT_STR] = "Argument to \".STRZ\" is not a string.";
+      _codes[Codes::END_OF_STR] = "End of string not found.";
       _codes[Codes::ARG_SIZE] = "Invalid number of arguments.";
       _codes[Codes::EMPTY_ARG] = "Argugment is the empty string (misplaced comma?).";
-      _codes[Codes::EXP_REG] = "Expected a register as an argument.";
       _codes[Codes::INV_REG] = "Non-existent register as arugment.";
-      _codes[Codes::EXP_CONST] = "Expected a constant as an argument.";
       _codes[Codes::INV_CONST] = "Constant value out of range.";
       _codes[Codes::INV_ARG] = "Invalid arugment.";
       _codes[Codes::INV_HEX] = "Non-hex character after 'x'.";
@@ -90,8 +92,8 @@ class ResultDecoder {
       _codes[Codes::LBL_NOT_FOUND] = "Label not found.";
       _codes[Codes::REDEF_LBL] = "Attempt to redefine label.";
 
-      _codes[Codes::FILE_NOT_FOUND] = "File not found."
-      _codes[Codes::FILE_NOT_OPENED] = "File could not be opened."
+      _codes[Codes::FILE_NOT_FOUND] = "File not found.";
+      _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";
     }
 
     /*! @brief Looks up a result code.

@@ -3,8 +3,8 @@
 // Edited by:   Andrew Groot
 
 #include "ResultCodes.h"
+#include <map>
 #include <string>
-
 using namespace std;
 using namespace Codes;
 

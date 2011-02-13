@@ -69,7 +69,7 @@ class iLine {
 
     /*! @return True iff the instruction is a pseudo-op (.ORIG, .END, .EQU, etc.).
     */
-    virtual bool IsPsuedoOp() const = 0;
+    virtual bool IsPseudoOp() const = 0;
 
 
     /*! @return True iff a literal was found in the line.
