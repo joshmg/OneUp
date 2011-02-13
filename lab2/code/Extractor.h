@@ -22,6 +22,7 @@ class Extractor : public iExtractor {
     Word _length;
 
   public:
+    //! Closes the input file, if necessary.
     ~Extractor();
 
     bool Open(std::string filename);

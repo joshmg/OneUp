@@ -28,11 +28,13 @@ class Line : public iLine {
     //! True iff line was a comment.
     bool _comment;
 
+
     /*! @brief Tests a character for whitespace.
         @param[in] ch The character to be tested.
         @return True iff ch is a space or a tab.
     */
     bool _IsWS(char ch) const;
+
 
     /*! @brief Get the next whitespace-free sub-string.
         @param[in] str The string from which to obtain the substring.
@@ -42,9 +44,9 @@ class Line : public iLine {
     */
     std::string _GetNext(std::string& str) const;
 
-    /*! @brief Tests a string for validity as an argument.
-        @param[in] arg The string to be checked.
-        @return SUCCESS if the string is valid; an appropriate error otherwise.
+
+    /*! @brief Tests the arguments extracted from the line for validity.
+        @return SUCCESS if the arugments are valid; an appropriate error otherwise.
         
         @par Criteria for an arugment
         A valid argument fits into one of the following categories:
@@ -67,17 +69,19 @@ class Line : public iLine {
             </ul>
           <li>Either of these can be a literal (denoted with an '=').
             <ul>
-            <li>Literals are 
+            <li>Literals are actually stored in the memory of the wi-11 machine.</li>
+            <li>To do this, the '=' is simply placed in front of the '#' or 'x'.</li>
+            </ul>
           </ul>
 
         <li>Label</li>
           <ul>
-          <li>
-
+          <li>A string beginning with an alphanumeric character that is no 'R' or 'x'.</li>
+          </ul>
           </ul>
         <ul>
     */
-    int _CheckArg(string arg);
+    int _CheckArgs();
 
   public:
     Codes::RESULT ReadLine(std::string line);

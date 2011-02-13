@@ -21,7 +21,7 @@
 */
 namespace Codes {
 
-  enum ERRORS {
+  enum ERROR {
     ERROR_0,        // quick descipription
     SUCCESS,        // Operation succeeded
     INV_LBL,        // Label starts with an invalid character
@@ -36,10 +36,10 @@ namespace Codes {
     INV_DEC,        // Non-digit after #.
     NON_LD_LIT,     // Literal as an argument to something other than LD.
     ORIG,           // ORIG not first non-comment line
-    ORIG_LABEL,     // ORIG does not have label
     ORIG_HEX,       // ORIG arg not hex
-    EQU_LABEL,      // EQU does not have label
+    REQ_LABEL,      // Instruction requires label
     LBL_NOT_FOUND,  // Could not find label
+    REDEF_LABEL,    // Attempt to redefine label
 
     FILE_NOT_FOUND, // File not found
     FILE_NOT_OPENED // File could not be opened
@@ -64,7 +64,7 @@ class ResultDecoder {
 
         It is static because the result code messages should be available from anywhere.
     */
-    std::map<Codes::RESULT, std::string> _codes;
+    std::map<Codes::ERROR, std::string> _codes;
 
   public:
     //! Generates the code-to-message mappings.
@@ -85,10 +85,10 @@ class ResultDecoder {
       _codes[Codes::INV_DEC] = "Non-digit after '#'.";
       _codes[Codes::NON_LD_LIT] = "Literals may only be used with the LD instruction.";
       _codes[Codes::ORIG] = "First non-comment line should contain \".ORIG\" instruction.";
-      _codes[Codes::ORIG_LABEL] = "\".ORIG\" does not have a label.";
       _codes[Codes::ORIG_HEX] = "Argument to \".ORIG\" not hex.";
-      _codes[Codes::EQU_LABEL] = "\".EQU\" does not have a label.";
+      _codes[Codes::REQ_LABEL] = "Instruction requires label.";
       _codes[Codes::LBL_NOT_FOUND] = "Label not found.";
+      _codes[Codes::REDEF_LBL] = "Attempt to redefine label.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found."
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened."

@@ -13,8 +13,11 @@
 
 class SymbolTable : public iSymbolTable {
   private:
+    //! Store symbol to address mappings.
     map<std::string, Word> _symbols;
+    //! Store literal value to address mappings.
     map<int, Word> _literals;
+    //! Store relocation information by string.
     map<std::string, bool> _relocatable;
 
   public:

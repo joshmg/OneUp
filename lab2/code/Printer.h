@@ -36,6 +36,7 @@ class Printer : public iPrinter {
     */
     void _SetBits(Word& w, int value, int index);
 
+
     /*! @brief Tests a string as a valid register.
         @param[in] reg The string to be tested.
         @return SUCCESS if reg is in the form RX where x is a number from 0 to 7.
@@ -43,12 +44,6 @@ class Printer : public iPrinter {
     */
     Codes::RESULT _IsReg(string reg);
 
-    /*! @brief Get the index of register from a string.
-        @param[in] reg The register string.
-        @pre reg is a valid register.
-        @return The index of register alluded to by reg
-    */
-    int _RegNum(string reg);
 
     /*! @brief Get the index of register from a string.
         @param[in] reg The register string.
@@ -56,6 +51,15 @@ class Printer : public iPrinter {
         @return The index of register alluded to by reg
     */
     int _RegNum(string reg);
+
+
+    /*! @brief Get the index of register from a string.
+        @param[in] reg The register string.
+        @pre reg is a valid register.
+        @return The index of register alluded to by reg
+    */
+    int _RegNum(string reg);
+
 
     /*! @brief Converts a Line into a Word.
         @param[in] line The Line to be converted.
@@ -66,9 +70,10 @@ class Printer : public iPrinter {
     Codes::RESULT _LineToWord(Line line, SymbolTable& symbols, Word& w);
 
   public:
+    //! @brief Closes the input and output files, if necessary.
     ~Printer();
 
-    bool Open(std::string infile, std::string outfile);
+    Codes::RESULT Open(std::string infile, std::string outfile);
     Codes::RESULT Print(SymbolTable& symbols, Word file_length);
 };
 
