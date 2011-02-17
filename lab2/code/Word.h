@@ -31,6 +31,9 @@ class Word : public iWord {
     bool _HasBit(int) const;
 
   public:
+    // maximum size of a Word
+    const static int MAX_SIZE = 65535;
+
     //! Sets a new Word's value to 0.
     Word();
     /*! @brief Sets a new Word's value to "i".

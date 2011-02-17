@@ -205,7 +205,18 @@ RESULT Line::ReadLine (string line) {
   }
 
   // check number of arguments
-  if (_inst == "DEBUG" || _inst == "RET") {
+  if (_inst.length() > 1 && _inst[0] == 'B' && _inst[1] == 'R') {
+    // make sure valid branch
+    for (int i = 2; i < _inst.length(); i++) {
+      if (_inst[i] != 'P' && _inst[i] != 'N' && _inst[i] != 'Z') {
+        return RESULT(INV_BR);
+      }
+    }
+    // check for 1 arg
+    if (_args.size() != 1) {
+      return RESULT(ARG_SIZE);
+    }
+  } else if (_inst == "DEBUG" || _inst == "RET") {
     if (_args.size() != 0) {
       return RESULT(ARG_SIZE);
     }
@@ -227,7 +238,7 @@ RESULT Line::ReadLine (string line) {
     }
   } else if (_inst == ".ORIG") {
     // could be zero or one
-    if (_args.size() > 2) {
+    if (_args.size() > 1) {
       return RESULT(ARG_SIZE);
     }
   } else {

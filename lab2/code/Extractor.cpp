@@ -23,6 +23,10 @@ string Extractor::_LineNumber(int pos) {
 }
 
 // public
+Extractor::Extractor(int size) {
+  _max_size = size;
+}
+
 Extractor::~Extractor() {
   if (_fileStream.is_open()) {
     _fileStream.close();
@@ -40,8 +44,8 @@ bool Extractor::Open(string filename) {
 }
 
 RESULT Extractor::GetSymbols(SymbolTable& symbols) {
-  _length.FromInt(-1); // -1 until .ORIG is found
-                      // actual length starts at zero
+  _length = -1; // -1 until .ORIG is found
+                       // actual length starts at zero
   int pos = 0;
   // store literals
   vector<int> literals;
@@ -66,7 +70,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
 
     if (! line.IsComment() ) {
       if (line.Instruction() == ".ORIG") {
-        if (_length.ToInt2Complement() >= 0) {
+        if (_length >= 0) {
           return RESULT(ORIG);
         }
       }
@@ -102,15 +106,27 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           }
           if (symbols.Contains(line[0])) {
             Word w = symbols.GetLabelAddr(line[0]);
-            symbols.InsertLabel(line.Label(), w, symbols.IsRelocatable(line[0]));
+            if (symbols.LabelCount() < _max_size) {
+              symbols.InsertLabel(line.Label(), w, symbols.IsRelocatable(line[0]));
+            } else {
+              return RESULT(MAX_S_SIZE);
+            }
           } else if (line[0][0] == 'x') {
             Word w;
             w.FromHexAbbr(line[0]);
-            symbols.InsertLabel(line.Label(), w);
+            if (symbols.LabelCount() < _max_size) {
+              symbols.InsertLabel(line.Label(), w);
+            } else {
+              return RESULT(MAX_S_SIZE);
+            }
           } else if (line[0][0] == '#') {
             Word w;
             w.FromInt(atoi(line[0].substr(1).c_str()));
-            symbols.InsertLabel(line.Label(), w);
+            if (symbols.LabelCount() < _max_size) {
+              symbols.InsertLabel(line.Label(), w);
+            } else {
+              return RESULT(MAX_S_SIZE);
+            }
           } else {
             result.msg = LBL_NOT_FOUND;
             result.info = _LineNumber(pos) + ": " + line[0];
@@ -146,7 +162,11 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
             }
-            symbols.InsertLabel(line.Label(), begin + _length);
+            if (symbols.LabelCount() < _max_size) {
+              symbols.InsertLabel(line.Label(), begin + Word(_length));
+            } else {
+              return RESULT(MAX_S_SIZE);
+            }
           }
           _length++;
         } else if (line.Instruction() == ".STRZ") {
@@ -157,10 +177,14 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
             }
-            symbols.InsertLabel(line.Label(), begin + _length);
+            if (symbols.LabelCount() < _max_size) {
+              symbols.InsertLabel(line.Label(), begin + Word(_length));
+            } else {
+              return RESULT(MAX_S_SIZE);
+            }
           }
           // adding on length of string (+1 for null termination)
-          _length = _length + Word(line[0].length() + 1);
+          _length += line[0].length() + 1;
         } else if (line.Instruction() == ".BLKW") {
           // .BLKW
           if (line.HasLabel()) {
@@ -169,7 +193,11 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
             }
-            symbols.InsertLabel(line.Label(), begin + _length);
+            if (symbols.LabelCount() < _max_size) {
+              symbols.InsertLabel(line.Label(), begin + Word(_length));
+            } else {
+              return RESULT(MAX_S_SIZE);
+            }
           }
           // get arugment
           Word w;
@@ -190,7 +218,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               }
             } break;
           }
-          _length = _length + w;
+          _length += w.ToInt();
         }
       } else {
         // not a pseduo-op
@@ -200,25 +228,35 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             result.info = _LineNumber(pos) + ": " + line.Label();
             return result;
           }
-          symbols.InsertLabel(line.Label(), begin + _length, relocatable);
+          if (symbols.LabelCount() < _max_size) {
+            symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
+          } else {
+            return RESULT(MAX_S_SIZE);
+          }
         }
         _length++;
       }
-         
 
       if (line.HasLiteral()) {
-        literals.push_back(line.Literal());
+        if (literals.size() < (_max_size / 2)) {
+          literals.push_back(line.Literal());
+        }
       }
+    }
+    if ( _length >= (_max_size * 2) || _length >= Word::MAX_SIZE ) {
+      return RESULT(MAX_LENGTH);
     }
   }
   
   for (int i=0; i<literals.size(); i++) {
-    symbols.InsertLiteral(literals[i], _length);
+    symbols.InsertLiteral(literals[i], Word(_length));
     _length++;
   }
+
+  return RESULT(SUCCESS);
 }
 
 Word Extractor::GetLength() const {
-  return _length;
+  return Word(_length);
 }
 
