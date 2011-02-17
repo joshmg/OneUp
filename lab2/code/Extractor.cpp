@@ -81,7 +81,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           }
           
           if (line.Size() == 1) {
-            if (! line[0][0] == 'x' ) {
+            if ( !(line[0][0] == 'x') ) {
               // not hex, error
               return RESULT(ORIG_HEX);
             } else {
