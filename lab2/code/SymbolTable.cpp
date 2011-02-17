@@ -29,8 +29,12 @@ Word SymbolTable::GetLabelAddr(string symbol) const {
   // However, if the contract is violated and symbol is not in the table, an unitialized Word object is returned.
 
   map<string, Word>::const_iterator it = _symbols.find(symbol);
-  if (it == _symbols.end()) return Word();
-  else return it->second;
+  if (it == _symbols.end()) {
+    return Word();
+  }
+  else {
+    return it->second;
+  }
 }
 
 Word SymbolTable::GetLiteralAddr(int value) const {
@@ -38,16 +42,32 @@ Word SymbolTable::GetLiteralAddr(int value) const {
   // However, if the contract is violated and symbol is not in the table, an unitialized Word object is returned.
 
   map<int, Word>::const_iterator it = _literals.find(value);
-  if (it == _literals.end()) return Word();
-  else return it->second;
+  if (it == _literals.end()) {
+    return Word();
+  }
+  else {
+    return it->second;
+  }
 }
 
 bool SymbolTable::IsRelocatable(string label) const {
   // IsRelocatable is designed by contract to require symbol be within Symbol Table;
-  // However, if the contract is violated and symbol is not in the table, true is returned.
+  // However, if the contract is violated and symbol is not in the table, false is returned.
 
   map<string, bool>::const_iterator it = _relocatable.find(label);
-  if (it == _relocatable.end()) return true;
-  else return it->second;
+  if (it == _relocatable.end()) {
+    return false;
+  }
+  else {
+    return it->second;
+  }
+}
+
+int SymbolTable::LabelCount() const {
+  return _symbols.size();
+}
+
+int SymbolTable::LiteralCount() const {
+  return _symbols.size();
 }
 

@@ -13,29 +13,40 @@ using namespace Codes;
 int main (int argc, char* argv[]) {
   bool TRAP_LABELS;
   string infile, outfile;
+  int symbol_length = SYMBOLTABLE_MAX_SIZE;
+  TRAP_LABELS = false;
 
   if (argc == 3) {
     // get the file names
     infile = argv[1];
     outfile = argv[2];
-
-    TRAP_LABELS = false;
-
-  } else if (argc == 4) {
-    // check out '-t'
-    if (argv[1][0] == '-' && argv[1][1] == 't') {
-      TRAP_LABELS = true;
-
-      infile = argv[2];
-      outfile = argv[3];
-    }
   } else {
     // Wrong number of arguments.
     cout << "Error: Usage: " << argv[0] << " [-t] <input_file> <output_file>\n";
     return 1; // usage error
   }
 
-  Extractor extract;
+  for (int i=3;i<argc;i++) {
+    if (argv[i][0] == '-' && argv[i][0] == 's') {
+      string size_flag(argv[i]);
+      string ascii_size = size_flag.substr(1);
+      symbol_length = atoi(ascii_size.c_str());
+    }
+    else if (argv[i][0] == '-' && argv[i][0] == 't') {
+      TRAP_LABELS = true;
+
+      infile = argv[2];
+      outfile = argv[3];
+    }
+  }
+
+  if (symbol_length < 1) {
+    cout << "Invalid maximum symbol length size. Usage: " << argv[0] << " [-s<max_size>]" << endl;
+    return 1;
+  }
+
+  Extractor extract(symbol_length);
+
   ResultDecoder results;
   if (!extract.Open(infile)) {
     cout << "Error: file " << infile << " could not be opened.\n";

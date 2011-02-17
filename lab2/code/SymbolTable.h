@@ -30,6 +30,9 @@ class SymbolTable : public iSymbolTable {
     Word GetLiteralAddr(int value) const;
 
     bool IsRelocatable(std::string label) const;
+
+    int LabelCount() const;
+    int LiteralCount() const;
 };
 
 #endif
