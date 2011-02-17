@@ -40,8 +40,8 @@ bool Extractor::Open(string filename) {
 }
 
 RESULT Extractor::GetSymbols(SymbolTable& symbols) {
-  _length.FromInt(0); // zero until .ORIG is found
-                      // actual length starts at one
+  _length.FromInt(-1); // -1 until .ORIG is found
+                      // actual length starts at zero
   int pos = 0;
   // store literals
   vector<int> literals;
@@ -51,7 +51,8 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
   Word begin(0);
 
   while (_fileStream.good()) {
-    pos++; // next line
+    pos++;  // next line
+            // start at 1
 
     string str;
     Line line;
@@ -64,8 +65,8 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
     }
 
     if (! line.IsComment() ) {
-      if (_length.ToInt() == 0) {
-        if (line.Instruction() != ".ORIG") {
+      if (line.Instruction() == ".ORIG") {
+        if (_length.ToInt2Complement() >= 0) {
           return RESULT(ORIG);
         }
       }

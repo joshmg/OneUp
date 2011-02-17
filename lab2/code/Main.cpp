@@ -16,8 +16,8 @@ int main (int argc, char* argv[]) {
 
   if (argc == 3) {
     // get the file names
-    infile = argv[2];
-    outfile = argv[3];
+    infile = argv[1];
+    outfile = argv[2];
 
     TRAP_LABELS = false;
 
