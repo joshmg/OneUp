@@ -13,7 +13,7 @@ using namespace Codes;
 int main (int argc, char* argv[]) {
   bool TRAP_LABELS;
   string infile, outfile;
-  int symbol_length = SYMBOLTABLE_MAX_SIZE;
+  int symbol_length = SYMBOL_TABLE_MAX_SIZE;
   TRAP_LABELS = false;
 
   if (argc == 3) {
