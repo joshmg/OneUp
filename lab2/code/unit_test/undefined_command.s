@@ -1,8 +1,8 @@
-; Should execute properly
-; Example Program
+; Invalid command
 Lab2EG   .ORIG   x30B0
 count    .FILL   #4
 Begin    LD      ACC,count       ;R1 <- 4
+NOP                              ; This doesnt exist...
          LEA     R0,msg
 loop     TRAP    x22             ;print "hi! "
          ADD     ACC,ACC,#-1     ;R1--

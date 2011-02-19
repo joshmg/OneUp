@@ -1,3 +1,4 @@
+; A valid relocatable program
 Prog   .ORIG
 X      .FILL	Y
 Halt   .EQU	x25

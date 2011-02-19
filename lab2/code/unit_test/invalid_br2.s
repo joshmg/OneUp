@@ -1,4 +1,5 @@
+; Invalid Branch Qualifiers
 Prog .ORIG
 HALT .EQU x25
-Begin BR Begin ; this shouldnt be valid
+Begin BR Begin ; This shouldnt be valid
      .END Begin

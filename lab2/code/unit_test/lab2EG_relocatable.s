@@ -1,6 +1,5 @@
-; Should execute properly
-; Example Program
-Lab2EG   .ORIG   x30B0
+;Example Program -- Relocatable: should be okay.
+Lab2EG   .ORIG
 count    .FILL   #4
 Begin    LD      ACC,count       ;R1 <- 4
          LEA     R0,msg

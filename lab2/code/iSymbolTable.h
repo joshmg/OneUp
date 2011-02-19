@@ -8,6 +8,7 @@
 
 #include "Word.h"
 #include <string>
+#include <map>
 
 /*! @brief Stores symbols and literals extracted from a source file.
 
@@ -63,6 +64,8 @@ class iSymbolTable {
         @returns True iff the symbol is relocatable.
     */
     virtual bool IsRelocatable(std::string label) const = 0;
+
+    virtual const std::map<int, Word>* GetLiterals() const = 0;
 };
 
 #endif
