@@ -1,12 +1,15 @@
 // File:        Printer.cpp
 // Written by:  Ryan Paulson
+//              Andrew Groot
 
 #include "Printer.h"
 #include "Word.h"
 #include "Line.h"
 #include "SymbolTable.h"
 #include "ResultCodes.h"
+#include "iots.h"
 #include <string>
+#include <vector>
 #include <cstdlib> // for atoi()
 #include <cmath> // for pow()
 using namespace std;
@@ -35,164 +38,100 @@ int Printer::_RegNum(string reg) {
 
 void Printer::_SetBits(std::string reg, Word& initial_mem, int& bit_offset) {
   switch (reg[1]) {
-    case "0": for (int i = 0; i < 3; i++) {
-                initial_mem.setBit(bit_offset, false);
+    case '0': for (int i = 0; i < 3; i++) {
+                initial_mem.SetBit(bit_offset, false);
                 bit_offset--;
               }
               break;
-    case "1": for (int i = 0; i < 3; i++) {
+    case '1': for (int i = 0; i < 3; i++) {
                 if (i != 2) {
-                  initial_mem.setBit(bit_offset, false);
+                  initial_mem.SetBit(bit_offset, false);
                 } else {
-                  initial_mem.setBit(bit_offset, true);
+                  initial_mem.SetBit(bit_offset, true);
                 }
                 bit_offset--;
               }
               break;
-    case "2": for (int i = 0; i < 3; i++) {
+    case '2': for (int i = 0; i < 3; i++) {
                 if (i != 1) {
-                  initial_mem.setBit(bit_offset, false);
+                  initial_mem.SetBit(bit_offset, false);
                 } else {
-                  initial_mem.setBit(bit_offset, true);
+                  initial_mem.SetBit(bit_offset, true);
                 }
                 bit_offset--;
               }
               break;
-    case "3": for (int i = 0; i < 3; i++) {
+    case '3': for (int i = 0; i < 3; i++) {
                 if (i == 0) {
-                  initial_mem.setBit(bit_offset, false);
+                  initial_mem.SetBit(bit_offset, false);
                 } else {
-                  initial_mem.setBit(bit_offset, true);
+                  initial_mem.SetBit(bit_offset, true);
                 }
                 bit_offset--;
               }
               break;
-    case "4": for (int i = 0; i < 3; i++) {
+    case '4': for (int i = 0; i < 3; i++) {
                 if (i != 0) {
-                  initial_mem.setBit(bit_offset, false);
+                  initial_mem.SetBit(bit_offset, false);
                 } else {
-                  initial_mem.setBit(bit_offset, true);
+                  initial_mem.SetBit(bit_offset, true);
                 }
                 bit_offset--;
               }
               break;
-    case "5": for (int i = 0; i < 3; i++) {
+    case '5': for (int i = 0; i < 3; i++) {
                 if (i == 1) {
-                  initial_mem.setBit(bit_offset, false);
+                  initial_mem.SetBit(bit_offset, false);
                 } else {
-                  initial_mem.setBit(bit_offset, true);
+                  initial_mem.SetBit(bit_offset, true);
                 }
                 bit_offset--;
               }
               break;
-    case "6": for (int i = 0; i < 3; i++) {
+    case '6': for (int i = 0; i < 3; i++) {
                 if (i == 2) {
-                  initial_mem.setBit(bit_offset, false);
+                  initial_mem.SetBit(bit_offset, false);
                 } else {
-                  initial_mem.setBit(bit_offset, true);
+                  initial_mem.SetBit(bit_offset, true);
                 }
                 bit_offset--;
               }
               break;
-    case "7": for (int i = 0; i < 3; i++) {
-                initial_mem.setBit(bit_offset, true);
+    case '7': for (int i = 0; i < 3; i++) {
+                initial_mem.SetBit(bit_offset, true);
                 bit_offset--;
               }
               break;
   }
 }
 
-// This function can't actually be used but the skeleton could be useful.
-/*
-RESULT Printer::_LineToWord(Line line, SymbolTable& symbols, Word& w) {
-  string inst = line.Instruction();
+Word Printer::_ParsePgoffset9(const string& op, const SymbolTable& symbols) {
+  Word value;
 
-  // do something different for each argument type
-  if (inst == "ADD" || inst == "AND") {
-    if (line.Size() != 3) {
-      return RESULT(ARG_SIZE);
-    }
-
-    // OP CODE
-    if (inst == "ADD") {
-      _SetBits(w, 1, 12);
-    } else {
-      // AND
-      _SetBits(w, 3, 12);
-    }
-
-    // Arg 1
-    RESULT result = _IsReg(line[0]);
-    if (result.msg == SUCCESS) {
-      _SetBits(w, _RegNum(line[0]), 9);
-    } else {
-      return result;
-    }
-
-    // Arg 2
-    result = _IsReg(line[1]);
-    if (result.msg == SUCCESS) {
-      _SetBits(w, _RegNum(line[1]), 6);
-    } else {
-      return result;
-    }
-
-    // Arg3
-    result = _IsReg(line[2]);
-    if (result.msg == SUCCESS) {
-      // set register bits
-      _SetBits(w, _RegNum(line[2]), 0);
-    } else {
-      // not register
-      result = _IsConstant(line[2], 5);
-      if (result.msg == SUCCESS) {
-        // set immediate bits
-        _SetBits(w, _ReadConstant(line[2]), 0);
-      } else {
-        // not register or constant
-        return RESULT(INV_ARG);
-      }
-    }
-
-  } else if (inst == "DEBUG" || inst == "RET") {
-    // just op code
-    if (inst == "DEBUG") {
-      _SetBits(w, 8, 12);
-    } else {
-      // RET
-      _SetBits(w, 13, 12);
-    }
-  } else if (inst == "JSR" || inst == "JMP") {
-
-
-  } else if (inst == "JSRR" || inst == "JMPR") {
-
-
-  } else if (inst == "LD" || inst == "LDI" || inst == "LEA" || inst == "ST" || inst == "STI") {
-
-
-  } else if (inst == "LDR" || inst == "STR") {
-
-
-  } else if (inst == "NOT") {
-
-
-  } else if (inst == "TRAP") {
-
-
-  } else {
-    // Handle psuedo ops
-    if (inst == ".ORIG") {
-
-    } else if (inst == ".END" || inst == ".EQU" || inst == ".FILL" || inst == ".STRZ" || inst == ".BLKW") {
-
-    } else {
-      // not a real instruction
-      return RESULT(INV_INST);
-    }
+  if (op[0] == '#') {
+    // decimal operand
+    value.FromInt(atoi(op.substr(1)));
   }
+  else if (op[0] == 'x') {
+    // Hex operand
+    value.FromHexAbbr(op);
+  } else {
+    // label operand, perviously defined, already checked
+    value = symbols.GetLabelAddr(op);
+  }
+
+  return value;
 }
-*/
+
+void Printer::_LineListing(const Word& current_address, const Word& value, const Line& current_line) {
+  cout << '(' << current_address.ToHex().substr(2) << ')'
+              << ' ' << value.ToHex().substr(2) << ' ' << value.ToStr() << ' '
+              << _InFileData(pos, current_line);
+}
+
+string Printer::_InFileData(const int line_number, const Line& current_line) {
+  return "(" + string(4 - num.length(), ' ') + itos(line_number) + ") " + current_line.ToString() + '\n';
+}
 
 //*** public ***//
 
@@ -230,1208 +169,606 @@ RESULT Printer::Open(string infile, string outfile) {
   }
 }
 
-RESULT Printer::Print(SymbolTable& symbols, Word& file_length, Word& initial_load) {
+RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
   string input_line;
-  Word current_address = initial_load;
+  Word current_address(0);
+  int initial_load = 0;
+  int pos = 0;
+  bool relocatable = false;
 
   while (_inStream.good()) {
     getline(_inStream, input_line);
+    pos++; // line number
 
-    Line current_line = Line::ReadLine(input_line);
+    Line current_line;
+    current_line.ReadLine(input_line);
+
     int bit_offset = 11;
+    const int listing_offset = 30;
 
     if (! current_line.IsComment()) {
       string inst = current_line.Instruction();
 
-
-      if (strcmp(inst, ".ORIG") == 0) {
+      if (inst == ".ORIG") {
         // Header record
-        _outStream << "H" << current_line.Label();
+        _outStream << "H" << current_line.Label() + string(6-current_line.Label().length(), ' ');
 
-        string str = initial_load.ToHex();
-        // Strip the 0x and print the initial load address
-        _outStream << str.substr(2,4) << "\n";
+        if (current_line.Size() == 1) {
+          Word addr;
+          addr.FromHexAbbr(current_line[0]);
 
-        str = file_length.ToHex();
+          // Initial load address
+          _outStream << addr.ToHex().substr(2,4);
+          current_address = current_address + addr;
+          initial_load += addr.ToInt();
+        } else {
+          relocatable = true;
+        }
+
         // Strip the 0x and print the segment length
-        _outStream << str.substr(2,4) << "\n";
-      } else if (strcmp(inst, ".BLKW") == 0) {
+        _outStream << file_length.ToHex().substr(2,4) << "\n";
+
+        //*** listing output
+        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+
+      } else if (inst == ".BLKW") {
         // Block pseudo-op
         string op = current_line[0];
 
-        int value = 0;
+        Word value = _ParsePgoffset9(op, symbols);
 
-        if (op[0] == "#") {
-          // Decimal operand
-          bool neg = false;
+        current_address = current_address + value;
 
-          if(op[1] == "-") {
-            neg = true;
-          }
-          if (neg) {
-            for (int i = 2; i < op.length(); i++) {
-              value *= 10;
-              value += op[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op.length(); i++) {
-              value *= 10;
-              value += op[i] - '0';
-            }
-          }
-        }
-        else if (op[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op.substr(1));
+        //*** listing output
+        cout << '(' << current_address.ToHex().substr(2) << ')'
+              << string(listing_offset - 6, ' ')  // already printed 6 chars
+              << _InFileData(pos, current_line);
 
-          value = temp.ToInt();
-        }
-
-        while (value > 0) {
-          // Text Records
-          _outStream << "T";
-
-          // Print address to be reserved
-          _outStream << current_address.ToHex().substr(2,4);
-          current_address++;
-
-          // Print a non-initialization
-          _outStream << "0000";
-
-          _outStream << "\n";
-
-          value--;
-        }
-      } else if (strcmp(inst, ".FILL") == 0) {
+      } else if (inst == ".FILL") {
         // Fill pseudo-op
         string op = current_line[0];
-
-        Word value = new Word();
-
-        if (op[0] == "#") {
-          // Decimal operand
-          int temp = 0;
-          bool neg = false;
-
-          if(op[1] == "-") {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op.length(); i++) {
-              temp *= 10;
-              temp += op[i] - '0';
-            }
-            temp *= -1;
-          }
-          else {
-            for (int i = 1; i < op.length(); i++) {
-              temp *= 10;
-              temp += op[i] - '0';
-            }
-          }
-
-          value = new Word(temp);
-        } else if (op[0] == "x") {
-          // Hex operand
-          value.FromHexAbbr(op.substr(1));
-        }
+        Word value = _ParsePgoffset9(op, symbols);
 
         // Text Record
-        _outStream << "T";
+        if (symbols.IsRelocatable(op) && relocatable) {
+          _outStream << 'W';
+        } else {
+          _outStream << 'T';
+        }
 
         // Print address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // Print initial memory value
-        _outStream << value.ToHex().substr(2,4);
+        _outStream << value.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, ".STRZ") == 0) {
+        //*** listing output
+        _LineListing(current_address, value, current_line);
+
+      } else if (inst == ".STRZ") {
         // String pseudo-op
         string op = current_line[0];
 
         for (int i = 0; i < op.length(); i++) {
-          Word character = new Word(atoi(op[i]);
+          Word character(atoi(op[i]));
 
           // Text Record
-          _outStream << "T";
+          _outStream << 'T';
 
           // Print the address of the current character
           _outStream << current_address.ToHex().substr(2,4);
           current_address++;
 
           // Print the hex representing the current character
-          _outStream << character.ToHex().substr(2,4);
+          _outStream << character.ToHex().substr(2,4) << "\n";
 
-          _outStream << "\n";
+          //*** listing output 1
+          _LineListing(current_address, value, current_line);
         }
 
         // Text record for null character at string termination
-        _outStream << "T" << current_address.ToHex().substr(2,4); << "0000";
+        _outStream << 'T' << current_address.ToHex().substr(2,4); << "0000\n";
         current_address++;
 
-        _outStream << "\n";
-      } else if (strcmp(inst, "ADD") == 0) {
-        // ADD instruction
+        //*** listing output 2
+        cout << '(' << current_address.ToHex().substr(2) << ')'
+              << ' ' << string(4, '0') << ' ' << string(16, '0') << ' '
+              << _InFileData(pos, current_line);
+
+      } else if (inst == "ADD" || inst == "AND") {
+        // ADD-like instructions
         // Text Record
-        _outStream << "T";
+        _outStream << 'T';
 
         // Print address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
-        initial_mem.setBit(12, true);
+        initial_mem.SetBit(12, true);
+        if (inst == "AND") {
+          initial_mem.SetBit(14, true);
+        }
 
         // Set bits for destination register
-        _SetBits(current_line[0], initial_mem, bit_offset);
+        if (current_line[0][0] == 'R') {
+          _SetBits(current_line[0], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[0])) {
+          _SetBits(current_line[0], initial_mem, bit_offset);
+        } else {
+          RESULT result(LBL_NOT_FOUND);
+          result.info = current_line[0] + ": ";
+          return result;
+        }
 
         // Set bits for source register 1
-        _SetBits(current_line[1], initial_mem, bit_offset);
+        if (current_line[1][0] == 'R') {
+          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[1])) {
+          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else {
+          RESULT result(LBL_NOT_FOUND);
+          result.info = current_line[1] + ": ";
+          return result;
+        }
 
         string op3 = current_line[2];
 
-        if (symbols.Contains(op3)) {
-          // Set appropriate bits in initial_mem to match appropriate symbol value
-          Word value = symbols.getLabelAddr(op3);
-
-          for (int i = 4; i >= 0; i--;) {
-            initial_mem.setBit(i, value[i]);
-          }
-        }else if (op3[0] == "R") {
+        if (op3[0] == 'R') {
           // Set next 3 bits to 0
           _SetBits("R0", initial_mem, bit_offset);
 
           // Set bits for source register 2
           _SetBits(op3, initial_mem, bit_offset);
+
         } else {
-          initial_mem.setBit(bit_offset, true);
+          initial_mem.SetBit(bit_offset, true);
           bit_offset--;
 
-          if (op3[0] == "#") {
-            // Decimal operand
-            int value = 0;
-            bool neg = false;
+          string op = current_line[0];
+          Word value = _ParsePgoffset9(op);
 
-            if(op3[1] == '-') {
-              neg = true;
-            }
-
-            if(neg) {
-              for (int i = 2; i < op3.length(); i++) {
-                value *= 10;
-                value += op3[i] - '0';
-              }
-              value *= -1;
-            }
-            else {
-              for (int i = 1; i < op3.length(); i++) {
-                value *= 10;
-                value += op3[i] - '0';
-              }
-            }
-
-            Word temp = new Word(value);
-
-            for (int i = 4; i >= 0; i--;) {
-              initial_mem.setBit(i, temp[i]);
-            }
-          } else if (op3[0] == "x") {
-            // Hex operand
-            Word temp = new Word();
-            temp.FromHexAbbr(op3.substr(1));
-
-            for( int i = 4; i >= 0; i--;) {
-              initial_mem.setBit(i, temp[i]);
-            }
+          for( int i = 4; i >= 0; i--;) {
+            initial_mem.SetBit(i, temp[i]);
           }
         }
         // **End parsing instruction**
 
         // Print the instruction in hex
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, "AND") == 0) {
-        // AND instruction
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line);
+
+      } else if (inst == "JSR" || inst == "JMP") {
+        // JSR Instructions
         // Text Record
-        _outStream << "T";
-
-        // Print address to be initialized
-        _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
-
-        // **Begin parsing instruction**
-        Word initial_mem = new Word();
-
-        // Set bits for opcode
-        initial_mem.setBit(14, true);
-        initial_mem.setBit(12, true);
-
-        // Set bits for destination register
-        _SetBits(current_line[0], initial_mem, bit_offset);
-
-        // Set bits for source register 1
-        _SetBits(current_line[1], initial_mem, bit_offset);
-
-        string op3 = current_line[2];
-
-        if (symbols.Contains(op3)) {
-          // Set appropriate bits in initial_mem to match appropriate symbol value
-          Word value = symbols.getLabelAddr(op3);
-
-          for (int i = 4; i >= 0; i--;) {
-            initial_mem.setBit(i, value[i]);
-          }
-        }else if (op3[0] == "R") {
-          // Set next 3 bits to 0
-          _SetBits("R0", initial_mem, bit_offset);
-
-          // Set bits for source register 2
-          _SetBits(op3, initial_mem, bit_offset);
-        } else {
-          initial_mem.setBit(bit_offset, true);
-          bit_offset--;
-
-          if (op3[0] == "#") {
-            // Decimal operand
-            int value = 0;
-            bool neg = false;
-
-            if(op3[1] == '-') {
-              neg = true;
-            }
-
-            if(neg) {
-              for (int i = 2; i < op3.length(); i++) {
-                value *= 10;
-                value += op3[i] - '0';
-              }
-              value *= -1;
-            }
-            else {
-              for (int i = 1; i < op3.length(); i++) {
-                value *= 10;
-                value += op3[i] - '0';
-              }
-            }
-
-            Word temp = new Word(value);
-
-            for (int i = 4; i >= 0; i--;) {
-              initial_mem.setBit(i, temp[i]);
-            }
-          } else if (op3[0] == "x") {
-            // Hex operand
-            Word temp = new Word();
-            temp.FromHexAbbr(op3.substr(1));
-
-            for (int i = 4; i >= 0; i--;) {
-              initial_mem.setBit(i, temp[i]);
-            }
-          }
-        }
-        // **End parsing instruction**
-
-        // Printthe instruction in hex
-        _outStream << initial_mem.ToHex().substr(2,4);
-
-        _outStream << "\n";
-      } else if (strcmp(inst, "JSR") == 0) {
-        // JSR Instruction
-        // Text Record
-        _outStream << "T";
+        _outStream << 'T';
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
-        initial_mem.setBit(14, true);
+        initial_mem.SetBit(14, true);
+        if (inst == "JSR") {
+          // set link bit
+          initial_mem.SetBit(11, true);
+        }
 
-        // Set link bit
-        // **To be changed, currently sets to 0**
-        _SetBits("R0", initial_mem, bit_offset);
+        bit_offset -= 3;
 
         string op = current_line[0];
+        Word value = _ParsePgoffset9(op, symbol);
 
-        if (symbols.Contains(op)) {
-          Word temp = symbols.GetLabelAddr(op);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
+        if (relocatable) {
+          if (! symbols.IsRelocatable(op)) {
+            RESULT result(ABS_REL);
+            result.info = op + ": ";
+            return result;
           }
-        } else {
-          if (op3[0] == "#") {
-            // Decimal operand
-            int value = 0;
-            bool neg = false;
+        }
 
-            if(op3[1] == '-') {
-              neg = true;
-            }
-
-            if(neg) {
-              for (int i = 2; i < op3.length(); i++) {
-                value *= 10;
-                value += op3[i] - '0';
-              }
-              value *= -1;
-            }
-            else {
-              for (int i = 1; i < op3.length(); i++) {
-                value *= 10;
-                value += op3[i] - '0';
-              }
-            }
-
-            Word temp = new Word(value);
-
-            while (bit_offset >= 0) {
-              initial_mem.setBit(bit_offset, temp[bit_offset]);
-              bit_offset--;
-            }
-          } else if (op3[0] == "x") {
-            // Hex operand
-            Word temp = new Word();
-            temp.FromHexAbbr(op3.substr(1));
-
-            while (bit_offset >= 0) {
-              initial_mem.setBit(bit_offset, temp[bit_offset]);
-              bit_offset--;
-            }
-          }
+        while (bit_offset >= 0) {
+          initial_mem.SetBit(bit_offset, value[bit_offset]);
+          bit_offset--;
         }
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, "JSRR") == 0) {
-        // JSRR Instruction
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line);
+
+      } else if (inst == "JSRR" || inst == "JMPR") {
+        // JSRR Instructions
         // Text Record
-        _outStream << "T";
+        _outStream << 'T';
 
         _outStream << current_address.ToHex.substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
-        initial_mem.setBit(15, true);
-        initial_mem.setBit(14, true);
+        initial_mem.SetBit(15, true);
+        initial_mem.SetBit(14, true);
+        if (inst == "JSRR") {
+          // set link bit
+          initial_mem.SetBit(11, true);
+        }
 
-        // Set link bit
-        // **To be changed, currently sets to 0**
-        _SetBits("R0", initial_mem, bit_offset);
+        bit_offset -= 3;
 
         // Set bits for base register
-        _SetBits(current_line[0], initial_mem, bit_offset);
+        if (current_line[1][0] == 'R') {
+          _SetBits(current_line[0], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[1])) {
+          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else {
+          RESULT result(LBL_NOT_FOUND);
+          result.info = current_line[1] + ": ";
+          return result;
+        }
 
-        string op2 = current_line[1];
+        string op = current_line[1];
 
-        if (symbols.Contains(op2)) {
-          Word temp = symbols.GetLabelAddr(op2);
+        Word value = _ParsePgoffset9(op, symbols);
 
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op2[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op2[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op2[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op2.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
+        while (bit_offset >= 0) {
+          initial_mem.SetBit(bit_offset, value[bit_offset]);
+          bit_offset--;
         }
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, "LD")) {
-        // LD Instruction
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line)
+
+      } else if (inst == "LD" || inst == "LDI" || inst == "LEA" || inst == "ST" || inst == "STI") {
+        // LD-like Instructions
         // Text Record
-        _outStream << "T";
+        if (relocatable) {
+          _outStream << 'R';
+        } else {
+          _outStream << 'T';
+        }
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
-        initial_mem.setBit(13, true);
+        initial_mem.SetBit(13, true);
+        if (inst == "LDI") {
+          initial_mem.SetBit(15, true);
+
+        } else if (inst == "LEA") {
+          initial_mem.SetBit(15, true);
+          initial_mem.SetBit(14, true);
+
+        } else if (inst == "ST") {
+          initial_mem.SetBit(12, true);
+
+        } else if (inst == "STI") {
+          initial_mem.SetBit(15, true);
+          initial_mem.SetBit(12, true);
+        }
 
         // Set bits for destination register
-        _SetBits(current_line[0], initial_mem, bit_offset);
+        if (current_line[1][0] == 'R') {
+          _SetBits(current_line[0], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[1])) {
+          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else {
+          RESULT result(LBL_NOT_FOUND);
+          result.info = current_line[1] + ": ";
+          return result;
+        }
+
+        bit_offset -= 3;
 
         string op2 = current_line[1];
 
         if (current_line.HasLiteral()) {
+          // LD only -- already checked
           Word temp = symbols.GetLiteralAddr(current_line.Literal());
 
           while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
+            initial_mem.SetBit(bit_offset, temp[bit_offset]);
           }
         } else if (symbols.Contains(op2)) {
           Word temp = symbols.GetLabelAddr(op2);
 
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-          }
-        } else if (op2[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op2[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
+          if (relocatable) {
+            if (! symbols.IsRelocatable(op2)) {
+              RESULT result(ABS_REL);
+              result.info = op2 + ": ";
+              return result;
             }
           }
 
-          Word temp = new Word(value);
-
           while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
+            initial_mem.SetBit(bit_offset, temp[bit_offset]);
           }
-        } else if (op2[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op2.substr(1));
+        } else {
+          if (relocatable) {
+            return RESULT(ABS_REL);
+          }
+
+          Word value = _ParsePgoffset9(op2, symbols);
 
           while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
+            initial_mem.SetBit(bit_offset, value[bit_offset]);
             bit_offset--;
           }
         }
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, "LDI") == 0) {
-        // LDI Instruction
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line);
+
+      } else if (inst == "LDR" || inst == "STR") {
+        // LDR-like Instructions
         // Text Record
-        _outStream << "T";
+        _outStream << 'T';
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
-        initial_mem.setBit(15, true);
-        initial_mem.setBit(13, true);
-
-        // Set bits for destination register
-        _SetBits(current_line[0], initial_mem, bit_offset);
-
-        string op2 = current_line[1];
-
-        if (current_line.HasLiteral()) {
-          Word temp = symbols.GetLiteralAddr(current_line.Literal());
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-          }
-        } else if (symbols.Contains(op2)) {
-          Word temp = symbols.GetLabelAddr(op2);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-          }
-        } else if (op2[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op2[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op2[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op2.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
+        initial_mem.SetBit(13, true);
+        initial_mem.SetBit(14, true);
+        if (inst == "STR") {
+          initial_mem.SetBit(12, true);
         }
-        // **End parsing instruction**
-
-        _outStream << initial_mem.ToHex().substr(2,4);
-
-        _outStream << "\n";
-      } else if (strcmp(inst, "LDR") == 0) {
-        // LDR Instruction
-        // Text Record
-        _outStream << "T";
-
-        // Print the address to be initialized
-        _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
-
-        // **Begin parsing instruction**
-        Word initial_mem = new Word();
-
-        // Set bits for opcode
-        initial_mem.setBit(14, true);
-        initial_mem.setBit(13, true);
 
         // Set bits for destination register
-        _SetBits(current_line[0], initial_mem, bit_offset);
+        if (current_line[0][0] == 'R') {
+          _SetBits(current_line[0], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[0])) {
+          _SetBits(current_line[0], initial_mem, bit_offset);
+        } else {
+          RESULT result(LBL_NOT_FOUND);
+          result.info = current_line[0] + ": ";
+          return result;
+        }
 
         // Set bits for base register
-        _SetBits(current_line[1], initial_mem, bit_offset);
+        if (current_line[1][0] == 'R') {
+          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[1])) {
+          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else {
+          RESULT result(LBL_NOT_FOUND);
+          result.info = current_line[1] + ": ";
+          return result;
+        }
+
+        bit_offset -= 6;
 
         string op3 = current_line[2];
 
-        if (symbols.Contains(op3)) {
-          Word temp = symbols.GetLabelAddr(op3);
+        Word value = _ParsePgoffset9(op3, symbols);
 
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-          }
-        } else if (op3[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op3[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op3.length(); i++) {
-              value *= 10;
-              value += op3[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op3.length(); i++) {
-              value *= 10;
-              value += op3[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op3[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op3.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
+        while (bit_offset >= 0) {
+          initial_mem.SetBit(bit_offset, value[bit_offset]);
+          bit_offset--;
         }
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, "LEA") == 0) {
-        // LEA Instruction
-        // Text Record
-        _outStream << "T";
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line);
 
-        // Print the address to be initialized
-        _outStream << current_address.ToHex().substr(2,4);
-
-        // **Begin parsing instruction**
-        Word initial_mem = new Word();
-
-        // Set bits for opcode
-        initial_mem.setBit(15, true);
-        initial_mem.setBit(14, true);
-        initial_mem.setBit(13, true);
-
-        // Set bits for destination register
-        _SetBits(current_line[0], initial_mem, bit_offset);
-
-        string op2 = current_line[1];
-
-        if (current_line.HasLiteral()) {
-          Word temp = symbols.GetLiteralAddr(current_line.Literal());
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (symbols.Contains(op2)) {
-          Word temp = symbols.GetLabelAddr(op2);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op2[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op2[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op3[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op2.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        }
-        // **End parsing instruction**
-
-        _outStream << initial_mem.ToHex().substr(2,4);
-
-        _outStream << "\n";
-      } else if (strcmp(inst, "NOT") == 0) {
+      } else if (inst == "NOT") {
         // NOT Instruction
         // Text Record
-        _outStream << "T";
+        _outStream << 'T';
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
-        initial_mem.setBit(15, true);
-        initial_mem.setBit(12, true);
+        initial_mem.SetBit(15, true);
+        initial_mem.SetBit(12, true);
 
         // Set bits for destination register
-        _SetBits(current_line[0], initial_mem, bit_offset);
-
-        // Set bits for source register
-        _SetBits(current_line[1], initial_mem, bit_offset);
-
-        // **End parsing instruction**
-
-        _outStream << initial_mem.ToHex().substr(2,4);
-
-        _outStream << "\n";
-      } else if (strcmp(inst, "RET") == 0) {
-        // RET Instruction
-        // Text Record
-        _outStream << "T";
-
-        // Print the address to be initialized
-        _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
-
-        // **Begin parsing instruction**
-        Word initial_mem = new Word();
-
-        // Set bits for opcode
-        initial_mem.setBit(15, true);
-        initial_mem.setBit(14, true);
-        initial_mem.setBit(12, true);
-
-        // **End parsing instruction**
-
-        _outStream << initial_mem.ToHex().substr(2,4);
-
-        _outStream << "\n";
-      } else if (strcmp(inst, "ST") == 0) {
-        // ST Instruction
-        // Text Record
-        _outStream << "T";
-
-        // Print the address to be initialized
-        _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
-
-        // **Begin parsing instruction**
-        Word initial_mem = new Word();
-
-        // Set bits for opcode
-        initial_mem.setBit(13, true);
-        initial_mem.setBit(12, true);
-
-        // Set bits for source register
-        _SetBits(current_line[0], initial_mem, bit_offset);
-
-        string op2 = current_line[1];
-
-        if (symbols.Contains(op2)) {
-          Word temp = symbols.GetLabelAddr(op2);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op2[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op2[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op2[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op2.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
+        if (current_line[0][0] == 'R') {
+          _SetBits(current_line[0], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[0])) {
+          _SetBits(current_line[0], initial_mem, bit_offset);
+        } else {
+          RESULT result(LBL_NOT_FOUND);
+          result.info = current_line[0] + ": ";
+          return result;
         }
+
+        // Set bits for source register
+        if (current_line[1][0] == 'R') {
+          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[1])) {
+          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else {
+          RESULT result(LBL_NOT_FOUND);
+          result.info = current_line[1] + ": ";
+          return result;
+        }
+
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, "STI") == 0) {
-        // STI Instruction
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line);
+
+      } else if (inst == "DBUG" || inst == "RET") {
+        // DEBUG/RET Instructions
         // Text Record
-        _outStream << "T";
+        _outStream << 'T';
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
-        initial_mem.setBit(15, true);
-        initial_mem.setBit(13, true);
-        initial_mem.setBit(12, true);
-
-        // Set bits for source register
-        _SetBits(current_line[0], initial_mem, bit_offset);
-
-        string op2 = current_line[1];
-
-        if (symbols.Contains(op2)) {
-          Word temp = symbols.GetLabelAddr(op2);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op2[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op2[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op2.length(); i++) {
-              value *= 10;
-              value += op2[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op2[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op2.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
+        initial_mem.SetBit(15, true);
+        if (inst == "RET") {
+          initial_mem.SetBit(14, true);
+          initial_mem.SetBit(12, true);
         }
+
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << _outStream << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, "STR") == 0) {
-        // STR Instruction
-        // Text Record
-        _outStream << "T";
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line);
 
-        // Print the address to be initialized
-        _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
-
-        // **Begin parsing instruction**
-        Word initial_mem = new Word();
-
-        // Set bits for opcode
-        initial_mem.setBit(14, true);
-        initial_mem.setBit(13, true);
-        initial_mem.setBit(12, true);
-
-        // Set bits for source register
-        _SetBits(current_line[0], initial_mem, bit_offset);
-
-        // Set bits for base register
-        _SetBits(current_line[1], initial_mem, bit_offset);
-
-        string op3 = current_line[1];
-
-        if (symbols.Contains(op3)) {
-          Word temp = symbols.GetLabelAddr(op3);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op3[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op3[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op3.length(); i++) {
-              value *= 10;
-              value += op3[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op3.length(); i++) {
-              value *= 10;
-              value += op3[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op3[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op3.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        }
-        // **End parsing instruction**
-
-        _outStream << initial_mem.ToHex().substr(2,4);
-
-        _outStream << "\n";
-      } else if (strcmp(inst, "TRAP") == 0) {
+      } else if (inst == "TRAP") {
         // TRAP Instruction
         // Text Record
-        _outStream << "T";
+        _outStream << 'T';
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
-        initial_mem.setBit(15, true);
-        initial_mem.setBit(14, true);
-        initial_mem.setBit(13, true);
-        initial_mem.setBit(12, true);
+        initial_mem.SetBit(15, true);
+        initial_mem.SetBit(14, true);
+        initial_mem.SetBit(13, true);
+        initial_mem.SetBit(12, true);
 
         bit_offset -= 4;
 
         string op = current_line[0];
 
-        if (symbols.Contains(op)) {
-          Word temp = symbols.GetLabelAddr(op);
+        Word value = _ParsePgoffset9(op, symbols);
 
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op.length(); i++) {
-              value *= 10;
-              value += op[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op.length(); i++) {
-              value *= 10;
-              value += op[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
+        while (bit_offset >= 0) {
+          initial_mem.SetBit(bit_offset, value[bit_offset]);
+          bit_offset--;
         }
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst.substr(0,2), "BR") {
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line);
+
+
+      } else if (inst.substr(0,2), "BR") {
         // BRx Instruction
         // Text Record
-        _outStream << "T";
+        _outStream << 'T';
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
-        Word initial_mem = new Word();
+        Word initial_mem;
 
         // Set bits for opcode
 
         // Check CCR bits
         bool n, z, p;
-        if (inst.find("N") != string::npos) {
-          initial_mem.setBit(11, true);
+        if (inst.find('N') != string::npos) {
+          initial_mem.SetBit(11, true);
         }
         bit_offset--;
 
-        if (inst.find("Z") != string::npos) {
-          initial_mem.setBit(10, true);
+        if (inst.find('Z') != string::npos) {
+          initial_mem.SetBit(10, true);
         }
         bit_offset--;
 
-        if (inst.find("P") != string::npos) {
-          initial_mem.setBit(9, true);
+        if (inst.find('P') != string::npos) {
+          initial_mem.SetBit(9, true);
         }
         bit_offset--;
 
         string op = current_line[0];
 
-        if (symbols.Contains(op)) {
-          Word temp = symbols.GetLabelAddr(op);
+        Word value = _ParsePgoffset9(op, symbols);
 
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op[0] == "#") {
-          // Decimal operand
-          int value = 0;
-          bool neg = false;
-
-          if(op[1] == '-') {
-            neg = true;
-          }
-
-          if(neg) {
-            for (int i = 2; i < op.length(); i++) {
-              value *= 10;
-              value += op[i] - '0';
-            }
-            value *= -1;
-          }
-          else {
-            for (int i = 1; i < op.length(); i++) {
-              value *= 10;
-              value += op[i] - '0';
-            }
-          }
-
-          Word temp = new Word(value);
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
-        } else if (op[0] == "x") {
-          // Hex operand
-          Word temp = new Word();
-          temp.FromHexAbbr(op.substr(1));
-
-          while (bit_offset >= 0) {
-            initial_mem.setBit(bit_offset, temp[bit_offset]);
-            bit_offset--;
-          }
+        while (bit_offset >= 0) {
+          initial_mem.SetBit(bit_offset, value[bit_offset]);
+          bit_offset--;
         }
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4);
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
-        _outStream << "\n";
-      } else if (strcmp(inst, ".END") == 0) {
+        //*** listing output
+        _LineListing(current_address, initial_mem, current_line);
+
+      } else if (inst == ".END") {
         //End Record
-        _outStream << "E" << initial_load << "\n";
+
+        // done with file, output literals
+        const map<int, Word>* literals = symbols.GetLiterals();
+        map<int, Word>::const_iterator it = literals->begin();
+
+        while (it != literals->end()) {
+          Word value(it->fisrt);
+          // object file output
+          _outStream << 'T' << current_address.ToHex().substr(2) << value.ToHex().substr(2) << '\n';
+          //*** listing output 1
+          cout << '(' << current_address.ToHex().substr(2) << ')'
+                << ' ' << value.ToHex().substr(2) << ' ' << value.ToStr() << " ( lit)\n";
+          current_address++;
+        }
+
+        _outStream << 'E' << initial_load << '\n';
+
+        //*** listing output 2
+        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
       }
     }
+  }
+
+  // done with file, output literals
+  const map<int, Word>* literals = symbols.GetLiterals();
+  map<int, Word>::const_iterator it = literals->begin();
+
+  while (it != literals->end()) {
+    Word value(it->fisrt);
+
+    cout << '(' << current_address.ToHex().substr(2) << ')'
+              << ' ' << value.ToHex().substr(2) << ' ' << value.ToStr() << " ( lit)";
+
+    current_address++;
   }
 
   return RESULT(SUCCESS);
