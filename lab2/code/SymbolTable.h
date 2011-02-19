@@ -33,6 +33,8 @@ class SymbolTable : public iSymbolTable {
 
     int LabelCount() const;
     int LiteralCount() const;
+
+    const std::map<int, Word>* GetLiterals() const;
 };
 
 #endif

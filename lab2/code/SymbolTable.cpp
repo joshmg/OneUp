@@ -71,3 +71,7 @@ int SymbolTable::LiteralCount() const {
   return _symbols.size();
 }
 
+const map<int, Word>* SymbolTable::GetLiterals() const {
+  return &_literals;
+}
+
