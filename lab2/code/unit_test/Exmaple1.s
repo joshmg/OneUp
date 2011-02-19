@@ -1,3 +1,4 @@
+; A valid program.
 Prog .ORIG x3020
 HALT .EQU x25
 Begin LD R0,N 		;R0 <- #13

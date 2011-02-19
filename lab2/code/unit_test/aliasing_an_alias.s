@@ -1,6 +1,5 @@
-; Should execute properly
-; Example Program
-Lab2EG   .ORIG   x30B0
+;Should be valid
+Lab2EG   .ORIG
 count    .FILL   #4
 Begin    LD      ACC,count       ;R1 <- 4
          LEA     R0,msg
@@ -16,7 +15,8 @@ Next     AND     R0,R0,x0        ;R0 <- 0
          LD      R6,=#100        ;R6 <= #100
          STR     R0,R5,#1        ;M[Array+1] <= xFFFF
          TRAP    x25
-ACC      .EQU    #1
+ACC2     .EQU    1
+ACC      .EQU    ACC2              ; This should be okay.
 ; ----- Scratch Space -----
 Array    .BLKW   #3
          .FILL   x10
