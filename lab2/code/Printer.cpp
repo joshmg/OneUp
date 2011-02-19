@@ -7,7 +7,8 @@
 #include "Line.h"
 #include "SymbolTable.h"
 #include "ResultCodes.h"
-#include "iots.h"
+#include "itos.h"
+#include <iostream>
 #include <string>
 #include <vector>
 #include <cstdlib> // for atoi()
@@ -110,7 +111,7 @@ Word Printer::_ParsePgoffset9(const string& op, const SymbolTable& symbols) {
 
   if (op[0] == '#') {
     // decimal operand
-    value.FromInt(atoi(op.substr(1)));
+    value.FromInt(atoi(op.substr(1).c_str()));
   }
   else if (op[0] == 'x') {
     // Hex operand
@@ -123,14 +124,14 @@ Word Printer::_ParsePgoffset9(const string& op, const SymbolTable& symbols) {
   return value;
 }
 
-void Printer::_LineListing(const Word& current_address, const Word& value, const Line& current_line) {
+void Printer::_LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos) {
   cout << '(' << current_address.ToHex().substr(2) << ')'
-              << ' ' << value.ToHex().substr(2) << ' ' << value.ToStr() << ' '
+              << "  " << value.ToHex().substr(2) << ' ' << value.ToStr() << ' '
               << _InFileData(pos, current_line);
 }
 
 string Printer::_InFileData(const int line_number, const Line& current_line) {
-  return "(" + string(4 - num.length(), ' ') + itos(line_number) + ") " + current_line.ToString() + '\n';
+  return "(" + string(4 - itos(line_number).length(), ' ') + itos(line_number) + ") " + current_line.ToString() + '\n';
 }
 
 //*** public ***//
@@ -244,14 +245,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << value.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, value, current_line);
+        _LineListing(current_address, value, current_line, pos);
 
       } else if (inst == ".STRZ") {
         // String pseudo-op
         string op = current_line[0];
 
         for (int i = 0; i < op.length(); i++) {
-          Word character(atoi(op[i]));
+          Word character((int) op[i]);
 
           // Text Record
           _outStream << 'T';
@@ -264,11 +265,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _outStream << character.ToHex().substr(2,4) << "\n";
 
           //*** listing output 1
-          _LineListing(current_address, value, current_line);
+          _LineListing(current_address, character, current_line, pos);
         }
 
         // Text record for null character at string termination
-        _outStream << 'T' << current_address.ToHex().substr(2,4); << "0000\n";
+        _outStream << 'T' << current_address.ToHex().substr(2,4) << "0000\n";
         current_address++;
 
         //*** listing output 2
@@ -301,7 +302,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _SetBits(current_line[0], initial_mem, bit_offset);
         } else {
           RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0] + ": ";
+          result.info = current_line[0];
           return result;
         }
 
@@ -312,7 +313,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _SetBits(current_line[1], initial_mem, bit_offset);
         } else {
           RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1] + ": ";
+          result.info = current_line[1];
           return result;
         }
 
@@ -330,10 +331,10 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           bit_offset--;
 
           string op = current_line[0];
-          Word value = _ParsePgoffset9(op);
+          Word value = _ParsePgoffset9(op, symbols);
 
-          for( int i = 4; i >= 0; i--;) {
-            initial_mem.SetBit(i, temp[i]);
+          for( int i = 4; i >= 0; i--) {
+            initial_mem.SetBit(i, value[i]);
           }
         }
         // **End parsing instruction**
@@ -342,7 +343,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line);
+        _LineListing(current_address, initial_mem, current_line, pos);
 
       } else if (inst == "JSR" || inst == "JMP") {
         // JSR Instructions
@@ -366,12 +367,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         bit_offset -= 3;
 
         string op = current_line[0];
-        Word value = _ParsePgoffset9(op, symbol);
+        Word value = _ParsePgoffset9(op, symbols);
 
         if (relocatable) {
           if (! symbols.IsRelocatable(op)) {
             RESULT result(ABS_REL);
-            result.info = op + ": ";
+            result.info = op;
             return result;
           }
         }
@@ -385,14 +386,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line);
+        _LineListing(current_address, initial_mem, current_line, pos);
 
       } else if (inst == "JSRR" || inst == "JMPR") {
         // JSRR Instructions
         // Text Record
         _outStream << 'T';
 
-        _outStream << current_address.ToHex.substr(2,4);
+        _outStream << current_address.ToHex().substr(2,4);
         current_address++;
 
         // **Begin parsing instruction**
@@ -415,7 +416,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _SetBits(current_line[1], initial_mem, bit_offset);
         } else {
           RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1] + ": ";
+          result.info = current_line[1];
           return result;
         }
 
@@ -432,7 +433,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line)
+        _LineListing(current_address, initial_mem, current_line, pos);
 
       } else if (inst == "LD" || inst == "LDI" || inst == "LEA" || inst == "ST" || inst == "STI") {
         // LD-like Instructions
@@ -468,13 +469,13 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         // Set bits for destination register
-        if (current_line[1][0] == 'R') {
+        if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[1])) {
-          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[0])) {
+          _SetBits(current_line[0], initial_mem, bit_offset);
         } else {
           RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1] + ": ";
+          result.info = current_line[0];
           return result;
         }
 
@@ -495,7 +496,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           if (relocatable) {
             if (! symbols.IsRelocatable(op2)) {
               RESULT result(ABS_REL);
-              result.info = op2 + ": ";
+              result.info = op2;
               return result;
             }
           }
@@ -520,7 +521,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line);
+        _LineListing(current_address, initial_mem, current_line, pos);
 
       } else if (inst == "LDR" || inst == "STR") {
         // LDR-like Instructions
@@ -548,7 +549,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _SetBits(current_line[0], initial_mem, bit_offset);
         } else {
           RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0] + ": ";
+          result.info = current_line[0];
           return result;
         }
 
@@ -559,7 +560,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _SetBits(current_line[1], initial_mem, bit_offset);
         } else {
           RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1] + ": ";
+          result.info = current_line[1];
           return result;
         }
 
@@ -578,7 +579,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line);
+        _LineListing(current_address, initial_mem, current_line, pos);
 
       } else if (inst == "NOT") {
         // NOT Instruction
@@ -603,7 +604,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _SetBits(current_line[0], initial_mem, bit_offset);
         } else {
           RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0] + ": ";
+          result.info = current_line[0];
           return result;
         }
 
@@ -614,7 +615,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _SetBits(current_line[1], initial_mem, bit_offset);
         } else {
           RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1] + ": ";
+          result.info = current_line[1];
           return result;
         }
 
@@ -623,7 +624,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line);
+        _LineListing(current_address, initial_mem, current_line, pos);
 
       } else if (inst == "DBUG" || inst == "RET") {
         // DEBUG/RET Instructions
@@ -649,7 +650,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << _outStream << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line);
+        _LineListing(current_address, initial_mem, current_line, pos);
 
       } else if (inst == "TRAP") {
         // TRAP Instruction
@@ -684,7 +685,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line);
+        _LineListing(current_address, initial_mem, current_line, pos);
 
 
       } else if (inst.substr(0,2), "BR") {
@@ -731,7 +732,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line);
+        _LineListing(current_address, initial_mem, current_line, pos);
 
       } else if (inst == ".END") {
         //End Record
@@ -741,7 +742,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         map<int, Word>::const_iterator it = literals->begin();
 
         while (it != literals->end()) {
-          Word value(it->fisrt);
+          Word value(it->first);
           // object file output
           _outStream << 'T' << current_address.ToHex().substr(2) << value.ToHex().substr(2) << '\n';
           //*** listing output 1
@@ -756,19 +757,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
       }
     }
-  }
-
-  // done with file, output literals
-  const map<int, Word>* literals = symbols.GetLiterals();
-  map<int, Word>::const_iterator it = literals->begin();
-
-  while (it != literals->end()) {
-    Word value(it->fisrt);
-
-    cout << '(' << current_address.ToHex().substr(2) << ')'
-              << ' ' << value.ToHex().substr(2) << ' ' << value.ToStr() << " ( lit)";
-
-    current_address++;
   }
 
   return RESULT(SUCCESS);
