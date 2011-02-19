@@ -53,12 +53,21 @@ class Printer : public iPrinter {
     */
     int _RegNum(std::string reg);
 
+    /*! @brief Sets the bits of initial_mem for registers.
+        @param[in] reg The register string.
+        @param[in] initial_mem The Word object to be changed.
+        @param[in] bit_offset The location of the first bit to be set (leftmost being 15). Passed by reference for cascade effect.
+        @pre bit_offset > 2
+        @post initial_mem has bits [bit_offset:bit_offset-2] appropriately set
+    */
+    void _SetBits(std::string reg, Word& initial_mem, int& bit_offset);
+
   public:
     //! @brief Closes the input and output files, if necessary.
     ~Printer();
 
     Codes::RESULT Open(std::string infile, std::string outfile);
-    Codes::RESULT Print(SymbolTable& symbols, Word& file_length);
+    Codes::RESULT Print(SymbolTable& symbols, Word& file_length, Word& initial_load);
 };
 
 #endif
