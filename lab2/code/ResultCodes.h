@@ -39,6 +39,7 @@ namespace Codes {
     INV_BR,         // Invalid Branch
     NON_LD_LIT,     // Literal as an argument to something other than LD.
     ORIG,           // ORIG not first non-comment line
+    ORIG_LBL,       // ORIG label more than 6 characters
     ORIG_HEX,       // ORIG arg not hex
     REQ_LABEL,      // Instruction requires label
     LBL_NOT_FOUND,  // Could not find label
@@ -46,6 +47,7 @@ namespace Codes {
     MAX_S_SIZE,     // Maximum number of symbols
     MAX_L_SIZE,     // Maximum number of literals
     MAX_LENGTH,     // Maximum number of source records.
+    ABS_REL,        // Absolute value in relative instruction
 
     FILE_NOT_FOUND, // File not found
     FILE_NOT_OPENED // File could not be opened
@@ -93,12 +95,14 @@ class ResultDecoder {
       _codes[Codes::NON_LD_LIT] = "Literals may only be used with the LD instruction.";
       _codes[Codes::ORIG] = "First non-comment line should contain \".ORIG\" instruction.";
       _codes[Codes::ORIG_HEX] = "Argument to \".ORIG\" not hex.";
+      _codes[Codes::ORIG_LBL] = "\".ORIG\" label longer than six characters.";
       _codes[Codes::REQ_LABEL] = "Instruction requires label.";
       _codes[Codes::LBL_NOT_FOUND] = "Label not found.";
       _codes[Codes::REDEF_LBL] = "Attempt to redefine label.";
       _codes[Codes::MAX_S_SIZE] = "Maximum number of symbols reached.";
       _codes[Codes::MAX_L_SIZE] = "Maximum number of literals reached.";
       _codes[Codes::MAX_LENGTH] = "Maximum object file size reached.";
+      _codes[Codes::ABS_REL] = "Absolute value in instruction that requires a relative.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found.";
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";

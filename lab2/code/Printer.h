@@ -67,7 +67,7 @@ class Printer : public iPrinter {
     ~Printer();
 
     Codes::RESULT Open(std::string infile, std::string outfile);
-    Codes::RESULT Print(SymbolTable& symbols, Word& file_length, Word& initial_load);
+    Codes::RESULT Print(SymbolTable& symbols, Word& file_length);
 };
 
 #endif

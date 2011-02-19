@@ -83,6 +83,11 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             result.info = _LineNumber(pos) + ": .ORIG: ";
             return result;
           }
+
+          if (line.Label().length() > 6) {
+            result.msg = ORIG_LBL;
+            result.info = _LineNumber(pos);
+          }
           
           if (line.Size() == 1) {
             if ( !(line[0][0] == 'x') ) {
