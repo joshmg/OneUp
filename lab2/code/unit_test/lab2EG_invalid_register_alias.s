@@ -15,7 +15,7 @@ Next     AND     R0,R0,x0        ;R0 <- 0
          LD      R6,=#100        ;R6 <= #100
          STR     R0,R5,#1        ;M[Array+1] <= xFFFF
          TRAP    x25
-ACC      .EQU    9              ; This is not an error.
+ACC      .EQU    #9              ; This is not an error.
 ; ----- Scratch Space -----
 Array    .BLKW   #3
          .FILL   x10
