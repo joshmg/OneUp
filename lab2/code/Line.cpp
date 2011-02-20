@@ -247,7 +247,8 @@ RESULT Line::ReadLine (string line) {
   }
 
   // check arguments for validity
-  return _CheckArgs();
+  if (_inst != ".STRZ") return _CheckArgs();
+  else return RESULT(SUCCESS);
 }
 
 string Line::Label() const {

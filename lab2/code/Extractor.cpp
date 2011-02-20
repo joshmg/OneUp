@@ -13,6 +13,7 @@
 #include <vector>
 #include <fstream>
 #include "itos.h"
+#include <iostream> 
 using namespace std;
 using namespace Codes;
 
