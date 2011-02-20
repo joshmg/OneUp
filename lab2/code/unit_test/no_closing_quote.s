@@ -1,13 +1,13 @@
-; Object File Length too large...
+; Example Program
 Lab2EG 	.ORIG 	x30B0
-count 	.BLKW 	xFFFF
-Begin 	LD		R1,count			;R1 <- 4
+count 	.FILL 	#4
+Begin 	LD 		ACC,count			;R1 <- 4
 		LEA		R0,msg
 loop	TRAP	x22						;print "hi! "
-		ADD		R1,R1,#-1		;R1--
+		ADD		ACC,ACC,#-1		;R1--
 		BRP		loop
 		JMP		Next
-msg		.STRZ	"hi! "
+msg		.STRZ	"hi!hhh	; no closing quote
 Next	AND		R0,R0,x0		;R0 <- 0
 		NOT 	R0,R0				;R0 <- xFFFF
 		ST		R0,Array			;M[Array] <- xFFFF
