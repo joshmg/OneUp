@@ -251,7 +251,8 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
       }
     }
     if ( _length >= (_max_size * 2) || _length >= Word::MAX_SIZE ) {
-      return RESULT(MAX_LENGTH, "(Max Length: " + itos(_max_size * 2) + ")");
+      int max = _length & Word::MAX_SIZE;
+      return RESULT(MAX_LENGTH, "(Max Length: " + itos(max) + ")");
     }
   }
   
