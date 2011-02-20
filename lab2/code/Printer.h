@@ -62,7 +62,11 @@ class Printer : public iPrinter {
     */
     void _SetBits(std::string reg, Word& initial_mem, int& bit_offset);
 
-    Word _ParsePgoffset9(const std::string& op, const SymbolTable& symbols);
+    Word _ParseWord(const std::string& op, const SymbolTable& symbols);
+
+    bool _Check9(Word value, Word PC);
+    bool _Check6(Word value);
+    bool _Check5(Word value);
 
     void _LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos);
 

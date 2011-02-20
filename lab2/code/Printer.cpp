@@ -106,7 +106,7 @@ void Printer::_SetBits(std::string reg, Word& initial_mem, int& bit_offset) {
   }
 }
 
-Word Printer::_ParsePgoffset9(const string& op, const SymbolTable& symbols) {
+Word Printer::_ParseWord(const string& op, const SymbolTable& symbols) {
   Word value;
 
   if (op[0] == '#') {
@@ -122,6 +122,21 @@ Word Printer::_ParsePgoffset9(const string& op, const SymbolTable& symbols) {
   }
 
   return value;
+}
+
+bool Printer::_Check9(Word value, Word PC) {
+  // test first 7 bits
+  Word temp1 = PC.And(Word(0xFE00));
+  Word temp2 = PC.And(Word(0xFE00));
+  return (temp1.ToInt() == temp2.ToInt());
+}
+
+bool Printer::_Check6(Word value) {
+  return (value.ToInt() < 64);
+}
+
+bool Printer::_Check5(Word value) {
+  return (value.ToInt2Complement() < 16 && value.ToInt2Complement() >= -16);
 }
 
 void Printer::_LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos) {
@@ -216,7 +231,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Block pseudo-op
         string op = current_line[0];
 
-        Word value = _ParsePgoffset9(op, symbols);
+        Word value = _ParseWord(op, symbols);
 
         //*** listing output
         cout << '(' << current_address.ToHex().substr(2) << ')'
@@ -227,7 +242,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
       } else if (inst == ".FILL") {
         // Fill pseudo-op
         string op = current_line[0];
-        Word value = _ParsePgoffset9(op, symbols);
+        Word value = _ParseWord(op, symbols);
 
         // Text Record
         if (symbols.IsRelocatable(op) && relocatable) {
@@ -329,7 +344,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           bit_offset--;
 
           string op = current_line[0];
-          Word value = _ParsePgoffset9(op, symbols);
+          Word value = _ParseWord(op, symbols);
+          if (! _Check5(value)) {
+            // invalid immediate
+            return RESULT(INV_IMM);
+          }
 
           for( int i = 4; i >= 0; i--) {
             initial_mem.SetBit(i, value[i]);
@@ -365,7 +384,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         bit_offset -= 3;
 
         string op = current_line[0];
-        Word value = _ParsePgoffset9(op, symbols);
+        Word value = _ParseWord(op, symbols);
 
         if (relocatable) {
           if (! symbols.IsRelocatable(op)) {
@@ -420,7 +439,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         string op = current_line[1];
 
-        Word value = _ParsePgoffset9(op, symbols);
+        Word value = _ParseWord(op, symbols);
+        if (! _Check6(value)) {
+          // invalid index
+          return RESULT(INV_IDX);
+        }
 
         while (bit_offset >= 0) {
           initial_mem.SetBit(bit_offset, value[bit_offset]);
@@ -480,16 +503,13 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         bit_offset -= 3;
 
         string op2 = current_line[1];
-
+        Word value;
         if (current_line.HasLiteral()) {
           // LD only -- already checked
-          Word temp = symbols.GetLiteralAddr(current_line.Literal());
+          value = symbols.GetLiteralAddr(current_line.Literal());
 
-          while (bit_offset >= 0) {
-            initial_mem.SetBit(bit_offset, temp[bit_offset]);
-          }
         } else if (symbols.Contains(op2)) {
-          Word temp = symbols.GetLabelAddr(op2);
+          value = symbols.GetLabelAddr(op2);
 
           if (relocatable) {
             if (! symbols.IsRelocatable(op2)) {
@@ -499,20 +519,20 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             }
           }
 
-          while (bit_offset >= 0) {
-            initial_mem.SetBit(bit_offset, temp[bit_offset]);
-          }
         } else {
           if (relocatable) {
             return RESULT(ABS_REL);
           }
 
-          Word value = _ParsePgoffset9(op2, symbols);
+          value = _ParseWord(op2, symbols);
+        }
+        if (! _Check9(value, current_address)) {
+          return RESULT(PG_ERR);
+        }
 
-          while (bit_offset >= 0) {
+        while (bit_offset >= 0) {
             initial_mem.SetBit(bit_offset, value[bit_offset]);
             bit_offset--;
-          }
         }
         // **End parsing instruction**
 
@@ -566,7 +586,10 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         string op3 = current_line[2];
 
-        Word value = _ParsePgoffset9(op3, symbols);
+        Word value = _ParseWord(op3, symbols);
+        if (! _Check6(value)) {
+          return RESULT(INV_IDX);
+        }
 
         while (bit_offset >= 0) {
           initial_mem.SetBit(bit_offset, value[bit_offset]);
@@ -672,7 +695,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         string op = current_line[0];
 
-        Word value = _ParsePgoffset9(op, symbols);
+        Word value = _ParseWord(op, symbols);
 
         while (bit_offset >= 0) {
           initial_mem.SetBit(bit_offset, value[bit_offset]);
@@ -718,7 +741,10 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         string op = current_line[0];
 
-        Word value = _ParsePgoffset9(op, symbols);
+        Word value = _ParseWord(op, symbols);
+        if (! _Check9(value, current_address)) {
+          return RESULT(PG_ERR);
+        }
 
         while (bit_offset >= 0) {
           initial_mem.SetBit(bit_offset, value[bit_offset]);

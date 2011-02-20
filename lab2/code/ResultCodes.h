@@ -48,6 +48,9 @@ namespace Codes {
     MAX_L_SIZE,     // Maximum number of literals
     MAX_LENGTH,     // Maximum number of source records.
     ABS_REL,        // Absolute value in relative instruction
+    INV_IMM,        // Immediate value not in range
+    INV_IDX,        // Index value not in range
+    PG_ERR,         // Arugment on different page
 
     FILE_NOT_FOUND, // File not found
     FILE_NOT_OPENED // File could not be opened
@@ -103,6 +106,9 @@ class ResultDecoder {
       _codes[Codes::MAX_L_SIZE] = "Maximum number of literals reached.";
       _codes[Codes::MAX_LENGTH] = "Maximum object file size reached.";
       _codes[Codes::ABS_REL] = "Absolute value in instruction that requires a relative.";
+      _codes[Codes::INV_IMM] = "Immediate value not expressible in 5 bits.";
+      _codes[Codes::INV_IDX] = "Index value not expressible in 6 bits.";
+      _codes[Codes::PG_ERR] = "Page Error: Address references a different page.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found.";
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";
