@@ -141,7 +141,7 @@ bool Printer::_Check5(Word value) {
 
 void Printer::_LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos) {
   cout << '(' << current_address.ToHex().substr(2) << ')'
-              << "  " << value.ToHex().substr(2) << ' ' << value.ToStr() << ' '
+              << ' ' << value.ToHex().substr(2) << "  " << value.ToStr() << ' '
               << _InFileData(pos, current_line);
 }
 
@@ -278,8 +278,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           // Print the hex representing the current character
           _outStream << character.ToHex().substr(2,4) << "\n";
 
-          //*** listing output 1
-          _LineListing(current_address, character, current_line, pos);
+          //*** listing output
+          if (i == 1) {
+            _LineListing(current_address, character, current_line, pos);
+          } else {
+            _LineListing(current_address, character, Line(), pos);
+          }
         }
 
         // Text record for null character at string termination
@@ -287,7 +291,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output 2
         cout << '(' << current_address.ToHex().substr(2) << ')'
-              << ' ' << string(4, '0') << ' ' << string(16, '0') << ' '
+              << ' ' << string(4, '0') << "  " << string(16, '0') << ' '
               << _InFileData(pos, current_line);
         current_address++;
 
@@ -827,7 +831,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _outStream << 'T' << current_address.ToHex().substr(2) << value.ToHex().substr(2) << '\n';
           //*** listing output 1
           cout << '(' << current_address.ToHex().substr(2) << ')'
-                << ' ' << value.ToHex().substr(2) << ' ' << value.ToStr() << " ( lit)\n";
+                << ' ' << value.ToHex().substr(2) << "  " << value.ToStr() << " ( lit)\n";
           current_address++;
           it++;
         }
@@ -837,9 +841,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output 2
         cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+
+        return RESULT(SUCCESS);
       }
     }
   }
 
-  return RESULT(SUCCESS);
+  return RESULT(NO_END);
 }
