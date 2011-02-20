@@ -106,7 +106,32 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
 
           _length++; 
         } else if (line.Instruction() == ".END") {
-          // .END, do nothing
+          // .END
+          Word w;
+          if (symbols.Contains(line[0])) {
+            w = symbols.GetLabelAddr(line[0]);
+          } else if (line[0][0] == 'x') {
+            Word w;
+            w.FromHexAbbr(line[0]);
+          } else if (line[0][0] == '#') {
+            Word w;
+            w.FromInt(atoi(line[0].substr(1).c_str()));
+          } else {
+            result.msg = LBL_NOT_FOUND;
+            result.info = _LineNumber(pos) + ": " + line[0];
+            return result;
+          }
+
+          int ulimit = begin.ToInt() + _length;
+          int llimit = begin.ToInt();
+          if (w.ToInt() >= llimit || (w.ToInt() < ulimit)) {
+            break;
+          }
+          // out of bounds
+          result.msg = END_OB;
+          result.info = _LineNumber(pos);
+          return result;
+
         } else if (line.Instruction() == ".EQU") {
           // .EQU
           if (! line.HasLabel()) {

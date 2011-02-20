@@ -384,7 +384,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
       } else if (inst == "JSR" || inst == "JMP") {
         // JSR Instructions
         // Text Record
-        _outStream << 'T';
+        if (relocatable) {
+          _outStream << 'R';
+        } else {
+          _outStream << 'T';
+        }
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
@@ -772,7 +776,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
       } else if (inst.substr(0,2) == "BR") {
         // BRx Instruction
         // Text Record
-        _outStream << 'T';
+        if (relocatable) {
+          _outStream << 'R';
+        } else {
+          _outStream << 'T';
+        }
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
