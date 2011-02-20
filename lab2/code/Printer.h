@@ -62,6 +62,12 @@ class Printer : public iPrinter {
     */
     void _SetBits(std::string reg, Word& initial_mem, int& bit_offset);
 
+    Word _ParsePgoffset9(const std::string& op, const SymbolTable& symbols);
+
+    void _LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos);
+
+    std::string _InFileData(const int line_number, const Line& current_line);
+
   public:
     //! @brief Closes the input and output files, if necessary.
     ~Printer();

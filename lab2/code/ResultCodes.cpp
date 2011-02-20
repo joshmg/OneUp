@@ -23,7 +23,7 @@ string ResultDecoder::Find(const RESULT& result) const {
       tmp += ": ";
     }
     // append error message
-    tmp += (it -> second);
+    tmp += (it -> second) + '\n';
     // return full message
     return tmp;
 	}
