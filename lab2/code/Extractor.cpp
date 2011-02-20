@@ -124,7 +124,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
 
           int ulimit = begin.ToInt() + _length;
           int llimit = begin.ToInt();
-          if (w.ToInt() >= llimit || (w.ToInt() < ulimit)) {
+          if (w.ToInt() >= llimit && (w.ToInt() < ulimit)) {
             break;
           }
           // out of bounds
