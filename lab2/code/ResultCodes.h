@@ -91,7 +91,7 @@ class ResultDecoder {
       _codes[Codes::EMPTY_ARG] = "Argugment is the empty string (misplaced comma?).";
       _codes[Codes::INV_REG] = "Non-existent register as arugment.";
       _codes[Codes::INV_CONST] = "Constant value out of range.";
-      _codes[Codes::INV_ARG] = "Invalid arugment.";
+      _codes[Codes::INV_ARG] = "Invalid argument.";
       _codes[Codes::INV_HEX] = "Non-hex character after 'x'.";
       _codes[Codes::INV_DEC] = "Non-digit after '#'.";
       _codes[Codes::INV_BR] = "Invalid CCR mask for branch instruction.";

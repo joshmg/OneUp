@@ -12,6 +12,8 @@
 #include <map>
 #include <vector>
 #include <fstream>
+#include "itos.h"
+#include <iostream> 
 using namespace std;
 using namespace Codes;
 
@@ -250,7 +252,8 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
       }
     }
     if ( _length >= (_max_size * 2) || _length >= Word::MAX_SIZE ) {
-      return RESULT(MAX_LENGTH);
+      int max = _length & Word::MAX_SIZE;
+      return RESULT(MAX_LENGTH, "(Max Length: " + itos(max) + ")");
     }
   }
   
