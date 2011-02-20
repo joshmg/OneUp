@@ -218,12 +218,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         Word value = _ParsePgoffset9(op, symbols);
 
-        current_address = current_address + value;
-
         //*** listing output
         cout << '(' << current_address.ToHex().substr(2) << ')'
               << string(listing_offset - 6, ' ')  // already printed 6 chars
               << _InFileData(pos, current_line);
+        current_address = current_address + value;
 
       } else if (inst == ".FILL") {
         // Fill pseudo-op
@@ -246,6 +245,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, value, current_line, pos);
+        current_address++;
 
       } else if (inst == ".STRZ") {
         // String pseudo-op
@@ -259,7 +259,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
           // Print the address of the current character
           _outStream << current_address.ToHex().substr(2,4);
-          current_address++;
 
           // Print the hex representing the current character
           _outStream << character.ToHex().substr(2,4) << "\n";
@@ -270,12 +269,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Text record for null character at string termination
         _outStream << 'T' << current_address.ToHex().substr(2,4) << "0000\n";
-        current_address++;
 
         //*** listing output 2
         cout << '(' << current_address.ToHex().substr(2) << ')'
               << ' ' << string(4, '0') << ' ' << string(16, '0') << ' '
               << _InFileData(pos, current_line);
+        current_address++;
 
       } else if (inst == "ADD" || inst == "AND") {
         // ADD-like instructions
@@ -284,7 +283,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -344,6 +342,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
       } else if (inst == "JSR" || inst == "JMP") {
         // JSR Instructions
@@ -352,7 +351,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -387,6 +385,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
       } else if (inst == "JSRR" || inst == "JMPR") {
         // JSRR Instructions
@@ -394,7 +393,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << 'T';
 
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -434,6 +432,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
       } else if (inst == "LD" || inst == "LDI" || inst == "LEA" || inst == "ST" || inst == "STI") {
         // LD-like Instructions
@@ -446,7 +445,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -522,6 +520,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
       } else if (inst == "LDR" || inst == "STR") {
         // LDR-like Instructions
@@ -530,7 +529,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -580,6 +578,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
       } else if (inst == "NOT") {
         // NOT Instruction
@@ -588,7 +587,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -625,6 +623,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
       } else if (inst == "DBUG" || inst == "RET") {
         // DEBUG/RET Instructions
@@ -633,7 +632,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -651,6 +649,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
       } else if (inst == "TRAP") {
         // TRAP Instruction
@@ -659,7 +658,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -686,16 +684,15 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
-
-      } else if (inst.substr(0,2), "BR") {
+      } else if (inst.substr(0,2) == "BR") {
         // BRx Instruction
         // Text Record
         _outStream << 'T';
 
         // Print the address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // **Begin parsing instruction**
         Word initial_mem;
@@ -733,6 +730,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
+        current_address++;
 
       } else if (inst == ".END") {
         //End Record
@@ -751,7 +749,8 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           current_address++;
         }
 
-        _outStream << 'E' << initial_load << '\n';
+        Word load(initial_load);
+        _outStream << 'E' << load.ToHex().substr(2) << '\n';
 
         //*** listing output 2
         cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
