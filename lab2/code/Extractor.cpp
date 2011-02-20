@@ -99,7 +99,8 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           } else {
             relocatable = true;
           }
-          
+
+          _length++; 
         } else if (line.Instruction() == ".END") {
           // .END, do nothing
         } else if (line.Instruction() == ".EQU") {
