@@ -829,6 +829,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           cout << '(' << current_address.ToHex().substr(2) << ')'
                 << ' ' << value.ToHex().substr(2) << ' ' << value.ToStr() << " ( lit)\n";
           current_address++;
+          it++;
         }
 
         Word load(initial_load);
