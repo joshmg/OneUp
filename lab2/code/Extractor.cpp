@@ -68,9 +68,14 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
     }
 
     if (! line.IsComment() ) {
+      if (_length == -1) {
+        if (line.Instruction() != ".ORIG") {
+          return RESULT(ORIG);
+        }
+      }
       if (line.Instruction() == ".ORIG") {
         if (_length >= 0) {
-          return RESULT(ORIG);
+          return RESULT(ORIG2);
         }
       }
 
