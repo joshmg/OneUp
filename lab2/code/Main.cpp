@@ -5,6 +5,7 @@
 #include "SymbolTable.h"
 #include "Printer.h"
 #include "ResultCodes.h"
+#include <cstdlib>
 #include <string>
 #include <iostream>
 using namespace std;

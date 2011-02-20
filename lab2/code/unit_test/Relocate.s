@@ -6,4 +6,4 @@ Start  LD 	R1,X
        ST	R1,Y
        TRAP	Halt
 Y      .BLKW	#1
-       .END     START
+       .END     Start

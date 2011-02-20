@@ -139,6 +139,10 @@ bool Printer::_Check5(Word value) {
   return (value.ToInt2Complement() < 16 && value.ToInt2Complement() >= -16);
 }
 
+void Printer::_PreError(const string& line) {
+  cout << "\n--- In line: " << line << "\n--- ";
+}
+
 void Printer::_LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos) {
   cout << '(' << current_address.ToHex().substr(2) << ')'
               << ' ' << value.ToHex().substr(2) << "  " << value.ToStr() << ' '
@@ -289,10 +293,10 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Text record for null character at string termination
         _outStream << 'T' << current_address.ToHex().substr(2,4) << "0000\n";
 
-        //*** listing output 2
+        //*** listing output 2 -- null character
         cout << '(' << current_address.ToHex().substr(2) << ')'
               << ' ' << string(4, '0') << "  " << string(16, '0') << ' '
-              << _InFileData(pos, current_line);
+              << _InFileData(pos, Line());
         current_address++;
 
       } else if (inst == "ADD" || inst == "AND") {
@@ -322,9 +326,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
+          _PreError(current_line.ToString());
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[0];
           return result;
@@ -340,9 +346,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
+          _PreError(current_line.ToString());
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[1];
           return result;
@@ -365,6 +373,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           Word value = _ParseWord(op, symbols);
           if (! _Check5(value)) {
             // invalid immediate
+            _PreError(current_line.ToString());
             return RESULT(INV_IMM);
           }
 
@@ -409,7 +418,8 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         if (relocatable) {
-          if (! symbols.IsRelocatable(op)) {
+          if (symbols.Contains(op) && !symbols.IsRelocatable(op)) {
+            _PreError(current_line.ToString());
             RESULT result(ABS_REL);
             result.info = op;
             return result;
@@ -458,9 +468,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
+          _PreError(current_line.ToString());
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[1];
           return result;
@@ -470,6 +482,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         Word value = _ParseWord(op, symbols);
         if (! _Check6(value)) {
+          _PreError(current_line.ToString());
           // invalid index
           return RESULT(INV_IDX);
         }
@@ -528,9 +541,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
+          _PreError(current_line.ToString());
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[0];
           return result;
@@ -548,7 +563,8 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           value = symbols.GetLabelAddr(op2);
 
           if (relocatable) {
-            if (! symbols.IsRelocatable(op2)) {
+            if (!symbols.IsRelocatable(op2)) {
+              _PreError(current_line.ToString());
               RESULT result(ABS_REL);
               result.info = op2;
               return result;
@@ -557,12 +573,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         } else {
           if (relocatable) {
+            _PreError(current_line.ToString());
             return RESULT(ABS_REL);
           }
 
           value = _ParseWord(op2, symbols);
         }
         if (! _Check9(value, current_address)) {
+          _PreError(current_line.ToString());
           return RESULT(PG_ERR);
         }
 
@@ -606,9 +624,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
+          _PreError(current_line.ToString());
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[0];
           return result;
@@ -624,9 +644,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
+          _PreError(current_line.ToString());
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[1];
           return result;
@@ -638,6 +660,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         Word value = _ParseWord(op3, symbols);
         if (! _Check6(value)) {
+          _PreError(current_line.ToString());
           return RESULT(INV_IDX);
         }
 
@@ -678,9 +701,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
+          _PreError(current_line.ToString());
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[0];
           return result;
@@ -696,9 +721,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
+          _PreError(current_line.ToString());
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[1];
           return result;
@@ -811,6 +838,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         Word value = _ParseWord(op, symbols);
         if (! _Check9(value, current_address)) {
+          _PreError(current_line.ToString());
           return RESULT(PG_ERR);
         }
 
