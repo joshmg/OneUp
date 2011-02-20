@@ -266,7 +266,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // String pseudo-op
         string op = current_line[0];
 
-        for (int i = 0; i < op.length(); i++) {
+        for (int i = 1; i < op.length()-1; i++) {
           Word character((int) op[i]);
 
           // Text Record
@@ -312,7 +312,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
         } else if (symbols.Contains(current_line[0])) {
-          _SetBits(current_line[0], initial_mem, bit_offset);
+          // check label addr as register number
+          int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
+          if (reg_num <= 7 && reg_num >= 0) {
+            string reg = "R" + itos(reg_num);
+            _SetBits(reg, initial_mem, bit_offset);
+          } else {
+            return RESULT(INV_REG);
+          }
         } else {
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[0];
@@ -323,7 +330,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (current_line[1][0] == 'R') {
           _SetBits(current_line[1], initial_mem, bit_offset);
         } else if (symbols.Contains(current_line[1])) {
-          _SetBits(current_line[1], initial_mem, bit_offset);
+          // check label addr as register number
+          int reg_num = symbols.GetLabelAddr(current_line[1]).ToInt();
+          if (reg_num <= 7 && reg_num >= 0) {
+            string reg = "R" + itos(reg_num);
+            _SetBits(reg, initial_mem, bit_offset);
+          } else {
+            return RESULT(INV_REG);
+          }
         } else {
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[1];
@@ -427,10 +441,17 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         bit_offset -= 3;
 
         // Set bits for base register
-        if (current_line[1][0] == 'R') {
+        if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[1])) {
-          _SetBits(current_line[1], initial_mem, bit_offset);
+        } else if (symbols.Contains(current_line[0])) {
+          // check label addr as register number
+          int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
+          if (reg_num <= 7 && reg_num >= 0) {
+            string reg = "R" + itos(reg_num);
+            _SetBits(reg, initial_mem, bit_offset);
+          } else {
+            return RESULT(INV_REG);
+          }
         } else {
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[1];
@@ -493,7 +514,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
         } else if (symbols.Contains(current_line[0])) {
-          _SetBits(current_line[0], initial_mem, bit_offset);
+          // check label addr as register number
+          int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
+          if (reg_num <= 7 && reg_num >= 0) {
+            string reg = "R" + itos(reg_num);
+            _SetBits(reg, initial_mem, bit_offset);
+          } else {
+            return RESULT(INV_REG);
+          }
         } else {
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[0];
@@ -564,7 +592,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
         } else if (symbols.Contains(current_line[0])) {
-          _SetBits(current_line[0], initial_mem, bit_offset);
+          // check label addr as register number
+          int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
+          if (reg_num <= 7 && reg_num >= 0) {
+            string reg = "R" + itos(reg_num);
+            _SetBits(reg, initial_mem, bit_offset);
+          } else {
+            return RESULT(INV_REG);
+          }
         } else {
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[0];
@@ -575,7 +610,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (current_line[1][0] == 'R') {
           _SetBits(current_line[1], initial_mem, bit_offset);
         } else if (symbols.Contains(current_line[1])) {
-          _SetBits(current_line[1], initial_mem, bit_offset);
+          // check label addr as register number
+          int reg_num = symbols.GetLabelAddr(current_line[1]).ToInt();
+          if (reg_num <= 7 && reg_num >= 0) {
+            string reg = "R" + itos(reg_num);
+            _SetBits(reg, initial_mem, bit_offset);
+          } else {
+            return RESULT(INV_REG);
+          }
         } else {
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[1];
@@ -622,7 +664,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
         } else if (symbols.Contains(current_line[0])) {
-          _SetBits(current_line[0], initial_mem, bit_offset);
+          // check label addr as register number
+          int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
+          if (reg_num <= 7 && reg_num >= 0) {
+            string reg = "R" + itos(reg_num);
+            _SetBits(reg, initial_mem, bit_offset);
+          } else {
+            return RESULT(INV_REG);
+          }
         } else {
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[0];
@@ -633,7 +682,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (current_line[1][0] == 'R') {
           _SetBits(current_line[1], initial_mem, bit_offset);
         } else if (symbols.Contains(current_line[1])) {
-          _SetBits(current_line[1], initial_mem, bit_offset);
+          // check label addr as register number
+          int reg_num = symbols.GetLabelAddr(current_line[1]).ToInt();
+          if (reg_num <= 7 && reg_num >= 0) {
+            string reg = "R" + itos(reg_num);
+            _SetBits(reg, initial_mem, bit_offset);
+          } else {
+            return RESULT(INV_REG);
+          }
         } else {
           RESULT result(LBL_NOT_FOUND);
           result.info = current_line[1];

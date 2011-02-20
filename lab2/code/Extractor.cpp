@@ -8,7 +8,6 @@
 #include "ResultCodes.h"
 #include <cstdlib>
 #include <string>
-#include <sstream> // for line numbers
 #include <map>
 #include <vector>
 #include <fstream>
@@ -19,9 +18,7 @@ using namespace Codes;
 
 // private
 string Extractor::_LineNumber(int pos) {
-  stringstream s;
-  s << "Line " << pos;
-  return s.str();
+  return ("Line " + itos(pos));
 }
 
 // public
