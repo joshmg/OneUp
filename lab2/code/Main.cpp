@@ -16,27 +16,24 @@ int main (int argc, char* argv[]) {
   int symbol_length = SYMBOL_TABLE_MAX_SIZE;
   TRAP_LABELS = false;
 
-  if (argc == 3) {
+  if (argc > 2) {
     // get the file names
     infile = argv[1];
     outfile = argv[2];
   } else {
     // Wrong number of arguments.
-    cout << "Error: Usage: " << argv[0] << " [-t] <input_file> <output_file>\n";
+    cout << "Error: Usage: " << argv[0] << " <input_file> <output_file> [-t] [-s<max_size>]\n";
     return 1; // usage error
   }
 
-  for (int i=3;i<argc;i++) {
-    if (argv[i][0] == '-' && argv[i][0] == 's') {
+  for (int i=3; i<argc; i++) {
+    if (argv[i][0] == '-' && argv[i][1] == 's') {
       string size_flag(argv[i]);
-      string ascii_size = size_flag.substr(1);
+      string ascii_size = size_flag.substr(2);
       symbol_length = atoi(ascii_size.c_str());
     }
-    else if (argv[i][0] == '-' && argv[i][0] == 't') {
+    else if (argv[i][0] == '-' && argv[i][1] == 't') {
       TRAP_LABELS = true;
-
-      infile = argv[2];
-      outfile = argv[3];
     }
   }
 
