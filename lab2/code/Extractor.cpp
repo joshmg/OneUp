@@ -215,8 +215,10 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               return RESULT(MAX_S_SIZE);
             }
           }
-          // adding on length of string (+1 for null termination)
-          _length += line[0].length() + 1;
+          // adding on length of string
+          // (- 1: +1 for null termination, -2 for quote at beginning and end)
+          _length += line[0].length() - 1;
+
         } else if (line.Instruction() == ".BLKW") {
           // .BLKW
           if (line.HasLabel()) {
@@ -252,6 +254,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           }
           _length += w.ToInt();
         }
+
       } else {
         // not a pseduo-op
         if (line.HasLabel()) {
