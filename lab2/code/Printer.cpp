@@ -239,9 +239,13 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         cout << '(' << current_address.ToHex().substr(2) << ')'
-              << string(listing_offset - 6, ' ')  // already printed 6 chars
+              << string(listing_offset - 6, ' ')  // - 6: already printed 6 chars
               << _InFileData(pos, current_line);
         current_address = current_address + value;
+
+      } else if (inst == ".EQU") {
+        // just print line
+        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
 
       } else if (inst == ".FILL") {
         // Fill pseudo-op
@@ -249,15 +253,27 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         // Text Record
-        if (symbols.IsRelocatable(op) && relocatable) {
+        if (symbols.Contains(op) && symbols.IsRelocatable(op) && relocatable) {
           _outStream << 'W';
         } else {
           _outStream << 'T';
         }
 
+        // Store label if one exists
+        if (current_line.HasLabel()) {
+          if (op[0] != 'x' && op[0] != '#') {
+            // is not a constant -- shouldn't have a value
+            if (!symbols.Contains(current_line.Label())) {
+              symbols.InsertLabel(current_line.Label(), value, symbols.IsRelocatable(op));
+            } else {
+              _PreError(current_line.ToString());
+              return RESULT(REDEF_LBL);
+            }
+          }
+        }
+
         // Print address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // Print initial memory value
         _outStream << value.ToHex().substr(2,4) << '\n';
@@ -288,6 +304,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           } else {
             _LineListing(current_address, character, Line(), pos);
           }
+          current_address++;
         }
 
         // Text record for null character at string termination
@@ -865,17 +882,19 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           Word value(it->first);
           // object file output
           _outStream << 'T' << current_address.ToHex().substr(2) << value.ToHex().substr(2) << '\n';
-          //*** listing output 1
+          //*** listing output 2
           cout << '(' << current_address.ToHex().substr(2) << ')'
-                << ' ' << value.ToHex().substr(2) << "  " << value.ToStr() << " ( lit)\n";
+                << ' ' << value.ToHex().substr(2) << "  " << value.ToStr()
+                << " ( lit) <" << value.ToInt2Complement() << ">\n"; // print literal value in <>'s
           current_address++;
           it++;
         }
 
+        // .END output afterward
         Word load(initial_load);
         _outStream << 'E' << load.ToHex().substr(2) << '\n';
 
-        //*** listing output 2
+        //*** listing output 1
         cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
 
         return RESULT(SUCCESS);

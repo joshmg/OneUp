@@ -182,12 +182,9 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             } break;
 
             default: {
-              if (symbols.Contains(line[0])) {
-                w = symbols.GetLabelAddr(line[0]);
-              } else {
-                // don't know this value yet
-                hasvalue = false;
-              }
+              // can't have value yet, will be defined in pass 2.
+              // Forward references to .FILL labels are illegal.
+              hasvalue = false;
             } break;
           }
                     
@@ -198,7 +195,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               return result;
             }
             if (symbols.LabelCount() < _max_size) {
-              symbols.InsertLabel(line.Label(), begin + Word(_length));
+              symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
             } else {
               return RESULT(MAX_S_SIZE);
             }

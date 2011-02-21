@@ -104,11 +104,11 @@ class ResultDecoder {
       _codes[Codes::ORIG_HEX] = "Argument to \".ORIG\" not hex.";
       _codes[Codes::ORIG_LBL] = "\".ORIG\" label longer than six characters.";
       _codes[Codes::REQ_LABEL] = "Instruction requires label.";
-      _codes[Codes::LBL_NOT_FOUND] = "Label not found.";
+      _codes[Codes::LBL_NOT_FOUND] = "Label not found.\n((Forward reference to .FILL label?  Case-sensitvity issue?))";
       _codes[Codes::REDEF_LBL] = "Attempt to redefine label.";
-      _codes[Codes::MAX_S_SIZE] = "Maximum number of symbols reached.  Alter with '-s'?";
-      _codes[Codes::MAX_L_SIZE] = "Maximum number of literals reached.  Alter with '-s'?";
-      _codes[Codes::MAX_LENGTH] = "Maximum object file size reached.  Alter with '-s'?";
+      _codes[Codes::MAX_S_SIZE] = "Maximum number of symbols reached.\n((Alter with '-s'?))";
+      _codes[Codes::MAX_L_SIZE] = "Maximum number of literals reached.\n((Alter with '-s'?))";
+      _codes[Codes::MAX_LENGTH] = "Maximum object file size reached.\n((Alter with '-s'?))";
       _codes[Codes::ABS_REL] = "Absolute value in instruction that requires a relative.";
       _codes[Codes::INV_IMM] = "Immediate value not expressible in 5 bits.";
       _codes[Codes::INV_IDX] = "Index value not expressible in 6 bits.";
