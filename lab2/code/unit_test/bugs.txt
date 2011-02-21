@@ -1,22 +1,21 @@
 bugs:
-non compatability bug
+[X] non compatability bug
 [X] fixed STRZ ugliness
 [X] no end record
 undefined symbol not spouting an error
 [X] empty file with just .END 0
-starting record is outside bounds of the source file
+[X] starting record is outside bounds of the source file
 relocatbable: .FILL and .STRZ symbol is being qualified as an absolute
 segment name length is too long :: SEGFAULT
 .EQU can assign a symbol with a value larger 16 bits
 .ORIG allowing a hex value that is out of the bounds of 16 bits
-Branch with no CCR qualifiers doesn't spout an error
+[X] Branch with no CCR qualifiers doesn't spout an error
 Relocatable values not being documented in object file. ex: valid_br1.s
 
 
 Current Test Cases which fail:
 case_symbols.s
 weird_quotations.s
-similar_symbols_ok.s
 lab2EG_relocatable.s
 Relocate.s
 starting_outside_bounds.s

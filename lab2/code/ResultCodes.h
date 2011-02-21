@@ -29,6 +29,7 @@ namespace Codes {
     INV_INST,       // Instruction does not exist
     STRZ_NOT_STR,   // Argument to .STRZ not a string
     END_OF_STR,     // No end quote
+    STR_JUNK,       // Extra characters after end quote
     ARG_SIZE,       // Wrong number of arguments
     EMPTY_ARG,      // Argument is the empty string
     INV_REG,        // Invalid register number
@@ -90,13 +91,14 @@ class ResultDecoder {
       _codes[Codes::INV_INST] = "Instruction not recognized.";
       _codes[Codes::STRZ_NOT_STR] = "Argument to \".STRZ\" is not a string.";
       _codes[Codes::END_OF_STR] = "End of string not found.";
+      _codes[Codes::STR_JUNK] = "Extra characters found after end of string.";
       _codes[Codes::ARG_SIZE] = "Invalid number of arguments.";
       _codes[Codes::EMPTY_ARG] = "Argugment is the empty string (misplaced comma?).";
       _codes[Codes::INV_REG] = "Non-existent register as arugment.";
       _codes[Codes::INV_CONST] = "Constant value out of range.";
       _codes[Codes::INV_ARG] = "Invalid argument.";
-      _codes[Codes::INV_HEX] = "Non-hex character after 'x'.";
-      _codes[Codes::INV_DEC] = "Non-digit after '#'.";
+      _codes[Codes::INV_HEX] = "Invalid hex following 'x'.";
+      _codes[Codes::INV_DEC] = "Invalid decimal following '#'.";
       _codes[Codes::INV_BR] = "Invalid CCR mask for branch instruction.";
       _codes[Codes::NON_LD_LIT] = "Literals may only be used with the LD instruction.";
       _codes[Codes::ORIG] = "First non-comment line should contain \".ORIG\" instruction.";

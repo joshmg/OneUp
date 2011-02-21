@@ -84,7 +84,7 @@ string Word::ToHexAbbr() const {
 }
 
 bool Word::FromInt(int value) {
-  if (((unsigned short) value) < (int) pow(2.0, WORD_SIZE)) {
+  if ((short) value == value) {
     // value is within allowable range
     _value = (short) value;
     return true;
@@ -157,6 +157,10 @@ bool Word::FromHex(const string& value) {
 bool Word::FromHexAbbr(const string& value) {
   if (value[0] != 'x') {
     // no '0x' prefix
+    return false;
+  }
+  if (value.length() > 5) {
+    // largest: xXXXX
     return false;
   }
   for (int i=1; i<value.length(); i++) {

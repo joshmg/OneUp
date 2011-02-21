@@ -32,7 +32,7 @@ class Word : public iWord {
 
   public:
     // maximum size of a Word
-    const static int MAX_SIZE = 65535;
+    const static int MAX_SIZE = 0xFFFF;
 
     //! Sets a new Word's value to 0.
     Word();

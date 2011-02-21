@@ -160,8 +160,8 @@ RESULT Line::ReadLine (string line) {
 
       while (line.length() > 0) {
         arg += line[0];
-        if (line[0] == '\"') {
-          // end of string
+        if (arg[arg.length()-1] != '\\' && line[0] == '\"') {
+          // found unescaped quote
           break;
         } else {
           // keep going
@@ -175,6 +175,10 @@ RESULT Line::ReadLine (string line) {
       if (line.length() == 0) {
         // no end quote
         return RESULT(END_OF_STR);
+      }
+      if (line.length() > 1) {
+        // junk after string
+        return RESULT(STR_JUNK);
       }
     }
   } else if (line.length() > 0) {
@@ -240,6 +244,10 @@ RESULT Line::ReadLine (string line) {
     // could be zero or one
     if (_args.size() > 1) {
       return RESULT(ARG_SIZE);
+    }
+    if (_args.size() == 1 && _args[0][0] != 'x') {
+      // argument to .ORIG must be hex
+      return RESULT(ORIG_HEX);
     }
   } else {
     // not a real instruction
