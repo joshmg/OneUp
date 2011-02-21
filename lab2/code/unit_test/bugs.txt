@@ -15,12 +15,4 @@ segment name length is too long :: SEGFAULT
 
 Current Test Cases which fail:
 case_symbols.s
-weird_quotations.s
-lab2EG_relocatable.s
-Relocate.s
-starting_outside_bounds.s
 lab2EG_invalid_segment_name.s
-aliasing_an_alias.s
-invalid_hex.s
-invalid_orig_hex.s
-valid_br1.s
