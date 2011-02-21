@@ -285,8 +285,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
   }
   
   for (int i=0; i<literals.size(); i++) {
-    symbols.InsertLiteral(literals[i], Word(_length));
-    _length++;
+    symbols.InsertLiteral(literals[i], begin + Word(_length++));
   }
 
   return RESULT(SUCCESS);
