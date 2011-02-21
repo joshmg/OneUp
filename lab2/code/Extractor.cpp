@@ -284,6 +284,11 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
     }
   }
   
+  if (_length < 1) {
+    // shouldn't happen
+    return RESULT(UNEXP_EOF);
+  }
+  
   for (int i=0; i<literals.size(); i++) {
     symbols.InsertLiteral(literals[i], begin + Word(_length++));
   }

@@ -55,7 +55,9 @@ namespace Codes {
     PG_ERR,         // Arugment on different page
     NO_END,         // No end record
     END_OB,         // End arg out of bounds
+    UNEXP_EOF,      // Unexpected EOF
 
+    // ^ new codes go here ^
     FILE_NOT_FOUND, // File not found
     FILE_NOT_OPENED // File could not be opened
   };
@@ -117,6 +119,7 @@ class ResultDecoder {
       _codes[Codes::PG_ERR] = "Page Error: Address references a different page.";
       _codes[Codes::NO_END] = "File has no end record.";
       _codes[Codes::END_OB] = "Arugment to \".END\" instruction is outside declared memory.";
+      _codes[Codes::UNEXP_EOF] = "Unexpected end of file.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found.";
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";
