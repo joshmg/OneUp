@@ -68,7 +68,7 @@ int SymbolTable::LabelCount() const {
 }
 
 int SymbolTable::LiteralCount() const {
-  return _symbols.size();
+  return _literals.size();
 }
 
 const map<int, Word>* SymbolTable::GetLiterals() const {
