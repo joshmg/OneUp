@@ -386,8 +386,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           initial_mem.SetBit(bit_offset, true);
           bit_offset--;
 
-          string op = current_line[0];
-          Word value = _ParseWord(op, symbols);
+          Word value = _ParseWord(op3, symbols);
           if (! _Check5(value)) {
             // invalid immediate
             _PreError(current_line.ToString());
@@ -428,8 +427,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           // set link bit
           initial_mem.SetBit(11, true);
         }
-
-        bit_offset -= 3;
 
         string op = current_line[0];
         Word value = _ParseWord(op, symbols);
@@ -473,7 +470,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           initial_mem.SetBit(11, true);
         }
 
-        bit_offset -= 3;
+        bit_offset -= 3; // link bit then junk
 
         // Set bits for base register
         if (current_line[0][0] == 'R') {
@@ -567,8 +564,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           result.info = current_line[0];
           return result;
         }
-
-        bit_offset -= 3;
 
         string op2 = current_line[1];
         Word value;
@@ -670,8 +665,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           result.info = current_line[1];
           return result;
         }
-
-        bit_offset -= 6;
 
         string op3 = current_line[2];
 
@@ -799,7 +792,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         initial_mem.SetBit(13, true);
         initial_mem.SetBit(12, true);
 
-        bit_offset -= 4;
+        bit_offset -= 4; // 4 junk bits
 
         string op = current_line[0];
 
