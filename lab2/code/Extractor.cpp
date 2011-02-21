@@ -210,7 +210,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               return result;
             }
             if (symbols.LabelCount() < _max_size) {
-              symbols.InsertLabel(line.Label(), begin + Word(_length));
+              symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
             } else {
               return RESULT(MAX_S_SIZE);
             }
