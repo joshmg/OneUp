@@ -1,0 +1,5 @@
+*.o*
+*.exe
+a.out
+wi11-asm
+wi11-sim
