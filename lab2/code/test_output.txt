@@ -1,0 +1,564 @@
+------------------------------------------------------------------
+|           Running all test files in unit_test/
+------------------------------------------------------------------
+>>> Testing unit_test/aliasing_an_alias.s.
+
+                              (   2) Lab2EG   .ORIG
+(0000) 0004  0000000000000100 (   3) count    .FILL   #4
+(0001) 2200  0010001000000000 (   4) Begin    LD      ACC,count       ;R1 <- 4
+
+--- In line:          LEA     R0,msg
+--- Error: msg: Absolute value in instruction that requires a relative.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/case_symbol.s.
+
+                              (   2) Lab2EG 	.ORIG 	x0
+(0000) 0E00  0000111000000000 (   3) Begin 	BRNZP next
+(0001) 0E00  0000111000000000 (   4) NEXT	BRNZP Begin
+                              (   5) 		.END	Begin
+
+>>> out.o
+HLab2EG00000002
+T00000E00
+T00010E00
+E0000
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/commented_nonsense.s.
+
+Error: Line 4: Arugment to ".END" instruction is outside declared memory.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/Exmaple1.s.
+
+                              (   2) Prog .ORIG x3020
+                              (   3) HALT .EQU x25
+(3020) 2024  0010000000100100 (   4) Begin LD R0,N 		;R0 <- #13
+(3021) 2226  0010001000100110 (   5) 	  LD R1,=#16 	;R1 <- #16
+(3022) 3025  0011000000100101 (   6) 	  ST R0,Ans 	;M[Ans]<-R0
+(3023) F025  1111000000100101 (   7)       TRAP HALT
+(3024) 000D  0000000000001101 (   8) N 	  .FILL #13
+(3025)                        (   9) Ans   .BLKW #1
+(3026) 0010  0000000000010000 ( lit) <16>
+                              (  10)       .END Begin
+
+>>> out.o
+HProg  30200007
+T30202024
+T30212226
+T30223025
+T3023F025
+T3024000D
+T30260010
+E3020
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_br1.s.
+
+Error: Line 4: Invalid CCR mask for branch instruction.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_br3.s.
+
+Error: Line 4: Invalid CCR mask for branch instruction.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_hex1.s.
+
+Error: Line 3: Invalid hex following 'x'.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_hex2.s.
+
+Error: Line 3: Invalid hex following 'x'.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_hex.s.
+
+Error: Line 3: Invalid hex following 'x'.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_op1.s.
+
+Error: Line 4: Instruction not recognized.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_op2.s.
+
+Error: Line 4: Instruction not recognized.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_op3.s.
+
+Error: Line 4: Instruction not recognized.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_op4.s.
+
+Error: Line 4: Instruction not recognized.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_orig_decimal2.s.
+
+Error: Line 3: Argument to ".ORIG" not hex.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_orig_decimal.s.
+
+Error: Line 3: Argument to ".ORIG" not hex.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_orig_hex.s.
+
+Error: Line 2: Invalid hex following 'x'.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/invalid_strz.s.
+
+Error: Line 10: Argument to ".STRZ" is not a string.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/Lab2EG2.s.
+
+                              (   2) Lab2EG 	.ORIG 	x30B0
+(30B0) 0004  0000000000000100 (   3) count 	.FILL 	#4
+(30B1) 22B0  0010001010110000 (   4) Begin 	LD 		ACC,count			;R1 <- 4
+(30B2) E0B7  1110000010110111 (   5) 		LEA		R0,msg
+(30B3) F022  1111000000100010 (   6) loop	TRAP	x22						;print "hi! "
+(30B4) 127F  0001001001111111 (   7) 		ADD		ACC,ACC,#-1		;R1--
+(30B5) 02B3  0000001010110011 (   8) 		BRP		loop
+(30B6) 40BC  0100000010111100 (   9) 		JMP		Next
+(30B7) 0068  0000000001101000 (  10) msg		.STRZ	"hi! "
+(30B8) 0069  0000000001101001 (  10) 
+(30B9) 0021  0000000000100001 (  10) 
+(30BA) 0020  0000000000100000 (  10) 
+(30BB) 0000  0000000000000000 (  10) 
+(30BC) 5020  0101000000100000 (  11) Next	AND		R0,R0,x0		;R0 <- 0
+(30BD) 9000  1001000000000000 (  12) 		NOT 	R0,R0				;R0 <- xFFFF
+(30BE) 30C3  0011000011000011 (  13) 		ST		R0,Array			;M[Array] <- xFFFF
+(30BF) EAC3  1110101011000011 (  14) 		LEA		R5,Array
+(30C0) 2CC7  0010110011000111 (  15) 		LD		R6,=#100			;R6 <= #100
+(30C1) 7141  0111000101000001 (  16) 		STR		R0,R5,#1		;M[Array+1] <= xFFFF
+(30C2) F025  1111000000100101 (  17) 		TRAP	x25
+                              (  18) ACC		.EQU	#1
+(30C3)                        (  20) Array	.BLKW 	#3
+(30C6) 0010  0000000000010000 (  21) 		.FILL	x10
+(30C7) 0064  0000000001100100 ( lit) <100>
+                              (  22) 		.END	Begin
+
+>>> out.o
+HLab2EG30B00018
+T30B00004
+T30B122B0
+T30B2E0B7
+T30B3F022
+T30B4127F
+T30B502B3
+T30B640BC
+T30B70068
+T30B80069
+T30B90021
+T30BA0020
+T30BB0000
+T30BC5020
+T30BD9000
+T30BE30C3
+T30BFEAC3
+T30C02CC7
+T30C17141
+T30C2F025
+T30C60010
+T30C70064
+E30B0
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/lab2EG_invalid_alias.s.
+
+Error: Line 18: R1: Label not found.
+((Forward reference to .FILL label?  Case-sensitvity issue?))
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/lab2EG_invalid_register_alias.s.
+
+                              (   2) Lab2EG   .ORIG
+(0000) 0004  0000000000000100 (   3) count    .FILL   #4
+
+--- In line: Begin    LD      ACC,count       ;R1 <- 4
+--- Error: Non-existent register as arugment.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/lab2EG_invalid_segment_name.s.
+
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/Lab2EG_invalid_whitespace.s.
+
+Error: Line 6: Instruction not recognized.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/lab2EG_relocatable.s.
+
+                              (   2) Lab2EG   .ORIG
+(0000) 0004  0000000000000100 (   3) count    .FILL   #4
+(0001) 2200  0010001000000000 (   4) Begin    LD      ACC,count       ;R1 <- 4
+
+--- In line:          LEA     R0,msg
+--- Error: msg: Absolute value in instruction that requires a relative.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/lab2EG.s.
+
+                              (   3) Lab2EG   .ORIG   x30B0
+(30B0) 0004  0000000000000100 (   4) count    .FILL   #4
+(30B1) 22B0  0010001010110000 (   5) Begin    LD      ACC,count       ;R1 <- 4
+(30B2) E0B7  1110000010110111 (   6)          LEA     R0,msg
+(30B3) F022  1111000000100010 (   7) loop     TRAP    x22             ;print "hi! "
+(30B4) 127F  0001001001111111 (   8)          ADD     ACC,ACC,#-1     ;R1--
+(30B5) 02B3  0000001010110011 (   9)          BRP     loop
+(30B6) 40BC  0100000010111100 (  10)          JMP     Next
+(30B7) 0068  0000000001101000 (  11) msg      .STRZ   "hi! "
+(30B8) 0069  0000000001101001 (  11) 
+(30B9) 0021  0000000000100001 (  11) 
+(30BA) 0020  0000000000100000 (  11) 
+(30BB) 0000  0000000000000000 (  11) 
+(30BC) 5020  0101000000100000 (  12) Next     AND     R0,R0,x0        ;R0 <- 0
+(30BD) 9000  1001000000000000 (  13)          NOT     R0,R0           ;R0 <- xFFFF
+(30BE) 30C3  0011000011000011 (  14)          ST      R0,Array        ;M[Array] <- xFFFF
+(30BF) EAC3  1110101011000011 (  15)          LEA     R5,Array
+(30C0) 2CC7  0010110011000111 (  16)          LD      R6,=#100        ;R6 <= #100
+(30C1) 7141  0111000101000001 (  17)          STR     R0,R5,#1        ;M[Array+1] <= xFFFF
+(30C2) F025  1111000000100101 (  18)          TRAP    x25
+                              (  19) ACC      .EQU    #1
+(30C3)                        (  21) Array    .BLKW   #3
+(30C6) 0010  0000000000010000 (  22)          .FILL   x10
+(30C7) 0064  0000000001100100 ( lit) <100>
+                              (  23)          .END    Begin
+
+>>> out.o
+HLab2EG30B00018
+T30B00004
+T30B122B0
+T30B2E0B7
+T30B3F022
+T30B4127F
+T30B502B3
+T30B640BC
+T30B70068
+T30B80069
+T30B90021
+T30BA0020
+T30BB0000
+T30BC5020
+T30BD9000
+T30BE30C3
+T30BFEAC3
+T30C02CC7
+T30C17141
+T30C2F025
+T30C60010
+T30C70064
+E30B0
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/Lab2EG_valid_whitespace.s.
+
+                              (   2) Lab2EG 	  .ORIG 	x30B0
+(30B0) 0004  0000000000000100 (   3) count 	.FILL 	#4
+(30B1) 22B0  0010001010110000 (   4) Begin 	LD		 ACC,count			;R1 <- 4
+(30B2) E0B7  1110000010110111 (   5) 		LEA		R0,msg
+(30B3) F022  1111000000100010 (   6) loop	TRAP	x22						;print "hi! "
+(30B4) 127F  0001001001111111 (   7) 		ADD		  ACC,ACC,#-1		;R1--
+(30B5) 02B3  0000001010110011 (   8) 		BRP		loop
+(30B6) 40BC  0100000010111100 (   9) 		JMP		  Next
+(30B7) 0068  0000000001101000 (  10) msg		.STRZ	"hi! "
+(30B8) 0069  0000000001101001 (  10) 
+(30B9) 0021  0000000000100001 (  10) 
+(30BA) 0020  0000000000100000 (  10) 
+(30BB) 0000  0000000000000000 (  10) 
+(30BC) 5020  0101000000100000 (  11) Next	AND		R0,R0,x0		;R0 <- 0
+(30BD) 9000  1001000000000000 (  12) 		NOT 	R0,R0				  ;R0 <- xFFFF
+(30BE) 30C3  0011000011000011 (  13) 		 ST		R0,Array			;M[Array] <- xFFFF
+(30BF) EAC3  1110101011000011 (  14) 		LEA		R5,Array
+(30C0) 2CC7  0010110011000111 (  15) 		LD		 R6,=#100			;R6 <= #100
+(30C1) 7141  0111000101000001 (  16) 		STR		 R0,R5,#1		;M[Array+1] <= xFFFF
+(30C2) F025  1111000000100101 (  17) 		TRAP	  x25
+                              (  18) ACC		.EQU	#1
+(30C3)                        (  20) Array	.BLKW 	#3
+(30C6) 0010  0000000000010000 (  21) 		.FILL	x10
+(30C7) 0064  0000000001100100 ( lit) <100>
+                              (  22) 		.END	Begin
+
+>>> out.o
+HLab2EG30B00018
+T30B00004
+T30B122B0
+T30B2E0B7
+T30B3F022
+T30B4127F
+T30B502B3
+T30B640BC
+T30B70068
+T30B80069
+T30B90021
+T30BA0020
+T30BB0000
+T30BC5020
+T30BD9000
+T30BE30C3
+T30BFEAC3
+T30C02CC7
+T30C17141
+T30C2F025
+T30C60010
+T30C70064
+E30B0
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/missing_symbol.s.
+
+Error: Line 10: Extra characters found after end of string.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/no_closing_quote.s.
+
+Error: Line 10: End of string not found.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/no_end_record.s.
+
+                              (   2) Lab2EG 	.ORIG 	x30B0
+(30B0) 0004  0000000000000100 (   3) count 	.FILL 	#4
+(30B1) 22B0  0010001010110000 (   4) Begin 	LD		ACC,count			;R1 <- 4
+(30B2) E0B7  1110000010110111 (   5) 		LEA		R0,msg
+(30B3) F022  1111000000100010 (   6) loop	TRAP	x22						;print "hi! "
+(30B4) 127F  0001001001111111 (   7) 		ADD		ACC,ACC,#-1		;R1--
+(30B5) 02B3  0000001010110011 (   8) 		BRP		loop
+(30B6) 40BC  0100000010111100 (   9) 		JMP		Next
+(30B7) 0068  0000000001101000 (  10) msg		.STRZ	"hi! "
+(30B8) 0069  0000000001101001 (  10) 
+(30B9) 0021  0000000000100001 (  10) 
+(30BA) 0020  0000000000100000 (  10) 
+(30BB) 0000  0000000000000000 (  10) 
+(30BC) 5020  0101000000100000 (  11) Next	AND		R0,R0,x0		;R0 <- 0
+(30BD) 9000  1001000000000000 (  12) 		NOT 	R0,R0				;R0 <- xFFFF
+(30BE) 30C3  0011000011000011 (  13) 		ST		R0,Array			;M[Array] <- xFFFF
+(30BF) EAC3  1110101011000011 (  14) 		LEA		R5,Array
+(30C0) 2CC7  0010110011000111 (  15) 		LD		R6,=#100			;R6 <= #100
+(30C1) 7141  0111000101000001 (  16) 		STR		R0,R5,#1		;M[Array+1] <= xFFFF
+(30C2) F025  1111000000100101 (  17) 		TRAP	x25
+                              (  18) ACC		.EQU	#1
+(30C3)                        (  20) Array	.BLKW 	#3
+(30C6) 0010  0000000000010000 (  21) 		.FILL	x10
+Error: File has no end record.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/nonsense.s.
+
+Error: Line 1: Instruction not recognized.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/page_branching.s.
+
+Error: (Max Length: 4096): Maximum object file size reached.
+((Alter with '-s'?))
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/random_neg.s.
+
+                              (   3) Test01	 .ORIG   x30B0
+(30B0) 0001  0000000000000001 (   4) inc	 .FILL   #1
+(30B1) 5260  0101001001100000 (   5) Begin	 AND	 R1,R1,#0	; Bitmask R1 to all zeroes
+(30B2) F043  1111000001000011 (   6) Loop  TRAP	 rND
+(30B3) 08B6  0000100010110110 (   7)          BRN	 End		; Branch to end of program if the N CCR is set
+
+--- In line: 	 ADD	 R1,R1,inc	; Increment R1
+--- Error: Immediate value not expressible in 5 bits.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/Relocate.s.
+
+                              (   2) Prog   .ORIG
+(0000) 0004  0000000000000100 (   3) X      .FILL	Y
+                              (   4) Halt   .EQU	x25
+(0001) 2204  0010001000000100 (   5) Start  LD 	R1,X
+(0002) 3204  0011001000000100 (   6)        ST	R1,Y
+(0003) F025  1111000000100101 (   7)        TRAP	Halt
+(0004)                        (   8) Y      .BLKW	#1
+                              (   9)        .END     Start
+
+>>> out.o
+HProg  0005
+W00000004
+R00012204
+R00023204
+T0003F025
+E0000
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/segment_length_overflow.s.
+
+Error: (Max Length: 65535): Maximum object file size reached.
+((Alter with '-s'?))
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/similar_symbols_ok.s.
+
+                              (   2) Lab2EG 	.ORIG 	x30B0
+(30B0) 0004  0000000000000100 (   3) count 	.FILL 	#4
+(30B1) 22B0  0010001010110000 (   4) Begin 	LD		ACC,count			;R1 <- 4
+(30B2) E0B7  1110000010110111 (   5) 		LEA		R0,msg
+(30B3) F022  1111000000100010 (   6) loop	TRAP	x22						;print "hi! "
+(30B4) 127F  0001001001111111 (   7) 		ADD		ACC,ACC,#-1		;R1--
+(30B5) 02B3  0000001010110011 (   8) 		BRP		loop
+(30B6) 40BD  0100000010111101 (   9) 		JMP		Next
+(30B7) 0EB8  0000111010111000 (  10) msg		BRNZP	mSg
+(30B8) 0068  0000000001101000 (  11) mSg		.STRZ	"hi! "
+(30B9) 0069  0000000001101001 (  11) 
+(30BA) 0021  0000000000100001 (  11) 
+(30BB) 0020  0000000000100000 (  11) 
+(30BC) 0000  0000000000000000 (  11) 
+(30BD) 5020  0101000000100000 (  12) Next	AND		R0,R0,x0		;R0 <- 0
+(30BE) 9000  1001000000000000 (  13) 		NOT 	R0,R0				;R0 <- xFFFF
+(30BF) 30C4  0011000011000100 (  14) 		ST		R0,Array			;M[Array] <- xFFFF
+(30C0) EAC4  1110101011000100 (  15) 		LEA		R5,Array
+(30C1) 2CC8  0010110011001000 (  16) 		LD		R6,=#100			;R6 <= #100
+(30C2) 7141  0111000101000001 (  17) 		STR		R0,R5,#1		;M[Array+1] <= xFFFF
+(30C3) F025  1111000000100101 (  18) 		TRAP	x25
+                              (  19) ACC		.EQU	#1
+(30C4)                        (  21) Array	.BLKW 	#3
+(30C7) 0010  0000000000010000 (  22) 		.FILL	x10
+(30C8) 0064  0000000001100100 ( lit) <100>
+                              (  23) 		.END	Begin
+
+>>> out.o
+HLab2EG30B00019
+T30B00004
+T30B122B0
+T30B2E0B7
+T30B3F022
+T30B4127F
+T30B502B3
+T30B640BD
+T30B70EB8
+T30B80068
+T30B90069
+T30BA0021
+T30BB0020
+T30BC0000
+T30BD5020
+T30BE9000
+T30BF30C4
+T30C0EAC4
+T30C12CC8
+T30C27141
+T30C3F025
+T30C70010
+T30C80064
+E30B0
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/starting_outside_bounds.s.
+
+Error: Line 3: Arugment to ".END" instruction is outside declared memory.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/undefined_command.s.
+
+Error: Line 5: Instruction not recognized.
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/valid_br1.s.
+
+                              (   2) Prog .ORIG
+                              (   3) HALT .EQU x25
+(0000) 0E00  0000111000000000 (   4) Begin BRNZPZZPPNNZP Begin ; This should be valid
+                              (   5)      .END Begin
+
+>>> out.o
+HProg  0001
+R00000E00
+E0000
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/valid_br2.s.
+
+                              (   2) Prog .ORIG
+                              (   3) HALT .EQU x25
+(0000) 0000  0000000000000000 (   4) Begin BR Begin ; This should be valid
+                              (   5)      .END Begin
+
+>>> out.o
+HProg  0001
+R00000000
+E0000
+
+
+------------------------------------------------------------------
+>>> Testing unit_test/weird_quotation.s.
+
+Error: Line 10: Extra characters found after end of string.
+
+
+------------------------------------------------------------------
+Rerun of page_branching.s with argument '-s3000'
+
+>>> Original error:
+Error: (Max Length: 4096): Maximum object file size reached.
+((Alter with '-s'?))
+
+>>> With -s argument
+                              (   2) Test02   .ORIG   x0 ; 1501
+(0000) 5020  0101000000100000 (   3) Begin    AND     R0,R0,#0       ; Bitmask R0 to all zeroes
+(0001)                        (   4)          .BLKW   xFFF
+(1000) F043  1111000001000011 (   5)          TRAP    rND
+(1001) 0600  0000011000000000 (   6)          BRZP    Begin          ; If the random number generated was non-negative, branch
+(1002) F025  1111000000100101 (   7)          TRAP    HALT           ; Otherwise, halt
+                              (   8) HALT     .EQU    x25
+                              (   9) rND      .EQU    x43
+                              (  10)          .END    Begin
+
+>>> out.o
+HTest0200001003
+T00005020
+T1000F043
+T10010600
+T1002F025
+E0000
