@@ -56,6 +56,8 @@ namespace Codes {
     NO_END,         // No end record
     END_OB,         // End arg out of bounds
     UNEXP_EOF,      // Unexpected EOF
+    REL_PG_SIZE,    // Relocatable prog spans won't fit in one page
+    MEM_FIT,        // Program won't fit in memory
 
     // ^ new codes go here ^
     FILE_NOT_FOUND, // File not found
@@ -120,6 +122,8 @@ class ResultDecoder {
       _codes[Codes::NO_END] = "File has no end record.";
       _codes[Codes::END_OB] = "Arugment to \".END\" instruction is outside declared memory.";
       _codes[Codes::UNEXP_EOF] = "Unexpected end of file.";
+      _codes[Codes::REL_PG_SIZE] = "Relocatable programs cannot occupy more than one page in memory.";
+      _codes[Codes::MEM_FIT] = "This program will not fit in memory.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found.";
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";

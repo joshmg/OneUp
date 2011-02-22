@@ -62,19 +62,19 @@ int main (int argc, char* argv[]) {
     // add trap codes if desired
     if (TRAP_LABELS) {
       // OUT
-      symbols.InsertLabel("OUT", Word(0x21));
+      symbols.InsertLabel("out", Word(0x21));
       // PUTS
-      symbols.InsertLabel("PUTS", Word(0x22));
+      symbols.InsertLabel("puts", Word(0x22));
       // IN
-      symbols.InsertLabel("IN", Word(0x23));
+      symbols.InsertLabel("in", Word(0x23));
       // HALT
-      symbols.InsertLabel("HALT", Word(0x25));
+      symbols.InsertLabel("halt", Word(0x25));
       // OUTN
-      symbols.InsertLabel("OUTN", Word(0x31));
+      symbols.InsertLabel("outn", Word(0x31));
       // INN
-      symbols.InsertLabel("INN", Word(0x33));
+      symbols.InsertLabel("inn", Word(0x33));
       // RND
-      symbols.InsertLabel("RND", Word(0x43));
+      symbols.InsertLabel("rnd", Word(0x43));
     }
 
     Printer printer;

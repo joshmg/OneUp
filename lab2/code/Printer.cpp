@@ -270,7 +270,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
               symbols.InsertLabel(current_line.Label(), value, symbols.IsRelocatable(op));
             } else {
               _PreError(current_line.ToString());
-              return RESULT(REDEF_LBL);
+              return RESULT(REDEF_LBL, op);
             }
           }
         }
@@ -351,9 +351,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         } else {
           _PreError(current_line.ToString());
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0];
-          return result;
+          return RESULT(LBL_NOT_FOUND, current_line[0]);
         }
 
         // Set bits for source register 1
@@ -371,9 +369,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         } else {
           _PreError(current_line.ToString());
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1];
-          return result;
+          return RESULT(LBL_NOT_FOUND, current_line[1]);
         }
 
         string op3 = current_line[2];
@@ -393,7 +389,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           if (op3[0] != 'x' && op3[0] != '#' && !symbols.Contains(op3)) {
             // is label that is not defined
             _PreError(current_line.ToString());
-            return RESULT(LBL_NOT_FOUND);
+            return RESULT(LBL_NOT_FOUND, op3);
           }
 
           if (! _Check5(value)) {
@@ -444,7 +440,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
-          return RESULT(LBL_NOT_FOUND);
+          return RESULT(LBL_NOT_FOUND, op);
         }
         // check page
         if (! _Check9(value, current_address)) {
@@ -509,9 +505,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         } else {
           _PreError(current_line.ToString());
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1];
-          return result;
+          return RESULT(LBL_NOT_FOUND, current_line[1]);
         }
 
         string op = current_line[1];
@@ -521,7 +515,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
-          return RESULT(LBL_NOT_FOUND);
+          return RESULT(LBL_NOT_FOUND, op);
         }
 
         if (! _Check6(value)) {
@@ -589,9 +583,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         } else {
           _PreError(current_line.ToString());
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0];
-          return result;
+          return RESULT(LBL_NOT_FOUND, current_line[0]);
         }
 
         string op2 = current_line[1];
@@ -617,7 +609,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           if (op2[0] != 'x' && op2[0] != '#' && !symbols.Contains(op2)) {
             // is label that is not defined
             _PreError(current_line.ToString());
-            return RESULT(LBL_NOT_FOUND);
+            return RESULT(LBL_NOT_FOUND, op2);
           }
 
           if (relocatable) {
@@ -678,9 +670,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         } else {
           _PreError(current_line.ToString());
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0];
-          return result;
+          return RESULT(LBL_NOT_FOUND, current_line[0]);
         }
 
         // Set bits for base register
@@ -698,9 +688,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         } else {
           _PreError(current_line.ToString());
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1];
-          return result;
+          return RESULT(LBL_NOT_FOUND, current_line[1]);
         }
 
         string op3 = current_line[2];
@@ -760,9 +748,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         } else {
           _PreError(current_line.ToString());
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0];
-          return result;
+          return RESULT(LBL_NOT_FOUND, current_line[0]);
         }
 
         // Set bits for source register
@@ -780,9 +766,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         } else {
           _PreError(current_line.ToString());
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1];
-          return result;
+          return RESULT(LBL_NOT_FOUND, current_line[1]);
         }
 
         // **End parsing instruction**
@@ -846,7 +830,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
-          return RESULT(LBL_NOT_FOUND);
+          return RESULT(LBL_NOT_FOUND, op);
         }
 
         while (bit_offset >= 0) {
@@ -903,7 +887,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
-          return RESULT(LBL_NOT_FOUND);
+          return RESULT(LBL_NOT_FOUND, op);
         }
         // make sure it's on the same page
         if (! _Check9(value, current_address)) {

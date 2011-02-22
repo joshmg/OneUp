@@ -104,8 +104,10 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           } else {
             relocatable = true;
           }
+          
+          symbols.InsertLabel(line.Label(), begin, relocatable);
+          _length++;
 
-          _length++; 
         } else if (line.Instruction() == ".END") {
           // .END
           Word w;
@@ -279,10 +281,31 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
         }
       }
     }
-    if ( _length >= (_max_size * 2) || _length >= Word::MAX_SIZE ) {
-      int max = _length & Word::MAX_SIZE;
-      return RESULT(MAX_LENGTH, "(Max Length: " + itos(max) + ")");
+
+    //--- various tests of program length
+    if (relocatable) {
+      int page_size = 0x1FF;
+      if (_length > page_size ) {
+        // must fit in one page
+        return RESULT(REL_PG_SIZE);
+      }
     }
+
+    if ( _length >= (_max_size * 2) ) {
+      // maximum size of footprint in memory
+      return RESULT(MAX_LENGTH, "(MaxObjFileSize: " + itos(_max_size * 2) + ")");
+    }
+
+    if ( begin.ToInt() + _length >= Word::MAX_SIZE) {
+      // begin is zero in relocatable program and
+      // could be anything from 0 to MAX_SIZE otherwise
+
+      // program will not fit in memory
+      return RESULT(MEM_FIT, "MemRange: " + begin.ToHexAbbr() + "-" + (begin + Word(_length)).ToHexAbbr());
+    }      
+      
+
+    //--- end of length related testing
   }
   
   if (_length < 1) {
