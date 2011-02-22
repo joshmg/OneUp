@@ -126,8 +126,11 @@ Word Printer::_ParseWord(const string& op, const SymbolTable& symbols) {
 
 bool Printer::_Check9(Word value, Word PC) {
   // test first 7 bits
-  Word temp1 = PC.And(Word(0xFE00));
-  Word temp2 = PC.And(Word(0xFE00));
+  Word top7(0xFE00);
+
+  Word temp1 = value.And(top7);
+  Word temp2 = PC.And(top7);
+
   return (temp1.ToInt() == temp2.ToInt());
 }
 
@@ -387,6 +390,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           bit_offset--;
 
           Word value = _ParseWord(op3, symbols);
+          if (op3[0] != 'x' && op3[0] != '#' && !symbols.Contains(op3)) {
+            // is label that is not defined
+            _PreError(current_line.ToString());
+            return RESULT(LBL_NOT_FOUND);
+          }
+
           if (! _Check5(value)) {
             // invalid immediate
             _PreError(current_line.ToString());
@@ -430,6 +439,19 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         string op = current_line[0];
         Word value = _ParseWord(op, symbols);
+
+        // make sure it's not an undefined label
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND);
+        }
+        // check page
+        if (! _Check9(value, current_address)) {
+          // invalid offset
+          _PreError(current_line.ToString());
+          return RESULT(PG_ERR);
+        }
 
         if (relocatable) {
           if (symbols.Contains(op) && !symbols.IsRelocatable(op)) {
@@ -493,8 +515,15 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         string op = current_line[1];
-
         Word value = _ParseWord(op, symbols);
+
+        // make sure it's not an undefined label
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND);
+        }
+
         if (! _Check6(value)) {
           _PreError(current_line.ToString());
           // invalid index
@@ -584,6 +613,13 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
 
         } else {
+          // make sure it's not an undefined label
+          if (op2[0] != 'x' && op2[0] != '#' && !symbols.Contains(op2)) {
+            // is label that is not defined
+            _PreError(current_line.ToString());
+            return RESULT(LBL_NOT_FOUND);
+          }
+
           if (relocatable) {
             _PreError(current_line.ToString());
             return RESULT(ABS_REL);
@@ -591,6 +627,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
           value = _ParseWord(op2, symbols);
         }
+        // check page
         if (! _Check9(value, current_address)) {
           _PreError(current_line.ToString());
           return RESULT(PG_ERR);
@@ -667,8 +704,15 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         string op3 = current_line[2];
-
         Word value = _ParseWord(op3, symbols);
+
+        // make sure it's not an undefined label
+        if (op3[0] != 'x' && op3[0] != '#' && !symbols.Contains(op3)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND);
+        }
+
         if (! _Check6(value)) {
           _PreError(current_line.ToString());
           return RESULT(INV_IDX);
@@ -798,6 +842,13 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         Word value = _ParseWord(op, symbols);
 
+        // make sure it's not an undefined label
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND);
+        }
+
         while (bit_offset >= 0) {
           initial_mem.SetBit(bit_offset, value[bit_offset]);
           bit_offset--;
@@ -847,6 +898,14 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         string op = current_line[0];
 
         Word value = _ParseWord(op, symbols);
+
+        // make sure it's not an undefined label
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND);
+        }
+        // make sure it's on the same page
         if (! _Check9(value, current_address)) {
           _PreError(current_line.ToString());
           return RESULT(PG_ERR);
