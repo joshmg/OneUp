@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$iWord_8h.html" title="Definition of a &quot;word&quot; of data." alt="" coords="135,160,204,189"/>
+<area shape="rect" id="node7" href="$iRegister_8h.html" title="Definition of a &quot;register&quot; in the Wi&#45;11 machine." alt="" coords="5,83,93,112"/>
+<area shape="rect" id="node10" href="$iMemory_8h.html" title="Definition of Wi&#45;11 memory." alt="" coords="283,83,371,112"/>
+<area shape="rect" id="node13" href="$ResultCodes_8h.html" title="Definition of the Wi&#45;11&#39;s run&#45;time messages." alt="" coords="313,160,425,189"/>
+<area shape="rect" id="node20" href="$iDecoder_8h.html" title="Definition of the Wi&#45;11 instruction decoder." alt="" coords="168,83,259,112"/>
+</map>

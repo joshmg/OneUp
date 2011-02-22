@@ -1,0 +1,191 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Object Files}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}The Header Record}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Text Records}{2}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}The End Record}{2}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}Interaction}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Components}{3}{subsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.1.1}Loading}{3}{subsubsection.1.3.1.1}
+\contentsline {subsubsection}{\numberline {1.3.1.2}Executing}{4}{subsubsection.1.3.1.2}
+\contentsline {subsection}{\numberline {1.3.2}Wi-\/11 Instruction Set}{4}{subsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.2.1}Offsets}{4}{subsubsection.1.3.2.1}
+\contentsline {subsubsection}{\numberline {1.3.2.2}Indexes}{5}{subsubsection.1.3.2.2}
+\contentsline {subsubsection}{\numberline {1.3.2.3}Intructions}{5}{subsubsection.1.3.2.3}
+\contentsline {subsubsection}{\numberline {1.3.2.4}Traps}{7}{subsubsection.1.3.2.4}
+\contentsline {chapter}{\numberline {2}Namespace Index}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Namespace List}{9}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Index}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{11}{section.3.1}
+\contentsline {chapter}{\numberline {4}Class Index}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Class List}{13}{section.4.1}
+\contentsline {chapter}{\numberline {5}File Index}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}File List}{15}{section.5.1}
+\contentsline {chapter}{\numberline {6}Namespace Documentation}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Codes Namespace Reference}{17}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{17}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Decoder\_\discretionary {-}{}{}Directory Namespace Reference}{17}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{18}{subsection.6.2.1}
+\contentsline {chapter}{\numberline {7}Class Documentation}{19}{chapter.7}
+\contentsline {section}{\numberline {7.1}Decoder Class Reference}{19}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{19}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}iDecoder Class Reference}{19}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{20}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Member Function Documentation}{20}{subsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2.1}DecodeInstruction}{20}{subsubsection.7.2.2.1}
+\contentsline {section}{\numberline {7.3}iLoader Class Reference}{20}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{20}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Member Function Documentation}{20}{subsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.2.1}Load}{20}{subsubsection.7.3.2.1}
+\contentsline {section}{\numberline {7.4}iMemory Class Reference}{21}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{21}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Member Function Documentation}{22}{subsection.7.4.2}
+\contentsline {subsubsection}{\numberline {7.4.2.1}Reserve}{22}{subsubsection.7.4.2.1}
+\contentsline {subsubsection}{\numberline {7.4.2.2}Load}{22}{subsubsection.7.4.2.2}
+\contentsline {subsubsection}{\numberline {7.4.2.3}Store}{22}{subsubsection.7.4.2.3}
+\contentsline {subsubsection}{\numberline {7.4.2.4}GetUsedMemory}{23}{subsubsection.7.4.2.4}
+\contentsline {section}{\numberline {7.5}Instruction Struct Reference}{23}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{23}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}Member Data Documentation}{23}{subsection.7.5.2}
+\contentsline {subsubsection}{\numberline {7.5.2.1}data}{23}{subsubsection.7.5.2.1}
+\contentsline {section}{\numberline {7.6}iObjParser Class Reference}{24}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{25}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2}Member Function Documentation}{25}{subsection.7.6.2}
+\contentsline {subsubsection}{\numberline {7.6.2.1}Initialize}{25}{subsubsection.7.6.2.1}
+\contentsline {subsubsection}{\numberline {7.6.2.2}GetNext}{25}{subsubsection.7.6.2.2}
+\contentsline {section}{\numberline {7.7}iRegister Class Reference}{26}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{27}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.7.2}Member Function Documentation}{27}{subsection.7.7.2}
+\contentsline {subsubsection}{\numberline {7.7.2.1}GetValue}{27}{subsubsection.7.7.2.1}
+\contentsline {subsubsection}{\numberline {7.7.2.2}Add}{28}{subsubsection.7.7.2.2}
+\contentsline {subsubsection}{\numberline {7.7.2.3}Add}{28}{subsubsection.7.7.2.3}
+\contentsline {subsubsection}{\numberline {7.7.2.4}operator+}{28}{subsubsection.7.7.2.4}
+\contentsline {subsubsection}{\numberline {7.7.2.5}Subtract}{28}{subsubsection.7.7.2.5}
+\contentsline {subsubsection}{\numberline {7.7.2.6}Subtract}{29}{subsubsection.7.7.2.6}
+\contentsline {subsubsection}{\numberline {7.7.2.7}operator-\/}{29}{subsubsection.7.7.2.7}
+\contentsline {subsubsection}{\numberline {7.7.2.8}And}{29}{subsubsection.7.7.2.8}
+\contentsline {subsubsection}{\numberline {7.7.2.9}And}{30}{subsubsection.7.7.2.9}
+\contentsline {subsubsection}{\numberline {7.7.2.10}Or}{30}{subsubsection.7.7.2.10}
+\contentsline {subsubsection}{\numberline {7.7.2.11}Or}{30}{subsubsection.7.7.2.11}
+\contentsline {subsubsection}{\numberline {7.7.2.12}Not}{31}{subsubsection.7.7.2.12}
+\contentsline {subsubsection}{\numberline {7.7.2.13}Store}{31}{subsubsection.7.7.2.13}
+\contentsline {subsubsection}{\numberline {7.7.2.14}Store}{31}{subsubsection.7.7.2.14}
+\contentsline {subsubsection}{\numberline {7.7.2.15}operator=}{31}{subsubsection.7.7.2.15}
+\contentsline {subsubsection}{\numberline {7.7.2.16}operator++}{32}{subsubsection.7.7.2.16}
+\contentsline {subsubsection}{\numberline {7.7.2.17}operator++}{32}{subsubsection.7.7.2.17}
+\contentsline {section}{\numberline {7.8}iWi11 Class Reference}{32}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{34}{subsection.7.8.1}
+\contentsline {subsection}{\numberline {7.8.2}Member Function Documentation}{35}{subsection.7.8.2}
+\contentsline {subsubsection}{\numberline {7.8.2.1}\_\discretionary {-}{}{}GetRegister}{35}{subsubsection.7.8.2.1}
+\contentsline {subsubsection}{\numberline {7.8.2.2}\_\discretionary {-}{}{}Add}{35}{subsubsection.7.8.2.2}
+\contentsline {subsubsection}{\numberline {7.8.2.3}\_\discretionary {-}{}{}Add}{35}{subsubsection.7.8.2.3}
+\contentsline {subsubsection}{\numberline {7.8.2.4}\_\discretionary {-}{}{}And}{36}{subsubsection.7.8.2.4}
+\contentsline {subsubsection}{\numberline {7.8.2.5}\_\discretionary {-}{}{}And}{36}{subsubsection.7.8.2.5}
+\contentsline {subsubsection}{\numberline {7.8.2.6}\_\discretionary {-}{}{}Branch}{37}{subsubsection.7.8.2.6}
+\contentsline {subsubsection}{\numberline {7.8.2.7}\_\discretionary {-}{}{}Debug}{37}{subsubsection.7.8.2.7}
+\contentsline {subsubsection}{\numberline {7.8.2.8}\_\discretionary {-}{}{}JSR}{37}{subsubsection.7.8.2.8}
+\contentsline {subsubsection}{\numberline {7.8.2.9}\_\discretionary {-}{}{}JSRR}{38}{subsubsection.7.8.2.9}
+\contentsline {subsubsection}{\numberline {7.8.2.10}\_\discretionary {-}{}{}Load}{38}{subsubsection.7.8.2.10}
+\contentsline {subsubsection}{\numberline {7.8.2.11}\_\discretionary {-}{}{}LoadI}{39}{subsubsection.7.8.2.11}
+\contentsline {subsubsection}{\numberline {7.8.2.12}\_\discretionary {-}{}{}LoadR}{39}{subsubsection.7.8.2.12}
+\contentsline {subsubsection}{\numberline {7.8.2.13}\_\discretionary {-}{}{}Not}{40}{subsubsection.7.8.2.13}
+\contentsline {subsubsection}{\numberline {7.8.2.14}\_\discretionary {-}{}{}Ret}{40}{subsubsection.7.8.2.14}
+\contentsline {subsubsection}{\numberline {7.8.2.15}\_\discretionary {-}{}{}Store}{41}{subsubsection.7.8.2.15}
+\contentsline {subsubsection}{\numberline {7.8.2.16}\_\discretionary {-}{}{}STI}{41}{subsubsection.7.8.2.16}
+\contentsline {subsubsection}{\numberline {7.8.2.17}\_\discretionary {-}{}{}STR}{42}{subsubsection.7.8.2.17}
+\contentsline {subsubsection}{\numberline {7.8.2.18}\_\discretionary {-}{}{}Trap}{42}{subsubsection.7.8.2.18}
+\contentsline {subsubsection}{\numberline {7.8.2.19}LoadObj}{43}{subsubsection.7.8.2.19}
+\contentsline {subsubsection}{\numberline {7.8.2.20}DisplayMemory}{44}{subsubsection.7.8.2.20}
+\contentsline {subsubsection}{\numberline {7.8.2.21}DisplayRegisters}{44}{subsubsection.7.8.2.21}
+\contentsline {subsubsection}{\numberline {7.8.2.22}ExecuteNext}{44}{subsubsection.7.8.2.22}
+\contentsline {section}{\numberline {7.9}iWord Class Reference}{44}{section.7.9}
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{46}{subsection.7.9.1}
+\contentsline {subsection}{\numberline {7.9.2}Member Function Documentation}{46}{subsection.7.9.2}
+\contentsline {subsubsection}{\numberline {7.9.2.1}ToInt}{46}{subsubsection.7.9.2.1}
+\contentsline {subsubsection}{\numberline {7.9.2.2}ToInt2Complement}{47}{subsubsection.7.9.2.2}
+\contentsline {subsubsection}{\numberline {7.9.2.3}ToStr}{47}{subsubsection.7.9.2.3}
+\contentsline {subsubsection}{\numberline {7.9.2.4}ToHex}{47}{subsubsection.7.9.2.4}
+\contentsline {subsubsection}{\numberline {7.9.2.5}FromInt}{48}{subsubsection.7.9.2.5}
+\contentsline {subsubsection}{\numberline {7.9.2.6}FromStr}{48}{subsubsection.7.9.2.6}
+\contentsline {subsubsection}{\numberline {7.9.2.7}FromHex}{48}{subsubsection.7.9.2.7}
+\contentsline {subsubsection}{\numberline {7.9.2.8}Add}{49}{subsubsection.7.9.2.8}
+\contentsline {subsubsection}{\numberline {7.9.2.9}operator+}{49}{subsubsection.7.9.2.9}
+\contentsline {subsubsection}{\numberline {7.9.2.10}Subtract}{49}{subsubsection.7.9.2.10}
+\contentsline {subsubsection}{\numberline {7.9.2.11}operator-\/}{50}{subsubsection.7.9.2.11}
+\contentsline {subsubsection}{\numberline {7.9.2.12}And}{50}{subsubsection.7.9.2.12}
+\contentsline {subsubsection}{\numberline {7.9.2.13}Or}{50}{subsubsection.7.9.2.13}
+\contentsline {subsubsection}{\numberline {7.9.2.14}Not}{51}{subsubsection.7.9.2.14}
+\contentsline {subsubsection}{\numberline {7.9.2.15}Copy}{51}{subsubsection.7.9.2.15}
+\contentsline {subsubsection}{\numberline {7.9.2.16}operator=}{51}{subsubsection.7.9.2.16}
+\contentsline {subsubsection}{\numberline {7.9.2.17}operator++}{52}{subsubsection.7.9.2.17}
+\contentsline {subsubsection}{\numberline {7.9.2.18}operator++}{52}{subsubsection.7.9.2.18}
+\contentsline {subsubsection}{\numberline {7.9.2.19}operator[]}{52}{subsubsection.7.9.2.19}
+\contentsline {subsubsection}{\numberline {7.9.2.20}SetBit}{53}{subsubsection.7.9.2.20}
+\contentsline {section}{\numberline {7.10}Loader Class Reference}{53}{section.7.10}
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{54}{subsection.7.10.1}
+\contentsline {subsection}{\numberline {7.10.2}Constructor \& Destructor Documentation}{54}{subsection.7.10.2}
+\contentsline {subsubsection}{\numberline {7.10.2.1}Loader}{54}{subsubsection.7.10.2.1}
+\contentsline {section}{\numberline {7.11}Memory Class Reference}{54}{section.7.11}
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{56}{subsection.7.11.1}
+\contentsline {section}{\numberline {7.12}ObjectData Struct Reference}{56}{section.7.12}
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{56}{subsection.7.12.1}
+\contentsline {section}{\numberline {7.13}ObjParser Class Reference}{57}{section.7.13}
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{58}{subsection.7.13.1}
+\contentsline {subsection}{\numberline {7.13.2}Member Function Documentation}{58}{subsection.7.13.2}
+\contentsline {subsubsection}{\numberline {7.13.2.1}Initialize}{58}{subsubsection.7.13.2.1}
+\contentsline {subsubsection}{\numberline {7.13.2.2}GetNext}{58}{subsubsection.7.13.2.2}
+\contentsline {section}{\numberline {7.14}Register Class Reference}{58}{section.7.14}
+\contentsline {subsection}{\numberline {7.14.1}Detailed Description}{60}{subsection.7.14.1}
+\contentsline {section}{\numberline {7.15}ResultDecoder Class Reference}{60}{section.7.15}
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{60}{subsection.7.15.1}
+\contentsline {subsection}{\numberline {7.15.2}Member Function Documentation}{61}{subsection.7.15.2}
+\contentsline {subsubsection}{\numberline {7.15.2.1}Find}{61}{subsubsection.7.15.2.1}
+\contentsline {subsection}{\numberline {7.15.3}Member Data Documentation}{61}{subsection.7.15.3}
+\contentsline {subsubsection}{\numberline {7.15.3.1}\_\discretionary {-}{}{}codes}{61}{subsubsection.7.15.3.1}
+\contentsline {section}{\numberline {7.16}Wi11 Class Reference}{61}{section.7.16}
+\contentsline {subsection}{\numberline {7.16.1}Detailed Description}{64}{subsection.7.16.1}
+\contentsline {subsection}{\numberline {7.16.2}Constructor \& Destructor Documentation}{64}{subsection.7.16.2}
+\contentsline {subsubsection}{\numberline {7.16.2.1}Wi11}{64}{subsubsection.7.16.2.1}
+\contentsline {section}{\numberline {7.17}Wi11::CCR Struct Reference}{64}{section.7.17}
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{65}{subsection.7.17.1}
+\contentsline {section}{\numberline {7.18}Word Class Reference}{65}{section.7.18}
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{66}{subsection.7.18.1}
+\contentsline {subsection}{\numberline {7.18.2}Member Function Documentation}{66}{subsection.7.18.2}
+\contentsline {subsubsection}{\numberline {7.18.2.1}\_\discretionary {-}{}{}HasBit}{66}{subsubsection.7.18.2.1}
+\contentsline {subsection}{\numberline {7.18.3}Member Data Documentation}{67}{subsection.7.18.3}
+\contentsline {subsubsection}{\numberline {7.18.3.1}\_\discretionary {-}{}{}value}{67}{subsubsection.7.18.3.1}
+\contentsline {chapter}{\numberline {8}File Documentation}{69}{chapter.8}
+\contentsline {section}{\numberline {8.1}Decoder.h File Reference}{69}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{70}{subsection.8.1.1}
+\contentsline {section}{\numberline {8.2}iDecoder.h File Reference}{71}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{72}{subsection.8.2.1}
+\contentsline {section}{\numberline {8.3}iLoader.h File Reference}{72}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Detailed Description}{73}{subsection.8.3.1}
+\contentsline {section}{\numberline {8.4}iMemory.h File Reference}{74}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Detailed Description}{74}{subsection.8.4.1}
+\contentsline {section}{\numberline {8.5}iObjParser.h File Reference}{75}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}Detailed Description}{75}{subsection.8.5.1}
+\contentsline {section}{\numberline {8.6}iRegister.h File Reference}{76}{section.8.6}
+\contentsline {subsection}{\numberline {8.6.1}Detailed Description}{76}{subsection.8.6.1}
+\contentsline {section}{\numberline {8.7}iWi11.h File Reference}{77}{section.8.7}
+\contentsline {subsection}{\numberline {8.7.1}Detailed Description}{77}{subsection.8.7.1}
+\contentsline {section}{\numberline {8.8}iWord.h File Reference}{78}{section.8.8}
+\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{78}{subsection.8.8.1}
+\contentsline {section}{\numberline {8.9}Loader.h File Reference}{78}{section.8.9}
+\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{79}{subsection.8.9.1}
+\contentsline {section}{\numberline {8.10}Memory.h File Reference}{80}{section.8.10}
+\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{80}{subsection.8.10.1}
+\contentsline {section}{\numberline {8.11}ObjParser.cpp File Reference}{81}{section.8.11}
+\contentsline {subsection}{\numberline {8.11.1}Detailed Description}{81}{subsection.8.11.1}
+\contentsline {section}{\numberline {8.12}ObjParser.h File Reference}{82}{section.8.12}
+\contentsline {subsection}{\numberline {8.12.1}Detailed Description}{82}{subsection.8.12.1}
+\contentsline {section}{\numberline {8.13}Register.h File Reference}{83}{section.8.13}
+\contentsline {subsection}{\numberline {8.13.1}Detailed Description}{83}{subsection.8.13.1}
+\contentsline {section}{\numberline {8.14}ResultCodes.h File Reference}{84}{section.8.14}
+\contentsline {subsection}{\numberline {8.14.1}Detailed Description}{85}{subsection.8.14.1}
+\contentsline {section}{\numberline {8.15}Wi11.h File Reference}{85}{section.8.15}
+\contentsline {subsection}{\numberline {8.15.1}Detailed Description}{86}{subsection.8.15.1}
+\contentsline {section}{\numberline {8.16}Word.cpp File Reference}{86}{section.8.16}
+\contentsline {subsection}{\numberline {8.16.1}Detailed Description}{86}{subsection.8.16.1}
+\contentsline {section}{\numberline {8.17}Word.h File Reference}{87}{section.8.17}
+\contentsline {subsection}{\numberline {8.17.1}Detailed Description}{88}{subsection.8.17.1}

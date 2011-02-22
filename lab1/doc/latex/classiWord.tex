@@ -1,0 +1,496 @@
+\hypertarget{classiWord}{
+\section{iWord Class Reference}
+\label{classiWord}\index{iWord@{iWord}}
+}
+
+
+Defines a \char`\"{}word\char`\"{} of data on the Wi-\/11 Machine.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classiWord_adcef1925ad309d54c9a3e896af5d5350}{ToInt} () const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}To non-\/negative Integer\char`\"{} \item\end{DoxyCompactList}\item 
+virtual int \hyperlink{classiWord_a68129605beb127647ecc59129f1c07f7}{ToInt2Complement} () const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}To Integer as 2's Complement\char`\"{} \item\end{DoxyCompactList}\item 
+virtual std::string \hyperlink{classiWord_acebcfc4edd3498c962a6a2379a88accf}{ToStr} () const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}To String\char`\"{} \item\end{DoxyCompactList}\item 
+virtual std::string \hyperlink{classiWord_a7d7cb4facca44fc785899d01e47f29b1}{ToHex} () const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}To Hexadecimal\char`\"{} \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classiWord_a1229f8249c32e01ccee035a205954a62}{FromInt} (int value)=0
+\begin{DoxyCompactList}\small\item\em \char`\"{}From Integer\char`\"{} \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classiWord_a6e40a4873ca945b119318a85c75a0fcf}{FromStr} (const std::string \&str)=0
+\begin{DoxyCompactList}\small\item\em \char`\"{}From String\char`\"{} \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classiWord_abd4229c26d0a2ff17b0a6bdb74240388}{FromHex} (const std::string \&str)=0
+\begin{DoxyCompactList}\small\item\em \char`\"{}From Hexadecimal\char`\"{} \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_ac5967eac5182607ac41b9ce6c3a74cb8}{Add} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em Adds two words. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a146bf924df8cbb03fbe8152e5e44edbe}{operator+} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em A standard addition operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a8e2da1fb4c3ffcc78e1d94f1798797ec}{Subtract} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em Subtracts two words. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a8fbd3f879952196cca2e4f03bac3890b}{operator-\/} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em A standard subtraction operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_ad9caea73d7a990bf5189ba1e44ec7865}{And} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}And\char`\"{}s the bits of two words. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a2f57b8b8739d1ce6c043494696a9f685}{Or} (const \hyperlink{classiWord}{iWord} \&w) const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}Or\char`\"{}s the bits of two words. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \hyperlink{classiWord_a6a7602a8220d84b5201a789b597fbbde}{Not} () const =0
+\begin{DoxyCompactList}\small\item\em \char`\"{}Not\char`\"{}s the bits of a word. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiWord_ac5ca71cd1defb94cd1f3536a59612a4e}{Copy} (const \hyperlink{classiWord}{iWord} \&w)=0
+\begin{DoxyCompactList}\small\item\em Copies a word. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classWord}{Word} \& \hyperlink{classiWord_aaee78600a625153a8282bcec181d0a24}{operator=} (const \hyperlink{classWord}{Word} \&w)=0
+\begin{DoxyCompactList}\small\item\em A standard assignment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classiWord}{iWord} \& \hyperlink{classiWord_af20040c25b79d2aeae41f1714fbb2cbc}{operator++} ()=0
+\begin{DoxyCompactList}\small\item\em A standard pre-\/increment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classiWord}{iWord} \& \hyperlink{classiWord_a6777f6f41915179c4255d3647a9eb4b5}{operator++} (int)=0
+\begin{DoxyCompactList}\small\item\em A standard post-\/increment operator. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classiWord_a0e83901b08763247527ce61c89fd847f}{operator\mbox{[}$\,$\mbox{]}} (const int i) const =0
+\begin{DoxyCompactList}\small\item\em An accessor to the 'i'th bit of the value. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classiWord_a6442bd382be2d072d6243cfcb9dd2312}{SetBit} (const int i, bool)=0
+\begin{DoxyCompactList}\small\item\em Sets the 'i'th bit of the value. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a \char`\"{}word\char`\"{} of data on the Wi-\/11 Machine. The methods present in this interface are meant to mimic the functionality of the Wi-\/11 machine, allowing for simplified execution of the instructions therein. As the size of a \char`\"{}word\char`\"{} depends on the architecture, classes implementing this interface should define the word length to be 16 bits in length. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classiWord_adcef1925ad309d54c9a3e896af5d5350}{
+\index{iWord@{iWord}!ToInt@{ToInt}}
+\index{ToInt@{ToInt}!iWord@{iWord}}
+\subsubsection[{ToInt}]{\setlength{\rightskip}{0pt plus 5cm}virtual int iWord::ToInt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_adcef1925ad309d54c9a3e896af5d5350}
+
+
+\char`\"{}To non-\/negative Integer\char`\"{} 
+
+\begin{DoxyPostcond}{Postcondition}
+The value of the word is not changed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+The bits of the word interpreted as a positive integer value. 
+\end{DoxyReturn}
+\hypertarget{classiWord_a68129605beb127647ecc59129f1c07f7}{
+\index{iWord@{iWord}!ToInt2Complement@{ToInt2Complement}}
+\index{ToInt2Complement@{ToInt2Complement}!iWord@{iWord}}
+\subsubsection[{ToInt2Complement}]{\setlength{\rightskip}{0pt plus 5cm}virtual int iWord::ToInt2Complement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a68129605beb127647ecc59129f1c07f7}
+
+
+\char`\"{}To Integer as 2's Complement\char`\"{} 
+
+\begin{DoxyPostcond}{Postcondition}
+The value of the word is not changed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+The bits of the word interpreted as a signed (2's complement) integer value. 
+\end{DoxyReturn}
+\hypertarget{classiWord_acebcfc4edd3498c962a6a2379a88accf}{
+\index{iWord@{iWord}!ToStr@{ToStr}}
+\index{ToStr@{ToStr}!iWord@{iWord}}
+\subsubsection[{ToStr}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string iWord::ToStr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_acebcfc4edd3498c962a6a2379a88accf}
+
+
+\char`\"{}To String\char`\"{} 
+
+\begin{DoxyPostcond}{Postcondition}
+The value of the word is not changed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+16 characters: each either a 1 or 0
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Examples:}
+If the object holds a (2's comp.) value 4: \char`\"{}0000000000000100\char`\"{}\par
+ If the object holds a (2's comp.) value -\/1: \char`\"{}1111111111111111\char`\"{} 
+\end{DoxyParagraph}
+\hypertarget{classiWord_a7d7cb4facca44fc785899d01e47f29b1}{
+\index{iWord@{iWord}!ToHex@{ToHex}}
+\index{ToHex@{ToHex}!iWord@{iWord}}
+\subsubsection[{ToHex}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string iWord::ToHex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a7d7cb4facca44fc785899d01e47f29b1}
+
+
+\char`\"{}To Hexadecimal\char`\"{} 
+
+\begin{DoxyPostcond}{Postcondition}
+The value of the word is not changed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\char`\"{}0x\char`\"{} + $<$4 characters in the range \mbox{[}0-\/9\mbox{]},\mbox{[}A-\/F\mbox{]}$>$
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Examples:}
+If the object holds (2's comp.) value 8: \char`\"{}0x0008\char`\"{}\par
+ If the object holds (2's comp.) value -\/2: \char`\"{}0xFFFE\char`\"{} 
+\end{DoxyParagraph}
+\hypertarget{classiWord_a1229f8249c32e01ccee035a205954a62}{
+\index{iWord@{iWord}!FromInt@{FromInt}}
+\index{FromInt@{FromInt}!iWord@{iWord}}
+\subsubsection[{FromInt}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool iWord::FromInt (
+\begin{DoxyParamCaption}
+\item[{int}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a1229f8249c32e01ccee035a205954a62}
+
+
+\char`\"{}From Integer\char`\"{} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The value to be stored into the word. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\char`\"{}value\char`\"{} is not changed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+True if and only if \char`\"{}value\char`\"{} can be represented in 16 bits
+\end{DoxyReturn}
+When this function returns \char`\"{}False\char`\"{}, the value of the word is unchanged.\par
+ Otherwise, the word now holds the value \char`\"{}value\char`\"{}. \hypertarget{classiWord_a6e40a4873ca945b119318a85c75a0fcf}{
+\index{iWord@{iWord}!FromStr@{FromStr}}
+\index{FromStr@{FromStr}!iWord@{iWord}}
+\subsubsection[{FromStr}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool iWord::FromStr (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{ str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a6e40a4873ca945b119318a85c75a0fcf}
+
+
+\char`\"{}From String\char`\"{} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & A string of characters meant to represent a \char`\"{}word\char`\"{} to be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\char`\"{}str\char`\"{} is not changed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+True if and only if \char`\"{}str\char`\"{} is well-\/formed (as defined in toStr()).
+\end{DoxyReturn}
+When this function returns \char`\"{}False\char`\"{}, the value of the word is unchanged.\par
+ Otherwise, the word now holds the value \char`\"{}str\char`\"{}. \hypertarget{classiWord_abd4229c26d0a2ff17b0a6bdb74240388}{
+\index{iWord@{iWord}!FromHex@{FromHex}}
+\index{FromHex@{FromHex}!iWord@{iWord}}
+\subsubsection[{FromHex}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool iWord::FromHex (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{ str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_abd4229c26d0a2ff17b0a6bdb74240388}
+
+
+\char`\"{}From Hexadecimal\char`\"{} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & A string of characters meant to represent a \char`\"{}word\char`\"{} to be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\char`\"{}str\char`\"{} is not changed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+True if and only if \char`\"{}str\char`\"{} is well-\/formed (as defined in toHex()).
+\end{DoxyReturn}
+When this function returns \char`\"{}False\char`\"{}, the value of the word is unchanged.\par
+ Otherwise, the word now holds the value \char`\"{}str\char`\"{}. \hypertarget{classiWord_ac5967eac5182607ac41b9ce6c3a74cb8}{
+\index{iWord@{iWord}!Add@{Add}}
+\index{Add@{Add}!iWord@{iWord}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Word} iWord::Add (
+\begin{DoxyParamCaption}
+\item[{const {\bf iWord} \&}]{ w}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_ac5967eac5182607ac41b9ce6c3a74cb8}
+
+
+Adds two words. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em w} & A word value to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Both \char`\"{}w\char`\"{} and the calling object do not change. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+A new \char`\"{}Word\char`\"{} object containing result of adding \char`\"{}w\char`\"{} and the calling object.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The addition is carried out with no regard to logical overflow. 
+\end{DoxyNote}
+\hypertarget{classiWord_a146bf924df8cbb03fbe8152e5e44edbe}{
+\index{iWord@{iWord}!operator+@{operator+}}
+\index{operator+@{operator+}!iWord@{iWord}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Word} iWord::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf iWord} \&}]{ w}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a146bf924df8cbb03fbe8152e5e44edbe}
+
+
+A standard addition operator. 
+
+\begin{DoxyNote}{Note}
+\char`\"{}result = p + w\char`\"{} is equivalent to \char`\"{}result = p.Add(w)\char`\"{}. 
+\end{DoxyNote}
+\hypertarget{classiWord_a8e2da1fb4c3ffcc78e1d94f1798797ec}{
+\index{iWord@{iWord}!Subtract@{Subtract}}
+\index{Subtract@{Subtract}!iWord@{iWord}}
+\subsubsection[{Subtract}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Word} iWord::Subtract (
+\begin{DoxyParamCaption}
+\item[{const {\bf iWord} \&}]{ w}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a8e2da1fb4c3ffcc78e1d94f1798797ec}
+
+
+Subtracts two words. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em w} & A word value to be subtracted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Both \char`\"{}w\char`\"{} and the calling object do not change. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+A new \char`\"{}Word\char`\"{} object containing the result of subtracting \char`\"{}w\char`\"{} from the calling object.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The subtraction is carried out with no regard for logical overflow. 
+\end{DoxyNote}
+\hypertarget{classiWord_a8fbd3f879952196cca2e4f03bac3890b}{
+\index{iWord@{iWord}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!iWord@{iWord}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Word} iWord::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf iWord} \&}]{ w}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a8fbd3f879952196cca2e4f03bac3890b}
+
+
+A standard subtraction operator. 
+
+\begin{DoxyNote}{Note}
+\char`\"{}result = p -\/ w\char`\"{} is equivalent to \char`\"{}result = p.Subtract(w)\char`\"{}. 
+\end{DoxyNote}
+\hypertarget{classiWord_ad9caea73d7a990bf5189ba1e44ec7865}{
+\index{iWord@{iWord}!And@{And}}
+\index{And@{And}!iWord@{iWord}}
+\subsubsection[{And}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Word} iWord::And (
+\begin{DoxyParamCaption}
+\item[{const {\bf iWord} \&}]{ w}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_ad9caea73d7a990bf5189ba1e44ec7865}
+
+
+\char`\"{}And\char`\"{}s the bits of two words. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em w} & A word value to be \char`\"{}and\char`\"{}ed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Both \char`\"{}w\char`\"{} and the calling object do not change. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+A new \char`\"{}Word\char`\"{} object containing the result of performing a bit-\/wise and on \char`\"{}w\char`\"{} and the calling object. 
+\end{DoxyReturn}
+\hypertarget{classiWord_a2f57b8b8739d1ce6c043494696a9f685}{
+\index{iWord@{iWord}!Or@{Or}}
+\index{Or@{Or}!iWord@{iWord}}
+\subsubsection[{Or}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Word} iWord::Or (
+\begin{DoxyParamCaption}
+\item[{const {\bf iWord} \&}]{ w}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a2f57b8b8739d1ce6c043494696a9f685}
+
+
+\char`\"{}Or\char`\"{}s the bits of two words. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em w} & A word value to be \char`\"{}or\char`\"{}ed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Both \char`\"{}w\char`\"{} and the calling object do not change. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+A new \char`\"{}Word\char`\"{} object containing the result of performing a bit-\/wise or on \char`\"{}w\char`\"{} and the calling object. 
+\end{DoxyReturn}
+\hypertarget{classiWord_a6a7602a8220d84b5201a789b597fbbde}{
+\index{iWord@{iWord}!Not@{Not}}
+\index{Not@{Not}!iWord@{iWord}}
+\subsubsection[{Not}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Word} iWord::Not (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a6a7602a8220d84b5201a789b597fbbde}
+
+
+\char`\"{}Not\char`\"{}s the bits of a word. 
+
+\begin{DoxyPostcond}{Postcondition}
+The calling object do not change. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+A new \char`\"{}Word\char`\"{} object containing the result of performing a bit-\/wise not on the calling object. 
+\end{DoxyReturn}
+\hypertarget{classiWord_ac5ca71cd1defb94cd1f3536a59612a4e}{
+\index{iWord@{iWord}!Copy@{Copy}}
+\index{Copy@{Copy}!iWord@{iWord}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}virtual void iWord::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf iWord} \&}]{ w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_ac5ca71cd1defb94cd1f3536a59612a4e}
+
+
+Copies a word. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em w} & The value to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The caller equals that parameter.
+\end{DoxyPostcond}
+Equivalent to the assignment \char`\"{}caller = parameter\char`\"{}. \hypertarget{classiWord_aaee78600a625153a8282bcec181d0a24}{
+\index{iWord@{iWord}!operator=@{operator=}}
+\index{operator=@{operator=}!iWord@{iWord}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Word}\& iWord::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Word} \&}]{ w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_aaee78600a625153a8282bcec181d0a24}
+
+
+A standard assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em w} & The value to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of the parameter.
+\end{DoxyReturn}
+The return value and parameter here must be declared as \char`\"{}Word\char`\"{}s as C++ does not work well with polymorphic assignment operators. \hypertarget{classiWord_af20040c25b79d2aeae41f1714fbb2cbc}{
+\index{iWord@{iWord}!operator++@{operator++}}
+\index{operator++@{operator++}!iWord@{iWord}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf iWord}\& iWord::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_af20040c25b79d2aeae41f1714fbb2cbc}
+
+
+A standard pre-\/increment operator. 
+
+\begin{DoxyReturn}{Returns}
+A reference to itself.
+\end{DoxyReturn}
+The object increments its value BEFORE the execution of the current line. \hypertarget{classiWord_a6777f6f41915179c4255d3647a9eb4b5}{
+\index{iWord@{iWord}!operator++@{operator++}}
+\index{operator++@{operator++}!iWord@{iWord}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf iWord}\& iWord::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a6777f6f41915179c4255d3647a9eb4b5}
+
+
+A standard post-\/increment operator. 
+
+\begin{DoxyReturn}{Returns}
+A reference to itself.
+\end{DoxyReturn}
+The object increments its value AFTER the execution of the current line. \hypertarget{classiWord_a0e83901b08763247527ce61c89fd847f}{
+\index{iWord@{iWord}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!iWord@{iWord}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool iWord::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{ i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a0e83901b08763247527ce61c89fd847f}
+
+
+An accessor to the 'i'th bit of the value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The index of the bit in question. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The index must be less than the size of a word, ie. 16. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+True $<$=$>$ 1, False $<$=$>$ 0.
+\end{DoxyReturn}
+The number of the bits starts at zero and rises into the more significant bits. \begin{DoxyParagraph}{Examples:}
+If the object holds a value of 4 (0...100 in binary): num\mbox{[}2\mbox{]} = 1.\par
+ If it holds a value of 1 (0...001 in binary): num\mbox{[}0\mbox{]} = 1.\par
+ If it holds a negative value (Starting with a 1 in 2's complement): num\mbox{[}15\mbox{]} = 1. 
+\end{DoxyParagraph}
+\hypertarget{classiWord_a6442bd382be2d072d6243cfcb9dd2312}{
+\index{iWord@{iWord}!SetBit@{SetBit}}
+\index{SetBit@{SetBit}!iWord@{iWord}}
+\subsubsection[{SetBit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void iWord::SetBit (
+\begin{DoxyParamCaption}
+\item[{const int}]{ i, }
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classiWord_a6442bd382be2d072d6243cfcb9dd2312}
+
+
+Sets the 'i'th bit of the value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The index of the bit in question. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The index must be less than the size of a word, ie. 16.
+\end{DoxyPrecond}
+Works in a similar way to operator\mbox{[}$\,$\mbox{]} but sets the bit instead of determining if it is set. 

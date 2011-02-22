@@ -1,0 +1,95 @@
+\hypertarget{classObjParser}{
+\section{ObjParser Class Reference}
+\label{classObjParser}\index{ObjParser@{ObjParser}}
+}
+
+
+Implements \hyperlink{classiObjParser}{iObjParser}.  
+
+
+
+
+Collaboration diagram for ObjParser:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classObjParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classObjParser_aea8cf97813333011fcfa8ed67327009d}{
+\hyperlink{classObjParser_aea8cf97813333011fcfa8ed67327009d}{$\sim$ObjParser} ()}
+\label{classObjParser_aea8cf97813333011fcfa8ed67327009d}
+
+\begin{DoxyCompactList}\small\item\em Closes a file, if necessary, when an \hyperlink{classiObjParser}{iObjParser} object goes out of scope. \item\end{DoxyCompactList}\item 
+Codes::RESULT \hyperlink{classObjParser_ae8d9939f390a68901e256d8a3187c24a}{Initialize} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Closes \_\-fileStream if necessary, then opens the file defined by \char`\"{}name\char`\"{}. \item\end{DoxyCompactList}\item 
+\hyperlink{structObjectData}{ObjectData} \hyperlink{classObjParser_a653f83071fd63e3fdf04f28699f2fff5}{GetNext} ()
+\begin{DoxyCompactList}\small\item\em Reads the next line from the current object file and parses it into an \hyperlink{structObjectData}{ObjectData} struct for use by the loader. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classObjParser_a50f5e135e982471969c63796becf20d6}{
+std::ifstream \hyperlink{classObjParser_a50f5e135e982471969c63796becf20d6}{\_\-fileStream}}
+\label{classObjParser_a50f5e135e982471969c63796becf20d6}
+
+\begin{DoxyCompactList}\small\item\em Maintains an input stream from the object file specified by the \char`\"{}name\char`\"{} parameter to Initialize. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements \hyperlink{classiObjParser}{iObjParser}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classObjParser_ae8d9939f390a68901e256d8a3187c24a}{
+\index{ObjParser@{ObjParser}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!ObjParser@{ObjParser}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}Codes::RESULT ObjParser::Initialize (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classObjParser_ae8d9939f390a68901e256d8a3187c24a}
+
+
+Closes \_\-fileStream if necessary, then opens the file defined by \char`\"{}name\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the file to be opened, including extension. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Codes::SUCCESS if the file is successfully opened, Codes::FILE\_\-NOT\_\-FOUND otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classiObjParser_a772e3a012952c19a56a4cdbb76b6a59a}{iObjParser}.
+
+\hypertarget{classObjParser_a653f83071fd63e3fdf04f28699f2fff5}{
+\index{ObjParser@{ObjParser}!GetNext@{GetNext}}
+\index{GetNext@{GetNext}!ObjParser@{ObjParser}}
+\subsubsection[{GetNext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjectData} ObjParser::GetNext (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classObjParser_a653f83071fd63e3fdf04f28699f2fff5}
+
+
+Reads the next line from the current object file and parses it into an \hyperlink{structObjectData}{ObjectData} struct for use by the loader. 
+
+\begin{DoxyPrecond}{Precondition}
+Initialize(name) has been called and \_\-fileStream is currently open. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The get pointer within \_\-fileStream has been advanced to the next line. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+A well-\/formed \hyperlink{structObjectData}{ObjectData} struct if a valid line is received, a 'dummy' \hyperlink{structObjectData}{ObjectData} struct otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classiObjParser_aeb9af4a40a06e755d8b0e493526d82dd}{iObjParser}.
+

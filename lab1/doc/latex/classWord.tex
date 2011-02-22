@@ -1,0 +1,176 @@
+\hypertarget{classWord}{
+\section{Word Class Reference}
+\label{classWord}\index{Word@{Word}}
+}
+
+
+Implements \hyperlink{classiWord}{iWord}.  
+
+
+
+
+Collaboration diagram for Word:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=122pt]{classWord__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classWord_a17baf7109d46beb48d5b469f3baedc48}{
+\hyperlink{classWord_a17baf7109d46beb48d5b469f3baedc48}{Word} ()}
+\label{classWord_a17baf7109d46beb48d5b469f3baedc48}
+
+\begin{DoxyCompactList}\small\item\em Sets a new Word's value to 0. \item\end{DoxyCompactList}\item 
+\hypertarget{classWord_acf9a6c3d9cf07d66da592ec76f572464}{
+int {\bfseries ToInt} () const }
+\label{classWord_acf9a6c3d9cf07d66da592ec76f572464}
+
+\item 
+\hypertarget{classWord_a4116e08d36472a287c06a4aa14e7ed4f}{
+int {\bfseries ToInt2Complement} () const }
+\label{classWord_a4116e08d36472a287c06a4aa14e7ed4f}
+
+\item 
+\hypertarget{classWord_a5f8c5dcdb847ed96021ef9282ccc7e76}{
+std::string {\bfseries ToStr} () const }
+\label{classWord_a5f8c5dcdb847ed96021ef9282ccc7e76}
+
+\item 
+\hypertarget{classWord_af71af6fa290db8e9b4719c2b95ba9af0}{
+std::string {\bfseries ToHex} () const }
+\label{classWord_af71af6fa290db8e9b4719c2b95ba9af0}
+
+\item 
+\hypertarget{classWord_aed80a61d7e2da2dbcde483058acd4259}{
+bool {\bfseries FromInt} (int value)}
+\label{classWord_aed80a61d7e2da2dbcde483058acd4259}
+
+\item 
+\hypertarget{classWord_a0b255da1e924b2ab520cc5ca271bacf0}{
+bool {\bfseries FromStr} (const std::string \&str)}
+\label{classWord_a0b255da1e924b2ab520cc5ca271bacf0}
+
+\item 
+\hypertarget{classWord_a247de32d413b48d2934f41caaa6cce77}{
+bool {\bfseries FromHex} (const std::string \&str)}
+\label{classWord_a247de32d413b48d2934f41caaa6cce77}
+
+\item 
+\hypertarget{classWord_ae9478910c6cb8c30abeedf7fc6ba5b36}{
+\hyperlink{classWord}{Word} {\bfseries Add} (const \hyperlink{classiWord}{iWord} \&w) const }
+\label{classWord_ae9478910c6cb8c30abeedf7fc6ba5b36}
+
+\item 
+\hypertarget{classWord_a0fa830d2d54ba68107d035c316b8d3ab}{
+\hyperlink{classWord}{Word} {\bfseries operator+} (const \hyperlink{classiWord}{iWord} \&w) const }
+\label{classWord_a0fa830d2d54ba68107d035c316b8d3ab}
+
+\item 
+\hypertarget{classWord_aef1af160cdcc631473aec52ea883e2e5}{
+\hyperlink{classWord}{Word} {\bfseries Subtract} (const \hyperlink{classiWord}{iWord} \&w) const }
+\label{classWord_aef1af160cdcc631473aec52ea883e2e5}
+
+\item 
+\hypertarget{classWord_af930dcccdcf2cdbb90df31ac61a4933c}{
+\hyperlink{classWord}{Word} {\bfseries operator-\/} (const \hyperlink{classiWord}{iWord} \&w) const }
+\label{classWord_af930dcccdcf2cdbb90df31ac61a4933c}
+
+\item 
+\hypertarget{classWord_a08eca1ca0af51daee452ba719f9407c5}{
+\hyperlink{classWord}{Word} {\bfseries And} (const \hyperlink{classiWord}{iWord} \&w) const }
+\label{classWord_a08eca1ca0af51daee452ba719f9407c5}
+
+\item 
+\hypertarget{classWord_a681da292897265ae47f144a99d49d9ec}{
+\hyperlink{classWord}{Word} {\bfseries Or} (const \hyperlink{classiWord}{iWord} \&w) const }
+\label{classWord_a681da292897265ae47f144a99d49d9ec}
+
+\item 
+\hypertarget{classWord_afdecfa9e3f2fda36496f249617a4cef5}{
+\hyperlink{classWord}{Word} {\bfseries Not} () const }
+\label{classWord_afdecfa9e3f2fda36496f249617a4cef5}
+
+\item 
+\hypertarget{classWord_a8c094d866fe9af5da5d32c98430a86f8}{
+void {\bfseries Copy} (const \hyperlink{classiWord}{iWord} \&w)}
+\label{classWord_a8c094d866fe9af5da5d32c98430a86f8}
+
+\item 
+\hypertarget{classWord_a437535c5c19c0ecfc01d52e2c297fe2c}{
+\hyperlink{classWord}{Word} \& {\bfseries operator=} (const \hyperlink{classWord}{Word} \&w)}
+\label{classWord_a437535c5c19c0ecfc01d52e2c297fe2c}
+
+\item 
+\hypertarget{classWord_a3837f49bcb44597e6d738ccb0eeed144}{
+\hyperlink{classiWord}{iWord} \& {\bfseries operator++} ()}
+\label{classWord_a3837f49bcb44597e6d738ccb0eeed144}
+
+\item 
+\hypertarget{classWord_ae921b75d263be790fd150c5962445163}{
+\hyperlink{classiWord}{iWord} \& {\bfseries operator++} (int)}
+\label{classWord_ae921b75d263be790fd150c5962445163}
+
+\item 
+\hypertarget{classWord_a0b08a81ced05b38d3d719ef70ecb3215}{
+bool {\bfseries operator\mbox{[}$\,$\mbox{]}} (const int i) const }
+\label{classWord_a0b08a81ced05b38d3d719ef70ecb3215}
+
+\item 
+\hypertarget{classWord_a8449f26fb840ca22dcc2ba3fc816d068}{
+void {\bfseries SetBit} (const int, bool)}
+\label{classWord_a8449f26fb840ca22dcc2ba3fc816d068}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classWord_a7190b6fab0a952eac77da5c0f4ddd0cf}{\_\-HasBit} (int) const 
+\begin{DoxyCompactList}\small\item\em Tests for powers of two in binary representation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short \hyperlink{classWord_a8b0aa1f2042266f307c51b3bdafa9128}{\_\-value}
+\begin{DoxyCompactList}\small\item\em Used to store the \char`\"{}word\char`\"{} of data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements \hyperlink{classiWord}{iWord}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classWord_a7190b6fab0a952eac77da5c0f4ddd0cf}{
+\index{Word@{Word}!\_\-HasBit@{\_\-HasBit}}
+\index{\_\-HasBit@{\_\-HasBit}!Word@{Word}}
+\subsubsection[{\_\-HasBit}]{\setlength{\rightskip}{0pt plus 5cm}bool Word::\_\-HasBit (
+\begin{DoxyParamCaption}
+\item[{int}]{ i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWord_a7190b6fab0a952eac77da5c0f4ddd0cf}
+
+
+Tests for powers of two in binary representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the digit desired from the binary representation of \_\-word. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if and only if the 'i'th bit is 1.
+\end{DoxyReturn}
+The indexing of the bits works as defined in operator\mbox{[}$\,$\mbox{]}(). 
+
+\subsection{Member Data Documentation}
+\hypertarget{classWord_a8b0aa1f2042266f307c51b3bdafa9128}{
+\index{Word@{Word}!\_\-value@{\_\-value}}
+\index{\_\-value@{\_\-value}!Word@{Word}}
+\subsubsection[{\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short {\bf Word::\_\-value}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWord_a8b0aa1f2042266f307c51b3bdafa9128}
+
+
+Used to store the \char`\"{}word\char`\"{} of data. 
+
+The type \char`\"{}unsigned short\char`\"{} was chosen because in c++, shorts are 16bits (the same size as our words) and having it unsigned allows for easy \char`\"{}reading\char`\"{} as a positive int or a 2's complement int. 

@@ -1,0 +1,81 @@
+\hypertarget{iDecoder_8h}{
+\section{iDecoder.h File Reference}
+\label{iDecoder_8h}\index{iDecoder.h@{iDecoder.h}}
+}
+
+
+Definition of the Wi-\/11 instruction decoder.  
+
+
+Include dependency graph for iDecoder.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{iDecoder_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structInstruction}{Instruction}
+\begin{DoxyCompactList}\small\item\em Container to simplify interactions with Wi-\/11 instructions. \item\end{DoxyCompactList}\item 
+class \hyperlink{classiDecoder}{iDecoder}
+\begin{DoxyCompactList}\small\item\em Defines how Wi-\/11 instructions are decoded. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceDecoder__Directory}{Decoder\_\-Directory}
+
+
+\begin{DoxyCompactList}\small\item\em Declares register id's and instruction types for each register and instruction. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries REGISTER\_\-ID} \{ \par
+{\bfseries R0}, 
+{\bfseries R1}, 
+{\bfseries R2}, 
+{\bfseries R3}, 
+\par
+{\bfseries R4}, 
+{\bfseries R5}, 
+{\bfseries R6}, 
+{\bfseries R7}, 
+\par
+{\bfseries PC}
+ \}
+\item 
+enum {\bfseries INSTRUCTION\_\-TYPE} \{ \par
+{\bfseries ADD}, 
+{\bfseries AND}, 
+{\bfseries BRx}, 
+{\bfseries DBUG}, 
+\par
+{\bfseries JSR}, 
+{\bfseries JSRR}, 
+{\bfseries LD}, 
+{\bfseries LDI}, 
+\par
+{\bfseries LDR}, 
+{\bfseries LEA}, 
+{\bfseries NOT}, 
+{\bfseries RET}, 
+\par
+{\bfseries ST}, 
+{\bfseries STI}, 
+{\bfseries STR}, 
+{\bfseries TRAP}, 
+\par
+{\bfseries ERROR}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of the Wi-\/11 instruction decoder. \begin{DoxyAuthor}{Author}
+Joshua Green 
+
+Andrew Groot 
+\end{DoxyAuthor}
