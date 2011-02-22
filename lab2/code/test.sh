@@ -1,25 +1,36 @@
 ## test.sh
 #!/bin/bash
 
-#          "path/to/dir/*.ext"
-test_files="unit_test/*.s"
+# "path/to/dir/*.ext"
+test_dir="unit_test/"
+ext="*.s"
+
+function printo() {
+	echo
+    echo ">>> out.o"
+    cat out.o 2>/dev/null   # print the object file
+}
 
 echo "------------------------------------------------------------------"
-echo "|                Running all test files...                       |"
+echo "|           Running all test files in $test_dir"
 echo "------------------------------------------------------------------"
 
-for file in `ls $test_files`; do
-	echo "Testing $file."
+for file in `ls $test_dir$ext`; do
+	echo ">>> Testing $file."
 	echo  
-	./wi11-asm $file out.o  # run the assembler
+	# run the assembler and, if successful, print object file
+	./wi11-asm $file out.o && printo
 	echo
-	echo ">> out.o"
-	cat out.o 2>/dev/null   # print the object file
-	rm out.o 2>/dev/null    # remove the object file
+	# don't print anything input by the user
+	stty -echo
+	# restore console echoing if interupted.
+	trap "stty echo; echo; exit 1" SIGINT SIGTERM
+	# wait for a key-press
+	read -n1 -p "(Press any key to continue)"
+	# restore console echoing
+	stty echo
 	echo
-	echo 
-	echo -n "Next? "
-	read
 	echo "------------------------------------------------------------------"
 done
 
+rm out.o 2>/dev/null    # remove the object file

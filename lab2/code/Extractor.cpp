@@ -91,6 +91,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           if (line.Label().length() > 6) {
             result.msg = ORIG_LBL;
             result.info = _LineNumber(pos);
+            return result;
           }
           
           if (line.Size() == 1) {
