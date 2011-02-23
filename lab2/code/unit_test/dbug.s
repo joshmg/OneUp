@@ -1,0 +1,4 @@
+TEST	.ORIG x1
+	DBUG
+	RET
+	.END TEST

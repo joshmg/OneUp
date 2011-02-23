@@ -778,7 +778,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         current_address++;
 
       } else if (inst == "DBUG" || inst == "RET") {
-        // DEBUG/RET Instructions
+        // DBUG/RET Instructions
         // Text Record
         _outStream << 'T';
 
@@ -797,7 +797,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // **End parsing instruction**
 
-        _outStream << initial_mem.ToHex().substr(2,4) << _outStream << '\n';
+        _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
