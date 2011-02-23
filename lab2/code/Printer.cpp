@@ -18,7 +18,7 @@ using namespace Codes;
 
 // private
 void Printer::_SetBits(Word& w, int value, int index) {
-  w = w.Or( Word(value*pow(2.0, index)) );
+  w = w.Or( Word(value * (int) pow(2.0, (double) index)) );
 }
 
 RESULT Printer::_IsReg(string reg) {
