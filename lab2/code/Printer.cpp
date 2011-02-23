@@ -255,6 +255,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         string op = current_line[0];
         Word value = _ParseWord(op, symbols);
 
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, op);
+        }
+
         // Text Record
         if (symbols.Contains(op) && symbols.IsRelocatable(op) && relocatable) {
           _outStream << 'W';
