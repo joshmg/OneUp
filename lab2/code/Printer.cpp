@@ -126,8 +126,11 @@ Word Printer::_ParseWord(const string& op, const SymbolTable& symbols) {
 
 bool Printer::_Check9(Word value, Word PC) {
   // test first 7 bits
-  Word temp1 = PC.And(Word(0xFE00));
-  Word temp2 = PC.And(Word(0xFE00));
+  Word top7(0xFE00);
+
+  Word temp1 = value.And(top7);
+  Word temp2 = PC.And(top7);
+
   return (temp1.ToInt() == temp2.ToInt());
 }
 
@@ -137,6 +140,10 @@ bool Printer::_Check6(Word value) {
 
 bool Printer::_Check5(Word value) {
   return (value.ToInt2Complement() < 16 && value.ToInt2Complement() >= -16);
+}
+
+void Printer::_PreError(const string& line) {
+  cout << "\n--- In line: " << line << "\n--- ";
 }
 
 void Printer::_LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos) {
@@ -235,9 +242,13 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         //*** listing output
         cout << '(' << current_address.ToHex().substr(2) << ')'
-              << string(listing_offset - 6, ' ')  // already printed 6 chars
+              << string(listing_offset - 6, ' ')  // - 6: already printed 6 chars
               << _InFileData(pos, current_line);
         current_address = current_address + value;
+
+      } else if (inst == ".EQU") {
+        // just print line
+        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
 
       } else if (inst == ".FILL") {
         // Fill pseudo-op
@@ -245,15 +256,27 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         // Text Record
-        if (symbols.IsRelocatable(op) && relocatable) {
+        if (symbols.Contains(op) && symbols.IsRelocatable(op) && relocatable) {
           _outStream << 'W';
         } else {
           _outStream << 'T';
         }
 
+        // Store label if one exists
+        if (current_line.HasLabel()) {
+          if (op[0] != 'x' && op[0] != '#') {
+            // is not a constant -- shouldn't have a value
+            if (!symbols.Contains(current_line.Label())) {
+              symbols.InsertLabel(current_line.Label(), value, symbols.IsRelocatable(op));
+            } else {
+              _PreError(current_line.ToString());
+              return RESULT(REDEF_LBL, op);
+            }
+          }
+        }
+
         // Print address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
-        current_address++;
 
         // Print initial memory value
         _outStream << value.ToHex().substr(2,4) << '\n';
@@ -284,15 +307,16 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           } else {
             _LineListing(current_address, character, Line(), pos);
           }
+          current_address++;
         }
 
         // Text record for null character at string termination
         _outStream << 'T' << current_address.ToHex().substr(2,4) << "0000\n";
 
-        //*** listing output 2
+        //*** listing output 2 -- null character
         cout << '(' << current_address.ToHex().substr(2) << ')'
               << ' ' << string(4, '0') << "  " << string(16, '0') << ' '
-              << _InFileData(pos, current_line);
+              << _InFileData(pos, Line());
         current_address++;
 
       } else if (inst == "ADD" || inst == "AND") {
@@ -322,12 +346,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0];
-          return result;
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, current_line[0]);
         }
 
         // Set bits for source register 1
@@ -340,12 +364,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1];
-          return result;
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, current_line[1]);
         }
 
         string op3 = current_line[2];
@@ -361,10 +385,16 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           initial_mem.SetBit(bit_offset, true);
           bit_offset--;
 
-          string op = current_line[0];
-          Word value = _ParseWord(op, symbols);
+          Word value = _ParseWord(op3, symbols);
+          if (op3[0] != 'x' && op3[0] != '#' && !symbols.Contains(op3)) {
+            // is label that is not defined
+            _PreError(current_line.ToString());
+            return RESULT(LBL_NOT_FOUND, op3);
+          }
+
           if (! _Check5(value)) {
             // invalid immediate
+            _PreError(current_line.ToString());
             return RESULT(INV_IMM);
           }
 
@@ -403,13 +433,25 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           initial_mem.SetBit(11, true);
         }
 
-        bit_offset -= 3;
-
         string op = current_line[0];
         Word value = _ParseWord(op, symbols);
 
+        // make sure it's not an undefined label
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, op);
+        }
+        // check page
+        if (! _Check9(value, current_address)) {
+          // invalid offset
+          _PreError(current_line.ToString());
+          return RESULT(PG_ERR);
+        }
+
         if (relocatable) {
-          if (! symbols.IsRelocatable(op)) {
+          if (symbols.Contains(op) && !symbols.IsRelocatable(op)) {
+            _PreError(current_line.ToString());
             RESULT result(ABS_REL);
             result.info = op;
             return result;
@@ -446,7 +488,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           initial_mem.SetBit(11, true);
         }
 
-        bit_offset -= 3;
+        bit_offset -= 3; // link bit then junk
 
         // Set bits for base register
         if (current_line[0][0] == 'R') {
@@ -458,18 +500,26 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1];
-          return result;
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, current_line[1]);
         }
 
         string op = current_line[1];
-
         Word value = _ParseWord(op, symbols);
+
+        // make sure it's not an undefined label
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, op);
+        }
+
         if (! _Check6(value)) {
+          _PreError(current_line.ToString());
           // invalid index
           return RESULT(INV_IDX);
         }
@@ -528,15 +578,13 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0];
-          return result;
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, current_line[0]);
         }
-
-        bit_offset -= 3;
 
         string op2 = current_line[1];
         Word value;
@@ -548,7 +596,8 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           value = symbols.GetLabelAddr(op2);
 
           if (relocatable) {
-            if (! symbols.IsRelocatable(op2)) {
+            if (!symbols.IsRelocatable(op2)) {
+              _PreError(current_line.ToString());
               RESULT result(ABS_REL);
               result.info = op2;
               return result;
@@ -556,13 +605,23 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
 
         } else {
+          // make sure it's not an undefined label
+          if (op2[0] != 'x' && op2[0] != '#' && !symbols.Contains(op2)) {
+            // is label that is not defined
+            _PreError(current_line.ToString());
+            return RESULT(LBL_NOT_FOUND, op2);
+          }
+
           if (relocatable) {
+            _PreError(current_line.ToString());
             return RESULT(ABS_REL);
           }
 
           value = _ParseWord(op2, symbols);
         }
+        // check page
         if (! _Check9(value, current_address)) {
+          _PreError(current_line.ToString());
           return RESULT(PG_ERR);
         }
 
@@ -606,12 +665,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0];
-          return result;
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, current_line[0]);
         }
 
         // Set bits for base register
@@ -624,20 +683,26 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1];
-          return result;
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, current_line[1]);
         }
 
-        bit_offset -= 6;
-
         string op3 = current_line[2];
-
         Word value = _ParseWord(op3, symbols);
+
+        // make sure it's not an undefined label
+        if (op3[0] != 'x' && op3[0] != '#' && !symbols.Contains(op3)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND);
+        }
+
         if (! _Check6(value)) {
+          _PreError(current_line.ToString());
           return RESULT(INV_IDX);
         }
 
@@ -678,12 +743,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[0];
-          return result;
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, current_line[0]);
         }
 
         // Set bits for source register
@@ -696,12 +761,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             string reg = "R" + itos(reg_num);
             _SetBits(reg, initial_mem, bit_offset);
           } else {
+            _PreError(current_line.ToString());
             return RESULT(INV_REG);
           }
         } else {
-          RESULT result(LBL_NOT_FOUND);
-          result.info = current_line[1];
-          return result;
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, current_line[1]);
         }
 
         // **End parsing instruction**
@@ -755,11 +820,18 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         initial_mem.SetBit(13, true);
         initial_mem.SetBit(12, true);
 
-        bit_offset -= 4;
+        bit_offset -= 4; // 4 junk bits
 
         string op = current_line[0];
 
         Word value = _ParseWord(op, symbols);
+
+        // make sure it's not an undefined label
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, op);
+        }
 
         while (bit_offset >= 0) {
           initial_mem.SetBit(bit_offset, value[bit_offset]);
@@ -810,7 +882,16 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         string op = current_line[0];
 
         Word value = _ParseWord(op, symbols);
+
+        // make sure it's not an undefined label
+        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          // is label that is not defined
+          _PreError(current_line.ToString());
+          return RESULT(LBL_NOT_FOUND, op);
+        }
+        // make sure it's on the same page
         if (! _Check9(value, current_address)) {
+          _PreError(current_line.ToString());
           return RESULT(PG_ERR);
         }
 
@@ -837,17 +918,19 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           Word value(it->first);
           // object file output
           _outStream << 'T' << current_address.ToHex().substr(2) << value.ToHex().substr(2) << '\n';
-          //*** listing output 1
+          //*** listing output 2
           cout << '(' << current_address.ToHex().substr(2) << ')'
-                << ' ' << value.ToHex().substr(2) << "  " << value.ToStr() << " ( lit)\n";
+                << ' ' << value.ToHex().substr(2) << "  " << value.ToStr()
+                << " ( lit) <" << value.ToInt2Complement() << ">\n"; // print literal value in <>'s
           current_address++;
           it++;
         }
 
+        // .END output afterward
         Word load(initial_load);
         _outStream << 'E' << load.ToHex().substr(2) << '\n';
 
-        //*** listing output 2
+        //*** listing output 1
         cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
 
         return RESULT(SUCCESS);

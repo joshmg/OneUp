@@ -1,0 +1,8 @@
+*.o*
+*.tex
+doc/
+!doc/latex/refman.pdf
+*.exe
+a.out
+wi11-asm
+wi11-sim

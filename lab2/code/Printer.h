@@ -68,6 +68,8 @@ class Printer : public iPrinter {
     bool _Check6(Word value);
     bool _Check5(Word value);
 
+    void _PreError(const std::string& line);
+
     void _LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos);
 
     std::string _InFileData(const int line_number, const Line& current_line);

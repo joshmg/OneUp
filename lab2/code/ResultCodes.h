@@ -29,6 +29,7 @@ namespace Codes {
     INV_INST,       // Instruction does not exist
     STRZ_NOT_STR,   // Argument to .STRZ not a string
     END_OF_STR,     // No end quote
+    STR_JUNK,       // Extra characters after end quote
     ARG_SIZE,       // Wrong number of arguments
     EMPTY_ARG,      // Argument is the empty string
     INV_REG,        // Invalid register number
@@ -54,7 +55,11 @@ namespace Codes {
     PG_ERR,         // Arugment on different page
     NO_END,         // No end record
     END_OB,         // End arg out of bounds
+    UNEXP_EOF,      // Unexpected EOF
+    REL_PG_SIZE,    // Relocatable prog spans won't fit in one page
+    MEM_FIT,        // Program won't fit in memory
 
+    // ^ new codes go here ^
     FILE_NOT_FOUND, // File not found
     FILE_NOT_OPENED // File could not be opened
   };
@@ -90,13 +95,14 @@ class ResultDecoder {
       _codes[Codes::INV_INST] = "Instruction not recognized.";
       _codes[Codes::STRZ_NOT_STR] = "Argument to \".STRZ\" is not a string.";
       _codes[Codes::END_OF_STR] = "End of string not found.";
+      _codes[Codes::STR_JUNK] = "Extra characters found after end of string.";
       _codes[Codes::ARG_SIZE] = "Invalid number of arguments.";
       _codes[Codes::EMPTY_ARG] = "Argugment is the empty string (misplaced comma?).";
       _codes[Codes::INV_REG] = "Non-existent register as arugment.";
       _codes[Codes::INV_CONST] = "Constant value out of range.";
       _codes[Codes::INV_ARG] = "Invalid argument.";
-      _codes[Codes::INV_HEX] = "Non-hex character after 'x'.";
-      _codes[Codes::INV_DEC] = "Non-digit after '#'.";
+      _codes[Codes::INV_HEX] = "Invalid hex following 'x'.";
+      _codes[Codes::INV_DEC] = "Invalid decimal following '#'.";
       _codes[Codes::INV_BR] = "Invalid CCR mask for branch instruction.";
       _codes[Codes::NON_LD_LIT] = "Literals may only be used with the LD instruction.";
       _codes[Codes::ORIG] = "First non-comment line should contain \".ORIG\" instruction.";
@@ -104,17 +110,20 @@ class ResultDecoder {
       _codes[Codes::ORIG_HEX] = "Argument to \".ORIG\" not hex.";
       _codes[Codes::ORIG_LBL] = "\".ORIG\" label longer than six characters.";
       _codes[Codes::REQ_LABEL] = "Instruction requires label.";
-      _codes[Codes::LBL_NOT_FOUND] = "Label not found.";
+      _codes[Codes::LBL_NOT_FOUND] = "Label not found.\n((Forward reference to .FILL label?  Case-sensitvity issue?))";
       _codes[Codes::REDEF_LBL] = "Attempt to redefine label.";
-      _codes[Codes::MAX_S_SIZE] = "Maximum number of symbols reached.  Alter with '-s'?";
-      _codes[Codes::MAX_L_SIZE] = "Maximum number of literals reached.  Alter with '-s'?";
-      _codes[Codes::MAX_LENGTH] = "Maximum object file size reached.  Alter with '-s'?";
+      _codes[Codes::MAX_S_SIZE] = "Maximum number of symbols reached.\n((Alter with '-s'?))";
+      _codes[Codes::MAX_L_SIZE] = "Maximum number of literals reached.\n((Alter with '-s'?))";
+      _codes[Codes::MAX_LENGTH] = "Maximum object file size reached.\n((Alter with '-s'?))";
       _codes[Codes::ABS_REL] = "Absolute value in instruction that requires a relative.";
       _codes[Codes::INV_IMM] = "Immediate value not expressible in 5 bits.";
       _codes[Codes::INV_IDX] = "Index value not expressible in 6 bits.";
       _codes[Codes::PG_ERR] = "Page Error: Address references a different page.";
       _codes[Codes::NO_END] = "File has no end record.";
       _codes[Codes::END_OB] = "Arugment to \".END\" instruction is outside declared memory.";
+      _codes[Codes::UNEXP_EOF] = "Unexpected end of file.";
+      _codes[Codes::REL_PG_SIZE] = "Relocatable programs cannot occupy more than one page in memory.";
+      _codes[Codes::MEM_FIT] = "This program will not fit in memory.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found.";
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";
