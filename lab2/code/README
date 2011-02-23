@@ -1,11 +1,23 @@
 Compiling the Wi-11 Assembler
 -----------------------------
 
-On a UNIX machine, simply running the "make" command should work.
-This requires that both g++ and make are installed.
+UNIX:
+-----
 
-Even without make, the command:
+If make is installed, run the "make" command.
+This requires that g++ is installed.
+
+Without make, the command:
 	g++ -o wi11-asm *.cpp
-run in the same directory as this file, should suffice.
+  Note: Run in the same directory as this file.
 
 Either method will create an executable called "wi11-asm".
+
+
+Windows:
+--------
+
+Supported Compiler:
+	Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 16.00.30319.01 for 80x86
+
+At command line, run the command "cl *.cpp /owi11_asm /EHsc"
