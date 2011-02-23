@@ -14,6 +14,22 @@
 #include <fstream>
 #include <map>
 
+/*! @brief Implements the iPrinter interface.
+
+    This implementation shows the complexity of
+    a Printer component.  Much of the redundancy
+    inherent in the concept of this class is
+    accounted for through the use of its many private functions.
+    However, the method chosen for returning error messages makes
+    it very difficult to truly optimize this code.  Therefore,
+    even much of the code specific to each type of operation is just a 
+    variant of another component.  The handling of different instructions
+    is done through a while loop containing a large
+    if-elseif-elseif... statement.  The components are separated by
+    their argument pattern in an attempt to compactify the code as
+    much as possible while still maintaining its correctness and
+    readability.
+*/
 class Printer : public iPrinter {
   private:
     //! The input file.
@@ -62,16 +78,53 @@ class Printer : public iPrinter {
     */
     void _SetBits(std::string reg, Word& initial_mem, int& bit_offset);
 
+    /*! @briefs Get a 16 value from a string.
+        @param[in] op The string to be parsed.
+        @param[in] symbols A table of symbols in case it is necessary.
+        @returns The value contained in op, whether it is a constant or a symbol.  If the symbol is not defined that
+will be handled outside of this function.
+    */
     Word _ParseWord(const std::string& op, const SymbolTable& symbols);
 
+    /*! @brief Checks a Pgoffset9 value.
+        @param[in] value The value to be checked.
+        @param[in] PC The value of the PC for value to be checked against.
+        @returns True iff the highest order 7 bits of value and PC are the same.
+    */
     bool _Check9(Word value, Word PC);
+
+    /*! @brief Checks a 6-bit index.
+        @param[in] value The value to be checked.
+        @returns True iff value can be expressed in 6 bits.
+    */
     bool _Check6(Word value);
+
+    /*! @brief Checks a 5-bit immediate value.
+        @param[in] value The value to be checked.
+        @returns True iff value can be expressed in 5 bits.
+    */
     bool _Check5(Word value);
 
+    /*! @brief Prints to the console to make error messages more readable.
+        @param[in] line The line in which the error was found.
+
+        Shows the user the line with the error and formats the output to make
+        error messages more readable.
+    */
     void _PreError(const std::string& line);
 
+    /*! @brief Prints the listing entry for a single non-pseudo-op instruction.
+        @param[in] current_address The address of the instruction.
+        @param[in] value The value to be store at current_address.
+        @param[in] current_line The line that has been translated.
+        @param[in] pos The current line number in the input file.
+    */
     void _LineListing(const Word& current_address, const Word& value, const Line& current_line, const int& pos);
 
+    /*! @brief Prints to the console to make listings more readable.
+        @param[in] line_number The current line in the file.
+        @param[in] current_line The line that has been translated.
+    */
     std::string _InFileData(const int line_number, const Line& current_line);
 
   public:

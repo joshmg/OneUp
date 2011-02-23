@@ -15,6 +15,15 @@
 #include <fstream>
 #define SYMBOL_TABLE_MAX_SIZE 1000
 
+/*! @brief Implements the iExtractor interface.
+
+    This implementation is very nearly trivial.
+    In this file the default maximum symbol table size is declared
+    and store the run-time value of the max will be stored in the
+    Extractor object.  The private variable keeping track of the
+    object file length is an int to facilitate the reporting of
+    a file whose length has exceeded the upper boundary of memory.
+*/
 class Extractor : public iExtractor {
   private:
     //! The input file

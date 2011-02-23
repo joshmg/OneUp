@@ -11,6 +11,12 @@
 #include <string>
 #include <vector>
 
+/*! @brief Implements the iLine interface.
+
+    This class store redundant amounts of information
+    separated in different ways to allow the client
+    to recreate and reformat the original text with ease.
+*/
 class Line : public iLine {
   private:
     //! Label, if any.  Empty string otherwise.
@@ -50,38 +56,7 @@ class Line : public iLine {
     /*! @brief Tests the arguments extracted from the line for validity.
         @return SUCCESS if the arugments are valid; an appropriate error otherwise.
         
-        @par Criteria for an arugment
-        A valid argument fits into one of the following categories:
-        <ul>
-        <li>Register</li>
-          <ul>
-          <li>Something of the form RX, 0 < X < 7.</li>
-          </ul>
-        <li>Constant</li>
-          <ul>
-          <li>A decimal or hexadecimal value.</li>
-          <li>A decimal value is denoted with a preceding '#'.
-            <ul>
-            <li>Example: #14 = 14 in decimal.</li>
-            </ul>
-          <li>A hexadecimal value is denoted with a preceding 'x'.
-            <ul>
-            <li>Example: x14 = 20 in decimal.<li>
-            <li>Example: xFFFF = -1 in decimal (for 16-bit constant).
-            </ul>
-          <li>Either of these can be a literal (denoted with an '=').
-            <ul>
-            <li>Literals are actually stored in the memory of the wi-11 machine.</li>
-            <li>To do this, the '=' is simply placed in front of the '#' or 'x'.</li>
-            </ul>
-          </ul>
-
-        <li>Label</li>
-          <ul>
-          <li>A string beginning with an alphanumeric character that is no 'R' or 'x'.</li>
-          </ul>
-          </ul>
-        <ul>
+        Here, valid arguments are as defined in the \ref operands sections.
     */
     Codes::RESULT _CheckArgs();
 

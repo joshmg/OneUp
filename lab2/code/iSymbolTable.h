@@ -65,6 +65,9 @@ class iSymbolTable {
     */
     virtual bool IsRelocatable(std::string label) const = 0;
 
+    /*! @brief Aids the Printer in outputing literals.
+        @returns An iterator from the literal values to their addresses.
+    */
     virtual const std::map<int, Word>* GetLiterals() const = 0;
 };
 

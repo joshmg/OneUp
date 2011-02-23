@@ -64,6 +64,7 @@ namespace Codes {
     FILE_NOT_OPENED // File could not be opened
   };
 
+  //! Holds error-reporting information
   struct RESULT {
     std::string info;
     ERROR msg;
@@ -75,8 +76,7 @@ namespace Codes {
   };
 }
 
-/*! @brief Finds the messages associated with a given result code.
-*/
+//! @brief Finds the messages associated with a given result code
 class ResultDecoder {
   private:
     /*! @brief Maps a result code to, in every case but SUCCESS, an error message.

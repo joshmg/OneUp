@@ -11,6 +11,16 @@
 #include <map>
 #include <string>
 
+/*! @brief Implements the iSymbolTable interface.
+
+    This implementation keeps mappings of the different
+    symbols and literal values to their address, as well as
+    a mapping of symbol to its "relocatable" status.
+    The purpose of this class is primarily to isolate the
+    use of some of the more fragile code and provide the client
+    with a tool rather than a list of components to pass into
+    every function. 
+*/
 class SymbolTable : public iSymbolTable {
   private:
     //! Store symbol to address mappings.
