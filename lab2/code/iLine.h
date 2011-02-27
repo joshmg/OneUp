@@ -48,6 +48,10 @@ class iLine {
     /*! @brief Provides access to the arguments of the instruction.
         @param[in] index The index of the argument desired, starting at 0 for the first one.
         @return Argument number "index".
+
+        One Important Case
+        @arg .STRZ: String arugments are returned without the surrounding quotes.  Only escaped quotes will appear in
+this string.
     */
     virtual std::string operator[] (int index) const = 0;
 
@@ -57,7 +61,7 @@ class iLine {
     virtual int Size() const = 0;
 
 
-    /*! @return The line of code as found.
+    /*! @return The line of code as found in the source file.
     */
     virtual std::string ToString() const = 0;
 

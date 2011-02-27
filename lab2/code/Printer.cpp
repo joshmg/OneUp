@@ -153,7 +153,13 @@ void Printer::_LineListing(const Word& current_address, const Word& value, const
 }
 
 string Printer::_InFileData(const int line_number, const Line& current_line) {
-  return "(" + string(4 - itos(line_number).length(), ' ') + itos(line_number) + ") " + current_line.ToString() + '\n';
+  string num = itos(line_number); // string version of line number
+  
+  if (num.length() <= 4) {
+    return "(" + string(4 - num.length(), ' ') + num + ") " + current_line.ToString() + '\n';
+  } else {
+    return "(" + string(4 - num.length(), ' ') + num + ") " + current_line.ToString() + '\n';
+  }
 }
 
 //*** public ***//
@@ -195,7 +201,7 @@ RESULT Printer::Open(string infile, string outfile) {
 RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
   string input_line;
   Word current_address(0);
-  int initial_load = 0;
+  Word initial_load(0);
   int pos = 0;
   bool relocatable = false;
 
@@ -222,8 +228,8 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
           // Initial load address
           _outStream << addr.ToHex().substr(2,4);
-          current_address = current_address + addr;
-          initial_load += addr.ToInt();
+          current_address = addr;
+          initial_load = addr;
         } else {
           relocatable = true;
         }
@@ -295,7 +301,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // String pseudo-op
         string op = current_line[0];
 
-        for (int i = 1; i < op.length()-1; i++) {
+        for (int i = 0; i < op.length(); i++) {
           Word character((int) op[i]);
 
           // Text Record
@@ -308,7 +314,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _outStream << character.ToHex().substr(2,4) << "\n";
 
           //*** listing output
-          if (i == 1) {
+          if (i == 0) {
             _LineListing(current_address, character, current_line, pos);
           } else {
             _LineListing(current_address, character, Line(), pos);
@@ -933,7 +939,24 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         // .END output afterward
-        Word load(initial_load);
+        Word load;
+
+        if (current_line.Size() == 0) {
+          load = initial_load;
+        } else {
+          string op = current_line[0];
+          load = _ParseWord(op, symbols);
+
+          // make sure it's not an undefined label
+          if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+            // is label that is not defined
+            _PreError(current_line.ToString());
+            return RESULT(LBL_NOT_FOUND, op);
+          }
+          // don't check end record value
+          // is allowed to be anywhere in memory
+        }
+
         _outStream << 'E' << load.ToHex().substr(2) << '\n';
 
         //*** listing output 1

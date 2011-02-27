@@ -58,6 +58,7 @@ namespace Codes {
     UNEXP_EOF,      // Unexpected EOF
     REL_PG_SIZE,    // Relocatable prog spans won't fit in one page
     MEM_FIT,        // Program won't fit in memory
+    END_LBL,        // .END cannot have a label
 
     // ^ new codes go here ^
     FILE_NOT_FOUND, // File not found
@@ -110,7 +111,7 @@ class ResultDecoder {
       _codes[Codes::ORIG_HEX] = "Argument to \".ORIG\" not hex.";
       _codes[Codes::ORIG_LBL] = "\".ORIG\" label longer than six characters.";
       _codes[Codes::REQ_LABEL] = "Instruction requires label.";
-      _codes[Codes::LBL_NOT_FOUND] = "Label not found.\n((Forward reference to .FILL label?  Case-sensitvity issue?))";
+      _codes[Codes::LBL_NOT_FOUND] = "Label not found.\n((Forward reference to .EQU label?  Case-sensitvity issue?))";
       _codes[Codes::REDEF_LBL] = "Attempt to redefine label.";
       _codes[Codes::MAX_S_SIZE] = "Maximum number of symbols reached.\n((Alter with '-s'?))";
       _codes[Codes::MAX_L_SIZE] = "Maximum number of literals reached.\n((Alter with '-s'?))";
@@ -124,6 +125,7 @@ class ResultDecoder {
       _codes[Codes::UNEXP_EOF] = "Unexpected end of file.";
       _codes[Codes::REL_PG_SIZE] = "Relocatable programs cannot occupy more than one page in memory.";
       _codes[Codes::MEM_FIT] = "This program will not fit in memory.";
+      _codes[Codes::END_LBL] = "\".END\" instruction cannot have a label.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found.";
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";

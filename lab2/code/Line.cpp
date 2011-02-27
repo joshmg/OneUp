@@ -153,33 +153,44 @@ RESULT Line::ReadLine (string line) {
     if (line[0] != '\"') {
       return RESULT(STRZ_NOT_STR);
     } else {
-      // move " to arg
       string arg;
-      arg += line[0];
+      // remove leading quote
       line = line.substr(1);
 
       while (line.length() > 0) {
-        arg += line[0];
         if (arg[arg.length()-1] != '\\' && line[0] == '\"') {
           // found unescaped quote
           break;
-        } else {
-          // keep going
-          line = line.substr(1);
         }
+
+        // continue forming arg
+        if (arg[arg.length()-1] == '\\' && line[0] == '\"') {
+          // escaped quote, replace back-slash
+          arg[arg.length()-1] = line[0];
+        } else {
+          arg += line[0];
+        }
+
+        // keep going
+        line = line.substr(1);
       }
       
-      // store arg
-      _args.push_back(arg);
-
-      if (line.length() == 0) {
+      if (line.length() == 0 || line[0] != '\"') {
         // no end quote
         return RESULT(END_OF_STR);
       }
-      if (line.length() > 1) {
+
+      // has end quote, get rid of it
+      string temp = line.substr(1);
+      line = _GetNext(temp);
+
+      if (line.length() > 0 && line[0] != ';') {
         // junk after string
         return RESULT(STR_JUNK);
       }
+
+      // everything good, store arg
+      _args.push_back(arg);
     }
   } else if (line.length() > 0) {
     // _inst != .STRZ
@@ -225,7 +236,7 @@ RESULT Line::ReadLine (string line) {
       return RESULT(ARG_SIZE);
     }
   } else if (_inst == "JSR" || _inst == "JMP" || _inst == "TRAP" ||
-              _inst == ".END" || _inst == ".EQU" || _inst == ".FILL" ||
+              _inst == ".EQU" || _inst == ".FILL" ||
               _inst == ".STRZ" || _inst == ".BLKW") {
     if (_args.size() != 1) {
       return RESULT(ARG_SIZE);
@@ -240,12 +251,12 @@ RESULT Line::ReadLine (string line) {
     if (_args.size() != 3) {
       return RESULT(ARG_SIZE);
     }
-  } else if (_inst == ".ORIG") {
+  } else if (_inst == ".ORIG" || _inst == ".END") {
     // could be zero or one
     if (_args.size() > 1) {
       return RESULT(ARG_SIZE);
     }
-    if (_args.size() == 1 && _args[0][0] != 'x') {
+    if (_inst == ".ORIG" && _args.size() == 1 && _args[0][0] != 'x') {
       // argument to .ORIG must be hex
       return RESULT(ORIG_HEX);
     }

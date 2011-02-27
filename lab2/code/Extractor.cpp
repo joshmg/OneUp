@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <string>
 #include <map>
-#include <vector>
+#include <set>
 #include <fstream>
 #include "itos.h"
 #include <iostream> 
@@ -47,7 +47,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
                        // actual length starts at zero
   int pos = 0;
   // store literals
-  vector<int> literals;
+  set<int> literals;
   // relocation status
   bool relocatable = false;
   // beginning location
@@ -110,26 +110,40 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
 
         } else if (line.Instruction() == ".END") {
           // .END
-          Word w;
-          if (symbols.Contains(line[0])) {
-            w = symbols.GetLabelAddr(line[0]);
-          } else if (line[0][0] == 'x') {
-            Word w;
-            w.FromHexAbbr(line[0]);
-          } else if (line[0][0] == '#') {
-            Word w;
-            w.FromInt(atoi(line[0].substr(1).c_str()));
-          } else {
-            result.msg = LBL_NOT_FOUND;
-            result.info = _LineNumber(pos) + ": " + line[0];
-            return result;
+          if (line.HasLabel()) {
+            // END cannot have label
+            return RESULT(END_LBL);
           }
 
-          int ulimit = begin.ToInt() + _length;
-          int llimit = begin.ToInt();
-          if (w.ToInt() >= llimit && (w.ToInt() < ulimit)) {
+          Word w;
+          if (line.Size() == 1) {
+            // has argument
+            if (symbols.Contains(line[0])) {
+              w = symbols.GetLabelAddr(line[0]);
+            } else if (line[0][0] == 'x') {
+              Word w;
+              w.FromHexAbbr(line[0]);
+            } else if (line[0][0] == '#') {
+              Word w;
+              w.FromInt(atoi(line[0].substr(1).c_str()));
+            } else {
+              result.msg = LBL_NOT_FOUND;
+              result.info = _LineNumber(pos) + ": " + line[0];
+              return result;
+            }
+
+            int ulimit = begin.ToInt() + _length;
+            int llimit = begin.ToInt();
+            if (w.ToInt() >= llimit && (w.ToInt() < ulimit)) {
+              // Everything is good, done with first pass
+              break;
+            }
+          } else {
+            // No arugments, nothing to check or do
+            // Everything is good, done with first pass
             break;
           }
+
           // out of bounds
           result.msg = END_OB;
           result.info = _LineNumber(pos);
@@ -144,7 +158,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           }
           if (symbols.Contains(line[0])) {
             Word w = symbols.GetLabelAddr(line[0]);
-            if (symbols.LabelCount() < _max_size) {
+            if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), w, symbols.IsRelocatable(line[0]));
             } else {
               return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
@@ -152,7 +166,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           } else if (line[0][0] == 'x') {
             Word w;
             w.FromHexAbbr(line[0]);
-            if (symbols.LabelCount() < _max_size) {
+            if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), w);
             } else {
               return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
@@ -160,7 +174,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           } else if (line[0][0] == '#') {
             Word w;
             w.FromInt(atoi(line[0].substr(1).c_str()));
-            if (symbols.LabelCount() < _max_size) {
+            if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), w);
             } else {
               return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
@@ -197,7 +211,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
             }
-            if (symbols.LabelCount() < _max_size) {
+            if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
             } else {
               return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
@@ -212,15 +226,15 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
             }
-            if (symbols.LabelCount() < _max_size) {
+            if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
             } else {
               return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
             }
           }
           // adding on length of string
-          // (- 1: +1 for null termination, -2 for quote at beginning and end)
-          _length += line[0].length() - 1;
+          // +1 for null termination
+          _length += line[0].length() + 1;
 
         } else if (line.Instruction() == ".BLKW") {
           // .BLKW
@@ -230,7 +244,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
             }
-            if (symbols.LabelCount() < _max_size) {
+            if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
             } else {
               return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
@@ -266,7 +280,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             result.info = _LineNumber(pos) + ": " + line.Label();
             return result;
           }
-          if (symbols.LabelCount() < _max_size) {
+          if (symbols.LabelCount() <= _max_size) {
             symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
           } else {
             return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
@@ -276,8 +290,8 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
       }
 
       if (line.HasLiteral()) {
-        if (literals.size() < (_max_size / 2)) {
-          literals.push_back(line.Literal());
+        if (literals.size() <= (_max_size / 2)) {
+          literals.insert(line.Literal());
         } else {
           return RESULT(MAX_L_SIZE, "(MaxLiteralCount: " + itos(_max_size / 2) + ")");
         }
@@ -315,8 +329,10 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
     return RESULT(UNEXP_EOF);
   }
   
-  for (int i=0; i<literals.size(); i++) {
-    symbols.InsertLiteral(literals[i], begin + Word(_length++));
+  set<int>::iterator it = literals.begin();
+  while (it != literals.end()) {
+    symbols.InsertLiteral(*it, begin + Word(_length++));
+    it++;
   }
 
   return RESULT(SUCCESS);
