@@ -187,25 +187,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           
         } else if (line.Instruction() == ".FILL") {
           // .FILL
-          Word w;
-          bool hasvalue = true;
-          switch(line[0][0]) {
-            case 'x': {
-              w.FromHexAbbr(line[0]);
-            } break;
-
-            case '#': {
-              w.FromInt(atoi(line[0].substr(1).c_str()));
-            } break;
-
-            default: {
-              // can't have value yet, will be defined in pass 2.
-              // Forward references to .FILL labels are illegal.
-              hasvalue = false;
-            } break;
-          }
-                    
-          if (hasvalue && line.HasLabel()) {
+          if (line.HasLabel()) {
             if (symbols.Contains(line.Label())) {
               result.msg = REDEF_LBL;
               result.info = _LineNumber(pos) + ": " + line.Label();
@@ -218,6 +200,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             }
           }
           _length++;
+
         } else if (line.Instruction() == ".STRZ") {
           // .STRZ
           if (line.HasLabel()) {

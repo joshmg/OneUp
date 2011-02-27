@@ -205,16 +205,29 @@ RESULT Line::ReadLine (string line) {
         args = args.substr(1);
       }
       
-      if (arg.length() > 0) {
+      if (arg.length() > 0 || args[0] == ';') {
         _args.push_back(arg);
+
+        if (args[0] == ';') {
+          // found comment, done
+          break;
+        }
 
         if (args.length() > 0 && args[0] == ',') {
           // get rid of comma
           args = args.substr(1);
         }
       } else {
-        // reached comma or semicolon immediately
+        // starts or ends with a comma
         return RESULT(EMPTY_ARG);
+      }
+    }
+    // check for comment
+    string extra = _GetNext(line);
+    if (extra.length() > 0 && extra[0] != ';') {
+      if (args[0] != ';') {
+        // comment wasn't in args and doesn't have ;
+        return RESULT(INV_COMMENT);
       }
     }
   }

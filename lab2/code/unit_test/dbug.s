@@ -1,5 +1,5 @@
 TEST	.ORIG x1
-	.FILL out
+	.FILL test;djklfs
 	DBUG
-	RET
+test	RET
 	.END
