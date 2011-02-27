@@ -445,6 +445,8 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           initial_mem.SetBit(11, true);
         }
 
+        bit_offset -= 3; // link bit and junk bits
+
         string op = current_line[0];
         Word value = _ParseWord(op, symbols);
 
