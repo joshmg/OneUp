@@ -25,7 +25,7 @@ string itos(long int number) {
 
 string itoshex(long int number) {
   if (number == 0) {
-    return "0";
+    return "x0";
   }
 
   string reverse;
