@@ -24,7 +24,7 @@ for file in `ls $test_dir$ext`; do
 	# don't print anything input by the user
 	stty -echo
 	# restore console echoing if interupted.
-	trap "stty echo; echo; exit 1" SIGINT SIGTERM
+	trap "stty echo; rm out.o; echo; exit 1" SIGINT SIGTERM
 	# wait for a key-press
 	read -n1 -p "(Press any key to continue)"
 	# restore console echoing

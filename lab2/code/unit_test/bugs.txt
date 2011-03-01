@@ -11,7 +11,16 @@ bugs:
 [X] .ORIG allowing a hex value that is out of the bounds of 16 bits
 [X] Branch with no CCR qualifiers doesn't spout an error
 [X] Relocatable values not being documented in object file. ex: valid_br1.s
-
+--- interactive grading
+[X] .END having optional operand
+[X] checking against page off by one
+[X] identical literals taking up additional space
+[X] listing file 4 char max on numbers?
+[X] label on .END
+[X] comments after string
+[ ] ADD with weird valid values of hex vs decimal
+[X] .FILL vs .EQU forward reference
+[X] weird setting dont-care bits
 
 Current Test Cases which fail:
 None.

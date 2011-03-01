@@ -161,7 +161,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), w, symbols.IsRelocatable(line[0]));
             } else {
-              return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
+              return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
             }
           } else if (line[0][0] == 'x') {
             Word w;
@@ -169,7 +169,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), w);
             } else {
-              return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
+              return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
             }
           } else if (line[0][0] == '#') {
             Word w;
@@ -177,7 +177,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), w);
             } else {
-              return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
+              return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
             }
           } else {
             result.msg = LBL_NOT_FOUND;
@@ -196,7 +196,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
             } else {
-              return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
+              return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
             }
           }
           _length++;
@@ -212,7 +212,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
             } else {
-              return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
+              return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
             }
           }
           // adding on length of string
@@ -230,7 +230,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
             } else {
-              return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
+              return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
             }
           }
           // get arugment
@@ -266,7 +266,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           if (symbols.LabelCount() <= _max_size) {
             symbols.InsertLabel(line.Label(), begin + Word(_length), relocatable);
           } else {
-            return RESULT(MAX_S_SIZE, "(MaxSymbolCount: " + itos(_max_size) + ")");
+            return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
           }
         }
         _length++;
@@ -276,7 +276,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
         if (literals.size() <= (_max_size / 2)) {
           literals.insert(line.Literal());
         } else {
-          return RESULT(MAX_L_SIZE, "(MaxLiteralCount: " + itos(_max_size / 2) + ")");
+          return RESULT(MAX_L_SIZE, _LineNumber(pos) + ": (MaxLiteralCount: " + itos(_max_size / 2) + ")");
         }
       }
     }
@@ -286,21 +286,23 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
       int page_size = 0x1FF;
       if (_length > page_size ) {
         // must fit in one page
-        return RESULT(REL_PG_SIZE);
+        return RESULT(REL_PG_SIZE, _LineNumber(pos) + ": Stopping at length " +
+                                    itos(_length) + '(' + itoshex(_length) + ')');
       }
     }
 
     if ( _length >= (_max_size * 2) ) {
       // maximum size of footprint in memory
-      return RESULT(MAX_LENGTH, "(MaxObjectFileSize: " + itos(_max_size * 2) + ")");
+      return RESULT(MAX_LENGTH, _LineNumber(pos) + ": (MaxObjectFileSize: " +
+                                  itos(_max_size * 2) + "(" + itoshex(_max_size * 2) + "))");
     }
 
-    if ( begin.ToInt() + _length >= Word::MAX_SIZE) {
+    if ( begin.ToInt() + _length > Word::MAX_SIZE) {
       // begin is zero in relocatable program and
       // could be anything from 0 to MAX_SIZE otherwise
 
       // program will not fit in memory
-      return RESULT(MEM_FIT, "MemRange: " + begin.ToHexAbbr() + "-" + (begin + Word(_length)).ToHexAbbr());
+      return RESULT(MEM_FIT, _LineNumber(pos) + ": Stopping at length " + itoshex(_length));
     }      
       
 

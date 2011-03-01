@@ -3,6 +3,7 @@
 //              Andrew Groot
 
 #include "Word.h"
+#include "itos.h"
 #include <string>
 #include <cmath> // for pow
 using namespace std;
@@ -63,24 +64,7 @@ string Word::ToHex() const {
 }
 
 string Word::ToHexAbbr() const {
-  string value("");
-
-  for (int i=0;i<WORD_SIZE;i+=4) {
-    // bits i to i+3, shifted down i bits
-    int hex_bit = (_value & 0x000F * (int)pow(2.0, i)) / (int)pow(2.0, i);
-    string temp = value;
-    if (hex_bit < 10) {
-      if (hex_bit != 0) {
-        // no leading zeros
-        value = '0' + hex_bit;
-      }
-    } else {
-      // 'A' = 10, so offset hex_bit by 10
-      value = 'A' + (hex_bit - 10);
-    }
-    value += temp;
-  }
-  return value; 
+  return itoshex(_value); 
 }
 
 bool Word::FromInt(int value) {
