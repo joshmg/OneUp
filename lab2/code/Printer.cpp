@@ -139,7 +139,7 @@ bool Printer::_Check6(Word value) {
 }
 
 bool Printer::_Check5(Word value) {
-  return (value.ToInt2Complement() < 16 && value.ToInt2Complement() >= -16);
+  return (value.ToInt2Complement() <= 15 && value.ToInt2Complement() >= -16);
 }
 
 void Printer::_PreError(const string& line) {
@@ -394,11 +394,26 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _SetBits(op3, initial_mem, bit_offset);
 
         } else {
-          initial_mem.SetBit(bit_offset, true);
-          bit_offset--;
+          initial_mem.SetBit(bit_offset--, true);
 
-          Word value = _ParseWord(op3, symbols);
-          if (op3[0] != 'x' && op3[0] != '#' && !symbols.Contains(op3)) {
+          // get immediate value - special case
+          Word value;
+          if (op3[0] == 'x') {
+            // hex
+            value.FromHexAbbr(op3);
+            // sign extend
+            if (value[4]) {
+              // fifth bit is set
+              // set all above it
+              value = value.Or(Word(0xFFE0));
+            }
+          } else if (op3[0] == '#') {
+            // decimal
+            value.FromInt(atoi(op3.substr(1).c_str()));
+          } else if (symbols.Contains(op3)) {
+            // label
+            value = symbols.GetLabelAddr(op3);
+          } else {
             // is label that is not defined
             _PreError(current_line.ToString());
             return RESULT(LBL_NOT_FOUND, op3);
