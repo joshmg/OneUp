@@ -1,13 +1,13 @@
 // File: Wi11.cpp
 // Written by Joshua Green
 
-#include "Wi11.h"
-#include "Register.h"
-#include "Memory.h"
-#include "iDecoder.h"
-#include "Decoder.h"
-#include "Loader.h"
-#include "ResultCodes.h"
+#include "../h/Wi11.h"
+#include "../h/Register.h"
+#include "../h/Memory.h"
+#include "../h/iDecoder.h"
+#include "../h/Decoder.h"
+#include "../h/Loader.h"
+#include "../h/ResultCodes.h"
 #include <iostream>
 #include <ctime>
 #include <cstdlib>

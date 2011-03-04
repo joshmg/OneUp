@@ -2,8 +2,8 @@
 // Written by:  Joshua Green
 //              Andrew Groot
 
-#include "Word.h"
-#include "itos.h"
+#include "../h/Word.h"
+#include "../h/itos.h"
 #include <string>
 #include <cmath> // for pow
 using namespace std;

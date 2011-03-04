@@ -2,7 +2,7 @@
 // Written by:
 //    Andrew Groot
 
-#include "Register.h"
+#include "../h/Register.h"
 
 //*** public ***//
 Register::Register () {

@@ -2,12 +2,12 @@
 // Written by:  Ryan Paulson
 //              Andrew Groot
 
-#include "Printer.h"
-#include "Word.h"
-#include "Line.h"
-#include "SymbolTable.h"
-#include "ResultCodes.h"
-#include "itos.h"
+#include "../h/Printer.h"
+#include "../h/Word.h"
+#include "../h/Line.h"
+#include "../h/SymbolTable.h"
+#include "../h/ResultCodes.h"
+#include "../h/itos.h"
 #include <iostream>
 #include <string>
 #include <vector>

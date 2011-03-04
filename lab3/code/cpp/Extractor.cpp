@@ -1,17 +1,17 @@
 // File:        Extractor.cpp
 // Written by:  Andrew Groot
 
-#include "Extractor.h"
-#include "Word.h"
-#include "Line.h"
-#include "SymbolTable.h"
-#include "ResultCodes.h"
+#include "../h/Extractor.h"
+#include "../h/Word.h"
+#include "../h/Line.h"
+#include "../h/SymbolTable.h"
+#include "../h/ResultCodes.h"
 #include <cstdlib>
 #include <string>
 #include <map>
 #include <set>
 #include <fstream>
-#include "itos.h"
+#include "../h/itos.h"
 #include <iostream> 
 using namespace std;
 using namespace Codes;

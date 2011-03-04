@@ -1,11 +1,11 @@
 // File: Decoder.cpp
 // coded by Andrew Canale
 
-#include "Decoder.h"
-#include "Word.h"
+#include "../h/Decoder.h"
+#include "../h/Word.h"
 #include <string>
 #include <vector>
-#include "ResultCodes.h"
+#include "../h/ResultCodes.h"
 #include <iostream>
 
 using namespace std;

@@ -1,32 +1,36 @@
 // File:        Main.cpp
 // Written by:  Andrew Groot
 
-#include "Wi11.h"
-#include "Extractor.h"
-#include "SymbolTable.h"
-#include "Printer.h"
-#include "ResultCodes.h"
+#include "../h/Wi11.h"
+#include "../h/Extractor.h"
+#include "../h/SymbolTable.h"
+#include "../h/Printer.h"
+#include "../h/ResultCodes.h"
 #include <cstdlib>
+#include <cstring> // for strlen()
 #include <string>
+#include <iostream>
 #include <fstream>
-#include <vecotr>
+#include <vector>
 using namespace std;
 using namespace Codes;
 
-int Assemler(vecotr<string>& infiles, string outfile, int symbol_length, bool trap_labels, bool listing);
+int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing);
 int Simulator(string infile, bool debug);
 
 void print_usage_error(char * name) {
-  cout << "Usage: " << name << " [-t | -s# | -l] -o outfile infile ...\n";
-      <<  "       " << name << " [-t | -s# | -l | -d] -ox outfile infile ...\n";
-      <<  "       " << name << " [-d] -x infile\n";
-      <<  endl;
+  cout << "Usage: " << name << " [-t | -s# | -l] -a infile ...\n"
+      <<  "       " << name << " [-t | -s# | -l] -o outfile infile ...\n"
+      <<  "       " << name << " [-t | -s# | -l | -d] -ox outfile infile ...\n"
+      <<  "       " << name << " [-d] -x infile\n"
+      <<  endl
       <<  "See the documentation for an explanation of each case.\n";
 } 
 
 int main (int argc, char* argv[]) {
   // wi11
   bool assemble = true;
+  bool link = true;
   bool execute = true;
   vector<string> infiles;
   string outfile;
@@ -63,7 +67,19 @@ int main (int argc, char* argv[]) {
         cout << "Error: Number following \"-s\" too large.\n";
       }
       pos++; // next arg
-    } else if (argv[pos] == "-o") {     // -o -- only generate object file
+    } else if (argv[pos] == "-a") {     // -a -- only assemble
+      link = false;
+      execute = false;
+      // get input files
+      while (++pos < argc) {
+        infiles.push_back(argv[pos]);
+      }
+      // check for valid arguements
+      if (debug) {
+        print_usage_error(argv[0]);
+        return 1;
+      }
+    } else if (argv[pos] == "-o") {     // -o -- assemble and link
       execute = false;
       if (++pos < argc) {
         // get output file
@@ -84,7 +100,7 @@ int main (int argc, char* argv[]) {
       }
       break; // done with args
     } else if (argv[pos] == "-x") {     // -x -- only execute given object file
-      assemble = false;
+      link = false;
       if (++pos < argc) {
         // get file to execute
         outfile = argv[pos];
@@ -116,7 +132,7 @@ int main (int argc, char* argv[]) {
       break; // done with args
     } else {
       // don't know argument
-      print_usage_error(arv[0]);
+      print_usage_error(argv[0]);
       return 1;
     } 
   }
@@ -126,6 +142,9 @@ int main (int argc, char* argv[]) {
   if (assemble) {
     Assembler(infiles, outfile, symbol_length, trap_labels, listing);
   }
+  if (link) {
+    // link files  *** need to figure this out ***
+  }
   if (execute) {
     return Simulator(outfile, debug);
   }
@@ -134,7 +153,7 @@ int main (int argc, char* argv[]) {
 }
 
 int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing) {
-  for (int i = 0; i < infiles.length(); i++) {
+  for (int i = 0; i < infiles.size(); i++) {
     string infile = infiles[i];
 
     Extractor extract(symbol_length);
@@ -189,7 +208,7 @@ int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool 
 
 int Simulator(string infile, bool debug) {
   Wi11 simulator;
-
+/*
   if (debug) cout << "Loading object files... ";
   for (int i=0;i<obj_files.size();i++) {
     if (!simulator.LoadObj(obj_files[i].c_str())) {
@@ -198,7 +217,7 @@ int Simulator(string infile, bool debug) {
     }
   }
   if (debug) cout << "done." << endl;
-
+*/
   if (debug) {
     // print initial status
     simulator.DisplayRegisters();

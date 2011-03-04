@@ -1,0 +1,4 @@
+Start at address 3000. 3 instructions.
+3008: 0xFFFF
+3000: Load M[3008] (FFFF) into R1
+3001: Exit

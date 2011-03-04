@@ -2,7 +2,7 @@
 // Written by:  Andrew Canale
 // Edited by:   Andrew Groot
 
-#include "ResultCodes.h"
+#include "../h/ResultCodes.h"
 #include <string>
 using namespace std;
 using namespace Codes;

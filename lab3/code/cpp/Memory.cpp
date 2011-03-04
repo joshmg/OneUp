@@ -1,10 +1,10 @@
 // File: Memory.cpp
 // Written by Joshua Green
 
-#include "iMemory.h"
-#include "Memory.h"
-#include "Word.h"
-#include "ResultCodes.h"
+#include "../h/iMemory.h"
+#include "../h/Memory.h"
+#include "../h/Word.h"
+#include "../h/ResultCodes.h"
 #include <map>
 #include <algorithm>
 

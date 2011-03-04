@@ -73,8 +73,6 @@ class Wi11 : public iWi11 {
 
     virtual bool ExecuteNext(bool verbose=false);
 
-    void poo() const;
-
 };
 
 #endif

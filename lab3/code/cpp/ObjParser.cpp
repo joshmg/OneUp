@@ -1,9 +1,9 @@
 /*! @file ObjParser.cpp
     @author Ryan Paulson
-    @brief Implements the declarations in "ObjParser.h".
+    @brief Implements the declarations in "../h/ObjParser.h".
 */
 
-#include "ObjParser.h"
+#include "../h/ObjParser.h"
 #include <string>
 #include <fstream> // Necessary for reading a file.
 #include <iostream>

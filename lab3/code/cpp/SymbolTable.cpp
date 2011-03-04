@@ -1,8 +1,8 @@
 // File:        SymbolTable.h
 // Written by:  Joshua Green
 
-#include "SymbolTable.h"
-#include "Word.h"
+#include "../h/SymbolTable.h"
+#include "../h/Word.h"
 #include <map>
 #include <string>
 using namespace std;

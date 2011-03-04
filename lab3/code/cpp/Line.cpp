@@ -1,6 +1,6 @@
-#include "Line.h"
-#include "Word.h"
-#include "ResultCodes.h"
+#include "../h/Line.h"
+#include "../h/Word.h"
+#include "../h/ResultCodes.h"
 #include <string>
 #include <cctype>
 #include <cstdlib>

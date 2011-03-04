@@ -1,12 +1,12 @@
 // File: Loader.cpp
 // Written by Logan Coulson
 
-#include "Loader.h"
-#include "Word.h"
-#include "ResultCodes.h"
-#include "iMemory.h"
-#include "iLoader.h"
-#include "ObjParser.h"
+#include "../h/Loader.h"
+#include "../h/Word.h"
+#include "../h/ResultCodes.h"
+#include "../h/iMemory.h"
+#include "../h/iLoader.h"
+#include "../h/ObjParser.h"
 #include <iostream>
 
 using namespace Codes;
