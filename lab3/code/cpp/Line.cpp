@@ -249,8 +249,8 @@ RESULT Line::ReadLine (string line) {
       return RESULT(ARG_SIZE);
     }
   } else if (_inst == "JSR" || _inst == "JMP" || _inst == "TRAP" ||
-              _inst == ".EQU" || _inst == ".FILL" ||
-              _inst == ".STRZ" || _inst == ".BLKW") {
+              _inst == ".EQU" || _inst == ".FILL" || _inst == ".STRZ" ||
+              _inst == ".BLKW" || _inst == ".ENT" || _inst == ".EXT") {
     if (_args.size() != 1) {
       return RESULT(ARG_SIZE);
     }

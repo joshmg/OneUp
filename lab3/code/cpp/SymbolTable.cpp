@@ -10,6 +10,7 @@ using namespace std;
 //    map<std::string, Word> _symbols;
 //    map<int, Word> _literals;
 //    map<std::string, bool> _relocatable;
+//    map<std::string, bool> _externals;
 
 void SymbolTable::InsertLabel(string label, Word addr, bool relocate) {
   _symbols[label] = addr;
@@ -20,8 +21,18 @@ void SymbolTable::InsertLiteral(int value, Word addr) {
   _literals[value] = addr;
 }
 
-bool SymbolTable::Contains(string symbol) const {
+void SymbolTable::AddExternal(string label) {
+  // The accessor ensures that the entry in in map
+  // Here we don't care what the mapped value is
+  _externals[label];
+}
+
+bool SymbolTable::IsSymbol(string symbol) const {
   return (_symbols.count(symbol) != 0);
+}
+
+bool SymbolTable::IsExternal(string symbol) const {
+  return (_externals.count(symbol) != 0);
 }
 
 Word SymbolTable::GetLabelAddr(string symbol) const {

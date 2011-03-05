@@ -203,6 +203,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
   Word current_address(0);
   Word initial_load(0);
   int pos = 0;
+  bool is_main = false;
   bool relocatable = false;
 
   while (_inStream.good()) {
@@ -240,6 +241,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         //*** listing output
         cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
 
+      } else if (inst == ".MAIN") {
+        is_main = true;
+
       } else if (inst == ".BLKW") {
         // Block pseudo-op
         string op = current_line[0];
@@ -259,16 +263,18 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
       } else if (inst == ".FILL") {
         // Fill pseudo-op
         string op = current_line[0];
-        Word value = _ParseWord(op, symbols);
+        Word value = _ParseWord(op, symbols); // 0 if external
 
-        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+        if (op[0] != 'x' && op[0] != '#' && !symbols.IsSymbol(op) && !symbols.IsExternal(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
           return RESULT(LBL_NOT_FOUND, op);
         }
 
-        // Text Record
-        if (symbols.Contains(op) && symbols.IsRelocatable(op) && relocatable) {
+        // Record Type
+        if (relocatable && symbols.IsExternal(op)) {
+          _outStream << 'X';
+        if (relocatable && symbols.IsSymbol(op) && symbols.IsRelocatable(op)) {
           _outStream << 'W';
         } else {
           _outStream << 'T';
@@ -278,7 +284,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         if (current_line.HasLabel()) {
           if (op[0] != 'x' && op[0] != '#') {
             // is not a constant -- shouldn't have a value
-            if (!symbols.Contains(current_line.Label())) {
+            if (!symbols.IsSymbol(current_line.Label())) {
               symbols.InsertLabel(current_line.Label(), value, symbols.IsRelocatable(op));
             } else {
               _PreError(current_line.ToString());
@@ -292,6 +298,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print initial memory value
         _outStream << value.ToHex().substr(2,4) << '\n';
+        _outStream << op << '\n';
 
         //*** listing output
         _LineListing(current_address, value, current_line, pos);
@@ -351,7 +358,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Set bits for destination register
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[0])) {
+        } else if (symbols.IsSymbol(current_line[0])) {
           // check label addr as register number
           int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
           if (reg_num <= 7 && reg_num >= 0) {
@@ -369,7 +376,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Set bits for source register 1
         if (current_line[1][0] == 'R') {
           _SetBits(current_line[1], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[1])) {
+        } else if (symbols.IsSymbol(current_line[1])) {
           // check label addr as register number
           int reg_num = symbols.GetLabelAddr(current_line[1]).ToInt();
           if (reg_num <= 7 && reg_num >= 0) {
@@ -410,7 +417,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           } else if (op3[0] == '#') {
             // decimal
             value.FromInt(atoi(op3.substr(1).c_str()));
-          } else if (symbols.Contains(op3)) {
+          } else if (symbols.IsSymbol(op3)) {
             // label
             value = symbols.GetLabelAddr(op3);
           } else {
@@ -466,7 +473,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         // make sure it's not an undefined label
-        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+        if (op[0] != 'x' && op[0] != '#' && !symbols.IsSymbol(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
           return RESULT(LBL_NOT_FOUND, op);
@@ -479,7 +486,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         if (relocatable) {
-          if (symbols.Contains(op) && !symbols.IsRelocatable(op)) {
+          if (symbols.IsSymbol(op) && !symbols.IsRelocatable(op)) {
             _PreError(current_line.ToString());
             RESULT result(ABS_REL);
             result.info = op;
@@ -522,7 +529,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Set bits for base register
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[0])) {
+        } else if (symbols.IsSymbol(current_line[0])) {
           // check label addr as register number
           int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
           if (reg_num <= 7 && reg_num >= 0) {
@@ -541,7 +548,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         // make sure it's not an undefined label
-        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+        if (op[0] != 'x' && op[0] != '#' && !symbols.IsSymbol(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
           return RESULT(LBL_NOT_FOUND, op);
@@ -600,7 +607,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Set bits for destination register
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[0])) {
+        } else if (symbols.IsSymbol(current_line[0])) {
           // check label addr as register number
           int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
           if (reg_num <= 7 && reg_num >= 0) {
@@ -621,7 +628,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           // LD only -- already checked
           value = symbols.GetLiteralAddr(current_line.Literal());
 
-        } else if (symbols.Contains(op2)) {
+        } else if (symbols.IsSymbol(op2)) {
           value = symbols.GetLabelAddr(op2);
 
           if (relocatable) {
@@ -635,7 +642,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         } else {
           // make sure it's not an undefined label
-          if (op2[0] != 'x' && op2[0] != '#' && !symbols.Contains(op2)) {
+          if (op2[0] != 'x' && op2[0] != '#' && !symbols.IsSymbol(op2)) {
             // is label that is not defined
             _PreError(current_line.ToString());
             return RESULT(LBL_NOT_FOUND, op2);
@@ -687,7 +694,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Set bits for destination register
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[0])) {
+        } else if (symbols.IsSymbol(current_line[0])) {
           // check label addr as register number
           int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
           if (reg_num <= 7 && reg_num >= 0) {
@@ -705,7 +712,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Set bits for base register
         if (current_line[1][0] == 'R') {
           _SetBits(current_line[1], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[1])) {
+        } else if (symbols.IsSymbol(current_line[1])) {
           // check label addr as register number
           int reg_num = symbols.GetLabelAddr(current_line[1]).ToInt();
           if (reg_num <= 7 && reg_num >= 0) {
@@ -724,7 +731,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op3, symbols);
 
         // make sure it's not an undefined label
-        if (op3[0] != 'x' && op3[0] != '#' && !symbols.Contains(op3)) {
+        if (op3[0] != 'x' && op3[0] != '#' && !symbols.IsSymbol(op3)) {
           // is label that is not defined
           _PreError(current_line.ToString());
           return RESULT(LBL_NOT_FOUND);
@@ -765,7 +772,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Set bits for destination register
         if (current_line[0][0] == 'R') {
           _SetBits(current_line[0], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[0])) {
+        } else if (symbols.IsSymbol(current_line[0])) {
           // check label addr as register number
           int reg_num = symbols.GetLabelAddr(current_line[0]).ToInt();
           if (reg_num <= 7 && reg_num >= 0) {
@@ -783,7 +790,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // Set bits for source register
         if (current_line[1][0] == 'R') {
           _SetBits(current_line[1], initial_mem, bit_offset);
-        } else if (symbols.Contains(current_line[1])) {
+        } else if (symbols.IsSymbol(current_line[1])) {
           // check label addr as register number
           int reg_num = symbols.GetLabelAddr(current_line[1]).ToInt();
           if (reg_num <= 7 && reg_num >= 0) {
@@ -856,7 +863,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         // make sure it's not an undefined label
-        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+        if (op[0] != 'x' && op[0] != '#' && !symbols.IsSymbol(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
           return RESULT(LBL_NOT_FOUND, op);
@@ -913,7 +920,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         // make sure it's not an undefined label
-        if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+        if (op[0] != 'x' && op[0] != '#' && !symbols.IsSymbol(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
           return RESULT(LBL_NOT_FOUND, op);
@@ -965,7 +972,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           load = _ParseWord(op, symbols);
 
           // make sure it's not an undefined label
-          if (op[0] != 'x' && op[0] != '#' && !symbols.Contains(op)) {
+          if (op[0] != 'x' && op[0] != '#' && !symbols.IsSymbol(op)) {
             // is label that is not defined
             _PreError(current_line.ToString());
             return RESULT(LBL_NOT_FOUND, op);

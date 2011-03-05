@@ -16,7 +16,8 @@ using namespace std;
 using namespace Codes;
 
 int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing);
-int Simulator(string infile, bool debug);
+int Linker(vector<string>& infiles, string& outfile);
+int Simulator(string& infile, bool debug);
 
 void print_usage_error(char * name, bool help = false) {
   cout << "Usage: " << name << " [-t | -s# | -l] -a infile ...\n"
@@ -46,10 +47,15 @@ int main (int argc, char* argv[]) {
   if (argc == 2 && argv[1] == "--help") {
     print_usage_error(argv[0], true);
     cout << "Options:\n"
+        <<  "  -t:  Include the trap code labels -- out, puts, in, halt, outn, inn, & rnd.\n"
+        <<  "  -s#: Increase the symbol limit -- defaults to 1000.\n"
+        <<  "  -l:  Print a listing during assembly.\n"
+        <<  "  -d:  Print verbose debug information during execution.\n"
+        <<  "  ---------------------------------------------------------------------------------"
         <<  "  -a:  Only assemble the input files, do not link or execute.\n"
         <<  "  -o:  Assemble and link, creating a single object file named \"outfile\"\n"
         <<  "  -ox: Assemble, link, and execute; create \"outfile\" as in the '-o' option.\n"
-        <<  "  -x:  Execute a pre-linked object file.  Skip assemble and linking steps.\n"
+        <<  "  -x:  Execute a pre-linked object file.  Skip assembly and linking steps.\n"
         <<  "  -n:  Specifies that the input files are already assembled.\n"
         <<  "        The preceeding '-o' or '-ox' argument describes what should be done.\n"
         <<  endl
@@ -61,13 +67,13 @@ int main (int argc, char* argv[]) {
         <<  "Examples:\n"
         <<  "  wi11 -t -s2000 -a file1.s file2.s file3.s\n"
         <<  "      This will create the object files the correspond to each file individually.\n"
-        <<  "      The will not be linked or executed.\n"
+        <<  "      They will not be linked or executed.\n"
         <<  endl
         <<  "  wi11 -l -t -o prog.o file1.s file2.s file3.s\n"
-        <<  "      This will assemble and link file1.s, file2.s and file3.s into prog.o.\n"
+        <<  "      This will assemble and link file1.s, file2.s, and file3.s into prog.o.\n"
         <<  endl
         <<  "  wi11 -ox prog.o -n file1.o file2.o file3.o\n"
-        <<  "      This will link file1.o file2.o and file3.o into prog.o and execute it.\n";
+        <<  "      This will link file1.o, file2.o, and file3.o into prog.o and execute it.\n";
     return 0;
   }
 
@@ -185,7 +191,7 @@ int main (int argc, char* argv[]) {
     Assembler(infiles, outfile, symbol_length, trap_labels, listing);
   }
   if (link) {
-    // link files  *** need to figure this out ***
+    Linker(infiles, outfile);
   }
   if (execute) {
     return Simulator(outfile, debug);
@@ -248,7 +254,11 @@ int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool 
   }
 }
 
-int Simulator(string infile, bool debug) {
+int Linker(vector<string>& infiles, string& outfile) {
+
+}
+
+int Simulator(string& infile, bool debug) {
   Wi11 simulator;
 /*
   if (debug) cout << "Loading object files... ";

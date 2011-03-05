@@ -69,15 +69,22 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
 
     if (! line.IsComment() ) {
       if (_length == -1) {
-        if (line.Instruction() != ".ORIG") {
+        if (line.Instruction() != ".ORIG" && line.Instruction() != ".MAIN") {
           return RESULT(ORIG);
         }
       }
+
       if (line.Instruction() == ".ORIG") {
         if (_length >= 0) {
           return RESULT(ORIG2);
         }
       }
+
+      if (line.Instruction() == ".MAIN") {
+        if (_length >= 0) {
+          return RESULT(MAIN, _LineNumber(pos));
+        }
+      }      
 
       if (line.IsPseudoOp()) {
         if (line.Instruction() == ".ORIG") {
@@ -108,6 +115,10 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           symbols.InsertLabel(line.Label(), begin, relocatable);
           _length++;
 
+        } else if (line.Instruction() == ".MAIN") {
+          // .MAIN
+          // Do nothing, only affects output file
+
         } else if (line.Instruction() == ".END") {
           // .END
           if (line.HasLabel()) {
@@ -118,7 +129,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           Word w;
           if (line.Size() == 1) {
             // has argument
-            if (symbols.Contains(line[0])) {
+            if (symbols.IsSymbol(line[0])) {
               w = symbols.GetLabelAddr(line[0]);
             } else if (line[0][0] == 'x') {
               Word w;
@@ -156,7 +167,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             result.info = _LineNumber(pos) + ": .EQU: ";
             return result;
           }
-          if (symbols.Contains(line[0])) {
+          if (symbols.IsSymbol(line[0])) {
             Word w = symbols.GetLabelAddr(line[0]);
             if (symbols.LabelCount() <= _max_size) {
               symbols.InsertLabel(line.Label(), w, symbols.IsRelocatable(line[0]));
@@ -188,7 +199,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
         } else if (line.Instruction() == ".FILL") {
           // .FILL
           if (line.HasLabel()) {
-            if (symbols.Contains(line.Label())) {
+            if (symbols.IsSymbol(line.Label())) {
               result.msg = REDEF_LBL;
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
@@ -204,7 +215,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
         } else if (line.Instruction() == ".STRZ") {
           // .STRZ
           if (line.HasLabel()) {
-            if (symbols.Contains(line.Label())) {
+            if (symbols.IsSymbol(line.Label())) {
               result.msg = REDEF_LBL;
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
@@ -222,7 +233,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
         } else if (line.Instruction() == ".BLKW") {
           // .BLKW
           if (line.HasLabel()) {
-            if (symbols.Contains(line.Label())) {
+            if (symbols.IsSymbol(line.Label())) {
               result.msg = REDEF_LBL;
               result.info = _LineNumber(pos) + ": " + line.Label();
               return result;
@@ -243,7 +254,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               w.FromInt(atoi(line[0].substr(1).c_str()));
             } break;
             default: {
-              if (symbols.Contains(line[0])) {
+              if (symbols.IsSymbol(line[0])) {
                 w = symbols.GetLabelAddr(line[0]);
               } else {
                 result.msg = LBL_NOT_FOUND;
@@ -255,10 +266,19 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           _length += w.ToInt();
         }
 
+      } else if (line.Instruction() == ".ENT") {
+        // .ENT
+        // Do nothing.  Printer will have to handle everything for .ENT's
+
+      } else if (line.Instruction() == ".EXT") {
+        // .EXT
+        // Declare External Label
+        symbols.AddExternal(line[0]);
+
       } else {
         // not a pseduo-op
         if (line.HasLabel()) {
-          if (symbols.Contains(line.Label())) {
+          if (symbols.IsSymbol(line.Label())) {
             result.msg = REDEF_LBL;
             result.info = _LineNumber(pos) + ": " + line.Label();
             return result;

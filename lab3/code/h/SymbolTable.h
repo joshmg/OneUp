@@ -29,12 +29,16 @@ class SymbolTable : public iSymbolTable {
     std::map<int, Word> _literals;
     //! Store relocation information by string.
     std::map<std::string, bool> _relocatable;
+    //! Store exteranls -- map merely for ease of use.
+    std::map<std::string, bool> _externals;
 
   public:
     void InsertLabel(std::string label, Word addr, bool relocate=false);
     void InsertLiteral(int value, Word addr);
+    void AddExternal(std::string label);
 
-    bool Contains(std::string symbol) const;
+    bool IsSymbol(std::string symbol) const;
+    bool IsExternal(std::string label) const;
 
     Word GetLabelAddr(std::string symbol) const;
     Word GetLiteralAddr(int value) const;
