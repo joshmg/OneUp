@@ -17,7 +17,8 @@
 
 class iLoader {
   private:
-    
+    virtual Codes::RESULT _GetLoadAddress(Word& produced_addr, const Word& segment_length) const = 0;
+
   public:
     /*! @brief Perform the loads to memory (storing the instructions).
         @param[in] filename The name of the object file to be read.

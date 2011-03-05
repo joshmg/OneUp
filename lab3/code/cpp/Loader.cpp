@@ -12,6 +12,20 @@
 using namespace Codes;
 using namespace std;
 
+RESULT Loader::_GetLoadAddress(Word& produced_address, const Word& segment_length) const {
+
+  cout << endl << "Requesting address for program length of " << segment_length.ToInt() << " : ";
+
+  string value;
+  getline(cin, value);
+  cout << endl;
+
+  int address = atoi(value.c_str());
+  
+
+  return SUCCESS;
+}
+
 // establish the Memory pointer of the class
 Loader::Loader(iMemory* mem) {
   _memory = mem;
@@ -19,6 +33,9 @@ Loader::Loader(iMemory* mem) {
 
 RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   ObjParser Parser; // the parser is just the iobjparser object
+
+  Word segment_start_address;
+  bool relocatable = false;
 
   Word Hex1,Hex2; // used to manipulate memory.  memory has the functions i need, so no hex conversion is needed, as everything is a word
   
@@ -33,18 +50,24 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
     return returns;
   }
 
-  Data=Parser.GetNext(); // getting my first header
+  Data=Parser.GetNext(); // getting the first header
 
   if (Data.type != 'H' && Data.type != 'M') { // if it is not a H, problem
                                               // added M for Main designator
     return INVALID_HEADER_ENTRY;
   }
 
-  if  (!(Hex1.FromHex(string("0x") + Data.data[1]))) { // setting up the words to use the reserve command memory has.  seemed to me to be an time improver.
+  if (Data.data[1] == RELOCATE_FLAG) {
+    RESULT malloc_result = _GetLoadAddress(Hex1, Word(atoi(Data.data[2].c_str())));
+    relocatable = true;
+  }
+  else if  (!(Hex1.FromHex(string("0x") + Data.data[1]))) { // setting up the words to use the reserve command memory has.
     return NOT_HEX;
   }
+
   // establishing the lower bound on memory
   min_memory=Hex1.ToInt();
+  segment_start_address = Hex1;
 
 
   if  (!(Hex2.FromHex(string("0x") + Data.data[2]))) {
@@ -53,7 +76,7 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   // establishing the upper bound on memory
   max_memory=min_memory+Hex2.ToInt();
 
-  if (Hex2.ToInt() < (short)(~0)) returns=_memory->Reserve(Hex1,Hex2);
+  if (Hex2.ToInt() < (unsigned short)(~0)) returns=_memory->Reserve(Hex1,Hex2);
   else return REQUESTED_MEMORY_TOO_LARGE;
 
   if (returns!=SUCCESS) {

@@ -29,6 +29,30 @@ void print_usage_error(char * name, bool help = false) {
 } 
 
 int main (int argc, char* argv[]) {
+
+  string in;
+  cout << "Assemble? (Y/n) ";
+  getline(cin, in);
+  if (in[0] != 'N' && in[0] != 'n') {
+    cout << "Source File Name: ";
+    getline(cin, in);
+
+    vector<string> infiles;
+    infiles.push_back(in);
+
+    string outfile = "out.o";
+    Assembler(infiles, outfile, 1000, true, true);
+  }
+
+  cout << "Object File Name: ";
+  string fname;
+
+  getline(cin, fname);
+
+  Simulator(fname, false);
+  return 0;
+
+  /*
   // wi11
   bool assemble = true;
   bool link = true;
@@ -84,11 +108,13 @@ int main (int argc, char* argv[]) {
       return 1;
     }
 
-    if (argv[pos++] == "-t") {          // -t -- add trap labels
+    cout << argv[pos] <<endl;
+
+    if (argv[pos] == "-t") {          // -t -- add trap labels
       trap_labels = true;
-    } else if (argv[pos++] == "-d") {   // -d -- execute in debug mode
+    } else if (argv[pos] == "-d") {   // -d -- execute in debug mode
       debug = true;
-    } else if (argv[pos++] == "-l") {   // -l -- print listing
+    } else if (argv[pos] == "-l") {   // -l -- print listing
       listing = true;
     } else if (argv[pos][1] == 's') {   // -s -- maximum number of symbols.
       symbol_length = atoi(argv[pos] + 2);
@@ -96,7 +122,6 @@ int main (int argc, char* argv[]) {
       if (strlen(argv[pos]) > s_char_limit) {
         cout << "Error: Number following \"-s\" too large.\n";
       }
-      pos++; // next arg
     } else if (argv[pos] == "-a") {     // -a -- only assemble
       link = false;
       execute = false;
@@ -177,6 +202,7 @@ int main (int argc, char* argv[]) {
       print_usage_error(argv[0]);
       return 1;
     } 
+    ++pos;
   }
   // done parsing arguements
 
@@ -192,6 +218,7 @@ int main (int argc, char* argv[]) {
   }
 
   return 0;
+  */
 }
 
 int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing) {
@@ -262,6 +289,9 @@ int Simulator(string infile, bool debug) {
   }
   if (debug) cout << "done." << endl;
 */
+
+  simulator.LoadObj(infile.c_str());
+
   if (debug) {
     // print initial status
     simulator.DisplayRegisters();

@@ -115,7 +115,7 @@ class ResultDecoder {
       // Simulator Error Codes:
       _codes[Codes::HALT] = "Execution has been terminated (Halt).";
       _codes[Codes::UNDEFINED] = "An unexpected error occured.";
-      _codes[Codes::INVALID_HEADER_ENTRY] = "Invalid object file header (Was the first character an 'H'?).";
+      _codes[Codes::INVALID_HEADER_ENTRY] = "Invalid object file header (Was the first character an 'H' or 'M'?).";
       _codes[Codes::INVALID_DATA_ENTRY] = "There is an invalid text record or there was no end record found.";
       _codes[Codes::OUT_OF_BOUNDS] = "Attempt to access memory outside of the program load area.";
       _codes[Codes::NOT_HEX] = "There was an invalid hex string found.";
