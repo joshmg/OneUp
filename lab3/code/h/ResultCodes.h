@@ -75,6 +75,8 @@ namespace Codes {
     MEM_FIT,        // Program won't fit in memory
     END_LBL,        // .END cannot have a label
     INV_COMMENT,    // Comment without ;
+    MAIN,           // Main after .ORIG
+    EXT_REDEF,      // Argument to .EXT already defined
 
     // ^ new codes go here ^
     FILE_NOT_FOUND, // File not found
@@ -161,6 +163,8 @@ class ResultDecoder {
       _codes[Codes::MEM_FIT] = "This program will not fit in memory.";
       _codes[Codes::END_LBL] = "\".END\" instruction cannot have a label.";
       _codes[Codes::INV_COMMENT] = "Comment not preceeded by ';'.\n((Whitespace separating arguments?))";
+      _codes[Codes::MAIN] = "\".MAIN\" should preceed \".ORIG\".";
+      _codes[Codes::EXT_REDEF] = "Argument to \"EXT\" is defined is this file.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found.";
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";

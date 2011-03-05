@@ -221,7 +221,15 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
       if (inst == ".ORIG") {
         // Header record
-        _outStream << "H" << current_line.Label() + string(6-current_line.Label().length(), ' ');
+        if (is_main) {
+          // output M for main files
+          _outStream << 'M';
+        } else {
+          // H for everything else
+          _outStream << 'H';
+        }
+        // output segment name and 
+        _outStream << current_line.Label() + string(6-current_line.Label().length(), ' ');
 
         if (current_line.Size() == 1) {
           Word addr;
@@ -272,9 +280,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         // Record Type
-        if (relocatable && symbols.IsExternal(op)) {
+        if (symbols.IsExternal(op)) {
           _outStream << 'X';
-        if (relocatable && symbols.IsSymbol(op) && symbols.IsRelocatable(op)) {
+        } else if (relocatable && symbols.IsSymbol(op) && symbols.IsRelocatable(op)) {
           _outStream << 'W';
         } else {
           _outStream << 'T';
@@ -298,7 +306,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         // Print initial memory value
         _outStream << value.ToHex().substr(2,4) << '\n';
-        _outStream << op << '\n';
+        if (symbols.IsExternal(op)) {
+          _outStream << op << '\n';
+        }
 
         //*** listing output
         _LineListing(current_address, value, current_line, pos);
@@ -337,6 +347,25 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
               << ' ' << string(4, '0') << "  " << string(16, '0') << ' '
               << _InFileData(pos, Line());
         current_address++;
+
+      } else if (inst == ".EXT") {
+        // .EXT
+        for (int i; i<current_line.Size(); i++) {
+          if (symbols.IsSymbol(current_line[i])) {
+            // attempting to declare label as external
+            // that is defined in this file.
+            _PreError(current_line.ToString());
+            return RESULT(EXT_REDEF);
+          }
+        }
+
+      } else if (inst == ".ENT") {
+        // .ENT
+        // output each entry point and its value
+        for (int i = 0; i < current_line.Size(); i++) {
+          Word value = symbols.GetLabelAddr(current_line[i]);
+          _outStream << current_line[i] << value.ToHex().substr(2,4) << '\n';
+        }
 
       } else if (inst == "ADD" || inst == "AND") {
         // ADD-like instructions
@@ -410,16 +439,18 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             value.FromHexAbbr(op3);
             // sign extend
             if (value[4]) {
-              // fifth bit is set
-              // set all above it
+              // fifth bit is set set all above it
+              // (sign extend)
               value = value.Or(Word(0xFFE0));
             }
           } else if (op3[0] == '#') {
             // decimal
             value.FromInt(atoi(op3.substr(1).c_str()));
+
           } else if (symbols.IsSymbol(op3)) {
             // label
             value = symbols.GetLabelAddr(op3);
+
           } else {
             // is label that is not defined
             _PreError(current_line.ToString());
@@ -448,7 +479,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
       } else if (inst == "JSR" || inst == "JMP") {
         // JSR Instructions
         // Text Record
-        if (relocatable) {
+        if (symbol.IsExternal(current_line[0])) {
+          _outStream << 'X';
+        } else if (relocatable) {
           _outStream << 'R';
         } else {
           _outStream << 'T';
@@ -473,7 +506,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         // make sure it's not an undefined label
-        if (op[0] != 'x' && op[0] != '#' && !symbols.IsSymbol(op)) {
+        if (op[0] != 'x' && op[0] != '#' && !symbols.IsSymbol(op) && !symbols.IsExternal(op)) {
           // is label that is not defined
           _PreError(current_line.ToString());
           return RESULT(LBL_NOT_FOUND, op);
@@ -501,6 +534,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // **End parsing instruction**
 
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
+        if (symbols.IsExternal(op)) {
+          _outStream << op << '\n';
+        }
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
@@ -575,7 +611,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
       } else if (inst == "LD" || inst == "LDI" || inst == "LEA" || inst == "ST" || inst == "STI") {
         // LD-like Instructions
         // Text Record
-        if (relocatable) {
+        if (symbols.IsExternal(current_line[1])) {
+          _outStream << 'X';
+        } else if (relocatable) {
           _outStream << 'R';
         } else {
           _outStream << 'T';
@@ -640,9 +678,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
             }
           }
 
+        } else if (symbols.IsExternal(op2)) {
+          // Keep value 0
         } else {
           // make sure it's not an undefined label
-          if (op2[0] != 'x' && op2[0] != '#' && !symbols.IsSymbol(op2)) {
+          if (op2[0] != 'x' && op2[0] != '#') {
             // is label that is not defined
             _PreError(current_line.ToString());
             return RESULT(LBL_NOT_FOUND, op2);
@@ -668,6 +708,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // **End parsing instruction**
 
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
+        if (symbols.IsExternal(op2)) {
+          _outStream << op2 << '\n';
+        }
 
         //*** listing output
         _LineListing(current_address, initial_mem, current_line, pos);
