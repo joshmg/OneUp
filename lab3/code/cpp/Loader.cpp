@@ -29,31 +29,33 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   int min_memory, max_memory, mem_location; // check for out of bounds acess on memory
   
   returns=Parser.Initialize(filename); // initializing the Parser
-  if (returns!=SUCCESS) {
+  if (returns != SUCCESS) {
     return returns;
   }
 
   Data=Parser.GetNext(); // getting my first header
 
-  if (Data.type!='H') { //if it is not a H, problem
+  if (Data.type != 'H' && Data.type != 'M') { // if it is not a H, problem
+                                              // added M for Main designator
     return INVALID_HEADER_ENTRY;
   }
 
   if  (!(Hex1.FromHex(string("0x") + Data.data[1]))) { // setting up the words to use the reserve command memory has.  seemed to me to be an time improver.
     return NOT_HEX;
   }
-
   // establishing the lower bound on memory
   min_memory=Hex1.ToInt();
-  if  (!(Hex2.FromHex(string("0x") + Data.data[2])))
-  {
+
+
+  if  (!(Hex2.FromHex(string("0x") + Data.data[2]))) {
     return NOT_HEX;
   }
-
   // establishing the upper bound on memory
   max_memory=min_memory+Hex2.ToInt();
-  if (Hex2.ToInt() < (short)~0) returns=_memory->Reserve(Hex1,Hex2);
-  else return REQUESTED_MEMORY_2LARGE;
+
+  if (Hex2.ToInt() < (short)(~0)) returns=_memory->Reserve(Hex1,Hex2);
+  else return REQUESTED_MEMORY_TOO_LARGE;
+
   if (returns!=SUCCESS) {
     return returns;
   }

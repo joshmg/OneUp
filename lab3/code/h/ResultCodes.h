@@ -22,8 +22,23 @@
 namespace Codes {
 
   enum ERROR {
+    // Shared Error Codes:
     ERROR_0,        // quick descipription
     SUCCESS,        // Operation succeeded
+
+
+    // Simulator Error Codes:
+    HALT,                 // TRAP Halt Command
+    UNDEFINED,            // An error description could not be found.
+    INVALID_HEADER_ENTRY, // Invalid object file header
+    INVALID_DATA_ENTRY,   // there was an invalid data entry in the object file
+    OUT_OF_BOUNDS,        // attempt to save memory outside of claimed area
+    NOT_HEX,              // the suposedly hex string is not hex
+    INVALID_TRAP_CODE,    // The provided trap code is not valid.
+    INVALID_START_PC,
+    REQUESTED_MEMORY_TOO_LARGE,
+
+    // Assembler Error Codes:
     INV_LBL,        // Label starts with an invalid character
     LBL_WO_INST,    // Label does not accompany an instruction
     INV_INST,       // Instruction does not exist
@@ -71,10 +86,13 @@ namespace Codes {
     std::string info;
     ERROR msg;
 
-    RESULT(ERROR err, std::string inf = "") {
+    RESULT(ERROR err=ERROR_0, std::string inf = "") {
       info = inf;
       msg = err;
     }
+
+    bool operator == (const ERROR) const;
+    bool operator != (const ERROR) const;
   };
 }
 
@@ -90,8 +108,23 @@ class ResultDecoder {
   public:
     //! Generates the code-to-message mappings.
     ResultDecoder() {
-      _codes[Codes::ERROR_0] = "This is an example description sent to the end-user upon verbose mode.";
+      _codes[Codes::ERROR_0] = "Undefined Error.";
       _codes[Codes::SUCCESS] = "Successful.";
+
+
+      // Simulator Error Codes:
+      _codes[Codes::HALT] = "Execution has been terminated (Halt).";
+      _codes[Codes::UNDEFINED] = "An unexpected error occured.";
+      _codes[Codes::INVALID_HEADER_ENTRY] = "Invalid object file header (Was the first character an 'H'?).";
+      _codes[Codes::INVALID_DATA_ENTRY] = "There is an invalid text record or there was no end record found.";
+      _codes[Codes::OUT_OF_BOUNDS] = "Attempt to access memory outside of the program load area.";
+      _codes[Codes::NOT_HEX] = "There was an invalid hex string found.";
+      _codes[Codes::INVALID_TRAP_CODE] = "The provided trap code is not valid.";
+      _codes[Codes::INVALID_START_PC] = "The initial value of the PC is out of bounds.";
+      _codes[Codes::REQUESTED_MEMORY_TOO_LARGE] = "Memory too large.";
+
+
+      // Assembler Error Codes:
       _codes[Codes::INV_LBL] = "Label starting with 'R' or 'x'.";
       _codes[Codes::LBL_WO_INST] = "Label is not followed by an instruction.";
       _codes[Codes::INV_INST] = "Instruction not recognized.";

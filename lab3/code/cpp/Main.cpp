@@ -246,6 +246,8 @@ int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool 
       }
     }
   }
+
+  return 0;
 }
 
 int Simulator(string infile, bool debug) {
