@@ -5,12 +5,10 @@
 #include "../h/Word.h"
 #include <string>
 #include <vector>
-#include "../h/ResultCodes.h"
 #include <iostream>
 
 using namespace std;
 using namespace Decoder_Directory;
-using namespace Codes;
 
 Instruction Decoder::DecodeInstruction(const iWord& word) const {
   Instruction return_instruction;

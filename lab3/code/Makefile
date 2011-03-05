@@ -1,4 +1,6 @@
-objects = cpp/Extractor.o cpp/Line.o cpp/Main.o cpp/Printer.o cpp/ResultCodes.o cpp/SymbolTable.o cpp/Word.o cpp/itos.o
+objects = cpp/Decoder.o cpp/Extractor.o cpp/Line.o cpp/Loader.o cpp/Main.o \
+			cpp/Memory.o cpp/ObjParser.o cpp/Printer.o cpp/Register.o \
+			cpp/ResultCodes.o cpp/SymbolTable.o cpp/Wi11.o cpp/Word.o cpp/itos.o
 
 wi11: $(objects)
 	g++ -o wi11 $(objects)
@@ -12,7 +14,6 @@ cpp/Decoder.o: h/Decoder.h h/iDecoder.h h/iWord.h h/Word.h h/ResultCodes.h
 cpp/Extractor.o: h/Extractor.h h/iExtractor.h h/SymbolTable.h
 cpp/Extractor.o: h/iSymbolTable.h h/Word.h h/iWord.h h/ResultCodes.h h/Word.h
 cpp/Extractor.o: h/Line.h h/iLine.h h/SymbolTable.h h/ResultCodes.h h/itos.h
-cpp/itos.o: h/itos.h
 cpp/Line.o: h/Line.h h/iLine.h h/Word.h h/iWord.h h/ResultCodes.h h/Word.h
 cpp/Line.o: h/ResultCodes.h
 cpp/Loader.o: h/Loader.h h/iLoader.h h/ResultCodes.h h/iMemory.h h/iWord.h
@@ -38,3 +39,4 @@ cpp/Wi11.o: h/ResultCodes.h h/iDecoder.h h/Word.h h/Register.h h/Memory.h
 cpp/Wi11.o: h/Decoder.h h/Loader.h h/iLoader.h h/Register.h h/Memory.h
 cpp/Wi11.o: h/iDecoder.h h/Decoder.h h/Loader.h h/ResultCodes.h
 cpp/Word.o: h/Word.h h/iWord.h h/itos.h
+cpp/itos.o: h/itos.h
