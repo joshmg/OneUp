@@ -244,7 +244,12 @@ RESULT Wi11::_Trap(const iWord& code) {
     } break;
     case 0x43: {
       Word new_R0_value;
-      new_R0_value.FromInt((int) (rand()*pow(-1.0f, (float)rand()))); // 2^16 = 65,536
+      //new_R0_value.FromInt((int) (rand()*pow(-1.0f, (float)rand()))); // 2^16 = 65,536
+
+      for (int i=0;i<WORD_SIZE;i++) {
+        new_R0_value.SetBit(i, (rand()%2==0));
+      }
+
       _R0 = new_R0_value;
 
       _UpdateCCR(_R0.GetValue().ToInt2Complement());

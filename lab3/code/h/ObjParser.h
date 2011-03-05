@@ -10,6 +10,8 @@
 #include "Word.h"
 #include <fstream>
 
+#define RELOCATE_FLAG "RELOCATE"
+
 //! Implements iObjParser.
 class ObjParser : public iObjParser {
   private:

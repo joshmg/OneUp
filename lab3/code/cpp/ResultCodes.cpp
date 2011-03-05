@@ -30,3 +30,10 @@ string ResultDecoder::Find(const RESULT& result) const {
 
 }
 
+bool RESULT::operator == (const ERROR e) const {
+  return (msg == e);
+}
+
+bool RESULT::operator != (const ERROR e) const {
+  return (msg != e);
+}
