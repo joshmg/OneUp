@@ -1,8 +1,9 @@
 rand 	.ORIG
 		TRAP rnd
+		BRNZP start
 val     .BLKW #1
-pop  	.FILL val
-		ST R0,val
+poo  	.FILL val
+start	ST R0,val
 		LD R0,val
 		TRAP outn
 

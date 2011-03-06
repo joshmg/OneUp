@@ -6,6 +6,7 @@
 #include "../h/itos.h"
 #include <string>
 #include <cmath> // for pow
+#include <iostream>
 using namespace std;
 
 //*** private ***//
@@ -68,7 +69,13 @@ string Word::ToHexAbbr() const {
 }
 
 bool Word::FromInt(int value) {
-  if ((short) value == value) {
+  // if value is negative and the values casted as a short are the same
+  //          (casting to a short throws away the leading 1's, therefore you compare a
+  //            positive and a negative value if value is larger than MAX_SIZE/2)
+  //    OR
+  //        if value is non negative and the values casted to an UNSIGNED short are the same
+
+  if ((value < 0 && (short) value == value) || (value >= 0 && (unsigned short) value == value)) {
     // value is within allowable range
     _value = (short) value;
     return true;

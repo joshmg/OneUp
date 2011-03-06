@@ -244,8 +244,6 @@ RESULT Wi11::_Trap(const iWord& code) {
     } break;
     case 0x43: {
       Word new_R0_value;
-      //new_R0_value.FromInt((int) (rand()*pow(-1.0f, (float)rand()))); // 2^16 = 65,536
-
       for (int i=0;i<WORD_SIZE;i++) {
         new_R0_value.SetBit(i, (rand()%2==0));
       }
@@ -315,6 +313,12 @@ void Wi11::DisplayRegisters() const {
 bool Wi11::ExecuteNext(bool verbose) {
   if (verbose) cout << "PC[" << _PC.GetValue().ToHex() << "]: ";
   Instruction instruction = _decoder.DecodeInstruction(_memory.Load(_PC.GetValue()));
+
+  if (_PC.GetValue().ToInt() == Word::MAX_SIZE) {
+    /*if (verbose)*/ cout << endl << "FATAL ERROR: PC Overflow. Aborting." << endl;
+    return false;
+  }
+
   _PC++;
 
   switch (instruction.type) {
