@@ -249,8 +249,8 @@ RESULT Line::ReadLine (string line) {
       return RESULT(ARG_SIZE);
     }
   } else if (_inst == "JSR" || _inst == "JMP" || _inst == "TRAP" ||
-              _inst == ".EQU" || _inst == ".FILL" ||
-              _inst == ".STRZ" || _inst == ".BLKW") {
+              _inst == ".EQU" || _inst == ".FILL" || _inst == ".STRZ" ||
+              _inst == ".BLKW") {
     if (_args.size() != 1) {
       return RESULT(ARG_SIZE);
     }
@@ -272,6 +272,12 @@ RESULT Line::ReadLine (string line) {
     if (_inst == ".ORIG" && _args.size() == 1 && _args[0][0] != 'x') {
       // argument to .ORIG must be hex
       return RESULT(ORIG_HEX);
+    }
+  } else if (_inst == ".EXT" || _inst == ".ENT") {
+    // variable number of arguments.
+    // Greater than zero
+    if (_args.size() == 0) {
+      return RESULT(ARG_SIZE);
     }
   } else {
     // not a real instruction

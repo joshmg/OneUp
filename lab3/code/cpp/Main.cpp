@@ -15,8 +15,9 @@
 using namespace std;
 using namespace Codes;
 
-int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing);
-int Simulator(string infile, bool debug);
+int Assembler(vector<string>& infiles, int symbol_length, bool trap_labels, bool listing);
+int Linker(vector<string>& infiles, string& outfile);
+int Simulator(string& infile, bool debug);
 
 void print_usage_error(char * name, bool help = false) {
   cout << "Usage: " << name << " [-t | -s# | -l] -a infile ...\n"
@@ -29,7 +30,7 @@ void print_usage_error(char * name, bool help = false) {
 } 
 
 int main (int argc, char* argv[]) {
-
+/*
   string in;
   cout << "Assemble? (Y/n) ";
   getline(cin, in);
@@ -51,8 +52,7 @@ int main (int argc, char* argv[]) {
 
   Simulator(fname, false);
   return 0;
-
-  /*
+*/
   // wi11
   bool assemble = true;
   bool link = true;
@@ -70,10 +70,15 @@ int main (int argc, char* argv[]) {
   if (argc == 2 && argv[1] == "--help") {
     print_usage_error(argv[0], true);
     cout << "Options:\n"
+        <<  "  -t:  Include the trap code labels -- out, puts, in, halt, outn, inn, & rnd.\n"
+        <<  "  -s#: Increase the symbol limit -- defaults to 1000.\n"
+        <<  "  -l:  Print a listing during assembly.\n"
+        <<  "  -d:  Print verbose debug information during execution.\n"
+        <<  "  ---------------------------------------------------------------------------------"
         <<  "  -a:  Only assemble the input files, do not link or execute.\n"
         <<  "  -o:  Assemble and link, creating a single object file named \"outfile\"\n"
         <<  "  -ox: Assemble, link, and execute; create \"outfile\" as in the '-o' option.\n"
-        <<  "  -x:  Execute a pre-linked object file.  Skip assemble and linking steps.\n"
+        <<  "  -x:  Execute a pre-linked object file.  Skip assembly and linking steps.\n"
         <<  "  -n:  Specifies that the input files are already assembled.\n"
         <<  "        The preceeding '-o' or '-ox' argument describes what should be done.\n"
         <<  endl
@@ -85,145 +90,149 @@ int main (int argc, char* argv[]) {
         <<  "Examples:\n"
         <<  "  wi11 -t -s2000 -a file1.s file2.s file3.s\n"
         <<  "      This will create the object files the correspond to each file individually.\n"
-        <<  "      The will not be linked or executed.\n"
+        <<  "      They will not be linked or executed.\n"
         <<  endl
         <<  "  wi11 -l -t -o prog.o file1.s file2.s file3.s\n"
-        <<  "      This will assemble and link file1.s, file2.s and file3.s into prog.o.\n"
+        <<  "      This will assemble and link file1.s, file2.s, and file3.s into prog.o.\n"
         <<  endl
         <<  "  wi11 -ox prog.o -n file1.o file2.o file3.o\n"
-        <<  "      This will link file1.o file2.o and file3.o into prog.o and execute it.\n";
+        <<  "      This will link file1.o, file2.o, and file3.o into prog.o and execute it.\n";
     return 0;
   }
 
   // get leading -? arguments
-  int pos = 1;
-  while (true) {
-    if (pos >= argc) {
+  int pos = 0;
+  while ( ++pos < argc) {
+    // make it a c++ string
+    string arg_pos(argv[pos]);
+
+    if (arg_pos.length() < 2 || arg_pos[0] != '-') {
       print_usage_error(argv[0]);
       return 1;
     }
 
-    if (strlen(argv[pos]) < 2 || argv[pos][0] != '-') {
-      print_usage_error(argv[0]);
-      return 1;
+    // check second character.
+    switch (arg_pos[1]) {
+      case 't': {             // -t -- add trap labels
+        trap_labels = true;
+      } break;
+
+      case 'd': {             // -d -- execute in debug mode
+        debug = true;
+      } break;
+
+      case 'l': {             // -l -- print listing
+        listing = true;
+      } break;
+
+      case 's': {             // -s -- maximum number of symbols
+        symbol_length = atoi(argv[pos] + 2);
+        const int s_char_limit = 12;
+        // 12 = 10 digits in MAX_INT + 2 for '-s'
+
+        if (strlen(argv[pos]) > s_char_limit) {
+          cout << "Error: Number following \"-s\" too large.\n";
+          return 1;
+        }
+      } break;
+
+      case 'a': {             // -a -- only assemble
+        link = false;
+        execute = false;
+
+        // get input files
+        // Next argument
+        ++pos;
+        while (pos < argc) {
+          infiles.push_back(argv[pos++]);
+        }
+        // check for valid arguements
+        if (debug) {
+          print_usage_error(argv[0]);
+          return 1;
+        }
+      } break;
+
+      case 'o': {               // -o(x) -- assemble and link, possibly execute
+        if (arg_pos.length() < 3 || arg_pos[2] != 'x') {
+          execute = false;
+        }
+        // next argument
+        ++pos;
+        if (pos < argc) {
+          // get output file
+          outfile = argv[pos];
+        } else {
+          // no output file
+          print_usage_error(argv[0]);
+          return 1;
+        }
+        // get input files
+        // next argument
+        ++pos;
+        if (pos < argc) {
+          // check for link flag
+          if (argv[pos] == "-n") {
+            assemble = false;
+          }
+        }
+        while (pos < argc) {
+          infiles.push_back(argv[pos++]);
+        }
+        // check for valid arguements
+        if (debug) {
+          print_usage_error(argv[0]);
+          return 1;
+        }
+      } break;
+
+      case 'x': {               // -x -- only execute given object file
+        link = false;
+        // next argument
+        ++pos;
+        if (pos < argc) {
+          // get file to execute
+          outfile = argv[pos];
+        }
+        // next argument
+        ++pos;
+        if (pos != argc) {
+          // extra stuff after -x
+          print_usage_error(argv[0]);
+          return 1;
+        }
+        // check for valid arguements
+        if (trap_labels || listing) {
+          print_usage_error(argv[0]);
+          return 1;
+        }
+      } break;
     }
-
-    cout << argv[pos] <<endl;
-
-    if (argv[pos] == "-t") {          // -t -- add trap labels
-      trap_labels = true;
-    } else if (argv[pos] == "-d") {   // -d -- execute in debug mode
-      debug = true;
-    } else if (argv[pos] == "-l") {   // -l -- print listing
-      listing = true;
-    } else if (argv[pos][1] == 's') {   // -s -- maximum number of symbols.
-      symbol_length = atoi(argv[pos] + 2);
-      int s_char_limit = 12;
-      if (strlen(argv[pos]) > s_char_limit) {
-        cout << "Error: Number following \"-s\" too large.\n";
-      }
-    } else if (argv[pos] == "-a") {     // -a -- only assemble
-      link = false;
-      execute = false;
-      // get input files
-      while (++pos < argc) {
-        infiles.push_back(argv[pos]);
-      }
-      // check for valid arguements
-      if (debug) {
-        print_usage_error(argv[0]);
-        return 1;
-      }
-    } else if (argv[pos] == "-o") {     // -o -- assemble and link
-      execute = false;
-      if (++pos < argc) {
-        // get output file
-        outfile = argv[pos];
-      } else {
-        // no output file
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      // get input files
-      if (++pos < argc) {
-        // check for link flag
-        if (argv[pos] == "-n") {
-          assemble = false;
-        }
-      }
-      while (pos < argc) {
-        infiles.push_back(argv[pos++]);
-      }
-      // check for valid arguements
-      if (debug) {
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      break; // done with args
-    } else if (argv[pos] == "-x") {     // -x -- only execute given object file
-      link = false;
-      if (++pos < argc) {
-        // get file to execute
-        outfile = argv[pos];
-      }
-      if (++pos != argc) {
-        // extra stuff after -x
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      // check for valid arguements
-      if (trap_labels || listing) {
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      break; // done with args
-    } else if (argv[pos] == "-ox") {    // -ox -- generate object file and execute
-      if (++pos < argc) {
-        // get output file
-        outfile = argv[pos];
-      } else {
-        // no output file
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      // get input files
-      if (++pos < argc) {
-        // check for link flag
-        if (argv[pos] == "-n") {
-          assemble = false;
-        }
-      }
-      while (pos < argc) {
-        infiles.push_back(argv[pos++]);
-      }
-      break; // done with args
-    } else {
-      // don't know argument
-      print_usage_error(argv[0]);
-      return 1;
-    } 
-    ++pos;
+    // end of switch
   }
   // done parsing arguements
 
   // Execute desired functionality.
   if (assemble) {
-    Assembler(infiles, outfile, symbol_length, trap_labels, listing);
+    cout << "Assembling.\n";
+    Assembler(infiles, symbol_length, trap_labels, listing);
   }
   if (link) {
-    // link files  *** need to figure this out ***
+    cout << "Linking\n";
+    Linker(infiles, outfile);
   }
   if (execute) {
+    cout << "Executing\n";
     return Simulator(outfile, debug);
   }
 
   return 0;
-  */
 }
 
-int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing) {
+int Assembler(vector<string>& infiles, int symbol_length, bool trap_labels, bool listing) {
   for (int i = 0; i < infiles.size(); i++) {
     string infile = infiles[i];
+    string outfile = infile + ".o";
 
     Extractor extract(symbol_length);
 
@@ -277,7 +286,11 @@ int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool 
   return 0;
 }
 
-int Simulator(string infile, bool debug) {
+int Linker(vector<string>& infiles, string& outfile) {
+  return 0;
+}
+
+int Simulator(string& infile, bool debug) {
   Wi11 simulator;
 /*
   if (debug) cout << "Loading object files... ";

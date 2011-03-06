@@ -10,15 +10,15 @@ clean:
 
 # DO NOT DELETE
 
-cpp/Decoder.o: h/Decoder.h h/iDecoder.h h/iWord.h h/Word.h h/ResultCodes.h
+cpp/Decoder.o: h/Decoder.h h/iDecoder.h h/iWord.h h/Word.h
 cpp/Extractor.o: h/Extractor.h h/iExtractor.h h/SymbolTable.h
 cpp/Extractor.o: h/iSymbolTable.h h/Word.h h/iWord.h h/ResultCodes.h h/Word.h
 cpp/Extractor.o: h/Line.h h/iLine.h h/SymbolTable.h h/ResultCodes.h h/itos.h
 cpp/Line.o: h/Line.h h/iLine.h h/Word.h h/iWord.h h/ResultCodes.h h/Word.h
 cpp/Line.o: h/ResultCodes.h
 cpp/Loader.o: h/Loader.h h/iLoader.h h/ResultCodes.h h/iMemory.h h/iWord.h
-cpp/Loader.o: h/Word.h h/ResultCodes.h h/iMemory.h h/iLoader.h h/ObjParser.h
-cpp/Loader.o: h/iObjParser.h h/Word.h
+cpp/Loader.o: h/Word.h h/Word.h h/ResultCodes.h h/iMemory.h h/iLoader.h
+cpp/Loader.o: h/ObjParser.h h/iObjParser.h
 cpp/Main.o: h/Wi11.h h/iWi11.h h/iWord.h h/iRegister.h h/iMemory.h
 cpp/Main.o: h/ResultCodes.h h/iDecoder.h h/Word.h h/Register.h h/Memory.h
 cpp/Main.o: h/Decoder.h h/Loader.h h/iLoader.h h/Extractor.h h/iExtractor.h

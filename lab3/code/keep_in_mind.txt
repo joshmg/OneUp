@@ -1,0 +1,24 @@
+--------
+|Issues|
+--------
+.EXT with symbols defined in current file.
+.ENT with symbols not defined in current file.
+
+Absolute programs with external points.  Bug?
+
+--------
+|Design|
+--------
+!! Assemble only one program at a time with -a?
+
+M instead of H for Main file: .MAIN pseudo-op
+   -- determines load addr
+Externals:  X|ADDR|INST|
+            SYMBOL
+Entries:    N|SYMBOL|ADDR|
+SymbolTable::Contains --> IsSymbol
+			       Added: IsExternal
+Same label in multiple .EXT's intentionally ignored.
+   -- Essentially an ifndef.
+External labels can only be used as pgoffset9's.
+   -- must be relative

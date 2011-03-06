@@ -34,10 +34,23 @@ class iSymbolTable {
     */
     virtual void InsertLiteral(int value, Word addr) = 0;
 
+
+    /*! @brief Store an external label name.
+        @param[in] label The label to be stored.
+    */
+    virtual void AddExternal(std::string label) = 0;
+
+
     /*! @param[in] symbol The symbol to look for.
         @returns True iff "symbol" is in the table.
     */
-    virtual bool Contains(std::string symbol) const = 0;
+    virtual bool IsSymbol(std::string symbol) const = 0;
+
+
+    /*! @param[in] label The label to look for.
+        @returns True iff "label" is an external label.
+    */
+    virtual bool IsExternal(std::string label) const = 0;
 
 
     /*! @brief Look up the address for a symbol.
@@ -64,6 +77,7 @@ class iSymbolTable {
         @returns True iff the symbol is relocatable.
     */
     virtual bool IsRelocatable(std::string label) const = 0;
+
 
     /*! @brief Aids the Printer in outputing literals.
         @returns An iterator from the literal values to their addresses.
