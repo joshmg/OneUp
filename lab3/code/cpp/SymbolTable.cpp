@@ -24,7 +24,7 @@ void SymbolTable::InsertLiteral(int value, Word addr) {
 void SymbolTable::AddExternal(string label) {
   // The accessor ensures that the entry in in map
   // Here we don't care what the mapped value is
-  _externals[label];
+  _externals[label] = true;
 }
 
 bool SymbolTable::IsSymbol(string symbol) const {

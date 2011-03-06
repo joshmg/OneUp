@@ -77,6 +77,7 @@ namespace Codes {
     INV_COMMENT,    // Comment without ;
     MAIN,           // Main after .ORIG
     EXT_REDEF,      // Argument to .EXT already defined
+    RELATIVE,       // EXT or ENT in an absolute program
 
     // ^ new codes go here ^
     FILE_NOT_FOUND, // File not found
@@ -165,6 +166,7 @@ class ResultDecoder {
       _codes[Codes::INV_COMMENT] = "Comment not preceeded by ';'.\n((Whitespace separating arguments?))";
       _codes[Codes::MAIN] = "\".MAIN\" should preceed \".ORIG\".";
       _codes[Codes::EXT_REDEF] = "Argument to \"EXT\" is defined is this file.";
+      _codes[Codes::RELATIVE] = "The \".EXT\" and \".ENT\" psuedo-ops are not valid in absolute program.";
 
       _codes[Codes::FILE_NOT_FOUND] = "File not found.";
       _codes[Codes::FILE_NOT_OPENED] = "File could not be opened.";

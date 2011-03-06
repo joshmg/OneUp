@@ -268,12 +268,25 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
 
       } else if (line.Instruction() == ".ENT") {
         // .ENT
-        // Do nothing.  Printer will have to handle everything for .ENT's
+        // Shouldn't occur in an absolute program
+        if (!relocatable) {
+          result.msg = RELATIVE;
+          result.info = _LineNumber(pos);
+          return result;
+        }
 
       } else if (line.Instruction() == ".EXT") {
         // .EXT
-        // Declare External Label
-        symbols.AddExternal(line[0]);
+        // Declare external labels for each argument
+        for (int i = 0; i<line.Size(); i++) {
+          symbols.AddExternal(line[i]);
+        }
+        // Shouldn't occur in an absolute program
+        if (!relocatable) {
+          result.msg = RELATIVE;
+          result.info = _LineNumber(pos);
+          return result;
+        }
 
       } else {
         // not a pseduo-op

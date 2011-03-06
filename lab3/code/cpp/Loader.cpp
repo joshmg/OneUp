@@ -8,6 +8,7 @@
 #include "../h/iLoader.h"
 #include "../h/ObjParser.h"
 #include <iostream>
+#include <cstdlib>
 
 using namespace Codes;
 using namespace std;

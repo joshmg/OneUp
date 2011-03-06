@@ -351,7 +351,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // output each entry point and its value
         for (int i = 0; i < current_line.Size(); i++) {
           Word value = symbols.GetLabelAddr(current_line[i]);
-          _outStream << current_line[i] << value.ToHex().substr(2,4) << '\n';
+          _outStream << 'N' << current_line[i] << value.ToHex().substr(2,4) << '\n';
         }
 
       } else if (inst == "ADD" || inst == "AND") {
