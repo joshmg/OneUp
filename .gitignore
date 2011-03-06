@@ -4,5 +4,4 @@
 doc/
 *.exe
 a.out
-wi11-asm
-wi11-sim
+wi11*

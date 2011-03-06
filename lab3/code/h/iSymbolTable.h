@@ -38,7 +38,7 @@ class iSymbolTable {
     /*! @brief Store an external label name.
         @param[in] label The label to be stored.
     */
-    virtual void AddExternal(std::string label) const = 0;
+    virtual void AddExternal(std::string label) = 0;
 
 
     /*! @param[in] symbol The symbol to look for.

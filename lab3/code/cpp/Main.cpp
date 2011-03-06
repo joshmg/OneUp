@@ -30,7 +30,7 @@ void print_usage_error(char * name, bool help = false) {
 } 
 
 int main (int argc, char* argv[]) {
-
+/*
   string in;
   cout << "Assemble? (Y/n) ";
   getline(cin, in);
@@ -52,8 +52,7 @@ int main (int argc, char* argv[]) {
 
   Simulator(fname, false);
   return 0;
-
-  /*
+*/
   // wi11
   bool assemble = true;
   bool link = true;
@@ -102,113 +101,112 @@ int main (int argc, char* argv[]) {
   }
 
   // get leading -? arguments
-  int pos = 1;
-  while (true) {
-    if (pos >= argc) {
+  int pos = 0;
+  while ( ++pos < argc) {
+    // make it a c++ string
+    string arg_pos(argv[pos]);
+
+    if (arg_pos.length() < 2 || arg_pos[0] != '-') {
       print_usage_error(argv[0]);
       return 1;
     }
 
-    if (strlen(argv[pos]) < 2 || argv[pos][0] != '-') {
-      print_usage_error(argv[0]);
-      return 1;
+    // check second character.
+    switch (arg_pos[1]) {
+      case 't': {             // -t -- add trap labels
+        trap_labels = true;
+      } break;
+
+      case 'd': {             // -d -- execute in debug mode
+        debug = true;
+      } break;
+
+      case 'l': {             // -l -- print listing
+        listing = true;
+      } break;
+
+      case 's': {             // -s -- maximum number of symbols
+        symbol_length = atoi(argv[pos] + 2);
+        const int s_char_limit = 12;
+        // 12 = 10 digits in MAX_INT + 2 for '-s'
+
+        if (strlen(argv[pos]) > s_char_limit) {
+          cout << "Error: Number following \"-s\" too large.\n";
+          return 1;
+        }
+      } break;
+
+      case 'a': {             // -a -- only assemble
+        link = false;
+        execute = false;
+
+        // get input files
+        while (++pos < argc) {
+          infiles.push_back(argv[pos]);
+        }
+        // check for valid arguements
+        if (debug) {
+          print_usage_error(argv[0]);
+          return 1;
+        }
+      } break;
+
+      case 'o': {             // -o -- assemble and link
+        if (arg_pos.length() < 3 || arg_pos[2] != 'x') {
+          execute = false;
+        }
+        // next argument
+        ++pos;
+        if (pos < argc) {
+          // get output file
+          outfile = argv[pos];
+        } else {
+          // no output file
+          print_usage_error(argv[0]);
+          return 1;
+        }
+        // get input files
+        // next argument
+        ++pos;
+        if (pos < argc) {
+          // check for link flag
+          if (argv[pos] == "-n") {
+            assemble = false;
+          }
+        }
+        while (pos < argc) {
+          infiles.push_back(argv[pos++]);
+        }
+        // check for valid arguements
+        if (debug) {
+          print_usage_error(argv[0]);
+          return 1;
+        }
+      } break;
+
+      case 'x': {               // -x -- only execute given object file
+        link = false;
+        // next argument
+        ++pos;
+        if (pos < argc) {
+          // get file to execute
+          outfile = argv[pos];
+        }
+        // next argument
+        ++pos;
+        if (pos != argc) {
+          // extra stuff after -x
+          print_usage_error(argv[0]);
+          return 1;
+        }
+        // check for valid arguements
+        if (trap_labels || listing) {
+          print_usage_error(argv[0]);
+          return 1;
+        }
+      } break;
     }
-
-    cout << argv[pos] <<endl;
-
-    if (argv[pos] == "-t") {          // -t -- add trap labels
-      trap_labels = true;
-    } else if (argv[pos] == "-d") {   // -d -- execute in debug mode
-      debug = true;
-    } else if (argv[pos] == "-l") {   // -l -- print listing
-      listing = true;
-    } else if (argv[pos][1] == 's') {   // -s -- maximum number of symbols.
-      symbol_length = atoi(argv[pos] + 2);
-      int s_char_limit = 12;
-      if (strlen(argv[pos]) > s_char_limit) {
-        cout << "Error: Number following \"-s\" too large.\n";
-      }
-    } else if (argv[pos] == "-a") {     // -a -- only assemble
-      link = false;
-      execute = false;
-      // get input files
-      while (++pos < argc) {
-        infiles.push_back(argv[pos]);
-      }
-      // check for valid arguements
-      if (debug) {
-        print_usage_error(argv[0]);
-        return 1;
-      }
-    } else if (argv[pos] == "-o") {     // -o -- assemble and link
-      execute = false;
-      if (++pos < argc) {
-        // get output file
-        outfile = argv[pos];
-      } else {
-        // no output file
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      // get input files
-      if (++pos < argc) {
-        // check for link flag
-        if (argv[pos] == "-n") {
-          assemble = false;
-        }
-      }
-      while (pos < argc) {
-        infiles.push_back(argv[pos++]);
-      }
-      // check for valid arguements
-      if (debug) {
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      break; // done with args
-    } else if (argv[pos] == "-x") {     // -x -- only execute given object file
-      link = false;
-      if (++pos < argc) {
-        // get file to execute
-        outfile = argv[pos];
-      }
-      if (++pos != argc) {
-        // extra stuff after -x
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      // check for valid arguements
-      if (trap_labels || listing) {
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      break; // done with args
-    } else if (argv[pos] == "-ox") {    // -ox -- generate object file and execute
-      if (++pos < argc) {
-        // get output file
-        outfile = argv[pos];
-      } else {
-        // no output file
-        print_usage_error(argv[0]);
-        return 1;
-      }
-      // get input files
-      if (++pos < argc) {
-        // check for link flag
-        if (argv[pos] == "-n") {
-          assemble = false;
-        }
-      }
-      while (pos < argc) {
-        infiles.push_back(argv[pos++]);
-      }
-      break; // done with args
-    } else {
-      // don't know argument
-      print_usage_error(argv[0]);
-      return 1;
-    } 
-    ++pos;
+    // end of switch
   }
   // done parsing arguements
 
@@ -224,7 +222,6 @@ int main (int argc, char* argv[]) {
   }
 
   return 0;
-  */
 }
 
 int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing) {

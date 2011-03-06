@@ -479,7 +479,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
       } else if (inst == "JSR" || inst == "JMP") {
         // JSR Instructions
         // Text Record
-        if (symbol.IsExternal(current_line[0])) {
+        if (symbols.IsExternal(current_line[0])) {
           _outStream << 'X';
         } else if (relocatable) {
           _outStream << 'R';
