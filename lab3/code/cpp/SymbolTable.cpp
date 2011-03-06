@@ -6,6 +6,7 @@
 #include <map>
 #include <string>
 using namespace std;
+#include <iostream>
 
 //    map<std::string, Word> _symbols;
 //    map<int, Word> _literals;
@@ -24,15 +25,15 @@ void SymbolTable::InsertLiteral(int value, Word addr) {
 void SymbolTable::AddExternal(string label) {
   // The accessor ensures that the entry in in map
   // Here we don't care what the mapped value is
-  _externals[label] = true;
+  _externals[label];
 }
 
 bool SymbolTable::IsSymbol(string symbol) const {
   return (_symbols.count(symbol) != 0);
 }
 
-bool SymbolTable::IsExternal(string symbol) const {
-  return (_externals.count(symbol) != 0);
+bool SymbolTable::IsExternal(string label) const {
+  return (_externals.count(label) != 0);
 }
 
 Word SymbolTable::GetLabelAddr(string symbol) const {

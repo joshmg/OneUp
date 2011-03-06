@@ -251,6 +251,8 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
       } else if (inst == ".MAIN") {
         is_main = true;
+        //listing output
+        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
 
       } else if (inst == ".BLKW") {
         // Block pseudo-op
@@ -346,6 +348,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           }
         }
 
+        // listing output
+        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+
       } else if (inst == ".ENT") {
         // .ENT
         // output each entry point and its value
@@ -353,6 +358,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           Word value = symbols.GetLabelAddr(current_line[i]);
           _outStream << 'N' << current_line[i] << value.ToHex().substr(2,4) << '\n';
         }
+
+        // listing output
+        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
 
       } else if (inst == "ADD" || inst == "AND") {
         // ADD-like instructions

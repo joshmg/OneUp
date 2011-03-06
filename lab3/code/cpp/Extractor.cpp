@@ -264,28 +264,28 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             } break;
           }
           _length += w.ToInt();
-        }
+          
+        } else if (line.Instruction() == ".ENT") {
+          // .ENT
+          // Shouldn't occur in an absolute program
+          if (!relocatable) {
+            result.msg = RELATIVE;
+            result.info = _LineNumber(pos);
+            return result;
+          }
 
-      } else if (line.Instruction() == ".ENT") {
-        // .ENT
-        // Shouldn't occur in an absolute program
-        if (!relocatable) {
-          result.msg = RELATIVE;
-          result.info = _LineNumber(pos);
-          return result;
-        }
-
-      } else if (line.Instruction() == ".EXT") {
-        // .EXT
-        // Declare external labels for each argument
-        for (int i = 0; i<line.Size(); i++) {
-          symbols.AddExternal(line[i]);
-        }
-        // Shouldn't occur in an absolute program
-        if (!relocatable) {
-          result.msg = RELATIVE;
-          result.info = _LineNumber(pos);
-          return result;
+        } else if (line.Instruction() == ".EXT") {
+          // .EXT
+          // Declare external labels for each argument
+          for (int i = 0; i<line.Size(); i++) {
+            symbols.AddExternal(line[i]);
+          }
+          // Shouldn't occur in an absolute program
+          if (!relocatable) {
+            result.msg = RELATIVE;
+            result.info = _LineNumber(pos);
+            return result;
+          }
         }
 
       } else {
