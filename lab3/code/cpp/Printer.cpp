@@ -282,7 +282,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
               symbols.InsertLabel(current_line.Label(), value, symbols.IsRelocatable(op));
             } else {
               _PreError(current_line.ToString());
-              return RESULT(REDEF_LBL, op);
+              return RESULT(REDEF_LBL, current_line.Label());
             }
           }
         }

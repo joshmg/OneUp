@@ -37,6 +37,10 @@ namespace Codes {
     INVALID_TRAP_CODE,    // The provided trap code is not valid.
     INVALID_START_PC,
     REQUESTED_MEMORY_TOO_LARGE,
+    BAD_MALLOC,           // Operating system unable to provide required memory to load object file.
+    RELOCATE_ENTRY_IN_ABSOLUTE, // Relocatable Text Entry found in a non-relocatable object file.
+    RELOCATION_OVERFLOW,  // During relocation, the composit address overflowed.
+    RELOCATION_OUTSIDE_BOUNDS,  //During relocation, the composit address attempted to access an address outside of bounds.
 
     // Assembler Error Codes:
     INV_LBL,        // Label starts with an invalid character
@@ -122,6 +126,10 @@ class ResultDecoder {
       _codes[Codes::INVALID_TRAP_CODE] = "The provided trap code is not valid.";
       _codes[Codes::INVALID_START_PC] = "The initial value of the PC is out of bounds.";
       _codes[Codes::REQUESTED_MEMORY_TOO_LARGE] = "Memory too large.";
+      _codes[Codes::BAD_MALLOC] = "Bad Malloc from OS.";
+      _codes[Codes::RELOCATE_ENTRY_IN_ABSOLUTE] = "Relocatable Text Entry found in a non-relocatable object file.";
+      _codes[Codes::RELOCATION_OVERFLOW] = "During relocation, the composit address overflowed.";
+      _codes[Codes::RELOCATION_OUTSIDE_BOUNDS] = "During relocation, the composit address attempted to access an address outside of bounds.";
 
 
       // Assembler Error Codes:

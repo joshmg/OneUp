@@ -211,6 +211,8 @@ class iWord {
           If it holds a value of 1 (0...001 in binary): num[0] = 1.\n
           If it holds a negative value (Starting with a 1 in 2's complement): num[15] = 1.
     */
+    // bits = [0]00[0] [0]00[0] [0]00[0] [0]00[0]
+    // i    = 15    12 11    8   7    4   3    0
     virtual bool operator[](const int i) const = 0;
 
 
@@ -222,6 +224,8 @@ class iWord {
         Works in a similar way to ::operator[] but sets the bit
         instead of determining if it is set.
     */
+    // bits = [0]00[0] [0]00[0] [0]00[0] [0]00[0]
+    // i    = 15    12 11    8   7    4   3    0
     virtual void SetBit(const int i, bool) = 0;
 };
 
