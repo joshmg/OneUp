@@ -178,7 +178,7 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   // if we ended the loop, and dectected something other that an E, we have an issue
   if (Data.type!='E') {
 
-    if (Data.type == 'X') {
+    if (Data.type == 'X' || Data.type == 'x') {
       Data=Parser.GetNext(); // Get the unresolved external name...
       return RESULT(UNRESOLVED_EXTERNAL, "Line " + itos(object_line_number) + ", Symbol Name \"" + Data.data[0] + "\"");
     }

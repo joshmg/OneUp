@@ -88,6 +88,7 @@ ObjectData ObjParser::GetNext() {
 
     // Text line
     case 'X': // this is technically an error to be caught in Loader
+    case 'x': // this is technically an error to be caught in Loader
     case 'R':
     case 'W':
     case 'T':
