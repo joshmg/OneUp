@@ -6,6 +6,8 @@
 #include "../h/SymbolTable.h"
 #include "../h/Printer.h"
 #include "../h/ResultCodes.h"
+#include "../h/FileArray.h"
+#include "../h/ObjParser.h"
 #include <cstdlib>
 #include <cstring> // for strlen()
 #include <string>
@@ -333,6 +335,42 @@ int Assembler(const string& infile, const string& outfile, int symbol_length, bo
 }
 
 int Linker(vector<string>& infiles, string& outfile) {
+  // open files
+  // input files
+  FileArray files;
+  for (int i = 0; i < infiles.size(); i++) {
+    RESULT result = files.Add(infiles[i]);
+    if (result != SUCCESS) {
+      return result;
+    }
+  }
+  //output file
+  ofstream outs;
+  outs.open(outfile);
+  if (!outs.is_open()) {
+    return RESULT(FILE_NOT_OPENED, outfile);
+  }
+
+  // get symbols
+  SymbolTable symbols;
+  int length = 0;
+  for (int i = 0; i < files.Size(); i++) {
+    string line;
+
+    // get header record
+    getline(files[i], line);
+    line = line.substr(1); // H or M
+    string name = line.substr(0, 6);
+
+    // get rid of trailing spaces
+    for (int j = 5; j > 0; j--) {
+      if (name[j] == ' ') {
+        name = name.substr(0, j);
+      }
+    }
+
+    
+
   return 0;
 }
 
