@@ -9,6 +9,8 @@ Absolute programs with external points.  Bug?
 --------
 |Design|
 --------
+!! Assemble only one program at a time with -a?
+
 M instead of H for Main file: .MAIN pseudo-op
    -- determines load addr
 Externals:  X|ADDR|INST|

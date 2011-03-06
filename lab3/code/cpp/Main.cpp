@@ -15,7 +15,7 @@
 using namespace std;
 using namespace Codes;
 
-int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing);
+int Assembler(vector<string>& infiles, int symbol_length, bool trap_labels, bool listing);
 int Linker(vector<string>& infiles, string& outfile);
 int Simulator(string& infile, bool debug);
 
@@ -141,8 +141,10 @@ int main (int argc, char* argv[]) {
         execute = false;
 
         // get input files
-        while (++pos < argc) {
-          infiles.push_back(argv[pos]);
+        // Next argument
+        ++pos;
+        while (pos < argc) {
+          infiles.push_back(argv[pos++]);
         }
         // check for valid arguements
         if (debug) {
@@ -151,7 +153,7 @@ int main (int argc, char* argv[]) {
         }
       } break;
 
-      case 'o': {             // -o -- assemble and link
+      case 'o': {               // -o(x) -- assemble and link, possibly execute
         if (arg_pos.length() < 3 || arg_pos[2] != 'x') {
           execute = false;
         }
@@ -212,21 +214,25 @@ int main (int argc, char* argv[]) {
 
   // Execute desired functionality.
   if (assemble) {
-    Assembler(infiles, outfile, symbol_length, trap_labels, listing);
+    cout << "Assembling.\n";
+    Assembler(infiles, symbol_length, trap_labels, listing);
   }
   if (link) {
+    cout << "Linking\n";
     Linker(infiles, outfile);
   }
   if (execute) {
+    cout << "Executing\n";
     return Simulator(outfile, debug);
   }
 
   return 0;
 }
 
-int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool trap_labels, bool listing) {
+int Assembler(vector<string>& infiles, int symbol_length, bool trap_labels, bool listing) {
   for (int i = 0; i < infiles.size(); i++) {
     string infile = infiles[i];
+    string outfile = infile + ".o";
 
     Extractor extract(symbol_length);
 
@@ -281,7 +287,7 @@ int Assembler(vector<string>& infiles, string& outfile, int symbol_length, bool 
 }
 
 int Linker(vector<string>& infiles, string& outfile) {
-
+  return 0;
 }
 
 int Simulator(string& infile, bool debug) {

@@ -288,19 +288,6 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _outStream << 'T';
         }
 
-        // Store label if one exists
-        if (current_line.HasLabel()) {
-          if (op[0] != 'x' && op[0] != '#') {
-            // is not a constant -- shouldn't have a value
-            if (!symbols.IsSymbol(current_line.Label())) {
-              symbols.InsertLabel(current_line.Label(), value, symbols.IsRelocatable(op));
-            } else {
-              _PreError(current_line.ToString());
-              return RESULT(REDEF_LBL, op);
-            }
-          }
-        }
-
         // Print address to be initialized
         _outStream << current_address.ToHex().substr(2,4);
 
