@@ -20,7 +20,7 @@ int Linker(vector<string>& infiles, string& outfile);
 int Simulator(string& infile, bool debug);
 
 void print_usage_error(char * name, bool help = false) {
-  cout << "Usage: " << name << " [-t | -s# | -l] -a infile ...\n"
+  cout << "Usage: " << name << " [-t | -s# | -l] -a infile outfile\n"
       <<  "       " << name << " [-t | -s# | -l] -o outfile [-n] infile ...\n"
       <<  "       " << name << " [-t | -s# | -l | -d] -ox outfile [-n] infile ...\n"
       <<  "       " << name << " [-d] -x infile\n\n";
@@ -67,16 +67,16 @@ int main (int argc, char* argv[]) {
   bool debug = false;
 
   // help message
-  if (argc == 2 && argv[1] == "--help") {
+  if (argc == 2 && string(argv[1]) == "--help") {
     print_usage_error(argv[0], true);
     cout << "Options:\n"
         <<  "  -t:  Include the trap code labels -- out, puts, in, halt, outn, inn, & rnd.\n"
         <<  "  -s#: Increase the symbol limit -- defaults to 1000.\n"
         <<  "  -l:  Print a listing during assembly.\n"
         <<  "  -d:  Print verbose debug information during execution.\n"
-        <<  "  ---------------------------------------------------------------------------------"
-        <<  "  -a:  Only assemble the input files, do not link or execute.\n"
-        <<  "  -o:  Assemble and link, creating a single object file named \"outfile\"\n"
+        <<  "  --------------------------------------------------------------------------------------\n"
+        <<  "  -a:  Assemble \"infile\" into \"outfile\", do not link or execute.\n"
+        <<  "  -o:  Assemble and link multiple files, creating a single object file named \"outfile\"\n"
         <<  "  -ox: Assemble, link, and execute; create \"outfile\" as in the '-o' option.\n"
         <<  "  -x:  Execute a pre-linked object file.  Skip assembly and linking steps.\n"
         <<  "  -n:  Specifies that the input files are already assembled.\n"
@@ -141,10 +141,22 @@ int main (int argc, char* argv[]) {
         execute = false;
 
         // get input files
-        // Next argument
+        // Next argument (infile)
         ++pos;
-        while (pos < argc) {
-          infiles.push_back(argv[pos++]);
+        if (pos < argc) {
+          infiles.push_back(argv[pos]);
+        }
+        // Next argument (outfile)
+        ++pos;
+        if (pos < argc) {
+          outfile = argv[pos];
+        }
+        // Next argument (shouldn't be one)
+        ++pos;
+        if (pos != argc) {
+          // extra stuff after outfile name
+          print_usage_error(argv[0]);
+          return 1;
         }
         // check for valid arguements
         if (debug) {
@@ -207,78 +219,96 @@ int main (int argc, char* argv[]) {
           return 1;
         }
       } break;
+
+      default: {
+        print_usage_error(argv[0]);
+        return 1;
+      } break;
     }
     // end of switch
   }
   // done parsing arguements
 
   // Execute desired functionality.
+  vector<string> temp_files;
   if (assemble) {
     cout << "Assembling.\n";
-    Assembler(infiles, symbol_length, trap_labels, listing);
+    if (infiles.length() == 1) {
+      Assembler(infiles[0], outfile, symbol_length, trap_labels, listing);
+    } else {
+      for (int i=0; i<infiles.size(); i++) {
+        string temp_name(tmpnam(char[L_tmpnam]));
+        temp_files.push_back(temp_name);
+
+        Assembler(infiles[i], temp_name, symbol_length, trap_labels, listing);
+      }
+    }
   }
   if (link) {
     cout << "Linking\n";
-    Linker(infiles, outfile);
+    if (temp_files.size() == 0) {
+      Linker(infiles, outfile);
+    } else {
+      Linker(temp_files, outfile);
+    }
   }
   if (execute) {
     cout << "Executing\n";
     return Simulator(outfile, debug);
   }
 
+  // remove temp files
+  for (int i=0; i<temp_files.size(); i++) {
+    
+
   return 0;
 }
 
-int Assembler(vector<string>& infiles, int symbol_length, bool trap_labels, bool listing) {
-  for (int i = 0; i < infiles.size(); i++) {
-    string infile = infiles[i];
-    string outfile = infile + ".o";
+int Assembler(string& infile, string& outfile, int symbol_length, bool trap_labels, bool listing) {
+  Extractor extract(symbol_length);
 
-    Extractor extract(symbol_length);
+  ResultDecoder results;
+  if (!extract.Open(infile)) {
+    cout << "Error: file " << infile << " could not be opened.\n";
+    return 2; // i/o error
+  } else {
+    // First pass of file, get symbols
+    SymbolTable symbols;
+    RESULT result = extract.GetSymbols(symbols);
+    if (result.msg != SUCCESS) {
+      cout << results.Find(result);
+      return 3; // syntax error
+    }
+    Word length = extract.GetLength();
 
-    ResultDecoder results;
-    if (!extract.Open(infile)) {
-      cout << "Error: file " << infile << " could not be opened.\n";
+    // add trap codes if desired
+    if (trap_labels) {
+      // OUT
+      symbols.InsertLabel("out", Word(0x21));
+      // PUTS
+      symbols.InsertLabel("puts", Word(0x22));
+      // IN
+      symbols.InsertLabel("in", Word(0x23));
+      // HALT
+      symbols.InsertLabel("halt", Word(0x25));
+      // OUTN
+      symbols.InsertLabel("outn", Word(0x31));
+      // INN
+      symbols.InsertLabel("inn", Word(0x33));
+      // RND
+      symbols.InsertLabel("rnd", Word(0x43));
+    }
+
+    Printer printer;
+    result = printer.Open(infile, outfile);
+    if (result.msg != SUCCESS) {
+      cout << results.Find(result);
       return 2; // i/o error
     } else {
-      // First pass of file, get symbols
-      SymbolTable symbols;
-      RESULT result = extract.GetSymbols(symbols);
+      result = printer.Print(symbols, length);
       if (result.msg != SUCCESS) {
         cout << results.Find(result);
         return 3; // syntax error
-      }
-      Word length = extract.GetLength();
-
-      // add trap codes if desired
-      if (trap_labels) {
-        // OUT
-        symbols.InsertLabel("out", Word(0x21));
-        // PUTS
-        symbols.InsertLabel("puts", Word(0x22));
-        // IN
-        symbols.InsertLabel("in", Word(0x23));
-        // HALT
-        symbols.InsertLabel("halt", Word(0x25));
-        // OUTN
-        symbols.InsertLabel("outn", Word(0x31));
-        // INN
-        symbols.InsertLabel("inn", Word(0x33));
-        // RND
-        symbols.InsertLabel("rnd", Word(0x43));
-      }
-
-      Printer printer;
-      result = printer.Open(infile, outfile);
-      if (result.msg != SUCCESS) {
-        cout << results.Find(result);
-        return 2; // i/o error
-      } else {
-        result = printer.Print(symbols, length);
-        if (result.msg != SUCCESS) {
-          cout << results.Find(result);
-          return 3; // syntax error
-        }
       }
     }
   }

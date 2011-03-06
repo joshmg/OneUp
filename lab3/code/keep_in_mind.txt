@@ -3,6 +3,7 @@
 --------
 .EXT with symbols defined in current file.
 .ENT with symbols not defined in current file.
+.EXT & .ENT in listing
 
 Absolute programs with external points.  Bug?
 
