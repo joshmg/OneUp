@@ -66,7 +66,7 @@ ObjectData ObjParser::GetNext() {
     case 'M':
     case 'H':
       //                    && (Relocatable case)
-      if (line.size() < 15 && line.size() != 11) { // improper header entry length
+      if (line.size() != 15 && line.size() != 11) { // improper header entry length
         _object.type = 0;
         _object.data.push_back(string());
         return _object;

@@ -17,7 +17,10 @@ string ResultDecoder::Find(const RESULT& result) const {
 		return "Error: Undefined Result Code Enumeration";
 	} else {
     // prepend "Error" to info
-		string tmp = "Error: " + result.info;
+		string tmp;
+    if (result != SUCCESS) tmp = "Error: ";
+    tmp += result.info;
+
     if (result.info.length() > 0) {
       // if necessary, add another separator
       tmp += ": ";
