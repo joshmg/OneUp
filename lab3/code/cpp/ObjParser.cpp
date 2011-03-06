@@ -1,5 +1,7 @@
 /*! @file ObjParser.cpp
     @author Ryan Paulson
+    @author Joshua Green
+    @author Andrew Groot
     @brief Implements the declarations in "../h/ObjParser.h".
 */
 
@@ -86,9 +88,25 @@ ObjectData ObjParser::GetNext() {
       }
       break;
 
+    case 'N':
+      if (line.size() < 6) { // NADDR (no symbol)
+        _object.type = 0;
+        _object.data.push_back(string());
+        return _object;
+      }
+
+      // N
+      _object.type = line[0];
+      // symbol    N|FOO|XXXX  size = 8, -1 for N, -4 for hex; = 3.
+      _object.data.push_back(line.substr(1, line.size() - 5));
+      // addr      N|FOO|XXXX  size = 8, -4 for addr, 4, 4; = XXXX
+      _object.data.push_back(line.substr(line.size()-4, 4));
+
+      return _object;
+
     // Text line
-    case 'X': // this is technically an error to be caught in Loader
-    case 'x': // this is technically an error to be caught in Loader
+    case 'X':
+    case 'x':
     case 'R':
     case 'W':
     case 'T':
@@ -101,6 +119,21 @@ ObjectData ObjParser::GetNext() {
       _object.type = line[0];
       _object.data.push_back(line.substr(1,4));
       _object.data.push_back(line.substr(5,4));
+
+      if (line[0] == 'x' || line[0] == 'X') {
+        // Get the next line
+        if (_fileStream.good()) {
+          getline(_fileStream, line);
+        }
+        else {
+          _object.type = 0;
+          _object.data.clear();
+          _object.data.push_back(string());
+          return _object;
+        }
+        // add symbol name
+        _object.data.push_back(line);
+      }
       break;
 
     // End line
