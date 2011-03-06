@@ -7,6 +7,7 @@
 #include "../h/iMemory.h"
 #include "../h/iLoader.h"
 #include "../h/ObjParser.h"
+#include "../h/itos.h"
 #include <iostream>
 #include <cstdlib>
 
@@ -16,13 +17,13 @@ using namespace std;
 RESULT Loader::_GetLoadAddress(Word& produced_address, const Word& segment_length) const {
 
   while (true) {
-    cout << endl << "Requesting address for program length of " << segment_length.ToInt() << " (Ex: x0000) : ";
+    cout << endl << "Requesting address for program length of " << segment_length.ToInt() << " (Ex: 0x0000) : ";
 
     string input;
     getline(cin, input);
     cout << endl;
 
-    if (produced_address.FromHexAbbr(input)) break;
+    if (produced_address.FromHex(input)) break;
     else cout << "Invalid input address syntax." << endl;;
   }
   
@@ -31,7 +32,10 @@ RESULT Loader::_GetLoadAddress(Word& produced_address, const Word& segment_lengt
 
   
   for (int i=WORD_SIZE-1;i>8;i--) {
-    if (produced_address[i] != page_test[i]) return BAD_MALLOC;
+    if (produced_address[i] != page_test[i]) {
+      cout << produced_address.ToStr() << " != " << page_test.ToStr() << endl;
+      return BAD_MALLOC;
+    }
   }
 
   return SUCCESS;
@@ -48,6 +52,8 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   Word segment_start_address;
   bool relocatable = false;
 
+  int object_line_number = 0;
+
   Word Hex1,Hex2; // used to manipulate memory.  memory has the functions i need, so no hex conversion is needed, as everything is a word
   
   ObjectData Data; // the Parser return the Data to this
@@ -62,10 +68,11 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   }
 
   Data=Parser.GetNext(); // getting the first header
+  ++object_line_number; // line_number = 1
 
   if (Data.type != 'H' && Data.type != 'M') { // if it is not a H, problem
                                               // added M for Main designator
-    return INVALID_HEADER_ENTRY;
+    return RESULT(INVALID_HEADER_ENTRY, "Line " + itos(object_line_number));
   }
 
   if (Data.data[1] == RELOCATE_FLAG) {
@@ -76,7 +83,7 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
     relocatable = true;
   }
   else if  (!(Hex1.FromHex(string("0x") + Data.data[1]))) { // setting up the words to use the reserve command memory has.
-    return NOT_HEX;
+    return RESULT(NOT_HEX, "Line " + itos(object_line_number) + ", Value \"" + Data.data[1] + "\"");
   }
 
   // establishing the lower bound on memory
@@ -85,25 +92,26 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
 
 
   if  (!(Hex2.FromHex(string("0x") + Data.data[2]))) {
-    return NOT_HEX;
+    return RESULT(NOT_HEX, "Line " + itos(object_line_number) + ", Value \"" + Data.data[1] + "\"");
   }
   // establishing the upper bound on memory
   max_memory=min_memory+Hex2.ToInt();
 
   if (Hex2.ToInt() < (unsigned short)(~0)) returns=_memory->Reserve(Hex1,Hex2);
-  else return REQUESTED_MEMORY_TOO_LARGE;
+  else return RESULT(REQUESTED_MEMORY_TOO_LARGE, "Line " + itos(object_line_number));
 
-  if (returns!=SUCCESS) {
-    return returns;
+  if (returns != SUCCESS) {
+    return RESULT(returns.msg, string("Line ") + itos(object_line_number));
   }
   Data=Parser.GetNext();
+  ++object_line_number;
 
   // this loop goes through the Test records
   while ((Data.type == 'T') || (Data.type == 'W') || (Data.type == 'R')) {
-    if (((Data.type == 'W') || (Data.type == 'R')) && !relocatable) return RELOCATE_ENTRY_IN_ABSOLUTE;
+    if (((Data.type == 'W') || (Data.type == 'R')) && !relocatable) return RESULT(RELOCATE_ENTRY_IN_ABSOLUTE, "Line " + itos(object_line_number));
 
     if  (!(Hex1.FromHex(string("0x") + Data.data[0]))) {
-      return NOT_HEX;
+      return RESULT(NOT_HEX, "Line " + itos(object_line_number) + ", Value \"" + Data.data[0] + "\"");
     }
 
     // converting the hex memory location to int
@@ -116,12 +124,11 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
 
     // ensuring that the memory location is in bounds
     if (!(mem_location >= min_memory && mem_location < max_memory)) {
-      cout << min_memory << " <= " << mem_location  << " < " << max_memory << endl;
-      return OUT_OF_BOUNDS;
+      return RESULT(OUT_OF_BOUNDS, "Line " + itos(object_line_number));
     }
 
     if  (!(Hex2.FromHex(string("0x") + Data.data[1]))) {
-      return NOT_HEX;
+      return RESULT(NOT_HEX, "Line " + itos(object_line_number) + ", Value \"" + Data.data[1] + "\"");
     }
 
     // Relocate the last 16 bits:
@@ -132,10 +139,10 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
 
       Word relocated_address;
       int new_address_int = segment_start_address.ToInt() + address_offset.ToInt();
-      if (new_address_int > Word::MAX_SIZE) return RELOCATION_OVERFLOW; // Relocation Overflow
+      if (new_address_int > Word::MAX_SIZE) return RESULT(RELOCATION_OVERFLOW, "Line " + itos(object_line_number)); // Relocation Overflow
       relocated_address.FromInt(new_address_int);
 
-      if (new_address_int > max_memory) return RELOCATION_OUTSIDE_BOUNDS;
+      if (new_address_int > max_memory) return RESULT(RELOCATION_OUTSIDE_BOUNDS, "Line " + itos(object_line_number));
 
       for (int i=0;i<16;i++) {
         Hex2.SetBit(i, relocated_address[i]);
@@ -150,10 +157,10 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
 
       Word relocated_address;
       int new_address_int = segment_start_address.ToInt() + address_offset.ToInt();
-      if (new_address_int > Word::MAX_SIZE) return RELOCATION_OVERFLOW; // Relocation Overflow
+      if (new_address_int > Word::MAX_SIZE) return RESULT(RELOCATION_OVERFLOW, "Line " + itos(object_line_number)); // Relocation Overflow
       relocated_address.FromInt(new_address_int);
 
-      if (new_address_int > max_memory) return RELOCATION_OUTSIDE_BOUNDS;
+      if (new_address_int > max_memory) return RESULT(RELOCATION_OUTSIDE_BOUNDS, "Line " + itos(object_line_number));
 
       for (int i=0;i<9;i++) {
         Hex2.SetBit(i, relocated_address[i]);
@@ -162,30 +169,35 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
 
     // if it is in bounds, store it
     returns=_memory->Store(Hex1,Hex2);
-    if (returns!=SUCCESS) {
-     return returns;
-    }
+    if (returns != SUCCESS) { return RESULT(returns.msg, (string("Line ") + itos(object_line_number))); }
 
     Data=Parser.GetNext();
+    ++object_line_number;
   }
 
   // if we ended the loop, and dectected something other that an E, we have an issue
   if (Data.type!='E') {
-    return INVALID_DATA_ENTRY;
+
+    if (Data.type == 'X') {
+      Data=Parser.GetNext(); // Get the unresolved external name...
+      return RESULT(UNRESOLVED_EXTERNAL, "Line " + itos(object_line_number) + ", Symbol Name \"" + Data.data[0] + "\"");
+    }
+
+    return RESULT(INVALID_DATA_ENTRY, "Line " + itos(object_line_number));
   }
 
   if  (!(Hex1.FromHex(string("0x") + Data.data[0]))) {
-    return NOT_HEX;
+    return RESULT(NOT_HEX, "Line " + itos(object_line_number) + ", Value \"" + Data.data[0] + "\"");
   }
 
   // if relocatable, relocate start address (end record)
   if (relocatable) {
-    if ((segment_start_address.ToInt() + Hex1.ToInt()) > Word::MAX_SIZE) return RELOCATION_OUTSIDE_BOUNDS;
+    if ((segment_start_address.ToInt() + Hex1.ToInt()) > Word::MAX_SIZE) return RESULT(RELOCATION_OUTSIDE_BOUNDS, "Line " + itos(object_line_number) + ", Value \"" + Hex1.ToHex() + "\"");
     Hex1.FromInt(segment_start_address.ToInt() + Hex1.ToInt());
   }
 
   if (Hex1.ToInt() < min_memory || Hex1.ToInt() >= max_memory) {
-    return INVALID_START_PC;
+    return RESULT(INVALID_START_PC, "Line " + itos(object_line_number) + ", Value \"" + Hex1.ToHex() + "\"");
   }
 
   //this should be copying Hex1 onto the PC_address.  if it is not, that is what it is meant to be doing

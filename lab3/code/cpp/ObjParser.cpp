@@ -87,6 +87,9 @@ ObjectData ObjParser::GetNext() {
       break;
 
     // Text line
+    case 'X': // this is technically an error to be caught in Loader
+    case 'R':
+    case 'W':
     case 'T':
       if (line.size() < 9) { // improper text entry length
         _object.type = 0;
@@ -94,7 +97,7 @@ ObjectData ObjParser::GetNext() {
         return _object;
       }
 
-      _object.type = 'T';
+      _object.type = line[0];
       _object.data.push_back(line.substr(1,4));
       _object.data.push_back(line.substr(5,4));
       break;

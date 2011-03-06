@@ -41,6 +41,7 @@ namespace Codes {
     RELOCATE_ENTRY_IN_ABSOLUTE, // Relocatable Text Entry found in a non-relocatable object file.
     RELOCATION_OVERFLOW,  // During relocation, the composit address overflowed.
     RELOCATION_OUTSIDE_BOUNDS,  //During relocation, the composit address attempted to access an address outside of bounds.
+    UNRESOLVED_EXTERNAL,  // Unresolved Symbol found in object file.
 
     // Assembler Error Codes:
     INV_LBL,        // Label starts with an invalid character
@@ -133,6 +134,7 @@ class ResultDecoder {
       _codes[Codes::RELOCATE_ENTRY_IN_ABSOLUTE] = "Relocatable Text Entry found in a non-relocatable object file.";
       _codes[Codes::RELOCATION_OVERFLOW] = "During relocation, the composit address overflowed.";
       _codes[Codes::RELOCATION_OUTSIDE_BOUNDS] = "During relocation, the composit address attempted to access an address outside of bounds.";
+      _codes[Codes::UNRESOLVED_EXTERNAL] = "Unresolved Symbol in object file.";
 
 
       // Assembler Error Codes:
