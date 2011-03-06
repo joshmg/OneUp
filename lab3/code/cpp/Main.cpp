@@ -205,6 +205,7 @@ int main (int argc, char* argv[]) {
       } break;
 
       case 'x': {               // -x -- only execute given object file
+        assemble = false;
         link = false;
         // next argument
         ++pos;
@@ -238,7 +239,7 @@ int main (int argc, char* argv[]) {
   // Execute desired functionality.
   vector<string> temp_files;
   if (assemble) {
-    cout << "Assembling.\n";
+    cout << "Assembling...\n";
     if (!link && !execute) {
       Assembler(infiles[0], outfile, symbol_length, trap_labels, listing);
     } else {
@@ -253,7 +254,7 @@ int main (int argc, char* argv[]) {
     }
   }
   if (link) {
-    cout << "Linking\n";
+    cout << "Linking...\n";
     if (temp_files.size() == 0) {
       Linker(infiles, outfile);
     } else {
@@ -261,7 +262,7 @@ int main (int argc, char* argv[]) {
     }
   }
   if (execute) {
-    cout << "Executing\n";
+    cout << "Executing...\n";
     return Simulator(outfile, debug);
   }
 
