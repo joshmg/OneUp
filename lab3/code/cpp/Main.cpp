@@ -15,7 +15,7 @@
 using namespace std;
 using namespace Codes;
 
-int Assembler(vector<string>& infiles, int symbol_length, bool trap_labels, bool listing);
+int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool listing);
 int Linker(vector<string>& infiles, string& outfile);
 int Simulator(string& infile, bool debug);
 
@@ -65,6 +65,12 @@ int main (int argc, char* argv[]) {
   int symbol_length = SYMBOL_TABLE_MAX_SIZE;
   // simulator
   bool debug = false;
+
+  if (argc == 1) {
+    // no arguments
+    print_usage_error(argv[0]);
+    return 1;
+  }
 
   // help message
   if (argc == 2 && string(argv[1]) == "--help") {
@@ -233,11 +239,13 @@ int main (int argc, char* argv[]) {
   vector<string> temp_files;
   if (assemble) {
     cout << "Assembling.\n";
-    if (infiles.length() == 1) {
+    if (!link && !execute) {
       Assembler(infiles[0], outfile, symbol_length, trap_labels, listing);
     } else {
       for (int i=0; i<infiles.size(); i++) {
-        string temp_name(tmpnam(char[L_tmpnam]));
+        char temp_name[L_tmpnam];
+        tmpnam(temp_name);
+        
         temp_files.push_back(temp_name);
 
         Assembler(infiles[i], temp_name, symbol_length, trap_labels, listing);
@@ -258,13 +266,20 @@ int main (int argc, char* argv[]) {
   }
 
   // remove temp files
+  bool rm_err = false;
   for (int i=0; i<temp_files.size(); i++) {
-    
-
+    if (remove(temp_files[i].c_str()) != 0) {
+      rm_err = true;
+    }
+  }
+  if (rm_err) {
+    // report failed deletions 
+    cout << "WARNING: One or more temp files could not be removed.";
+  }
   return 0;
 }
 
-int Assembler(string& infile, string& outfile, int symbol_length, bool trap_labels, bool listing) {
+int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool listing) {
   Extractor extract(symbol_length);
 
   ResultDecoder results;
