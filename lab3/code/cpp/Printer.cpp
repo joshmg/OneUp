@@ -337,7 +337,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
       } else if (inst == ".EXT") {
         // .EXT
-        for (int i; i<current_line.Size(); i++) {
+        for (int i=0; i<current_line.Size(); i++) {
           if (symbols.IsSymbol(current_line[i])) {
             // attempting to declare label as external
             // that is defined in this file.
