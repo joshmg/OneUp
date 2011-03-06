@@ -392,7 +392,7 @@ bool Wi11::ExecuteNext(bool verbose) {
         else return false;
       }
       else {
-        if (verbose) cout << "Branch ignored." << endl;
+        if (verbose) cout << "Branch ignored." << endl << endl;
         return true;
       }
     } break;
