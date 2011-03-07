@@ -1,7 +1,5 @@
-objects = cpp/Decoder.o cpp/Extractor.o cpp/Line.o cpp/Loader.o cpp/Main.o \
-			cpp/Memory.o cpp/ObjParser.o cpp/Printer.o cpp/Register.o \
-			cpp/ResultCodes.o cpp/SymbolTable.o cpp/Wi11.o cpp/Word.o \
-			cpp/itos.o cpp/FileArray.o
+objects = cpp/Decoder.o cpp/Extractor.o cpp/FileArray.o cpp/Line.o cpp/Loader.o cpp/Main.o cpp/Memory.o cpp/ObjParser.o \
+			cpp/Printer.o cpp/Register.o cpp/ResultCodes.o cpp/SymbolTable.o cpp/Wi11.o cpp/Word.o cpp/itos.o
 
 wi11: $(objects)
 	g++ -o wi11 $(objects)

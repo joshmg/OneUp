@@ -68,4 +68,3 @@ void FileArray::Clear() {
   _files.clear();
   _names.clear();
 }
-
