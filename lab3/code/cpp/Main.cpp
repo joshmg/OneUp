@@ -14,13 +14,12 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
-
 using namespace std;
 using namespace Codes;
 
 int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool listing);
-int Linker(vector<string>& infiles, string& outfile);
-int Simulator(string& infile, bool debug);
+int Linker(const vector<string>& infiles, const string& outfile);
+int Simulator(const string& infile, bool debug);
 
 void print_usage_error(char * name, bool help = false) {
   cout << "Usage: " << name << " [-t | -s# | -l] -a infile outfile\n"
@@ -335,7 +334,7 @@ int Assembler(const string& infile, const string& outfile, int symbol_length, bo
   return 0;
 }
 
-int Linker(vector<string>& infiles, string& outfile) {
+int Linker(const vector<string>& infiles, const string& outfile) {
   // open files
   // input files
   FileArray files;
@@ -513,7 +512,7 @@ int Linker(vector<string>& infiles, string& outfile) {
   return 0;
 }
 
-int Simulator(string& infile, bool debug) {
+int Simulator(const string& infile, bool debug) {
   Wi11 simulator;
 /*
   if (debug) cout << "Loading object files... ";

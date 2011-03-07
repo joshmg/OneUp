@@ -15,16 +15,16 @@ FileArray::FileArray() {
 
 RESULT FileArray::Add(string name) {
   // create a pointer to a file
-  ObjParser parser;
+  ObjParser* parser = new ObjParser();
 
   // open file
-  RESULT result = parser.Initialize(name.c_str());
+  RESULT result = parser->Initialize(name.c_str());
   if (result != SUCCESS) {
     return RESULT(result.msg, name);
   }
 
   // check first char for main function
-  ObjectData header = parser.GetNext();
+  ObjectData header = parser->GetNext();
   if ( header.type == 'M') {
     if (_hasMain) {
       return RESULT(MULTI_MAIN, name);
@@ -44,7 +44,7 @@ RESULT FileArray::Add(string name) {
 
 void FileArray::Reset() {
   for (int i = 0; i < _files.size(); i++) {
-    _files[i].Initialize(_names[i].c_str());
+    _files[i]->Initialize(_names[i].c_str());
   }
 }
 
@@ -53,7 +53,7 @@ string FileArray::Name(int index) const {
 }
 
 ObjParser& FileArray::operator[](int index) {
-  return _files[index];
+  return *(_files[index]);
 }
 
 int FileArray::Size() const {
@@ -61,6 +61,10 @@ int FileArray::Size() const {
 }
 
 void FileArray::Clear() {
+  // undo dynamic memory allocations
+  for (int i = 0; i < _files.size(); i++) {
+    delete _files[i];
+  }
   _files.clear();
   _names.clear();
 }

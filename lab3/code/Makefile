@@ -30,6 +30,7 @@ cpp/Main.o: h/Decoder.h h/Loader.h h/iLoader.h h/Extractor.h h/iExtractor.h
 cpp/Main.o: h/SymbolTable.h h/iSymbolTable.h h/SymbolTable.h h/Printer.h
 cpp/Main.o: h/iPrinter.h h/Line.h h/iLine.h h/ResultCodes.h h/FileArray.h
 cpp/Main.o: h/iFileArray.h h/ObjParser.h h/iObjParser.h h/ObjParser.h
+cpp/Main.o: h/itos.h
 cpp/Memory.o: h/iMemory.h h/Memory.h h/iMemory.h h/iWord.h h/ResultCodes.h
 cpp/Memory.o: h/Word.h h/ResultCodes.h
 cpp/ObjParser.o: h/ObjParser.h

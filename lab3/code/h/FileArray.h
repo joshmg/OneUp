@@ -16,7 +16,7 @@
 class FileArray : public iFileArray {
   private:
     //! Keeps all of the files open for the two pass algorithm.
-    std::vector<ObjParser> _files;
+    std::vector<ObjParser*> _files;
     //! Keeps track of the names of the files.
     std::vector<std::string> _names;
     //! True iff a main file has already been found.
