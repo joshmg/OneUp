@@ -8,12 +8,13 @@
 #include "../h/ResultCodes.h"
 #include "../h/FileArray.h"
 #include "../h/ObjParser.h"
-#include <cstdlib>
-#include <cstring> // for strlen()
-#include <string>
+#include "../h/itos.h"
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
+#include <string>
 #include <vector>
+
 using namespace std;
 using namespace Codes;
 
@@ -138,7 +139,7 @@ int main (int argc, char* argv[]) {
         const int s_char_limit = 12;
         // 12 = 10 digits in MAX_INT + 2 for '-s'
 
-        if (strlen(argv[pos]) > s_char_limit) {
+        if (arg_pos.length() > s_char_limit) {
           cout << "Error: Number following \"-s\" too large.\n";
           return 1;
         }
@@ -338,38 +339,176 @@ int Linker(vector<string>& infiles, string& outfile) {
   // open files
   // input files
   FileArray files;
+  ResultDecoder decoder;
   for (int i = 0; i < infiles.size(); i++) {
-    RESULT result = files.Add(infiles[i]);
-    if (result != SUCCESS) {
-      return result;
+    RESULT result = files.Add( infiles[i] );
+    if (result.msg != SUCCESS) {
+      cout << decoder.Find(result);
+      return 1;
     }
   }
   //output file
   ofstream outs;
-  outs.open(outfile);
+  outs.open(outfile.c_str());
   if (!outs.is_open()) {
-    return RESULT(FILE_NOT_OPENED, outfile);
+    RESULT result(FILE_NOT_OPENED, outfile);
+    cout << decoder.Find(result);
+    return 1;
   }
 
   // get symbols
   SymbolTable symbols;
+  ObjectData line;
   int length = 0;
   for (int i = 0; i < files.Size(); i++) {
-    string line;
+    int pos = 0;
+    cout << "Parsing " << files.Name(i) << ":\n";
 
-    // get header record
-    getline(files[i], line);
-    line = line.substr(1); // H or M
-    string name = line.substr(0, 6);
+    // Get header record
+    line = files[i].GetNext();
+    ++pos;
+    if (line.type == 'H' || line.type == 'M') {
+      // H(M)|NAME  |SIZE
 
-    // get rid of trailing spaces
-    for (int j = 5; j > 0; j--) {
-      if (name[j] == ' ') {
-        name = name.substr(0, j);
+      // Make sure it's not absolute
+      if (line.data[1] != RELOCATE_FLAG) {
+        RESULT result(LINK_ABS, files.Name(i));
       }
+      // store as an entry point
+      symbols.InsertLabel(line.data[0], length);
+      // keep track of lenght
+      Word size;
+      size.FromHex("0x" + line.data[2]);
+      length += size.ToInt();
+    } else {
+      // Doesn't start with header record
+      cout << decoder.Find(RESULT(INVALID_HEADER_ENTRY, "Line " + itos(pos)));
+      return 1;
     }
 
-    
+    line = files[i].GetNext();
+    ++pos;
+    // wait for E or junk
+    while (line.type == 'N' || line.type == 'X' || line.type == 'x' ||
+           line.type == 'R' || line.type == 'W' || line.type == 'T') {
+      // only N's matter at this point
+      // check for errors
+
+      if (line.type == 'N') {
+        // N|SYMBOL_NAME|ADDR
+        Word value;
+        if (!value.FromHex("0x" + line.data[1])) {
+          cout << decoder.Find(RESULT(INV_HEX, "Line " + itos(pos)));
+          return 1;
+        }
+        symbols.InsertLabel(line.data[0], value);
+      }
+      line = files[i].GetNext();
+      ++pos;
+    }
+
+    // found something that's not a normal text record
+    // either an end record or an error
+    if (line.type != 'E') {
+      cout << decoder.Find(RESULT(INVALID_DATA_ENTRY, "Line " + itos(pos)));
+    }
+  }
+  // done getting symbols
+  // all must have valid syntax
+
+  const int PAGE_SIZE = 0x01FF;
+  // check length
+  if (length > PAGE_SIZE) {
+    cout << decoder.Find(RESULT(MEM_FIT, itos(length - PAGE_SIZE) + " extra lines"));
+    return 1;
+  }
+  // Go back to the top of each file
+  files.Reset();
+  Word full_length(length);
+  length = 0;  // the number of data records in outfile
+
+  // print output
+  // header record
+  line = files[0].GetNext(); // main header record -- for name
+  // H|MAIN  |SIZE
+  outs << 'H' << line.data[0] << full_length.ToHex().substr(2) << endl;
+
+  int pos = 1; // line number
+  string main_end; // keep the main file end record
+  for (int i = 0; i<files.Size(); i++) {
+    line = files[i].GetNext();
+    if (line.type == 'H') { // can't be 'M' because we're already past the main file's header
+      // ignore all other headers
+      line = files[i].GetNext();
+    }
+    pos = 1;
+    while (line.type == 'N' || line.type == 'X' || line.type == 'x' ||
+           line.type == 'R' || line.type == 'W' || line.type == 'T') {
+      switch (line.type) {
+        case 'N': {
+          // ignore
+        } break;
+
+        case 'x':
+        case 'X': {
+          // X(x)|ADDR|DATA(INST)
+          // SYMBOL_NAME
+          if (!symbols.IsSymbol(line.data[2])) {
+            // SYMBOL_NAME is not in the table
+            cout << decoder.Find(RESULT(UNRESOLVED_EXTERNAL, "Line " + itos(pos)));
+            return 1;
+          }
+          Word addr, data, value;
+          if (!addr.FromHex("0x" + line.data[0])) {
+            cout << decoder.Find(RESULT(INV_HEX, "Line " + itos(pos)));
+            return 1;
+          }
+          addr = addr + Word(length); // apply offset to addr
+          if (!data.FromHex("0x" + line.data[1])) {
+            cout << decoder.Find(RESULT(INV_HEX, "Line " + itos(pos)));
+            return 1;
+          }
+          // get value of symbol
+          value = symbols.GetLabelAddr(line.data[2]);
+
+          // addr and data are valid hex, symbol value retrieved
+          if (line.type == 'x') {
+            // value = pgoffset9
+            for (int j = 9; i < WORD_SIZE; j++) {
+              // copy page number
+              value.SetBit(j, data[j]);
+            }
+            outs << 'R' << addr.ToHex().substr(2) << value.ToHex().substr(2);
+            
+          } else { // line.type == 'X'
+            // value = word of data
+            outs << 'W' << addr.ToHex().substr(2) << value.ToHex().substr(2);
+          }
+          ++length;
+        } break;
+
+        default: {
+          // T(R/W)|ADDR|INST
+          Word addr, inst;
+          addr.FromHex("0x" + line.data[0]);
+          addr = addr + Word(length);
+          inst.FromHex("0x" + line.data[0]);
+          outs << line.type << addr.ToHex().substr(2) << inst.ToHex().substr(2) << endl;
+          ++length;
+        } break;
+      } // end switch
+      // Must be end record
+      if (i == 0) {
+        main_end = line.type + line.data[0];
+      }
+      // done with file
+    }
+  }
+  // output main's end record
+  outs << main_end << endl;
+
+  // done, close outfile
+  outs.close();
 
   return 0;
 }

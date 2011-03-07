@@ -9,19 +9,22 @@
 using namespace std;
 using namespace Codes;
 
+FileArray::FileArray() {
+  _hasMain = false;
+}
 
 RESULT FileArray::Add(string name) {
   // create a pointer to a file
   ObjParser parser;
 
   // open file
-  RESULT result = parser.Initialize(name);
+  RESULT result = parser.Initialize(name.c_str());
   if (result != SUCCESS) {
     return RESULT(result.msg, name);
   }
 
   // check first char for main function
-  ObjData header = parser.GetNext();
+  ObjectData header = parser.GetNext();
   if ( header.type == 'M') {
     if (_hasMain) {
       return RESULT(MULTI_MAIN, name);
@@ -39,18 +42,21 @@ RESULT FileArray::Add(string name) {
 }
 
 
-void FileArray::Restart() {
-  for (int i = 0; i < _files.Size(); i++) {
-    _files[i].Initialize(_names[i]);
+void FileArray::Reset() {
+  for (int i = 0; i < _files.size(); i++) {
+    _files[i].Initialize(_names[i].c_str());
   }
 }
 
+string FileArray::Name(int index) const {
+  return _names[index];
+}
 
-ifstream& FileArray::operator[](int index) {
+ObjParser& FileArray::operator[](int index) {
   return _files[index];
 }
 
-int FileArray::Size() {
+int FileArray::Size() const {
   return _files.size();
 }
 

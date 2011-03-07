@@ -101,8 +101,7 @@ ObjectData ObjParser::GetNext() {
       _object.data.push_back(line.substr(1, line.size() - 5));
       // addr      N|FOO|XXXX  size = 8, -4 for addr, 4, 4; = XXXX
       _object.data.push_back(line.substr(line.size()-4, 4));
-
-      return _object;
+      break;
 
     // Text line
     case 'X':

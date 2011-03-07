@@ -27,7 +27,7 @@ namespace Codes {
     SUCCESS,        // Operation succeeded
 
 
-    // Simulator Error Codes:
+    // Simulator/Linker Error Codes:
     HALT,                 // TRAP Halt Command
     UNDEFINED,            // An error description could not be found.
     INVALID_HEADER_ENTRY, // Invalid object file header
@@ -42,6 +42,8 @@ namespace Codes {
     RELOCATION_OVERFLOW,  // During relocation, the composit address overflowed.
     RELOCATION_OUTSIDE_BOUNDS,  //During relocation, the composit address attempted to access an address outside of bounds.
     UNRESOLVED_EXTERNAL,  // Unresolved Symbol found in object file.
+    LINK_ABS,             // Attempt to link an absolute program
+    MULTI_MAIN,           // Attempt to link multiple main files
 
     // Assembler Error Codes:
     INV_LBL,        // Label starts with an invalid character
@@ -120,7 +122,7 @@ class ResultDecoder {
       _codes[Codes::SUCCESS] = "Successful.";
 
 
-      // Simulator Error Codes:
+      // Simulator/Linker Error Codes:
       _codes[Codes::HALT] = "Execution has been terminated (Halt).";
       _codes[Codes::UNDEFINED] = "An unexpected error occured.";
       _codes[Codes::INVALID_HEADER_ENTRY] = "Invalid object file header (Was the first character an 'H' or 'M'?).";
@@ -129,13 +131,14 @@ class ResultDecoder {
       _codes[Codes::NOT_HEX] = "There was an invalid hex string found.";
       _codes[Codes::INVALID_TRAP_CODE] = "The provided trap code is not valid.";
       _codes[Codes::INVALID_START_PC] = "The initial value of the PC is out of bounds.";
-      _codes[Codes::REQUESTED_MEMORY_TOO_LARGE] = "Memory too large.";
+      _codes[Codes::REQUESTED_MEMORY_TOO_LARGE] = "Requested memory too large.";
       _codes[Codes::BAD_MALLOC] = "Bad Malloc from OS.";
       _codes[Codes::RELOCATE_ENTRY_IN_ABSOLUTE] = "Relocatable Text Entry found in a non-relocatable object file.";
       _codes[Codes::RELOCATION_OVERFLOW] = "During relocation, the composit address overflowed.";
       _codes[Codes::RELOCATION_OUTSIDE_BOUNDS] = "During relocation, the composit address attempted to access an address outside of bounds.";
       _codes[Codes::UNRESOLVED_EXTERNAL] = "Unresolved Symbol in object file.";
-
+      _codes[Codes::LINK_ABS] = "Attempt to link an absolute program.";
+      _codes[Codes::MULTI_MAIN] = "Attempt to link multiple main files.";
 
       // Assembler Error Codes:
       _codes[Codes::INV_LBL] = "Label starting with 'R' or 'x'.";
