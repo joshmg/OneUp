@@ -76,7 +76,11 @@ RESULT Loader::Load(const char* filename, iWord& PC_address) const {
   }
 
   if (Data.data[1] == RELOCATE_FLAG) {
-    RESULT malloc_result = _GetLoadAddress(Hex1, Word(atoi(Data.data[2].c_str())));
+    Word segment_length;
+    if (!segment_length.FromHex("0x" + Data.data[2])) {
+      return RESULT(INV_HEX, "Line 1");
+    }
+    RESULT malloc_result = _GetLoadAddress(Hex1, segment_length);
 
     if (malloc_result != SUCCESS) return malloc_result;
 
