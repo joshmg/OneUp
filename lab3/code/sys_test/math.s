@@ -20,8 +20,8 @@ sqrtpc  .BLKW #1       ; store R7 while executing square root
 ; Uses R5 and R6, guesses one and goes up as necessary
 SQRT    AND R5,R5,#0  ; Clear R5
         ADD R4,R4,#0  ; set CCR for R4
-        BRZ sqfin     ; if R4 = 0, return 0
         ST R7,sqrtpc  ; Save R7, to allow for calling MULT
+        BRZ sqfin     ; if R4 = 0, return 0
 sqnext  ADD R5,R5,#1  ; R5++
         ADD R6,R5,#0  ; R6 = R5
         JSR MULT      ; R0 = R5*R6

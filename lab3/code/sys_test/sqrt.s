@@ -29,19 +29,17 @@ start   TRAP inn        ; print prompt & get number
         TRAP puts       ; Print ") = " -- now have "SQRT(#) = "
         ADD R4,R4,#0    ; Set CCR for R4 -- input number
 ; If the value is negative, negate it and add an 'i' after the answer
-; If the value is zero, skip to the printing phase
-; If the value is positive, do the square root normally
+; Otherwise, do the square root normally.
         BRN neg
-        BRZ print
-        BRP pos
+        BRZP go
 ; Negate
 neg     NOT R4,R4       
         ADD R4,R4,#1
         ADD R2,R2,#1    ; R2 = 1 -- boolean for negative
 ; Get square root
-pos     JSR SQRT
+go      JSR SQRT
 ; Print answer
-print   TRAP outn
+        TRAP outn
         ADD R2,R2,#0  ; Set CCR for R2
 ; if not zero, print an 'i'
         BRZ end

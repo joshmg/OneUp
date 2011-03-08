@@ -135,7 +135,7 @@ class ResultDecoder {
       _codes[Codes::REQUESTED_MEMORY_TOO_LARGE] = "Requested memory too large.";
       _codes[Codes::BAD_MALLOC] = "Bad Malloc from OS.";
       _codes[Codes::RELOCATE_ENTRY_IN_ABSOLUTE] = "Relocatable Text Entry found in a non-relocatable object file.";
-      _codes[Codes::RELOCATION_OVERFLOW] = "During relocation, the composit address overflowed.";
+      _codes[Codes::RELOCATION_OVERFLOW] = "During relocation, the composite address overflowed.";
       _codes[Codes::RELOCATION_OUTSIDE_BOUNDS] = "During relocation, the composite address attempted to access an address outside of bounds.";
       _codes[Codes::UNRESOLVED_EXTERNAL] = "Unresolved Symbol in object file.";
       _codes[Codes::LINK_ABS] = "Attempt to link an absolute program.";
