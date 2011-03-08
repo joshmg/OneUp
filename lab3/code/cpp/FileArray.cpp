@@ -36,6 +36,12 @@ RESULT FileArray::Add(string name) {
     _names.insert(_names.begin(), name);
     return RESULT(SUCCESS);
   }
+
+  if (header.type != 'H') {
+    // invalid file
+    return RESULT(INVALID_HEADER_ENTRY, name);
+  }
+
   // header file
   _files.push_back(parser);
   _names.push_back(name);

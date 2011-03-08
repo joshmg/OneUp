@@ -164,6 +164,10 @@ string Printer::_InFileData(const int line_number, const Line& current_line) {
 
 //*** public ***//
 
+Printer::Printer(bool verbose) {
+  _verbose = verbose;
+}
+
 Printer::~Printer() {
   if (_inStream.is_open()) {
     _inStream.close();
@@ -247,12 +251,16 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << file_length.ToHex().substr(2,4) << "\n";
 
         //*** listing output
-        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        if (_verbose) {
+          cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        }
 
       } else if (inst == ".MAIN") {
         is_main = true;
         //listing output
-        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        if (_verbose) {
+          cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        }
 
       } else if (inst == ".BLKW") {
         // Block pseudo-op
@@ -261,14 +269,19 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         Word value = _ParseWord(op, symbols);
 
         //*** listing output
-        cout << '(' << current_address.ToHex().substr(2) << ')'
-              << string(listing_offset - 6, ' ')  // - 6: already printed 6 chars
-              << _InFileData(pos, current_line);
+        if (_verbose) {
+          cout << '(' << current_address.ToHex().substr(2) << ')'
+                << string(listing_offset - 6, ' ')  // - 6: already printed 6 chars
+                << _InFileData(pos, current_line);
+        }
         current_address = current_address + value;
 
       } else if (inst == ".EQU") {
         // just print line
-        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        //*** listing output
+        if (_verbose) {
+          cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        }
 
       } else if (inst == ".FILL") {
         // Fill pseudo-op
@@ -300,7 +313,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         //*** listing output
-        _LineListing(current_address, value, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, value, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == ".STRZ") {
@@ -320,10 +335,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           _outStream << character.ToHex().substr(2,4) << "\n";
 
           //*** listing output
-          if (i == 0) {
-            _LineListing(current_address, character, current_line, pos);
-          } else {
-            _LineListing(current_address, character, Line(), pos);
+          if (_verbose) {
+            if (i == 0) {
+              _LineListing(current_address, character, current_line, pos);
+            } else {
+              _LineListing(current_address, character, Line(), pos);
+            }
           }
           current_address++;
         }
@@ -332,9 +349,11 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << 'T' << current_address.ToHex().substr(2,4) << "0000\n";
 
         //*** listing output 2 -- null character
-        cout << '(' << current_address.ToHex().substr(2) << ')'
-              << ' ' << string(4, '0') << "  " << string(16, '0') << ' '
-              << _InFileData(pos, Line());
+        if (_verbose) {
+          cout << '(' << current_address.ToHex().substr(2) << ')'
+                << ' ' << string(4, '0') << "  " << string(16, '0') << ' '
+                << _InFileData(pos, Line());
+        }
         current_address++;
 
       } else if (inst == ".EXT") {
@@ -349,7 +368,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         // listing output
-        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        if (_verbose) {
+          cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        }
 
       } else if (inst == ".ENT") {
         // .ENT
@@ -360,7 +381,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         // listing output
-        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        if (_verbose) {
+          cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        }
 
       } else if (inst == "ADD" || inst == "AND") {
         // ADD-like instructions
@@ -468,7 +491,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == "JSR" || inst == "JMP") {
@@ -534,7 +559,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == "JSRR" || inst == "JMPR") {
@@ -600,7 +627,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == "LD" || inst == "LDI" || inst == "LEA" || inst == "ST" || inst == "STI") {
@@ -708,7 +737,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         }
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == "LDR" || inst == "STR") {
@@ -789,7 +820,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == "NOT") {
@@ -848,7 +881,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == "DBUG" || inst == "RET") {
@@ -874,7 +909,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == "TRAP") {
@@ -916,7 +953,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst.substr(0,2) == "BR") {
@@ -978,7 +1017,9 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         _outStream << initial_mem.ToHex().substr(2,4) << '\n';
 
         //*** listing output
-        _LineListing(current_address, initial_mem, current_line, pos);
+        if (_verbose) {
+          _LineListing(current_address, initial_mem, current_line, pos);
+        }
         current_address++;
 
       } else if (inst == ".END") {
@@ -992,10 +1033,12 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
           Word value(it->first);
           // object file output
           _outStream << 'T' << current_address.ToHex().substr(2) << value.ToHex().substr(2) << '\n';
-          //*** listing output 2
-          cout << '(' << current_address.ToHex().substr(2) << ')'
-                << ' ' << value.ToHex().substr(2) << "  " << value.ToStr()
-                << " ( lit) <" << value.ToInt2Complement() << ">\n"; // print literal value in <>'s
+          //*** listing output 1
+          if (_verbose) {
+            cout << '(' << current_address.ToHex().substr(2) << ')'
+                  << ' ' << value.ToHex().substr(2) << "  " << value.ToStr()
+                  << " ( lit) <" << value.ToInt2Complement() << ">\n"; // print literal value in <>'s
+          }
           current_address++;
           it++;
         }
@@ -1021,8 +1064,10 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
 
         _outStream << 'E' << load.ToHex().substr(2) << '\n';
 
-        //*** listing output 1
-        cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        //*** listing output 2
+        if (_verbose) {
+          cout << string(listing_offset, ' ') << _InFileData(pos, current_line);
+        }
 
         return RESULT(SUCCESS);
       }

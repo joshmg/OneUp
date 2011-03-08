@@ -18,14 +18,14 @@ using namespace std;
 using namespace Codes;
 
 void remove_temps(const vector<string>& files);
-int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool listing);
+int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool verbose);
 int Linker(const vector<string>& infiles, const string& outfile);
 int Simulator(const string& infile, bool debug);
 
 void print_usage_error(char * name, bool help = false) {
-  cout << "Usage: " << name << " [-t | -s# | -l] -a infile outfile\n"
-      <<  "       " << name << " [-t | -s# | -l] -o outfile [-n] infile ...\n"
-      <<  "       " << name << " [-t | -s# | -l | -d] -ox outfile [-n] infile ...\n"
+  cout << "Usage: " << name << " [-t | -s# | -v] -a infile outfile\n"
+      <<  "       " << name << " [-t | -s# | -v] -o outfile [-n] infile ...\n"
+      <<  "       " << name << " [-t | -s# | -v | -d] -ox outfile [-n] infile ...\n"
       <<  "       " << name << " [-d] -x infile\n\n";
       if (!help) {
         cout <<  "For more information run: " << name << " --help\n";
@@ -33,29 +33,6 @@ void print_usage_error(char * name, bool help = false) {
 } 
 
 int main (int argc, char* argv[]) {
-/*
-  string in;
-  cout << "Assemble? (Y/n) ";
-  getline(cin, in);
-  if (in[0] != 'N' && in[0] != 'n') {
-    cout << "Source File Name: ";
-    getline(cin, in);
-
-    vector<string> infiles;
-    infiles.push_back(in);
-
-    string outfile = "out.o";
-    Assembler(infiles, outfile, 1000, true, true);
-  }
-
-  cout << "Object File Name: ";
-  string fname;
-
-  getline(cin, fname);
-
-  Simulator(fname, false);
-  return 0;
-*/
   // wi11
   bool assemble = true;
   bool link = true;
@@ -64,7 +41,7 @@ int main (int argc, char* argv[]) {
   string outfile;
   // assembler
   bool trap_labels = false;
-  bool listing = false;
+  bool verbose = false;
   int symbol_length = SYMBOL_TABLE_MAX_SIZE;
   // simulator
   bool debug = false;
@@ -81,8 +58,8 @@ int main (int argc, char* argv[]) {
     cout << "Options:\n"
         <<  "  -t:  Include the trap code labels -- out, puts, in, halt, outn, inn, & rnd.\n"
         <<  "  -s#: Increase the symbol limit -- defaults to 1000.\n"
-        <<  "  -l:  Print a listing during assembly.\n"
-        <<  "  -d:  Print verbose debug information during execution.\n"
+        <<  "  -v:  Verbose: Print a description of what is being done during assembly and linking.\n"
+        <<  "  -d:  Print debug information during execution.\n"
         <<  "  --------------------------------------------------------------------------------------\n"
         <<  "  -a:  Assemble \"infile\" into \"outfile\", do not link or execute.\n"
         <<  "  -o:  Assemble and link multiple files, creating a single object file named \"outfile\"\n"
@@ -99,13 +76,21 @@ int main (int argc, char* argv[]) {
         <<  "Examples:\n"
         <<  "  wi11 -t -s2000 -a file1.s file2.s file3.s\n"
         <<  "      This will create the object files the correspond to each file individually.\n"
-        <<  "      They will not be linked or executed.\n"
+        <<  "      They will not be linked or executed.  The maximum number of symbols is 2000\n"
+        <<  "      and the trap codes will be added for the user.\n"
         <<  endl
-        <<  "  wi11 -l -t -o prog.o file1.s file2.s file3.s\n"
+        <<  "  wi11 -v -o prog.o file1.s file2.s file3.s\n"
         <<  "      This will assemble and link file1.s, file2.s, and file3.s into prog.o.\n"
+        <<  "      Messages corresponding to the current phase of assembly or linking will\n"
+        <<  "      be printed to the console.\n"
         <<  endl
         <<  "  wi11 -ox prog.o -n file1.o file2.o file3.o\n"
-        <<  "      This will link file1.o, file2.o, and file3.o into prog.o and execute it.\n";
+        <<  "      This will link file1.o, file2.o, and file3.o into prog.o and execute it.\n"
+        <<  endl
+        <<  "  wi11 -d -x prog.o\n"
+        <<  "      This will execute prog.o but allow the user to input parameters by which\n"
+        <<  "      the execution will take place as well as view the state of the machine\n"
+        <<  "      after each individual instruction is executed.\n";
     return 0;
   }
 
@@ -130,8 +115,8 @@ int main (int argc, char* argv[]) {
         debug = true;
       } break;
 
-      case 'l': {             // -l -- print listing
-        listing = true;
+      case 'v': {             // -v -- verbose mode
+        verbose = true;
       } break;
 
       case 's': {             // -s -- maximum number of symbols
@@ -226,7 +211,7 @@ int main (int argc, char* argv[]) {
           return 1;
         }
         // check for valid arguements
-        if (trap_labels || listing) {
+        if (trap_labels || verbose) {
           print_usage_error(argv[0]);
           return 1;
         }
@@ -247,26 +232,36 @@ int main (int argc, char* argv[]) {
 
   // assemble
   if (assemble) {
-    cout << "Assembling...\n";
+    if (verbose) {
+      cout << "Assembling...\n";
+    }
     if (!link && !execute) {
       // say which file
-      cout << "-- " << infiles[0] << ":\n";
+      if (verbose) {
+        cout << "-- " << infiles[0] << ":\n";
+      }
 
-      ret = Assembler(infiles[0], outfile, symbol_length, trap_labels, listing);
-      cout << endl;
+      ret = Assembler(infiles[0], outfile, symbol_length, trap_labels, verbose);
+      if (verbose) {
+        cout << endl;
+      }
     } else {
       // not assembling a single file
       for (int i=0; i<infiles.size(); i++) {
-        // name each file on assembly
-        cout << "-- " << infiles[i] << ":\n";
+        // if listings will be printed, name each file on assemble
+        if (verbose) {
+          cout << "-- " << infiles[i] << ":\n";
+        }
 
         char temp_name[L_tmpnam];
         tmpnam(temp_name);
         
         temp_files.push_back(temp_name);
 
-        ret = Assembler(infiles[i], temp_name, symbol_length, trap_labels, listing);
-        cout << endl;
+        ret = Assembler(infiles[i], temp_name, symbol_length, trap_labels, verbose);
+        if (verbose) {
+          cout << endl;
+        }
       }
     }
     if (ret != 0) {
@@ -275,8 +270,11 @@ int main (int argc, char* argv[]) {
     }
   }
   // link
-  if (link) {
-    cout << "Linking...\n";
+  if (link && infiles.size() > 1) {
+    //        ^ don't link only one file
+    if (verbose) {
+      cout << "Linking... ";
+    }
     if (temp_files.size() == 0) {
       ret = Linker(infiles, outfile);
     } else {
@@ -286,14 +284,18 @@ int main (int argc, char* argv[]) {
       remove_temps(temp_files);
       return ret;
     }
-    cout << endl;
+    if (verbose) {
+      cout << "Done." << endl;
+    }
   }
   // remove temp files, they are no longer need
   remove_temps(temp_files);
 
   // execute
   if (execute) {
-    cout << "Executing...\n";
+    if (verbose) {
+      cout << "Executing...\n";
+    }
     return Simulator(outfile, debug);
   }
   // everyting went well
@@ -315,7 +317,7 @@ void remove_temps(const vector<string>& files) {
   }
 }
 
-int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool listing) {
+int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool verbose) {
   Extractor extract(symbol_length);
 
   ResultDecoder results;
@@ -350,7 +352,7 @@ int Assembler(const string& infile, const string& outfile, int symbol_length, bo
       symbols.InsertLabel("rnd", Word(0x43));
     }
 
-    Printer printer;
+    Printer printer(verbose);
     result = printer.Open(infile, outfile);
     if (result.msg != SUCCESS) {
       cout << results.Find(result);
@@ -394,7 +396,6 @@ int Linker(const vector<string>& infiles, const string& outfile) {
   const int PAGE_SIZE = 0x01FF;
   for (int i = 0; i < files.Size(); i++) {
     int pos = 0;
-    cout << "Parsing " << files.Name(i) << ":\n";
 
     // Get header record
     line = files[i].GetNext();
@@ -415,12 +416,12 @@ int Linker(const vector<string>& infiles, const string& outfile) {
 
       // check length
       if ((length + size.ToInt()) > PAGE_SIZE) {
-        cout << decoder.Find(RESULT(MEM_FIT, itos(length - PAGE_SIZE) + " extra lines"));
+        cout << decoder.Find(RESULT(MEM_FIT, itos(length - PAGE_SIZE) + " extra lines after " + itos(i) + " files"));
         return 1;
       }
     } else {
       // Doesn't start with header record
-      cout << decoder.Find(RESULT(INVALID_HEADER_ENTRY, "Line " + itos(pos)));
+      cout << decoder.Find(RESULT(INVALID_HEADER_ENTRY, files.Name(i) + ": Line " + itos(pos)));
       return 1;
     }
 
@@ -574,18 +575,11 @@ int Linker(const vector<string>& infiles, const string& outfile) {
 
 int Simulator(const string& infile, bool debug) {
   Wi11 simulator;
-/*
-  if (debug) cout << "Loading object files... ";
-  for (int i=0;i<obj_files.size();i++) {
-    if (!simulator.LoadObj(obj_files[i].c_str())) {
-      cout << "Aborting." << endl;
-      return 1;
-    }
-  }
-  if (debug) cout << "done." << endl;
-*/
 
-  simulator.LoadObj(infile.c_str());
+  if (!simulator.LoadObj(infile.c_str())) {
+    // Error in file, already printed
+    return 1;
+  }
 
   if (debug) {
     // print initial status

@@ -36,6 +36,8 @@ class Printer : public iPrinter {
     std::ifstream _inStream;
     //! The output file.
     std::ofstream _outStream;
+    //! The Printer object will print to the console iff this is True.
+    bool _verbose;
 
     /*! @brief Set 0 or more bits of a word.
         @param[in:out] w The word whose bits are to be set.
@@ -128,7 +130,9 @@ will be handled outside of this function.
     std::string _InFileData(const int line_number, const Line& current_line);
 
   public:
-    //! @brief Closes the input and output files, if necessary.
+    //! Sets the mode of execution in terms of console output.
+    Printer(bool verbose = true);
+    //! Closes the input and output files, if necessary.
     ~Printer();
 
     Codes::RESULT Open(std::string infile, std::string outfile);
