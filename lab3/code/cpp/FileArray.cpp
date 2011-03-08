@@ -25,6 +25,7 @@ RESULT FileArray::Add(string name) {
 
   // check first char for main function
   ObjectData header = parser->GetNext();
+  parser->Initialize(name.c_str()); // restart file
   if ( header.type == 'M') {
     if (_hasMain) {
       return RESULT(MULTI_MAIN, name);

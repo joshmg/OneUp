@@ -80,6 +80,7 @@ namespace Codes {
     UNEXP_EOF,      // Unexpected EOF
     REL_PG_SIZE,    // Relocatable prog spans won't fit in one page
     MEM_FIT,        // Program won't fit in memory
+    MAIN_LBL,       // .MAIN cannot have a label
     END_LBL,        // .END cannot have a label
     INV_COMMENT,    // Comment without ;
     MAIN,           // Main after .ORIG
@@ -135,7 +136,7 @@ class ResultDecoder {
       _codes[Codes::BAD_MALLOC] = "Bad Malloc from OS.";
       _codes[Codes::RELOCATE_ENTRY_IN_ABSOLUTE] = "Relocatable Text Entry found in a non-relocatable object file.";
       _codes[Codes::RELOCATION_OVERFLOW] = "During relocation, the composit address overflowed.";
-      _codes[Codes::RELOCATION_OUTSIDE_BOUNDS] = "During relocation, the composit address attempted to access an address outside of bounds.";
+      _codes[Codes::RELOCATION_OUTSIDE_BOUNDS] = "During relocation, the composite address attempted to access an address outside of bounds.";
       _codes[Codes::UNRESOLVED_EXTERNAL] = "Unresolved Symbol in object file.";
       _codes[Codes::LINK_ABS] = "Attempt to link an absolute program.";
       _codes[Codes::MULTI_MAIN] = "Attempt to link multiple main files.";
@@ -175,6 +176,7 @@ class ResultDecoder {
       _codes[Codes::UNEXP_EOF] = "Unexpected end of file.";
       _codes[Codes::REL_PG_SIZE] = "Relocatable programs cannot occupy more than one page in memory.";
       _codes[Codes::MEM_FIT] = "This program will not fit in memory.";
+      _codes[Codes::MAIN_LBL] = "\".MAIN.\" instruction cannot have a label.";
       _codes[Codes::END_LBL] = "\".END\" instruction cannot have a label.";
       _codes[Codes::INV_COMMENT] = "Comment not preceeded by ';'.\n((Whitespace separating arguments?))";
       _codes[Codes::MAIN] = "\".MAIN\" should preceed \".ORIG\".";

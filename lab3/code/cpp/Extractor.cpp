@@ -113,11 +113,14 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
           }
           
           symbols.InsertLabel(line.Label(), begin, relocatable);
-          _length++;
+          ++_length; // = 0
 
         } else if (line.Instruction() == ".MAIN") {
           // .MAIN
-          // Do nothing, only affects output file
+          // Shouldn't have a label
+          if (line.HasLabel()) {
+            return RESULT(MAIN_LBL);
+          }
 
         } else if (line.Instruction() == ".END") {
           // .END
@@ -210,7 +213,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
               return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
             }
           }
-          _length++;
+          ++_length;
 
         } else if (line.Instruction() == ".STRZ") {
           // .STRZ
@@ -302,7 +305,7 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
             return RESULT(MAX_S_SIZE, _LineNumber(pos) + ": (MaxSymbolCount: " + itos(_max_size) + ")");
           }
         }
-        _length++;
+        ++_length;
       }
 
       if (line.HasLiteral()) {

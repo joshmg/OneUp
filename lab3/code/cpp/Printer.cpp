@@ -475,7 +475,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // JSR Instructions
         // Text Record
         if (symbols.IsExternal(current_line[0])) {
-          _outStream << 'X';
+          _outStream << 'x';
         } else if (relocatable) {
           _outStream << 'R';
         } else {
@@ -607,7 +607,7 @@ RESULT Printer::Print(SymbolTable& symbols, Word& file_length) {
         // LD-like Instructions
         // Text Record
         if (symbols.IsExternal(current_line[1])) {
-          _outStream << 'X';
+          _outStream << 'x';
         } else if (relocatable) {
           _outStream << 'R';
         } else {

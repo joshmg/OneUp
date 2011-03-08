@@ -244,7 +244,7 @@ RESULT Line::ReadLine (string line) {
     if (_args.size() != 1) {
       return RESULT(ARG_SIZE);
     }
-  } else if (_inst == "DBUG" || _inst == "RET") {
+  } else if (_inst == "DBUG" || _inst == "RET" || _inst == ".MAIN") {
     if (_args.size() != 0) {
       return RESULT(ARG_SIZE);
     }

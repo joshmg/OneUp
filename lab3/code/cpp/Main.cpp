@@ -17,6 +17,7 @@
 using namespace std;
 using namespace Codes;
 
+void remove_temps(const vector<string>& files);
 int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool listing);
 int Linker(const vector<string>& infiles, const string& outfile);
 int Simulator(const string& infile, bool debug);
@@ -191,16 +192,18 @@ int main (int argc, char* argv[]) {
         // next argument
         ++pos;
         if (pos < argc) {
+          arg_pos = argv[pos];
           // check for link flag
-          if (argv[pos] == "-n") {
+          if (arg_pos == "-n") {
             assemble = false;
+            ++pos;
           }
         }
         while (pos < argc) {
           infiles.push_back(argv[pos++]);
         }
         // check for valid arguements
-        if (debug) {
+        if (!execute && debug) {
           print_usage_error(argv[0]);
           return 1;
         }
@@ -240,38 +243,69 @@ int main (int argc, char* argv[]) {
 
   // Execute desired functionality.
   vector<string> temp_files;
+  int ret;  // return value for each of the sections
+
+  // assemble
   if (assemble) {
     cout << "Assembling...\n";
     if (!link && !execute) {
-      Assembler(infiles[0], outfile, symbol_length, trap_labels, listing);
+      // say which file
+      cout << "-- " << infiles[0] << ":\n";
+
+      ret = Assembler(infiles[0], outfile, symbol_length, trap_labels, listing);
+      cout << endl;
     } else {
+      // not assembling a single file
       for (int i=0; i<infiles.size(); i++) {
+        // name each file on assembly
+        cout << "-- " << infiles[i] << ":\n";
+
         char temp_name[L_tmpnam];
         tmpnam(temp_name);
         
         temp_files.push_back(temp_name);
 
-        Assembler(infiles[i], temp_name, symbol_length, trap_labels, listing);
+        ret = Assembler(infiles[i], temp_name, symbol_length, trap_labels, listing);
+        cout << endl;
       }
     }
+    if (ret != 0) {
+      remove_temps(temp_files);
+      return ret;
+    }
   }
+  // link
   if (link) {
     cout << "Linking...\n";
     if (temp_files.size() == 0) {
-      Linker(infiles, outfile);
+      ret = Linker(infiles, outfile);
     } else {
-      Linker(temp_files, outfile);
+      ret = Linker(temp_files, outfile);
     }
+    if (ret != 0) {
+      remove_temps(temp_files);
+      return ret;
+    }
+    cout << endl;
   }
+  // remove temp files, they are no longer need
+  remove_temps(temp_files);
+
+  // execute
   if (execute) {
     cout << "Executing...\n";
     return Simulator(outfile, debug);
   }
+  // everyting went well
+  return 0;
+}
 
-  // remove temp files
+void remove_temps(const vector<string>& files) {
+  // watch for failed remove
   bool rm_err = false;
-  for (int i=0; i<temp_files.size(); i++) {
-    if (remove(temp_files[i].c_str()) != 0) {
+  // remove them one at a time
+  for (int i=0; i<files.size(); i++) {
+    if (remove(files[i].c_str()) != 0) {
       rm_err = true;
     }
   }
@@ -279,7 +313,6 @@ int main (int argc, char* argv[]) {
     // report failed deletions 
     cout << "WARNING: One or more temp files could not be removed.";
   }
-  return 0;
 }
 
 int Assembler(const string& infile, const string& outfile, int symbol_length, bool trap_labels, bool listing) {
@@ -350,8 +383,7 @@ int Linker(const vector<string>& infiles, const string& outfile) {
   ofstream outs;
   outs.open(outfile.c_str());
   if (!outs.is_open()) {
-    RESULT result(FILE_NOT_OPENED, outfile);
-    cout << decoder.Find(result);
+    cout << decoder.Find(RESULT(FILE_NOT_OPENED, outfile));
     return 1;
   }
 
@@ -359,6 +391,7 @@ int Linker(const vector<string>& infiles, const string& outfile) {
   SymbolTable symbols;
   ObjectData line;
   int length = 0;
+  const int PAGE_SIZE = 0x01FF;
   for (int i = 0; i < files.Size(); i++) {
     int pos = 0;
     cout << "Parsing " << files.Name(i) << ":\n";
@@ -366,19 +399,25 @@ int Linker(const vector<string>& infiles, const string& outfile) {
     // Get header record
     line = files[i].GetNext();
     ++pos;
+    Word size; // length of this segment
     if (line.type == 'H' || line.type == 'M') {
       // H(M)|NAME  |SIZE
 
       // Make sure it's not absolute
       if (line.data[1] != RELOCATE_FLAG) {
-        RESULT result(LINK_ABS, files.Name(i));
+        cout << decoder.Find(RESULT(LINK_ABS, files.Name(i)));
+        return 1;
       }
       // store as an entry point
       symbols.InsertLabel(line.data[0], length);
-      // keep track of lenght
-      Word size;
+      // keep track of length -- needs to be added to length later
       size.FromHex("0x" + line.data[2]);
-      length += size.ToInt();
+
+      // check length
+      if ((length + size.ToInt()) > PAGE_SIZE) {
+        cout << decoder.Find(RESULT(MEM_FIT, itos(length - PAGE_SIZE) + " extra lines"));
+        return 1;
+      }
     } else {
       // Doesn't start with header record
       cout << decoder.Find(RESULT(INVALID_HEADER_ENTRY, "Line " + itos(pos)));
@@ -400,6 +439,9 @@ int Linker(const vector<string>& infiles, const string& outfile) {
           cout << decoder.Find(RESULT(INV_HEX, "Line " + itos(pos)));
           return 1;
         }
+        // shift address
+        value = value + Word(length);
+        // store symbol
         symbols.InsertLabel(line.data[0], value);
       }
       line = files[i].GetNext();
@@ -411,16 +453,12 @@ int Linker(const vector<string>& infiles, const string& outfile) {
     if (line.type != 'E') {
       cout << decoder.Find(RESULT(INVALID_DATA_ENTRY, "Line " + itos(pos)));
     }
+
+    length += size.ToInt();
   }
   // done getting symbols
   // all must have valid syntax
 
-  const int PAGE_SIZE = 0x01FF;
-  // check length
-  if (length > PAGE_SIZE) {
-    cout << decoder.Find(RESULT(MEM_FIT, itos(length - PAGE_SIZE) + " extra lines"));
-    return 1;
-  }
   // Go back to the top of each file
   files.Reset();
   Word full_length(length);
@@ -434,6 +472,8 @@ int Linker(const vector<string>& infiles, const string& outfile) {
 
   int pos = 1; // line number
   string main_end; // keep the main file end record
+  int prev_length = 0;  // length at the end of the previous file
+
   for (int i = 0; i<files.Size(); i++) {
     line = files[i].GetNext();
     if (line.type == 'H') { // can't be 'M' because we're already past the main file's header
@@ -446,63 +486,83 @@ int Linker(const vector<string>& infiles, const string& outfile) {
       switch (line.type) {
         case 'N': {
           // ignore
+          --length; // to counteract the increment below.
         } break;
 
+        // relocatables
+        case 'R':
+        case 'W':
         case 'x':
         case 'X': {
           // X(x)|ADDR|DATA(INST)
           // SYMBOL_NAME
-          if (!symbols.IsSymbol(line.data[2])) {
-            // SYMBOL_NAME is not in the table
-            cout << decoder.Find(RESULT(UNRESOLVED_EXTERNAL, "Line " + itos(pos)));
-            return 1;
+          if (line.type == 'x' || line.type == 'X') {
+            if (!symbols.IsSymbol(line.data[2])) {
+              // SYMBOL_NAME is not in the table
+              cout << decoder.Find(RESULT(UNRESOLVED_EXTERNAL, "Line " + itos(pos)));
+              return 1;
+            }
           }
           Word addr, data, value;
+          // addr in new program
           if (!addr.FromHex("0x" + line.data[0])) {
             cout << decoder.Find(RESULT(INV_HEX, "Line " + itos(pos)));
             return 1;
           }
-          addr = addr + Word(length); // apply offset to addr
+          addr = addr + Word(prev_length);
+          // get data
           if (!data.FromHex("0x" + line.data[1])) {
             cout << decoder.Find(RESULT(INV_HEX, "Line " + itos(pos)));
             return 1;
           }
-          // get value of symbol
-          value = symbols.GetLabelAddr(line.data[2]);
+
+          // get offset value
+          if (line.type == 'x' || line.type == 'X') {
+            // store in pass one
+            value = symbols.GetLabelAddr(line.data[2]);
+          } else {
+            // defined by relocatble property
+            value = data + Word(prev_length);
+          }
 
           // addr and data are valid hex, symbol value retrieved
-          if (line.type == 'x') {
+          if (line.type == 'x' || line.type == 'R') {
             // value = pgoffset9
-            for (int j = 9; i < WORD_SIZE; j++) {
-              // copy page number
+            for (int j = 9; j < WORD_SIZE; j++) {
+              // copy offset
               value.SetBit(j, data[j]);
             }
-            outs << 'R' << addr.ToHex().substr(2) << value.ToHex().substr(2);
+
+            outs << 'R' << addr.ToHex().substr(2) << value.ToHex().substr(2) << endl;
             
-          } else { // line.type == 'X'
+          } else { // line.type == 'X'|'W'
             // value = word of data
-            outs << 'W' << addr.ToHex().substr(2) << value.ToHex().substr(2);
+            outs << 'W' << addr.ToHex().substr(2) << value.ToHex().substr(2) << endl;
           }
-          ++length;
         } break;
 
-        default: {
-          // T(R/W)|ADDR|INST
-          Word addr, inst;
-          addr.FromHex("0x" + line.data[0]);
-          addr = addr + Word(length);
-          inst.FromHex("0x" + line.data[0]);
-          outs << line.type << addr.ToHex().substr(2) << inst.ToHex().substr(2) << endl;
-          ++length;
+        default: { // T
+          // T|ADDR|INST
+          // Echo the line with new addr
+          Word addr;
+          if (!addr.FromHex("0x" + line.data[0])) {
+            cout << decoder.Find(RESULT(INV_HEX, "Line " + itos(pos)));
+            return 1;
+          }
+          addr = addr + Word(prev_length);
+          outs << line.type << addr.ToHex().substr(2) << line.data[1] << endl;
         } break;
       } // end switch
-      // Must be end record
-      if (i == 0) {
-        main_end = line.type + line.data[0];
-      }
-      // done with file
+
+      line = files[i].GetNext();
+      ++length;
+    } // end while
+    // Must be end record
+    if (i == 0) {
+      main_end = line.type + line.data[0];
     }
-  }
+    prev_length = length;
+  } // end for
   // output main's end record
   outs << main_end << endl;
 
