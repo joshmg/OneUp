@@ -303,17 +303,12 @@ int main (int argc, char* argv[]) {
 }
 
 void remove_temps(const vector<string>& files) {
-  // watch for failed remove
-  bool rm_err = false;
   // remove them one at a time
   for (int i=0; i<files.size(); i++) {
-    if (remove(files[i].c_str()) != 0) {
-      rm_err = true;
-    }
-  }
-  if (rm_err) {
-    // report failed deletions 
-    cout << "WARNING: One or more temp files could not be removed.";
+    // don't worry about failed removes,
+    // it's probably just the assembler not
+    // having been able to make it.
+    remove(files[i].c_str());
   }
 }
 
@@ -329,6 +324,7 @@ int Assembler(const string& infile, const string& outfile, int symbol_length, bo
     SymbolTable symbols;
     RESULT result = extract.GetSymbols(symbols);
     if (result.msg != SUCCESS) {
+      cout << "In file: " << infile << ":\n";
       cout << results.Find(result);
       return 3; // syntax error
     }
@@ -355,11 +351,13 @@ int Assembler(const string& infile, const string& outfile, int symbol_length, bo
     Printer printer(verbose);
     result = printer.Open(infile, outfile);
     if (result.msg != SUCCESS) {
+      cout << "In file: " << infile << ":\n";
       cout << results.Find(result);
       return 2; // i/o error
     } else {
       result = printer.Print(symbols, length);
       if (result.msg != SUCCESS) {
+        cout << "In file: " << infile << ":\n";
         cout << results.Find(result);
         return 3; // syntax error
       }

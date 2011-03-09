@@ -53,14 +53,13 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
   // beginning location
   Word begin(0);
 
-  while (_fileStream.good()) {
-    pos++;  // next line
-            // start at 1
+  // reusable vars for loop
+  string str;
+  Line line;
+  while (getline(_fileStream, str)) {
+    ++pos;  // next line, start at 1
 
-    string str;
-    Line line;
     // get line, return error with line number if invalid
-    getline(_fileStream, str);
     RESULT result = line.ReadLine(str);
     if (result.msg != SUCCESS) {
       result.info = _LineNumber(pos);
@@ -340,8 +339,6 @@ RESULT Extractor::GetSymbols(SymbolTable& symbols) {
       // program will not fit in memory
       return RESULT(MEM_FIT, _LineNumber(pos) + ": Stopping at length " + itoshex(_length));
     }      
-      
-
     //--- end of length related testing
   }
   

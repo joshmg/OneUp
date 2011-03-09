@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 
+//! Implements iFileArray
 class FileArray : public iFileArray {
   private:
     //! Keeps all of the files open for the two pass algorithm.
@@ -23,6 +24,7 @@ class FileArray : public iFileArray {
     bool _hasMain;
 
   public:
+    //! Sets the _hasMain variable to false.
     FileArray();
 
     Codes::RESULT Add(std::string name);

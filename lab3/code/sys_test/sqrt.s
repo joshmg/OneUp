@@ -11,8 +11,10 @@
 runsqt  .ORIG
         .EXT     SQRT,PRESQRT,PSTSQRT
 ; for imaginary roots
-imgnry   .STRZ  "i"
+imgnry   .STRZ  "i"          ; An i for if the square root is imaginary
+newln    .FILL   xA           ; ASCII value for a newline
 ; trap codes
+out     .EQU    x21
 puts    .EQU    x22
 halt    .EQU    x25
 outn    .EQU    x31
@@ -40,11 +42,13 @@ neg     NOT     R4,R4
 go      JSR     SQRT
 ; Print answer
         TRAP    outn
-        ADD     R2,R2,#0  ; Set CCR for R2
+        ADD     R2,R2,#0     ; Set CCR for R2
 ; if not zero, print an 'i'
         BRZ     end
         LEA     R0,imgnry
         TRAP    puts
 ; end of program
-end     TRAP    halt
+end     LD R0,newln          ; load a newline into R0
+        TRAP    out          ; print newline
+        TRAP    halt
         .END    start

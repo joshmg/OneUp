@@ -52,10 +52,7 @@ ObjectData ObjParser::GetNext() {
   string line;
 
   //  Checks if the file is ready to be read and reads the line if ready or returns a 'dummy' ObjectData struct if not.
-  if (_fileStream.good()) {
-    getline(_fileStream, line);
-  }
-  else {
+  if (!(getline(_fileStream, line))) {
     _object.type = 0;
     _object.data.push_back(string());
     return _object;
@@ -121,10 +118,7 @@ ObjectData ObjParser::GetNext() {
 
       if (line[0] == 'x' || line[0] == 'X') {
         // Get the next line
-        if (_fileStream.good()) {
-          getline(_fileStream, line);
-        }
-        else {
+        if (!(getline(_fileStream, line))) {
           _object.type = 0;
           _object.data.clear();
           _object.data.push_back(string());
