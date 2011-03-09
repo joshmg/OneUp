@@ -17,7 +17,9 @@ using namespace std;
 RESULT Loader::_GetLoadAddress(Word& produced_address, const Word& segment_length) const {
 
   while (true) {
-    cout << endl << "Requesting address for program length of " << segment_length.ToInt() << " (Ex: 0x0000) : ";
+    cout << endl << "Requesting address for program of length "
+        << segment_length.ToInt() << "(" << segment_length.ToHexAbbr() << ") "
+        <<  " (Ex: 0x0000) : ";
 
     string input;
     getline(cin, input);
