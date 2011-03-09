@@ -33,7 +33,6 @@ RESULT Loader::_GetLoadAddress(Word& produced_address, const Word& segment_lengt
   
   for (int i=WORD_SIZE-1;i>8;i--) {
     if (produced_address[i] != page_test[i]) {
-      cout << produced_address.ToStr() << " != " << page_test.ToStr() << endl;
       return BAD_MALLOC;
     }
   }
