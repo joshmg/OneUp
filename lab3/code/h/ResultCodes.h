@@ -12,6 +12,8 @@
 
 /*! @brief Values corresponding to the results of Wi-11 function calls.
 
+    Contains the error and success codes for the Assembler, Linker and Simulator.
+
     An enum is used for efficiency.  The code can be returned up the
     collaboration hierarchy quickly so that, if necessary, the program
     can print an appropriate error message

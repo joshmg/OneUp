@@ -1,0 +1,19 @@
+delta:
+
+
+intro: 	Main
+		Introduction
+		format
+		instructions
+			.ORIG
+			.EXT
+			.ENT
+			.MAIN
+
+		Linker
+		FileArray
+		itos
+		object parser
+
+
+modififed @brief of ResultCodes
